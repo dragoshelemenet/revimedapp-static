@@ -10082,3 +10082,19 @@ html.route-ready .pageHero{
 .galleryCard img{
   object-fit:cover!important;
 }
+
+/* Admin service rows: prevent raw icon URLs from ruining titles */
+.adminServiceIcon{
+  width:32px!important;
+  height:32px!important;
+  object-fit:contain!important;
+  border-radius:10px!important;
+  background:#eef7ff!important;
+  padding:5px!important;
+}
+
+.adminSimpleCard,
+.adminSimpleCard *{
+  overflow-wrap:break-word;
+}
+

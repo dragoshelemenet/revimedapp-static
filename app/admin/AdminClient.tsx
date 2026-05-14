@@ -4,6 +4,50 @@ import AdminApplicationsManager from "@/components/AdminApplicationsManager";
 import { useMemo, useState } from "react";
 
 
+function adminCleanIconUrl(value: any) {
+  return String(value || "")
+    .replace(new RegExp("https?://img\\.icons8\\.com/\\S+", "gi"), "")
+    .replace(new RegExp("\\s+", "g"), " ")
+    .trim();
+}
+
+function adminVisibleTitle(item: any, lang: string) {
+  const raw =
+    item?.["title_" + lang] ||
+    item?.[lang + "_title"] ||
+    item?.translations?.[lang]?.title ||
+    item?.i18n?.[lang]?.title ||
+    item?.title?.[lang] ||
+    item?.title ||
+    item?.name ||
+    item?.label ||
+    item?.slug ||
+    "Element";
+
+  return adminCleanIconUrl(raw);
+}
+
+function adminVisibleDescription(item: any, lang: string) {
+  const raw =
+    item?.["description_" + lang] ||
+    item?.[lang + "_description"] ||
+    item?.translations?.[lang]?.description ||
+    item?.i18n?.[lang]?.description ||
+    item?.description?.[lang] ||
+    item?.description ||
+    item?.short ||
+    item?.excerpt ||
+    "";
+
+  return adminCleanIconUrl(raw);
+}
+
+function adminIconSrc(item: any) {
+  return item?.icon_url || item?.iconUrl || item?.icon || "";
+}
+
+
+
 function pickLangText(item: any, field: string, lang: string) {
   if (!item) return "";
 
