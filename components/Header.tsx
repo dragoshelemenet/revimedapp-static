@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { site, tools } from "@/lib/site";
+import { site } from "@/lib/site";
 import { cleanPath, isLang, languages, langLabels, t, type Lang, withLang } from "@/lib/i18n";
 
 export default function Header() {
@@ -57,23 +57,7 @@ export default function Header() {
           <Link href={link("/")} onClick={close}>{text.home}</Link>
           <Link href={link("/despre-noi")} onClick={close}>{text.about}</Link>
           <Link href={link("/servicii")} onClick={close}>{text.services}</Link>
-
-          <div className="rmDrop">
-            <Link href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
-            <div className="rmDropPanel">
-              <Link href={link("/aplicatii/teste-si-instrumente")} onClick={close}>
-                <b>{text.tools}</b>
-                <small>Medical tools</small>
-              </Link>
-              {tools.map((tool) => (
-                <Link key={tool.slug} href={link(tool.href)} onClick={close}>
-                  <b>{tool.title}</b>
-                  <small>{tool.description}</small>
-                </Link>
-              ))}
-            </div>
-          </div>
-
+          <Link href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
           <Link href={link("/preturi")} onClick={close}>{text.prices}</Link>
           <Link href={link("/galerie")} onClick={close}>{text.gallery}</Link>
           <Link href={link("/blog")} onClick={close}>{text.blog}</Link>
