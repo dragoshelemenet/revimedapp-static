@@ -73,7 +73,7 @@ const fallbackApps: ManagedApp[] = [
     id: "revimed-yoga-tibetan",
     slug: "revimed-yoga-tibetan",
     image: "/images/hero-bg.jpg",
-    kind: "internal",
+    kind: "react",
     position: 4,
     href: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
     visible: true,
