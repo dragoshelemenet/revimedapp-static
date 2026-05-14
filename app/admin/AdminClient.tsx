@@ -36,6 +36,16 @@ type ServiceAdmin = {
   published: number;
 };
 
+type GalleryItem = {
+  id: number;
+  lang: "ro" | "en" | "ru" | "ua";
+  image: string;
+  title: string;
+  alt: string;
+  position: number;
+  published: number;
+};
+
 export default function AdminClient({
   loggedIn,
   posts,
@@ -46,13 +56,15 @@ export default function AdminClient({
   posts: Post[];
   prices?: Price[];
   services?: ServiceAdmin[];
+  gallery?: GalleryItem[];
   selectedLang?: "ro" | "en" | "ru" | "ua";
 }) {
   const [workingLang, setWorkingLang] = useState<"ro" | "en" | "ru" | "ua">(selectedLang);
-  const [tab, setTab] = useState<"services" | "prices" | "blog">("services");
+  const [tab, setTab] = useState<"services" | "prices" | "gallery" | "blog">("services");
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [editingPrice, setEditingPrice] = useState<Price | null>(null);
   const [editingService, setEditingService] = useState<ServiceAdmin | null>(null);
+  const [editingGallery, setEditingGallery] = useState<GalleryItem | null>(null);
   const [message, setMessage] = useState("");
 
   async function login(formData: FormData) {
@@ -111,6 +123,21 @@ export default function AdminClient({
     if (res.ok) location.reload();
   }
 
+  async function saveGallery(formData: FormData) {
+    const id = formData.get("id");
+    const url = id ? `/api/admin/gallery/${id}` : "/api/admin/gallery";
+    const method = id ? "PUT" : "POST";
+    const res = await fetch(url, { method, body: formData });
+    if (res.ok) location.reload();
+    else setMessage("Nu s-a salvat imaginea.");
+  }
+
+  async function removeGallery(id: number) {
+    if (!confirm("Ștergi imaginea din galerie?")) return;
+    const res = await fetch(`/api/admin/gallery/${id}`, { method: "DELETE" });
+    if (res.ok) location.reload();
+  }
+
   if (!loggedIn) {
     return (
       <section className="adminBg">
@@ -155,6 +182,7 @@ export default function AdminClient({
         <div className="adminTabs">
           <button className={tab === "services" ? "active" : ""} onClick={() => setTab("services")}>Servicii</button>
           <button className={tab === "prices" ? "active" : ""} onClick={() => setTab("prices")}>Prețuri</button>
+          <button className={tab === "gallery" ? "active" : ""} onClick={() => setTab("gallery")}>Galerie</button>
           <button className={tab === "blog" ? "active" : ""} onClick={() => setTab("blog")}>Blog</button>
         </div>
 

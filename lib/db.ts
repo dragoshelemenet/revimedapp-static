@@ -56,6 +56,18 @@ CREATE TABLE IF NOT EXISTS prices (
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   edited_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS gallery_items (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang TEXT NOT NULL DEFAULT 'ro',
+  image TEXT NOT NULL,
+  title TEXT NOT NULL,
+  alt TEXT NOT NULL DEFAULT '',
+  position INTEGER NOT NULL DEFAULT 0,
+  published INTEGER NOT NULL DEFAULT 1,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  edited_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 `);
 
 function hasColumn(table: string, column: string) {
@@ -197,4 +209,43 @@ export function getPublishedServicesAdmin(lang: Lang = "ro") {
 
 export function getServiceBySlug(slug: string, lang: Lang = "ro") {
   return db.prepare("SELECT * FROM services_admin WHERE slug = ? AND lang = ? AND published = 1").get(slug, lang) as ServiceAdmin | undefined;
+}
+
+
+export type GalleryItem = {
+  id: number;
+  lang: Lang;
+  image: string;
+  title: string;
+  alt: string;
+  position: number;
+  published: number;
+  created_at: string;
+  edited_at: string;
+};
+
+const galleryCount = db.prepare("SELECT COUNT(*) as c FROM gallery_items").get() as { c: number };
+if (galleryCount.c === 0) {
+  const insertGallery = db.prepare(`
+    INSERT INTO gallery_items (lang, image, title, alt, position, published)
+    VALUES ('ro', ?, ?, ?, ?, 1)
+  `);
+
+  [
+    ["/images/2pic.jpg", "Recepție Revimed PLUS+", "Recepție și spațiu de așteptare Revimed PLUS+", 1],
+    ["/images/1pic.jpg", "Consultație medicală", "Cabinet consultații Revimed PLUS+", 2],
+    ["/images/3.jpg", "Reabilitare medicală", "Proceduri de reabilitare medicală", 3],
+    ["/images/pre.jpg", "Sală de terapie", "Spațiu pentru terapie și recuperare", 4],
+    ["/images/pre1.jpg", "Proceduri terapeutice", "Proceduri medicale și recuperare", 5],
+    ["/images/31.jpg", "Cabinet medical", "Cabinet medical Revimed PLUS+", 6]
+  ].forEach((row) => insertGallery.run(...row));
+}
+
+export function getAllGalleryItems(lang?: Lang) {
+  if (lang) return db.prepare("SELECT * FROM gallery_items WHERE lang = ? ORDER BY position ASC, id ASC").all(lang) as GalleryItem[];
+  return db.prepare("SELECT * FROM gallery_items ORDER BY lang ASC, position ASC, id ASC").all() as GalleryItem[];
+}
+
+export function getPublishedGalleryItems(lang: Lang = "ro") {
+  return db.prepare("SELECT * FROM gallery_items WHERE lang = ? AND published = 1 ORDER BY position ASC, id ASC").all(lang) as GalleryItem[];
 }

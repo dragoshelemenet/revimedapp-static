@@ -1,5 +1,5 @@
 import { requireAdmin } from "@/lib/auth";
-import { getAllPosts, getAllPrices, getAllServicesAdmin } from "@/lib/db";
+import { getAllPosts, getAllPrices, getAllServicesAdmin, getAllGalleryItems } from "@/lib/db";
 import AdminClient from "../admin/AdminClient";
 
 export const dynamic = "force-dynamic";
@@ -17,6 +17,7 @@ export default async function AdminLoginPage({
   const posts = admin ? getAllPosts(lang) : [];
   const prices = admin ? getAllPrices(lang) : [];
   const services = admin ? getAllServicesAdmin(lang) : [];
+  const gallery = admin ? getAllGalleryItems(lang) : [];
 
-  return <AdminClient loggedIn={Boolean(admin)} posts={posts} prices={prices} services={services} selectedLang={lang} />;
+  return <AdminClient loggedIn={Boolean(admin)} posts={posts} prices={prices} services={services} gallery={gallery} selectedLang={lang} />;
 }

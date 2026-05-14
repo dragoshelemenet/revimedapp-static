@@ -1280,3 +1280,61 @@ p{margin:0 0 18px}
     gap:9px;
   }
 }
+
+/* Gallery video fix */
+.galleryVideoSection{
+  background:#fff;
+  padding-top:48px;
+}
+
+.galleryVideoGrid{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  align-items:start;
+}
+
+.galleryVideoCard{
+  background:#fff;
+  border:1px solid #dbeafe;
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 14px 34px rgba(0,132,210,.12);
+}
+
+.galleryVideoCard .youtubeFrame{
+  width:100%;
+  aspect-ratio:16 / 9;
+  border-radius:14px;
+  overflow:hidden;
+  background:#111827;
+}
+
+.galleryVideoCard h3{
+  font-size:18px;
+  line-height:1.25;
+  margin:14px 4px 2px;
+  color:#102033;
+}
+
+.fixedGalleryGrid .galleryPhoto span{
+  font-size:15px;
+  line-height:1.25;
+}
+
+@media(max-width:1000px){
+  .galleryVideoGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px){
+  .galleryVideoGrid{
+    grid-template-columns:1fr;
+  }
+
+  .galleryVideoCard h3{
+    font-size:17px;
+  }
+}

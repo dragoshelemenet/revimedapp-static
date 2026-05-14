@@ -1,38 +1,16 @@
 import { youtubeVideos } from "@/lib/videos";
+import { getPublishedGalleryItems } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Galerie",
   description: "Galerie foto și video Revimed PLUS+ din Chișinău."
 };
 
-const galleryImages = [
-  {
-    src: "/images/2pic.jpg",
-    alt: "Echipamente Medicale"
-  },
-  {
-    src: "/images/1pic.jpg",
-    alt: "Sala de Consultații"
-  },
-  {
-    src: "/images/3.jpg",
-    alt: "Reabilitare"
-  },
-  {
-    src: "/images/pre.jpg",
-    alt: "Facilități Moderne"
-  },
-  {
-    src: "/images/pre1.jpg",
-    alt: "Personal Medical"
-  },
-  {
-    src: "/images/31.jpg",
-    alt: "Clinic"
-  }
-];
-
 export default function GalleryPage() {
+  const galleryImages = getPublishedGalleryItems("ro");
+
   return (
     <>
       <section className="pageHero galleryHero">
@@ -49,17 +27,17 @@ export default function GalleryPage() {
         <div className="rmShell">
           <h2 className="centerTitle">Galerie Foto</h2>
 
-          <div className="galleryMasonry">
+          <div className="galleryMasonry fixedGalleryGrid">
             {galleryImages.map((image, index) => (
               <a
-                href={image.src}
+                href={image.image}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={index === 0 || index === 3 ? "galleryPhoto galleryLarge" : "galleryPhoto"}
-                key={image.src}
+                key={image.id}
               >
-                <img src={image.src} alt={image.alt} loading="lazy" />
-                <span>{image.alt}</span>
+                <img src={image.image} alt={image.alt || image.title} loading="lazy" />
+                <span>{image.title}</span>
               </a>
             ))}
           </div>
@@ -70,9 +48,9 @@ export default function GalleryPage() {
         <div className="rmShell">
           <h2 className="centerTitle">Video-urile Noastre</h2>
 
-          <div className="youtubeGrid galleryYoutubeGrid">
-            {youtubeVideos.map((video, index) => (
-              <article className={index === 0 ? "youtubeCard youtubeBig" : "youtubeCard"} key={video.embed}>
+          <div className="galleryVideoGrid">
+            {youtubeVideos.map((video) => (
+              <article className="galleryVideoCard" key={video.embed}>
                 <div className="youtubeFrame">
                   <iframe
                     src={video.embed}
