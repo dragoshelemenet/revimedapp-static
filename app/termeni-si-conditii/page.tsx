@@ -33,10 +33,20 @@ export default function TermsPage() {
             consultarea cu medicul este obligatorie.
           </p>
 
-          <h2>3. Utilizare pe propriul risc</h2>
+          <h2>3. Zero responsabilitate medicală și utilizare pe propriul risc</h2>
           <p>
-            Orice acțiune realizată pe baza informațiilor educaționale de pe site, fără consult medical,
-            se face pe propriul risc al utilizatorului. Revimed PLUS+ nu recomandă automedicația.
+            Tot ce este citit, văzut sau folosit pe acest site, inclusiv articole, teste, aplicații,
+            recomandări generale, informații despre plante, suplimente, respirație, screening sau orice
+            alt material educațional, este folosit exclusiv pe propriul risc al utilizatorului.
+          </p>
+          <p>
+            Revimed PLUS+, autorii site-ului și administratorii nu își asumă responsabilitatea pentru decizii,
+            acțiuni, tratamente, automedicație, amânarea consultației medicale sau interpretarea greșită a
+            informațiilor de pe site. Site-ul are scop informativ și educațional, nu scop de diagnostic sau tratament.
+          </p>
+          <p>
+            Pentru orice problemă medicală, simptom, tratament, investigație, supliment, plantă sau procedură,
+            consultarea cu un medic este obligatorie.
           </p>
 
           <h2>4. Fitoterapie și suplimente</h2>

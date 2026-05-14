@@ -55,7 +55,13 @@ export default function CookiesPage() {
             analytics sau alte funcționalități care implică prelucrarea datelor.
           </p>
 
-          <h2>7. Contact</h2>
+          <h2>7. Responsabilitate medicală</h2>
+          <p>
+            Conținutul site-ului este educațional. Orice informație citită sau folosită de pe site este utilizată
+            pe propriul risc. Site-ul nu înlocuiește consultația medicală și nu oferă diagnostic sau tratament online.
+          </p>
+
+          <h2>8. Contact</h2>
           <p>
             Pentru întrebări despre confidențialitate sau cookies, contactați Centrul Medical Revimed PLUS+.
           </p>
