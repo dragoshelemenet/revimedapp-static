@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
+import RouteTransition from "../components/RouteTransition";
 import { site } from "../lib/site";
 import "../lib/seedLanguages";
 
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ro">
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <RouteTransition />
         <Header />
         <LanguageFlagOverlay />
         <main>{children}</main>

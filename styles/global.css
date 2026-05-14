@@ -5864,3 +5864,185 @@ select:focus-visible{
     font-size:15px;
   }
 }
+
+/* Smooth route + hero transition */
+main,
+.pageHero,
+.homeHero,
+.heroOverlay,
+.heroCenter,
+.pageHero .rmShell,
+.pageHero h1,
+.pageHero .lead,
+.pageHero .crumb{
+  backface-visibility:hidden;
+  transform-style:preserve-3d;
+}
+
+.homeHero,
+.pageHero{
+  transform-origin:top center;
+  transition:
+    height .42s cubic-bezier(.22,.61,.36,1),
+    min-height .42s cubic-bezier(.22,.61,.36,1),
+    opacity .26s ease,
+    transform .42s cubic-bezier(.22,.61,.36,1),
+    filter .42s cubic-bezier(.22,.61,.36,1);
+}
+
+.heroOverlay{
+  transition:
+    min-height .42s cubic-bezier(.22,.61,.36,1),
+    height .42s cubic-bezier(.22,.61,.36,1),
+    opacity .26s ease,
+    background .42s ease;
+}
+
+.heroCenter,
+.pageHero .rmShell{
+  transition:
+    transform .44s cubic-bezier(.22,.61,.36,1),
+    opacity .28s ease;
+}
+
+.heroCenter h1,
+.heroCenter p,
+.pageHero h1,
+.pageHero .lead,
+.pageHero .crumb{
+  transition:
+    transform .44s cubic-bezier(.22,.61,.36,1),
+    opacity .32s ease;
+}
+
+/* When route changes, slightly compress and fade the current hero */
+html.route-changing .homeHero,
+html.route-changing .pageHero{
+  opacity:.88;
+  transform:translateY(-4px) scale(.992);
+  filter:saturate(.96);
+}
+
+html.route-changing .heroCenter,
+html.route-changing .pageHero .rmShell{
+  opacity:.72;
+  transform:translateY(12px);
+}
+
+/* New route settles into place */
+html.route-ready .homeHero,
+html.route-ready .pageHero{
+  animation:heroSettle .52s cubic-bezier(.22,.61,.36,1) both;
+}
+
+html.route-ready .heroCenter,
+html.route-ready .pageHero .rmShell{
+  animation:heroTextSettle .56s cubic-bezier(.22,.61,.36,1) both;
+}
+
+html.route-ready .heroCenter h1,
+html.route-ready .pageHero h1{
+  animation:titleSettle .62s cubic-bezier(.22,.61,.36,1) both;
+}
+
+html.route-ready .heroCenter p,
+html.route-ready .pageHero .lead,
+html.route-ready .pageHero .crumb{
+  animation:leadSettle .68s cubic-bezier(.22,.61,.36,1) both;
+}
+
+@keyframes heroSettle{
+  from{
+    opacity:.86;
+    transform:translateY(8px) scale(.988);
+    filter:saturate(.96);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:saturate(1);
+  }
+}
+
+@keyframes heroTextSettle{
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes titleSettle{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes leadSettle{
+  from{
+    opacity:0;
+    transform:translateY(14px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Content enters smoother below hero */
+.rmSection{
+  animation:sectionFadeIn .42s ease both;
+}
+
+@keyframes sectionFadeIn{
+  from{
+    opacity:.82;
+    transform:translateY(8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Avoid too much motion for accessibility */
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+/* Mobile: smaller animation so it feels stable */
+@media(max-width:700px){
+  html.route-changing .homeHero,
+  html.route-changing .pageHero{
+    transform:translateY(-2px) scale(.996);
+  }
+
+  html.route-changing .heroCenter,
+  html.route-changing .pageHero .rmShell{
+    transform:translateY(8px);
+  }
+
+  html.route-ready .homeHero,
+  html.route-ready .pageHero{
+    animation-duration:.38s;
+  }
+
+  html.route-ready .heroCenter,
+  html.route-ready .pageHero .rmShell{
+    animation-duration:.42s;
+  }
+}
