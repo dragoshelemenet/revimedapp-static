@@ -7419,3 +7419,255 @@ body:has(.adminLoginPage) .languageFlagOverlay{
     justify-content:space-between!important;
   }
 }
+
+/* =========================================================
+   ADMIN LOGO BACK + FLAG BOTTOM LEFT + HERO EDGE FLASH FIX
+   ========================================================= */
+
+/* Admin sidebar logo restored as link */
+.adminSideLogo.withLogo{
+  display:grid!important;
+  gap:12px!important;
+  margin:0 0 24px!important;
+}
+
+.adminSideLogo.withLogo a{
+  display:block!important;
+  width:max-content!important;
+  border-radius:14px!important;
+  background:#fff!important;
+  padding:8px 10px!important;
+  transition:opacity .15s ease, transform .15s ease!important;
+}
+
+.adminSideLogo.withLogo a:hover{
+  opacity:.9!important;
+  transform:translateY(-1px)!important;
+}
+
+.adminSideLogo.withLogo img{
+  display:block!important;
+  width:150px!important;
+  height:auto!important;
+  max-height:54px!important;
+  object-fit:contain!important;
+}
+
+.adminSideLogo.withLogo b{
+  color:#fff!important;
+  font-size:28px!important;
+  font-weight:950!important;
+  letter-spacing:-.04em!important;
+  line-height:1!important;
+}
+
+.adminSideLogo.withLogo b::after{
+  content:"Panou administrare";
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  font-weight:800;
+  color:rgba(255,255,255,.62);
+  letter-spacing:0;
+}
+
+/* Override previous rule that hid sidebar logo images */
+.adminSidebar .adminSideLogo.withLogo img{
+  display:block!important;
+}
+
+/* Admin language flag: visible bottom-left instead of hidden right edge */
+.adminEdgeFlag{
+  position:fixed!important;
+  left:255px!important;
+  bottom:22px!important;
+  top:auto!important;
+  right:auto!important;
+  width:auto!important;
+  height:auto!important;
+  z-index:50!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  padding:10px 14px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.92)!important;
+  border:1px solid #dcebf7!important;
+  opacity:1!important;
+  box-shadow:none!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  pointer-events:none!important;
+}
+
+.adminEdgeFlag span{
+  font-size:28px!important;
+  line-height:1!important;
+  transform:none!important;
+}
+
+.adminEdgeFlag b{
+  display:block!important;
+  margin:0!important;
+  color:#075f9e!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  opacity:1!important;
+}
+
+/* Mobile admin flag */
+@media(max-width:900px){
+  .adminEdgeFlag{
+    left:14px!important;
+    bottom:12px!important;
+    opacity:.95!important;
+  }
+
+  .adminEdgeFlag span{
+    font-size:24px!important;
+  }
+
+  .adminEdgeFlag b{
+    display:block!important;
+    font-size:12px!important;
+  }
+}
+
+/* =========================================================
+   HERO WHITE EDGE / WHITE OVERLAY FLASH FIX
+   ========================================================= */
+
+/* Make the entire first paint behind hero blue, never white */
+html,
+body{
+  background:#071f3f!important;
+}
+
+main,
+.rmSection,
+.aboutBlock,
+.servicesBlock,
+.appBlock,
+.homeStatsBand,
+.homeCtaBand,
+.testimonialBand,
+.rmFooter{
+  background-color:#fff;
+}
+
+/* Hero must own a solid image layer that overfills the container */
+.homeHero,
+.pageHero{
+  position:relative!important;
+  overflow:hidden!important;
+  background:#071f3f!important;
+  contain:paint!important;
+}
+
+/* Create a dedicated overfilled background image layer */
+.homeHero::before,
+.pageHero::after{
+  content:""!important;
+  position:absolute!important;
+  inset:-18px!important;
+  z-index:0!important;
+  pointer-events:none!important;
+  background:url('/images/medical-bg.jpg') center center/cover no-repeat!important;
+  transform:none!important;
+  opacity:1!important;
+}
+
+/* Put gradient overlay on top of image layer */
+.homeHero::after{
+  content:""!important;
+  position:absolute!important;
+  inset:-2px!important;
+  z-index:1!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.10),transparent 28%),
+    linear-gradient(90deg,rgba(7,31,63,.76),rgba(7,31,63,.34) 48%,rgba(0,143,216,.28))!important;
+  opacity:1!important;
+}
+
+.pageHero::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-2px!important;
+  z-index:1!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 25% 30%,rgba(255,255,255,.09),transparent 27%),
+    linear-gradient(90deg,rgba(7,31,63,.76),rgba(7,31,63,.45) 42%,rgba(0,143,216,.36))!important;
+  opacity:1!important;
+}
+
+/* Disable any background on hero itself that could flash while CSS swaps */
+.homeHero,
+.pageHero{
+  background-image:none!important;
+}
+
+/* Content above both layers */
+.heroOverlay,
+.pageHero .rmShell{
+  position:relative!important;
+  z-index:3!important;
+}
+
+/* The old heroOverlay should no longer paint a separate background */
+.heroOverlay{
+  background:transparent!important;
+}
+
+/* Stop all route animations from touching hero background/image layers */
+.homeHero,
+.pageHero,
+.homeHero::before,
+.homeHero::after,
+.pageHero::before,
+.pageHero::after{
+  transform:none!important;
+  filter:none!important;
+  transition:opacity .22s ease!important;
+}
+
+/* Only animate text, not image */
+html.route-changing .homeHero,
+html.route-changing .pageHero{
+  opacity:1!important;
+}
+
+html.route-changing .heroOverlay,
+html.route-changing .pageHero .rmShell{
+  opacity:.78!important;
+  transform:translateY(6px)!important;
+}
+
+html.route-ready .heroOverlay,
+html.route-ready .pageHero .rmShell{
+  animation:heroContentStable .38s cubic-bezier(.22,.61,.36,1) both!important;
+}
+
+/* Prevent old route-ready animation on the whole hero */
+html.route-ready .homeHero,
+html.route-ready .pageHero{
+  animation:none!important;
+}
+
+/* Keep following content white after hero */
+.homeStatsBand{
+  background:#fff!important;
+}
+
+@media(max-width:700px){
+  .homeHero::before,
+  .pageHero::after{
+    inset:-24px!important;
+  }
+
+  .homeHero::after,
+  .pageHero::before{
+    inset:-3px!important;
+  }
+}

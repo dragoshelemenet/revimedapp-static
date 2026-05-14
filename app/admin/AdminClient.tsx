@@ -341,7 +341,12 @@ export default function AdminClient({
   return (
     <section className="adminSimplePage">
       <aside className="adminSidebar">
-        <div className="adminSideLogo textOnly"><b>Admin</b></div>
+        <div className="adminSideLogo withLogo">
+          <a href="/" target="_blank" rel="noopener noreferrer" title="Deschide site-ul principal">
+            <img src="/images/logo.png" alt="REVIMED" />
+          </a>
+          <b>Admin</b>
+        </div>
 
         <button className={screen === "home" ? "active" : ""} onClick={() => setScreen("home")}>Dashboard</button>
         <button className={screen.startsWith("blog") ? "active" : ""} onClick={() => setScreen("blog")}>Blog</button>
