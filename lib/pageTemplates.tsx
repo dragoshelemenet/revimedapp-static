@@ -7,6 +7,7 @@ import { t, withLang, type Lang } from "@/lib/i18n";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import PricesAccordion from "@/components/PricesAccordion";
 import ReviewCarousel from "@/components/ReviewCarousel";
+import IconVisual from "@/components/IconVisual";
 
 export function HomeTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
@@ -44,7 +45,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
           <div className="serviceGrid">
             {services.map((service) => (
               <Link key={service.id} href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile">
-                <div className="tileIcon">{service.icon}</div>
+                <IconVisual src={service.icon} alt={service.title} className="tileIconImg" />
                 <h3>{service.title}</h3>
                 <p>{service.short_desc}</p>
               </Link>
@@ -129,7 +130,7 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
         <div className="rmShell serviceGrid">
           {services.map((service) => (
             <Link href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile" key={service.id}>
-              <div className="tileIcon">{service.icon}</div>
+              <IconVisual src={service.icon} alt={service.title} className="tileIconImg" />
               <h3>{service.title}</h3>
               <p>{service.short_desc}</p>
             </Link>
@@ -372,11 +373,11 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
             <p className="contactIntro">{text.contactSubtitle}</p>
 
             <div className="contactInfoList">
-              <a href={`tel:${contact.fixed_phone.replaceAll(" ", "")}`}><span>☎</span><div><b>Fix</b><strong>{contact.fixed_phone}</strong></div></a>
-              <a href={`tel:${contact.phone.replaceAll(" ", "")}`}><span>📞</span><div><b>{text.contact}</b><strong>{contact.phone}</strong></div></a>
-              <a href={`tel:${contact.phone_alt.replaceAll(" ", "")}`}><span>📱</span><div><b>Alt</b><strong>{contact.phone_alt}</strong></div></a>
-              <a href={`mailto:${contact.email}`}><span>✉</span><div><b>Email</b><strong>{contact.email}</strong></div></a>
-              <div className="contactInfoStatic"><span>📍</span><div><b>{text.contact}</b><strong>{contact.address}</strong></div></div>
+              <a href={`tel:${contact.fixed_phone.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" /><div><b>Fix</b><strong>{contact.fixed_phone}</strong></div></a>
+              <a href={`tel:${contact.phone.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" /><div><b>{text.contact}</b><strong>{contact.phone}</strong></div></a>
+              <a href={`tel:${contact.phone_alt.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/iphone.png" alt="phone" className="contactSmallIcon" /><div><b>Alt</b><strong>{contact.phone_alt}</strong></div></a>
+              <a href={`mailto:${contact.email}`}><IconVisual src="https://img.icons8.com/color/96/email.png" alt="email" className="contactSmallIcon" /><div><b>Email</b><strong>{contact.email}</strong></div></a>
+              <div className="contactInfoStatic"><IconVisual src="https://img.icons8.com/color/96/marker.png" alt="address" className="contactSmallIcon" /><div><b>{text.contact}</b><strong>{contact.address}</strong></div></div>
             </div>
 
             <div className="contactActionRow">
@@ -395,9 +396,9 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
             <div className="contactMiniCard">
               <h3>{text.transport}</h3>
               <div className="transportModern">
-                <span>🚌 {contact.bus}</span>
-                <span>🚎 {contact.trolleybus}</span>
-                <span>🚕 {contact.tram}</span>
+                <span><IconVisual src="https://img.icons8.com/color/96/bus.png" alt="bus" className="transportIcon" /> {contact.bus}</span>
+                <span><IconVisual src="https://img.icons8.com/color/96/trolleybus.png" alt="trolleybus" className="transportIcon" /> {contact.trolleybus}</span>
+                <span><IconVisual src="https://img.icons8.com/color/96/taxi.png" alt="transport" className="transportIcon" /> {contact.tram}</span>
               </div>
             </div>
 

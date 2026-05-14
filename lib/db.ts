@@ -281,3 +281,19 @@ export function getPublishedServicesSmart(lang: Lang = "ro") {
 export function getServiceBySlugSmart(slug: string, lang: Lang = "ro") {
   return getServiceBySlug(slug, lang) || getServiceBySlug(slug, "ro");
 }
+
+const iconMigrationMap: Record<string, string> = {
+  "🧠": "https://img.icons8.com/color/96/brain.png",
+  "⚕️": "https://img.icons8.com/color/96/medical-doctor.png",
+  "🏃": "https://img.icons8.com/color/96/physical-therapy.png",
+  "💓": "https://img.icons8.com/color/96/heart-health.png",
+  "🌿": "https://img.icons8.com/color/96/spa.png",
+  "🎵": "https://img.icons8.com/color/96/electrotherapy.png"
+};
+
+try {
+  const updateIcon = db.prepare("UPDATE services_admin SET icon = ? WHERE icon = ?");
+  for (const [emoji, iconUrl] of Object.entries(iconMigrationMap)) {
+    updateIcon.run(iconUrl, emoji);
+  }
+} catch {}

@@ -400,7 +400,7 @@ export default function AdminClient({
               <Field label="Titlu"><input name="title" defaultValue={editingPost?.title || ""} required /></Field>
               <Field label="Slug URL"><input name="slug" defaultValue={editingPost?.slug || ""} /></Field>
               <Field label="Descriere SEO"><textarea name="excerpt" rows={3} defaultValue={editingPost?.excerpt || ""} required /></Field>
-              <Field label="Imagine"><input name="image" defaultValue={editingPost?.image || "/images/medical-bg.jpg"} /></Field>
+              <Field label="Imagine"><UploadInput name="image" defaultValue={editingPost?.image || "/images/medical-bg.jpg"} placeholder="/images/medical-bg.jpg sau /uploads/photo.jpg" /></Field>
               <Field label="Cuvinte cheie"><input name="keywords" defaultValue={editingPost?.keywords || ""} /></Field>
               <Field label="Conținut"><textarea name="content" rows={14} defaultValue={editingPost?.content || ""} required /></Field>
               <Check defaultChecked={editingPost ? Boolean(editingPost.published) : true} />
@@ -437,8 +437,8 @@ export default function AdminClient({
               <input type="hidden" name="lang" value={workingLang} />
               <Field label="Titlu"><input name="title" defaultValue={editingService?.title || ""} required /></Field>
               <Field label="Slug URL"><input name="slug" defaultValue={editingService?.slug || ""} /></Field>
-              <Field label="Icon"><input name="icon" defaultValue={editingService?.icon || "⚕️"} /></Field>
-              <Field label="Imagine"><input name="image" defaultValue={editingService?.image || "/images/medical-bg.jpg"} /></Field>
+              <Field label="Icon URL/path sau upload"><UploadInput name="icon" defaultValue={editingService?.icon || "https://img.icons8.com/color/96/medical-doctor.png"} placeholder="https://img.icons8.com/color/96/brain.png sau /uploads/icon.png" /></Field>
+              <Field label="Imagine"><UploadInput name="image" defaultValue={editingService?.image || "/images/medical-bg.jpg"} placeholder="/images/medical-bg.jpg sau /uploads/photo.jpg" /></Field>
               <Field label="Descriere scurtă"><textarea name="short_desc" rows={3} defaultValue={editingService?.short_desc || ""} required /></Field>
               <Field label="Text complet pagină"><textarea name="full_content" rows={14} defaultValue={editingService?.full_content || ""} required /></Field>
               <Field label="SEO keywords"><input name="keywords" defaultValue={editingService?.keywords || ""} /></Field>
@@ -516,7 +516,7 @@ export default function AdminClient({
             <form action={saveGallery} className="adminFormSimple">
               <input type="hidden" name="id" value={editingGallery?.id || ""} />
               <input type="hidden" name="lang" value={workingLang} />
-              <Field label="Imagine"><input name="image" defaultValue={editingGallery?.image || "/images/2pic.jpg"} required /></Field>
+              <Field label="Imagine"><UploadInput name="image" defaultValue={editingGallery?.image || "/images/2pic.jpg"} placeholder="/images/2pic.jpg sau /uploads/photo.jpg" /></Field>
               <Field label="Text pe poză"><input name="title" defaultValue={editingGallery?.title || ""} required /></Field>
               <Field label="Alt SEO"><input name="alt" defaultValue={editingGallery?.alt || ""} /></Field>
               <Field label="Ordine"><input type="number" name="position" defaultValue={editingGallery?.position || 0} /></Field>
@@ -543,8 +543,8 @@ export default function AdminClient({
                 <Field label="Autobuz"><input name="bus" defaultValue={contactContent?.bus || ""} /></Field>
                 <Field label="Troleibuz"><input name="trolleybus" defaultValue={contactContent?.trolleybus || ""} /></Field>
                 <Field label="Tramvai"><input name="tram" defaultValue={contactContent?.tram || ""} /></Field>
-                <Field label="Poza 1"><input name="image_one" defaultValue={contactContent?.image_one || "/images/6.jpg"} /></Field>
-                <Field label="Poza 2"><input name="image_two" defaultValue={contactContent?.image_two || "/images/1.jpg"} /></Field>
+                <Field label="Poza 1"><UploadInput name="image_one" defaultValue={contactContent?.image_one || "/images/6.jpg"} placeholder="/images/6.jpg sau /uploads/photo.jpg" /></Field>
+                <Field label="Poza 2"><UploadInput name="image_two" defaultValue={contactContent?.image_two || "/images/1.jpg"} placeholder="/images/1.jpg sau /uploads/photo.jpg" /></Field>
               </div>
               <Field label="Google Maps link"><textarea name="map_link" rows={3} defaultValue={contactContent?.map_link || ""} /></Field>
               <Field label="Google Maps embed src"><textarea name="map_embed" rows={4} defaultValue={contactContent?.map_embed || ""} /></Field>
@@ -593,7 +593,7 @@ export default function AdminClient({
               <Field label="Block key"><input name="block_key" defaultValue={editingContent?.block_key || "hero"} /></Field>
               <Field label="Titlu"><input name="title" defaultValue={editingContent?.title || ""} /></Field>
               <Field label="Text"><textarea name="text" rows={6} defaultValue={editingContent?.text || ""} /></Field>
-              <Field label="Imagine"><input name="image" defaultValue={editingContent?.image || ""} /></Field>
+              <Field label="Imagine"><UploadInput name="image" defaultValue={editingContent?.image || ""} placeholder="/images/medical-bg.jpg sau /uploads/photo.jpg" /></Field>
               <Field label="Ordine"><input type="number" name="position" defaultValue={editingContent?.position || 0} /></Field>
               <Check defaultChecked={editingContent ? Boolean(editingContent.published) : true} />
               <FormActions back={() => setScreen("content-list")} />
@@ -602,6 +602,72 @@ export default function AdminClient({
         )}
       </main>
     </section>
+  );
+}
+
+
+function UploadInput({
+  name,
+  defaultValue,
+  placeholder,
+  accept = "image/*"
+}: {
+  name: string;
+  defaultValue?: string;
+  placeholder?: string;
+  accept?: string;
+}) {
+  const [value, setValue] = useState(defaultValue || "");
+  const [busy, setBusy] = useState(false);
+
+  async function upload(file: File) {
+    setBusy(true);
+    const data = new FormData();
+    data.append("file", file);
+    const res = await fetch("/api/admin/upload", { method: "POST", body: data });
+    const json = await res.json();
+    setBusy(false);
+
+    if (json?.url) setValue(json.url);
+    else alert(json?.error || "Upload failed");
+  }
+
+  return (
+    <div
+      className="uploadInput"
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => {
+        e.preventDefault();
+        const file = e.dataTransfer.files?.[0];
+        if (file) upload(file);
+      }}
+    >
+      <input
+        name={name}
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => setValue(e.target.value)}
+      />
+
+      <label className="uploadButton">
+        {busy ? "Uploading..." : "Upload / drag-drop"}
+        <input
+          type="file"
+          accept={accept}
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) upload(file);
+          }}
+        />
+      </label>
+
+      {value && (
+        <div className="uploadPreview">
+          <img src={value} alt="" />
+          <small>{value}</small>
+        </div>
+      )}
+    </div>
   );
 }
 

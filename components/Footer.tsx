@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import IconVisual from "@/components/IconVisual";
 
 const facebookUrl = "https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/";
 
@@ -14,7 +15,7 @@ export default function Footer() {
 
         <div className="footerSchedule">
           <h3>Program de lucru:</h3>
-          <p>📍 {site.address}</p>
+          <p className="footerAddress"><IconVisual src="https://img.icons8.com/color/96/marker.png" alt="address" className="footerMiniIcon" /> {site.address}</p>
           <p>{site.hours}</p>
           <p>{site.phone}</p>
         </div>
