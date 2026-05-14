@@ -9558,3 +9558,28 @@ html.route-ready .pageHero{
     line-height:1.65!important;
   }
 }
+
+/* Reviews with real names */
+.reviewAuthor,
+.testimonialAuthor,
+.reviewName,
+.reviewSlide b,
+.reviewSlide small{
+  color:#075f9e!important;
+  font-weight:950!important;
+}
+
+.reviewStars,
+.testimonialStars,
+.stars{
+  color:#f59e0b!important;
+  letter-spacing:.12em!important;
+}
+
+.reviewSlide{
+  min-height:190px!important;
+}
+
+.reviewSlide p{
+  line-height:1.65!important;
+}

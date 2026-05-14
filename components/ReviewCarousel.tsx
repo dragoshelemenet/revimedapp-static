@@ -1,29 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { revimedReviews } from "@/lib/revimedReviews";
 
-const reviews = [
-  {
-    text: "Servicii bune, atenție și explicații clare. Recomand cu încredere.",
-    name: "Pacient Revimed"
-  },
-  {
-    text: "Consultație calmă, clară și recomandări utile pentru recuperare.",
-    name: "Pacient Revimed"
-  },
-  {
-    text: "Am primit un plan clar pentru recuperare și explicații pe înțeles.",
-    name: "Pacient Revimed"
-  },
-  {
-    text: "Personal atent, atmosferă plăcută și abordare profesionistă.",
-    name: "Pacient Revimed"
-  },
-  {
-    text: "M-au ajutat să înțeleg problema și pașii următori.",
-    name: "Pacient Revimed"
-  }
-];
+const reviews = revimedReviews;
 
 export default function ReviewCarousel() {
   const [index, setIndex] = useState(0);
