@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import { usePathname } from "next/navigation";
 import { isLang, type Lang } from "@/lib/i18n";
 
@@ -203,16 +203,19 @@ function formatTime(value: number) {
 }
 
 export default function RevimedYogaTibetanPage() {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   function stopYogaAudioOnExit() {
     try {
-      const audio = audioRef.current;
-      if (audio) {
-        audio.pause();
-        audio.currentTime = 0;
+      const ctx = audioRef.current as any;
+      if (ctx?.state && ctx.state !== "closed") {
+        ctx.close?.().catch?.(() => {});
       }
     } catch {}
+
+    try {
+      oscRef.current?.stop?.();
+    } catch {}
+
     try {
       document.querySelectorAll("audio").forEach((node) => {
         node.pause();

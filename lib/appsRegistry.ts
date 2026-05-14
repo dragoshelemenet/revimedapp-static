@@ -115,7 +115,7 @@ const fallbackApps: ManagedApp[] = [
     htmlPath: "",
     position: 3
   }
-
+,
   {
     id: "calculator-recuperare-personalizata",
     slug: "calculator-recuperare-personalizata",

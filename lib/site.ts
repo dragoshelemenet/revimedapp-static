@@ -112,7 +112,7 @@ export const tools = [
     description:
       "Instrument educațional pentru simptome neurologice și semnale de alarmă."
   }
-
+,
   {
     title: "Calculator Recuperare Personalizată",
     slug: "calculator-recuperare-personalizata",
