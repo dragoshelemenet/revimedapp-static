@@ -1,177 +1,256 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { isLang, type Lang } from "@/lib/i18n";
 
-const programs: Record<string, any> = {
-  profund: { name: "Vindecare profundă", phases: [4, 4, 6, 2], info: "Ritm calm pentru relaxare globală, recuperare și echilibrare." },
-  anx: { name: "Anxietate / stres", phases: [4, 2, 7, 2], info: "Expirație lungă pentru reducerea hiperactivării." },
-  somn: { name: "Insomnie / somn profund", phases: [4, 4, 8, 2], info: "Program lent pentru seară și liniștirea sistemului nervos." },
-  resp: { name: "Respirator / Buteyko blând", phases: [3, 2, 5, 2], info: "Respirație blândă, fără forțare." },
-  cardio: { name: "Cardiovascular", phases: [5, 2, 6, 2], info: "Ritm egalizat, calm, fără retenții agresive." },
-  digestiv: { name: "Digestiv / abdomen", phases: [4, 2, 6, 2], info: "Respirație abdominală pentru relaxare digestivă." },
-  energie: { name: "Energie / burnout", phases: [4, 1, 4, 1], info: "Ritm ușor activator, fără hiperventilație." }
+type Pattern = {
+  key: string;
+  inhale: number;
+  hold1: number;
+  exhale: number;
+  hold2: number;
 };
 
-const organs: Record<string, any> = {
-  snv: ["Sistem nervos vegetativ", "Relaxare, tonus vagal, reducerea tensiunii interne."],
-  creier: ["Creier / somn / memorie", "Calmare mentală, concentrare, pregătire pentru somn."],
-  inima: ["Inimă / torace", "Respirație calmă și percepție corporală blândă."],
-  plamani: ["Plămâni / bronhii", "Ritm ușor, fără forțare sau apnee agresivă."],
-  digestiv: ["Stomac / colon / abdomen", "Respirație abdominală lentă."],
-  gat: ["Gât / voce", "Relaxarea gâtului, maxilarului și toracelui superior."]
+const patterns: Pattern[] = [
+  { key: "box", inhale: 4, hold1: 4, exhale: 4, hold2: 4 },
+  { key: "478", inhale: 4, hold1: 7, exhale: 8, hold2: 0 },
+  { key: "coherence", inhale: 5, hold1: 0, exhale: 5, hold2: 0 }
+];
+
+const dict: Record<Lang, any> = {
+  ro: {
+    crumb: "Teste și Instrumente / Respirație terapeutică",
+    title: "Respirație Terapeutică",
+    lead: "Exerciții ghidate de respirație pentru calm, ritm, concentrare și relaxare.",
+    choose: "Alege protocolul",
+    start: "Start",
+    pause: "Pauză",
+    reset: "Resetare",
+    inhale: "Inspiră",
+    hold: "Ține",
+    exhale: "Expiră",
+    rest: "Pauză",
+    cycle: "Ciclu",
+    seconds: "secunde",
+    box: "Respirație box 4-4-4-4",
+    boxDesc: "Protocol echilibrat pentru calm, focus și stabilizare.",
+    "478": "Respirație 4-7-8",
+    "478Desc": "Protocol lent pentru relaxare și reducerea tensiunii.",
+    coherence: "Coerență 5-5",
+    coherenceDesc: "Ritm simplu pentru calm și reglare vegetativă.",
+    infoTitle: "Cum se folosește",
+    info: "Stai comod, respiră pe nas dacă poți și nu forța. Oprește exercițiul dacă apare amețeală, durere, lipsă de aer sau disconfort.",
+    warning: "Această aplicație este educațională și nu înlocuiește consultația medicală. Folosirea se face pe propriul risc."
+  },
+  en: {
+    crumb: "Tests and Tools / Therapeutic breathing",
+    title: "Therapeutic Breathing",
+    lead: "Guided breathing exercises for calm, rhythm, focus and relaxation.",
+    choose: "Choose protocol",
+    start: "Start",
+    pause: "Pause",
+    reset: "Reset",
+    inhale: "Inhale",
+    hold: "Hold",
+    exhale: "Exhale",
+    rest: "Rest",
+    cycle: "Cycle",
+    seconds: "seconds",
+    box: "Box breathing 4-4-4-4",
+    boxDesc: "Balanced protocol for calm, focus and stabilization.",
+    "478": "4-7-8 breathing",
+    "478Desc": "Slow protocol for relaxation and tension reduction.",
+    coherence: "Coherence 5-5",
+    coherenceDesc: "Simple rhythm for calm and autonomic regulation.",
+    infoTitle: "How to use",
+    info: "Sit comfortably, breathe through the nose if possible and do not force it. Stop if dizziness, pain, shortness of breath or discomfort appears.",
+    warning: "This app is educational and does not replace medical consultation. Use it at your own risk."
+  },
+  ru: {
+    crumb: "Тесты и инструменты / Терапевтическое дыхание",
+    title: "Терапевтическое дыхание",
+    lead: "Управляемые дыхательные упражнения для спокойствия, ритма, концентрации и расслабления.",
+    choose: "Выберите протокол",
+    start: "Старт",
+    pause: "Пауза",
+    reset: "Сброс",
+    inhale: "Вдох",
+    hold: "Задержка",
+    exhale: "Выдох",
+    rest: "Пауза",
+    cycle: "Цикл",
+    seconds: "секунд",
+    box: "Box breathing 4-4-4-4",
+    boxDesc: "Сбалансированный протокол для спокойствия, фокуса и стабилизации.",
+    "478": "Дыхание 4-7-8",
+    "478Desc": "Медленный протокол для расслабления и снижения напряжения.",
+    coherence: "Когерентность 5-5",
+    coherenceDesc: "Простой ритм для спокойствия и вегетативной регуляции.",
+    infoTitle: "Как использовать",
+    info: "Сядьте удобно, дышите через нос, если возможно, и не форсируйте дыхание. Остановитесь при головокружении, боли, нехватке воздуха или дискомфорте.",
+    warning: "Это приложение образовательное и не заменяет консультацию врача. Использование — на собственный риск."
+  },
+  ua: {
+    crumb: "Тести та інструменти / Терапевтичне дихання",
+    title: "Терапевтичне дихання",
+    lead: "Керовані дихальні вправи для спокою, ритму, концентрації та розслаблення.",
+    choose: "Оберіть протокол",
+    start: "Старт",
+    pause: "Пауза",
+    reset: "Скинути",
+    inhale: "Вдих",
+    hold: "Затримка",
+    exhale: "Видих",
+    rest: "Пауза",
+    cycle: "Цикл",
+    seconds: "секунд",
+    box: "Box breathing 4-4-4-4",
+    boxDesc: "Збалансований протокол для спокою, фокусу та стабілізації.",
+    "478": "Дихання 4-7-8",
+    "478Desc": "Повільний протокол для розслаблення та зменшення напруги.",
+    coherence: "Когерентність 5-5",
+    coherenceDesc: "Простий ритм для спокою та вегетативної регуляції.",
+    infoTitle: "Як використовувати",
+    info: "Сядьте зручно, дихайте через ніс, якщо можете, і не форсуйте. Зупиніться при запамороченні, болю, нестачі повітря або дискомфорті.",
+    warning: "Цей застосунок освітній і не замінює консультацію лікаря. Використання — на власний ризик."
+  }
 };
 
-const phaseNames = ["Inspiră", "Ține", "Expiră", "Pauză"];
+function useLang(): Lang {
+  const pathname = usePathname();
+  const first = pathname.split("/").filter(Boolean)[0];
+  return isLang(first) ? first : "ro";
+}
 
-export default function TibetanYogaPage() {
-  const [program, setProgram] = useState("profund");
-  const [organ, setOrgan] = useState("snv");
-  const [duration, setDuration] = useState(300);
+export default function BreathingPage() {
+  const lang = useLang();
+  const t = dict[lang];
+  const [selected, setSelected] = useState("box");
   const [running, setRunning] = useState(false);
-  const [elapsed, setElapsed] = useState(0);
   const [phaseIndex, setPhaseIndex] = useState(0);
-  const [phaseLeft, setPhaseLeft] = useState(programs.profund.phases[0]);
-  const [voice, setVoice] = useState(false);
-  const [music, setMusic] = useState(false);
-  const audioCtx = useRef<AudioContext | null>(null);
+  const [phaseLeft, setPhaseLeft] = useState(4);
+  const [cycle, setCycle] = useState(1);
 
-  const cfg = programs[program];
-  const organInfo = organs[organ];
-  const progress = Math.min(100, Math.round((elapsed / duration) * 100));
+  const pattern = useMemo(() => patterns.find((p) => p.key === selected) || patterns[0], [selected]);
+
+  const phases = useMemo(() => {
+    return [
+      { label: t.inhale, seconds: pattern.inhale },
+      { label: t.hold, seconds: pattern.hold1 },
+      { label: t.exhale, seconds: pattern.exhale },
+      { label: t.rest, seconds: pattern.hold2 }
+    ].filter((p) => p.seconds > 0);
+  }, [pattern, t]);
 
   useEffect(() => {
     setPhaseIndex(0);
-    setPhaseLeft(cfg.phases[0]);
-    setElapsed(0);
+    setPhaseLeft(phases[0]?.seconds || 4);
+    setCycle(1);
     setRunning(false);
-  }, [program, duration]);
+  }, [selected, phases]);
 
   useEffect(() => {
     if (!running) return;
-    const timer = setInterval(() => {
-      setElapsed((e) => {
-        if (e + 1 >= duration) {
-          setRunning(false);
-          return duration;
-        }
-        return e + 1;
-      });
 
-      setPhaseLeft((left: number) => {
+    const timer = setInterval(() => {
+      setPhaseLeft((left) => {
         if (left > 1) return left - 1;
-        setPhaseIndex((pi: number) => {
-          const next = (pi + 1) % 4;
-          if (voice && typeof window !== "undefined" && "speechSynthesis" in window) {
-            window.speechSynthesis.cancel();
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(phaseNames[next]));
+
+        setPhaseIndex((idx) => {
+          const next = idx + 1;
+          if (next >= phases.length) {
+            setCycle((c) => c + 1);
+            setPhaseLeft(phases[0].seconds);
+            return 0;
           }
+
+          setPhaseLeft(phases[next].seconds);
           return next;
         });
-        return cfg.phases[(phaseIndex + 1) % 4];
-      });
 
-      if (music) playTone();
+        return left;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [running, cfg, phaseIndex, duration, voice, music]);
+  }, [running, phases]);
 
-  function playTone() {
-    try {
-      audioCtx.current ||= new AudioContext();
-      const ctx = audioCtx.current;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.frequency.value = 174 + phaseIndex * 33;
-      gain.gain.value = 0.035;
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.22);
-    } catch {}
-  }
-
-  const auraClass = ["inhale", "hold", "exhale", "hold2"][phaseIndex];
+  const phase = phases[phaseIndex] || phases[0];
+  const progress = phase ? Math.round(((phase.seconds - phaseLeft) / phase.seconds) * 100) : 0;
 
   return (
-    <section className="tibetanPage">
-      <div className="tibetanWrap">
-        <div className="tibetanHeader">
-          <h1>REVIMED – YOGA TIBETAN PREMIUM</h1>
-          <p>MOD UȘOR PENTRU PACIENT: urmărește cercul, nu secunda</p>
+    <>
+      <section className="pageHero">
+        <div className="rmShell">
+          <p className="crumb">{t.crumb}</p>
+          <h1>{t.title}</h1>
+          <p className="lead">{t.lead}</p>
         </div>
+      </section>
 
-        <div className="tibetanGrid">
-          <aside className="tPanel">
-            <h2>SETARE</h2>
-            <label>Patologie / scop</label>
-            <select value={program} onChange={(e) => setProgram(e.target.value)}>
-              {Object.entries(programs).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}
-            </select>
-
-            <label>Organ / sistem</label>
-            <select value={organ} onChange={(e) => setOrgan(e.target.value)}>
-              {Object.entries(organs).map(([k, v]) => <option key={k} value={k}>{v[0]}</option>)}
-            </select>
-
-            <label>Durată</label>
-            <select value={duration} onChange={(e) => setDuration(Number(e.target.value))}>
-              <option value={180}>3 minute</option>
-              <option value={300}>5 minute</option>
-              <option value={600}>10 minute</option>
-              <option value={900}>15 minute</option>
-            </select>
-
-            <div className="tRow">
-              <button className="start" onClick={() => setRunning(true)}>▶ START</button>
-              <button className="pause" onClick={() => setRunning(false)}>⏸ PAUZĂ</button>
+      <section className="rmSection breathSection">
+        <div className="rmShell breathLayout">
+          <aside className="breathPanel">
+            <h2>{t.choose}</h2>
+            <div className="breathOptions">
+              {patterns.map((p) => (
+                <button
+                  key={p.key}
+                  className={selected === p.key ? "active" : ""}
+                  onClick={() => setSelected(p.key)}
+                >
+                  <b>{t[p.key]}</b>
+                  <span>{t[`${p.key}Desc`]}</span>
+                </button>
+              ))}
             </div>
-            <button className="reset" onClick={() => { setRunning(false); setElapsed(0); setPhaseIndex(0); setPhaseLeft(cfg.phases[0]); }}>↺ RESET</button>
-            <button className="voice" onClick={() => setVoice(!voice)}>🗣 Ghid vocal: {voice ? "ON" : "OFF"}</button>
-            <button className="music" onClick={() => setMusic(!music)}>🎵 Sunet tibetan: {music ? "ON" : "OFF"}</button>
 
-            <div className="tInfo">
-              <b>{cfg.name}</b><br />
-              {cfg.info}<br /><br />
-              <b>{organInfo[0]}</b><br />
-              {organInfo[1]}
-            </div>
-            <div className="tWarn"><b>Regulă ușoară:</b> inspiră când cercul crește, ține când stă, expiră când cercul scade.</div>
+            <div className="noteBox">{t.warning}</div>
           </aside>
 
-          <main className="tPanel center">
-            <div className={`aura ${auraClass}`}>
-              <div className="circleText">{phaseLeft}</div>
+          <main className="breathMain">
+            <div className="breathCircleWrap">
+              <div className={`breathCircle ${running ? "running" : ""}`}>
+                <span>{phase?.label}</span>
+                <strong>{phaseLeft}</strong>
+                <small>{t.seconds}</small>
+              </div>
             </div>
-            <div className="phase">{phaseNames[phaseIndex]}</div>
-            <div className="phaseSec">{phaseLeft} secunde</div>
-            <div className="progressBox"><div className="progress" style={{ width: `${progress}%` }} /></div>
-            <div className="easyText">{Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")} / {Math.floor(duration / 60)}:{String(duration % 60).padStart(2, "0")}</div>
 
-            <div className="miniSquare">
-              <svg viewBox="0 0 200 200">
-                <line className={`side s0 ${phaseIndex === 0 ? "" : "dim"}`} x1="35" y1="35" x2="165" y2="35" />
-                <line className={`side s1 ${phaseIndex === 1 ? "" : "dim"}`} x1="165" y1="35" x2="165" y2="165" />
-                <line className={`side s2 ${phaseIndex === 2 ? "" : "dim"}`} x1="165" y1="165" x2="35" y2="165" />
-                <line className={`side s3 ${phaseIndex === 3 ? "" : "dim"}`} x1="35" y1="165" x2="35" y2="35" />
-                <circle className="ball" cx={phaseIndex === 0 ? 100 : phaseIndex === 1 ? 165 : phaseIndex === 2 ? 100 : 35} cy={phaseIndex === 0 ? 35 : phaseIndex === 1 ? 100 : phaseIndex === 2 ? 165 : 100} r="10" />
-              </svg>
+            <div className="breathProgress">
+              <div style={{ width: `${progress}%` }} />
             </div>
+
+            <div className="breathControls">
+              <button className="blueBtn" onClick={() => setRunning((v) => !v)}>
+                {running ? t.pause : t.start}
+              </button>
+              <button
+                className="softBtn"
+                onClick={() => {
+                  setRunning(false);
+                  setPhaseIndex(0);
+                  setPhaseLeft(phases[0]?.seconds || 4);
+                  setCycle(1);
+                }}
+              >
+                {t.reset}
+              </button>
+            </div>
+
+            <div className="breathStats">
+              <span>{t.cycle}: <b>{cycle}</b></span>
+              <span>{t.choose}: <b>{t[selected]}</b></span>
+            </div>
+
+            <article className="adminCard breathInfo">
+              <h2>{t.infoTitle}</h2>
+              <p>{t.info}</p>
+            </article>
           </main>
-
-          <aside className="tPanel">
-            <h2>EFECTE</h2>
-            <div className="metric"><b>Program:</b> {cfg.name}</div>
-            <div className="metric"><b>Organ:</b> {organInfo[0]}</div>
-            <div className="metric"><b>Ritm:</b> {cfg.phases.join(" - ")}</div>
-            <div className="effect">🟢 relaxare</div>
-            <div className="effect">🟡 atenție pe corp</div>
-            <div className="effect">🔵 respirație calmă</div>
-            <div className="effect">🟣 reglare emoțională</div>
-            <div className="tWarn">Nu forța respirația. Oprește exercițiul dacă apare disconfort, amețeală sau durere.</div>
-          </aside>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

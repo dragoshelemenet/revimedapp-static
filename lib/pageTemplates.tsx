@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { youtubeVideos } from "@/lib/videos";
-import { tools, site } from "@/lib/site";
+import { site } from "@/lib/site";
+import { translatedTools } from "@/lib/appMeta";
 import { getPublishedServicesSmart, getPublishedPricesSmart, getPublishedPostsSmart, getServiceBySlugSmart, getPostBySlugSmart } from "@/lib/db";
 import { getContactContentSmart, getContentBlockSmart, getPublishedGalleryItemsSmart } from "@/lib/content";
 import { t, withLang, type Lang } from "@/lib/i18n";
@@ -13,6 +14,7 @@ import HomeCTA from "@/components/HomeCTA";
 export function HomeTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
   const services = getPublishedServicesSmart(lang).slice(0, 6);
+  const appTools = translatedTools(lang);
 
   return (
     <>
@@ -59,7 +61,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
         <div className="rmShell">
           <h2 className="centerTitle">{text.tools}</h2>
           <div className="toolGrid">
-            {tools.map((tool) => (
+            {appTools.map((tool) => (
               <Link href={withLang(tool.href, lang)} className="toolTile" key={tool.slug}>
                 <span>{tool.tag}</span>
                 <h3>{tool.title}</h3>
@@ -188,6 +190,7 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 export function AppsTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
   const hero = getContentBlockSmart(lang, "aplicatii", "hero");
+  const appTools = translatedTools(lang);
 
   return (
     <>
@@ -200,7 +203,7 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
       </section>
       <section className="rmSection">
         <div className="rmShell toolGrid">
-          {tools.map((tool) => (
+          {appTools.map((tool) => (
             <Link href={withLang(tool.href, lang)} className="toolTile" key={tool.slug}>
               <span>{tool.tag}</span>
               <h3>{tool.title}</h3>
