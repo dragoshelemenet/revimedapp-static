@@ -6670,3 +6670,387 @@ html.route-ready .pageHero .crumb{
     min-height:680px;
   }
 }
+
+/* =========================================================
+   FINAL HERO ANIMATION FIX + PREMIUM DESIGN POLISH
+   No white edges, no jump, smoother page transitions
+   ========================================================= */
+
+/* Stop white flashes around hero images */
+body,
+main{
+  background:#fff!important;
+}
+
+.homeHero,
+.pageHero{
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background-color:#071f3f!important;
+  transform:none!important;
+  will-change:auto!important;
+}
+
+/* The image/background must never show white edges */
+.homeHero::after,
+.pageHero::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  z-index:0;
+  pointer-events:none;
+  background:inherit;
+  opacity:0;
+}
+
+/* Keep actual hero content above overlays */
+.heroOverlay,
+.pageHero .rmShell{
+  position:relative!important;
+  z-index:2!important;
+}
+
+/* Remove scale-based route animation that caused white edges */
+html.route-changing .homeHero,
+html.route-changing .pageHero,
+html.route-ready .homeHero,
+html.route-ready .pageHero{
+  transform:none!important;
+  filter:none!important;
+}
+
+/* Smooth transition using opacity/gradient only */
+.homeHero,
+.pageHero,
+.heroOverlay{
+  transition:
+    opacity .32s ease,
+    background-position .5s cubic-bezier(.22,.61,.36,1),
+    height .42s cubic-bezier(.22,.61,.36,1),
+    min-height .42s cubic-bezier(.22,.61,.36,1)!important;
+}
+
+html.route-changing .homeHero,
+html.route-changing .pageHero{
+  opacity:.94!important;
+}
+
+html.route-changing .heroOverlay,
+html.route-changing .pageHero .rmShell{
+  opacity:.78!important;
+  transform:translateY(8px)!important;
+}
+
+html.route-ready .homeHero,
+html.route-ready .pageHero{
+  animation:heroFadeStable .45s cubic-bezier(.22,.61,.36,1) both!important;
+}
+
+html.route-ready .heroOverlay,
+html.route-ready .pageHero .rmShell{
+  animation:heroContentStable .5s cubic-bezier(.22,.61,.36,1) both!important;
+}
+
+@keyframes heroFadeStable{
+  from{
+    opacity:.9;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes heroContentStable{
+  from{
+    opacity:0;
+    transform:translateY(14px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Override old scale animations completely */
+@keyframes heroSettle{
+  from{ opacity:.9; transform:none; filter:none; }
+  to{ opacity:1; transform:none; filter:none; }
+}
+
+/* Better hero composition */
+.homeHero{
+  background:
+    linear-gradient(90deg,rgba(7,31,63,.72),rgba(7,31,63,.22) 48%,rgba(0,143,216,.2)),
+    url('/images/medical-bg.jpg') center center/cover no-repeat!important;
+}
+
+.heroOverlay{
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.14),transparent 26%),
+    linear-gradient(90deg,rgba(7,31,63,.58),rgba(0,143,216,.18))!important;
+}
+
+.pageHero{
+  background:
+    linear-gradient(90deg,rgba(7,31,63,.78),rgba(7,31,63,.42) 42%,rgba(0,143,216,.36)),
+    url('/images/medical-bg.jpg') center center/cover no-repeat!important;
+}
+
+.pageHero::before{
+  inset:-1px!important;
+  background:
+    radial-gradient(circle at 25% 30%,rgba(255,255,255,.11),transparent 27%),
+    linear-gradient(90deg,rgba(7,31,63,.68),rgba(0,143,216,.34))!important;
+}
+
+/* Hero text premium */
+.heroCenter{
+  max-width:760px!important;
+  margin-inline:auto!important;
+  padding-inline:16px!important;
+}
+
+.heroCenter h1{
+  letter-spacing:-.055em!important;
+  font-weight:950!important;
+  text-shadow:0 1px 0 rgba(0,0,0,.04)!important;
+}
+
+.heroCenter p{
+  font-weight:850!important;
+  opacity:.96!important;
+}
+
+.heroCenter .blueBtn{
+  border-radius:14px!important;
+  padding:14px 22px!important;
+  min-height:48px!important;
+}
+
+/* Make top stat cards cleaner and not glued to hero */
+.homeStatsBand{
+  margin-top:0!important;
+  padding:18px 0 0!important;
+  background:#fff!important;
+}
+
+.homeStatsGrid article{
+  background:#fff!important;
+  border:1px solid #e5eff8!important;
+  border-radius:16px!important;
+  min-height:84px!important;
+  padding:16px 18px!important;
+}
+
+.homeStatsGrid b{
+  font-size:20px!important;
+}
+
+.homeStatsGrid span{
+  font-size:13px!important;
+}
+
+/* Homepage sections look more premium */
+.aboutBlock{
+  padding-top:64px!important;
+}
+
+.aboutGrid{
+  max-width:900px!important;
+  margin-inline:auto!important;
+}
+
+.aboutGrid h2{
+  font-size:42px!important;
+  letter-spacing:-.04em!important;
+}
+
+.aboutGrid p{
+  font-size:16px!important;
+  line-height:1.75!important;
+}
+
+/* Services/app cards more modern, less empty */
+.serviceGrid,
+.toolGrid{
+  max-width:760px!important;
+  margin-inline:auto!important;
+}
+
+.serviceTile,
+.toolTile{
+  border-radius:18px!important;
+  padding:22px!important;
+  background:linear-gradient(180deg,#ffffff,#fbfdff)!important;
+}
+
+.serviceTile h3,
+.toolTile h3{
+  font-size:19px!important;
+  letter-spacing:-.02em!important;
+}
+
+.serviceTile p,
+.toolTile p{
+  font-size:13px!important;
+  line-height:1.48!important;
+}
+
+.tileIconImg{
+  background:#f3f9ff!important;
+  border:1px solid #e5eff8!important;
+}
+
+/* CTA more premium and not too heavy */
+.homeCtaInner{
+  max-width:880px!important;
+  margin-inline:auto!important;
+  border-radius:26px!important;
+  overflow:hidden!important;
+  background:
+    linear-gradient(90deg,rgba(7,31,63,.91),rgba(8,121,186,.78)),
+    url('/images/medical-bg.jpg') center/cover no-repeat!important;
+}
+
+.homeCtaInner h2{
+  letter-spacing:-.045em!important;
+}
+
+/* Reviews more polished */
+.testimonialBand{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.18),transparent 30%),
+    linear-gradient(180deg,#0b8fd8,#075f9e)!important;
+}
+
+.reviewSlide{
+  border:0!important;
+  border-radius:18px!important;
+}
+
+/* Footer calmer */
+.rmFooter{
+  background:#f8fbff!important;
+  border-top:1px solid #e5eff8!important;
+}
+
+/* Header stable and premium */
+.rmHeader{
+  background:#fff!important;
+}
+
+.rmTop{
+  background:#1296db!important;
+}
+
+.rmNav{
+  border-bottom:1px solid #e5eff8!important;
+}
+
+/* Mobile: no hero image jump, no white edge */
+@media(max-width:700px){
+  .homeHero{
+    background-position:center center!important;
+  }
+
+  .homeHero,
+  .heroOverlay{
+    height:360px!important;
+    min-height:360px!important;
+  }
+
+  .pageHero{
+    height:220px!important;
+    min-height:220px!important;
+  }
+
+  html.route-changing .heroOverlay,
+  html.route-changing .pageHero .rmShell{
+    transform:translateY(5px)!important;
+  }
+
+  .heroCenter{
+    text-align:center!important;
+  }
+
+  .heroCenter h1{
+    font-size:32px!important;
+    line-height:1.03!important;
+    max-width:330px!important;
+    margin-inline:auto!important;
+  }
+
+  .heroCenter p{
+    font-size:16px!important;
+    max-width:330px!important;
+    margin-inline:auto!important;
+  }
+
+  .homeStatsGrid{
+    grid-template-columns:1fr 1fr!important;
+  }
+
+  .homeStatsGrid article{
+    min-height:72px!important;
+    padding:12px!important;
+  }
+
+  .homeStatsGrid b{
+    font-size:16px!important;
+  }
+
+  .homeStatsGrid span{
+    font-size:11px!important;
+  }
+
+  .aboutBlock{
+    padding-top:36px!important;
+  }
+
+  .aboutGrid{
+    max-width:100%!important;
+  }
+
+  .aboutGrid h2{
+    font-size:27px!important;
+  }
+
+  .serviceGrid,
+  .toolGrid{
+    max-width:100%!important;
+  }
+
+  .serviceTile,
+  .toolTile{
+    padding:14px!important;
+    border-radius:15px!important;
+  }
+
+  .serviceTile h3,
+  .toolTile h3{
+    font-size:14px!important;
+  }
+
+  .serviceTile p,
+  .toolTile p{
+    font-size:11px!important;
+  }
+
+  .homeCtaInner{
+    border-radius:20px!important;
+  }
+}
+
+/* Disable old section fade shifting too much */
+.rmSection{
+  animation:sectionSoftFade .3s ease both!important;
+}
+
+@keyframes sectionSoftFade{
+  from{
+    opacity:.96;
+  }
+  to{
+    opacity:1;
+  }
+}
