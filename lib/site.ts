@@ -66,7 +66,7 @@ export const services = [
   {
     title: "Electrostimulation",
     slug: "electrostimulare",
-    icon: "https://img.icons8.com/color/96/electrotherapy.png",
+    icon: "https://img.icons8.com/color/96/electrical.png",
     image: "/images/medical-bg.jpg",
     description:
       "Proceduri pentru activare musculară, tonifiere, recuperare neuromusculară și suport în dureri cronice.",

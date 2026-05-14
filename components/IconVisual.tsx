@@ -15,7 +15,7 @@ export default function IconVisual({
     "🏃": "https://img.icons8.com/color/96/physical-therapy.png",
     "💓": "https://img.icons8.com/color/96/heart-health.png",
     "🌿": "https://img.icons8.com/color/96/spa.png",
-    "🎵": "https://img.icons8.com/color/96/electrotherapy.png",
+    "🎵": "https://img.icons8.com/color/96/electrical.png",
     "📍": "https://img.icons8.com/color/96/marker.png",
     "☎": "https://img.icons8.com/color/96/phone.png",
     "📞": "https://img.icons8.com/color/96/phone.png",

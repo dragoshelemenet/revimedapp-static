@@ -288,7 +288,7 @@ const iconMigrationMap: Record<string, string> = {
   "🏃": "https://img.icons8.com/color/96/physical-therapy.png",
   "💓": "https://img.icons8.com/color/96/heart-health.png",
   "🌿": "https://img.icons8.com/color/96/spa.png",
-  "🎵": "https://img.icons8.com/color/96/electrotherapy.png"
+  "🎵": "https://img.icons8.com/color/96/electrical.png"
 };
 
 try {
@@ -296,4 +296,11 @@ try {
   for (const [emoji, iconUrl] of Object.entries(iconMigrationMap)) {
     updateIcon.run(iconUrl, emoji);
   }
+} catch {}
+
+try {
+  db.prepare("UPDATE services_admin SET icon = ? WHERE icon = ?").run(
+    "https://img.icons8.com/color/96/electrical.png",
+    "https://img.icons8.com/color/96/electrotherapy.png"
+  );
 } catch {}

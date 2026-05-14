@@ -3979,3 +3979,363 @@ p{margin:0 0 18px}
   color:#607086;
   word-break:break-all;
 }
+
+/* Clean clinical UI refresh: calmer, less shadow, more readable */
+:root{
+  --clean-blue:#0b8fd8;
+  --clean-blue-dark:#075f9e;
+  --clean-navy:#102033;
+  --clean-text:#243247;
+  --clean-muted:#68778b;
+  --clean-bg:#f7fbff;
+  --clean-line:#e5eff8;
+  --clean-soft:#eef7ff;
+}
+
+body{
+  color:var(--clean-text);
+  background:#fff;
+}
+
+/* Layout rhythm */
+.rmShell{
+  max-width:1120px;
+}
+
+.rmSection{
+  padding:64px 0;
+}
+
+@media(max-width:700px){
+  .rmSection{
+    padding:34px 0!important;
+  }
+}
+
+/* Header cleaner */
+.rmHeader{
+  background:#fff;
+  border-bottom:1px solid var(--clean-line);
+  box-shadow:none!important;
+}
+
+.rmTop{
+  background:#1296db!important;
+}
+
+.rmNav{
+  box-shadow:none!important;
+}
+
+.rmLinks > a,
+.rmDrop > a{
+  color:var(--clean-navy)!important;
+  font-weight:850!important;
+}
+
+.rmLinks > a:hover{
+  color:var(--clean-blue)!important;
+}
+
+/* Hero cleaner */
+.homeHero{
+  background-position:center!important;
+}
+
+.heroOverlay{
+  background:linear-gradient(90deg,rgba(8,31,58,.62),rgba(0,142,214,.38))!important;
+}
+
+.heroCenter h1,
+.pageHero h1{
+  letter-spacing:-.04em;
+}
+
+.pageHero{
+  background:
+    linear-gradient(90deg,rgba(8,31,58,.72),rgba(0,142,214,.48)),
+    url('/images/medical-bg.jpg') center/cover no-repeat!important;
+}
+
+/* Buttons cleaner */
+.blueBtn{
+  background:var(--clean-blue)!important;
+  color:#fff!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:12px!important;
+  font-weight:850!important;
+}
+
+.blueBtn:hover{
+  background:var(--clean-blue-dark)!important;
+  transform:none!important;
+}
+
+.softBtn{
+  background:var(--clean-soft)!important;
+  color:var(--clean-blue-dark)!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:12px!important;
+  font-weight:850!important;
+}
+
+.softBtn:hover{
+  background:#dff0ff!important;
+}
+
+/* Cards: remove heavy shadows/outlines, cleaner backgrounds */
+.card,
+.serviceTile,
+.toolTile,
+.adminCard,
+.contactPrimaryCard,
+.contactSidePanel,
+.contactMapModern,
+.contactMiniCard,
+.currencyBox,
+.priceNotice,
+.priceAccordionGroup,
+.neuroQuickTop,
+.neuroIntro,
+.neuroQuestion,
+.neuroResult,
+.reviewSlide,
+.youtubeCard,
+.galleryVideoCard,
+.galleryPhoto,
+.legalCard{
+  box-shadow:none!important;
+  border:1px solid var(--clean-line)!important;
+}
+
+.serviceTile,
+.toolTile,
+.card{
+  background:#fff!important;
+  transition:background .16s ease, border-color .16s ease;
+}
+
+.serviceTile:hover,
+.toolTile:hover,
+.card:hover{
+  background:#f8fcff!important;
+  border-color:#cfe4f8!important;
+  transform:none!important;
+}
+
+.serviceTile h3,
+.toolTile h3,
+.card h2{
+  color:var(--clean-navy)!important;
+}
+
+.serviceTile p,
+.toolTile p,
+.card p{
+  color:var(--clean-muted)!important;
+}
+
+/* Service/app icons cleaner */
+.tileIconImg{
+  width:44px;
+  height:44px;
+  padding:5px;
+  border-radius:12px;
+  background:#f4faff;
+}
+
+@media(max-width:700px){
+  .tileIconImg{
+    width:32px!important;
+    height:32px!important;
+    padding:3px!important;
+  }
+}
+
+/* About section cleaner */
+.doctorVisual{
+  box-shadow:none!important;
+}
+
+.doctorVisual img{
+  box-shadow:none!important;
+  border:1px solid var(--clean-line);
+}
+
+/* Forms/inputs */
+input,
+textarea,
+select{
+  box-shadow:none!important;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  outline:2px solid rgba(11,143,216,.18)!important;
+  border-color:#99d5f7!important;
+}
+
+/* Gallery cleaner */
+.galleryPhoto span{
+  background:rgba(16,32,51,.74)!important;
+  box-shadow:none!important;
+}
+
+/* Contact cleaner */
+.contactModernSection{
+  background:#fff!important;
+}
+
+.contactInfoList a,
+.contactInfoStatic,
+.transportModern span{
+  box-shadow:none!important;
+  border:1px solid var(--clean-line)!important;
+}
+
+.contactInfoList a:hover{
+  transform:none!important;
+  background:#f8fcff!important;
+}
+
+.contactSmallIcon{
+  box-shadow:none!important;
+  border:1px solid var(--clean-line);
+}
+
+.contactMapModern iframe{
+  border:1px solid var(--clean-line)!important;
+}
+
+/* Prices cleaner */
+.priceAccordionHead{
+  background:#fff!important;
+}
+
+.priceAccordionGroup.open .priceAccordionHead{
+  background:#f8fcff!important;
+}
+
+.priceAccordionHead i{
+  background:#eef7ff!important;
+  color:var(--clean-blue-dark)!important;
+}
+
+.priceItemClean{
+  box-shadow:none!important;
+  border:1px solid var(--clean-line)!important;
+  background:#fff!important;
+}
+
+.currencyResult{
+  box-shadow:none!important;
+}
+
+/* Reviews cleaner */
+.testimonialBand{
+  background:linear-gradient(135deg,#075f9e,#0b8fd8)!important;
+}
+
+.reviewArrow{
+  box-shadow:none!important;
+  border:1px solid rgba(255,255,255,.45)!important;
+}
+
+/* Footer cleaner */
+.rmFooter{
+  border-top:1px solid var(--clean-line)!important;
+  background:#fff!important;
+}
+
+.footerSchedule{
+  background:transparent!important;
+  border:0!important;
+}
+
+/* Admin cleaner */
+.adminSidebar,
+.adminLoginBrand{
+  box-shadow:none!important;
+}
+
+.adminSimpleCard,
+.adminHomeGrid button,
+.adminActionGrid button,
+.adminSimpleItem,
+.adminLangSelect,
+.adminLoginCard,
+.adminLoginBrand{
+  box-shadow:none!important;
+  border:1px solid var(--clean-line)!important;
+}
+
+.adminHomeGrid button:hover,
+.adminActionGrid button:hover{
+  transform:none!important;
+  background:#f8fcff!important;
+}
+
+/* Mobile cleaner and shorter */
+@media(max-width:700px){
+  .rmHeader{
+    border-bottom:1px solid var(--clean-line)!important;
+  }
+
+  .rmLinks.mobileOpen{
+    box-shadow:none!important;
+    border:1px solid var(--clean-line)!important;
+  }
+
+  .homeHero,
+  .heroOverlay{
+    min-height:360px!important;
+  }
+
+  .heroCenter h1{
+    font-size:31px!important;
+  }
+
+  .heroCenter p{
+    font-size:16px!important;
+  }
+
+  .pageHero{
+    min-height:220px!important;
+  }
+
+  .pageHero h1{
+    font-size:32px!important;
+  }
+
+  .pageHero .lead{
+    font-size:16px!important;
+  }
+
+  .serviceTile,
+  .toolTile,
+  .card{
+    border-radius:14px!important;
+  }
+
+  .serviceTile h3,
+  .toolTile h3,
+  .card h2{
+    font-size:14px!important;
+    line-height:1.15!important;
+  }
+
+  .serviceTile p,
+  .toolTile p,
+  .card p{
+    font-size:11px!important;
+  }
+}
+
+.contactInfoList span,
+.contactInfoStatic span{
+  box-shadow:none!important;
+  border:1px solid var(--clean-line)!important;
+}
