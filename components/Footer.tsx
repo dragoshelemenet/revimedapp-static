@@ -3,28 +3,32 @@ import { site } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footerGrid">
+    <footer className="rmFooter">
+      <div className="rmShell rmFooterGrid">
         <div>
-          <h3>{site.name}</h3>
-          <p>Neurologie, neurochirurgie, reabilitare medicală, fizioterapie și instrumente digitale pentru pacienți.</p>
+          <img src="/images/logo.png" alt="REVIMED" className="footerLogo" />
+          <p>© {new Date().getFullYear()} Centru Medical Revimed PLUS+. All rights reserved.</p>
         </div>
         <div>
-          <h3>Meniu</h3>
+          <h3>Linkuri utile</h3>
+          <Link href="/">Acasă</Link>
+          <Link href="/despre-noi">Despre Noi</Link>
           <Link href="/servicii">Servicii</Link>
+          <Link href="/preturi">Prețuri</Link>
           <Link href="/aplicatii/teste-si-instrumente">Teste și Instrumente</Link>
-          <Link href="/blog">Blog</Link>
           <Link href="/contact">Contact</Link>
         </div>
         <div>
-          <h3>Contact</h3>
-          <p>{site.address}</p>
-          <p>{site.phone}</p>
-          <p>{site.email}</p>
+          <h3>Urmăriți-ne</h3>
+          <div className="fb">f</div>
+        </div>
+        <div>
+          <h3>Program de lucru:</h3>
+          <p>📍 {site.address}</p>
           <p>{site.hours}</p>
+          <p>{site.phone}</p>
         </div>
       </div>
-      <div className="container copyright">© {new Date().getFullYear()} {site.name}. Toate drepturile rezervate.</div>
     </footer>
   );
 }

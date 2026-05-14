@@ -395,3 +395,134 @@ p{margin:0 0 18px}
   .stats{grid-template-columns:1fr}
   .sideBox{position:static}
 }
+
+/* Revimed visual system */
+.rmShell{width:min(1130px,calc(100% - 32px));margin:auto}
+.rmTop{height:28px;background:#0696e8;color:white;font-size:13px}
+.rmTop .rmShell{display:flex;align-items:center;justify-content:space-between;height:28px}
+.rmHeader{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.rmNav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.rmLogo{display:flex;align-items:center;gap:10px}
+.rmLogo img{height:44px;max-width:170px;object-fit:contain}
+.rmLogoText{font-weight:900;color:#c12b2b;display:none}
+.rmLinks{display:flex;align-items:center;gap:23px;font-size:14px;font-weight:800;color:#101827}
+.rmLinks a:hover{color:#0a96e8}
+.rmDrop{position:relative}
+.rmDropPanel{display:none;position:absolute;top:26px;right:0;width:360px;background:#fff;border:1px solid #dbeafe;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.14);padding:10px}
+.rmDrop:hover .rmDropPanel{display:block}
+.rmDropPanel a{display:block;padding:12px;border-radius:12px}
+.rmDropPanel a:hover{background:#eef8ff}
+.rmDropPanel small{display:block;color:#66758a;font-weight:500;margin-top:4px}
+.homeHero{min-height:520px;background:url('/images/medical-bg.jpg') center/cover no-repeat}
+.heroOverlay{min-height:520px;background:linear-gradient(90deg,rgba(0,63,120,.53),rgba(0,96,180,.42));display:grid;place-items:center;text-align:center;color:white}
+.heroCenter h1{font-size:54px;letter-spacing:-2px;margin:0 0 14px;text-shadow:0 2px 15px rgba(0,0,0,.22)}
+.heroCenter p{font-size:28px;font-weight:700;margin-bottom:28px}
+.blueBtn{display:inline-flex;border:0;align-items:center;justify-content:center;background:#0a98ed;color:#fff!important;border-radius:7px;padding:13px 25px;font-weight:900;box-shadow:0 8px 24px rgba(10,152,237,.32);cursor:pointer}
+.softBtn{display:inline-flex;border:0;align-items:center;justify-content:center;background:#e8f4ff;color:#2b6a9b!important;border-radius:12px;padding:12px 22px;font-weight:900;box-shadow:0 8px 20px rgba(39,102,150,.14);cursor:pointer}
+.rmSection{padding:62px 0}
+.aboutGrid{display:grid;grid-template-columns:330px 1fr;gap:72px;align-items:center}
+.doctorVisual{position:relative;width:300px;margin:auto}
+.doctorVisual img{width:300px;height:300px;border-radius:28px;object-fit:cover;border:4px solid #d7f0ff;box-shadow:0 18px 50px rgba(20,120,190,.18)}
+.floatIcon{position:absolute;width:44px;height:44px;border-radius:12px;background:#fff;box-shadow:0 10px 22px rgba(0,134,210,.2);display:grid;place-items:center}
+.i1{left:-35px;top:82px}.i2{right:-20px;top:35px}.i3{right:-45px;top:130px}.i4{left:-25px;bottom:45px}
+.aboutBlock h2,.centerTitle{font-size:38px;color:#111;text-align:left}
+.centerTitle{text-align:center;margin-bottom:30px}
+.aboutBlock p{font-weight:600;color:#202833}
+.serviceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:900px;margin:auto}
+.serviceTile{background:linear-gradient(180deg,#f8fcff,#eaf7ff);border:1px solid #cde9ff;border-radius:16px;text-align:center;padding:28px 22px;box-shadow:0 12px 26px rgba(0,132,210,.2);transition:.2s}
+.serviceTile:hover{transform:translateY(-5px)}
+.tileIcon{font-size:42px;color:#56a9de;line-height:1}
+.serviceTile h3{font-size:20px;margin:15px 0 8px}
+.serviceTile p{font-size:13px;color:#202833;font-weight:600}
+.toolGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.toolTile{background:#fff;border:1px solid #d6ecff;border-radius:18px;padding:24px;box-shadow:0 12px 28px rgba(0,132,210,.13)}
+.toolTile span{display:inline-block;background:#e8f4ff;border-radius:999px;padding:6px 10px;color:#087bc0;font-weight:900;font-size:12px}
+.videoGrid{max-width:900px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
+.videoCard{height:135px;border-radius:8px;background:linear-gradient(135deg,#1b1b1b,#606060);display:grid;place-items:center;color:red;font-size:50px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.bigVideo{height:290px;grid-row:span 2}
+.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.mapBox iframe{width:100%;height:260px;border:0;border-radius:8px;box-shadow:0 10px 28px rgba(0,0,0,.13)}
+.testimonialBand{background:linear-gradient(135deg,#0a2554,#069df2);padding:64px 0;color:white;text-align:center}
+.reviewGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.review{background:#fff;color:#111;border-radius:8px;padding:22px;text-align:left;box-shadow:0 12px 28px rgba(0,0,0,.16)}
+.review b{color:#ffc400}
+.priceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.priceCard,.priceRow{background:#fff;border:1px solid #dbeafe;border-radius:16px;box-shadow:0 10px 26px rgba(0,132,210,.1);padding:22px}
+.priceCard strong,.priceRow strong{color:#0696e8;font-size:24px}
+.center{text-align:center;margin-top:25px}
+.priceTable{display:grid;gap:14px}
+.priceRow{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.priceNote{background:#e8f4ff;border-radius:14px;padding:18px;font-weight:900}
+.rmFooter{background:#fff;padding:38px 0;border-top:1px solid #e5eef7}
+.rmFooterGrid{display:grid;grid-template-columns:1.2fr 1fr .8fr 1.2fr;gap:34px;align-items:start}
+.rmFooter a{display:inline-block;margin:0 12px 8px 0;font-weight:700}
+.footerLogo{height:45px;object-fit:contain}
+.fb{width:45px;height:45px;background:#118ee9;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:30px;font-weight:900}
+
+.pageHero{background:linear-gradient(135deg,#0a2554,#069df2);color:white;padding:78px 0}
+.crumb{color:#dceeff;font-weight:800}
+.lead{font-size:20px;color:#edf8ff}
+.adminBg{min-height:80vh;background:#f2f8ff;padding:60px 0}
+.adminLogin{display:grid;place-items:center}
+.adminCard{background:#fff;border:1px solid #dbeafe;border-radius:18px;padding:24px;box-shadow:0 14px 38px rgba(0,83,160,.13)}
+.adminPanel{display:grid;gap:22px}
+.adminTop{display:flex;justify-content:space-between;align-items:center}
+.adminColumns{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.adminForm{display:grid;gap:11px}
+.adminForm input,.adminForm textarea{width:100%;border:1px solid #cfe4f8;border-radius:10px;padding:12px}
+.checkLine{display:flex!important;align-items:center;gap:8px}
+.checkLine input{width:auto}
+.adminList{display:grid;gap:10px;margin-top:22px}
+.adminItem{border:1px solid #e1edf8;border-radius:12px;padding:12px}
+.adminItem small{display:block;color:#66758a}
+.adminItem button{margin:8px 8px 0 0;border:0;border-radius:8px;padding:8px 10px;cursor:pointer}
+
+.doshaShell{max-width:1100px}
+.doshaIntro,.doshaResult{background:#fff;border:1px solid #dbeafe;border-radius:16px;padding:20px;box-shadow:0 10px 26px rgba(0,132,210,.08);margin-bottom:20px}
+.doshaGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.doshaQuestion{background:#fff;border:1px solid #dbeafe;border-radius:14px;padding:15px}
+.doshaQuestion small{display:block;color:#596b7f;margin:8px 0}
+.doshaQuestion label{font-weight:800;margin-right:16px}
+.toolActions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.protocolCard{background:#f2fbff;border-left:4px solid #0696e8;border-radius:12px;padding:12px;margin:10px 0}
+.noteBox{background:#fff8e8;border-left:4px solid #dd7b00;border-radius:12px;padding:14px;margin-top:18px}
+
+.tibetanPage{background:radial-gradient(circle at top,#24104c,#050615 72%);color:#fff6d8;padding:18px 0 60px;min-height:100vh}
+.tibetanWrap{width:min(1180px,calc(100% - 28px));margin:auto}
+.tibetanHeader,.tPanel{background:rgba(5,9,24,.82);border:1px solid rgba(255,215,120,.35);border-radius:22px;box-shadow:0 0 24px rgba(170,80,255,.24)}
+.tibetanHeader{text-align:center;padding:18px;margin-bottom:14px}
+.tibetanHeader h1{color:#ffd477;font-family:Georgia,serif;font-size:25px;letter-spacing:2px}
+.tibetanGrid{display:grid;grid-template-columns:300px 1fr 300px;gap:14px}
+.tPanel{padding:16px}
+.tPanel h2{text-align:center;color:#ffd477;font-size:18px}
+.tPanel label{font-weight:bold;color:#f4d489}
+.tPanel select,.tPanel button{width:100%;padding:13px;border-radius:14px;font-size:16px;margin:6px 0 12px}
+.tPanel select{background:#0b142c;color:#fff6d8;border:1px solid rgba(255,215,120,.4)}
+.tPanel button{border:0;color:white;font-weight:bold;cursor:pointer;min-height:52px}
+.start{background:#7b2cbf}.pause{background:#087ea4}.reset{background:#7a0014}.music{background:#8b6914}.voice{background:#236b3a}
+.tRow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tInfo,.tWarn,.metric{background:rgba(255,255,255,.07);border-left:4px solid #ffd477;border-radius:12px;padding:10px;font-size:14px;margin-top:10px}
+.center{text-align:center}
+.aura{width:min(78vw,360px);height:min(78vw,360px);border-radius:50%;margin:20px auto;display:grid;place-items:center;background:radial-gradient(circle,rgba(126,255,79,.35),rgba(39,216,255,.18),rgba(191,85,255,.10),transparent 72%);box-shadow:0 0 55px rgba(126,255,79,.35);transform:scale(.72);transition:transform .8s linear,filter .8s linear}
+.aura.inhale{transform:scale(1.08);filter:brightness(1.25)}.aura.hold{transform:scale(1.08);filter:brightness(1.4)}.aura.exhale{transform:scale(.68);filter:brightness(.8)}.aura.hold2{transform:scale(.68);filter:brightness(.95)}
+.circleText{font-size:82px;font-weight:900;color:#fff;text-shadow:0 0 22px #000}
+.phase{font-size:34px;font-weight:900;color:#7cff4f;text-shadow:0 0 18px #65ff35}
+.phaseSec{font-size:20px;color:#ffd477}
+.progressBox{height:18px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin:10px auto;max-width:420px}
+.progress{height:100%;background:linear-gradient(90deg,#7cff4f,#ffd477);border-radius:999px}
+.easyText{font-size:22px;font-weight:bold}
+.miniSquare{width:180px;height:180px;margin:10px auto}
+.side{stroke-width:9;stroke-linecap:round;filter:drop-shadow(0 0 6px currentColor)}
+.s0{stroke:#7cff4f;color:#7cff4f}.s1{stroke:#ffba42;color:#ffba42}.s2{stroke:#27d8ff;color:#27d8ff}.s3{stroke:#bf55ff;color:#bf55ff}.dim{opacity:.22}.ball{fill:#e00022;stroke:#ffb4bd;stroke-width:2;filter:drop-shadow(0 0 12px #ff3152)}
+.effect{padding:8px;border-bottom:1px solid rgba(255,255,255,.12)}
+
+@media(max-width:900px){
+  .rmNav{height:auto;align-items:flex-start;flex-direction:column;padding:12px 0}
+  .rmLinks{gap:10px}
+  .homeHero,.heroOverlay{min-height:430px}
+  .heroCenter h1{font-size:38px}
+  .aboutGrid,.contactGrid,.rmFooterGrid,.adminColumns,.tibetanGrid{grid-template-columns:1fr}
+  .serviceGrid,.toolGrid,.reviewGrid,.priceGrid,.doshaGrid{grid-template-columns:1fr}
+  .videoGrid{grid-template-columns:1fr}
+  .bigVideo{height:180px}
+}

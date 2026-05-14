@@ -4,6 +4,7 @@ export function GET() {
   return new Response(`User-agent: *
 Allow: /
 
+Disallow: /revimed-login
 Disallow: /admin
 Disallow: /api/
 

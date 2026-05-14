@@ -1,35 +1,40 @@
-import { site, services } from "@/lib/site";
+import { getPublishedPrices } from "@/lib/db";
+import { site } from "@/lib/site";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Prețuri",
-  description: "Prețuri pentru servicii medicale Revimed PLUS+."
+  description: "Lista de prețuri Revimed PLUS+ pentru servicii medicale în Chișinău."
 };
 
 export default function Page() {
+  const prices = getPublishedPrices();
+
   return (
     <>
       <section className="pageHero">
-        <div className="container">
+        <div className="rmShell">
           <p className="crumb">Acasă / Prețuri</p>
           <h1>Prețuri</h1>
-          <p className="lead">Pentru prețuri exacte și programări, contactați centrul medical.</p>
+          <p className="lead">Lista de prețuri pentru serviciile Revimed PLUS+.</p>
         </div>
       </section>
-      <section className="section">
-        <div className="container grid3">
-          {services.map((service) => (
-            <div className="card serviceCard" key={service.slug}>
-              <span className="icon">{service.icon}</span>
-              <h2>{service.title}</h2>
-              <p>{service.description}</p>
-              <p><b>Preț:</b> la solicitare</p>
+
+      <section className="rmSection">
+        <div className="rmShell priceTable">
+          {prices.map((p) => (
+            <div className="priceRow" key={p.id}>
+              <div>
+                <h3>{p.service}</h3>
+                <p>{p.note}</p>
+              </div>
+              <strong>{p.price}</strong>
             </div>
           ))}
-        </div>
-        <div className="container card" style={{ marginTop: 24 }}>
-          <h2>Contact</h2>
-          <p>{site.phone} · {site.phone2}</p>
-          <p>{site.address}</p>
+          <div className="priceNote">
+            Pentru programare: {site.phone} · {site.phone2}
+          </div>
         </div>
       </section>
     </>

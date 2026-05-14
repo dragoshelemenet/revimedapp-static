@@ -9,98 +9,98 @@ export const site = {
   email: "revimed@revimed.md",
   address: "Str. Mircea cel Bătrân Nr. 18/1, Chișinău, Ciocana",
   hours: "Luni–Vineri: 09:00–19:00",
-  image: "/images/revimed-og.jpg"
+  image: "/images/medical-bg.jpg"
 };
 
 export const services = [
   {
-    title: "Consultație neurologică",
+    title: "Neurological consult",
     slug: "consultatie-neurologica",
     icon: "🧠",
-    image: "/images/neurologie.jpg",
+    image: "/images/about-us.jpg",
     description:
-      "Consultație neurologică în Chișinău pentru cefalee, amețeli, amorțeli, dureri neuropate, tulburări de somn și simptome ale sistemului nervos.",
+      "Consultație neurologică pentru cefalee, amețeli, amorțeli, dureri neuropate, tulburări de somn și simptome ale sistemului nervos.",
     keywords:
-      "neurolog Chișinău, consultație neurologică, dureri de cap, amețeli, amorțeli, neuropatie, tulburări de somn"
+      "neurolog Chișinău, consultație neurologică, dureri de cap, amețeli, amorțeli, neuropatie"
   },
   {
-    title: "Consultație neurochirurgicală",
+    title: "Neuro-surgery consult",
     slug: "consultatie-neurochirurgicala",
     icon: "⚕️",
-    image: "/images/neurochirurgie.jpg",
+    image: "/images/medical-bg.jpg",
     description:
-      "Consultație neurochirurgicală pentru hernie de disc, dureri lombare și cervicale, radiculopatii, coloană vertebrală și recuperare postoperatorie.",
+      "Consultație neurochirurgicală pentru hernie de disc, dureri lombare și cervicale, radiculopatii și patologii ale coloanei.",
     keywords:
-      "neurochirurg Chișinău, hernie de disc, dureri lombare, dureri cervicale, radiculopatie, coloană vertebrală"
+      "neurochirurg Chișinău, hernie de disc, dureri lombare, dureri cervicale, coloană vertebrală"
   },
   {
-    title: "Fizioterapie și reabilitare",
+    title: "Fizionarație și Reabilitare",
     slug: "fizioterapie-reabilitare",
     icon: "🏃",
-    image: "/images/reabilitare.jpg",
+    image: "/images/medical-bg.jpg",
     description:
-      "Fizioterapie și reabilitare medicală pentru durere, mobilitate, tonus muscular, postură, recuperare funcțională și calitatea mișcării.",
+      "Programe personalizate pentru mobilitate, durere, postură, tonus muscular și recuperare funcțională.",
     keywords:
-      "fizioterapie Chișinău, reabilitare medicală, recuperare medicală, kinetoterapie, dureri musculare, recuperare funcțională"
+      "fizioterapie Chișinău, reabilitare medicală, recuperare medicală, kinetoterapie"
   },
   {
-    title: "Diagnostic funcțional",
+    title: "Functional diagnostics",
     slug: "diagnostic-functional",
     icon: "💓",
-    image: "/images/diagnostic-functional.jpg",
+    image: "/images/medical-bg.jpg",
     description:
       "Diagnostic funcțional pentru evaluarea sistemului nervos, aparatului locomotor, circulației și funcțiilor asociate recuperării.",
     keywords:
-      "diagnostic funcțional Chișinău, evaluare neurologică, investigații funcționale, evaluare medicală"
+      "diagnostic funcțional Chișinău, evaluare neurologică, investigații funcționale"
   },
   {
-    title: "Terapie Bemer",
+    title: "Bahmeră Therapy",
     slug: "terapie-bemer",
     icon: "🌿",
-    image: "/images/bemer.jpg",
+    image: "/images/medical-bg.jpg",
     description:
-      "Terapie Bemer în Chișinău pentru susținerea microcirculației, relaxării și recuperării în cadrul unui plan terapeutic responsabil.",
+      "Terapie pentru susținerea microcirculației, relaxării și recuperării în cadrul unui plan terapeutic responsabil.",
     keywords:
-      "Bemer Chișinău, terapie Bemer, microcirculație, recuperare, terapie complementară"
+      "Bemer Chișinău, terapie Bemer, microcirculație, recuperare"
   },
   {
-    title: "Electrostimulare",
+    title: "Electrostimulation",
     slug: "electrostimulare",
-    icon: "⚡",
-    image: "/images/electrostimulare.jpg",
+    icon: "🎵",
+    image: "/images/medical-bg.jpg",
     description:
-      "Electrostimulare pentru activare musculară, tonifiere, recuperare neuromusculară și suport în dureri cronice.",
+      "Proceduri pentru activare musculară, tonifiere, recuperare neuromusculară și suport în dureri cronice.",
     keywords:
-      "electrostimulare Chișinău, recuperare musculară, stimulare musculară, durere cronică, tonifiere"
+      "electrostimulare Chișinău, recuperare musculară, stimulare musculară"
   }
 ];
 
 export const tools = [
   {
-    title: "Test Ayurveda Dosha",
+    title: "Ayurveda Dosha Test",
     slug: "test-ayurveda-dosha",
     href: "/aplicatii/teste-si-instrumente/test-ayurveda-dosha",
     tag: "Test integrativ",
-    image: "/images/test-ayurveda-dosha.jpg",
+    image: "/images/medical-bg.jpg",
     description:
-      "Chestionar educațional Vata–Pitta–Kapha cu scor, interpretare și recomandări generale pentru stil de viață."
+      "Chestionar Vata–Pitta–Kapha cu scor, concluzie și protocol educațional cu doze și contraindicații."
   },
   {
-    title: "Respirație terapeutică ghidată",
+    title: "REVIMED Yoga Tibetan",
     slug: "respiratie-terapeutica",
     href: "/aplicatii/teste-si-instrumente/respiratie-terapeutica",
     tag: "Instrument pacient",
-    image: "/images/respiratie-terapeutica.jpg",
+    image: "/images/medical-bg.jpg",
     description:
-      "Timer vizual pentru respirație ghidată, relaxare, somn, anxietate și reglarea sistemului nervos vegetativ."
+      "Aplicație de respirație ghidată cu programe pentru anxietate, somn, respirație, cardiovascular, digestiv și energie."
   },
   {
     title: "Screening neurologic rapid",
     slug: "screening-neurologic",
     href: "/aplicatii/teste-si-instrumente/screening-neurologic",
     tag: "Autoevaluare",
-    image: "/images/screening-neurologic.jpg",
+    image: "/images/medical-bg.jpg",
     description:
-      "Instrument educațional pentru verificarea simptomelor neurologice și identificarea semnalelor de alarmă."
+      "Instrument educațional pentru simptome neurologice și semnale de alarmă."
   }
 ];
