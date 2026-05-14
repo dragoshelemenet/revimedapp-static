@@ -40,7 +40,10 @@ const common = {
     back: "Înapoi",
     result: "Rezultat orientativ",
     restart: "Începe din nou",
-    print: "Tipărește",
+    print: "Tipărește raportul",
+    selectedAnswers: "Răspunsurile pacientului",
+    importantRecommendations: "Recomandări importante",
+    medicalReport: "Raport pentru medic",
     progress: "Progres",
     choose: "Alege răspunsul",
     answers: ["Nu", "Rar", "Des", "Foarte des"],
@@ -59,7 +62,10 @@ const common = {
     back: "Back",
     result: "Orientation result",
     restart: "Start again",
-    print: "Print",
+    print: "Print report",
+    selectedAnswers: "Patient answers",
+    importantRecommendations: "Important recommendations",
+    medicalReport: "Report for doctor",
     progress: "Progress",
     choose: "Choose an answer",
     answers: ["No", "Rarely", "Often", "Very often"],
@@ -78,7 +84,10 @@ const common = {
     back: "Назад",
     result: "Ориентировочный результат",
     restart: "Начать заново",
-    print: "Печать",
+    print: "Печать отчета",
+    selectedAnswers: "Ответы пациента",
+    importantRecommendations: "Важные рекомендации",
+    medicalReport: "Отчет для врача",
     progress: "Прогресс",
     choose: "Выберите ответ",
     answers: ["Нет", "Редко", "Часто", "Очень часто"],
@@ -97,7 +106,10 @@ const common = {
     back: "Назад",
     result: "Орієнтовний результат",
     restart: "Почати знову",
-    print: "Друк",
+    print: "Друк звіту",
+    selectedAnswers: "Відповіді пацієнта",
+    importantRecommendations: "Важливі рекомендації",
+    medicalReport: "Звіт для лікаря",
     progress: "Прогрес",
     choose: "Оберіть відповідь",
     answers: ["Ні", "Рідко", "Часто", "Дуже часто"],
@@ -866,6 +878,12 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
   const percent = Math.round((score / max) * 100);
 
   const resultLabel = percent < 34 ? cfg.low[lang] : percent < 67 ? cfg.medium[lang] : cfg.high[lang];
+
+  const selectedAnswerRows = cfg.questions.map((question, index) => ({
+    question: question[lang],
+    answer: text.answers[answers[index] || 0],
+    value: answers[index] || 0
+  }));
   const guidance = guidanceForTool(slug, lang, percent);
   const progress = done ? 100 : Math.round(((step + 1) / cfg.questions.length) * 100);
 
@@ -968,8 +986,36 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
                 <small>{text.disclaimer}</small>
               </div>
 
+              <div className="smartPrintReport">
+                <div className="printReportHeader">
+                  <span className="miniBadge">{text.medicalReport}</span>
+                  <h3>{cfg.title[lang]}</h3>
+                  <p><b>{text.result}:</b> {resultLabel}</p>
+                  <p><b>{text.score}:</b> {score}/{max} · {percent}%</p>
+                </div>
+
+                <div className="smartSelectedAnswers">
+                  <h3>{text.selectedAnswers}</h3>
+                  <div className="selectedAnswerList">
+                    {selectedAnswerRows.map((row, idx) => (
+                      <div className="selectedAnswerItem" key={row.question}>
+                        <b>{idx + 1}. {row.question}</b>
+                        <span>{row.answer} · {row.value}/3</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="smartImportantRecommendations">
+                  <h3>{text.importantRecommendations}</h3>
+                  <ol>
+                    {guidance.plan.map((tip) => <li key={tip}>{tip}</li>)}
+                  </ol>
+                </div>
+              </div>
+
               <div className="smartActions">
-                <button className="blueBtn" type="button" onClick={() => window.print()}>{text.print}</button>
+                <button className="blueBtn printReportBtn" type="button" onClick={() => window.print()}>{text.print}</button>
                 <button className="softBtn" type="button" onClick={() => { setStep(0); setAnswers(Array(cfg.questions.length).fill(0)); setDone(false); }}>
                   {text.restart}
                 </button>
