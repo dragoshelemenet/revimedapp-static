@@ -10056,3 +10056,17 @@ html.route-ready .pageHero{
     grid-template-columns:1fr!important;
   }
 }
+
+/* Neurological screening translated result polish */
+.neuroCategoryGrid span,
+.neuroResultStats span{
+  text-transform:none!important;
+}
+
+.neuroCategoryGrid article{
+  min-height:58px!important;
+}
+
+.neuroResultHead h2{
+  overflow-wrap:break-word!important;
+}

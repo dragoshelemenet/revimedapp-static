@@ -238,6 +238,20 @@ const questions: Question[] = [
 
 const ui = {
   ro: {
+    categoryLabels: {
+      alarm: "Semnale de alarmă",
+      motor: "Motor",
+      sensory: "Sensibilitate",
+      cognitive: "Cognitiv",
+      balance: "Echilibru",
+      pain: "Durere",
+      vegetative: "Vegetativ"
+    },
+    resultStats: {
+      score: "Scor orientativ",
+      alarms: "Semnale de alarmă",
+      questions: "Întrebări"
+    },
     crumb: "Teste și Instrumente / Screening Neurologic",
     title: "Screening neurologic rapid",
     lead: "Instrument educațional pentru simptome neurologice, semnale de alarmă și orientare preliminară.",
@@ -266,6 +280,20 @@ const ui = {
     disclaimer: "Acest instrument este educațional. Nu pune diagnostic, nu tratează și nu înlocuiește consultația cu medicul. Tot ce citești sau aplici se face pe propriul risc."
   },
   en: {
+    categoryLabels: {
+      alarm: "Red flags",
+      motor: "Motor",
+      sensory: "Sensory",
+      cognitive: "Cognitive",
+      balance: "Balance",
+      pain: "Pain",
+      vegetative: "Autonomic"
+    },
+    resultStats: {
+      score: "Orientation score",
+      alarms: "Red flags",
+      questions: "Questions"
+    },
     crumb: "Tests and Tools / Neurological Screening",
     title: "Rapid neurological screening",
     lead: "Educational tool for neurological symptoms, red flags and preliminary orientation.",
@@ -294,6 +322,20 @@ const ui = {
     disclaimer: "This tool is educational. It does not diagnose, treat or replace medical consultation. Everything you read or apply is at your own risk."
   },
   ru: {
+    categoryLabels: {
+      alarm: "Тревожные признаки",
+      motor: "Двигательные",
+      sensory: "Чувствительность",
+      cognitive: "Когнитивные",
+      balance: "Равновесие",
+      pain: "Боль",
+      vegetative: "Вегетативные"
+    },
+    resultStats: {
+      score: "Ориентировочный балл",
+      alarms: "Тревожные признаки",
+      questions: "Вопросы"
+    },
     crumb: "Тесты и инструменты / Неврологический скрининг",
     title: "Быстрый неврологический скрининг",
     lead: "Образовательный инструмент для неврологических симптомов, тревожных признаков и предварительной ориентации.",
@@ -322,6 +364,20 @@ const ui = {
     disclaimer: "Этот инструмент образовательный. Он не ставит диагноз, не лечит и не заменяет консультацию врача. Всё, что вы читаете или применяете, делается на собственный риск."
   },
   ua: {
+    categoryLabels: {
+      alarm: "Тривожні ознаки",
+      motor: "Рухові",
+      sensory: "Чутливість",
+      cognitive: "Когнітивні",
+      balance: "Рівновага",
+      pain: "Біль",
+      vegetative: "Вегетативні"
+    },
+    resultStats: {
+      score: "Орієнтовний бал",
+      alarms: "Тривожні ознаки",
+      questions: "Питання"
+    },
     crumb: "Тести та інструменти / Неврологічний скринінг",
     title: "Швидкий неврологічний скринінг",
     lead: "Освітній інструмент для неврологічних симптомів, тривожних ознак і попередньої орієнтації.",
@@ -470,7 +526,7 @@ export default function NeuroScreeningPage() {
           {!showResult && question && (
             <article className={question.alarm ? "neuroStepCard alarm" : "neuroStepCard"}>
               <div className="neuroStepBadge">
-                {question.alarm ? t.urgent : question.category}
+                {question.alarm ? t.urgent : t.categoryLabels[question.category]}
               </div>
 
               <h2>{question[lang]}</h2>
@@ -515,15 +571,15 @@ export default function NeuroScreeningPage() {
 
               <div className="neuroResultStats">
                 <article>
-                  <span>{t.score}</span>
+                  <span>{t.resultStats?.score || t.score}</span>
                   <b>{result.score}</b>
                 </article>
                 <article>
-                  <span>{t.urgent}</span>
+                  <span>{t.resultStats?.alarms || t.urgent}</span>
                   <b>{result.alarms}</b>
                 </article>
                 <article>
-                  <span>{t.question}</span>
+                  <span>{t.resultStats?.questions || t.question}</span>
                   <b>{answeredCount}/{questions.length}</b>
                 </article>
               </div>
@@ -531,7 +587,7 @@ export default function NeuroScreeningPage() {
               <div className="neuroCategoryGrid">
                 {Object.entries(result.categories).map(([key, value]) => (
                   <article key={key}>
-                    <span>{key}</span>
+                    <span>{t.categoryLabels[key as keyof typeof t.categoryLabels] || key}</span>
                     <div><i style={{ width: `${Math.min(100, value * 18)}%` }} /></div>
                     <b>{value}</b>
                   </article>
