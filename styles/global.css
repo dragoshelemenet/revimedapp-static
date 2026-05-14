@@ -1338,3 +1338,83 @@ p{margin:0 0 18px}
     font-size:17px;
   }
 }
+
+/* Unified inner-page hero: image + blue overlay, except homepage */
+.pageHero{
+  position:relative;
+  overflow:hidden;
+  min-height:320px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(7,31,63,.78),rgba(0,148,232,.72)),
+    url('/images/medical-bg.jpg') center/cover no-repeat!important;
+  color:white;
+}
+
+.pageHero .rmShell{
+  position:relative;
+  z-index:2;
+}
+
+.pageHero h1{
+  color:white;
+  text-shadow:0 3px 18px rgba(0,0,0,.22);
+}
+
+.pageHero .lead{
+  color:#f0f8ff;
+  text-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+
+.pageHero .crumb{
+  color:#fff;
+  opacity:.95;
+  font-weight:900;
+}
+
+/* Remove separate hero overrides so all inner pages look consistent */
+.galleryHero,
+.contactHero,
+.pricesHero,
+.ayurHero{
+  background:
+    linear-gradient(90deg,rgba(7,31,63,.78),rgba(0,148,232,.72)),
+    url('/images/medical-bg.jpg') center/cover no-repeat!important;
+}
+
+/* Better spacing on desktop inner pages */
+@media(min-width:901px){
+  .pageHero{
+    padding:86px 0;
+  }
+
+  .pageHero h1{
+    max-width:900px;
+  }
+
+  .pageHero .lead{
+    max-width:720px;
+  }
+}
+
+/* Mobile version */
+@media(max-width:700px){
+  .pageHero{
+    min-height:260px;
+    padding:48px 0 52px!important;
+    background:
+      linear-gradient(90deg,rgba(7,31,63,.84),rgba(0,148,232,.75)),
+      url('/images/medical-bg.jpg') center/cover no-repeat!important;
+  }
+
+  .pageHero h1{
+    font-size:40px;
+    line-height:1.08;
+  }
+
+  .pageHero .lead{
+    font-size:19px;
+    line-height:1.5;
+  }
+}
