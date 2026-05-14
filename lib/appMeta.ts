@@ -1,3 +1,23 @@
+
+const yogaV2Fallback = {
+  slug: "revimed-yoga-tibetan",
+  href: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
+  title: {
+    ro: "REVIMED Yoga Tibetan V2",
+    en: "REVIMED Tibetan Yoga V2",
+    ru: "REVIMED Тибетская йога V2",
+    ua: "REVIMED Тибетська йога V2"
+  },
+  description: {
+    ro: "Respirație ghidată cu programe pentru anxietate, somn, respirație, cardiovascular, digestiv și energie.",
+    en: "Guided breathing programs for anxiety, sleep, breathing, cardiovascular, digestion and energy.",
+    ru: "Дыхательные программы для тревоги, сна, дыхания, сердца, пищеварения и энергии.",
+    ua: "Дихальні програми для тривоги, сну, дихання, серця, травлення та енергії."
+  },
+  tag: { ro: "Respirație", en: "Breathing", ru: "Дыхание", ua: "Дихання" },
+  position: 3
+};
+
 import type { Lang } from "@/lib/i18n";
 import { getVisibleAppsForLang } from "@/lib/appsRegistry";
 
