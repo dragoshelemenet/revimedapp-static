@@ -12,6 +12,7 @@ import ReviewCarousel from "@/components/ReviewCarousel";
 import IconVisual from "@/components/IconVisual";
 import HomeCTA from "@/components/HomeCTA";
 import HomeStats from "@/components/HomeStats";
+import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 
 export function HomeTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
@@ -52,8 +53,8 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
           <div className="serviceGrid">
             {services.map((service) => (
               <Link key={service.id} href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile">
-                <IconVisual src={service.icon} alt={service.title} className="tileIconImg" />
-                <h3>{service.title}</h3>
+                <IconVisual src={service.icon} alt={cleanServiceText(service.title)} className="tileIconImg" />
+                <h3>{cleanServiceText(service.title)}</h3>
                 <p>{service.short_desc}</p>
               </Link>
             ))}
@@ -139,8 +140,8 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
         <div className="rmShell serviceGrid">
           {services.map((service) => (
             <Link href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile" key={service.id}>
-              <IconVisual src={service.icon} alt={service.title} className="tileIconImg" />
-              <h3>{service.title}</h3>
+              <IconVisual src={service.icon} alt={cleanServiceText(service.title)} className="tileIconImg" />
+              <h3>{cleanServiceText(service.title)}</h3>
               <p>{service.short_desc}</p>
             </Link>
           ))}
@@ -159,8 +160,8 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     <>
       <section className="pageHero">
         <div className="rmShell">
-          <p className="crumb">{text.home} / {text.services} / {service.title}</p>
-          <h1>{service.icon} {service.title}</h1>
+          <p className="crumb">{text.home} / {text.services} / {cleanServiceText(service.title)}</p>
+          <h1>{service.icon} {cleanServiceText(service.title)}</h1>
           <p className="lead">{service.short_desc}</p>
           <Link className="blueBtn" href={withLang("/contact", lang)}>{text.appointment}</Link>
         </div>
@@ -168,7 +169,7 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
       <section className="rmSection">
         <div className="rmShell contentGrid">
           <article className="adminCard serviceArticle">
-            <img src={service.image} alt={service.title} className="serviceHeroImg" />
+            <img src={service.image} alt={cleanServiceText(service.title)} className="serviceHeroImg" />
             <div className="textContent">
               {service.full_content.split("\n").map((line, idx) => {
                 const trimmed = line.trim();

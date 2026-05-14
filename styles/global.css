@@ -9531,3 +9531,30 @@ html.route-ready .pageHero{
   line-height:1.45!important;
   max-width:780px!important;
 }
+
+/* Service detail SEO text polish */
+.serviceSeoText,
+.serviceDetailText{
+  display:grid!important;
+  gap:14px!important;
+}
+
+.serviceSeoText p,
+.serviceDetailText p{
+  color:#475569!important;
+  font-size:17px!important;
+  line-height:1.75!important;
+  margin:0!important;
+}
+
+.pageHero h1{
+  overflow-wrap:break-word!important;
+}
+
+@media(max-width:700px){
+  .serviceSeoText p,
+  .serviceDetailText p{
+    font-size:15px!important;
+    line-height:1.65!important;
+  }
+}

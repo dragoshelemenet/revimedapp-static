@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ServiceTemplate } from "@/lib/pageTemplates";
+import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 export const dynamic = "force-dynamic";
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

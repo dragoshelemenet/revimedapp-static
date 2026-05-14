@@ -3,6 +3,7 @@ import { getPublishedPosts, getPublishedServicesAdmin } from "@/lib/db";
 import { services, site, tools } from "@/lib/site";
 import { languages, withLang, type Lang } from "@/lib/i18n";
 import "@/lib/content";
+import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 
 export const dynamic = "force-dynamic";
 
