@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 type Question = {
   id: string;
@@ -211,6 +211,7 @@ export default function NeuroScreeningPage() {
   const [duration, setDuration] = useState("zile");
   const [progression, setProgression] = useState("stabil");
   const [show, setShow] = useState(false);
+  const resultRef = useRef<HTMLElement | null>(null);
 
   const result = useMemo(() => {
     let total = 0;
@@ -266,6 +267,13 @@ export default function NeuroScreeningPage() {
     setAnswers((prev) => ({ ...prev, [id]: value }));
   }
 
+  function generateResult() {
+    setShow(true);
+    setTimeout(() => {
+      resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  }
+
   function reset() {
     setAnswers({});
     setAge("");
@@ -318,7 +326,7 @@ export default function NeuroScreeningPage() {
               <span>Scor orientativ: {result.total}</span>
             </div>
 
-            <button className="blueBtn" onClick={() => setShow(true)}>Generează rezultat</button>
+            <button className="blueBtn" onClick={generateResult}>Generează rezultat</button>
             <button className="softBtn" onClick={() => window.print()}>Tipărește raport</button>
             <button className="softBtn" onClick={reset}>Resetare</button>
 
@@ -391,8 +399,13 @@ export default function NeuroScreeningPage() {
               ))}
             </div>
 
+            <div className="bottomGenerateBox">
+              <button className="blueBtn" onClick={generateResult}>Generează rezultat</button>
+              <p>Butonul este și aici ca să nu trebuiască să urci înapoi sus după completarea chestionarului.</p>
+            </div>
+
             {show && (
-              <section className={`neuroResult ${result.className}`}>
+              <section ref={resultRef} className={`neuroResult ${result.className}`}>
                 <h2>{result.title}</h2>
                 <p className="scoreLine">
                   Scor: <b>{result.total}</b> · Semnale de alarmă: <b>{result.redFlags}</b> · Nivel: <b>{result.level}</b>

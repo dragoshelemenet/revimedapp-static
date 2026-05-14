@@ -14,7 +14,6 @@ export default function Header() {
   const text = t(lang);
   const currentCleanPath = cleanPath(pathname);
   const close = () => setOpen(false);
-
   const link = (path: string) => withLang(path, lang);
 
   return (
@@ -40,7 +39,6 @@ export default function Header() {
       <nav className="rmNav rmShell">
         <Link href={link("/")} className="rmLogo" aria-label={site.name} onClick={close}>
           <img src="/images/logo.png" alt="REVIMED" />
-          <span className="rmLogoText">REVIMED</span>
         </Link>
 
         <button
@@ -48,9 +46,11 @@ export default function Header() {
           type="button"
           aria-label="Meniu"
           aria-expanded={open}
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((v) => !v)}
         >
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
         <div className={open ? "rmLinks mobileOpen" : "rmLinks"}>

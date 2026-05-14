@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { site } from "../lib/site";
+import "../lib/seedLanguages";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

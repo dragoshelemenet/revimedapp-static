@@ -1888,3 +1888,271 @@ p{margin:0 0 18px}
     break-inside:avoid;
   }
 }
+
+/* HARD HEADER FIX: desktop normal, hamburger only mobile */
+.hamburger,
+.menuBackdrop{
+  display:none;
+}
+
+@media(min-width:701px){
+  .rmHeader{
+    position:sticky;
+    top:0;
+    z-index:1000;
+  }
+
+  .rmNav{
+    height:64px!important;
+    min-height:64px!important;
+    padding:0!important;
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+  }
+
+  .rmLogo{
+    width:auto!important;
+    justify-content:flex-start!important;
+  }
+
+  .rmLogo img{
+    height:44px!important;
+    max-width:180px!important;
+  }
+
+  .rmLinks{
+    position:static!important;
+    display:flex!important;
+    flex-direction:row!important;
+    grid-template-columns:none!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:22px!important;
+    width:auto!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:none!important;
+    max-height:none!important;
+    overflow:visible!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  .rmLinks > a,
+  .rmDrop > a{
+    background:transparent!important;
+    padding:0!important;
+    min-height:auto!important;
+    display:inline-flex!important;
+    width:auto!important;
+    font-size:14px!important;
+    font-weight:900!important;
+    color:#101827!important;
+  }
+
+  .rmDropPanel{
+    position:absolute!important;
+    top:30px!important;
+    right:0!important;
+    left:auto!important;
+    width:360px!important;
+    display:none!important;
+    background:#fff!important;
+    border:1px solid #dbeafe!important;
+    border-radius:18px!important;
+    box-shadow:0 20px 60px rgba(0,0,0,.14)!important;
+    padding:10px!important;
+  }
+
+  .rmDrop:hover .rmDropPanel{
+    display:block!important;
+  }
+
+  .rmDropPanel a{
+    display:block!important;
+    padding:12px!important;
+    border-radius:12px!important;
+    background:transparent!important;
+  }
+
+  .rmDropPanel a:hover{
+    background:#eef8ff!important;
+  }
+}
+
+@media(max-width:700px){
+  .rmHeader{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+  }
+
+  .rmTop{
+    height:26px!important;
+  }
+
+  .rmTop .rmShell{
+    height:26px!important;
+    justify-content:flex-end!important;
+  }
+
+  .rmNav{
+    height:auto!important;
+    min-height:auto!important;
+    padding:9px 14px 12px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+  }
+
+  .rmLogo{
+    width:100%!important;
+    justify-content:center!important;
+    position:relative;
+    z-index:1003;
+  }
+
+  .rmLogo img{
+    height:44px!important;
+    max-width:190px!important;
+  }
+
+  .hamburger{
+    display:flex!important;
+    width:44px!important;
+    height:34px!important;
+    border:1px solid #9aa8b8!important;
+    border-radius:6px!important;
+    background:white!important;
+    padding:5px 8px!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+    gap:4px!important;
+    cursor:pointer!important;
+    z-index:1003!important;
+  }
+
+  .hamburger span{
+    display:block!important;
+    height:2px!important;
+    width:100%!important;
+    border-radius:10px!important;
+    background:#102033!important;
+    margin:0!important;
+    transition:.2s ease!important;
+  }
+
+  .hamburger.active span:nth-child(1){
+    transform:translateY(6px) rotate(45deg)!important;
+  }
+
+  .hamburger.active span:nth-child(2){
+    opacity:0!important;
+  }
+
+  .hamburger.active span:nth-child(3){
+    transform:translateY(-6px) rotate(-45deg)!important;
+  }
+
+  .rmLinks{
+    display:none!important;
+  }
+
+  .rmLinks.mobileOpen{
+    display:grid!important;
+    position:fixed!important;
+    top:104px!important;
+    left:14px!important;
+    right:14px!important;
+    width:auto!important;
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+    padding:14px!important;
+    background:#fff!important;
+    border:1px solid #dbeafe!important;
+    border-radius:22px!important;
+    box-shadow:0 24px 70px rgba(7,31,63,.28)!important;
+    z-index:1003!important;
+    max-height:calc(100vh - 120px)!important;
+    overflow:auto!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:none!important;
+  }
+
+  .rmLinks.mobileOpen > a,
+  .rmLinks.mobileOpen .rmDrop > a{
+    width:100%!important;
+    min-height:44px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    text-align:left!important;
+    padding:12px 14px!important;
+    border-radius:14px!important;
+    background:#f4f9ff!important;
+    color:#102033!important;
+    font-size:16px!important;
+    font-weight:900!important;
+  }
+
+  .rmLinks.mobileOpen .rmDropPanel{
+    display:block!important;
+    position:static!important;
+    width:100%!important;
+    border:0!important;
+    box-shadow:none!important;
+    padding:6px 0 0!important;
+    background:transparent!important;
+  }
+
+  .rmLinks.mobileOpen .rmDropPanel a{
+    display:block!important;
+    background:#eef8ff!important;
+    margin-top:6px!important;
+    border-radius:12px!important;
+    padding:11px 13px!important;
+  }
+
+  .rmLinks.mobileOpen .rmDropPanel small{
+    display:none!important;
+  }
+
+  .menuBackdrop{
+    display:block!important;
+    position:fixed!important;
+    inset:0!important;
+    border:0!important;
+    background:rgba(7,31,63,.34)!important;
+    z-index:1001!important;
+  }
+}
+
+.bottomGenerateBox{
+  background:#fff;
+  border:1px solid #dbeafe;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 14px 34px rgba(0,132,210,.10);
+  text-align:center;
+}
+
+.bottomGenerateBox .blueBtn{
+  min-width:240px;
+}
+
+.bottomGenerateBox p{
+  margin:12px 0 0;
+  color:#66758a;
+  font-weight:750;
+}
