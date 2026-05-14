@@ -408,7 +408,7 @@ export default function RevimedYogaTibetanPage() {
                     return next;
                   });
                 }}>
-                  <img src="https://img.icons8.com/ios-filled/50/0b8fd8/singing-bowl.png" alt="" />
+                  <img src="https://img.icons8.com/ios-filled/50/0b8fd8/musical-notes.png" alt="" />
                   {t.sound}
                 </button>
               </div>
