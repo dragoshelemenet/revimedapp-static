@@ -36,6 +36,37 @@ type ServiceAdmin = {
   published: number;
 };
 
+type ContactContent = {
+  id: number;
+  lang: "ro" | "en" | "ru" | "ua";
+  fixed_phone: string;
+  phone: string;
+  phone_alt: string;
+  email: string;
+  address: string;
+  hours_week: string;
+  hours_weekend: string;
+  bus: string;
+  trolleybus: string;
+  tram: string;
+  image_one: string;
+  image_two: string;
+  map_link: string;
+  map_embed: string;
+};
+
+type ContentBlock = {
+  id: number;
+  lang: "ro" | "en" | "ru" | "ua";
+  page_key: string;
+  block_key: string;
+  title: string;
+  text: string;
+  image: string;
+  position: number;
+  published: number;
+};
+
 type GalleryItem = {
   id: number;
   lang: "ro" | "en" | "ru" | "ua";
@@ -58,9 +89,11 @@ export default function AdminClient({
   services?: ServiceAdmin[];
   gallery?: GalleryItem[];
   selectedLang?: "ro" | "en" | "ru" | "ua";
+  contactContent?: ContactContent | null;
+  contentBlocks?: ContentBlock[];
 }) {
   const [workingLang, setWorkingLang] = useState<"ro" | "en" | "ru" | "ua">(selectedLang);
-  const [tab, setTab] = useState<"services" | "prices" | "gallery" | "blog">("services");
+  const [tab, setTab] = useState<"services" | "prices" | "gallery" | "contact" | "content" | "blog">("services");
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [editingPrice, setEditingPrice] = useState<Price | null>(null);
   const [editingService, setEditingService] = useState<ServiceAdmin | null>(null);
@@ -76,6 +109,27 @@ export default function AdminClient({
   async function logout() {
     await fetch("/api/admin/logout", { method: "POST" });
     location.reload();
+  }
+
+  async function saveContact(formData: FormData) {
+    const res = await fetch("/api/admin/contact", { method: "POST", body: formData });
+    if (res.ok) location.reload();
+    else setMessage("Nu s-a salvat contactul.");
+  }
+
+  async function saveContentBlock(formData: FormData) {
+    const id = formData.get("id");
+    const url = id ? `/api/admin/content-blocks/${id}` : "/api/admin/content-blocks";
+    const method = id ? "PUT" : "POST";
+    const res = await fetch(url, { method, body: formData });
+    if (res.ok) location.reload();
+    else setMessage("Nu s-a salvat textul.");
+  }
+
+  async function removeContentBlock(id: number) {
+    if (!confirm("Ștergi textul?")) return;
+    const res = await fetch(`/api/admin/content-blocks/${id}`, { method: "DELETE" });
+    if (res.ok) location.reload();
   }
 
   async function savePost(formData: FormData) {
@@ -183,6 +237,8 @@ export default function AdminClient({
           <button className={tab === "services" ? "active" : ""} onClick={() => setTab("services")}>Servicii</button>
           <button className={tab === "prices" ? "active" : ""} onClick={() => setTab("prices")}>Prețuri</button>
           <button className={tab === "gallery" ? "active" : ""} onClick={() => setTab("gallery")}>Galerie</button>
+          <button className={tab === "contact" ? "active" : ""} onClick={() => setTab("contact")}>Contact</button>
+          <button className={tab === "content" ? "active" : ""} onClick={() => setTab("content")}>Texte pagini</button>
           <button className={tab === "blog" ? "active" : ""} onClick={() => setTab("blog")}>Blog</button>
         </div>
 
