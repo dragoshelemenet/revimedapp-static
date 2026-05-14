@@ -8,6 +8,7 @@ import CurrencyConverter from "@/components/CurrencyConverter";
 import PricesAccordion from "@/components/PricesAccordion";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import IconVisual from "@/components/IconVisual";
+import HomeCTA from "@/components/HomeCTA";
 
 export function HomeTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
@@ -69,6 +70,8 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+
+      <HomeCTA />
 
       <section className="testimonialBand">
         <div className="rmShell">
