@@ -10,7 +10,7 @@ type Phase = "inhale" | "hold" | "exhale" | "rest";
 const ui = {
   ro: {
     crumb: "Teste și Instrumente / Yoga Tibetană",
-    title: "REVIMED Yoga Tibetan V2",
+    title: "REVIMED Yoga Tibetan",
     lead: "Respirație ghidată educațională pentru relaxare, somn, stres, respirație, inimă, digestie și energie.",
     setup: "Setare program",
     goal: "Scop",
@@ -53,7 +53,7 @@ const ui = {
   },
   en: {
     crumb: "Tests and Tools / Tibetan Yoga",
-    title: "REVIMED Tibetan Yoga V2",
+    title: "REVIMED Tibetan Yoga",
     lead: "Educational guided breathing for relaxation, sleep, stress, breathing, heart, digestion and energy.",
     setup: "Program setup",
     goal: "Goal",
@@ -96,7 +96,7 @@ const ui = {
   },
   ru: {
     crumb: "Тесты и инструменты / Тибетская йога",
-    title: "REVIMED Тибетская йога V2",
+    title: "REVIMED Тибетская йога",
     lead: "Образовательное дыхательное сопровождение для расслабления, сна, стресса, дыхания, сердца, пищеварения и энергии.",
     setup: "Настройка программы",
     goal: "Цель",
@@ -139,7 +139,7 @@ const ui = {
   },
   ua: {
     crumb: "Тести та інструменти / Тибетська йога",
-    title: "REVIMED Тибетська йога V2",
+    title: "REVIMED Тибетська йога",
     lead: "Освітній дихальний супровід для розслаблення, сну, стресу, дихання, серця, травлення та енергії.",
     setup: "Налаштування програми",
     goal: "Мета",
@@ -203,6 +203,46 @@ function formatTime(value: number) {
 }
 
 export default function RevimedYogaTibetanPage() {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  function stopYogaAudioOnExit() {
+    try {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    } catch {}
+    try {
+      document.querySelectorAll("audio").forEach((node) => {
+        node.pause();
+        node.currentTime = 0;
+      });
+    } catch {}
+  }
+
+  useEffect(() => {
+    const stop = () => stopYogaAudioOnExit();
+
+    window.addEventListener("pagehide", stop);
+    window.addEventListener("beforeunload", stop);
+
+    const onClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const link = target?.closest?.("a");
+      if (link) stopYogaAudioOnExit();
+    };
+
+    document.addEventListener("click", onClick, true);
+
+    return () => {
+      stopYogaAudioOnExit();
+      window.removeEventListener("pagehide", stop);
+      window.removeEventListener("beforeunload", stop);
+      document.removeEventListener("click", onClick, true);
+    };
+  }, []);
+
   const lang = getLang(usePathname());
   const t = ui[lang];
 

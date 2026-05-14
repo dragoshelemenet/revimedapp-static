@@ -161,7 +161,7 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
       <section className="pageHero">
         <div className="rmShell">
           <p className="crumb">{text.home} / {text.services} / {cleanServiceText(service.title)}</p>
-          <h1>{service.icon} {cleanServiceText(service.title)}</h1>
+          <h1>{cleanServiceText(service.title)}</h1>
           <p className="lead">{service.short_desc}</p>
           <Link className="blueBtn" href={withLang("/contact", lang)}>{text.appointment}</Link>
         </div>
