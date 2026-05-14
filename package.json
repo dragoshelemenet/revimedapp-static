@@ -23,5 +23,9 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "typescript": "latest"
+  },
+  "engines": {
+    "node": "22.x",
+    "npm": "10.x"
   }
 }
