@@ -297,47 +297,48 @@ export default function NeuroScreeningPage() {
       </section>
 
       <section className="rmSection neuroScreenSection">
-        <div className="rmShell neuroLayout">
-          <aside className="neuroSide">
-            <h2>Date rapide</h2>
-
-            <label>Vârsta</label>
-            <input value={age} onChange={(e) => setAge(e.target.value)} placeholder="ex: 45" />
-
-            <label>Simptome apărute de</label>
-            <select value={duration} onChange={(e) => setDuration(e.target.value)}>
-              <option value="ore">Ore / brusc</option>
-              <option value="zile">Zile</option>
-              <option value="saptamani">Săptămâni</option>
-              <option value="luni">Luni sau mai mult</option>
-            </select>
-
-            <label>Evoluție</label>
-            <select value={progression} onChange={(e) => setProgression(e.target.value)}>
-              <option value="stabil">Stabil</option>
-              <option value="agravare">Se agravează</option>
-              <option value="ameliorare">Se ameliorează</option>
-              <option value="fluctuant">Fluctuant</option>
-            </select>
-
-            <div className="neuroScoreBox">
-              <b>Întrebări bifate</b>
-              <strong>{answered}</strong>
-              <span>Scor orientativ: {result.total}</span>
+        <div className="rmShell neuroCleanLayout">
+          <section className="neuroQuickTop">
+            <div>
+              <h2>Date rapide</h2>
+              <p>Completează informațiile de bază, apoi răspunde la întrebări. Rezultatul apare la final.</p>
             </div>
 
-            <button className="blueBtn" onClick={generateResult}>Generează rezultat</button>
-            <button className="softBtn" onClick={() => window.print()}>Tipărește raport</button>
-            <button className="softBtn" onClick={reset}>Resetare</button>
+            <div className="neuroQuickGrid">
+              <label>
+                Vârsta
+                <input value={age} onChange={(e) => setAge(e.target.value)} placeholder="ex: 45" />
+              </label>
 
-            <div className="medicalRiskBox">
+              <label>
+                Simptome apărute de
+                <select value={duration} onChange={(e) => setDuration(e.target.value)}>
+                  <option value="ore">Ore / brusc</option>
+                  <option value="zile">Zile</option>
+                  <option value="saptamani">Săptămâni</option>
+                  <option value="luni">Luni sau mai mult</option>
+                </select>
+              </label>
+
+              <label>
+                Evoluție
+                <select value={progression} onChange={(e) => setProgression(e.target.value)}>
+                  <option value="stabil">Stabil</option>
+                  <option value="agravare">Se agravează</option>
+                  <option value="ameliorare">Se ameliorează</option>
+                  <option value="fluctuant">Fluctuant</option>
+                </select>
+              </label>
+            </div>
+
+            <div className="medicalRiskBox cleanRiskBox">
               <b>Important</b>
               <p>
-                Acest instrument nu pune diagnostic. Orice informație citită sau folosită este pe propriul risc.
+                Acest instrument nu pune diagnostic. Informațiile sunt educaționale și se folosesc pe propriul risc.
                 Pentru simptome medicale, consultația cu medicul este obligatorie.
               </p>
             </div>
-          </aside>
+          </section>
 
           <main className="neuroMain">
             <div className="neuroIntro">
@@ -401,12 +402,16 @@ export default function NeuroScreeningPage() {
 
             <div className="bottomGenerateBox">
               <button className="blueBtn" onClick={generateResult}>Generează rezultat</button>
-              <p>Butonul este și aici ca să nu trebuiască să urci înapoi sus după completarea chestionarului.</p>
+              <button className="softBtn" onClick={reset}>Resetare</button>
+              <p>Rezultatul apare imediat mai jos după apăsarea butonului.</p>
             </div>
 
             {show && (
               <section ref={resultRef} className={`neuroResult ${result.className}`}>
-                <h2>{result.title}</h2>
+                <div className="resultTopLine">
+                  <h2>{result.title}</h2>
+                  <button className="softBtn printBtn" onClick={() => window.print()}>Tipărește rezultat</button>
+                </div>
                 <p className="scoreLine">
                   Scor: <b>{result.total}</b> · Semnale de alarmă: <b>{result.redFlags}</b> · Nivel: <b>{result.level}</b>
                 </p>

@@ -2552,3 +2552,149 @@ p{margin:0 0 18px}
     font-size:20px;
   }
 }
+
+/* Clean neurological screening layout */
+.neuroCleanLayout{
+  display:grid;
+  gap:22px;
+  max-width:1040px;
+}
+
+.neuroQuickTop{
+  background:#fff;
+  border:1px solid #dbeafe;
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 14px 34px rgba(0,132,210,.08);
+  display:grid;
+  gap:18px;
+}
+
+.neuroQuickTop h2{
+  color:#0a2554;
+  font-size:30px;
+  margin-bottom:6px;
+}
+
+.neuroQuickTop p{
+  color:#607086;
+  margin:0;
+}
+
+.neuroQuickGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.neuroQuickGrid label{
+  display:grid;
+  gap:8px;
+  font-weight:900;
+  color:#102033;
+}
+
+.neuroQuickGrid input,
+.neuroQuickGrid select{
+  width:100%;
+  border:1px solid #cfe4f8;
+  border-radius:14px;
+  padding:13px;
+  background:#f8fcff;
+}
+
+.cleanRiskBox{
+  margin:0;
+}
+
+.neuroMain{
+  display:grid;
+  gap:18px;
+}
+
+.neuroIntro{
+  padding:22px 24px!important;
+}
+
+.neuroIntro h2{
+  font-size:28px;
+}
+
+.neuroQuestion{
+  box-shadow:none!important;
+  border-radius:20px!important;
+  padding:20px!important;
+}
+
+.neuroQuestion h3{
+  font-size:18px!important;
+}
+
+.answerScale label{
+  box-shadow:none!important;
+}
+
+.bottomGenerateBox{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+.bottomGenerateBox p{
+  width:100%;
+}
+
+.resultTopLine{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:12px;
+}
+
+.resultTopLine h2{
+  margin:0;
+}
+
+.printBtn{
+  white-space:nowrap;
+}
+
+.neuroSide{
+  display:none!important;
+}
+
+.neuroLayout{
+  display:block!important;
+}
+
+@media(max-width:900px){
+  .neuroQuickGrid{
+    grid-template-columns:1fr;
+  }
+
+  .resultTopLine{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .printBtn{
+    width:100%;
+  }
+}
+
+@media(max-width:700px){
+  .neuroCleanLayout{
+    width:calc(100% - 28px);
+  }
+
+  .neuroQuestion{
+    padding:18px!important;
+  }
+
+  .answerScale{
+    grid-template-columns:1fr 1fr!important;
+  }
+}
