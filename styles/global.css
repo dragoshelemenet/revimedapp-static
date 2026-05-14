@@ -8877,3 +8877,57 @@ html.route-ready .pageHero{
   .ayurResultHead h2{font-size:32px}
   .ayurScoreItem{grid-template-columns:72px 1fr 34px}
 }
+
+/* Neurological Screening wizard */
+.neuroWizardSection{background:#f7fbff!important}
+.neuroWizardShell{max-width:920px!important}
+.neuroProgressCard{background:#fff;border:1px solid #dcebf7;border-radius:22px;padding:18px 20px;margin-bottom:18px}
+.neuroProgressTop{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:12px}
+.neuroProgressTop span{color:#64748b;font-weight:950}
+.neuroProgressTop b{color:#075f9e;font-size:20px;font-weight:950}
+.neuroProgressBar{height:12px;background:#eaf5ff;border-radius:999px;overflow:hidden}
+.neuroProgressBar i{display:block;height:100%;background:linear-gradient(90deg,#0b8fd8,#159eea);border-radius:999px;transition:width .28s ease}
+.neuroStepCard,.neuroResultWizard{background:#fff;border:1px solid #dcebf7;border-radius:28px;padding:34px}
+.neuroStepCard.alarm{border-color:#ffd0c7;background:linear-gradient(180deg,#fff,#fff8f6)}
+.neuroStepBadge{display:inline-flex;width:max-content;border-radius:999px;background:#edf7ff;color:#075f9e;padding:8px 13px;font-size:13px;font-weight:950;margin-bottom:20px;text-transform:capitalize}
+.neuroStepCard.alarm .neuroStepBadge{background:#fff0ed;color:#c2410c}
+.neuroStepCard h2{color:#08234a;font-size:34px;line-height:1.18;letter-spacing:-.04em;max-width:780px;margin:0 0 12px}
+.neuroStepCard p{color:#64748b;font-size:16px;line-height:1.6;margin:0 0 26px}
+.neuroAnswerGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.neuroAnswerGrid button{min-height:62px;border:1px solid #cfe4f8;background:#f8fcff;color:#102033;border-radius:18px;font-size:17px;font-weight:950;cursor:pointer;transition:background .16s ease,border-color .16s ease,transform .16s ease}
+.neuroAnswerGrid button:hover,.neuroAnswerGrid button.selected{background:#eaf6ff;border-color:#8fcef3;transform:translateY(-1px);color:#075f9e}
+.neuroWizardActions{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+.neuroWizardActions.bottom{justify-content:flex-end}
+.neuroWizardActions button:disabled{opacity:.45;cursor:not-allowed}
+.neuroResultHead{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;border-radius:22px;padding:24px;background:#f8fcff;border:1px solid #dcebf7;margin-bottom:18px}
+.neuroResultHead.high,.neuroResultHead.emergency{background:#fff7ed;border-color:#fed7aa}
+.neuroResultHead span{display:inline-flex;border-radius:999px;background:#edf7ff;color:#075f9e;padding:7px 12px;font-size:12px;font-weight:950;margin-bottom:10px}
+.neuroResultHead.high span,.neuroResultHead.emergency span{background:#ffedd5;color:#c2410c}
+.neuroResultHead h2{color:#08234a;font-size:34px;line-height:1.05;letter-spacing:-.045em;margin:0 0 10px}
+.neuroResultHead p{color:#475569;line-height:1.65;margin:0;max-width:660px}
+.neuroResultStats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.neuroResultStats article{background:#fff;border:1px solid #dcebf7;border-radius:18px;padding:18px}
+.neuroResultStats span{display:block;color:#64748b;font-weight:900;font-size:13px}
+.neuroResultStats b{display:block;color:#075f9e;font-size:30px;line-height:1;margin-top:8px}
+.neuroCategoryGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.neuroCategoryGrid article{background:#fff;border:1px solid #dcebf7;border-radius:16px;padding:14px;display:grid;grid-template-columns:100px 1fr 30px;align-items:center;gap:10px}
+.neuroCategoryGrid span{color:#102033;font-weight:950;text-transform:capitalize}
+.neuroCategoryGrid div{height:9px;background:#eaf5ff;border-radius:999px;overflow:hidden}
+.neuroCategoryGrid i{display:block;height:100%;background:#0b8fd8;border-radius:999px}
+.neuroCategoryGrid b{color:#075f9e;text-align:right}
+.neuroRiskBox{margin-top:18px;background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:18px}
+.neuroRiskBox b{color:#9a3412;font-size:16px}
+.neuroRiskBox p{color:#7c2d12;margin:8px 0 0;line-height:1.6}
+@media(max-width:700px){
+  .neuroWizardShell{max-width:calc(100% - 28px)!important}
+  .neuroStepCard,.neuroResultWizard{border-radius:22px;padding:22px}
+  .neuroStepCard h2{font-size:25px}
+  .neuroAnswerGrid{grid-template-columns:1fr 1fr}
+  .neuroAnswerGrid button{min-height:54px;font-size:15px}
+  .neuroWizardActions{flex-direction:column}
+  .neuroResultHead{flex-direction:column}
+  .neuroResultHead h2{font-size:28px}
+  .neuroResultStats{grid-template-columns:1fr}
+  .neuroCategoryGrid{grid-template-columns:1fr}
+  .neuroCategoryGrid article{grid-template-columns:88px 1fr 28px}
+}
