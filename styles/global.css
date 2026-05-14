@@ -8671,3 +8671,161 @@ html.route-ready .pageHero{
     grid-template-columns:72px 1fr 34px;
   }
 }
+
+/* =========================================================
+   STRONG BLUE HERO OVERLAY RESTORE + ADMIN FLAG RIGHT EDGE
+   ========================================================= */
+
+/* Restore intense beautiful blue overlay, but keep image overfilled to avoid white edges */
+.homeHero::after{
+  content:""!important;
+  position:absolute!important;
+  inset:-3px!important;
+  z-index:1!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 58% 35%,rgba(0,157,255,.24),transparent 32%),
+    linear-gradient(90deg,
+      rgba(5,24,55,.84) 0%,
+      rgba(7,49,94,.70) 34%,
+      rgba(0,119,190,.58) 67%,
+      rgba(0,159,232,.52) 100%
+    )!important;
+  opacity:1!important;
+}
+
+.pageHero::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-3px!important;
+  z-index:1!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 70% 22%,rgba(0,166,255,.24),transparent 34%),
+    linear-gradient(90deg,
+      rgba(5,24,55,.86) 0%,
+      rgba(7,48,92,.72) 38%,
+      rgba(0,119,190,.60) 70%,
+      rgba(0,159,232,.55) 100%
+    )!important;
+  opacity:1!important;
+}
+
+/* Keep the actual image layer bigger than the hero so no white edges appear */
+.homeHero::before,
+.pageHero::after{
+  inset:-28px!important;
+  background:url('/images/medical-bg.jpg') center center/cover no-repeat!important;
+  transform:none!important;
+}
+
+/* Text contrast on stronger overlay */
+.heroCenter h1,
+.pageHero h1{
+  color:#fff!important;
+  text-shadow:0 2px 18px rgba(0,0,0,.18)!important;
+}
+
+.heroCenter p,
+.pageHero .lead,
+.pageHero .crumb{
+  color:rgba(255,255,255,.94)!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.14)!important;
+}
+
+/* Do not animate/scale background layers */
+.homeHero,
+.pageHero,
+.homeHero::before,
+.homeHero::after,
+.pageHero::before,
+.pageHero::after{
+  transform:none!important;
+  filter:none!important;
+}
+
+/* Admin language flag: bottom-right edge */
+.adminEdgeFlag{
+  position:fixed!important;
+  right:14px!important;
+  bottom:14px!important;
+  left:auto!important;
+  top:auto!important;
+  z-index:9999!important;
+  width:auto!important;
+  height:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  padding:10px 14px!important;
+  border-radius:999px 0 0 999px!important;
+  background:rgba(255,255,255,.95)!important;
+  border:1px solid #dcebf7!important;
+  border-right:0!important;
+  opacity:1!important;
+  box-shadow:none!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  pointer-events:none!important;
+}
+
+.adminEdgeFlag span{
+  font-size:28px!important;
+  line-height:1!important;
+  transform:none!important;
+}
+
+.adminEdgeFlag b{
+  display:block!important;
+  margin:0!important;
+  color:#075f9e!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  opacity:1!important;
+}
+
+@media(max-width:900px){
+  .adminEdgeFlag{
+    right:8px!important;
+    bottom:8px!important;
+    padding:8px 11px!important;
+  }
+
+  .adminEdgeFlag span{
+    font-size:24px!important;
+  }
+
+  .adminEdgeFlag b{
+    font-size:12px!important;
+  }
+}
+
+@media(max-width:700px){
+  .homeHero::before,
+  .pageHero::after{
+    inset:-34px!important;
+  }
+
+  .homeHero::after,
+  .pageHero::before{
+    inset:-4px!important;
+  }
+
+  .homeHero::after{
+    background:
+      linear-gradient(180deg,
+        rgba(5,24,55,.78) 0%,
+        rgba(7,48,92,.68) 48%,
+        rgba(0,143,216,.58) 100%
+      )!important;
+  }
+
+  .pageHero::before{
+    background:
+      linear-gradient(180deg,
+        rgba(5,24,55,.80) 0%,
+        rgba(7,48,92,.68) 48%,
+        rgba(0,143,216,.58) 100%
+      )!important;
+  }
+}
