@@ -12,6 +12,13 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Centru Medical Revimed PLUS+. All rights reserved.</p>
         </div>
 
+        <div className="footerSchedule">
+          <h3>Program de lucru:</h3>
+          <p>📍 {site.address}</p>
+          <p>{site.hours}</p>
+          <p>{site.phone}</p>
+        </div>
+
         <div className="footerLinks">
           <h3>Linkuri utile</h3>
           <div>
@@ -29,15 +36,8 @@ export default function Footer() {
         <div className="footerSocial">
           <h3>Urmăriți-ne</h3>
           <a className="fb" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed">
-            f
+            <span>f</span>
           </a>
-        </div>
-
-        <div className="footerSchedule">
-          <h3>Program de lucru:</h3>
-          <p>📍 {site.address}</p>
-          <p>{site.hours}</p>
-          <p>{site.phone}</p>
         </div>
       </div>
     </footer>

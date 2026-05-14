@@ -3115,3 +3115,107 @@ p{margin:0 0 18px}
     grid-column:1 / -1!important;
   }
 }
+
+/* Footer mobile final fix */
+.fb{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:48px!important;
+  height:48px!important;
+  border-radius:50%!important;
+  background:#1596e8!important;
+  color:white!important;
+  font-weight:950!important;
+  font-family:Arial, Helvetica, sans-serif!important;
+  font-size:32px!important;
+  line-height:1!important;
+  text-decoration:none!important;
+  overflow:hidden!important;
+}
+
+.fb span{
+  display:block!important;
+  transform:translateY(1px)!important;
+}
+
+@media(max-width:700px){
+  .rmFooter{
+    padding:24px 0 28px!important;
+  }
+
+  .rmFooterGrid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    grid-template-areas:
+      "brand brand"
+      "schedule schedule"
+      "links links"
+      "social social"!important;
+    gap:18px!important;
+  }
+
+  .footerBrand{
+    grid-area:brand!important;
+  }
+
+  .footerSchedule{
+    grid-area:schedule!important;
+    background:#f6fbff!important;
+    border:1px solid #dbeafe!important;
+    border-radius:16px!important;
+    padding:14px!important;
+  }
+
+  .footerLinks{
+    grid-area:links!important;
+  }
+
+  .footerSocial{
+    grid-area:social!important;
+  }
+
+  .footerSocial h3{
+    margin-bottom:10px!important;
+  }
+
+  .footerLinks div{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:8px 16px!important;
+  }
+
+  .footerLinks a{
+    font-size:14px!important;
+    line-height:1.25!important;
+    font-weight:900!important;
+  }
+
+  .footerSchedule h3,
+  .footerLinks h3,
+  .footerSocial h3{
+    font-size:20px!important;
+  }
+
+  .footerSchedule p{
+    font-size:14px!important;
+    line-height:1.45!important;
+    margin:0 0 8px!important;
+  }
+
+  .fb{
+    width:46px!important;
+    height:46px!important;
+    font-size:31px!important;
+  }
+}
+
+@media(max-width:380px){
+  .rmFooterGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .footerLinks div{
+    grid-template-columns:1fr 1fr!important;
+  }
+}
