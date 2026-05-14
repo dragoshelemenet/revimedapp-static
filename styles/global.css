@@ -9521,3 +9521,496 @@ html.route-ready .pageHero{
     justify-self:start!important;
   }
 }
+
+/* =========================================================
+   REVIMED YOGA TIBETAN V2
+   ========================================================= */
+.yogaV2Section{
+  background:#f7fbff!important;
+}
+
+.yogaV2Shell{
+  max-width:1180px!important;
+}
+
+.yogaV2Grid{
+  display:grid;
+  grid-template-columns:300px 1fr 300px;
+  gap:18px;
+  align-items:stretch;
+}
+
+.yogaPanel{
+  background:#fff;
+  border:1px solid #dcebf7;
+  border-radius:26px;
+  padding:22px;
+  min-width:0;
+}
+
+.yogaPanelHead{
+  margin-bottom:18px;
+}
+
+.yogaPanelHead span{
+  display:inline-flex;
+  width:max-content;
+  border-radius:999px;
+  background:#edf7ff;
+  color:#075f9e;
+  padding:7px 12px;
+  font-size:12px;
+  font-weight:950;
+  margin-bottom:10px;
+}
+
+.yogaPanelHead h2{
+  color:#08234a;
+  font-size:27px;
+  line-height:1.05;
+  letter-spacing:-.045em;
+  margin:0;
+}
+
+.yogaSettings label{
+  display:grid;
+  gap:8px;
+  color:#102033;
+  font-size:14px;
+  font-weight:950;
+  margin-bottom:14px;
+}
+
+.yogaSettings select{
+  width:100%;
+  min-height:52px;
+  border-radius:15px;
+  border:1px solid #cfe4f8;
+  background:#f8fcff;
+  color:#102033;
+  font-size:15px;
+  font-weight:850;
+  padding:0 14px;
+}
+
+.yogaButtonGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:8px;
+}
+
+.yogaButtonGrid button{
+  width:100%;
+}
+
+.dangerLite{
+  color:#b42318!important;
+  background:#fff4f2!important;
+}
+
+.yogaToggleGrid{
+  display:grid;
+  gap:10px;
+  margin-top:12px;
+}
+
+.yogaToggleGrid button{
+  min-height:50px;
+  border-radius:15px;
+  border:1px solid #dcebf7;
+  background:#f8fcff;
+  color:#102033;
+  font-weight:950;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:flex-start;
+  padding:0 14px;
+  cursor:pointer;
+}
+
+.yogaToggleGrid button.active{
+  background:#edf7ff;
+  color:#075f9e;
+  border-color:#9ed8f6;
+}
+
+.yogaToggleGrid img{
+  width:22px;
+  height:22px;
+}
+
+.yogaRule{
+  margin-top:16px;
+  background:#f8fcff;
+  border:1px solid #dcebf7;
+  border-radius:18px;
+  padding:15px;
+}
+
+.yogaRule b{
+  color:#075f9e;
+  font-size:15px;
+}
+
+.yogaRule p{
+  color:#64748b;
+  line-height:1.55;
+  margin:7px 0 0;
+  font-size:14px;
+}
+
+.yogaPractice{
+  padding:26px;
+  display:grid;
+  align-content:start;
+}
+
+.yogaPracticeTop{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:flex-start;
+  margin-bottom:18px;
+}
+
+.yogaPracticeTop span{
+  display:inline-flex;
+  border-radius:999px;
+  background:#edf7ff;
+  color:#075f9e;
+  padding:7px 12px;
+  font-size:12px;
+  font-weight:950;
+  margin-bottom:10px;
+}
+
+.yogaPracticeTop h2{
+  color:#08234a;
+  font-size:36px;
+  line-height:1.03;
+  letter-spacing:-.05em;
+  margin:0;
+}
+
+.yogaPracticeTop p{
+  color:#64748b;
+  font-weight:850;
+  margin:8px 0 0;
+}
+
+.yogaTimePill{
+  min-width:126px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#0b97e4,#0879ba);
+  color:#fff;
+  padding:14px 16px;
+  text-align:center;
+}
+
+.yogaTimePill small{
+  display:block;
+  color:rgba(255,255,255,.86);
+  font-size:12px;
+  font-weight:900;
+}
+
+.yogaTimePill b{
+  display:block;
+  font-size:28px;
+  line-height:1.05;
+  margin-top:3px;
+  font-weight:950;
+}
+
+.yogaProgressLine,
+.yogaPhaseBar{
+  height:10px;
+  background:#eaf5ff;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.yogaProgressLine i,
+.yogaPhaseBar i{
+  display:block;
+  height:100%;
+  border-radius:999px;
+  background:#0b8fd8;
+  transition:width .25s linear;
+}
+
+.yogaBreathStage{
+  min-height:430px;
+  display:grid;
+  place-items:center;
+  padding:28px 0 20px;
+}
+
+.yogaBreathOrb{
+  width:310px;
+  height:310px;
+  border-radius:50%;
+  border:2px solid #0b8fd8;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.94),rgba(237,247,255,.78) 38%,rgba(11,143,216,.16) 70%,rgba(11,143,216,.04));
+  transition:transform .85s cubic-bezier(.22,.61,.36,1), border-color .3s ease, background .3s ease;
+  position:relative;
+}
+
+.yogaBreathOrb::before,
+.yogaBreathOrb::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  inset:-18px;
+  background:radial-gradient(circle,rgba(11,143,216,.12),transparent 70%);
+  z-index:0;
+}
+
+.yogaBreathOrb::after{
+  inset:-38px;
+  opacity:.5;
+}
+
+.yogaBreathOrb.hold{
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.96),rgba(237,247,255,.82) 38%,rgba(37,99,235,.18) 70%,rgba(37,99,235,.05));
+}
+
+.yogaBreathOrb.exhale{
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.98),rgba(245,251,255,.88) 44%,rgba(16,185,129,.13) 74%,rgba(16,185,129,.04));
+}
+
+.yogaBreathOrb.rest{
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.98),rgba(248,252,255,.90) 44%,rgba(100,116,139,.10) 74%,rgba(100,116,139,.04));
+}
+
+.yogaOrbCore{
+  position:relative;
+  z-index:2;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  background:#fff;
+  border:1px solid #dcebf7;
+  text-align:center;
+}
+
+.yogaOrbCore span{
+  display:block;
+  color:#075f9e;
+  font-size:24px;
+  font-weight:950;
+  letter-spacing:-.03em;
+}
+
+.yogaOrbCore b{
+  display:block;
+  color:#08234a;
+  font-size:64px;
+  line-height:1;
+  font-weight:950;
+  margin-top:8px;
+}
+
+.yogaPhaseBar{
+  max-width:430px;
+  width:100%;
+  margin:0 auto 18px;
+}
+
+.yogaCycle{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.yogaCycle article{
+  border:1px solid #dcebf7;
+  background:#f8fcff;
+  border-radius:16px;
+  padding:13px;
+  text-align:center;
+}
+
+.yogaCycle article.active{
+  background:#edf7ff;
+  border-color:#9ed8f6;
+}
+
+.yogaCycle b{
+  display:block;
+  color:#075f9e;
+  font-size:20px;
+}
+
+.yogaCycle span{
+  display:block;
+  color:#64748b;
+  font-size:12px;
+  font-weight:900;
+  margin-top:4px;
+}
+
+.yogaCompleted{
+  margin-top:18px;
+  border-radius:18px;
+  background:#ecfdf5;
+  border:1px solid #bbf7d0;
+  color:#166534;
+  padding:16px;
+  font-weight:900;
+  text-align:center;
+}
+
+.yogaInfo{
+  display:grid;
+  align-content:start;
+}
+
+.yogaEffect{
+  border:1px solid #dcebf7;
+  background:#f8fcff;
+  border-radius:18px;
+  padding:16px;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  margin-bottom:14px;
+}
+
+.yogaEffect img{
+  width:28px;
+  height:28px;
+  flex:0 0 28px;
+}
+
+.yogaEffect p{
+  color:#475569;
+  line-height:1.55;
+  margin:0;
+  font-weight:850;
+}
+
+.yogaRecList{
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:9px;
+  list-style:none;
+}
+
+.yogaRecList li{
+  color:#475569;
+  line-height:1.5;
+  background:#fff;
+  border:1px solid #e5eff8;
+  border-radius:14px;
+  padding:12px 13px;
+  font-size:14px;
+}
+
+.yogaSafety{
+  margin-top:14px;
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  border-radius:18px;
+  padding:16px;
+}
+
+.yogaSafety b{
+  color:#9a3412;
+}
+
+.yogaSafety p{
+  color:#7c2d12;
+  line-height:1.55;
+  margin:7px 0 0;
+  font-size:13px;
+}
+
+@media(max-width:1050px){
+  .yogaV2Grid{
+    grid-template-columns:1fr;
+  }
+
+  .yogaSettings,
+  .yogaInfo{
+    max-width:760px;
+    width:100%;
+    margin-inline:auto;
+  }
+
+  .yogaPractice{
+    max-width:760px;
+    width:100%;
+    margin-inline:auto;
+  }
+}
+
+@media(max-width:700px){
+  .yogaV2Shell{
+    max-width:calc(100% - 28px)!important;
+  }
+
+  .yogaPanel{
+    border-radius:22px;
+    padding:18px;
+  }
+
+  .yogaPractice{
+    padding:18px;
+  }
+
+  .yogaPracticeTop{
+    flex-direction:column;
+  }
+
+  .yogaPracticeTop h2{
+    font-size:28px;
+  }
+
+  .yogaTimePill{
+    width:100%;
+  }
+
+  .yogaBreathStage{
+    min-height:330px;
+    padding:20px 0 12px;
+  }
+
+  .yogaBreathOrb{
+    width:230px;
+    height:230px;
+  }
+
+  .yogaOrbCore{
+    width:145px;
+    height:145px;
+  }
+
+  .yogaOrbCore span{
+    font-size:19px;
+  }
+
+  .yogaOrbCore b{
+    font-size:48px;
+  }
+
+  .yogaCycle{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .yogaButtonGrid{
+    grid-template-columns:1fr;
+  }
+}
