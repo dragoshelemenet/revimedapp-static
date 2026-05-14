@@ -6447,3 +6447,226 @@ html.route-ready .pageHero .crumb{
     min-height:auto!important;
   }
 }
+
+/* Admin Applications manager */
+.adminAppsList{
+  display:grid;
+  gap:12px;
+}
+
+.adminAppRow{
+  display:grid;
+  grid-template-columns:86px 1fr auto;
+  gap:14px;
+  align-items:center;
+  border:1px solid #e4eef8;
+  border-radius:18px;
+  background:#fff;
+  padding:14px;
+}
+
+.adminAppRow img{
+  width:86px;
+  height:62px;
+  object-fit:cover;
+  border-radius:12px;
+  background:#f8fcff;
+}
+
+.adminAppRow b{
+  display:block;
+  color:#102033;
+  font-size:17px;
+}
+
+.adminAppRow span,
+.adminAppRow small{
+  display:block;
+  color:#65758a;
+  margin-top:4px;
+}
+
+.adminAppActions{
+  display:flex;
+  gap:8px;
+}
+
+.adminAppActions button{
+  border:0;
+  border-radius:12px;
+  padding:10px 13px;
+  background:#e8f4ff;
+  color:#075d9d;
+  font-weight:950;
+  cursor:pointer;
+}
+
+.adminAppActions button.success{
+  background:#eafaf0;
+  color:#0c7b38;
+}
+
+.htmlDropZone{
+  border:2px dashed #b7dcf4;
+  background:#f8fcff;
+  border-radius:18px;
+  padding:20px;
+  display:grid;
+  gap:8px;
+  text-align:center;
+}
+
+.htmlDropZone b{
+  color:#102033;
+  font-size:18px;
+}
+
+.htmlDropZone p{
+  color:#65758a;
+  margin:0;
+}
+
+.htmlDropZone label{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  justify-self:center;
+  width:max-content;
+  min-height:42px;
+  border-radius:12px;
+  padding:10px 14px;
+  background:#0b8fd8;
+  color:white;
+  font-weight:950;
+  cursor:pointer;
+}
+
+.htmlDropZone input{
+  display:none;
+}
+
+.htmlDropZone small{
+  color:#075d9d;
+  font-weight:900;
+}
+
+.adminLangEditorGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.adminLangMiniCard{
+  border:1px solid #e4eef8;
+  border-radius:18px;
+  background:#fff;
+  padding:14px;
+  display:grid;
+  gap:8px;
+}
+
+.adminLangMiniCard.active{
+  border-color:#94d2f5;
+  background:#f8fcff;
+}
+
+.adminLangMiniCard h3{
+  color:#075f9e;
+  font-size:16px;
+}
+
+.adminLangMiniCard label{
+  font-weight:900;
+  color:#102033;
+  font-size:12px;
+}
+
+.adminLangMiniCard input,
+.adminLangMiniCard textarea{
+  width:100%;
+  border:1px solid #cfe4f8;
+  border-radius:12px;
+  padding:10px;
+  background:#fff;
+}
+
+.appEditNotice,
+.replaceHtmlBox{
+  border:1px solid #e4eef8;
+  border-radius:18px;
+  background:#f8fcff;
+  padding:16px;
+}
+
+.appEditNotice b,
+.replaceHtmlBox h3{
+  color:#102033;
+}
+
+.appEditNotice p{
+  color:#65758a;
+  margin:6px 0 0;
+}
+
+.replaceHtmlBox{
+  display:grid;
+  gap:12px;
+}
+
+.htmlAppSection{
+  background:#f9fcff;
+}
+
+.htmlAppFrameWrap{
+  border:1px solid #e4eef8;
+  border-radius:22px;
+  overflow:hidden;
+  background:#fff;
+  padding:0!important;
+}
+
+.htmlAppFrame{
+  display:block;
+  width:100%;
+  min-height:780px;
+  border:0;
+  background:white;
+}
+
+@media(max-width:1000px){
+  .adminLangEditorGrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .adminAppRow{
+    grid-template-columns:72px 1fr;
+  }
+
+  .adminAppActions{
+    grid-column:1 / -1;
+  }
+}
+
+@media(max-width:650px){
+  .adminLangEditorGrid{
+    grid-template-columns:1fr;
+  }
+
+  .adminAppRow{
+    grid-template-columns:1fr;
+  }
+
+  .adminAppRow img{
+    width:100%;
+    height:150px;
+  }
+
+  .adminAppActions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .htmlAppFrame{
+    min-height:680px;
+  }
+}

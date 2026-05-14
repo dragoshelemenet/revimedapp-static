@@ -1,5 +1,6 @@
 "use client";
 
+import AdminApplicationsManager from "@/components/AdminApplicationsManager";
 import { useMemo, useState } from "react";
 
 type Lang = "ro" | "en" | "ru" | "ua";
@@ -20,7 +21,8 @@ type Screen =
   | "contact"
   | "content"
   | "content-list"
-  | "content-form";
+  | "content-form"
+  | "applications";
 
 type Post = {
   id: number;
@@ -145,6 +147,7 @@ export default function AdminClient({
       "gallery-form": editingGallery ? "Editează imagine" : "Adaugă imagine",
       contact: "Contact",
       content: "Texte pagini",
+      applications: "Aplicații",
       "content-list": "Texte existente",
       "content-form": editingContent ? "Editează text pagină" : "Adaugă text pagină"
     };
@@ -334,6 +337,7 @@ export default function AdminClient({
         <button className={screen.startsWith("blog") ? "active" : ""} onClick={() => setScreen("blog")}>Blog</button>
         <button className={screen.startsWith("services") ? "active" : ""} onClick={() => setScreen("services")}>Servicii</button>
         <button className={screen.startsWith("prices") ? "active" : ""} onClick={() => setScreen("prices")}>Prețuri</button>
+        <button className={screen === "applications" ? "active" : ""} onClick={() => setScreen("applications")}>Aplicații</button>
         <button className={screen.startsWith("gallery") ? "active" : ""} onClick={() => setScreen("gallery")}>Galerie</button>
         <button className={screen === "contact" ? "active" : ""} onClick={() => setScreen("contact")}>Contact</button>
         <button className={screen.startsWith("content") ? "active" : ""} onClick={() => setScreen("content")}>Texte pagini</button>
@@ -365,6 +369,7 @@ export default function AdminClient({
             <button onClick={() => setScreen("blog")}><b>Blog</b><span>{posts.length} articole</span></button>
             <button onClick={() => setScreen("services")}><b>Servicii</b><span>{services.length} servicii</span></button>
             <button onClick={() => setScreen("prices")}><b>Prețuri</b><span>{prices.length} rânduri</span></button>
+            <button onClick={() => setScreen("applications")}><b>Aplicații</b><span>Vizibilitate, HTML upload, înlocuire</span></button>
             <button onClick={() => setScreen("gallery")}><b>Galerie</b><span>{gallery.length} imagini</span></button>
             <button onClick={() => setScreen("contact")}><b>Contact</b><span>Telefon, hartă, program</span></button>
             <button onClick={() => setScreen("content")}><b>Texte pagini</b><span>Hero și texte generale</span></button>
@@ -524,6 +529,11 @@ export default function AdminClient({
               <FormActions back={() => setScreen("gallery-list")} />
             </form>
           </FormCard>
+        )}
+
+
+        {screen === "applications" && (
+          <AdminApplicationsManager workingLang={workingLang} />
         )}
 
         {screen === "contact" && (

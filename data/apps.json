@@ -1,0 +1,86 @@
+[
+  {
+    "id": "test-ayurveda-dosha",
+    "slug": "test-ayurveda-dosha",
+    "title": {
+      "ro": "Ayurveda Dosha Test",
+      "en": "Ayurveda Dosha Test",
+      "ru": "Тест Ayurveda Dosha",
+      "ua": "Тест Ayurveda Dosha"
+    },
+    "description": {
+      "ro": "Identifică orientativ profilul Vata, Pitta sau Kapha și primește recomandări educaționale.",
+      "en": "Identify your Vata, Pitta or Kapha tendency and receive educational recommendations.",
+      "ru": "Определите ориентировочный профиль Vata, Pitta или Kapha и получите образовательные рекомендации.",
+      "ua": "Визначте орієнтовний профіль Vata, Pitta або Kapha та отримайте освітні рекомендації."
+    },
+    "tag": {
+      "ro": "Ayurveda",
+      "en": "Ayurveda",
+      "ru": "Ayurveda",
+      "ua": "Ayurveda"
+    },
+    "href": "/aplicatii/teste-si-instrumente/test-ayurveda-dosha",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "",
+    "position": 1
+  },
+  {
+    "id": "respiratie-terapeutica",
+    "slug": "respiratie-terapeutica",
+    "title": {
+      "ro": "Respirație Terapeutică",
+      "en": "Therapeutic Breathing",
+      "ru": "Терапевтическое дыхание",
+      "ua": "Терапевтичне дихання"
+    },
+    "description": {
+      "ro": "Exerciții ghidate de respirație pentru calm, ritm și relaxare.",
+      "en": "Guided breathing exercises for calm, rhythm and relaxation.",
+      "ru": "Управляемые дыхательные упражнения для спокойствия, ритма и расслабления.",
+      "ua": "Керовані дихальні вправи для спокою, ритму та розслаблення."
+    },
+    "tag": {
+      "ro": "Respirație",
+      "en": "Breathing",
+      "ru": "Дыхание",
+      "ua": "Дихання"
+    },
+    "href": "/aplicatii/teste-si-instrumente/respiratie-terapeutica",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "",
+    "position": 2
+  },
+  {
+    "id": "screening-neurologic",
+    "slug": "screening-neurologic",
+    "title": {
+      "ro": "Screening Neurologic",
+      "en": "Neurological Screening",
+      "ru": "Неврологический скрининг",
+      "ua": "Неврологічний скринінг"
+    },
+    "description": {
+      "ro": "Chestionar educațional pentru simptome neurologice și semnale de alarmă.",
+      "en": "Educational questionnaire for neurological symptoms and red flags.",
+      "ru": "Образовательная анкета для неврологических симптомов и тревожных признаков.",
+      "ua": "Освітня анкета для неврологічних симптомів і тривожних ознак."
+    },
+    "tag": {
+      "ro": "Neurologie",
+      "en": "Neurology",
+      "ru": "Неврология",
+      "ua": "Неврологія"
+    },
+    "href": "/aplicatii/teste-si-instrumente/screening-neurologic",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "",
+    "position": 3
+  }
+]
