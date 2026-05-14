@@ -2698,3 +2698,151 @@ p{margin:0 0 18px}
     grid-template-columns:1fr 1fr!important;
   }
 }
+
+/* Beautiful admin login */
+.adminLoginPage{
+  min-height:calc(100vh - 90px);
+  display:grid;
+  place-items:center;
+  padding:54px 16px;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(0,157,242,.18),transparent 28%),
+    radial-gradient(circle at 90% 80%,rgba(7,31,63,.14),transparent 30%),
+    linear-gradient(180deg,#f6fbff,#ffffff);
+}
+
+.adminLoginShell{
+  width:min(980px,100%);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:26px;
+  align-items:stretch;
+}
+
+.adminLoginBrand,
+.adminLoginCard{
+  border:1px solid #dbeafe;
+  border-radius:30px;
+  background:white;
+  box-shadow:0 24px 70px rgba(7,31,63,.13);
+}
+
+.adminLoginBrand{
+  padding:42px;
+  color:white;
+  background:
+    linear-gradient(135deg,rgba(7,31,63,.88),rgba(0,157,242,.78)),
+    url('/images/medical-bg.jpg') center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  min-height:440px;
+}
+
+.adminLoginBrand img{
+  width:210px;
+  max-width:100%;
+  background:white;
+  border-radius:18px;
+  padding:10px 14px;
+  margin-bottom:auto;
+  box-shadow:0 12px 28px rgba(0,0,0,.14);
+}
+
+.adminLoginBrand span{
+  width:max-content;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:999px;
+  padding:8px 13px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+
+.adminLoginBrand h1{
+  font-size:48px;
+  line-height:1;
+  margin-bottom:14px;
+}
+
+.adminLoginBrand p{
+  font-size:18px;
+  color:#eef8ff;
+  max-width:420px;
+}
+
+.adminLoginCard{
+  padding:42px;
+  display:grid;
+  align-content:center;
+  gap:14px;
+}
+
+.adminLoginCard h2{
+  color:#0a2554;
+  font-size:34px;
+  margin-bottom:12px;
+}
+
+.adminLoginCard label{
+  font-weight:950;
+  color:#102033;
+}
+
+.adminLoginCard input{
+  width:100%;
+  border:1px solid #cfe4f8;
+  border-radius:16px;
+  padding:15px 16px;
+  background:#f8fcff;
+  font-size:17px;
+  outline:none;
+}
+
+.adminLoginCard input:focus{
+  border-color:#0a98ed;
+  box-shadow:0 0 0 4px rgba(10,152,237,.12);
+}
+
+.adminLoginCard .blueBtn{
+  width:100%;
+  margin-top:8px;
+  border-radius:16px;
+  min-height:54px;
+  font-size:17px;
+}
+
+.adminLoginError{
+  background:#fff1f1;
+  color:#b00020;
+  border:1px solid #ffc8c8;
+  border-radius:14px;
+  padding:12px 14px;
+  font-weight:900;
+  margin:0;
+}
+
+.adminLoginCard small{
+  color:#66758a;
+  text-align:center;
+  margin-top:6px;
+}
+
+@media(max-width:800px){
+  .adminLoginShell{
+    grid-template-columns:1fr;
+  }
+
+  .adminLoginBrand{
+    min-height:300px;
+    padding:28px;
+  }
+
+  .adminLoginBrand h1{
+    font-size:38px;
+  }
+
+  .adminLoginCard{
+    padding:28px;
+  }
+}

@@ -1,30 +1,19 @@
 import { NextResponse } from "next/server";
-import { createSession, cookieName } from "@/lib/auth";
-import bcrypt from "bcryptjs";
+import { createAdminSession } from "@/lib/auth";
 
 export async function POST(req: Request) {
   const form = await req.formData();
-  const username = String(form.get("username") || "");
+  const username = String(form.get("username") || "").trim();
   const password = String(form.get("password") || "");
 
-  const okUser = username === process.env.ADMIN_USER;
-  const saved = process.env.ADMIN_PASS || "";
-  const okPass = saved.startsWith("$2")
-    ? await bcrypt.compare(password, saved)
-    : password === saved;
+  const ok = await createAdminSession(username, password);
 
-  if (!okUser || !okPass) {
-    return NextResponse.json({ ok: false }, { status: 401 });
+  if (!ok) {
+    return NextResponse.json(
+      { ok: false, error: "Invalid credentials" },
+      { status: 401 }
+    );
   }
 
-  const token = await createSession(username);
-  const res = NextResponse.json({ ok: true });
-  res.cookies.set(cookieName, token, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    path: "/",
-    maxAge: 60 * 60 * 24 * 7
-  });
-  return res;
+  return NextResponse.json({ ok: true });
 }

@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
-import { cookieName } from "@/lib/auth";
+import { destroyAdminSession } from "@/lib/auth";
 
 export async function POST() {
-  const res = NextResponse.json({ ok: true });
-  res.cookies.set(cookieName, "", { path: "/", maxAge: 0 });
-  return res;
+  await destroyAdminSession();
+  return NextResponse.json({ ok: true });
 }

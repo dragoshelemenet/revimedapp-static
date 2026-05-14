@@ -200,16 +200,31 @@ export default function AdminClient({
 
   if (!loggedIn) {
     return (
-      <section className="adminBg">
-        <div className="rmShell adminLogin">
-          <form action={login} className="adminCard">
+      <section className="adminLoginPage">
+        <div className="adminLoginShell">
+          <div className="adminLoginBrand">
+            <img src="/images/logo.png" alt="REVIMED" />
+            <span>Panou securizat</span>
             <h1>Revimed Login</h1>
+            <p>Intră în panoul de administrare pentru blog, servicii, prețuri, galerie, contact și texte pe limbi.</p>
+          </div>
+
+          <form action={login} className="adminLoginCard">
+            <h2>Autentificare</h2>
+
             <label>Utilizator</label>
-            <input name="username" required />
+            <input name="username" defaultValue="revimed1" autoComplete="username" required />
+
             <label>Parolă</label>
-            <input name="password" type="password" required />
-            <button className="blueBtn">Intră</button>
-            {message && <p className="dangerText">{message}</p>}
+            <input name="password" type="password" autoComplete="current-password" required />
+
+            <button className="blueBtn">Intră în admin</button>
+
+            {message && <p className="adminLoginError">{message}</p>}
+
+            <small>
+              Acces doar pentru persoane autorizate.
+            </small>
           </form>
         </div>
       </section>
