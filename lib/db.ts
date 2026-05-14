@@ -249,3 +249,35 @@ export function getAllGalleryItems(lang?: Lang) {
 export function getPublishedGalleryItems(lang: Lang = "ro") {
   return db.prepare("SELECT * FROM gallery_items WHERE lang = ? AND published = 1 ORDER BY position ASC, id ASC").all(lang) as GalleryItem[];
 }
+
+export function getPublishedPostsSmart(lang: Lang = "ro") {
+  const rows = getPublishedPosts(lang);
+  if (rows.length || lang === "ro") return rows;
+  return getPublishedPosts("ro");
+}
+
+export function getAllPostsSmart(lang: Lang = "ro") {
+  const rows = getAllPosts(lang);
+  if (rows.length || lang === "ro") return rows;
+  return getAllPosts("ro");
+}
+
+export function getPostBySlugSmart(slug: string, lang: Lang = "ro") {
+  return getPostBySlug(slug, lang) || getPostBySlug(slug, "ro");
+}
+
+export function getPublishedPricesSmart(lang: Lang = "ro") {
+  const rows = getPublishedPrices(lang);
+  if (rows.length || lang === "ro") return rows;
+  return getPublishedPrices("ro");
+}
+
+export function getPublishedServicesSmart(lang: Lang = "ro") {
+  const rows = getPublishedServicesAdmin(lang);
+  if (rows.length || lang === "ro") return rows;
+  return getPublishedServicesAdmin("ro");
+}
+
+export function getServiceBySlugSmart(slug: string, lang: Lang = "ro") {
+  return getServiceBySlug(slug, lang) || getServiceBySlug(slug, "ro");
+}

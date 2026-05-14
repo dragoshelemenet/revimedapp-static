@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import { PricesTemplate } from "@/lib/pageTemplates";
-import { isLang, type Lang } from "@/lib/i18n";
-export const dynamic = "force-dynamic";
+import { isLang } from "@/lib/i18n";
+import Original from "@/app/aplicatii/teste-si-instrumente/test-ayurveda-dosha/page";
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLang(lang) || lang === "ro") notFound();
-  return <PricesTemplate lang={lang as Lang} />;
+  return <Original />;
 }

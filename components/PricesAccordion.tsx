@@ -10,8 +10,16 @@ type Price = {
   note: string;
 };
 
-export default function PricesAccordion({ groups, prices }: { groups: string[]; prices: Price[] }) {
-  const [open, setOpen] = useState<string | null>(groups[0] || null);
+export default function PricesAccordion({
+  groups,
+  prices,
+  servicesCountLabel = "servicii"
+}: {
+  groups: string[];
+  prices: Price[];
+  servicesCountLabel?: string;
+}) {
+  const [open, setOpen] = useState<string | null>(null);
 
   return (
     <div className="pricesAccordion">
@@ -29,7 +37,7 @@ export default function PricesAccordion({ groups, prices }: { groups: string[]; 
             >
               <span>
                 <b>{group}</b>
-                <small>{rows.length} servicii</small>
+                <small>{rows.length} {servicesCountLabel}</small>
               </span>
               <i>{isOpen ? "−" : "+"}</i>
             </button>

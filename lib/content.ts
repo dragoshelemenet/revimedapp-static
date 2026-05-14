@@ -115,3 +115,17 @@ export function getAllContentBlocks(lang?: Lang) {
   return db.prepare("SELECT * FROM content_blocks ORDER BY lang ASC, page_key ASC, position ASC, id ASC")
     .all() as ContentBlock[];
 }
+
+export function getContactContentSmart(lang: Lang = "ro") {
+  return getContactContent(lang) || getContactContent("ro");
+}
+
+export function getContentBlockSmart(lang: Lang = "ro", pageKey: string, blockKey: string) {
+  return getContentBlock(lang, pageKey, blockKey) || getContentBlock("ro", pageKey, blockKey);
+}
+
+export function getPublishedGalleryItemsSmart(lang: Lang = "ro") {
+  const rows = db.prepare("SELECT * FROM gallery_items WHERE lang = ? AND published = 1 ORDER BY position ASC, id ASC").all(lang) as any[];
+  if (rows.length || lang === "ro") return rows;
+  return db.prepare("SELECT * FROM gallery_items WHERE lang = 'ro' AND published = 1 ORDER BY position ASC, id ASC").all() as any[];
+}

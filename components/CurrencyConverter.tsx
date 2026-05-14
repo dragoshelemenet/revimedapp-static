@@ -11,7 +11,18 @@ const currencies = {
 
 type Currency = keyof typeof currencies;
 
-export default function CurrencyConverter() {
+export default function CurrencyConverter({
+  labels
+}: {
+  labels?: {
+    converterTitle?: string;
+    converterText?: string;
+    amount?: string;
+    from?: string;
+    to?: string;
+    result?: string;
+  };
+}) {
   const [amount, setAmount] = useState("500");
   const [from, setFrom] = useState<Currency>("MDL");
   const [to, setTo] = useState<Currency>("EUR");
@@ -28,34 +39,32 @@ export default function CurrencyConverter() {
     <section className="currencyBox">
       <div>
         <span className="contactBadge">Calculator</span>
-        <h2>Convertor valutar orientativ</h2>
-        <p>
-          Pentru comoditate, poți aproxima rapid prețurile. Cursurile sunt orientative și pot fi modificate ulterior în cod sau înlocuite cu API.
-        </p>
+        <h2>{labels?.converterTitle || "Convertor valutar orientativ"}</h2>
+        <p>{labels?.converterText || "Pentru comoditate, poți aproxima rapid prețurile."}</p>
       </div>
 
       <div className="currencyGrid">
         <label>
-          Sumă
+          {labels?.amount || "Sumă"}
           <input value={amount} onChange={(e) => setAmount(e.target.value)} inputMode="decimal" />
         </label>
 
         <label>
-          Din
+          {labels?.from || "Din"}
           <select value={from} onChange={(e) => setFrom(e.target.value as Currency)}>
             {Object.keys(currencies).map((key) => <option key={key}>{key}</option>)}
           </select>
         </label>
 
         <label>
-          În
+          {labels?.to || "În"}
           <select value={to} onChange={(e) => setTo(e.target.value as Currency)}>
             {Object.keys(currencies).map((key) => <option key={key}>{key}</option>)}
           </select>
         </label>
 
         <div className="currencyResult">
-          <small>Rezultat</small>
+          <small>{labels?.result || "Rezultat"}</small>
           <strong>{result} {to}</strong>
         </div>
       </div>
