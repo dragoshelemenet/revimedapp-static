@@ -3,10 +3,10 @@ const yogaV2Fallback = {
   slug: "revimed-yoga-tibetan",
   href: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
   title: {
-    ro: "REVIMED Yoga Tibetan V2",
-    en: "REVIMED Tibetan Yoga V2",
-    ru: "REVIMED Тибетская йога V2",
-    ua: "REVIMED Тибетська йога V2"
+    ro: "REVIMED Yoga Tibetan",
+    en: "REVIMED Tibetan Yoga",
+    ru: "REVIMED Тибетская йога",
+    ua: "REVIMED Тибетська йога"
   },
   description: {
     ro: "Respirație ghidată cu programe pentru anxietate, somn, respirație, cardiovascular, digestiv și energie.",

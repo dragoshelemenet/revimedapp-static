@@ -138,5 +138,173 @@
     "kind": "react",
     "htmlPath": "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
     "position": 5
+  },
+  {
+    "id": "test-postura-coloana",
+    "slug": "test-postura-coloana",
+    "title": {
+      "ro": "Test Postură și Coloană",
+      "en": "Posture and Spine Test",
+      "ru": "Тест осанки и позвоночника",
+      "ua": "Тест постави та хребта"
+    },
+    "description": {
+      "ro": "Verifică orientativ postura, durerile cervicale/lombare și obiceiurile care pot afecta coloana.",
+      "en": "Check posture, neck/lower back pain and habits that may affect the spine.",
+      "ru": "Оценка осанки, боли в шее/пояснице и привычек, влияющих на позвоночник.",
+      "ua": "Оцінка постави, болю в шиї/попереку та звичок, що впливають на хребет."
+    },
+    "tag": {
+      "ro": "Coloană",
+      "en": "Spine",
+      "ru": "Позвоночник",
+      "ua": "Хребет"
+    },
+    "href": "/aplicatii/teste-si-instrumente/test-postura-coloana",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "/aplicatii/teste-si-instrumente/test-postura-coloana",
+    "position": 6
+  },
+  {
+    "id": "monitor-dureri-spate",
+    "slug": "monitor-dureri-spate",
+    "title": {
+      "ro": "Monitor Dureri de Spate",
+      "en": "Back Pain Monitor",
+      "ru": "Монитор боли в спине",
+      "ua": "Монітор болю в спині"
+    },
+    "description": {
+      "ro": "Rezumat educațional pentru durere, factori agravanți, limitări și semnale de alarmă.",
+      "en": "Educational summary for pain, aggravating factors, limitations and red flags.",
+      "ru": "Образовательное резюме боли, факторов ухудшения, ограничений и тревожных признаков.",
+      "ua": "Освітнє резюме болю, факторів погіршення, обмежень і тривожних ознак."
+    },
+    "tag": {
+      "ro": "Durere",
+      "en": "Pain",
+      "ru": "Боль",
+      "ua": "Біль"
+    },
+    "href": "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
+    "position": 7
+  },
+  {
+    "id": "test-risc-cadere-echilibru",
+    "slug": "test-risc-cadere-echilibru",
+    "title": {
+      "ro": "Test Risc Cădere / Echilibru",
+      "en": "Fall Risk / Balance Test",
+      "ru": "Тест риска падения / равновесия",
+      "ua": "Тест ризику падіння / рівноваги"
+    },
+    "description": {
+      "ro": "Evaluează orientativ mersul, echilibrul, amețeala și riscul de cădere.",
+      "en": "Assess walking, balance, dizziness and fall risk.",
+      "ru": "Оценка ходьбы, равновесия, головокружения и риска падения.",
+      "ua": "Оцінка ходи, рівноваги, запаморочення та ризику падіння."
+    },
+    "tag": {
+      "ro": "Echilibru",
+      "en": "Balance",
+      "ru": "Равновесие",
+      "ua": "Рівновага"
+    },
+    "href": "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru",
+    "position": 8
+  },
+  {
+    "id": "planner-exercitii-zilnice",
+    "slug": "planner-exercitii-zilnice",
+    "title": {
+      "ro": "Planner Exerciții Zilnice",
+      "en": "Daily Exercise Planner",
+      "ru": "Планер ежедневных упражнений",
+      "ua": "Планер щоденних вправ"
+    },
+    "description": {
+      "ro": "Rutină educațională de 5–10 minute pentru mobilitate, forță, postură și echilibru.",
+      "en": "5–10 minute educational routine for mobility, strength, posture and balance.",
+      "ru": "Образовательная рутина 5–10 минут для подвижности, силы, осанки и равновесия.",
+      "ua": "Освітня рутина 5–10 хвилин для рухливості, сили, постави та рівноваги."
+    },
+    "tag": {
+      "ro": "Exerciții",
+      "en": "Exercises",
+      "ru": "Упражнения",
+      "ua": "Вправи"
+    },
+    "href": "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
+    "position": 9
+  },
+  {
+    "id": "test-stres-somn-respiratie",
+    "slug": "test-stres-somn-respiratie",
+    "title": {
+      "ro": "Test Stres, Somn și Respirație",
+      "en": "Stress, Sleep and Breathing Test",
+      "ru": "Тест стреса, сна и дыхания",
+      "ua": "Тест стресу, сну та дихання"
+    },
+    "description": {
+      "ro": "Verifică orientativ stresul, somnul, respirația și tensiunea corporală.",
+      "en": "Check stress, sleep, breathing and body tension.",
+      "ru": "Оценка стресса, сна, дыхания и телесного напряжения.",
+      "ua": "Оцінка стресу, сну, дихання та тілесного напруження."
+    },
+    "tag": {
+      "ro": "Somn",
+      "en": "Sleep",
+      "ru": "Сон",
+      "ua": "Сон"
+    },
+    "href": "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie",
+    "position": 10
+  },
+  {
+    "id": "pregatire-consultatie",
+    "slug": "pregatire-consultatie",
+    "title": {
+      "ro": "Pregătire pentru Consultație",
+      "en": "Consultation Preparation",
+      "ru": "Подготовка к консультации",
+      "ua": "Підготовка до консультації"
+    },
+    "description": {
+      "ro": "Răspunde la întrebări și primești un rezumat util pentru medic.",
+      "en": "Answer questions and get a useful summary for the doctor.",
+      "ru": "Ответьте на вопросы и получите полезное резюме для врача.",
+      "ua": "Дайте відповіді й отримайте корисне резюме для лікаря."
+    },
+    "tag": {
+      "ro": "Consultație",
+      "en": "Consultation",
+      "ru": "Консультация",
+      "ua": "Консультація"
+    },
+    "href": "/aplicatii/teste-si-instrumente/pregatire-consultatie",
+    "image": "/images/medical-bg.jpg",
+    "visible": true,
+    "kind": "react",
+    "htmlPath": "/aplicatii/teste-si-instrumente/pregatire-consultatie",
+    "position": 11
   }
 ]
