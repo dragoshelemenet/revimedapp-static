@@ -10,6 +10,7 @@ import PricesAccordion from "@/components/PricesAccordion";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import IconVisual from "@/components/IconVisual";
 import HomeCTA from "@/components/HomeCTA";
+import HomeStats from "@/components/HomeStats";
 
 export function HomeTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
@@ -27,6 +28,8 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+
+      <HomeStats />
 
       <section className="rmSection aboutBlock">
         <div className="rmShell aboutGrid">

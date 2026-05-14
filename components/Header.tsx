@@ -15,6 +15,11 @@ export default function Header() {
   const currentCleanPath = cleanPath(pathname);
   const close = () => setOpen(false);
   const link = (path: string) => withLang(path, lang);
+  const isActive = (path: string) => {
+    const clean = cleanPath(pathname);
+    if (path === "/") return clean === "/";
+    return clean === path || clean.startsWith(`${path}/`);
+  };
 
   return (
     <header className="rmHeader">
@@ -54,14 +59,14 @@ export default function Header() {
         </button>
 
         <div className={open ? "rmLinks mobileOpen" : "rmLinks"}>
-          <Link href={link("/")} onClick={close}>{text.home}</Link>
-          <Link href={link("/despre-noi")} onClick={close}>{text.about}</Link>
-          <Link href={link("/servicii")} onClick={close}>{text.services}</Link>
-          <Link href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
-          <Link href={link("/preturi")} onClick={close}>{text.prices}</Link>
-          <Link href={link("/galerie")} onClick={close}>{text.gallery}</Link>
-          <Link href={link("/blog")} onClick={close}>{text.blog}</Link>
-          <Link href={link("/contact")} onClick={close}>{text.contact}</Link>
+          <Link className={isActive("/") ? "activeNav" : ""} href={link("/")} onClick={close}>{text.home}</Link>
+          <Link className={isActive("/despre-noi") ? "activeNav" : ""} href={link("/despre-noi")} onClick={close}>{text.about}</Link>
+          <Link className={isActive("/servicii") ? "activeNav" : ""} href={link("/servicii")} onClick={close}>{text.services}</Link>
+          <Link className={isActive("/aplicatii") ? "activeNav" : ""} href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
+          <Link className={isActive("/preturi") ? "activeNav" : ""} href={link("/preturi")} onClick={close}>{text.prices}</Link>
+          <Link className={isActive("/galerie") ? "activeNav" : ""} href={link("/galerie")} onClick={close}>{text.gallery}</Link>
+          <Link className={isActive("/blog") ? "activeNav" : ""} href={link("/blog")} onClick={close}>{text.blog}</Link>
+          <Link className={isActive("/contact") ? "activeNav" : ""} href={link("/contact")} onClick={close}>{text.contact}</Link>
         </div>
       </nav>
 

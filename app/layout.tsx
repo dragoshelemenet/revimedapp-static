@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
 import RouteTransition from "../components/RouteTransition";
+import MobileCallBar from "../components/MobileCallBar";
 import { site } from "../lib/site";
 import "../lib/seedLanguages";
 
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageFlagOverlay />
         <main>{children}</main>
         <Footer />
+        <MobileCallBar />
       </body>
     </html>
   );

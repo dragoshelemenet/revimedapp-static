@@ -6046,3 +6046,404 @@ html.route-ready .pageHero .crumb{
     animation-duration:.42s;
   }
 }
+
+/* =========================================================
+   PREMIUM DESIGN ENHANCEMENT CONTINUATION
+   ========================================================= */
+
+/* Active menu */
+.rmLinks > a.activeNav{
+  color:#0b8fd8!important;
+}
+
+.rmLinks > a.activeNav::after{
+  transform:scaleX(1)!important;
+}
+
+@media(max-width:700px){
+  .rmLinks.mobileOpen > a.activeNav{
+    background:#e4f4ff!important;
+    color:#075f9e!important;
+  }
+}
+
+/* Homepage trust stats */
+.homeStatsBand{
+  background:#fff;
+  margin-top:-42px;
+  position:relative;
+  z-index:5;
+  padding-bottom:20px;
+}
+
+.homeStatsGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.homeStatsGrid article{
+  background:#fff;
+  border:1px solid #e4eef8;
+  border-radius:18px;
+  padding:18px 20px;
+  min-height:96px;
+  display:grid;
+  align-content:center;
+}
+
+.homeStatsGrid b{
+  display:block;
+  color:#102033;
+  font-size:22px;
+  line-height:1.1;
+}
+
+.homeStatsGrid span{
+  display:block;
+  color:#65758a;
+  font-size:14px;
+  margin-top:6px;
+}
+
+/* More beautiful section transitions */
+.aboutBlock,
+.servicesBlock,
+.appBlock,
+.galleryPageSection,
+.pricesCleanSection,
+.contactModernSection,
+.legalSection,
+.neuroScreenSection,
+.breathSection,
+.ayurSection{
+  position:relative;
+}
+
+.aboutBlock::before,
+.servicesBlock::before,
+.appBlock::before,
+.contactModernSection::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#e4eef8,transparent);
+}
+
+/* Better page content readability */
+.prose,
+.textContent{
+  max-width:780px;
+}
+
+.prose p,
+.textContent p{
+  color:#334155;
+  font-size:17px;
+  line-height:1.78;
+  margin-bottom:16px;
+}
+
+.prose li,
+.textContent li{
+  margin:8px 0;
+  line-height:1.65;
+}
+
+/* Service detail */
+.serviceHeroImg{
+  border-radius:20px!important;
+  margin-bottom:24px!important;
+  width:100%;
+  max-height:360px;
+  object-fit:cover;
+  border:1px solid #e4eef8;
+}
+
+.sideBox{
+  align-self:start;
+  position:sticky;
+  top:116px;
+  background:#f8fcff!important;
+}
+
+/* Cards have clearer bottom action */
+.serviceTile b,
+.toolTile b,
+.card b{
+  display:inline-flex!important;
+  width:max-content;
+  align-items:center;
+  gap:6px;
+  border-radius:999px;
+  padding:7px 10px;
+  background:#eef7ff;
+  color:#075f9e!important;
+  font-size:13px;
+  font-weight:900;
+}
+
+/* Better app cards */
+.toolTile{
+  min-height:220px!important;
+}
+
+.toolTile span{
+  margin-bottom:8px;
+}
+
+/* Better contact info rhythm */
+.contactPrimaryCard{
+  background:
+    linear-gradient(180deg,#ffffff,#fbfdff)!important;
+}
+
+.contactInfoList{
+  grid-template-columns:1fr 1fr!important;
+}
+
+.contactInfoStatic{
+  grid-column:1 / -1;
+}
+
+/* Cleaner mini cards */
+.contactMiniCard h3{
+  font-size:21px!important;
+}
+
+.transportModern span{
+  display:flex!important;
+  align-items:center!important;
+}
+
+/* Prices refined */
+.currencyBox{
+  background:
+    linear-gradient(180deg,#ffffff,#fbfdff)!important;
+}
+
+.currencyBox h2{
+  letter-spacing:-.03em;
+}
+
+.currencyGrid input,
+.currencyGrid select,
+.adminField input,
+.adminField textarea,
+.adminField select{
+  transition:border-color .15s ease, background .15s ease;
+}
+
+.priceAccordionGroup{
+  overflow:hidden;
+}
+
+.priceAccordionHead i{
+  transition:transform .18s ease, background .18s ease;
+}
+
+.priceAccordionGroup.open .priceAccordionHead i{
+  transform:rotate(180deg);
+}
+
+.priceItemClean{
+  display:grid!important;
+  grid-template-columns:1fr auto!important;
+  align-items:center!important;
+  gap:16px!important;
+  padding:16px!important;
+}
+
+/* Gallery better */
+.galleryMasonry{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  grid-auto-rows:190px!important;
+}
+
+.galleryPhoto img{
+  transition:transform .28s ease, filter .28s ease;
+}
+
+.galleryPhoto:hover img{
+  transform:scale(1.035);
+  filter:saturate(1.06);
+}
+
+/* Blog */
+.blogCard{
+  padding:14px!important;
+}
+
+.blogCard h2{
+  padding:0 6px;
+}
+
+.blogCard p{
+  padding:0 6px;
+}
+
+.blogCard b{
+  margin-left:6px;
+  margin-bottom:4px;
+}
+
+/* Apps smoother */
+.breathPanel,
+.breathMain,
+.ayurQuestion,
+.neuroQuestion,
+.neuroQuickTop{
+  background:#fff!important;
+}
+
+.breathCircle{
+  box-shadow:inset 0 0 0 12px rgba(238,247,255,.7)!important;
+}
+
+.neuroQuestion h3{
+  max-width:680px;
+}
+
+/* Footer better alignment */
+.rmFooterGrid{
+  align-items:start!important;
+}
+
+.footerBrand p,
+.footerSchedule p{
+  color:#65758a;
+}
+
+/* Floating mobile call bar */
+.mobileCallBar{
+  display:none;
+}
+
+@media(max-width:700px){
+  body{
+    padding-bottom:68px;
+  }
+
+  .mobileCallBar{
+    display:grid;
+    position:fixed;
+    left:12px;
+    right:12px;
+    bottom:10px;
+    z-index:1200;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    pointer-events:auto;
+  }
+
+  .mobileCallBar a{
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:950;
+  }
+
+  .mobileCallBar a:first-child{
+    background:#0b8fd8;
+    color:white;
+  }
+
+  .mobileCallBar a:last-child{
+    background:#eef7ff;
+    color:#075f9e;
+    border:1px solid #d4e9f8;
+  }
+}
+
+/* Mobile refinements */
+@media(max-width:700px){
+  .homeStatsBand{
+    margin-top:0;
+    padding:18px 0 0;
+  }
+
+  .homeStatsGrid{
+    grid-template-columns:1fr 1fr!important;
+    gap:10px;
+  }
+
+  .homeStatsGrid article{
+    min-height:78px;
+    padding:12px;
+    border-radius:14px;
+  }
+
+  .homeStatsGrid article:first-child{
+    grid-column:1 / -1;
+  }
+
+  .homeStatsGrid b{
+    font-size:17px;
+  }
+
+  .homeStatsGrid span{
+    font-size:11.5px;
+    line-height:1.25;
+  }
+
+  .serviceTile b,
+  .toolTile b,
+  .card b{
+    padding:5px 7px;
+    font-size:10.5px!important;
+  }
+
+  .toolTile{
+    min-height:156px!important;
+  }
+
+  .contactInfoList{
+    grid-template-columns:1fr!important;
+  }
+
+  .contactInfoStatic{
+    grid-column:auto;
+  }
+
+  .priceItemClean{
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+
+  .priceItemClean strong{
+    font-size:18px!important;
+  }
+
+  .galleryMasonry{
+    grid-template-columns:1fr 1fr!important;
+    grid-auto-rows:150px!important;
+  }
+
+  .sideBox{
+    position:static!important;
+  }
+
+  .serviceHeroImg{
+    max-height:240px!important;
+  }
+}
+
+/* Very small mobile */
+@media(max-width:360px){
+  .homeStatsGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .serviceTile,
+  .toolTile,
+  .card{
+    min-height:auto!important;
+  }
+}
