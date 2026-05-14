@@ -599,3 +599,233 @@ p{margin:0 0 18px}
   color:#0a98ed;
   font-weight:900;
 }
+
+/* Homepage cleanup */
+.pricePreview{
+  display:none!important;
+}
+
+.testimonialBand{
+  padding:54px 0;
+}
+
+.reviewCarousel{
+  width:min(760px,100%);
+  margin:28px auto 0;
+  display:grid;
+  grid-template-columns:58px 1fr 58px;
+  gap:18px;
+  align-items:center;
+}
+
+.reviewArrow{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:0;
+  background:#fff;
+  color:#0a72bd;
+  font-size:42px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,0,0,.18);
+  line-height:1;
+}
+
+.reviewSlide{
+  background:#fff;
+  color:#102033;
+  border-radius:18px;
+  padding:28px;
+  min-height:190px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  box-shadow:0 14px 34px rgba(0,0,0,.16);
+}
+
+.reviewSlide p{
+  font-size:20px;
+  font-weight:750;
+  margin:0 0 14px;
+}
+
+.reviewSlide .stars{
+  color:#ffc400;
+  font-size:22px;
+  letter-spacing:3px;
+  margin-bottom:8px;
+}
+
+.reviewSlide small{
+  color:#66758a;
+  margin-top:8px;
+}
+
+/* Cleaner prices page */
+.pricesHero{
+  padding:64px 0;
+}
+
+.pricesCleanSection{
+  background:#f6fbff;
+}
+
+.pricesLayout{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:26px;
+  align-items:start;
+}
+
+.priceCategoryMenu{
+  position:sticky;
+  top:104px;
+  background:#fff;
+  border:1px solid #dbeafe;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 14px 34px rgba(0,132,210,.09);
+}
+
+.priceCategoryMenu h2{
+  font-size:24px;
+  margin-bottom:14px;
+}
+
+.priceCategoryMenu a{
+  display:block;
+  padding:12px 14px;
+  border-radius:12px;
+  background:#eef8ff;
+  color:#075d9d;
+  font-weight:900;
+  margin-bottom:9px;
+}
+
+.priceCategoryMenu a:hover{
+  background:#0a98ed;
+  color:#fff;
+}
+
+.priceContactBox{
+  display:grid;
+  gap:5px;
+  margin-top:18px;
+  padding:16px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0a2554,#069df2);
+  color:#fff;
+}
+
+.pricesContent{
+  display:grid;
+  gap:26px;
+}
+
+.priceGroupClean{
+  background:#fff;
+  border:1px solid #dbeafe;
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 14px 34px rgba(0,132,210,.09);
+  scroll-margin-top:120px;
+}
+
+.priceGroupClean h2{
+  font-size:30px;
+  color:#0a2554;
+  margin-bottom:18px;
+  padding-bottom:12px;
+  border-bottom:1px solid #e4f1ff;
+}
+
+.priceListClean{
+  display:grid;
+  gap:10px;
+}
+
+.priceItemClean{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:20px;
+  align-items:center;
+  padding:16px;
+  border-radius:16px;
+  background:#f8fcff;
+  border:1px solid #e1f0ff;
+}
+
+.priceItemClean h3{
+  font-size:18px;
+  margin:0 0 4px;
+  color:#102033;
+}
+
+.priceItemClean p{
+  margin:0;
+  color:#66758a;
+  font-size:14px;
+}
+
+.priceItemClean strong{
+  white-space:nowrap;
+  font-size:22px;
+  color:#0696e8;
+}
+
+.priceDisclaimer{
+  background:#fff8e8;
+  border-left:5px solid #e89a00;
+  border-radius:16px;
+  padding:18px;
+  font-weight:850;
+}
+
+/* Fixed map feeling */
+.fixedMapCard{
+  position:sticky!important;
+  top:110px!important;
+}
+
+.fixedMapCard iframe,
+.mapBox iframe{
+  min-height:360px;
+}
+
+.contactGrid{
+  align-items:start;
+}
+
+@media(max-width:900px){
+  .reviewCarousel{
+    grid-template-columns:46px 1fr 46px;
+    gap:8px;
+  }
+
+  .reviewArrow{
+    width:46px;
+    height:46px;
+    font-size:34px;
+  }
+
+  .reviewSlide{
+    padding:20px;
+  }
+
+  .pricesLayout{
+    grid-template-columns:1fr;
+  }
+
+  .priceCategoryMenu{
+    position:static;
+  }
+
+  .priceItemClean{
+    grid-template-columns:1fr;
+  }
+
+  .priceItemClean strong{
+    font-size:20px;
+  }
+}

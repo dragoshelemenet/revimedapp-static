@@ -1,12 +1,13 @@
 import Link from "next/link";
+import ReviewCarousel from "@/components/ReviewCarousel";
+import { youtubeVideos } from "@/lib/videos";
 import { site, tools } from "@/lib/site";
 import { getPublishedServicesAdmin } from "@/lib/db";
-import { getPublishedPrices } from "@/lib/db";
+
 
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
-  const prices = getPublishedPrices().slice(0, 6);
   const services = getPublishedServicesAdmin();
 
   return (
@@ -74,18 +75,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rmSection videoBlock">
-        <div className="rmShell">
-          <h2 className="centerTitle">Video-urile Noastre</h2>
-          <div className="videoGrid">
-            <div className="videoCard bigVideo">▶</div>
-            <div className="videoCard">▶</div>
-            <div className="videoCard">▶</div>
-            <div className="videoCard">▶</div>
-            <div className="videoCard">▶</div>
-          </div>
-        </div>
-      </section>
 
       <section className="rmSection">
         <div className="rmShell contactGrid">
@@ -106,29 +95,10 @@ export default function HomePage() {
       <section className="testimonialBand">
         <div className="rmShell">
           <h2>Ce Spun Pacienții Noștri</h2>
-          <div className="reviewGrid">
-            <div className="review">“Servicii bune, atenție și explicații clare.”<br /><b>★★★★★</b></div>
-            <div className="review">“Consultație calmă și recomandări utile.”<br /><b>★★★★★</b></div>
-            <div className="review">“Am primit un plan clar pentru recuperare.”<br /><b>★★★★★</b></div>
-          </div>
+          <ReviewCarousel />
         </div>
       </section>
 
-      <section className="rmSection pricePreview">
-        <div className="rmShell">
-          <h2 className="centerTitle">Prețuri</h2>
-          <div className="priceGrid">
-            {prices.map((item) => (
-              <div className="priceCard" key={item.id}>
-                <h3>{item.service}</h3>
-                <strong>{item.price}</strong>
-                <p>{item.note}</p>
-              </div>
-            ))}
-          </div>
-          <div className="center"><Link className="blueBtn" href="/preturi">Vezi toate prețurile</Link></div>
-        </div>
-      </section>
     </>
   );
 }

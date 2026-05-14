@@ -25,7 +25,7 @@ export default function Page() {
             <p><b>Program:</b> {site.hours}</p>
             <a className="btn" href={"tel:" + site.phone.replaceAll(" ", "")}>Sună acum</a>
           </div>
-          <div className="card sideBox">
+          <div className="card sideBox fixedMapCard">
             <h3>Hartă</h3>
             <p>Str. Mircea cel Bătrân Nr. 18/1, Chișinău, Ciocana</p>
             <a className="btn secondary" href="https://www.google.com/maps/search/?api=1&query=Centrul%20Medical%20Revimed%20PLUS%20Chisinau">Deschide harta</a>
