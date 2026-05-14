@@ -903,3 +903,322 @@ p{margin:0 0 18px}
     grid-row:auto;
   }
 }
+
+/* MOBILE FIXES */
+@media(max-width:700px){
+  body{
+    overflow-x:hidden;
+  }
+
+  .rmShell{
+    width:calc(100% - 28px);
+  }
+
+  .rmTop{
+    height:26px;
+  }
+
+  .rmTop .rmShell{
+    height:26px;
+    justify-content:flex-end;
+  }
+
+  .rmNav{
+    min-height:auto;
+    height:auto;
+    padding:10px 14px 12px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .rmLogo{
+    justify-content:center;
+    width:100%;
+  }
+
+  .rmLogo img{
+    height:44px;
+    max-width:190px;
+  }
+
+  .rmLinks{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    font-size:13px;
+    line-height:1.15;
+  }
+
+  .rmLinks > a,
+  .rmDrop > a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-height:36px;
+    padding:8px 6px;
+    border-radius:10px;
+    background:#f4f9ff;
+    color:#102033;
+    font-weight:900;
+  }
+
+  .rmDrop{
+    width:100%;
+  }
+
+  .rmDropPanel{
+    position:absolute;
+    left:0;
+    right:auto;
+    top:42px;
+    width:min(330px,calc(100vw - 28px));
+    z-index:999;
+  }
+
+  .pageHero{
+    padding:48px 0 54px;
+  }
+
+  .pageHero h1{
+    font-size:42px;
+    line-height:1.08;
+    letter-spacing:-1.5px;
+    max-width:320px;
+  }
+
+  .pageHero .lead{
+    font-size:20px;
+    line-height:1.55;
+    max-width:320px;
+  }
+
+  .crumb{
+    font-size:16px;
+    line-height:1.35;
+  }
+
+  .rmSection{
+    padding:44px 0;
+  }
+
+  .toolGrid,
+  .serviceGrid,
+  .grid3{
+    grid-template-columns:1fr!important;
+    gap:16px;
+  }
+
+  .toolTile,
+  .serviceTile,
+  .card,
+  .adminCard{
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 10px 28px rgba(0,88,150,.10);
+  }
+
+  .toolTile h3,
+  .serviceTile h3{
+    font-size:26px;
+    line-height:1.08;
+    margin-top:14px;
+    margin-bottom:12px;
+    word-break:normal;
+    overflow-wrap:normal;
+    hyphens:none;
+  }
+
+  .toolTile p,
+  .serviceTile p{
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .toolTile b{
+    display:inline-block;
+    margin-top:12px;
+    font-size:17px;
+  }
+
+  .tag,
+  .toolTile span{
+    font-size:13px;
+    padding:7px 12px;
+  }
+
+  .centerTitle{
+    font-size:32px;
+    line-height:1.1;
+  }
+
+  .homeHero,
+  .heroOverlay{
+    min-height:420px;
+  }
+
+  .heroCenter h1{
+    font-size:38px;
+    line-height:1.06;
+    letter-spacing:-1.5px;
+  }
+
+  .heroCenter p{
+    font-size:21px;
+    line-height:1.35;
+  }
+
+  .aboutGrid,
+  .contactGrid,
+  .contentGrid,
+  .contactMainGrid,
+  .pricesLayout,
+  .rmFooterGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .doctorVisual,
+  .doctorVisual img{
+    width:250px;
+    height:250px;
+  }
+
+  .floatIcon{
+    width:38px;
+    height:38px;
+  }
+
+  .youtubeGrid,
+  .galleryMasonry,
+  .priceGrid,
+  .reviewGrid,
+  .doshaGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .galleryMasonry{
+    grid-auto-rows:240px;
+  }
+
+  .galleryLarge{
+    grid-row:auto;
+  }
+
+  .priceCategoryMenu,
+  .contactMapFrame,
+  .sideBox{
+    position:static!important;
+  }
+
+  .priceItemClean,
+  .priceRow{
+    grid-template-columns:1fr!important;
+    display:grid;
+    gap:8px;
+  }
+
+  .priceItemClean strong,
+  .priceRow strong{
+    white-space:normal;
+    font-size:20px;
+  }
+
+  .reviewCarousel{
+    grid-template-columns:42px 1fr 42px;
+    gap:8px;
+  }
+
+  .reviewArrow{
+    width:42px;
+    height:42px;
+    font-size:32px;
+  }
+
+  .reviewSlide{
+    padding:18px;
+    min-height:175px;
+  }
+
+  .reviewSlide p{
+    font-size:17px;
+    line-height:1.45;
+  }
+
+  .oldContactPhotos,
+  .homeContactPhotos{
+    grid-template-columns:1fr!important;
+  }
+
+  .oldContactPhotos img,
+  .homeContactPhotos img{
+    height:220px;
+  }
+
+  .contactMapFrame iframe{
+    height:330px;
+  }
+
+  .tibetanGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .aura{
+    width:260px;
+    height:260px;
+  }
+
+  .circleText{
+    font-size:60px;
+  }
+
+  .phase{
+    font-size:28px;
+  }
+
+  .rmFooter{
+    padding:32px 0;
+  }
+
+  .rmFooterGrid{
+    gap:24px;
+    text-align:left;
+  }
+
+  .footerLogo{
+    height:42px;
+    max-width:190px;
+  }
+
+  .rmFooter h3{
+    font-size:24px;
+    margin-top:10px;
+  }
+
+  .rmFooter a{
+    display:inline-block;
+    margin:0 10px 10px 0;
+    font-size:16px;
+  }
+
+  .fb{
+    width:48px;
+    height:48px;
+  }
+}
+
+@media(max-width:390px){
+  .rmLinks{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .pageHero h1{
+    font-size:39px;
+  }
+
+  .toolTile h3,
+  .serviceTile h3{
+    font-size:24px;
+  }
+}
