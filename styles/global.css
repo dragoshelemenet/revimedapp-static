@@ -829,3 +829,77 @@ p{margin:0 0 18px}
     font-size:20px;
   }
 }
+
+.galleryHero{
+  background:
+    linear-gradient(135deg,rgba(10,37,84,.92),rgba(6,157,242,.76)),
+    url('/images/medical-bg.jpg') center/cover no-repeat;
+}
+
+.galleryPageSection{
+  background:#f6fbff;
+}
+
+.galleryMasonry{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:240px;
+  gap:18px;
+}
+
+.galleryPhoto{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  background:#e8f4ff;
+  box-shadow:0 16px 36px rgba(0,132,210,.14);
+  border:1px solid #dbeafe;
+}
+
+.galleryPhoto img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .28s ease;
+}
+
+.galleryPhoto:hover img{
+  transform:scale(1.06);
+}
+
+.galleryPhoto span{
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:rgba(7,31,63,.75);
+  color:white;
+  font-weight:900;
+  backdrop-filter:blur(8px);
+}
+
+.galleryLarge{
+  grid-row:span 2;
+}
+
+.galleryVideoSection{
+  background:white;
+  padding-top:42px;
+}
+
+.galleryYoutubeGrid{
+  margin-top:20px;
+}
+
+@media(max-width:900px){
+  .galleryMasonry{
+    grid-template-columns:1fr;
+    grid-auto-rows:260px;
+  }
+
+  .galleryLarge{
+    grid-row:auto;
+  }
+}
