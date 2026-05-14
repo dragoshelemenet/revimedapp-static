@@ -79,10 +79,10 @@ const fallbackApps: ManagedApp[] = [
     href: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
     visible: true,
     title: {
-      ro: "REVIMED Yoga Tibetan V2",
-      en: "REVIMED Tibetan Yoga V2",
-      ru: "REVIMED Тибетская йога V2",
-      ua: "REVIMED Тибетська йога V2"
+      ro: "REVIMED Yoga Tibetan",
+      en: "REVIMED Tibetan Yoga",
+      ru: "REVIMED Тибетская йога",
+      ua: "REVIMED Тибетська йога"
     },
     description: {
       ro: "Respirație ghidată cu programe pentru anxietate, somn, respirație, cardiovascular, digestiv și energie.",
@@ -115,6 +115,30 @@ const fallbackApps: ManagedApp[] = [
     htmlPath: "",
     position: 3
   }
+
+  {
+    id: "calculator-recuperare-personalizata",
+    slug: "calculator-recuperare-personalizata",
+    title: {
+      ro: "Calculator Recuperare Personalizată",
+      en: "Personalized Recovery Planner",
+      ru: "План восстановления",
+      ua: "План відновлення"
+    },
+    description: {
+      ro: "Instrument educațional care propune pași de recuperare în funcție de durere, mobilitate, zonă afectată și obiectiv.",
+      en: "Educational tool that suggests recovery steps based on pain, mobility, affected area and goal.",
+      ru: "Образовательный инструмент с рекомендациями по восстановлению с учетом боли, подвижности, зоны и цели.",
+      ua: "Освітній інструмент з рекомендаціями відновлення з урахуванням болю, рухливості, зони та мети."
+    },
+    tag: { ro: "Recuperare", en: "Recovery", ru: "Реабилитация", ua: "Відновлення" },
+    href: "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
+    image: "/images/medical-bg.jpg",
+    visible: true,
+    kind: "react",
+    htmlPath: "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
+    position: 5
+  },
 ];
 
 function normalizeSlug(value: string) {

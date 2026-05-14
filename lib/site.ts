@@ -95,7 +95,7 @@ export const tools = [
       "Exerciții ghidate de respirație pentru calm, ritm și relaxare."
   },
   {
-    title: "REVIMED Yoga Tibetan V2",
+    title: "REVIMED Yoga Tibetan",
     slug: "revimed-yoga-tibetan",
     href: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
     tag: "Instrument pacient",
@@ -112,4 +112,14 @@ export const tools = [
     description:
       "Instrument educațional pentru simptome neurologice și semnale de alarmă."
   }
+
+  {
+    title: "Calculator Recuperare Personalizată",
+    slug: "calculator-recuperare-personalizata",
+    href: "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
+    tag: "Recuperare",
+    image: "/images/medical-bg.jpg",
+    description:
+      "Instrument educațional care propune pași de recuperare în funcție de durere, mobilitate, zonă afectată și obiectiv."
+  },
 ];

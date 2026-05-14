@@ -10098,3 +10098,224 @@ html.route-ready .pageHero{
   overflow-wrap:break-word;
 }
 
+
+/* Recovery Planner App */
+.recoveryApp{
+  background:#f7fbff!important;
+}
+
+.recoveryGrid{
+  display:grid!important;
+  grid-template-columns:340px 1fr!important;
+  gap:22px!important;
+  align-items:start!important;
+  max-width:1120px!important;
+}
+
+.recoveryPanel,
+.recoveryResult{
+  background:#fff!important;
+  border:1px solid #dcebf7!important;
+  border-radius:26px!important;
+  padding:24px!important;
+}
+
+.miniBadge{
+  display:inline-flex!important;
+  width:max-content!important;
+  background:#edf7ff!important;
+  color:#075f9e!important;
+  border-radius:999px!important;
+  padding:7px 12px!important;
+  font-size:12px!important;
+  font-weight:950!important;
+  margin-bottom:14px!important;
+}
+
+.recoveryPanel label{
+  display:grid!important;
+  gap:8px!important;
+  color:#102033!important;
+  font-weight:950!important;
+  margin-bottom:14px!important;
+}
+
+.recoveryPanel select{
+  min-height:52px!important;
+  border-radius:15px!important;
+  border:1px solid #cfe4f8!important;
+  background:#f8fcff!important;
+  padding:0 14px!important;
+  font-weight:850!important;
+}
+
+.rangeBox{
+  display:grid!important;
+  gap:9px!important;
+  background:#f8fcff!important;
+  border:1px solid #dcebf7!important;
+  border-radius:18px!important;
+  padding:15px!important;
+  margin-bottom:12px!important;
+}
+
+.rangeBox b{
+  color:#08234a!important;
+}
+
+.rangeBox input{
+  width:100%!important;
+  accent-color:#0b8fd8!important;
+}
+
+.recoveryPanel .blueBtn,
+.recoveryPanel .softBtn{
+  width:100%!important;
+  margin-top:10px!important;
+}
+
+.emptyResult{
+  min-height:420px!important;
+  display:grid!important;
+  place-items:center!important;
+  align-content:center!important;
+  text-align:center!important;
+}
+
+.emptyResult img{
+  width:70px!important;
+  height:70px!important;
+  margin-bottom:14px!important;
+}
+
+.emptyResult h2{
+  color:#08234a!important;
+  font-size:34px!important;
+  letter-spacing:-.04em!important;
+  margin:0!important;
+}
+
+.emptyResult p{
+  color:#64748b!important;
+  max-width:520px!important;
+}
+
+.recoveryHeroCard{
+  display:flex!important;
+  justify-content:space-between!important;
+  align-items:center!important;
+  gap:20px!important;
+  background:linear-gradient(135deg,#f8fcff,#edf7ff)!important;
+  border:1px solid #dcebf7!important;
+  border-radius:22px!important;
+  padding:22px!important;
+  margin-bottom:18px!important;
+}
+
+.recoveryHeroCard h2{
+  color:#08234a!important;
+  font-size:36px!important;
+  line-height:1.05!important;
+  letter-spacing:-.045em!important;
+  margin:0 0 8px!important;
+}
+
+.recoveryHeroCard p{
+  color:#64748b!important;
+  margin:0!important;
+  font-weight:800!important;
+}
+
+.recoveryScore{
+  min-width:116px!important;
+  border-radius:20px!important;
+  background:linear-gradient(180deg,#0b97e4,#0879ba)!important;
+  color:#fff!important;
+  text-align:center!important;
+  padding:16px!important;
+}
+
+.recoveryScore small{
+  color:rgba(255,255,255,.85)!important;
+  font-weight:900!important;
+}
+
+.recoveryScore b{
+  display:block!important;
+  color:#fff!important;
+  font-size:34px!important;
+  line-height:1!important;
+  margin-top:5px!important;
+}
+
+.recoveryCards{
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:14px!important;
+}
+
+.recoveryCards article{
+  border:1px solid #dcebf7!important;
+  border-radius:20px!important;
+  background:#fff!important;
+  padding:18px!important;
+}
+
+.recoveryCards .warningCard{
+  background:#fff7ed!important;
+  border-color:#fed7aa!important;
+}
+
+.recoveryCards h3{
+  color:#08234a!important;
+  font-size:19px!important;
+  margin:0 0 12px!important;
+}
+
+.recoveryCards ul{
+  margin:0!important;
+  padding-left:18px!important;
+  color:#475569!important;
+  line-height:1.55!important;
+}
+
+.recoveryCards li{
+  margin-bottom:8px!important;
+}
+
+.recoveryDisclaimer{
+  margin-top:16px!important;
+  border:1px solid #fed7aa!important;
+  background:#fff7ed!important;
+  border-radius:20px!important;
+  padding:18px!important;
+}
+
+.recoveryDisclaimer b{
+  color:#9a3412!important;
+}
+
+.recoveryDisclaimer p{
+  color:#7c2d12!important;
+  line-height:1.55!important;
+}
+
+@media(max-width:900px){
+  .recoveryGrid{
+    grid-template-columns:1fr!important;
+    max-width:calc(100% - 28px)!important;
+  }
+
+  .recoveryCards{
+    grid-template-columns:1fr!important;
+  }
+
+  .recoveryHeroCard{
+    flex-direction:column!important;
+    align-items:flex-start!important;
+  }
+
+  .recoveryScore{
+    width:100%!important;
+  }
+}
