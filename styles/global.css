@@ -10522,3 +10522,38 @@ html.route-ready .pageHero{
     align-items:flex-start!important;
   }
 }
+
+.smartPlan{
+  background:#f8fcff!important;
+}
+
+.smartAvoid{
+  background:#ffffbf10!important;
+}
+
+.smartRedFlags{
+  background:#fff1f2!important;
+  border-color:#fecdd3!important;
+}
+
+.smartRedFlags h3{
+  color:#9f1239!important;
+}
+
+.smartRedFlags li{
+  color:#881337!important;
+  font-weight:750!important;
+}
+
+.smartPrep{
+  background:#f0fdf4!important;
+  border-color:#bbf7d0!important;
+}
+
+.smartPrep h3{
+  color:#166534!important;
+}
+
+.smartPrep li{
+  color:#14532d!important;
+}

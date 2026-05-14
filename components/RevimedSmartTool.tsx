@@ -45,7 +45,12 @@ const common = {
     choose: "Alege răspunsul",
     answers: ["Nu", "Rar", "Des", "Foarte des"],
     score: "Scor",
-    recommendation: "Recomandări",
+    recommendation: "Ce înseamnă rezultatul",
+    actionPlan: "Plan concret pentru următoarele 7 zile",
+    avoid: "Ce să eviți momentan",
+    redFlags: "Semnale pentru consult rapid",
+    consultPrep: "Ce să pregătești pentru consultație",
+    summary: "Rezumat pentru medic",
     contact: "Pentru interpretare corectă și plan personalizat, programează o consultație la Revimed PLUS+.",
     disclaimer: "Instrument educațional. Nu pune diagnostic și nu înlocuiește consultația medicului."
   },
@@ -59,7 +64,12 @@ const common = {
     choose: "Choose an answer",
     answers: ["No", "Rarely", "Often", "Very often"],
     score: "Score",
-    recommendation: "Recommendations",
+    recommendation: "What the result means",
+    actionPlan: "Concrete plan for the next 7 days",
+    avoid: "What to avoid for now",
+    redFlags: "Signs for quick consultation",
+    consultPrep: "What to prepare for consultation",
+    summary: "Doctor summary",
     contact: "For proper interpretation and a personalized plan, schedule a consultation at Revimed PLUS+.",
     disclaimer: "Educational tool. It does not diagnose and does not replace medical consultation."
   },
@@ -73,7 +83,12 @@ const common = {
     choose: "Выберите ответ",
     answers: ["Нет", "Редко", "Часто", "Очень часто"],
     score: "Балл",
-    recommendation: "Рекомендации",
+    recommendation: "Что означает результат",
+    actionPlan: "Конкретный план на следующие 7 дней",
+    avoid: "Чего пока избегать",
+    redFlags: "Признаки для быстрой консультации",
+    consultPrep: "Что подготовить к консультации",
+    summary: "Резюме для врача",
     contact: "Для правильной интерпретации и индивидуального плана запишитесь на консультацию в Revimed PLUS+.",
     disclaimer: "Образовательный инструмент. Не ставит диагноз и не заменяет консультацию врача."
   },
@@ -87,7 +102,12 @@ const common = {
     choose: "Оберіть відповідь",
     answers: ["Ні", "Рідко", "Часто", "Дуже часто"],
     score: "Бал",
-    recommendation: "Рекомендації",
+    recommendation: "Що означає результат",
+    actionPlan: "Конкретний план на наступні 7 днів",
+    avoid: "Чого поки уникати",
+    redFlags: "Ознаки для швидкої консультації",
+    consultPrep: "Що підготувати до консультації",
+    summary: "Резюме для лікаря",
     contact: "Для правильної інтерпретації та індивідуального плану запишіться на консультацію в Revimed PLUS+.",
     disclaimer: "Освітній інструмент. Не встановлює діагноз і не замінює консультацію лікаря."
   }
@@ -309,6 +329,192 @@ function getLang(pathname: string): Lang {
   return isLang(first) ? first : "ro";
 }
 
+
+function getLevel(percent: number) {
+  if (percent < 34) return "low";
+  if (percent < 67) return "medium";
+  return "high";
+}
+
+function detailedGuidance(slug: ToolSlug, lang: Lang, percent: number, score: number, max: number) {
+  const level = getLevel(percent);
+
+  const ro = {
+    low: {
+      meaning: [
+        "Rezultatul nu arată multe semne de risc în răspunsurile selectate.",
+        "Totuși, dacă simptomele persistă, scopul este prevenția și corectarea obiceiurilor înainte să apară limitări."
+      ],
+      plan: [
+        "Fă 5–10 minute de mișcare ușoară zilnic, fără durere forțată.",
+        "Notează timp de 7 zile când apar simptomele: dimineața, după stat jos, după mers sau după efort.",
+        "Păstrează pauze scurte la fiecare 30–45 minute dacă lucrezi la birou."
+      ],
+      avoid: [
+        "Nu crește brusc intensitatea exercițiilor.",
+        "Nu ignora simptomele care se repetă mai multe zile la rând."
+      ],
+      red: [
+        "Durere bruscă severă.",
+        "Amorțeală, slăbiciune sau pierdere de echilibru nou apărută.",
+        "Simptome care se agravează rapid."
+      ],
+      prep: [
+        "Notează zona exactă a simptomelor.",
+        "Notează ce activitate agravează și ce ameliorează.",
+        "Adu investigațiile existente, dacă ai."
+      ]
+    },
+    medium: {
+      meaning: [
+        "Rezultatul sugerează impact funcțional moderat: problema merită urmărită și corectată.",
+        "Nu este suficient doar un sfat general; ai nevoie de o direcție clară: reducerea simptomului, mobilitate, apoi forță/control."
+      ],
+      plan: [
+        "În următoarele 7 zile evită mișcările care cresc simptomele peste 5/10.",
+        "Fă exerciții blânde în amplitudine confortabilă, 5 minute, de 1–2 ori pe zi.",
+        "Monitorizează dacă mersul, somnul sau activitatea zilnică se îmbunătățesc sau se înrăutățesc.",
+        "Dacă nu apare progres în 7–14 zile, programează evaluare."
+      ],
+      avoid: [
+        "Nu face exerciții intense doar pentru că durerea scade temporar.",
+        "Nu sta complet nemișcat mai multe zile.",
+        "Nu amâna evaluarea dacă simptomele limitează mersul, somnul sau munca."
+      ],
+      red: [
+        "Durere care coboară pe braț/picior cu amorțeală.",
+        "Slăbiciune sau instabilitate.",
+        "Amețeală, căderi sau pierdere de coordonare."
+      ],
+      prep: [
+        "Pregătește scorul de durere 0–10 dimineața și seara.",
+        "Notează de când durează problema.",
+        "Spune ce tratamente ai încercat și ce efect au avut."
+      ]
+    },
+    high: {
+      meaning: [
+        "Rezultatul arată multe răspunsuri cu risc/impact ridicat.",
+        "Aici recomandarea utilă nu este «fă exerciții», ci evaluare ghidată: trebuie clarificat ce provoacă simptomele și ce este sigur pentru tine."
+      ],
+      plan: [
+        "În următoarele 24–72 ore evită exercițiile provocatoare și efortul intens.",
+        "Fă doar mișcări ușoare, lente, care nu cresc simptomele.",
+        "Notează episoadele: când apar, cât durează, ce le declanșează, ce le reduce.",
+        "Programează o consultație pentru evaluare neurologică/recuperare și plan personalizat."
+      ],
+      avoid: [
+        "Nu începe singur exerciții de echilibru dificile.",
+        "Nu ridica greutăți și nu face mișcări bruște dacă există instabilitate, amorțeală sau slăbiciune.",
+        "Nu conduce/nu urca scări nesupravegheat dacă ai amețeli sau risc de cădere."
+      ],
+      red: [
+        "Cădere recentă sau căderi repetate.",
+        "Slăbiciune progresivă, amorțeală sau tulburări de mers.",
+        "Durere severă după traumă.",
+        "Pierdere control urinar/fecal, febră sau simptome care se agravează rapid."
+      ],
+      prep: [
+        "Notează numărul de căderi/episoade și data aproximativă.",
+        "Adu lista medicamentelor și investigațiile existente.",
+        "Pregătește 3 întrebări: ce am voie să fac, ce trebuie evitat, ce plan de recuperare urmez."
+      ]
+    }
+  };
+
+  const en = {
+    low: {
+      meaning: ["Your answers do not show many risk signs.", "Focus on prevention and correcting habits before limitations appear."],
+      plan: ["Do 5–10 minutes of gentle movement daily.", "Track symptoms for 7 days.", "Take short breaks every 30–45 minutes if you sit a lot."],
+      avoid: ["Do not suddenly increase exercise intensity.", "Do not ignore symptoms that repeat for several days."],
+      red: ["Sudden severe pain.", "New numbness, weakness or balance loss.", "Rapidly worsening symptoms."],
+      prep: ["Write the exact symptom area.", "Write what worsens and relieves it.", "Bring existing investigations if available."]
+    },
+    medium: {
+      meaning: ["The result suggests moderate functional impact.", "You need a clear direction: reduce symptoms, restore mobility, then strength/control."],
+      plan: ["For 7 days avoid movements that raise symptoms above 5/10.", "Do gentle comfortable-range exercises 5 minutes, 1–2 times/day.", "Track walking, sleep and daily activity.", "If no progress in 7–14 days, schedule assessment."],
+      avoid: ["Do not train intensely just because pain drops temporarily.", "Do not stay completely inactive for days.", "Do not delay assessment if symptoms limit walking, sleep or work."],
+      red: ["Pain travelling down arm/leg with numbness.", "Weakness or instability.", "Dizziness, falls or coordination loss."],
+      prep: ["Prepare morning/evening pain scores.", "Write when the problem started.", "List treatments tried and their effect."]
+    },
+    high: {
+      meaning: ["Your answers show high risk/impact.", "The useful step is guided assessment, not generic exercise advice."],
+      plan: ["For 24–72 hours avoid provoking exercises and heavy effort.", "Only do slow gentle movements that do not worsen symptoms.", "Track episodes: trigger, duration, relief.", "Schedule neurological/recovery assessment and a personalized plan."],
+      avoid: ["Do not start difficult balance exercises alone.", "Avoid weights and sudden movements if instability, numbness or weakness exists.", "Avoid stairs/driving unsupervised if dizzy or at fall risk."],
+      red: ["Recent or repeated falls.", "Progressive weakness, numbness or walking problems.", "Severe pain after trauma.", "Loss of bladder/bowel control, fever or rapidly worsening symptoms."],
+      prep: ["Write number/date of falls or episodes.", "Bring medication list and investigations.", "Prepare 3 questions: what is safe, what to avoid, what recovery plan to follow."]
+    }
+  };
+
+  const ru = {
+    low: {
+      meaning: ["Ответы не показывают много признаков риска.", "Цель — профилактика и коррекция привычек до появления ограничений."],
+      plan: ["Делайте 5–10 минут мягких движений ежедневно.", "Отслеживайте симптомы 7 дней.", "Делайте перерывы каждые 30–45 минут при сидячей работе."],
+      avoid: ["Не увеличивайте нагрузку резко.", "Не игнорируйте повторяющиеся симптомы."],
+      red: ["Внезапная сильная боль.", "Новое онемение, слабость или потеря равновесия.", "Быстрое ухудшение."],
+      prep: ["Запишите точную зону симптомов.", "Что ухудшает и что облегчает.", "Возьмите имеющиеся обследования."]
+    },
+    medium: {
+      meaning: ["Результат указывает на умеренное функциональное влияние.", "Нужен понятный план: уменьшение симптомов, подвижность, затем сила/контроль."],
+      plan: ["7 дней избегайте движений, усиливающих симптомы выше 5/10.", "Мягкие упражнения 5 минут 1–2 раза в день.", "Следите за ходьбой, сном и ежедневной активностью.", "Если нет прогресса 7–14 дней — запишитесь на оценку."],
+      avoid: ["Не тренируйтесь интенсивно из-за временного снижения боли.", "Не оставайтесь полностью неподвижным несколько дней.", "Не откладывайте оценку при ограничении ходьбы, сна или работы."],
+      red: ["Боль в руку/ногу с онемением.", "Слабость или нестабильность.", "Головокружение, падения или потеря координации."],
+      prep: ["Подготовьте оценку боли утром/вечером.", "Запишите, когда началась проблема.", "Укажите, какое лечение пробовали и эффект."]
+    },
+    high: {
+      meaning: ["Ответы показывают высокий риск/влияние.", "Полезный шаг — направленная оценка, а не общие упражнения."],
+      plan: ["24–72 часа избегайте провоцирующих упражнений и тяжелой нагрузки.", "Только медленные мягкие движения без ухудшения.", "Записывайте эпизоды: триггер, длительность, что облегчает.", "Запишитесь на неврологическую/реабилитационную оценку."],
+      avoid: ["Не начинайте сложные упражнения на равновесие самостоятельно.", "Избегайте веса и резких движений при нестабильности, онемении или слабости.", "Избегайте лестниц/вождения без поддержки при головокружении или риске падения."],
+      red: ["Недавнее или повторное падение.", "Прогрессирующая слабость, онемение или нарушение ходьбы.", "Сильная боль после травмы.", "Нарушение контроля мочи/стула, температура или быстрое ухудшение."],
+      prep: ["Запишите число/дату падений или эпизодов.", "Возьмите список лекарств и обследования.", "Подготовьте 3 вопроса: что можно, что избегать, какой план восстановления."]
+    }
+  };
+
+  const ua = {
+    low: {
+      meaning: ["Відповіді не показують багато ознак ризику.", "Мета — профілактика і корекція звичок до появи обмежень."],
+      plan: ["Робіть 5–10 хвилин м’яких рухів щодня.", "Відстежуйте симптоми 7 днів.", "Робіть перерви кожні 30–45 хвилин при сидячій роботі."],
+      avoid: ["Не збільшуйте навантаження різко.", "Не ігноруйте повторювані симптоми."],
+      red: ["Раптовий сильний біль.", "Нове оніміння, слабкість або втрата рівноваги.", "Швидке погіршення."],
+      prep: ["Запишіть точну зону симптомів.", "Що погіршує і що полегшує.", "Візьміть наявні обстеження."]
+    },
+    medium: {
+      meaning: ["Результат вказує на помірний функціональний вплив.", "Потрібен зрозумілий план: зменшення симптомів, рухливість, потім сила/контроль."],
+      plan: ["7 днів уникайте рухів, що підсилюють симптоми понад 5/10.", "М’які вправи 5 хвилин 1–2 рази на день.", "Слідкуйте за ходою, сном і щоденною активністю.", "Якщо немає прогресу 7–14 днів — запишіться на оцінку."],
+      avoid: ["Не тренуйтеся інтенсивно через тимчасове зниження болю.", "Не залишайтесь повністю нерухомим кілька днів.", "Не відкладайте оцінку при обмеженні ходи, сну або роботи."],
+      red: ["Біль у руку/ногу з онімінням.", "Слабкість або нестабільність.", "Запаморочення, падіння або втрата координації."],
+      prep: ["Підготуйте оцінку болю вранці/увечері.", "Запишіть, коли почалась проблема.", "Вкажіть, яке лікування пробували та ефект."]
+    },
+    high: {
+      meaning: ["Відповіді показують високий ризик/вплив.", "Корисний крок — спрямована оцінка, а не загальні вправи."],
+      plan: ["24–72 години уникайте провокуючих вправ і важкого навантаження.", "Тільки повільні м’які рухи без погіршення.", "Записуйте епізоди: тригер, тривалість, що полегшує.", "Запишіться на неврологічну/реабілітаційну оцінку."],
+      avoid: ["Не починайте складні вправи на рівновагу самостійно.", "Уникайте ваги і різких рухів при нестабільності, онімінні або слабкості.", "Уникайте сходів/водіння без підтримки при запамороченні або ризику падіння."],
+      red: ["Недавнє або повторне падіння.", "Прогресуюча слабкість, оніміння або порушення ходи.", "Сильний біль після травми.", "Порушення контролю сечі/калу, температура або швидке погіршення."],
+      prep: ["Запишіть кількість/дату падінь або епізодів.", "Візьміть список ліків і обстеження.", "Підготуйте 3 питання: що можна, що уникати, який план відновлення."]
+    }
+  };
+
+  const dict = { ro, en, ru, ua }[lang];
+  const base = dict[level as keyof typeof dict];
+
+  if (slug === "test-risc-cadere-echilibru" && level === "high") {
+    return {
+      ...base,
+      plan: lang === "ro"
+        ? [
+            "Până la evaluare, mergi cu sprijin dacă te simți nesigur.",
+            "Elimină obstacolele din casă: covorașe, cabluri, lumină slabă.",
+            "Ridică-te lent din pat/scaun și așteaptă 10–20 secunde înainte să pornești.",
+            "Nu face exerciții de echilibru singur; fă-le doar lângă perete/scaun stabil.",
+            "Programează evaluare neurologică/recuperare pentru testarea mersului, forței și echilibrului."
+          ]
+        : base.plan
+    };
+  }
+
+  return base;
+}
+
 export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
   const lang = getLang(usePathname());
   const cfg = configs[slug];
@@ -323,6 +529,7 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
   const percent = Math.round((score / max) * 100);
 
   const resultLabel = percent < 34 ? cfg.low[lang] : percent < 67 ? cfg.medium[lang] : cfg.high[lang];
+  const guidance = detailedGuidance(slug, lang, percent, score, max);
   const progress = done ? 100 : Math.round(((step + 1) / cfg.questions.length) * 100);
 
   function select(value: Answer) {
@@ -387,7 +594,35 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
               <div className="smartTips">
                 <h3>{text.recommendation}</h3>
                 <ul>
-                  {cfg.tips[lang].map((tip) => <li key={tip}>{tip}</li>)}
+                  {guidance.meaning.map((tip) => <li key={tip}>{tip}</li>)}
+                </ul>
+              </div>
+
+              <div className="smartTips smartPlan">
+                <h3>{text.actionPlan}</h3>
+                <ul>
+                  {guidance.plan.map((tip) => <li key={tip}>{tip}</li>)}
+                </ul>
+              </div>
+
+              <div className="smartTips smartAvoid">
+                <h3>{text.avoid}</h3>
+                <ul>
+                  {guidance.avoid.map((tip) => <li key={tip}>{tip}</li>)}
+                </ul>
+              </div>
+
+              <div className="smartTips smartRedFlags">
+                <h3>{text.redFlags}</h3>
+                <ul>
+                  {guidance.red.map((tip) => <li key={tip}>{tip}</li>)}
+                </ul>
+              </div>
+
+              <div className="smartTips smartPrep">
+                <h3>{text.consultPrep}</h3>
+                <ul>
+                  {guidance.prep.map((tip) => <li key={tip}>{tip}</li>)}
                 </ul>
               </div>
 
