@@ -1,5 +1,4 @@
 import type { Lang } from "@/lib/i18n";
-import { getGalleryLabel } from "@/lib/galleryLabels";
 
 export type GalleryLabelKey =
   | "reception"
