@@ -1,6 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+
+type Lang = "ro" | "en" | "ru" | "ua";
+type Screen =
+  | "home"
+  | "blog"
+  | "blog-list"
+  | "blog-form"
+  | "services"
+  | "services-list"
+  | "services-form"
+  | "prices"
+  | "prices-list"
+  | "prices-form"
+  | "gallery"
+  | "gallery-list"
+  | "gallery-form"
+  | "contact"
+  | "content"
+  | "content-list"
+  | "content-form";
 
 type Post = {
   id: number;
@@ -37,9 +57,19 @@ type ServiceAdmin = {
   published: number;
 };
 
+type GalleryItem = {
+  id: number;
+  lang: Lang;
+  image: string;
+  title: string;
+  alt: string;
+  position: number;
+  published: number;
+};
+
 type ContactContent = {
   id: number;
-  lang: "ro" | "en" | "ru" | "ua";
+  lang: Lang;
   fixed_phone: string;
   phone: string;
   phone_alt: string;
@@ -58,7 +88,7 @@ type ContactContent = {
 
 type ContentBlock = {
   id: number;
-  lang: "ro" | "en" | "ru" | "ua";
+  lang: Lang;
   page_key: string;
   block_key: string;
   title: string;
@@ -68,15 +98,7 @@ type ContentBlock = {
   published: number;
 };
 
-type GalleryItem = {
-  id: number;
-  lang: "ro" | "en" | "ru" | "ua";
-  image: string;
-  title: string;
-  alt: string;
-  position: number;
-  published: number;
-};
+const langOptions: Lang[] = ["ro", "en", "ru", "ua"];
 
 export default function AdminClient({
   loggedIn,
@@ -95,26 +117,113 @@ export default function AdminClient({
   gallery?: GalleryItem[];
   contactContent?: ContactContent | null;
   contentBlocks?: ContentBlock[];
-  selectedLang?: "ro" | "en" | "ru" | "ua";
+  selectedLang?: Lang;
 }) {
-  const safeSelectedLang = selectedLang || "ro";
-  const [workingLang, setWorkingLang] = useState<"ro" | "en" | "ru" | "ua">(safeSelectedLang);
-  const [tab, setTab] = useState<"services" | "prices" | "gallery" | "contact" | "content" | "blog">("services");
-  const [editingPost, setEditingPost] = useState<Post | null>(null);
-  const [editingPrice, setEditingPrice] = useState<Price | null>(null);
-  const [editingService, setEditingService] = useState<ServiceAdmin | null>(null);
-  const [editingGallery, setEditingGallery] = useState<GalleryItem | null>(null);
+  const [workingLang, setWorkingLang] = useState<Lang>(selectedLang || "ro");
+  const [screen, setScreen] = useState<Screen>("home");
   const [message, setMessage] = useState("");
+  const [editingPost, setEditingPost] = useState<Post | null>(null);
+  const [editingService, setEditingService] = useState<ServiceAdmin | null>(null);
+  const [editingPrice, setEditingPrice] = useState<Price | null>(null);
+  const [editingGallery, setEditingGallery] = useState<GalleryItem | null>(null);
+  const [editingContent, setEditingContent] = useState<ContentBlock | null>(null);
+
+  const screenTitle = useMemo(() => {
+    const map: Record<Screen, string> = {
+      home: "Dashboard",
+      blog: "Blog",
+      "blog-list": "Articole blog",
+      "blog-form": editingPost ? "Editează articol" : "Adaugă articol",
+      services: "Servicii",
+      "services-list": "Lista servicii",
+      "services-form": editingService ? "Editează serviciu" : "Adaugă serviciu",
+      prices: "Prețuri",
+      "prices-list": "Lista prețuri",
+      "prices-form": editingPrice ? "Editează preț" : "Adaugă preț",
+      gallery: "Galerie",
+      "gallery-list": "Imagini galerie",
+      "gallery-form": editingGallery ? "Editează imagine" : "Adaugă imagine",
+      contact: "Contact",
+      content: "Texte pagini",
+      "content-list": "Texte existente",
+      "content-form": editingContent ? "Editează text pagină" : "Adaugă text pagină"
+    };
+    return map[screen];
+  }, [screen, editingPost, editingService, editingPrice, editingGallery, editingContent]);
 
   async function login(formData: FormData) {
     const res = await fetch("/api/admin/login", { method: "POST", body: formData });
     if (res.ok) location.reload();
-    else setMessage("Date greșite.");
+    else setMessage("Login sau parolă greșită.");
   }
 
   async function logout() {
     await fetch("/api/admin/logout", { method: "POST" });
     location.reload();
+  }
+
+  function changeLang(lang: Lang) {
+    window.location.href = `/revimed-login?lang=${lang}`;
+  }
+
+  async function savePost(formData: FormData) {
+    const id = formData.get("id");
+    const url = id ? `/api/admin/posts/${id}` : "/api/admin/posts";
+    const method = id ? "PUT" : "POST";
+    const res = await fetch(url, { method, body: formData });
+    if (res.ok) location.reload();
+    else setMessage("Nu s-a salvat articolul.");
+  }
+
+  async function removePost(id: number) {
+    if (!confirm("Ștergi articolul?")) return;
+    const res = await fetch(`/api/admin/posts/${id}`, { method: "DELETE" });
+    if (res.ok) location.reload();
+  }
+
+  async function saveService(formData: FormData) {
+    const id = formData.get("id");
+    const url = id ? `/api/admin/services/${id}` : "/api/admin/services";
+    const method = id ? "PUT" : "POST";
+    const res = await fetch(url, { method, body: formData });
+    if (res.ok) location.reload();
+    else setMessage("Nu s-a salvat serviciul.");
+  }
+
+  async function removeService(id: number) {
+    if (!confirm("Ștergi serviciul?")) return;
+    const res = await fetch(`/api/admin/services/${id}`, { method: "DELETE" });
+    if (res.ok) location.reload();
+  }
+
+  async function savePrice(formData: FormData) {
+    const id = formData.get("id");
+    const url = id ? `/api/admin/prices/${id}` : "/api/admin/prices";
+    const method = id ? "PUT" : "POST";
+    const res = await fetch(url, { method, body: formData });
+    if (res.ok) location.reload();
+    else setMessage("Nu s-a salvat prețul.");
+  }
+
+  async function removePrice(id: number) {
+    if (!confirm("Ștergi prețul?")) return;
+    const res = await fetch(`/api/admin/prices/${id}`, { method: "DELETE" });
+    if (res.ok) location.reload();
+  }
+
+  async function saveGallery(formData: FormData) {
+    const id = formData.get("id");
+    const url = id ? `/api/admin/gallery/${id}` : "/api/admin/gallery";
+    const method = id ? "PUT" : "POST";
+    const res = await fetch(url, { method, body: formData });
+    if (res.ok) location.reload();
+    else setMessage("Nu s-a salvat imaginea.");
+  }
+
+  async function removeGallery(id: number) {
+    if (!confirm("Ștergi imaginea?")) return;
+    const res = await fetch(`/api/admin/gallery/${id}`, { method: "DELETE" });
+    if (res.ok) location.reload();
   }
 
   async function saveContact(formData: FormData) {
@@ -138,64 +247,54 @@ export default function AdminClient({
     if (res.ok) location.reload();
   }
 
-  async function savePost(formData: FormData) {
-    const id = formData.get("id");
-    const url = id ? `/api/admin/posts/${id}` : "/api/admin/posts";
-    const method = id ? "PUT" : "POST";
-    const res = await fetch(url, { method, body: formData });
-    if (res.ok) location.reload();
-    else setMessage("Nu s-a salvat articolul.");
+  function openEditPost(post: Post) {
+    setEditingPost(post);
+    setScreen("blog-form");
   }
 
-  async function removePost(id: number) {
-    if (!confirm("Ștergi articolul?")) return;
-    const res = await fetch(`/api/admin/posts/${id}`, { method: "DELETE" });
-    if (res.ok) location.reload();
+  function openNewPost() {
+    setEditingPost(null);
+    setScreen("blog-form");
   }
 
-  async function savePrice(formData: FormData) {
-    const id = formData.get("id");
-    const url = id ? `/api/admin/prices/${id}` : "/api/admin/prices";
-    const method = id ? "PUT" : "POST";
-    const res = await fetch(url, { method, body: formData });
-    if (res.ok) location.reload();
-    else setMessage("Nu s-a salvat prețul.");
+  function openEditService(item: ServiceAdmin) {
+    setEditingService(item);
+    setScreen("services-form");
   }
 
-  async function removePrice(id: number) {
-    if (!confirm("Ștergi rândul de preț?")) return;
-    const res = await fetch(`/api/admin/prices/${id}`, { method: "DELETE" });
-    if (res.ok) location.reload();
+  function openNewService() {
+    setEditingService(null);
+    setScreen("services-form");
   }
 
-  async function saveService(formData: FormData) {
-    const id = formData.get("id");
-    const url = id ? `/api/admin/services/${id}` : "/api/admin/services";
-    const method = id ? "PUT" : "POST";
-    const res = await fetch(url, { method, body: formData });
-    if (res.ok) location.reload();
-    else setMessage("Nu s-a salvat serviciul.");
+  function openEditPrice(item: Price) {
+    setEditingPrice(item);
+    setScreen("prices-form");
   }
 
-  async function removeService(id: number) {
-    if (!confirm("Ștergi serviciul? Pagina lui nu va mai apărea.")) return;
-    const res = await fetch(`/api/admin/services/${id}`, { method: "DELETE" });
-    if (res.ok) location.reload();
+  function openNewPrice() {
+    setEditingPrice(null);
+    setScreen("prices-form");
   }
 
-  async function saveGallery(formData: FormData) {
-    const id = formData.get("id");
-    const url = id ? `/api/admin/gallery/${id}` : "/api/admin/gallery";
-    const method = id ? "PUT" : "POST";
-    const res = await fetch(url, { method, body: formData });
-    if (res.ok) location.reload();
-    else setMessage("Nu s-a salvat imaginea.");
+  function openEditGallery(item: GalleryItem) {
+    setEditingGallery(item);
+    setScreen("gallery-form");
   }
 
-  async function removeGallery(id: number) {
-    if (!confirm("Ștergi imaginea din galerie?")) return;
-    const res = await fetch(`/api/admin/gallery/${id}`, { method: "DELETE" });
-    if (res.ok) location.reload();
+  function openNewGallery() {
+    setEditingGallery(null);
+    setScreen("gallery-form");
+  }
+
+  function openEditContent(item: ContentBlock) {
+    setEditingContent(item);
+    setScreen("content-form");
+  }
+
+  function openNewContent() {
+    setEditingContent(null);
+    setScreen("content-form");
   }
 
   if (!loggedIn) {
@@ -206,25 +305,17 @@ export default function AdminClient({
             <img src="/images/logo.png" alt="REVIMED" />
             <span>Panou securizat</span>
             <h1>Revimed Login</h1>
-            <p>Intră în panoul de administrare pentru blog, servicii, prețuri, galerie, contact și texte pe limbi.</p>
+            <p>Administrare blog, servicii, prețuri, galerie, contact și texte pe limbi.</p>
           </div>
 
           <form action={login} className="adminLoginCard">
             <h2>Autentificare</h2>
-
             <label>Utilizator</label>
             <input name="username" defaultValue="revimed1" autoComplete="username" required />
-
             <label>Parolă</label>
             <input name="password" type="password" autoComplete="current-password" required />
-
             <button className="blueBtn">Intră în admin</button>
-
             {message && <p className="adminLoginError">{message}</p>}
-
-            <small>
-              Acces doar pentru persoane autorizate.
-            </small>
           </form>
         </div>
       </section>
@@ -232,202 +323,360 @@ export default function AdminClient({
   }
 
   return (
-    <section className="adminBg">
-      <div className="rmShell adminPanel">
-        <div className="adminTop">
-          <h1>Panou Revimed</h1>
-          <button className="softBtn" onClick={logout}>Ieșire</button>
+    <section className="adminSimplePage">
+      <aside className="adminSidebar">
+        <div className="adminSideLogo">
+          <img src="/images/logo.png" alt="REVIMED" />
+          <b>Admin</b>
         </div>
 
-        <div className="adminLangPicker">
-          <b>Alege limba cu care lucrezi:</b>
-          {(["ro","en","ru","ua"] as const).map((l) => (
-            <button
-              key={l}
-              className={workingLang === l ? "active" : ""}
-              type="button"
-              onClick={() => { window.location.href = `/revimed-login?lang=${l}`; }}
-            >
-              {l.toUpperCase()}
-            </button>
-          ))}
-          <small>Blog/servicii/text prețuri se editează pe limba aleasă. Prețul numeric se sincronizează pe toate limbile prin group_key.</small>
+        <button className={screen === "home" ? "active" : ""} onClick={() => setScreen("home")}>Dashboard</button>
+        <button className={screen.startsWith("blog") ? "active" : ""} onClick={() => setScreen("blog")}>Blog</button>
+        <button className={screen.startsWith("services") ? "active" : ""} onClick={() => setScreen("services")}>Servicii</button>
+        <button className={screen.startsWith("prices") ? "active" : ""} onClick={() => setScreen("prices")}>Prețuri</button>
+        <button className={screen.startsWith("gallery") ? "active" : ""} onClick={() => setScreen("gallery")}>Galerie</button>
+        <button className={screen === "contact" ? "active" : ""} onClick={() => setScreen("contact")}>Contact</button>
+        <button className={screen.startsWith("content") ? "active" : ""} onClick={() => setScreen("content")}>Texte pagini</button>
+
+        <button className="logoutSide" onClick={logout}>Ieșire</button>
+      </aside>
+
+      <main className="adminSimpleMain">
+        <div className="adminSimpleTop">
+          <div>
+            <button className="backBtn" onClick={() => setScreen("home")}>← Dashboard</button>
+            <h1>{screenTitle}</h1>
+          </div>
+
+          <div className="adminLangSelect">
+            <span>Limba:</span>
+            {langOptions.map((l) => (
+              <button key={l} className={workingLang === l ? "active" : ""} onClick={() => changeLang(l)}>
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="adminTabs">
-          <button className={tab === "services" ? "active" : ""} onClick={() => setTab("services")}>Servicii</button>
-          <button className={tab === "prices" ? "active" : ""} onClick={() => setTab("prices")}>Prețuri</button>
-          <button className={tab === "gallery" ? "active" : ""} onClick={() => setTab("gallery")}>Galerie</button>
-          <button className={tab === "contact" ? "active" : ""} onClick={() => setTab("contact")}>Contact</button>
-          <button className={tab === "content" ? "active" : ""} onClick={() => setTab("content")}>Texte pagini</button>
-          <button className={tab === "blog" ? "active" : ""} onClick={() => setTab("blog")}>Blog</button>
-        </div>
+        {message && <div className="adminNotice">{message}</div>}
 
-        {tab === "services" && (
-          <div className="adminColumns">
-            <div className="adminCard">
-              <h2>{editingService ? "Editează serviciu" : "Adaugă serviciu"}</h2>
-              <form action={saveService} className="adminForm">
-                <input type="hidden" name="id" value={editingService?.id || ""} />
-                <input type="hidden" name="lang" value={workingLang} />
-
-                <label>Titlu serviciu</label>
-                <input name="title" defaultValue={editingService?.title || ""} required />
-
-                <label>Slug URL</label>
-                <input name="slug" defaultValue={editingService?.slug || ""} placeholder="se generează automat dacă lași gol" />
-
-                <label>Icon</label>
-                <input name="icon" defaultValue={editingService?.icon || "⚕️"} />
-
-                <label>Imagine</label>
-                <input name="image" defaultValue={editingService?.image || "/images/medical-bg.jpg"} />
-
-                <label>Descriere scurtă</label>
-                <textarea name="short_desc" rows={3} defaultValue={editingService?.short_desc || ""} required />
-
-                <label>Text complet pagină serviciu</label>
-                <textarea name="full_content" rows={12} defaultValue={editingService?.full_content || ""} required />
-
-                <label>Cuvinte cheie SEO</label>
-                <input name="keywords" defaultValue={editingService?.keywords || ""} />
-
-                <label>Ordine</label>
-                <input name="position" type="number" defaultValue={editingService?.position || 0} />
-
-                <label className="checkLine">
-                  <input type="checkbox" name="published" defaultChecked={editingService ? Boolean(editingService.published) : true} />
-                  Publicat
-                </label>
-
-                <button className="blueBtn">{editingService ? "Salvează serviciul" : "Adaugă serviciu"}</button>
-                {editingService && <button type="button" className="softBtn" onClick={() => setEditingService(null)}>Anulează</button>}
-              </form>
-            </div>
-
-            <div className="adminCard">
-              <h2>Servicii existente</h2>
-              <div className="adminList">
-                {services.map((service) => (
-                  <div className="adminItem" key={service.id}>
-                    <b>{service.icon} {service.title}</b>
-                    <small>/{service.slug} · ordine {service.position} · {service.published ? "publicat" : "ascuns"}</small>
-                    <button onClick={() => setEditingService(service)}>Editare</button>
-                    <button onClick={() => removeService(service.id)}>Șterge</button>
-                  </div>
-                ))}
-              </div>
-            </div>
+        {screen === "home" && (
+          <div className="adminHomeGrid">
+            <button onClick={() => setScreen("blog")}><b>Blog</b><span>{posts.length} articole</span></button>
+            <button onClick={() => setScreen("services")}><b>Servicii</b><span>{services.length} servicii</span></button>
+            <button onClick={() => setScreen("prices")}><b>Prețuri</b><span>{prices.length} rânduri</span></button>
+            <button onClick={() => setScreen("gallery")}><b>Galerie</b><span>{gallery.length} imagini</span></button>
+            <button onClick={() => setScreen("contact")}><b>Contact</b><span>Telefon, hartă, program</span></button>
+            <button onClick={() => setScreen("content")}><b>Texte pagini</b><span>Hero și texte generale</span></button>
           </div>
         )}
 
-        {tab === "prices" && (
-          <div className="adminColumns">
-            <div className="adminCard">
-              <h2>{editingPrice ? "Editează preț" : "Adaugă preț"}</h2>
-              <form action={savePrice} className="adminForm">
-                <input type="hidden" name="id" value={editingPrice?.id || ""} />
-                <input type="hidden" name="lang" value={workingLang} />
-
-                <label>Cheie comună preț / group_key</label>
-                <input name="group_key" defaultValue={editingPrice?.group_key || ""} placeholder="ex: neuro_1. Aceeași cheie = același preț în toate limbile" />
-
-                <label>Categorie</label>
-                <input name="category" defaultValue={editingPrice?.category || ""} placeholder="ex: Consultații Neurologice" required />
-
-                <label>Serviciu / rând în tabel</label>
-                <input name="service" defaultValue={editingPrice?.service || ""} required />
-
-                <label>Preț</label>
-                <input name="price" defaultValue={editingPrice?.price || ""} required />
-
-                <label>Notă / descriere</label>
-                <input name="note" defaultValue={editingPrice?.note || ""} />
-
-                <label>Ordine</label>
-                <input name="position" type="number" defaultValue={editingPrice?.position || 0} />
-
-                <label className="checkLine">
-                  <input type="checkbox" name="published" defaultChecked={editingPrice ? Boolean(editingPrice.published) : true} />
-                  Publicat
-                </label>
-
-                <button className="blueBtn">{editingPrice ? "Salvează prețul" : "Adaugă preț"}</button>
-                {editingPrice && <button type="button" className="softBtn" onClick={() => setEditingPrice(null)}>Anulează</button>}
-              </form>
-            </div>
-
-            <div className="adminCard">
-              <h2>Tabel prețuri</h2>
-              <div className="adminList">
-                {prices.map((price) => (
-                  <div className="adminItem" key={price.id}>
-                    <b>{price.category}: {price.service}</b>
-                    <small>{price.price} · ordine {price.position} · {price.published ? "publicat" : "ascuns"}</small>
-                    {price.note && <small>{price.note}</small>}
-                    <button onClick={() => setEditingPrice(price)}>Editare</button>
-                    <button onClick={() => removePrice(price.id)}>Șterge</button>
-                  </div>
-                ))}
-              </div>
-            </div>
+        {screen === "blog" && (
+          <div className="adminActionGrid">
+            <button onClick={() => setScreen("blog-list")}><b>Vezi articole</b><span>Editează sau șterge articole existente</span></button>
+            <button onClick={openNewPost}><b>Adaugă articol</b><span>Scrie articol nou pentru limba {workingLang.toUpperCase()}</span></button>
           </div>
         )}
 
-        {tab === "blog" && (
-          <div className="adminColumns">
-            <div className="adminCard">
-              <h2>{editingPost ? "Editează articol" : "Adaugă articol"}</h2>
-              <form action={savePost} className="adminForm">
-                <input type="hidden" name="id" value={editingPost?.id || ""} />
-                <input type="hidden" name="lang" value={workingLang} />
+        {screen === "blog-list" && (
+          <ListShell title="Articole" onAdd={openNewPost}>
+            {posts.map((post) => (
+              <ListItem
+                key={post.id}
+                title={post.title}
+                subtitle={`/${post.slug} · ${post.published ? "publicat" : "ascuns"}`}
+                onEdit={() => openEditPost(post)}
+                onDelete={() => removePost(post.id)}
+              />
+            ))}
+          </ListShell>
+        )}
 
-                <label>Titlu</label>
-                <input name="title" defaultValue={editingPost?.title || ""} required />
+        {screen === "blog-form" && (
+          <FormCard title={editingPost ? "Editează articol" : "Adaugă articol"}>
+            <form action={savePost} className="adminFormSimple">
+              <input type="hidden" name="id" value={editingPost?.id || ""} />
+              <input type="hidden" name="lang" value={workingLang} />
+              <Field label="Titlu"><input name="title" defaultValue={editingPost?.title || ""} required /></Field>
+              <Field label="Slug URL"><input name="slug" defaultValue={editingPost?.slug || ""} /></Field>
+              <Field label="Descriere SEO"><textarea name="excerpt" rows={3} defaultValue={editingPost?.excerpt || ""} required /></Field>
+              <Field label="Imagine"><input name="image" defaultValue={editingPost?.image || "/images/medical-bg.jpg"} /></Field>
+              <Field label="Cuvinte cheie"><input name="keywords" defaultValue={editingPost?.keywords || ""} /></Field>
+              <Field label="Conținut"><textarea name="content" rows={14} defaultValue={editingPost?.content || ""} required /></Field>
+              <Check defaultChecked={editingPost ? Boolean(editingPost.published) : true} />
+              <FormActions back={() => setScreen("blog-list")} />
+            </form>
+          </FormCard>
+        )}
 
-                <label>Slug URL</label>
-                <input name="slug" defaultValue={editingPost?.slug || ""} />
-
-                <label>Descriere SEO</label>
-                <textarea name="excerpt" defaultValue={editingPost?.excerpt || ""} required rows={3} />
-
-                <label>Imagine</label>
-                <input name="image" defaultValue={editingPost?.image || "/images/medical-bg.jpg"} required />
-
-                <label>Cuvinte cheie</label>
-                <input name="keywords" defaultValue={editingPost?.keywords || ""} />
-
-                <label>Conținut</label>
-                <textarea name="content" defaultValue={editingPost?.content || ""} required rows={10} />
-
-                <label className="checkLine">
-                  <input type="checkbox" name="published" defaultChecked={editingPost ? Boolean(editingPost.published) : true} />
-                  Publicat
-                </label>
-
-                <button className="blueBtn">{editingPost ? "Salvează articolul" : "Adaugă articol"}</button>
-                {editingPost && <button className="softBtn" type="button" onClick={() => setEditingPost(null)}>Anulează</button>}
-              </form>
-            </div>
-
-            <div className="adminCard">
-              <h2>Articole</h2>
-              <div className="adminList">
-                {posts.map((post) => (
-                  <div className="adminItem" key={post.id}>
-                    <b>{post.title}</b>
-                    <small>/{post.slug}</small>
-                    <button onClick={() => setEditingPost(post)}>Editare</button>
-                    <button onClick={() => removePost(post.id)}>Șterge</button>
-                  </div>
-                ))}
-              </div>
-            </div>
+        {screen === "services" && (
+          <div className="adminActionGrid">
+            <button onClick={() => setScreen("services-list")}><b>Vezi servicii</b><span>Editează serviciile și paginile lor</span></button>
+            <button onClick={openNewService}><b>Adaugă serviciu</b><span>Creează o pagină nouă de serviciu</span></button>
           </div>
         )}
 
-        {message && <p>{message}</p>}
-      </div>
+        {screen === "services-list" && (
+          <ListShell title="Servicii" onAdd={openNewService}>
+            {services.map((item) => (
+              <ListItem
+                key={item.id}
+                title={`${item.icon} ${item.title}`}
+                subtitle={`/${item.slug} · ordine ${item.position} · ${item.published ? "publicat" : "ascuns"}`}
+                onEdit={() => openEditService(item)}
+                onDelete={() => removeService(item.id)}
+              />
+            ))}
+          </ListShell>
+        )}
+
+        {screen === "services-form" && (
+          <FormCard title={editingService ? "Editează serviciu" : "Adaugă serviciu"}>
+            <form action={saveService} className="adminFormSimple">
+              <input type="hidden" name="id" value={editingService?.id || ""} />
+              <input type="hidden" name="lang" value={workingLang} />
+              <Field label="Titlu"><input name="title" defaultValue={editingService?.title || ""} required /></Field>
+              <Field label="Slug URL"><input name="slug" defaultValue={editingService?.slug || ""} /></Field>
+              <Field label="Icon"><input name="icon" defaultValue={editingService?.icon || "⚕️"} /></Field>
+              <Field label="Imagine"><input name="image" defaultValue={editingService?.image || "/images/medical-bg.jpg"} /></Field>
+              <Field label="Descriere scurtă"><textarea name="short_desc" rows={3} defaultValue={editingService?.short_desc || ""} required /></Field>
+              <Field label="Text complet pagină"><textarea name="full_content" rows={14} defaultValue={editingService?.full_content || ""} required /></Field>
+              <Field label="SEO keywords"><input name="keywords" defaultValue={editingService?.keywords || ""} /></Field>
+              <Field label="Ordine"><input type="number" name="position" defaultValue={editingService?.position || 0} /></Field>
+              <Check defaultChecked={editingService ? Boolean(editingService.published) : true} />
+              <FormActions back={() => setScreen("services-list")} />
+            </form>
+          </FormCard>
+        )}
+
+        {screen === "prices" && (
+          <div className="adminActionGrid">
+            <button onClick={() => setScreen("prices-list")}><b>Vezi prețuri</b><span>Editează lista de prețuri</span></button>
+            <button onClick={openNewPrice}><b>Adaugă preț</b><span>Adaugă un rând nou de preț</span></button>
+          </div>
+        )}
+
+        {screen === "prices-list" && (
+          <ListShell title="Prețuri" onAdd={openNewPrice}>
+            {prices.map((item) => (
+              <ListItem
+                key={item.id}
+                title={`${item.category}: ${item.service}`}
+                subtitle={`${item.price} · group_key: ${item.group_key || "-"} · ${item.published ? "publicat" : "ascuns"}`}
+                onEdit={() => openEditPrice(item)}
+                onDelete={() => removePrice(item.id)}
+              />
+            ))}
+          </ListShell>
+        )}
+
+        {screen === "prices-form" && (
+          <FormCard title={editingPrice ? "Editează preț" : "Adaugă preț"}>
+            <form action={savePrice} className="adminFormSimple">
+              <input type="hidden" name="id" value={editingPrice?.id || ""} />
+              <input type="hidden" name="lang" value={workingLang} />
+              <Field label="Group key — același key sincronizează prețul numeric în toate limbile">
+                <input name="group_key" defaultValue={editingPrice?.group_key || `price_${Date.now()}`} />
+              </Field>
+              <Field label="Categorie"><input name="category" defaultValue={editingPrice?.category || ""} required /></Field>
+              <Field label="Serviciu"><input name="service" defaultValue={editingPrice?.service || ""} required /></Field>
+              <Field label="Preț"><input name="price" defaultValue={editingPrice?.price || ""} required /></Field>
+              <Field label="Notă"><input name="note" defaultValue={editingPrice?.note || ""} /></Field>
+              <Field label="Ordine"><input type="number" name="position" defaultValue={editingPrice?.position || 0} /></Field>
+              <Check defaultChecked={editingPrice ? Boolean(editingPrice.published) : true} />
+              <FormActions back={() => setScreen("prices-list")} />
+            </form>
+          </FormCard>
+        )}
+
+        {screen === "gallery" && (
+          <div className="adminActionGrid">
+            <button onClick={() => setScreen("gallery-list")}><b>Vezi imagini</b><span>Editează textele și imaginile din galerie</span></button>
+            <button onClick={openNewGallery}><b>Adaugă imagine</b><span>Adaugă poză nouă în galerie</span></button>
+          </div>
+        )}
+
+        {screen === "gallery-list" && (
+          <ListShell title="Galerie" onAdd={openNewGallery}>
+            {gallery.map((item) => (
+              <ListItem
+                key={item.id}
+                title={item.title}
+                subtitle={`${item.image} · ordine ${item.position} · ${item.published ? "publicat" : "ascuns"}`}
+                onEdit={() => openEditGallery(item)}
+                onDelete={() => removeGallery(item.id)}
+                image={item.image}
+              />
+            ))}
+          </ListShell>
+        )}
+
+        {screen === "gallery-form" && (
+          <FormCard title={editingGallery ? "Editează imagine" : "Adaugă imagine"}>
+            <form action={saveGallery} className="adminFormSimple">
+              <input type="hidden" name="id" value={editingGallery?.id || ""} />
+              <input type="hidden" name="lang" value={workingLang} />
+              <Field label="Imagine"><input name="image" defaultValue={editingGallery?.image || "/images/2pic.jpg"} required /></Field>
+              <Field label="Text pe poză"><input name="title" defaultValue={editingGallery?.title || ""} required /></Field>
+              <Field label="Alt SEO"><input name="alt" defaultValue={editingGallery?.alt || ""} /></Field>
+              <Field label="Ordine"><input type="number" name="position" defaultValue={editingGallery?.position || 0} /></Field>
+              <Check defaultChecked={editingGallery ? Boolean(editingGallery.published) : true} />
+              <FormActions back={() => setScreen("gallery-list")} />
+            </form>
+          </FormCard>
+        )}
+
+        {screen === "contact" && (
+          <FormCard title="Contact / Hartă / Transport">
+            <form action={saveContact} className="adminFormSimple">
+              <input type="hidden" name="lang" value={workingLang} />
+              <div className="adminTwoCols">
+                <Field label="Fix"><input name="fixed_phone" defaultValue={contactContent?.fixed_phone || "(022) 60-50-60"} /></Field>
+                <Field label="Telefon"><input name="phone" defaultValue={contactContent?.phone || "(+373) 069773816"} /></Field>
+                <Field label="Telefon alternativ"><input name="phone_alt" defaultValue={contactContent?.phone_alt || "(+373) 079422908"} /></Field>
+                <Field label="Email"><input name="email" defaultValue={contactContent?.email || "doctor-revenco@ya.ru"} /></Field>
+              </div>
+              <Field label="Adresă"><input name="address" defaultValue={contactContent?.address || ""} /></Field>
+              <div className="adminTwoCols">
+                <Field label="Program luni-vineri"><input name="hours_week" defaultValue={contactContent?.hours_week || ""} /></Field>
+                <Field label="Program weekend"><input name="hours_weekend" defaultValue={contactContent?.hours_weekend || ""} /></Field>
+                <Field label="Autobuz"><input name="bus" defaultValue={contactContent?.bus || ""} /></Field>
+                <Field label="Troleibuz"><input name="trolleybus" defaultValue={contactContent?.trolleybus || ""} /></Field>
+                <Field label="Tramvai"><input name="tram" defaultValue={contactContent?.tram || ""} /></Field>
+                <Field label="Poza 1"><input name="image_one" defaultValue={contactContent?.image_one || "/images/6.jpg"} /></Field>
+                <Field label="Poza 2"><input name="image_two" defaultValue={contactContent?.image_two || "/images/1.jpg"} /></Field>
+              </div>
+              <Field label="Google Maps link"><textarea name="map_link" rows={3} defaultValue={contactContent?.map_link || ""} /></Field>
+              <Field label="Google Maps embed src"><textarea name="map_embed" rows={4} defaultValue={contactContent?.map_embed || ""} /></Field>
+              <FormActions back={() => setScreen("home")} />
+            </form>
+          </FormCard>
+        )}
+
+        {screen === "content" && (
+          <div className="adminActionGrid">
+            <button onClick={() => setScreen("content-list")}><b>Vezi texte</b><span>Hero și texte existente</span></button>
+            <button onClick={openNewContent}><b>Adaugă text</b><span>Adaugă text pentru o pagină</span></button>
+          </div>
+        )}
+
+        {screen === "content-list" && (
+          <ListShell title="Texte pagini" onAdd={openNewContent}>
+            {contentBlocks.map((item) => (
+              <ListItem
+                key={item.id}
+                title={`${item.page_key} / ${item.block_key}`}
+                subtitle={`${item.title} · ${item.published ? "publicat" : "ascuns"}`}
+                onEdit={() => openEditContent(item)}
+                onDelete={() => removeContentBlock(item.id)}
+              />
+            ))}
+          </ListShell>
+        )}
+
+        {screen === "content-form" && (
+          <FormCard title={editingContent ? "Editează text" : "Adaugă text"}>
+            <form action={saveContentBlock} className="adminFormSimple">
+              <input type="hidden" name="id" value={editingContent?.id || ""} />
+              <input type="hidden" name="lang" value={workingLang} />
+              <Field label="Pagina">
+                <select name="page_key" defaultValue={editingContent?.page_key || "contact"}>
+                  <option value="contact">Contact</option>
+                  <option value="galerie">Galerie</option>
+                  <option value="preturi">Prețuri</option>
+                  <option value="servicii">Servicii</option>
+                  <option value="aplicatii">Aplicații</option>
+                  <option value="blog">Blog</option>
+                  <option value="despre-noi">Despre Noi</option>
+                </select>
+              </Field>
+              <Field label="Block key"><input name="block_key" defaultValue={editingContent?.block_key || "hero"} /></Field>
+              <Field label="Titlu"><input name="title" defaultValue={editingContent?.title || ""} /></Field>
+              <Field label="Text"><textarea name="text" rows={6} defaultValue={editingContent?.text || ""} /></Field>
+              <Field label="Imagine"><input name="image" defaultValue={editingContent?.image || ""} /></Field>
+              <Field label="Ordine"><input type="number" name="position" defaultValue={editingContent?.position || 0} /></Field>
+              <Check defaultChecked={editingContent ? Boolean(editingContent.published) : true} />
+              <FormActions back={() => setScreen("content-list")} />
+            </form>
+          </FormCard>
+        )}
+      </main>
     </section>
+  );
+}
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <label className="adminField">
+      <span>{label}</span>
+      {children}
+    </label>
+  );
+}
+
+function Check({ defaultChecked }: { defaultChecked: boolean }) {
+  return (
+    <label className="adminCheck">
+      <input type="checkbox" name="published" defaultChecked={defaultChecked} />
+      Publicat
+    </label>
+  );
+}
+
+function FormActions({ back }: { back: () => void }) {
+  return (
+    <div className="adminFormActions">
+      <button className="blueBtn">Salvează</button>
+      <button type="button" className="softBtn" onClick={back}>Înapoi</button>
+    </div>
+  );
+}
+
+function FormCard({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="adminSimpleCard">
+      <h2>{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+function ListShell({ title, onAdd, children }: { title: string; onAdd: () => void; children: React.ReactNode }) {
+  return (
+    <section className="adminSimpleCard">
+      <div className="adminListHead">
+        <h2>{title}</h2>
+        <button className="blueBtn" onClick={onAdd}>Adaugă</button>
+      </div>
+      <div className="adminSimpleList">{children}</div>
+    </section>
+  );
+}
+
+function ListItem({
+  title,
+  subtitle,
+  onEdit,
+  onDelete,
+  image
+}: {
+  title: string;
+  subtitle: string;
+  onEdit: () => void;
+  onDelete: () => void;
+  image?: string;
+}) {
+  return (
+    <article className="adminSimpleItem">
+      {image && <img src={image} alt="" />}
+      <div>
+        <b>{title}</b>
+        <span>{subtitle}</span>
+      </div>
+      <div className="adminItemActions">
+        <button onClick={onEdit}>Edit</button>
+        <button className="danger" onClick={onDelete}>Șterge</button>
+      </div>
+    </article>
   );
 }
