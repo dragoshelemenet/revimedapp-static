@@ -92,7 +92,8 @@ export default function AdminClient({
   contactContent?: ContactContent | null;
   contentBlocks?: ContentBlock[];
 }) {
-  const [workingLang, setWorkingLang] = useState<"ro" | "en" | "ru" | "ua">(selectedLang);
+  const safeSelectedLang = selectedLang || "ro";
+  const [workingLang, setWorkingLang] = useState<"ro" | "en" | "ru" | "ua">(safeSelectedLang);
   const [tab, setTab] = useState<"services" | "prices" | "gallery" | "contact" | "content" | "blog">("services");
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [editingPrice, setEditingPrice] = useState<Price | null>(null);
