@@ -3592,3 +3592,263 @@ p{margin:0 0 18px}
     border-radius:20px;
   }
 }
+
+/* Compact mobile homepage/site layout */
+.fb,
+.fb span{
+  display:none!important;
+}
+
+.fbIcon8{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:48px!important;
+  height:48px!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  text-decoration:none!important;
+  overflow:hidden!important;
+}
+
+.fbIcon8 img{
+  width:48px!important;
+  height:48px!important;
+  display:block!important;
+}
+
+@media(max-width:700px){
+  .rmSection{
+    padding:28px 0!important;
+  }
+
+  .centerTitle{
+    font-size:26px!important;
+    margin-bottom:18px!important;
+  }
+
+  .aboutBlock .aboutGrid{
+    gap:18px!important;
+  }
+
+  .doctorVisual,
+  .doctorVisual img{
+    width:190px!important;
+    height:190px!important;
+    margin:0 auto!important;
+  }
+
+  .aboutGrid h2{
+    font-size:27px!important;
+    line-height:1.1!important;
+  }
+
+  .aboutGrid p{
+    font-size:14px!important;
+    line-height:1.5!important;
+  }
+
+  /* 2 cards per row on phone */
+  .serviceGrid,
+  .toolGrid,
+  .grid3,
+  .doshaGrid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+  }
+
+  .serviceTile,
+  .toolTile,
+  .card{
+    padding:14px!important;
+    border-radius:16px!important;
+    min-height:auto!important;
+  }
+
+  .serviceTile .tileIcon,
+  .tileIcon{
+    font-size:26px!important;
+    margin-bottom:6px!important;
+  }
+
+  .serviceTile h3,
+  .toolTile h3,
+  .card h2{
+    font-size:15px!important;
+    line-height:1.15!important;
+    margin:6px 0 6px!important;
+    letter-spacing:-.2px!important;
+  }
+
+  .serviceTile p,
+  .toolTile p,
+  .card p{
+    font-size:11.5px!important;
+    line-height:1.35!important;
+    margin:0!important;
+  }
+
+  .toolTile span,
+  .serviceTile span,
+  .tag{
+    font-size:10px!important;
+    padding:5px 8px!important;
+    margin-bottom:4px!important;
+  }
+
+  .toolTile b,
+  .serviceTile b,
+  .card b{
+    display:block!important;
+    margin-top:10px!important;
+    font-size:12px!important;
+  }
+
+  /* Keep very text-heavy pages one column */
+  .pricesAccordion,
+  .priceAccordionBody,
+  .contactModernGrid,
+  .contentGrid,
+  .neuroCleanLayout,
+  .neuroQuestions{
+    grid-template-columns:1fr!important;
+  }
+
+  /* Reviews smaller */
+  .testimonialBand{
+    padding:32px 0!important;
+  }
+
+  .reviewCarousel{
+    width:100%!important;
+    grid-template-columns:34px 1fr 34px!important;
+    gap:6px!important;
+  }
+
+  .reviewArrow{
+    width:34px!important;
+    height:34px!important;
+    font-size:27px!important;
+  }
+
+  .reviewSlide{
+    min-height:150px!important;
+    padding:16px!important;
+  }
+
+  .reviewSlide p{
+    font-size:14px!important;
+    line-height:1.35!important;
+  }
+
+  .reviewSlide .stars{
+    font-size:16px!important;
+  }
+
+  /* Footer compact */
+  .rmFooter{
+    padding:22px 0!important;
+  }
+
+  .rmFooterGrid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    grid-template-areas:
+      "brand brand"
+      "schedule schedule"
+      "links social"!important;
+    gap:16px!important;
+  }
+
+  .footerBrand{
+    grid-area:brand!important;
+  }
+
+  .footerSchedule{
+    grid-area:schedule!important;
+    padding:12px!important;
+    border-radius:14px!important;
+    background:#f6fbff!important;
+    border:1px solid #dbeafe!important;
+  }
+
+  .footerLinks{
+    grid-area:links!important;
+  }
+
+  .footerSocial{
+    grid-area:social!important;
+  }
+
+  .footerLogo{
+    height:34px!important;
+    max-width:150px!important;
+  }
+
+  .footerBrand p{
+    font-size:12px!important;
+    line-height:1.35!important;
+    margin:6px 0 0!important;
+  }
+
+  .rmFooter h3{
+    font-size:16px!important;
+    margin-bottom:8px!important;
+  }
+
+  .footerLinks div{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:6px!important;
+  }
+
+  .footerLinks a{
+    font-size:12px!important;
+    line-height:1.2!important;
+    margin:0!important;
+  }
+
+  .footerSchedule p{
+    font-size:12px!important;
+    line-height:1.35!important;
+    margin:0 0 6px!important;
+  }
+
+  .fbIcon8,
+  .fbIcon8 img{
+    width:42px!important;
+    height:42px!important;
+  }
+}
+
+/* On very narrow phones keep cards readable */
+@media(max-width:350px){
+  .serviceGrid,
+  .toolGrid,
+  .grid3,
+  .doshaGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .serviceTile h3,
+  .toolTile h3,
+  .card h2{
+    font-size:19px!important;
+  }
+
+  .serviceTile p,
+  .toolTile p,
+  .card p{
+    font-size:14px!important;
+  }
+
+  .rmFooterGrid{
+    grid-template-areas:
+      "brand"
+      "schedule"
+      "links"
+      "social"!important;
+    grid-template-columns:1fr!important;
+  }
+}

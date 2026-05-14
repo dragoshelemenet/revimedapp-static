@@ -35,8 +35,8 @@ export default function Footer() {
 
         <div className="footerSocial">
           <h3>Urmăriți-ne</h3>
-          <a className="fb" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed">
-            <span>f</span>
+          <a className="fbIcon8" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed">
+            <img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook" />
           </a>
         </div>
       </div>
