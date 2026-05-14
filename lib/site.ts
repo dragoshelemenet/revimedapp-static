@@ -86,7 +86,7 @@ export const tools = [
       "Chestionar Vata–Pitta–Kapha cu scor, concluzie și protocol educațional cu doze și contraindicații."
   },
   {
-    title: "REVIMED Yoga Tibetan",
+    title: "REVIMED Yoga Tibetan V2",
     slug: "respiratie-terapeutica",
     href: "/aplicatii/teste-si-instrumente/respiratie-terapeutica",
     tag: "Instrument pacient",

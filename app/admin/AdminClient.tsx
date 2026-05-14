@@ -540,7 +540,7 @@ export default function AdminClient({
             {services.map((item) => (
               <ListItem
                 key={item.id}
-                title={`${item.icon} ${adminTitle(item, workingLang)}`}
+                title={`$ ${adminTitle(item, workingLang)}`}
                 subtitle={`/${item.slug} · ordine ${item.position} · ${item.published ? "publicat" : "ascuns"}`}
                 onEdit={() => openEditService(item)}
                 onDelete={() => removeService(item.id)}

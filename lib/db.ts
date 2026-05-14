@@ -234,11 +234,11 @@ if (galleryCount.c === 0) {
 
   [
     ["/images/2pic.jpg", "Recepție Revimed PLUS+", "Recepție și spațiu de așteptare Revimed PLUS+", 1],
-    ["/images/1pic.jpg", "Consultație medicală", "Cabinet consultații Revimed PLUS+", 2],
+    ["/images/1pic.jpg", "Angajați prietenoși", "Echipă prietenoasă Revimed PLUS+", 2],
     ["/images/3.jpg", "Reabilitare medicală", "Proceduri de reabilitare medicală", 3],
     ["/images/pre.jpg", "Sală de terapie", "Spațiu pentru terapie și recuperare", 4],
     ["/images/pre1.jpg", "Proceduri terapeutice", "Proceduri medicale și recuperare", 5],
-    ["/images/31.jpg", "Cabinet medical", "Cabinet medical Revimed PLUS+", 6]
+    ["/images/31.jpg", "Doctor Igor Revenco", "Doctor Igor Revenco - Centrul Medical Revimed PLUS+", 6]
   ].forEach((row) => insertGallery.run(...row));
 }
 
