@@ -57,9 +57,9 @@ export default function TibetanYogaPage() {
         return e + 1;
       });
 
-      setPhaseLeft((left) => {
+      setPhaseLeft((left: number) => {
         if (left > 1) return left - 1;
-        setPhaseIndex((pi) => {
+        setPhaseIndex((pi: number) => {
           const next = (pi + 1) % 4;
           if (voice && typeof window !== "undefined" && "speechSynthesis" in window) {
             window.speechSynthesis.cancel();
