@@ -17,6 +17,8 @@ export default function Footer() {
           <Link href="/preturi">Prețuri</Link>
           <Link href="/aplicatii/teste-si-instrumente">Teste și Instrumente</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/termeni-si-conditii">Termeni și Condiții</Link>
+          <Link href="/cookies">Cookies</Link>
         </div>
         <div>
           <h3>Urmăriți-ne</h3>

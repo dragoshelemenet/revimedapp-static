@@ -152,7 +152,9 @@ export default function DoshaPage() {
               <ul>{proto.avoid.map((x: string) => <li key={x}>{x}</li>)}</ul>
 
               <div className="noteBox">
-                Notă importantă: contraindicațiile, sarcina, alăptarea, bolile autoimune, tratamentele sedative, tiroidiene, antidiabetice, anticoagulante și istoricul hepatic trebuie discutate cu un specialist.
+                <b>Consultarea cu medicul este obligatorie.</b> Fitoterapia, plantele, suplimentele și dozele menționate aici sunt informații educaționale generale. Orice utilizare fără consult medical se face pe propriul risc. Această aplicație nu este creată pentru a înlocui consultația cu doctorul, diagnosticul, tratamentul sau recomandările personalizate ale unui specialist. Scopul ei este doar orientativ, pentru educație și pentru a ajuta pacientul să discute mai clar cu medicul.
+                <br /><br />
+                Contraindicațiile, sarcina, alăptarea, bolile autoimune, bolile hepatice sau renale, tratamentele sedative, tiroidiene, antidiabetice, anticoagulante și orice tratament medicamentos trebuie discutate obligatoriu cu un specialist înainte de folosire.
               </div>
             </div>
           )}
