@@ -81,16 +81,20 @@ export default function AdminClient({
   loggedIn,
   posts,
   prices = [],
-  services = []
+  services = [],
+  gallery = [],
+  contactContent = null,
+  contentBlocks = [],
+  selectedLang = "ro"
 }: {
   loggedIn: boolean;
   posts: Post[];
   prices?: Price[];
   services?: ServiceAdmin[];
   gallery?: GalleryItem[];
-  selectedLang?: "ro" | "en" | "ru" | "ua";
   contactContent?: ContactContent | null;
   contentBlocks?: ContentBlock[];
+  selectedLang?: "ro" | "en" | "ru" | "ua";
 }) {
   const safeSelectedLang = selectedLang || "ro";
   const [workingLang, setWorkingLang] = useState<"ro" | "en" | "ru" | "ua">(safeSelectedLang);
