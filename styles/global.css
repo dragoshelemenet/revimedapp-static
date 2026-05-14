@@ -8931,3 +8931,298 @@ html.route-ready .pageHero{
   .neuroCategoryGrid{grid-template-columns:1fr}
   .neuroCategoryGrid article{grid-template-columns:88px 1fr 28px}
 }
+
+/* =========================================================
+   PRICES PAGE NORMAL DESKTOP LAYOUT FIX
+   ========================================================= */
+
+/* Make prices page use normal readable width */
+.pricesCleanSection .rmShell,
+.pricesPage .rmShell,
+.pricePage .rmShell{
+  max-width:1120px!important;
+}
+
+/* Currency converter: normal desktop card */
+.currencyBox{
+  max-width:980px!important;
+  width:100%!important;
+  margin:0 auto 26px!important;
+  padding:30px 34px!important;
+  border-radius:24px!important;
+  display:grid!important;
+  grid-template-columns:1fr 1.45fr!important;
+  gap:34px!important;
+  align-items:center!important;
+}
+
+.currencyBox h2{
+  max-width:360px!important;
+  font-size:34px!important;
+  line-height:1.02!important;
+}
+
+.currencyGrid{
+  display:grid!important;
+  grid-template-columns:1fr 1fr 1fr 120px!important;
+  gap:14px!important;
+  align-items:end!important;
+}
+
+.currencyGrid label{
+  min-width:0!important;
+}
+
+.currencyGrid input,
+.currencyGrid select{
+  width:100%!important;
+  min-width:0!important;
+  height:56px!important;
+  min-height:56px!important;
+}
+
+.currencyResult{
+  height:70px!important;
+  min-height:70px!important;
+  width:120px!important;
+  border-radius:16px!important;
+  padding:12px 16px!important;
+}
+
+/* Notice aligns with content */
+.priceNotice{
+  max-width:980px!important;
+  margin:0 auto 34px!important;
+  padding:16px 22px!important;
+}
+
+/* Accordion should be normal width, not tiny */
+.pricesAccordion{
+  max-width:760px!important;
+  width:100%!important;
+  margin:0 auto!important;
+  gap:14px!important;
+}
+
+.priceAccordionGroup{
+  width:100%!important;
+  border-radius:20px!important;
+  overflow:hidden!important;
+}
+
+/* Fix title + count layout */
+.priceAccordionHead{
+  min-height:82px!important;
+  width:100%!important;
+  padding:20px 22px!important;
+  display:grid!important;
+  grid-template-columns:1fr 50px!important;
+  align-items:center!important;
+  gap:18px!important;
+}
+
+.priceAccordionHead > div,
+.priceAccordionHead .priceAccordionTitle,
+.priceAccordionHead h2,
+.priceAccordionHead h3{
+  min-width:0!important;
+}
+
+.priceAccordionHead b{
+  display:block!important;
+  font-size:24px!important;
+  line-height:1.14!important;
+  letter-spacing:-.035em!important;
+  margin:0 0 6px!important;
+  white-space:normal!important;
+}
+
+.priceAccordionHead span{
+  display:block!important;
+  margin:0!important;
+  font-size:13px!important;
+  line-height:1.2!important;
+  color:#64748b!important;
+  font-weight:900!important;
+}
+
+/* If the count is inline next to title, force it lower */
+.priceAccordionHead b + span,
+.priceAccordionHead h2 + span,
+.priceAccordionHead h3 + span{
+  margin-top:6px!important;
+}
+
+/* Plus button stable */
+.priceAccordionHead i,
+.priceAccordionHead button,
+.pricePlus{
+  width:46px!important;
+  height:46px!important;
+  min-width:46px!important;
+  border-radius:50%!important;
+  justify-self:end!important;
+  align-self:center!important;
+}
+
+/* Inside opened category */
+.priceAccordionBody{
+  padding:18px 20px 22px!important;
+}
+
+.priceItemClean{
+  display:grid!important;
+  grid-template-columns:1fr auto!important;
+  gap:14px!important;
+  align-items:center!important;
+  padding:16px 18px!important;
+}
+
+/* If old price row has table/list class names */
+.priceRow,
+.priceItem,
+.priceLine{
+  display:grid!important;
+  grid-template-columns:1fr auto!important;
+  gap:14px!important;
+  align-items:center!important;
+}
+
+.priceRow strong,
+.priceItem strong,
+.priceLine strong,
+.priceItemClean strong{
+  justify-self:end!important;
+  color:#075f9e!important;
+  font-weight:950!important;
+}
+
+/* Remove accidental tiny inline service count */
+.priceAccordionHead small{
+  display:block!important;
+  margin-top:6px!important;
+  color:#64748b!important;
+  font-size:13px!important;
+  font-weight:900!important;
+}
+
+/* Desktop page spacing */
+@media(min-width:901px){
+  .pricesCleanSection{
+    padding:58px 0 74px!important;
+  }
+
+  .pricesAccordion{
+    padding-bottom:18px!important;
+  }
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .pricesCleanSection .rmShell,
+  .pricesPage .rmShell,
+  .pricePage .rmShell{
+    max-width:calc(100% - 32px)!important;
+  }
+
+  .currencyBox{
+    max-width:100%!important;
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+    padding:24px!important;
+  }
+
+  .currencyBox h2{
+    max-width:none!important;
+  }
+
+  .currencyGrid{
+    grid-template-columns:1fr 1fr!important;
+  }
+
+  .currencyResult{
+    width:100%!important;
+    grid-column:1 / -1!important;
+  }
+
+  .priceNotice,
+  .pricesAccordion{
+    max-width:100%!important;
+  }
+}
+
+/* Mobile: clean, readable */
+@media(max-width:700px){
+  .pricesCleanSection .rmShell,
+  .pricesPage .rmShell,
+  .pricePage .rmShell{
+    max-width:calc(100% - 28px)!important;
+  }
+
+  .currencyBox{
+    padding:18px!important;
+    border-radius:20px!important;
+  }
+
+  .currencyBox h2{
+    font-size:26px!important;
+  }
+
+  .currencyGrid{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+
+  .currencyGrid input,
+  .currencyGrid select{
+    height:50px!important;
+    min-height:50px!important;
+  }
+
+  .currencyResult{
+    height:64px!important;
+    min-height:64px!important;
+  }
+
+  .priceNotice{
+    margin-bottom:22px!important;
+  }
+
+  .priceAccordionHead{
+    min-height:76px!important;
+    grid-template-columns:1fr 42px!important;
+    padding:16px!important;
+  }
+
+  .priceAccordionHead b{
+    font-size:19px!important;
+  }
+
+  .priceAccordionHead span,
+  .priceAccordionHead small{
+    font-size:12px!important;
+  }
+
+  .priceAccordionHead i,
+  .priceAccordionHead button,
+  .pricePlus{
+    width:40px!important;
+    height:40px!important;
+    min-width:40px!important;
+  }
+
+  .priceItemClean,
+  .priceRow,
+  .priceItem,
+  .priceLine{
+    grid-template-columns:1fr!important;
+    gap:6px!important;
+  }
+
+  .priceRow strong,
+  .priceItem strong,
+  .priceLine strong,
+  .priceItemClean strong{
+    justify-self:start!important;
+  }
+}
