@@ -2,6 +2,7 @@ import Link from "next/link";
 import { youtubeVideos } from "@/lib/videos";
 import { site } from "@/lib/site";
 import { translatedTools } from "@/lib/appMeta";
+import { translateGalleryTitle } from "@/lib/galleryTranslate";
 import { getPublishedServicesSmart, getPublishedPricesSmart, getPublishedPostsSmart, getServiceBySlugSmart, getPostBySlugSmart } from "@/lib/db";
 import { getContactContentSmart, getContentBlockSmart, getPublishedGalleryItemsSmart } from "@/lib/content";
 import { t, withLang, type Lang } from "@/lib/i18n";
@@ -274,7 +275,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
                 key={image.id}
               >
                 <img src={image.image} alt={image.alt || image.title} loading="lazy" />
-                <span>{image.title}</span>
+                <span>{translateGalleryTitle(lang, image.title, image.image)}</span>
               </a>
             ))}
           </div>
