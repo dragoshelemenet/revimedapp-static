@@ -515,6 +515,343 @@ function detailedGuidance(slug: ToolSlug, lang: Lang, percent: number, score: nu
   return base;
 }
 
+
+type GuidanceBlock = {
+  meaning: string[];
+  plan: string[];
+  avoid: string[];
+  red: string[];
+  prep: string[];
+};
+
+function levelFromPercent(percent: number) {
+  if (percent < 34) return "low";
+  if (percent < 67) return "medium";
+  return "high";
+}
+
+function guidanceForTool(slug: ToolSlug, lang: Lang, percent: number): GuidanceBlock {
+  const level = levelFromPercent(percent);
+
+  const fallback: Record<Lang, Record<string, GuidanceBlock>> = {
+    ro: {
+      low: {
+        meaning: [
+          "Scorul este mic, deci răspunsurile nu arată un impact major acum.",
+          "Totuși, scopul este să previi agravarea și să observi tiparul simptomelor."
+        ],
+        plan: [
+          "Urmărește simptomele 7 zile: când apar, cât durează și ce le agravează.",
+          "Fă mișcare ușoară zilnic, fără să provoci durere.",
+          "Dacă simptomele se repetă, notează-le pentru medic."
+        ],
+        avoid: [
+          "Nu ignora simptomele care apar zilnic.",
+          "Nu crește brusc efortul doar pentru că azi te simți bine."
+        ],
+        red: [
+          "Durere bruscă severă.",
+          "Amorțeală, slăbiciune, amețeală sau pierdere de echilibru.",
+          "Simptome care se agravează rapid."
+        ],
+        prep: [
+          "Zona exactă a simptomelor.",
+          "Durata problemei.",
+          "Ce ajută și ce agravează."
+        ]
+      },
+      medium: {
+        meaning: [
+          "Scorul arată impact moderat. Problema merită urmărită și corectată.",
+          "Este util un plan simplu: reducerea simptomului, mobilitate, apoi revenire progresivă."
+        ],
+        plan: [
+          "Evită 7 zile mișcările care cresc simptomele peste 5/10.",
+          "Fă activități ușoare, controlate, 5–10 minute pe zi.",
+          "Dacă nu apare progres în 7–14 zile, programează evaluare."
+        ],
+        avoid: [
+          "Nu forța exerciții dureroase.",
+          "Nu sta complet nemișcat mai multe zile.",
+          "Nu amâna consultul dacă simptomele limitează mersul, somnul sau munca."
+        ],
+        red: [
+          "Durere care coboară pe braț sau picior.",
+          "Slăbiciune, amorțeală sau instabilitate.",
+          "Amețeli, căderi sau pierdere de coordonare."
+        ],
+        prep: [
+          "Scor durere dimineața/seara.",
+          "Lista tratamentelor încercate.",
+          "Investigații existente."
+        ]
+      },
+      high: {
+        meaning: [
+          "Scorul este ridicat. Nu e potrivit un sfat general; ai nevoie de evaluare ghidată.",
+          "Obiectivul este să clarifici ce este sigur pentru tine și ce trebuie evitat."
+        ],
+        plan: [
+          "În următoarele 24–72 ore evită efortul intens și mișcările care provoacă simptome.",
+          "Fă doar mișcări lente, ușoare, care nu agravează.",
+          "Programează o consultație pentru un plan personalizat."
+        ],
+        avoid: [
+          "Nu începe singur exerciții dificile.",
+          "Nu ridica greutăți dacă ai durere, amorțeală, slăbiciune sau instabilitate.",
+          "Nu continua activități care agravează clar simptomele."
+        ],
+        red: [
+          "Slăbiciune progresivă sau amorțeală.",
+          "Cădere, traumă sau durere severă.",
+          "Pierdere control urinar/fecal, febră sau agravare rapidă."
+        ],
+        prep: [
+          "Când a început problema și cum evoluează.",
+          "Ce mișcări declanșează simptomele.",
+          "Medicamente, investigații și boli asociate."
+        ]
+      }
+    },
+    en: {
+      low: {
+        meaning: ["Low score: no major impact is shown now.", "The goal is prevention and tracking symptom patterns."],
+        plan: ["Track symptoms for 7 days.", "Do gentle daily movement without provoking pain.", "Write repeated symptoms for the doctor."],
+        avoid: ["Do not ignore daily symptoms.", "Do not suddenly increase effort."],
+        red: ["Sudden severe pain.", "Numbness, weakness, dizziness or balance loss.", "Rapidly worsening symptoms."],
+        prep: ["Exact symptom area.", "Problem duration.", "What helps and what worsens."]
+      },
+      medium: {
+        meaning: ["Moderate score: the problem should be monitored and corrected.", "Use a simple plan: reduce symptoms, improve mobility, return progressively."],
+        plan: ["Avoid movements that raise symptoms above 5/10 for 7 days.", "Do controlled light activity 5–10 minutes daily.", "If no progress in 7–14 days, schedule assessment."],
+        avoid: ["Do not force painful exercises.", "Do not stay completely inactive for days.", "Do not delay consultation if walking, sleep or work is limited."],
+        red: ["Pain going down arm or leg.", "Weakness, numbness or instability.", "Dizziness, falls or coordination loss."],
+        prep: ["Morning/evening pain score.", "Treatments tried.", "Existing investigations."]
+      },
+      high: {
+        meaning: ["High score: generic advice is not enough.", "You need guided assessment to know what is safe and what to avoid."],
+        plan: ["For 24–72 hours avoid intense effort and provoking movements.", "Only do slow gentle movements that do not worsen symptoms.", "Schedule consultation for a personalized plan."],
+        avoid: ["Do not start difficult exercises alone.", "Do not lift weights with pain, numbness, weakness or instability.", "Do not continue activities that clearly worsen symptoms."],
+        red: ["Progressive weakness or numbness.", "Fall, trauma or severe pain.", "Loss of bladder/bowel control, fever or rapid worsening."],
+        prep: ["When it started and how it evolves.", "Triggering movements.", "Medication, investigations and associated conditions."]
+      }
+    },
+    ru: {
+      low: {
+        meaning: ["Низкий балл: сейчас нет выраженного влияния.", "Цель — профилактика и отслеживание симптомов."],
+        plan: ["Отслеживайте симптомы 7 дней.", "Делайте мягкие движения без провокации боли.", "Записывайте повторяющиеся симптомы для врача."],
+        avoid: ["Не игнорируйте ежедневные симптомы.", "Не увеличивайте нагрузку резко."],
+        red: ["Внезапная сильная боль.", "Онемение, слабость, головокружение или потеря равновесия.", "Быстрое ухудшение."],
+        prep: ["Точная зона симптомов.", "Длительность проблемы.", "Что помогает и что ухудшает."]
+      },
+      medium: {
+        meaning: ["Умеренный балл: проблему стоит отслеживать и корректировать.", "План: уменьшение симптомов, подвижность, постепенное возвращение."],
+        plan: ["7 дней избегайте движений, усиливающих симптомы выше 5/10.", "Легкая контролируемая активность 5–10 минут в день.", "Если нет прогресса 7–14 дней, запишитесь на оценку."],
+        avoid: ["Не делайте болезненные упражнения через силу.", "Не оставайтесь полностью неподвижным.", "Не откладывайте консультацию, если ограничены ходьба, сон или работа."],
+        red: ["Боль в руку или ногу.", "Слабость, онемение или нестабильность.", "Головокружение, падения или нарушение координации."],
+        prep: ["Оценка боли утром/вечером.", "Что пробовали лечить.", "Имеющиеся обследования."]
+      },
+      high: {
+        meaning: ["Высокий балл: общих советов недостаточно.", "Нужна оценка, чтобы понять, что безопасно и чего избегать."],
+        plan: ["24–72 часа избегайте интенсивной нагрузки и провоцирующих движений.", "Только медленные мягкие движения без ухудшения.", "Запишитесь на консультацию для персонального плана."],
+        avoid: ["Не начинайте сложные упражнения самостоятельно.", "Не поднимайте тяжести при боли, онемении, слабости или нестабильности.", "Не продолжайте действия, которые явно ухудшают симптомы."],
+        red: ["Прогрессирующая слабость или онемение.", "Падение, травма или сильная боль.", "Нарушение контроля мочи/стула, температура или быстрое ухудшение."],
+        prep: ["Когда началось и как развивается.", "Какие движения провоцируют.", "Лекарства, обследования и сопутствующие болезни."]
+      }
+    },
+    ua: {
+      low: {
+        meaning: ["Низький бал: зараз немає вираженого впливу.", "Мета — профілактика і відстеження симптомів."],
+        plan: ["Відстежуйте симптоми 7 днів.", "Робіть м’які рухи без провокації болю.", "Записуйте повторювані симптоми для лікаря."],
+        avoid: ["Не ігноруйте щоденні симптоми.", "Не збільшуйте навантаження різко."],
+        red: ["Раптовий сильний біль.", "Оніміння, слабкість, запаморочення або втрата рівноваги.", "Швидке погіршення."],
+        prep: ["Точна зона симптомів.", "Тривалість проблеми.", "Що допомагає і що погіршує."]
+      },
+      medium: {
+        meaning: ["Помірний бал: проблему варто відстежувати і коригувати.", "План: зменшення симптомів, рухливість, поступове повернення."],
+        plan: ["7 днів уникайте рухів, що підсилюють симптоми понад 5/10.", "Легка контрольована активність 5–10 хвилин на день.", "Якщо немає прогресу 7–14 днів, запишіться на оцінку."],
+        avoid: ["Не робіть болючі вправи через силу.", "Не залишайтесь повністю нерухомим.", "Не відкладайте консультацію, якщо обмежені хода, сон або робота."],
+        red: ["Біль у руку або ногу.", "Слабкість, оніміння або нестабільність.", "Запаморочення, падіння або порушення координації."],
+        prep: ["Оцінка болю вранці/увечері.", "Що пробували для лікування.", "Наявні обстеження."]
+      },
+      high: {
+        meaning: ["Високий бал: загальних порад недостатньо.", "Потрібна оцінка, щоб зрозуміти, що безпечно і чого уникати."],
+        plan: ["24–72 години уникайте інтенсивного навантаження і провокуючих рухів.", "Тільки повільні м’які рухи без погіршення.", "Запишіться на консультацію для персонального плану."],
+        avoid: ["Не починайте складні вправи самостійно.", "Не піднімайте вагу при болю, онімінні, слабкості або нестабільності.", "Не продовжуйте дії, які явно погіршують симптоми."],
+        red: ["Прогресуюча слабкість або оніміння.", "Падіння, травма або сильний біль.", "Порушення контролю сечі/калу, температура або швидке погіршення."],
+        prep: ["Коли почалось і як розвивається.", "Які рухи провокують.", "Ліки, обстеження і супутні хвороби."]
+      }
+    }
+  };
+
+  const base = fallback[lang][level];
+
+  const specific: Partial<Record<ToolSlug, Partial<Record<Lang, Partial<Record<string, GuidanceBlock>>>>>> = {
+    "monitor-dureri-spate": {
+      ro: {
+        low: {
+          meaning: [
+            "Durerea pare ușoară în răspunsurile tale, dar merită urmărită ca să vezi tiparul.",
+            "Utilitatea aici este jurnalul: medicul poate înțelege mai repede ce provoacă durerea."
+          ],
+          plan: [
+            "Timp de 7 zile notează durerea dimineața și seara pe o scară 0–10.",
+            "Notează lângă scor: stat jos, mers, ridicat greutăți, aplecare, tuse/strănut.",
+            "Fă mers ușor 10–20 minute dacă nu crește durerea.",
+            "Folosește poziții confortabile, dar evită repausul total prelungit."
+          ],
+          avoid: [
+            "Nu sta în pat toată ziua dacă nu este recomandat medical.",
+            "Nu face întinderi agresive sau manipulări bruște.",
+            "Nu testa durerea repetând mișcarea care o provoacă."
+          ],
+          red: [
+            "Durere care coboară sub genunchi cu amorțeală.",
+            "Slăbiciune în picior sau dificultate la mers.",
+            "Durere după traumă, febră sau pierdere control urinar/fecal."
+          ],
+          prep: [
+            "Jurnalul 0–10 pe 7 zile.",
+            "Ce poziție ameliorează durerea.",
+            "Ce medicamente ai luat și dacă au ajutat.",
+            "Investigații: RMN/CT/radiografie, dacă există."
+          ]
+        }
+      }
+    },
+    "test-postura-coloana": {
+      ro: {
+        low: {
+          meaning: [
+            "Scorul nu indică risc postural mare, dar postura poate crea probleme lent, în timp.",
+            "Cel mai util este să corectezi mediul de lucru și pauzele înainte să apară dureri constante."
+          ],
+          plan: [
+            "La fiecare 30–45 minute ridică-te 1–2 minute.",
+            "Ține ecranul la nivelul ochilor și sprijin lombar ușor.",
+            "Fă zilnic 5 repetări lente: retragere bărbie, deschidere piept, extensie toracică.",
+            "Schimbă poziția des; postura perfectă ținută rigid nu e scopul."
+          ],
+          avoid: [
+            "Nu sta cu laptopul jos ore întregi.",
+            "Nu trage umerii forțat în spate toată ziua.",
+            "Nu face exerciții cervicale rapide dacă amețești."
+          ],
+          red: [
+            "Amorțeală sau furnicături pe braț/picior.",
+            "Slăbiciune, durere care coboară, tulburări de mers.",
+            "Durere de cap nouă severă sau amețeală persistentă."
+          ],
+          prep: [
+            "Poză cu locul de lucru, dacă vrei recomandări ergonomice.",
+            "Când apare durerea: birou, condus, somn.",
+            "Zonele dureroase exacte: gât, omoplat, lombar."
+          ]
+        }
+      }
+    },
+    "planner-exercitii-zilnice": {
+      ro: {
+        low: {
+          meaning: [
+            "Poți începe cu o rutină ușoară de întreținere.",
+            "Scopul nu e performanța, ci consecvența și controlul."
+          ],
+          plan: [
+            "Ziua 1–2: 5 minute mobilitate blândă pentru zona rigidă.",
+            "Ziua 3–4: adaugă 5 minute mers sau exerciții de respirație.",
+            "Ziua 5–7: adaugă exerciții ușoare de forță: ridicări lente, contracții izometrice, echilibru lângă perete.",
+            "Regula: după exercițiu durerea trebuie să revină la nivelul inițial în maximum 24h."
+          ],
+          avoid: [
+            "Nu copia exerciții intense de pe internet fără adaptare.",
+            "Nu lucra prin durere ascuțită.",
+            "Nu schimba toate obiceiurile deodată; crește gradual."
+          ],
+          red: [
+            "Durere care crește de la zi la zi.",
+            "Amețeală, slăbiciune sau instabilitate.",
+            "Durere toracică sau lipsă de aer."
+          ],
+          prep: [
+            "Ce exerciții ai încercat și ce ai simțit după.",
+            "Care este obiectivul: mers, postură, forță, durere.",
+            "Cât timp poți face exerciții fără agravare."
+          ]
+        }
+      }
+    },
+    "test-stres-somn-respiratie": {
+      ro: {
+        low: {
+          meaning: [
+            "Scorul sugerează impact redus, dar somnul și respirația influențează durerea și recuperarea.",
+            "Merită să construiești o rutină simplă de seară."
+          ],
+          plan: [
+            "Cu 60 minute înainte de somn redu luminile și ecranele.",
+            "Fă 3–5 minute respirație lentă: inspir 4 secunde, expir 6 secunde.",
+            "Notează ora de culcare, trezirile și nivelul de energie dimineața.",
+            "Dacă apare tensiune în umeri/gât, combină respirația cu relaxare musculară."
+          ],
+          avoid: [
+            "Nu face respirații forțate sau rapide dacă amețești.",
+            "Nu folosi exerciții respiratorii ca înlocuitor pentru consult dacă ai lipsă severă de aer.",
+            "Nu consuma cafeină târziu dacă somnul e afectat."
+          ],
+          red: [
+            "Durere toracică, lipsă severă de aer, leșin.",
+            "Palpitații puternice sau simptome noi intense.",
+            "Insomnie severă persistentă cu epuizare."
+          ],
+          prep: [
+            "Câte ore dormi și câte treziri ai.",
+            "Când apare senzația de lipsă de aer.",
+            "Stres, medicamente, cafeină, dureri asociate."
+          ]
+        }
+      }
+    },
+    "pregatire-consultatie": {
+      ro: {
+        low: {
+          meaning: [
+            "Ai puține semnale importante, dar o consultație devine mult mai eficientă dacă vii pregătit.",
+            "Scopul aplicației este să transformi simptomele într-un rezumat clar."
+          ],
+          plan: [
+            "Scrie într-o frază problema principală: unde, de când, cum se simte.",
+            "Notează 3 lucruri care agravează și 3 care ameliorează.",
+            "Pregătește lista medicamentelor și tratamentelor încercate.",
+            "Adu investigațiile sau pozele/documentele medicale existente."
+          ],
+          avoid: [
+            "Nu spune doar «mă doare» fără localizare și durată.",
+            "Nu uita medicamentele/dozele.",
+            "Nu ascunde tratamentele încercate anterior."
+          ],
+          red: [
+            "Simptome neurologice noi: slăbiciune, amorțeală, tulburări de mers.",
+            "Durere severă sau după traumă.",
+            "Febră, scădere în greutate neexplicată, agravare rapidă."
+          ],
+          prep: [
+            "Întrebarea 1: care este cauza probabilă?",
+            "Întrebarea 2: ce am voie să fac și ce trebuie să evit?",
+            "Întrebarea 3: ce plan de recuperare/monitorizare urmez?"
+          ]
+        }
+      }
+    }
+  };
+
+  return {
+    ...base,
+    ...(specific[slug]?.[lang]?.[level] || {})
+  };
+}
+
+
 export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
   const lang = getLang(usePathname());
   const cfg = configs[slug];
@@ -529,7 +866,7 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
   const percent = Math.round((score / max) * 100);
 
   const resultLabel = percent < 34 ? cfg.low[lang] : percent < 67 ? cfg.medium[lang] : cfg.high[lang];
-  const guidance = detailedGuidance(slug, lang, percent, score, max);
+  const guidance = guidanceForTool(slug, lang, percent);
   const progress = done ? 100 : Math.round(((step + 1) / cfg.questions.length) * 100);
 
   function select(value: Answer) {
