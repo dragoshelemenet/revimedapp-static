@@ -7671,3 +7671,336 @@ html.route-ready .pageHero{
     inset:-3px!important;
   }
 }
+
+/* =========================================================
+   FOOTER + TESTIMONIALS PREMIUM POLISH
+   ========================================================= */
+
+/* Testimonials section narrower and more elegant */
+.testimonialBand{
+  padding:58px 0!important;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.22),transparent 32%),
+    linear-gradient(180deg,#0b9be4,#075f9e)!important;
+}
+
+.testimonialBand .rmShell{
+  max-width:860px!important;
+}
+
+.testimonialBand h2{
+  font-size:38px!important;
+  letter-spacing:-.045em!important;
+  margin-bottom:26px!important;
+}
+
+.reviewCarousel{
+  max-width:760px!important;
+  margin-inline:auto!important;
+  display:grid!important;
+  grid-template-columns:48px 1fr 48px!important;
+  align-items:center!important;
+  gap:18px!important;
+}
+
+.reviewSlide{
+  min-height:170px!important;
+  border-radius:22px!important;
+  background:#fff!important;
+  padding:28px 34px!important;
+  display:grid!important;
+  place-items:center!important;
+  text-align:center!important;
+  border:1px solid rgba(255,255,255,.75)!important;
+}
+
+.reviewSlide p{
+  font-size:17px!important;
+  line-height:1.5!important;
+  color:#102033!important;
+  font-weight:850!important;
+  max-width:520px!important;
+  margin:0 auto 12px!important;
+}
+
+.reviewSlide .stars,
+.stars{
+  color:#ffb800!important;
+  letter-spacing:3px!important;
+  font-size:18px!important;
+}
+
+.reviewSlide small,
+.reviewSlide b{
+  color:#4d5f73!important;
+  font-size:13px!important;
+  font-weight:900!important;
+}
+
+/* Nicer testimonial arrows */
+.reviewArrow{
+  width:46px!important;
+  height:46px!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  border:1px solid rgba(255,255,255,.9)!important;
+  color:#0b8fd8!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:0!important;
+  padding:0!important;
+  cursor:pointer!important;
+  transition:transform .16s ease, background .16s ease!important;
+}
+
+.reviewArrow:hover{
+  transform:translateY(-1px)!important;
+  background:#eef8ff!important;
+}
+
+.reviewArrow img{
+  width:22px!important;
+  height:22px!important;
+  display:block!important;
+  object-fit:contain!important;
+}
+
+/* Fallback if the component still uses text arrows */
+.reviewArrow::before{
+  content:"";
+  width:22px;
+  height:22px;
+  background:center/contain no-repeat;
+  display:block;
+}
+
+.reviewArrow:first-child::before{
+  background-image:url("https://img.icons8.com/ios-filled/50/0b8fd8/chevron-left.png");
+}
+
+.reviewArrow:last-child::before{
+  background-image:url("https://img.icons8.com/ios-filled/50/0b8fd8/chevron-right.png");
+}
+
+.reviewArrow:has(img)::before{
+  display:none!important;
+}
+
+/* Footer should be narrower like testimonials, cleaner and tighter */
+.rmFooter{
+  background:#f7fbff!important;
+  border-top:1px solid #e1edf8!important;
+  padding:34px 0 38px!important;
+}
+
+.rmFooter .rmShell{
+  max-width:860px!important;
+}
+
+.rmFooterGrid{
+  display:grid!important;
+  grid-template-columns:1.25fr 1fr 1fr .75fr!important;
+  gap:30px!important;
+  align-items:start!important;
+}
+
+.footerLogo{
+  height:40px!important;
+  max-width:170px!important;
+  object-fit:contain!important;
+}
+
+.footerBrand p{
+  color:#64748b!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+  margin-top:10px!important;
+}
+
+.rmFooter h3{
+  color:#102033!important;
+  font-size:18px!important;
+  line-height:1.1!important;
+  letter-spacing:-.02em!important;
+  margin:0 0 12px!important;
+}
+
+.footerSchedule p{
+  color:#64748b!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+  margin:0 0 9px!important;
+}
+
+.footerLinks div{
+  display:grid!important;
+  gap:7px!important;
+}
+
+.footerLinks a{
+  width:max-content!important;
+  color:#102033!important;
+  font-size:13px!important;
+  line-height:1.2!important;
+  font-weight:900!important;
+  margin:0!important;
+}
+
+.footerLinks a:hover{
+  color:#0b8fd8!important;
+}
+
+.footerSocial{
+  display:grid!important;
+  justify-items:start!important;
+}
+
+.fbIcon8,
+.fbIcon8 img{
+  width:40px!important;
+  height:40px!important;
+}
+
+/* Make footer visually centered under content */
+.rmFooterGrid > *{
+  min-width:0!important;
+}
+
+/* Desktop fine tune */
+@media(min-width:900px){
+  .rmFooter{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+}
+
+/* Tablet footer */
+@media(max-width:900px){
+  .testimonialBand .rmShell,
+  .rmFooter .rmShell{
+    max-width:calc(100% - 32px)!important;
+  }
+
+  .rmFooterGrid{
+    grid-template-columns:1fr 1fr!important;
+    gap:24px 28px!important;
+  }
+
+  .footerBrand{
+    grid-column:1 / -1!important;
+  }
+}
+
+/* Mobile testimonial + footer */
+@media(max-width:700px){
+  .testimonialBand{
+    padding:42px 0!important;
+  }
+
+  .testimonialBand h2{
+    font-size:28px!important;
+    margin-bottom:18px!important;
+  }
+
+  .reviewCarousel{
+    grid-template-columns:38px 1fr 38px!important;
+    gap:8px!important;
+  }
+
+  .reviewArrow{
+    width:38px!important;
+    height:38px!important;
+  }
+
+  .reviewArrow::before,
+  .reviewArrow img{
+    width:18px!important;
+    height:18px!important;
+  }
+
+  .reviewSlide{
+    min-height:150px!important;
+    padding:20px 16px!important;
+    border-radius:18px!important;
+  }
+
+  .reviewSlide p{
+    font-size:14px!important;
+    line-height:1.4!important;
+  }
+
+  .rmFooter{
+    padding:24px 0 82px!important;
+  }
+
+  .rmFooter .rmShell{
+    max-width:calc(100% - 28px)!important;
+  }
+
+  .rmFooterGrid{
+    grid-template-columns:1fr 1fr!important;
+    grid-template-areas:
+      "brand brand"
+      "schedule schedule"
+      "links social"!important;
+    gap:18px 18px!important;
+  }
+
+  .footerBrand{
+    grid-area:brand!important;
+  }
+
+  .footerSchedule{
+    grid-area:schedule!important;
+  }
+
+  .footerLinks{
+    grid-area:links!important;
+  }
+
+  .footerSocial{
+    grid-area:social!important;
+  }
+
+  .footerLogo{
+    height:34px!important;
+    max-width:150px!important;
+  }
+
+  .footerBrand p,
+  .footerSchedule p,
+  .footerLinks a{
+    font-size:12px!important;
+  }
+
+  .rmFooter h3{
+    font-size:16px!important;
+  }
+
+  .fbIcon8,
+  .fbIcon8 img{
+    width:38px!important;
+    height:38px!important;
+  }
+}
+
+@media(max-width:360px){
+  .reviewCarousel{
+    grid-template-columns:32px 1fr 32px!important;
+  }
+
+  .reviewArrow{
+    width:32px!important;
+    height:32px!important;
+  }
+
+  .rmFooterGrid{
+    grid-template-columns:1fr!important;
+    grid-template-areas:
+      "brand"
+      "schedule"
+      "links"
+      "social"!important;
+  }
+}

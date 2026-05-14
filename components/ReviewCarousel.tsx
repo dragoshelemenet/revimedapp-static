@@ -36,7 +36,7 @@ export default function ReviewCarousel() {
   return (
     <div className="reviewCarousel">
       <button className="reviewArrow" onClick={prev} aria-label="Review anterior">
-        ‹
+        <img src="https://img.icons8.com/ios-filled/50/0b8fd8/chevron-left.png" alt="prev" />
       </button>
 
       <div className="reviewSlide">
@@ -47,7 +47,7 @@ export default function ReviewCarousel() {
       </div>
 
       <button className="reviewArrow" onClick={next} aria-label="Review următor">
-        ›
+        <img src="https://img.icons8.com/ios-filled/50/0b8fd8/chevron-right.png" alt="next" />
       </button>
     </div>
   );
