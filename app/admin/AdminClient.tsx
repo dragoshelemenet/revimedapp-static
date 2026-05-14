@@ -15,6 +15,7 @@ type Post = {
 
 type Price = {
   id: number;
+  group_key: string;
   category: string;
   service: string;
   price: string;
