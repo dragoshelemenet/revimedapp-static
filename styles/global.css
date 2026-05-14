@@ -9583,3 +9583,63 @@ html.route-ready .pageHero{
 .reviewSlide p{
   line-height:1.65!important;
 }
+
+/* Full service SEO section */
+.serviceSeoDetailsBlock{
+  display:grid!important;
+  gap:14px!important;
+  margin-top:22px!important;
+  background:#fff!important;
+  border:1px solid #dcebf7!important;
+  border-radius:22px!important;
+  padding:22px!important;
+}
+
+.serviceSeoDetailsBlock p{
+  color:#475569!important;
+  font-size:17px!important;
+  line-height:1.75!important;
+  margin:0!important;
+}
+
+.serviceSeoDetailsBlock p:first-child{
+  color:#102033!important;
+  font-weight:850!important;
+}
+
+.serviceSeoDetailsBlock ul{
+  margin:4px 0 0!important;
+  padding-left:20px!important;
+  display:grid!important;
+  gap:8px!important;
+}
+
+.serviceSeoDetailsBlock li{
+  color:#475569!important;
+  line-height:1.55!important;
+}
+
+.serviceSeoDetailsBlock b{
+  display:block!important;
+  color:#075f9e!important;
+  font-size:17px!important;
+  line-height:1.45!important;
+  margin-top:6px!important;
+}
+
+.pageHero h1{
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
+}
+
+@media(max-width:700px){
+  .serviceSeoDetailsBlock{
+    border-radius:18px!important;
+    padding:18px!important;
+  }
+
+  .serviceSeoDetailsBlock p{
+    font-size:15px!important;
+    line-height:1.65!important;
+  }
+}
