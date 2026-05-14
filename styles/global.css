@@ -4402,3 +4402,558 @@ select:focus{
     opacity:.5;
   }
 }
+
+/* =========================================================
+   PREMIUM STABILITY + READABILITY PATCH
+   ========================================================= */
+
+/* Prevent page shift/jump between routes */
+html{
+  overflow-y:scroll;
+  scroll-behavior:smooth;
+}
+
+body{
+  min-width:320px;
+  overflow-x:hidden;
+}
+
+/* Header always same height */
+.rmHeader{
+  height:92px!important;
+  min-height:92px!important;
+  max-height:92px!important;
+}
+
+.rmTop{
+  height:28px!important;
+  min-height:28px!important;
+  max-height:28px!important;
+}
+
+.rmNav{
+  height:64px!important;
+  min-height:64px!important;
+  max-height:64px!important;
+}
+
+/* Reserve normal page width so content does not shift */
+.rmShell{
+  width:min(1120px,calc(100% - 32px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* Make flag overlay stable and non-layout affecting */
+.languageFlagOverlay{
+  position:fixed!important;
+  top:92px!important;
+  right:0!important;
+  transform:translateX(12px)!important;
+  contain:layout paint!important;
+  will-change:opacity!important;
+  z-index:850!important;
+}
+
+/* Stable internal hero height */
+.pageHero{
+  min-height:300px!important;
+  height:300px!important;
+  display:flex!important;
+  align-items:center!important;
+  padding:0!important;
+}
+
+.pageHero .rmShell{
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+
+.pageHero h1{
+  font-size:clamp(38px,5vw,58px)!important;
+  line-height:1.02!important;
+  margin:0 0 14px!important;
+  max-width:900px!important;
+}
+
+.pageHero .lead{
+  font-size:clamp(17px,2.2vw,21px)!important;
+  line-height:1.55!important;
+  max-width:760px!important;
+  margin:0!important;
+}
+
+.crumb{
+  margin:0 0 14px!important;
+}
+
+/* Homepage hero stable */
+.homeHero,
+.heroOverlay{
+  min-height:500px!important;
+  height:500px!important;
+}
+
+.heroCenter h1{
+  font-size:clamp(42px,6vw,64px)!important;
+  line-height:1!important;
+  margin-bottom:14px!important;
+}
+
+.heroCenter p{
+  font-size:clamp(20px,2.8vw,30px)!important;
+  margin-bottom:26px!important;
+}
+
+/* Better typography */
+h1,h2,h3{
+  text-wrap:balance;
+}
+
+p{
+  text-wrap:pretty;
+}
+
+.centerTitle{
+  font-size:clamp(30px,4vw,42px)!important;
+  line-height:1.08!important;
+  color:#102033!important;
+  margin-bottom:28px!important;
+}
+
+/* Cleaner section rhythm */
+.rmSection{
+  padding:70px 0!important;
+}
+
+.servicesBlock,
+.appBlock,
+.galleryPageSection,
+.pricesCleanSection,
+.contactModernSection{
+  background:#fff!important;
+}
+
+/* Better card grid desktop */
+.serviceGrid,
+.toolGrid{
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:18px!important;
+}
+
+.grid3{
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:18px!important;
+}
+
+/* Premium card style: no heavy shadows, clean, easy */
+.serviceTile,
+.toolTile,
+.card{
+  border-radius:18px!important;
+  padding:24px!important;
+  min-height:100%!important;
+  border:1px solid #e5eff8!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+}
+
+.serviceTile:hover,
+.toolTile:hover,
+.card:hover{
+  background:#f8fcff!important;
+  border-color:#cfe4f8!important;
+}
+
+.serviceTile h3,
+.toolTile h3,
+.card h2{
+  font-size:21px!important;
+  line-height:1.18!important;
+  margin:4px 0!important;
+  color:#102033!important;
+  font-weight:900!important;
+}
+
+.serviceTile p,
+.toolTile p,
+.card p{
+  font-size:14px!important;
+  line-height:1.55!important;
+  color:#607086!important;
+  margin:0!important;
+}
+
+.toolTile b,
+.serviceTile b,
+.card b{
+  margin-top:auto!important;
+  color:#0b8fd8!important;
+}
+
+/* More elegant icons */
+.tileIconImg{
+  width:48px!important;
+  height:48px!important;
+  background:#f3f9ff!important;
+  border-radius:14px!important;
+  padding:6px!important;
+  margin:0 0 8px!important;
+}
+
+/* About area cleaner */
+.aboutGrid{
+  grid-template-columns:320px 1fr!important;
+  gap:56px!important;
+}
+
+.aboutGrid p{
+  color:#334155!important;
+  font-size:17px!important;
+  line-height:1.75!important;
+}
+
+/* Contact readable */
+.contactModernGrid{
+  gap:22px!important;
+}
+
+.contactPrimaryCard,
+.contactSidePanel,
+.contactMapModern{
+  border-radius:22px!important;
+  padding:26px!important;
+}
+
+.contactPrimaryCard h2{
+  font-size:36px!important;
+  line-height:1.05!important;
+}
+
+.contactInfoList{
+  gap:12px!important;
+}
+
+.contactInfoList a,
+.contactInfoStatic{
+  border-radius:16px!important;
+  padding:14px!important;
+}
+
+/* Prices easier */
+.priceAccordionHead{
+  padding:20px 22px!important;
+}
+
+.priceAccordionHead b{
+  font-size:22px!important;
+}
+
+.priceAccordionBody{
+  padding:0 18px 18px!important;
+}
+
+/* Gallery cleaner */
+.galleryMasonry{
+  gap:14px!important;
+}
+
+.galleryPhoto{
+  border-radius:18px!important;
+}
+
+.galleryVideoGrid{
+  gap:18px!important;
+}
+
+.galleryVideoCard{
+  border-radius:18px!important;
+  padding:12px!important;
+}
+
+/* Blog cards */
+.blogImage,
+.postHeroImage{
+  border-radius:16px!important;
+}
+
+/* Buttons consistently usable */
+.blueBtn,
+.softBtn{
+  min-height:44px!important;
+  padding:12px 20px!important;
+  border-radius:12px!important;
+  transition:background .15s ease,color .15s ease,border-color .15s ease!important;
+}
+
+/* Footer clearer */
+.rmFooter{
+  padding:38px 0!important;
+}
+
+.rmFooterGrid{
+  gap:28px!important;
+}
+
+/* Language bar stable */
+.langs{
+  min-width:150px!important;
+  justify-content:flex-end!important;
+}
+
+/* Desktop header stable no jumps */
+@media(min-width:701px){
+  .rmLinks{
+    height:64px!important;
+    align-items:center!important;
+  }
+
+  .rmLinks > a{
+    height:64px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+  }
+
+  .rmLogo{
+    height:64px!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+
+  .rmLogo img{
+    height:42px!important;
+    width:auto!important;
+    display:block!important;
+  }
+}
+
+/* Tablet */
+@media(max-width:980px){
+  .serviceGrid,
+  .toolGrid,
+  .grid3{
+    grid-template-columns:repeat(2,1fr)!important;
+  }
+
+  .aboutGrid,
+  .contactModernGrid,
+  .contentGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .doctorVisual{
+    margin:auto!important;
+  }
+}
+
+/* Mobile stable header and cleaner cards */
+@media(max-width:700px){
+  .rmHeader{
+    height:86px!important;
+    min-height:86px!important;
+    max-height:86px!important;
+  }
+
+  .rmTop{
+    height:24px!important;
+    min-height:24px!important;
+    max-height:24px!important;
+  }
+
+  .rmNav{
+    height:62px!important;
+    min-height:62px!important;
+    max-height:62px!important;
+  }
+
+  .rmShell{
+    width:calc(100% - 24px)!important;
+  }
+
+  .languageFlagOverlay{
+    top:86px!important;
+    opacity:.48!important;
+  }
+
+  .homeHero,
+  .heroOverlay{
+    height:370px!important;
+    min-height:370px!important;
+  }
+
+  .heroCenter h1{
+    font-size:34px!important;
+    line-height:1.04!important;
+  }
+
+  .heroCenter p{
+    font-size:17px!important;
+    line-height:1.35!important;
+  }
+
+  .pageHero{
+    height:230px!important;
+    min-height:230px!important;
+  }
+
+  .pageHero h1{
+    font-size:32px!important;
+    line-height:1.05!important;
+    margin-bottom:10px!important;
+  }
+
+  .pageHero .lead{
+    font-size:15.5px!important;
+    line-height:1.45!important;
+  }
+
+  .rmSection{
+    padding:36px 0!important;
+  }
+
+  .centerTitle{
+    font-size:26px!important;
+    margin-bottom:18px!important;
+  }
+
+  .serviceGrid,
+  .toolGrid,
+  .grid3{
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:10px!important;
+  }
+
+  .serviceTile,
+  .toolTile,
+  .card{
+    padding:14px!important;
+    border-radius:14px!important;
+    gap:5px!important;
+  }
+
+  .tileIconImg{
+    width:32px!important;
+    height:32px!important;
+    border-radius:10px!important;
+    padding:4px!important;
+    margin-bottom:5px!important;
+  }
+
+  .serviceTile h3,
+  .toolTile h3,
+  .card h2{
+    font-size:14px!important;
+    line-height:1.15!important;
+    margin:2px 0!important;
+  }
+
+  .serviceTile p,
+  .toolTile p,
+  .card p{
+    font-size:11px!important;
+    line-height:1.35!important;
+  }
+
+  .toolTile b,
+  .serviceTile b,
+  .card b{
+    font-size:12px!important;
+    margin-top:6px!important;
+  }
+
+  .toolTile span{
+    font-size:10px!important;
+    padding:4px 7px!important;
+  }
+
+  .aboutGrid{
+    gap:20px!important;
+  }
+
+  .doctorVisual,
+  .doctorVisual img{
+    width:180px!important;
+    height:180px!important;
+  }
+
+  .aboutGrid p{
+    font-size:14px!important;
+    line-height:1.55!important;
+  }
+
+  /* Mobile contact less tall */
+  .contactPrimaryCard,
+  .contactSidePanel,
+  .contactMapModern{
+    padding:18px!important;
+    border-radius:18px!important;
+  }
+
+  .contactPrimaryCard h2{
+    font-size:28px!important;
+  }
+
+  .contactInfoList{
+    grid-template-columns:1fr!important;
+  }
+
+  .contactInfoList a,
+  .contactInfoStatic{
+    padding:12px!important;
+  }
+
+  .contactMapModern iframe{
+    height:310px!important;
+  }
+
+  /* Prices mobile */
+  .currencyBox{
+    padding:18px!important;
+    border-radius:18px!important;
+  }
+
+  .currencyBox h2{
+    font-size:24px!important;
+  }
+
+  .priceAccordionHead{
+    padding:16px!important;
+  }
+
+  .priceAccordionHead b{
+    font-size:18px!important;
+  }
+
+  /* Mobile menu no jumping */
+  .rmLinks.mobileOpen{
+    top:86px!important;
+    max-height:calc(100vh - 100px)!important;
+    overflow:auto!important;
+  }
+}
+
+/* Very small phones */
+@media(max-width:360px){
+  .serviceGrid,
+  .toolGrid,
+  .grid3{
+    grid-template-columns:1fr!important;
+  }
+
+  .serviceTile h3,
+  .toolTile h3,
+  .card h2{
+    font-size:18px!important;
+  }
+
+  .serviceTile p,
+  .toolTile p,
+  .card p{
+    font-size:13px!important;
+  }
+}
