@@ -1,36 +1,72 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { site, tools } from "@/lib/site";
+import { cleanPath, isLang, languages, langLabels, t, type Lang, withLang } from "@/lib/i18n";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const first = pathname.split("/").filter(Boolean)[0];
+  const lang: Lang = isLang(first) ? first : "ro";
+  const text = t(lang);
+  const currentCleanPath = cleanPath(pathname);
+  const close = () => setOpen(false);
+
+  const link = (path: string) => withLang(path, lang);
+
   return (
     <header className="rmHeader">
       <div className="rmTop">
         <div className="rmShell">
           <span></span>
-          <span className="langs">EN&nbsp;&nbsp; RU&nbsp;&nbsp; UA</span>
+          <span className="langs">
+            {languages.map((l) => (
+              <Link
+                key={l}
+                href={withLang(currentCleanPath, l)}
+                className={l === lang ? "langActive" : ""}
+                onClick={close}
+              >
+                {langLabels[l]}
+              </Link>
+            ))}
+          </span>
         </div>
       </div>
 
       <nav className="rmNav rmShell">
-        <Link href="/" className="rmLogo" aria-label={site.name}>
+        <Link href={link("/")} className="rmLogo" aria-label={site.name} onClick={close}>
           <img src="/images/logo.png" alt="REVIMED" />
           <span className="rmLogoText">REVIMED</span>
         </Link>
 
-        <div className="rmLinks">
-          <Link href="/">Acasă</Link>
-          <Link href="/despre-noi">Despre Noi</Link>
-          <Link href="/servicii">Servicii</Link>
+        <button
+          className={open ? "hamburger active" : "hamburger"}
+          type="button"
+          aria-label="Meniu"
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <div className={open ? "rmLinks mobileOpen" : "rmLinks"}>
+          <Link href={link("/")} onClick={close}>{text.home}</Link>
+          <Link href={link("/despre-noi")} onClick={close}>{text.about}</Link>
+          <Link href={link("/servicii")} onClick={close}>{text.services}</Link>
 
           <div className="rmDrop">
-            <Link href="/aplicatii">Aplicații</Link>
+            <Link href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
             <div className="rmDropPanel">
-              <Link href="/aplicatii/teste-si-instrumente">
-                <b>Teste și Instrumente</b>
-                <small>Toate aplicațiile medicale</small>
+              <Link href={link("/aplicatii/teste-si-instrumente")} onClick={close}>
+                <b>{text.tools}</b>
+                <small>Medical tools</small>
               </Link>
               {tools.map((tool) => (
-                <Link key={tool.slug} href={tool.href}>
+                <Link key={tool.slug} href={link(tool.href)} onClick={close}>
                   <b>{tool.title}</b>
                   <small>{tool.description}</small>
                 </Link>
@@ -38,12 +74,15 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/preturi">Prețuri</Link>
-          <Link href="/galerie">Galerie</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href={link("/preturi")} onClick={close}>{text.prices}</Link>
+          <Link href={link("/galerie")} onClick={close}>{text.gallery}</Link>
+          <Link href={link("/blog")} onClick={close}>{text.blog}</Link>
+          <Link href={link("/video-uri")} onClick={close}>{text.videos}</Link>
+          <Link href={link("/contact")} onClick={close}>{text.contact}</Link>
         </div>
       </nav>
+
+      {open && <button className="menuBackdrop" aria-label="Închide meniul" onClick={close}></button>}
     </header>
   );
 }

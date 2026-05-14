@@ -1222,3 +1222,61 @@ p{margin:0 0 18px}
     font-size:24px;
   }
 }
+
+.langs{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.langs a{
+  color:white;
+  font-weight:900;
+  opacity:.82;
+}
+
+.langs a.langActive{
+  opacity:1;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.adminLangPicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  background:#fff;
+  border:1px solid #dbeafe;
+  border-radius:16px;
+  padding:14px;
+  box-shadow:0 10px 26px rgba(0,132,210,.08);
+}
+
+.adminLangPicker button{
+  border:0;
+  border-radius:999px;
+  padding:10px 16px;
+  font-weight:900;
+  cursor:pointer;
+  background:#e8f4ff;
+  color:#075d9d;
+}
+
+.adminLangPicker button.active{
+  background:#0a98ed;
+  color:white;
+}
+
+.adminLangPicker small{
+  display:block;
+  width:100%;
+  color:#66758a;
+  font-weight:700;
+}
+
+@media(max-width:700px){
+  .langs{
+    gap:9px;
+  }
+}

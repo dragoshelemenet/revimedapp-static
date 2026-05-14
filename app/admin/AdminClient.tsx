@@ -46,7 +46,9 @@ export default function AdminClient({
   posts: Post[];
   prices?: Price[];
   services?: ServiceAdmin[];
+  selectedLang?: "ro" | "en" | "ru" | "ua";
 }) {
+  const [workingLang, setWorkingLang] = useState<"ro" | "en" | "ru" | "ua">(selectedLang);
   const [tab, setTab] = useState<"services" | "prices" | "blog">("services");
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [editingPrice, setEditingPrice] = useState<Price | null>(null);
@@ -135,6 +137,21 @@ export default function AdminClient({
           <button className="softBtn" onClick={logout}>Ieșire</button>
         </div>
 
+        <div className="adminLangPicker">
+          <b>Alege limba cu care lucrezi:</b>
+          {(["ro","en","ru","ua"] as const).map((l) => (
+            <button
+              key={l}
+              className={workingLang === l ? "active" : ""}
+              type="button"
+              onClick={() => { window.location.href = `/revimed-login?lang=${l}`; }}
+            >
+              {l.toUpperCase()}
+            </button>
+          ))}
+          <small>Blog/servicii/text prețuri se editează pe limba aleasă. Prețul numeric se sincronizează pe toate limbile prin group_key.</small>
+        </div>
+
         <div className="adminTabs">
           <button className={tab === "services" ? "active" : ""} onClick={() => setTab("services")}>Servicii</button>
           <button className={tab === "prices" ? "active" : ""} onClick={() => setTab("prices")}>Prețuri</button>
@@ -147,6 +164,7 @@ export default function AdminClient({
               <h2>{editingService ? "Editează serviciu" : "Adaugă serviciu"}</h2>
               <form action={saveService} className="adminForm">
                 <input type="hidden" name="id" value={editingService?.id || ""} />
+                <input type="hidden" name="lang" value={workingLang} />
 
                 <label>Titlu serviciu</label>
                 <input name="title" defaultValue={editingService?.title || ""} required />
@@ -204,6 +222,10 @@ export default function AdminClient({
               <h2>{editingPrice ? "Editează preț" : "Adaugă preț"}</h2>
               <form action={savePrice} className="adminForm">
                 <input type="hidden" name="id" value={editingPrice?.id || ""} />
+                <input type="hidden" name="lang" value={workingLang} />
+
+                <label>Cheie comună preț / group_key</label>
+                <input name="group_key" defaultValue={editingPrice?.group_key || ""} placeholder="ex: neuro_1. Aceeași cheie = același preț în toate limbile" />
 
                 <label>Categorie</label>
                 <input name="category" defaultValue={editingPrice?.category || ""} placeholder="ex: Consultații Neurologice" required />
@@ -253,6 +275,7 @@ export default function AdminClient({
               <h2>{editingPost ? "Editează articol" : "Adaugă articol"}</h2>
               <form action={savePost} className="adminForm">
                 <input type="hidden" name="id" value={editingPost?.id || ""} />
+                <input type="hidden" name="lang" value={workingLang} />
 
                 <label>Titlu</label>
                 <input name="title" defaultValue={editingPost?.title || ""} required />
