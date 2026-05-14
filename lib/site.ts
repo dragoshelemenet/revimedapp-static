@@ -85,6 +85,14 @@ export const tools = [
     description:
       "Chestionar Vata–Pitta–Kapha cu scor, concluzie și protocol educațional cu doze și contraindicații."
   },
+
+  {
+    tag: "Respirație",
+    title: "REVIMED Yoga Tibetan V2",
+    description: "Aplicație de respirație ghidată cu programe pentru anxietate, somn, respirație, cardiovascular, digestiv și energie.",
+    href: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan"
+  },
+
   {
     title: "REVIMED Yoga Tibetan V2",
     slug: "respiratie-terapeutica",
