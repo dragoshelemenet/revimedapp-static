@@ -318,7 +318,7 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
   const [answers, setAnswers] = useState<Answer[]>(Array(cfg.questions.length).fill(0));
   const [done, setDone] = useState(false);
 
-  const score = useMemo(() => answers.reduce((sum, item) => sum + item, 0), [answers]);
+  const score = useMemo(() => answers.reduce<number>((sum, item) => sum + Number(item), 0), [answers]);
   const max = cfg.questions.length * 3;
   const percent = Math.round((score / max) * 100);
 
