@@ -9521,3 +9521,13 @@ html.route-ready .pageHero{
     justify-self:start!important;
   }
 }
+
+/* Admin language editing note */
+.adminLangHelp{
+  margin:8px 0 18px!important;
+  color:#64748b!important;
+  font-size:15px!important;
+  font-weight:850!important;
+  line-height:1.45!important;
+  max-width:780px!important;
+}

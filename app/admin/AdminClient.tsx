@@ -3,6 +3,56 @@
 import AdminApplicationsManager from "@/components/AdminApplicationsManager";
 import { useMemo, useState } from "react";
 
+
+function pickLangText(item: any, field: string, lang: string) {
+  if (!item) return "";
+
+  const direct = item[field];
+
+  const key1 = field + "_" + lang;
+  const key2 = lang + "_" + field;
+
+  const langValue =
+    item[key1] ??
+    item[key2] ??
+    item.translations?.[lang]?.[field] ??
+    item.i18n?.[lang]?.[field] ??
+    item[field]?.[lang];
+
+  if (typeof langValue === "string" && langValue.trim()) return cleanAdminIconUrl(langValue);
+  if (typeof direct === "string" && direct.trim()) return cleanAdminIconUrl(direct);
+  if (typeof direct === "object" && direct?.[lang]) return cleanAdminIconUrl(direct[lang]);
+
+  return "";
+}
+
+function cleanAdminIconUrl(value: string) {
+  return String(value || "")
+    .replace(/https?:\/\/img\.icons8\.com\/\S+/gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function adminTitle(item: any, lang: string) {
+  return (
+    pickLangText(item, "title", lang) ||
+    pickLangText(item, "name", lang) ||
+    pickLangText(item, "label", lang) ||
+    item?.slug ||
+    "Element"
+  );
+}
+
+function adminDescription(item: any, lang: string) {
+  return (
+    pickLangText(item, "description", lang) ||
+    pickLangText(item, "short", lang) ||
+    pickLangText(item, "excerpt", lang) ||
+    ""
+  );
+}
+
+
 type Lang = "ro" | "en" | "ru" | "ua";
 type Screen =
   | "home"
@@ -408,7 +458,7 @@ export default function AdminClient({
             {posts.map((post) => (
               <ListItem
                 key={post.id}
-                title={post.title}
+                title={adminTitle(post, workingLang)}
                 subtitle={`/${post.slug} · ${post.published ? "publicat" : "ascuns"}`}
                 onEdit={() => openEditPost(post)}
                 onDelete={() => removePost(post.id)}
@@ -446,7 +496,7 @@ export default function AdminClient({
             {services.map((item) => (
               <ListItem
                 key={item.id}
-                title={`${item.icon} ${item.title}`}
+                title={`${item.icon} ${adminTitle(item, workingLang)}`}
                 subtitle={`/${item.slug} · ordine ${item.position} · ${item.published ? "publicat" : "ascuns"}`}
                 onEdit={() => openEditService(item)}
                 onDelete={() => removeService(item.id)}
@@ -526,7 +576,7 @@ export default function AdminClient({
             {gallery.map((item) => (
               <ListItem
                 key={item.id}
-                title={item.title}
+                title={adminTitle(item, workingLang)}
                 subtitle={`${item.image} · ordine ${item.position} · ${item.published ? "publicat" : "ascuns"}`}
                 onEdit={() => openEditGallery(item)}
                 onDelete={() => removeGallery(item.id)}
@@ -596,7 +646,7 @@ export default function AdminClient({
               <ListItem
                 key={item.id}
                 title={`${item.page_key} / ${item.block_key}`}
-                subtitle={`${item.title} · ${item.published ? "publicat" : "ascuns"}`}
+                subtitle={`${adminTitle(item, workingLang)} · ${item.published ? "publicat" : "ascuns"}`}
                 onEdit={() => openEditContent(item)}
                 onDelete={() => removeContentBlock(item.id)}
               />
