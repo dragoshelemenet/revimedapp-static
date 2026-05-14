@@ -94,10 +94,10 @@ const fallbackApps: ManagedApp[] = [
 ];
 
 function normalizeSlug(value: string) {
-  return value
+  return String(value || "")
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\\u0300-\\u036f]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
@@ -109,6 +109,8 @@ export function slugifyAppTitle(title: string) {
 
 export function readAppsRegistry(): ManagedApp[] {
   try {
+    const dataDir = path.join(process.cwd(), "data");
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
     const file = path.join(process.cwd(), registryPath);
     if (!fs.existsSync(file)) return fallbackApps;
     const parsed = JSON.parse(fs.readFileSync(file, "utf8"));
@@ -163,8 +165,16 @@ export async function readHtmlApp(slug: string) {
 }
 
 export function extractTitleFromHtml(html: string) {
-  const title = html.match(/<title[^>]*>(.*?)<\\/title>/is)?.[1]?.trim();
-  const h1 = html.match(/<h1[^>]*>(.*?)<\\/h1>/is)?.[1]?.replace(/<[^>]+>/g, "")?.trim();
+  const source = String(html || "");
+  const titleMatch = source.match(new RegExp("<title[^>]*>([\s\S]*?)</title>", "i"));
+  const h1Match = source.match(new RegExp("<h1[^>]*>([\s\S]*?)</h1>", "i"));
+
+  const stripTags = (value: string | undefined) =>
+    String(value || "").replace(new RegExp("<[^>]+>", "g"), "").trim();
+
+  const title = stripTags(titleMatch?.[1]);
+  const h1 = stripTags(h1Match?.[1]);
+
   return title || h1 || "Aplicație nouă";
 }
 
