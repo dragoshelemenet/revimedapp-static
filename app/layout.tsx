@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     description: site.description,
     images: [site.image]
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg"
+  },
   robots: {
     index: true,
     follow: true,
