@@ -1,4 +1,5 @@
 import type { Lang } from "@/lib/i18n";
+import { getGalleryLabel } from "@/lib/galleryLabels";
 
 const translations: Record<Lang, Record<string, string>> = {
   ro: {},

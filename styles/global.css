@@ -10070,3 +10070,15 @@ html.route-ready .pageHero{
 .neuroResultHead h2{
   overflow-wrap:break-word!important;
 }
+
+/* Gallery label readability */
+.galleryCardTitle,
+.galleryOverlay,
+.galleryItemTitle{
+  overflow-wrap:break-word!important;
+}
+
+.galleryGrid img,
+.galleryCard img{
+  object-fit:cover!important;
+}
