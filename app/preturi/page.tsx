@@ -1,5 +1,7 @@
 import { getPublishedPrices } from "@/lib/db";
 import { site } from "@/lib/site";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import PricesAccordion from "@/components/PricesAccordion";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +12,7 @@ export const metadata = {
 };
 
 export default function PricesPage() {
-  const prices = getPublishedPrices();
+  const prices = getPublishedPrices("ro");
   const groups = Array.from(new Set(prices.map((p) => p.category)));
 
   return (
@@ -20,55 +22,20 @@ export default function PricesPage() {
           <p className="crumb">Acasă / Prețuri</p>
           <h1>Prețuri Revimed PLUS+</h1>
           <p className="lead">
-            Alege categoria și verifică rapid serviciul. Pentru confirmare și programare, contactează centrul.
+            Alege categoria pentru a vedea serviciile. Listele sunt închise implicit pentru citire mai ușoară.
           </p>
         </div>
       </section>
 
       <section className="rmSection pricesCleanSection">
-        <div className="rmShell pricesLayout">
-          <aside className="priceCategoryMenu">
-            <h2>Categorii</h2>
-            {groups.map((group) => (
-              <a href={`#${group.toLowerCase().replaceAll(" ", "-").replaceAll("ă", "a").replaceAll("ț", "t").replaceAll("ș", "s")}`} key={group}>
-                {group}
-              </a>
-            ))}
-            <div className="priceContactBox">
-              <b>Programare</b>
-              <span>{site.phone}</span>
-              <span>{site.phone2}</span>
-            </div>
-          </aside>
+        <div className="rmShell pricesModernLayout">
+          <CurrencyConverter />
 
-          <div className="pricesContent">
-            {groups.map((group) => {
-              const id = group.toLowerCase().replaceAll(" ", "-").replaceAll("ă", "a").replaceAll("ț", "t").replaceAll("ș", "s");
-              const rows = prices.filter((p) => p.category === group);
-
-              return (
-                <section className="priceGroupClean" id={id} key={group}>
-                  <h2>{group}</h2>
-
-                  <div className="priceListClean">
-                    {rows.map((p) => (
-                      <article className="priceItemClean" key={p.id}>
-                        <div>
-                          <h3>{p.service}</h3>
-                          {p.note && <p>{p.note}</p>}
-                        </div>
-                        <strong>{p.price}</strong>
-                      </article>
-                    ))}
-                  </div>
-                </section>
-              );
-            })}
-
-            <div className="priceDisclaimer">
-              Prețurile pot fi actualizate. Pentru informații exacte, sunați la {site.phone} sau {site.phone2}.
-            </div>
+          <div className="priceNotice">
+            <b>Notă:</b> Prețurile pot fi actualizate. Pentru confirmare și programare: {site.phone} · {site.phone2}
           </div>
+
+          <PricesAccordion groups={groups} prices={prices} />
         </div>
       </section>
     </>

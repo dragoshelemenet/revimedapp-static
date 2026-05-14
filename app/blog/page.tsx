@@ -18,7 +18,7 @@ export default function BlogPage() {
         <div className="container">
           <p className="crumb">Acasă / Blog</p>
           <h1>Blog medical</h1>
-          <p className="lead">Articole educaționale publicate din panoul admin.</p>
+          <p className="lead">Articole, noutăți și materiale educaționale Revimed PLUS+.</p>
         </div>
       </section>
 

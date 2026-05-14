@@ -77,7 +77,6 @@ export default function Header() {
           <Link href={link("/preturi")} onClick={close}>{text.prices}</Link>
           <Link href={link("/galerie")} onClick={close}>{text.gallery}</Link>
           <Link href={link("/blog")} onClick={close}>{text.blog}</Link>
-          <Link href={link("/video-uri")} onClick={close}>{text.videos}</Link>
           <Link href={link("/contact")} onClick={close}>{text.contact}</Link>
         </div>
       </nav>
