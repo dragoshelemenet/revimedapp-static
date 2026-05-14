@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/global.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
 import { site } from "../lib/site";
 import "../lib/seedLanguages";
 
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Header />
+        <LanguageFlagOverlay />
         <main>{children}</main>
         <Footer />
       </body>

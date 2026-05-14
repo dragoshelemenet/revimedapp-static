@@ -4339,3 +4339,66 @@ select:focus{
   box-shadow:none!important;
   border:1px solid var(--clean-line)!important;
 }
+
+/* Subtle active language flag overlay */
+.languageFlagOverlay{
+  position:fixed;
+  top:78px;
+  right:0;
+  z-index:900;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px 10px 22px;
+  border-radius:999px 0 0 999px;
+  opacity:.6;
+  transform:translateX(10px);
+  background:
+    linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.52) 42%,rgba(255,255,255,.88) 100%);
+  color:#102033;
+  backdrop-filter:blur(8px);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 18%,rgba(0,0,0,.78) 55%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 18%,rgba(0,0,0,.78) 55%,#000 100%);
+}
+
+.languageFlagOverlay .flagEmoji{
+  font-size:30px;
+  line-height:1;
+  filter:saturate(1.08);
+}
+
+.languageFlagOverlay .flagLabel{
+  font-size:12px;
+  font-weight:900;
+  opacity:.78;
+  padding-right:4px;
+}
+
+.languageFlagOverlay.flag-ro{
+  display:none;
+}
+
+@media(max-width:700px){
+  .languageFlagOverlay{
+    top:88px;
+    padding:8px 10px 8px 18px;
+    opacity:.55;
+    transform:translateX(14px);
+  }
+
+  .languageFlagOverlay .flagEmoji{
+    font-size:26px;
+  }
+
+  .languageFlagOverlay .flagLabel{
+    display:none;
+  }
+}
+
+@media(max-width:380px){
+  .languageFlagOverlay{
+    top:86px;
+    opacity:.5;
+  }
+}
