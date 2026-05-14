@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { services, site, tools } from "@/lib/site";
+import { site, tools } from "@/lib/site";
+import { getPublishedServicesAdmin } from "@/lib/db";
 import { getPublishedPrices } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   const prices = getPublishedPrices().slice(0, 6);
+  const services = getPublishedServicesAdmin();
 
   return (
     <>
@@ -49,7 +51,7 @@ export default function HomePage() {
               <Link key={service.slug} href={`/servicii/${service.slug}`} className="serviceTile">
                 <div className="tileIcon">{service.icon}</div>
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
+                <p>{service.short_desc}</p>
               </Link>
             ))}
           </div>

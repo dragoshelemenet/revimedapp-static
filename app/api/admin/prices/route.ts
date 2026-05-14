@@ -7,6 +7,7 @@ export async function POST(req: Request) {
   if (!admin) return NextResponse.json({ ok: false }, { status: 401 });
 
   const form = await req.formData();
+  const category = String(form.get("category") || "General").trim();
   const service = String(form.get("service") || "").trim();
   const price = String(form.get("price") || "").trim();
   const note = String(form.get("note") || "").trim();
@@ -15,8 +16,10 @@ export async function POST(req: Request) {
 
   if (!service || !price) return NextResponse.json({ ok: false }, { status: 400 });
 
-  db.prepare("INSERT INTO prices (service, price, note, position, published) VALUES (?, ?, ?, ?, ?)")
-    .run(service, price, note, position, published);
+  db.prepare(`
+    INSERT INTO prices (category, service, price, note, position, published)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `).run(category, service, price, note, position, published);
 
   return NextResponse.json({ ok: true });
 }

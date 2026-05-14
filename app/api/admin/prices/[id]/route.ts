@@ -11,6 +11,7 @@ export async function PUT(req: Request, ctx: Ctx) {
   const { id } = await ctx.params;
   const form = await req.formData();
 
+  const category = String(form.get("category") || "General").trim();
   const service = String(form.get("service") || "").trim();
   const price = String(form.get("price") || "").trim();
   const note = String(form.get("note") || "").trim();
@@ -19,9 +20,9 @@ export async function PUT(req: Request, ctx: Ctx) {
 
   db.prepare(`
     UPDATE prices
-    SET service=?, price=?, note=?, position=?, published=?, edited_at=CURRENT_TIMESTAMP
+    SET category=?, service=?, price=?, note=?, position=?, published=?, edited_at=CURRENT_TIMESTAMP
     WHERE id=?
-  `).run(service, price, note, position, published, id);
+  `).run(category, service, price, note, position, published, id);
 
   return NextResponse.json({ ok: true });
 }

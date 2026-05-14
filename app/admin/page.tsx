@@ -1,4 +1,7 @@
 import { notFound } from "next/navigation";
-export default function Page() {
+
+export const metadata = { robots: { index: false, follow: false } };
+
+export default function AdminPage() {
   notFound();
 }

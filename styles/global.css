@@ -526,3 +526,76 @@ p{margin:0 0 18px}
   .videoGrid{grid-template-columns:1fr}
   .bigVideo{height:180px}
 }
+
+.adminTabs{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  background:#fff;
+  border:1px solid #dbeafe;
+  padding:12px;
+  border-radius:16px;
+  box-shadow:0 10px 26px rgba(0,132,210,.08);
+}
+.adminTabs button{
+  border:0;
+  border-radius:999px;
+  padding:11px 18px;
+  font-weight:900;
+  cursor:pointer;
+  background:#e8f4ff;
+  color:#075d9d;
+}
+.adminTabs button.active{
+  background:#0a98ed;
+  color:#fff;
+}
+.fullPriceTable{
+  display:grid;
+  gap:30px;
+}
+.priceGroup{
+  background:#fff;
+  border:1px solid #dbeafe;
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 14px 34px rgba(0,132,210,.1);
+}
+.priceGroup h2{
+  color:#0a2554;
+  margin-bottom:18px;
+}
+.priceRows{
+  display:grid;
+  gap:12px;
+}
+.serviceHeroImg{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:24px;
+  background:#e8f4ff;
+}
+.serviceArticle{
+  overflow:hidden;
+}
+.textContent p{
+  color:#334155;
+  font-size:17px;
+}
+.textContent li{
+  margin-left:22px;
+  margin-bottom:8px;
+  color:#334155;
+}
+.miniPrice{
+  display:grid;
+  gap:4px;
+  border-top:1px solid #e3effb;
+  padding:12px 0;
+}
+.miniPrice span{
+  color:#0a98ed;
+  font-weight:900;
+}
