@@ -3852,3 +3852,13 @@ p{margin:0 0 18px}
     grid-template-columns:1fr!important;
   }
 }
+
+/* Remove blue box from Program de lucru on mobile footer */
+@media(max-width:700px){
+  .footerSchedule{
+    background:transparent!important;
+    border:0!important;
+    padding:0!important;
+    border-radius:0!important;
+  }
+}
