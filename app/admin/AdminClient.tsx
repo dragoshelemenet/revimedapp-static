@@ -122,6 +122,19 @@ export default function AdminClient({
   selectedLang?: Lang;
 }) {
   const [workingLang, setWorkingLang] = useState<Lang>(selectedLang || "ro");
+  const adminFlag = {
+    ro: "🇷🇴",
+    en: "🇬🇧",
+    ru: "🇷🇺",
+    ua: "🇺🇦"
+  }[workingLang];
+
+  const adminLangName = {
+    ro: "Română",
+    en: "English",
+    ru: "Русский",
+    ua: "Українська"
+  }[workingLang];
   const [screen, setScreen] = useState<Screen>("home");
   const [message, setMessage] = useState("");
   const [editingPost, setEditingPost] = useState<Post | null>(null);
@@ -328,10 +341,7 @@ export default function AdminClient({
   return (
     <section className="adminSimplePage">
       <aside className="adminSidebar">
-        <div className="adminSideLogo">
-          <img src="/images/logo.png" alt="REVIMED" />
-          <b>Admin</b>
-        </div>
+        <div className="adminSideLogo textOnly"><b>Admin</b></div>
 
         <button className={screen === "home" ? "active" : ""} onClick={() => setScreen("home")}>Dashboard</button>
         <button className={screen.startsWith("blog") ? "active" : ""} onClick={() => setScreen("blog")}>Blog</button>
@@ -360,6 +370,11 @@ export default function AdminClient({
               </button>
             ))}
           </div>
+        </div>
+
+        <div className={`adminEdgeFlag adminEdgeFlag-${workingLang}`} aria-hidden="true">
+          <span>{adminFlag}</span>
+          <b>{adminLangName}</b>
         </div>
 
         {message && <div className="adminNotice">{message}</div>}

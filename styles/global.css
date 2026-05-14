@@ -7054,3 +7054,368 @@ html.route-ready .pageHero .rmShell{
     opacity:1;
   }
 }
+
+/* =========================================================
+   ADMIN REAL VISUAL FIX
+   Removes duplicate public/header feel, duplicate logo,
+   adds visible language edge flag, makes dashboard cleaner.
+   ========================================================= */
+
+/* Hide normal public site header/footer on admin dashboard */
+body:has(.adminSimplePage) .rmHeader,
+body:has(.adminSimplePage) .rmFooter,
+body:has(.adminLoginPage) .rmHeader,
+body:has(.adminLoginPage) .rmFooter,
+body:has(.adminSimplePage) .mobileCallBar,
+body:has(.adminLoginPage) .mobileCallBar,
+body:has(.adminSimplePage) .languageFlagOverlay,
+body:has(.adminLoginPage) .languageFlagOverlay{
+  display:none!important;
+}
+
+/* Admin page should fill whole viewport */
+.adminSimplePage{
+  min-height:100vh!important;
+  display:grid!important;
+  grid-template-columns:245px 1fr!important;
+  background:#f4f8fc!important;
+  color:#102033!important;
+}
+
+/* Sidebar without duplicate logo image */
+.adminSidebar{
+  background:linear-gradient(180deg,#062246,#082f5f)!important;
+  padding:26px 20px!important;
+  min-height:100vh!important;
+  height:auto!important;
+  position:sticky!important;
+  top:0!important;
+  border-right:1px solid rgba(255,255,255,.08)!important;
+}
+
+.adminSideLogo,
+.adminSideLogo.textOnly{
+  display:block!important;
+  margin:0 0 24px!important;
+  padding:0!important;
+}
+
+.adminSideLogo img,
+.adminSideLogo.textOnly img{
+  display:none!important;
+}
+
+.adminSideLogo b,
+.adminSideLogo.textOnly b{
+  display:block!important;
+  color:white!important;
+  font-size:28px!important;
+  font-weight:950!important;
+  letter-spacing:-.04em!important;
+  line-height:1!important;
+}
+
+.adminSideLogo b::after{
+  content:"Panou administrare";
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  font-weight:800;
+  color:rgba(255,255,255,.62);
+  letter-spacing:0;
+}
+
+/* Sidebar buttons */
+.adminSidebar button{
+  min-height:46px!important;
+  border-radius:13px!important;
+  padding:12px 14px!important;
+  background:rgba(255,255,255,.08)!important;
+  color:#fff!important;
+  font-size:15px!important;
+  font-weight:900!important;
+  border:1px solid rgba(255,255,255,.06)!important;
+  transition:background .16s ease,border-color .16s ease!important;
+}
+
+.adminSidebar button:hover{
+  background:rgba(255,255,255,.14)!important;
+}
+
+.adminSidebar button.active{
+  background:#139be8!important;
+  border-color:#139be8!important;
+}
+
+.adminSidebar .logoutSide,
+.logoutSide{
+  margin-top:auto!important;
+  background:#e53935!important;
+  border-color:#e53935!important;
+}
+
+/* Main admin area */
+.adminSimpleMain{
+  position:relative!important;
+  overflow:hidden!important;
+  padding:36px 38px!important;
+  max-width:1180px!important;
+  width:100%!important;
+}
+
+/* Top header inside admin */
+.adminSimpleTop{
+  position:relative!important;
+  z-index:2!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:space-between!important;
+  gap:20px!important;
+  margin-bottom:24px!important;
+}
+
+.adminSimpleTop h1{
+  margin:6px 0 0!important;
+  color:#08234a!important;
+  font-size:42px!important;
+  line-height:1!important;
+  letter-spacing:-.055em!important;
+  font-weight:950!important;
+}
+
+.backBtn{
+  color:#0879ba!important;
+  font-weight:950!important;
+  font-size:15px!important;
+}
+
+/* Language selector */
+.adminLangSelect{
+  position:relative!important;
+  z-index:3!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  background:white!important;
+  border:1px solid #dcebf7!important;
+  border-radius:18px!important;
+  padding:10px 12px!important;
+  box-shadow:none!important;
+}
+
+.adminLangSelect span{
+  color:#64748b!important;
+  font-weight:900!important;
+}
+
+.adminLangSelect button{
+  width:46px!important;
+  height:46px!important;
+  border-radius:50%!important;
+  padding:0!important;
+  background:#edf6ff!important;
+  color:#075f9e!important;
+  border:0!important;
+  font-weight:950!important;
+}
+
+.adminLangSelect button.active{
+  background:#139be8!important;
+  color:white!important;
+}
+
+/* Edge language flag — visible right edge */
+.adminEdgeFlag{
+  position:absolute!important;
+  top:88px!important;
+  right:0!important;
+  z-index:1!important;
+  width:260px!important;
+  height:150px!important;
+  pointer-events:none!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:flex-end!important;
+  gap:10px!important;
+  padding:20px 0 0 54px!important;
+  opacity:.6!important;
+  background:linear-gradient(90deg,rgba(244,248,252,0),rgba(244,248,252,.55) 45%,rgba(244,248,252,1))!important;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.18) 24%,rgba(0,0,0,.72) 62%,#000 100%)!important;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.18) 24%,rgba(0,0,0,.72) 62%,#000 100%)!important;
+}
+
+.adminEdgeFlag span{
+  font-size:72px!important;
+  line-height:1!important;
+  transform:translateX(12px)!important;
+}
+
+.adminEdgeFlag b{
+  margin-top:18px!important;
+  color:#075f9e!important;
+  font-size:14px!important;
+  font-weight:950!important;
+  opacity:.78!important;
+}
+
+/* Dashboard cards more modern */
+.adminHomeGrid{
+  position:relative!important;
+  z-index:2!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:16px!important;
+}
+
+.adminHomeGrid button,
+.adminActionGrid button,
+.adminSimpleCard{
+  background:#fff!important;
+  border:1px solid #dcebf7!important;
+  border-radius:22px!important;
+  box-shadow:none!important;
+}
+
+.adminHomeGrid button{
+  min-height:132px!important;
+  padding:24px!important;
+  cursor:pointer!important;
+  transition:background .16s ease,border-color .16s ease,transform .16s ease!important;
+}
+
+.adminHomeGrid button:hover{
+  background:#f8fcff!important;
+  border-color:#bfe1f6!important;
+  transform:translateY(-2px)!important;
+}
+
+.adminHomeGrid b{
+  display:block!important;
+  color:#08234a!important;
+  font-size:28px!important;
+  line-height:1.05!important;
+  letter-spacing:-.04em!important;
+  margin-bottom:12px!important;
+}
+
+.adminHomeGrid span{
+  color:#64748b!important;
+  font-size:15px!important;
+  font-weight:900!important;
+}
+
+/* Admin cards/forms */
+.adminSimpleCard{
+  position:relative!important;
+  z-index:2!important;
+  padding:26px!important;
+}
+
+.adminSimpleCard h2{
+  font-size:32px!important;
+  letter-spacing:-.04em!important;
+  color:#08234a!important;
+}
+
+/* Login page redesign also */
+.adminLoginPage{
+  min-height:100vh!important;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(19,155,232,.16),transparent 28%),
+    linear-gradient(180deg,#f4f8fc,#ffffff)!important;
+}
+
+.adminLoginShell{
+  max-width:980px!important;
+}
+
+.adminLoginBrand,
+.adminLoginCard{
+  box-shadow:none!important;
+  border:1px solid #dcebf7!important;
+}
+
+.adminLoginBrand{
+  background:
+    linear-gradient(135deg,rgba(6,34,70,.9),rgba(19,155,232,.7)),
+    url('/images/medical-bg.jpg') center/cover no-repeat!important;
+}
+
+.adminLoginBrand img{
+  display:none!important;
+}
+
+.adminLoginBrand::before{
+  content:"Revimed Admin";
+  display:block;
+  width:max-content;
+  background:white;
+  color:#08234a;
+  border-radius:16px;
+  padding:12px 16px;
+  font-size:24px;
+  font-weight:950;
+  margin-bottom:auto;
+}
+
+.adminLoginCard h2{
+  color:#08234a!important;
+  letter-spacing:-.04em!important;
+}
+
+/* Mobile admin */
+@media(max-width:900px){
+  .adminSimplePage{
+    grid-template-columns:1fr!important;
+  }
+
+  .adminSidebar{
+    position:relative!important;
+    min-height:auto!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+
+  .adminSideLogo{
+    grid-column:1 / -1!important;
+  }
+
+  .adminSimpleMain{
+    padding:22px 14px!important;
+  }
+
+  .adminSimpleTop{
+    flex-direction:column!important;
+  }
+
+  .adminHomeGrid{
+    grid-template-columns:1fr 1fr!important;
+  }
+
+  .adminEdgeFlag{
+    top:120px!important;
+    width:150px!important;
+    height:100px!important;
+    opacity:.35!important;
+  }
+
+  .adminEdgeFlag span{
+    font-size:44px!important;
+  }
+
+  .adminEdgeFlag b{
+    display:none!important;
+  }
+}
+
+@media(max-width:560px){
+  .adminHomeGrid{
+    grid-template-columns:1fr!important;
+  }
+
+  .adminLangSelect{
+    width:100%!important;
+    justify-content:space-between!important;
+  }
+}
