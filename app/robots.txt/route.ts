@@ -1,15 +1,21 @@
-import { site } from "@/lib/site";
+import { siteUrl } from "@/lib/seo";
+
+export const dynamic = "force-dynamic";
 
 export function GET() {
-  return new Response(`User-agent: *
+  const body = `User-agent: *
 Allow: /
 
-Disallow: /revimed-login
 Disallow: /admin
+Disallow: /revimed-login
 Disallow: /api/
 
-Sitemap: ${site.url}/sitemap.xml
-`, {
-    headers: { "Content-Type": "text/plain" }
+Sitemap: ${siteUrl}/sitemap.xml
+`;
+
+  return new Response(body, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8"
+    }
   });
 }

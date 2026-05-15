@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/global.css";
+import { JsonLd, clinicJsonLd, websiteJsonLd } from "@/lib/seo";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
@@ -84,7 +85,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RouteTransition />
         <Header />
         <LanguageFlagOverlay />
-        <main>{children}</main>
+        <main><JsonLd data={clinicJsonLd("ro")} />
+        <JsonLd data={websiteJsonLd()} />
+        {children}</main>
         <Footer />
         <MobileCallBar />
       </body>

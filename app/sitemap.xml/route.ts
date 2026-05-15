@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/seo";
 import { NextResponse } from "next/server";
 import { getPublishedPosts, getPublishedServicesAdmin } from "@/lib/db";
 import { services, site, tools } from "@/lib/site";
