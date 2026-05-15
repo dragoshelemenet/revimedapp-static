@@ -14,6 +14,103 @@ import HomeCTA from "@/components/HomeCTA";
 import HomeStats from "@/components/HomeStats";
 import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 
+
+
+const seoVisibleText = {
+  ro: {
+    servicesTitle: "Servicii medicale Revimed PLUS+ în Chișinău",
+    servicesP1:
+      "Centrul Medical Revimed PLUS+ oferă servicii orientate spre evaluarea sistemului nervos, recuperare funcțională, fizioterapie, diagnostic și terapii complementare. Pacienții se pot adresa pentru dureri de spate, dureri cervicale, amețeli, amorțeli, tulburări de mers, recuperare după afecțiuni neurologice sau pentru un plan personalizat de reabilitare.",
+    servicesP2:
+      "Scopul consultației este să înțelegem simptomele, să analizăm istoricul pacientului și să recomandăm pașii potriviți: evaluare neurologică, consultație neurochirurgicală, fizioterapie, electroterapie, terapie balneară sau monitorizare. Clinica se află în Chișinău, sectorul Ciocana.",
+    prices: "Vezi prețurile",
+    appointment: "Programează o consultație",
+    tools: "Teste educaționale pentru pacienți",
+    appsTitle: "Teste și instrumente educaționale pentru pacienți",
+    appsP1:
+      "Instrumentele digitale Revimed PLUS+ sunt create pentru orientare educațională înainte de consultație. Pacientul poate completa teste pentru postură și coloană, dureri de spate, echilibru, somn, respirație sau simptome neurologice, apoi poate tipări un raport cu răspunsurile selectate pentru a-l prezenta medicului.",
+    appsP2:
+      "Aceste aplicații nu pun diagnostic și nu înlocuiesc consultația medicală. Ele ajută pacientul să organizeze informațiile importante: când au început simptomele, ce le agravează, ce le ameliorează, ce semnale de alarmă există și ce întrebări trebuie pregătite pentru medic.",
+    appsBullets: [
+      "raport printabil cu răspunsurile pacientului;",
+      "recomandări educaționale clare;",
+      "semnale când este indicat consult rapid;",
+      "pregătire mai bună pentru consultație la Revimed PLUS+ Chișinău."
+    ],
+    services: "Servicii medicale",
+    contact: "Contact și programări"
+  },
+  en: {
+    servicesTitle: "Revimed PLUS+ medical services in Chisinau",
+    servicesP1:
+      "Revimed PLUS+ Medical Center provides services focused on nervous system assessment, functional recovery, physiotherapy, diagnostics and complementary therapies. Patients may come for back pain, neck pain, dizziness, numbness, walking problems, recovery after neurological conditions or a personalized rehabilitation plan.",
+    servicesP2:
+      "The purpose of the consultation is to understand the symptoms, review the patient history and recommend the right next steps: neurological assessment, neurosurgical consultation, physiotherapy, electrotherapy, balneotherapy or monitoring. The clinic is located in Chisinau, Ciocana district.",
+    prices: "View prices",
+    appointment: "Book a consultation",
+    tools: "Educational tools for patients",
+    appsTitle: "Educational tests and tools for patients",
+    appsP1:
+      "Revimed PLUS+ digital tools are created for educational orientation before a consultation. Patients can complete tests for posture and spine, back pain, balance, sleep, breathing or neurological symptoms, then print a report with their selected answers to show the doctor.",
+    appsP2:
+      "These applications do not diagnose and do not replace a medical consultation. They help patients organize important information: when symptoms started, what makes them worse, what relieves them, which warning signs exist and what questions should be prepared for the doctor.",
+    appsBullets: [
+      "printable report with the patient’s answers;",
+      "clear educational recommendations;",
+      "warning signs when quick consultation is recommended;",
+      "better preparation for a consultation at Revimed PLUS+ Chisinau."
+    ],
+    services: "Medical services",
+    contact: "Contact and appointments"
+  },
+  ru: {
+    servicesTitle: "Медицинские услуги Revimed PLUS+ в Кишиневе",
+    servicesP1:
+      "Медицинский центр Revimed PLUS+ предлагает услуги, направленные на оценку нервной системы, функциональное восстановление, физиотерапию, диагностику и дополнительные терапии. Пациенты могут обращаться при боли в спине, боли в шее, головокружении, онемении, нарушении ходьбы, восстановлении после неврологических состояний или для индивидуального плана реабилитации.",
+    servicesP2:
+      "Цель консультации — понять симптомы, оценить историю пациента и рекомендовать правильные следующие шаги: неврологическую оценку, консультацию нейрохирурга, физиотерапию, электротерапию, бальнеотерапию или наблюдение. Клиника находится в Кишиневе, сектор Чеканы.",
+    prices: "Посмотреть цены",
+    appointment: "Записаться на консультацию",
+    tools: "Образовательные тесты для пациентов",
+    appsTitle: "Образовательные тесты и инструменты для пациентов",
+    appsP1:
+      "Цифровые инструменты Revimed PLUS+ созданы для образовательной ориентации перед консультацией. Пациент может пройти тесты для осанки и позвоночника, боли в спине, равновесия, сна, дыхания или неврологических симптомов, а затем распечатать отчет с выбранными ответами для врача.",
+    appsP2:
+      "Эти приложения не ставят диагноз и не заменяют медицинскую консультацию. Они помогают пациенту организовать важную информацию: когда начались симптомы, что их усиливает, что облегчает, какие есть тревожные признаки и какие вопросы подготовить врачу.",
+    appsBullets: [
+      "печатный отчет с ответами пациента;",
+      "понятные образовательные рекомендации;",
+      "тревожные признаки, когда нужна быстрая консультация;",
+      "лучшая подготовка к консультации в Revimed PLUS+ Кишинев."
+    ],
+    services: "Медицинские услуги",
+    contact: "Контакты и запись"
+  },
+  ua: {
+    servicesTitle: "Медичні послуги Revimed PLUS+ у Кишиневі",
+    servicesP1:
+      "Медичний центр Revimed PLUS+ пропонує послуги, спрямовані на оцінку нервової системи, функціональне відновлення, фізіотерапію, діагностику та додаткові терапії. Пацієнти можуть звертатися при болю в спині, болю в шиї, запамороченні, онімінні, порушенні ходи, відновленні після неврологічних станів або для індивідуального плану реабілітації.",
+    servicesP2:
+      "Мета консультації — зрозуміти симптоми, оцінити історію пацієнта та рекомендувати правильні наступні кроки: неврологічну оцінку, консультацію нейрохірурга, фізіотерапію, електротерапію, бальнеотерапію або спостереження. Клініка знаходиться у Кишиневі, сектор Чекани.",
+    prices: "Переглянути ціни",
+    appointment: "Записатися на консультацію",
+    tools: "Освітні тести для пацієнтів",
+    appsTitle: "Освітні тести та інструменти для пацієнтів",
+    appsP1:
+      "Цифрові інструменти Revimed PLUS+ створені для освітньої орієнтації перед консультацією. Пацієнт може пройти тести для постави та хребта, болю в спині, рівноваги, сну, дихання або неврологічних симптомів, а потім роздрукувати звіт з обраними відповідями для лікаря.",
+    appsP2:
+      "Ці застосунки не встановлюють діагноз і не замінюють медичну консультацію. Вони допомагають пацієнту організувати важливу інформацію: коли почалися симптоми, що їх посилює, що полегшує, які є тривожні ознаки та які питання підготувати лікарю.",
+    appsBullets: [
+      "друкований звіт з відповідями пацієнта;",
+      "зрозумілі освітні рекомендації;",
+      "тривожні ознаки, коли потрібна швидка консультація;",
+      "краща підготовка до консультації в Revimed PLUS+ Кишинів."
+    ],
+    services: "Медичні послуги",
+    contact: "Контакти та запис"
+  }
+} as const;
+
 export function HomeTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
   const services = getPublishedServicesSmart(lang).slice(0, 6);
@@ -124,6 +221,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
 
 export function ServicesTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
+  const seoText = seoVisibleText[lang] || seoVisibleText.ro;
   const hero = getContentBlockSmart(lang, "servicii", "hero");
   const services = getPublishedServicesSmart(lang);
 
@@ -148,22 +246,13 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
         </div>
 
         <div className="rmShell seoContentBlock">
-          <h2>Servicii medicale Revimed PLUS+ în Chișinău</h2>
-          <p>
-            Centrul Medical Revimed PLUS+ oferă servicii orientate spre evaluarea sistemului nervos,
-            recuperare funcțională, fizioterapie, diagnostic și terapii complementare. Pacienții se pot
-            adresa pentru dureri de spate, dureri cervicale, amețeli, amorțeli, tulburări de mers,
-            recuperare după afecțiuni neurologice sau pentru un plan personalizat de reabilitare.
-          </p>
-          <p>
-            Scopul consultației este să înțelegem simptomele, să analizăm istoricul pacientului și să
-            recomandăm pașii potriviți: evaluare neurologică, consultație neurochirurgicală, fizioterapie,
-            electroterapie, terapie balneară sau monitorizare. Clinica se află în Chișinău, sectorul Ciocana.
-          </p>
+          <h2>{seoText.servicesTitle}</h2>
+          <p>{seoText.servicesP1}</p>
+          <p>{seoText.servicesP2}</p>
           <div className="seoLinks">
-            <Link href={withLang("/preturi", lang)}>Vezi prețurile</Link>
-            <Link href={withLang("/contact", lang)}>Programează o consultație</Link>
-            <Link href={withLang("/aplicatii/teste-si-instrumente", lang)}>Teste educaționale pentru pacienți</Link>
+            <Link href={withLang("/preturi", lang)}>{seoText.prices}</Link>
+            <Link href={withLang("/contact", lang)}>{seoText.appointment}</Link>
+            <Link href={withLang("/aplicatii/teste-si-instrumente", lang)}>{seoText.tools}</Link>
           </div>
         </div>
       </section>
@@ -214,6 +303,7 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
 export function AppsTemplate({ lang }: { lang: Lang }) {
   const text = t(lang);
+  const seoText = seoVisibleText[lang] || seoVisibleText.ro;
   const hero = getContentBlockSmart(lang, "aplicatii", "hero");
   const appTools = translatedTools(lang);
 
@@ -239,28 +329,16 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
         </div>
 
         <div className="rmShell seoContentBlock">
-          <h2>Teste și instrumente educaționale pentru pacienți</h2>
-          <p>
-            Instrumentele digitale Revimed PLUS+ sunt create pentru orientare educațională înainte de
-            consultație. Pacientul poate completa teste pentru postură și coloană, dureri de spate,
-            echilibru, somn, respirație sau simptome neurologice, apoi poate tipări un raport cu răspunsurile
-            selectate pentru a-l prezenta medicului.
-          </p>
-          <p>
-            Aceste aplicații nu pun diagnostic și nu înlocuiesc consultația medicală. Ele ajută pacientul
-            să organizeze informațiile importante: când au început simptomele, ce le agravează, ce le
-            ameliorează, ce semnale de alarmă există și ce întrebări trebuie pregătite pentru medic.
-          </p>
+          <h2>{seoText.appsTitle}</h2>
+          <p>{seoText.appsP1}</p>
+          <p>{seoText.appsP2}</p>
           <ul>
-            <li>raport printabil cu răspunsurile pacientului;</li>
-            <li>recomandări educaționale clare;</li>
-            <li>semnale când este indicat consult rapid;</li>
-            <li>pregătire mai bună pentru consultație la Revimed PLUS+ Chișinău.</li>
+            {seoText.appsBullets.map((item) => <li key={item}>{item}</li>)}
           </ul>
           <div className="seoLinks">
-            <Link href={withLang("/servicii", lang)}>Servicii medicale</Link>
-            <Link href={withLang("/contact", lang)}>Contact și programări</Link>
-            <Link href={withLang("/preturi", lang)}>Prețuri</Link>
+            <Link href={withLang("/servicii", lang)}>{seoText.services}</Link>
+            <Link href={withLang("/contact", lang)}>{seoText.contact}</Link>
+            <Link href={withLang("/preturi", lang)}>{seoText.prices}</Link>
           </div>
         </div>
       </section>
