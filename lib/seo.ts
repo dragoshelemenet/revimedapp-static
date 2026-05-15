@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import type { Metadata } from "next";
 import { type Lang, withLang } from "@/lib/i18n";
 
@@ -210,12 +211,10 @@ export function serviceJsonLd({
 }
 
 export function JsonLd({ data }: { data: any }) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data).replace(/</g, "\\u003c")
-      }}
-    />
-  );
+  return createElement("script", {
+    type: "application/ld+json",
+    dangerouslySetInnerHTML: {
+      __html: JSON.stringify(data).replace(/</g, "\u003c")
+    }
+  });
 }
