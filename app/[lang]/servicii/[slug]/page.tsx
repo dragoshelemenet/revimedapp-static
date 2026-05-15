@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
-  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as any;
+  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
   const seo = serviceSeo[slug]?.[safeLang];
 
   return makeAdvancedMetadata({
