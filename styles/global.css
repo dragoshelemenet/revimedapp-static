@@ -10762,3 +10762,108 @@ html.route-ready .pageHero{
     margin:16mm;
   }
 }
+
+/* SEO content sections */
+.seoContentBlock{
+  max-width:980px!important;
+  margin:40px auto 0!important;
+  padding:28px!important;
+  border:1px solid #dcebf7!important;
+  border-radius:24px!important;
+  background:#fff!important;
+}
+
+.seoContentBlock h2{
+  color:#08234a!important;
+  font-size:30px!important;
+  letter-spacing:-.035em!important;
+  margin:0 0 14px!important;
+}
+
+.seoContentBlock p{
+  color:#475569!important;
+  line-height:1.7!important;
+  font-size:16px!important;
+}
+
+.seoContentBlock ul{
+  color:#475569!important;
+  line-height:1.7!important;
+}
+
+/* Visible SEO content blocks */
+.seoContentBlock{
+  margin-top:42px!important;
+  padding:30px!important;
+  border-radius:26px!important;
+  border:1px solid #dcebf7!important;
+  background:linear-gradient(180deg,#ffffff 0%,#f8fcff 100%)!important;
+  box-shadow:0 18px 45px rgba(8,35,74,.04)!important;
+}
+
+.seoContentBlock h2{
+  margin:0 0 14px!important;
+  color:#08234a!important;
+  font-size:32px!important;
+  line-height:1.08!important;
+  letter-spacing:-.04em!important;
+}
+
+.seoContentBlock p{
+  color:#475569!important;
+  font-size:17px!important;
+  line-height:1.75!important;
+  margin:0 0 14px!important;
+}
+
+.seoContentBlock ul{
+  margin:14px 0 0!important;
+  padding-left:22px!important;
+  color:#475569!important;
+  line-height:1.75!important;
+  font-size:16px!important;
+}
+
+.seoContentBlock li{
+  margin-bottom:6px!important;
+}
+
+.seoLinks{
+  display:flex!important;
+  gap:10px!important;
+  flex-wrap:wrap!important;
+  margin-top:18px!important;
+}
+
+.seoLinks a{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:11px 14px!important;
+  border-radius:999px!important;
+  background:#eaf6ff!important;
+  color:#0069aa!important;
+  font-weight:900!important;
+  text-decoration:none!important;
+  border:1px solid #cfeafd!important;
+}
+
+.seoLinks a:hover{
+  background:#0b8fd8!important;
+  color:#fff!important;
+}
+
+@media(max-width:700px){
+  .seoContentBlock{
+    padding:22px!important;
+    border-radius:20px!important;
+  }
+
+  .seoContentBlock h2{
+    font-size:26px!important;
+  }
+
+  .seoContentBlock p{
+    font-size:16px!important;
+  }
+}

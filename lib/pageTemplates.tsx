@@ -146,6 +146,26 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
             </Link>
           ))}
         </div>
+
+        <div className="rmShell seoContentBlock">
+          <h2>Servicii medicale Revimed PLUS+ în Chișinău</h2>
+          <p>
+            Centrul Medical Revimed PLUS+ oferă servicii orientate spre evaluarea sistemului nervos,
+            recuperare funcțională, fizioterapie, diagnostic și terapii complementare. Pacienții se pot
+            adresa pentru dureri de spate, dureri cervicale, amețeli, amorțeli, tulburări de mers,
+            recuperare după afecțiuni neurologice sau pentru un plan personalizat de reabilitare.
+          </p>
+          <p>
+            Scopul consultației este să înțelegem simptomele, să analizăm istoricul pacientului și să
+            recomandăm pașii potriviți: evaluare neurologică, consultație neurochirurgicală, fizioterapie,
+            electroterapie, terapie balneară sau monitorizare. Clinica se află în Chișinău, sectorul Ciocana.
+          </p>
+          <div className="seoLinks">
+            <Link href={withLang("/preturi", lang)}>Vezi prețurile</Link>
+            <Link href={withLang("/contact", lang)}>Programează o consultație</Link>
+            <Link href={withLang("/aplicatii/teste-si-instrumente", lang)}>Teste educaționale pentru pacienți</Link>
+          </div>
+        </div>
       </section>
     </>
   );
@@ -216,6 +236,32 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
               <b>{text.readMore}</b>
             </Link>
           ))}
+        </div>
+
+        <div className="rmShell seoContentBlock">
+          <h2>Teste și instrumente educaționale pentru pacienți</h2>
+          <p>
+            Instrumentele digitale Revimed PLUS+ sunt create pentru orientare educațională înainte de
+            consultație. Pacientul poate completa teste pentru postură și coloană, dureri de spate,
+            echilibru, somn, respirație sau simptome neurologice, apoi poate tipări un raport cu răspunsurile
+            selectate pentru a-l prezenta medicului.
+          </p>
+          <p>
+            Aceste aplicații nu pun diagnostic și nu înlocuiesc consultația medicală. Ele ajută pacientul
+            să organizeze informațiile importante: când au început simptomele, ce le agravează, ce le
+            ameliorează, ce semnale de alarmă există și ce întrebări trebuie pregătite pentru medic.
+          </p>
+          <ul>
+            <li>raport printabil cu răspunsurile pacientului;</li>
+            <li>recomandări educaționale clare;</li>
+            <li>semnale când este indicat consult rapid;</li>
+            <li>pregătire mai bună pentru consultație la Revimed PLUS+ Chișinău.</li>
+          </ul>
+          <div className="seoLinks">
+            <Link href={withLang("/servicii", lang)}>Servicii medicale</Link>
+            <Link href={withLang("/contact", lang)}>Contact și programări</Link>
+            <Link href={withLang("/preturi", lang)}>Prețuri</Link>
+          </div>
         </div>
       </section>
     </>
