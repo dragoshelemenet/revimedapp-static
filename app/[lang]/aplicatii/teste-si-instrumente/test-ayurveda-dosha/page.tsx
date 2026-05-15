@@ -1,6 +1,21 @@
+import { makeAdvancedMetadata, appSeo } from "@/lib/seoAdvanced";
 import { notFound } from "next/navigation";
 import { isLang } from "@/lib/i18n";
 import Original from "@/app/aplicatii/teste-si-instrumente/test-ayurveda-dosha/page";
+
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as any;
+
+  return makeAdvancedMetadata({
+    lang: safeLang,
+    path: "/aplicatii/teste-si-instrumente/test-ayurveda-dosha",
+    title: appSeo["test-ayurveda-dosha"]?.[safeLang]?.title || "Ayurveda Dosha Test",
+    description: appSeo["test-ayurveda-dosha"]?.[safeLang]?.description || "Ayurveda Dosha Test Revimed PLUS+ — instrument educațional pentru pacienți, cu rezultat orientativ și raport printabil pentru consultație.",
+    keywords: appSeo["test-ayurveda-dosha"]?.[safeLang]?.keywords || []
+  });
+}
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

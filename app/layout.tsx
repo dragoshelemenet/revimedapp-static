@@ -9,6 +9,7 @@ import MobileCallBar from "../components/MobileCallBar";
 import { site } from "../lib/site";
 import "../lib/seedLanguages";
 
+import { JsonLdBlock, localMedicalBusinessJsonLd } from "@/lib/seoAdvanced";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageFlagOverlay />
         <main><JsonLd data={clinicJsonLd("ro")} />
         <JsonLd data={websiteJsonLd()} />
+        <JsonLdBlock data={localMedicalBusinessJsonLd()} />
         {children}</main>
         <Footer />
         <MobileCallBar />

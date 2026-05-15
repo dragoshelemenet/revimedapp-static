@@ -1,158 +1,97 @@
-import { siteUrl } from "@/lib/seo";
-import { NextResponse } from "next/server";
-import { getPublishedPosts, getPublishedServicesAdmin } from "@/lib/db";
-import { services, site, tools } from "@/lib/site";
-import { languages, withLang, type Lang } from "@/lib/i18n";
-import "@/lib/content";
-import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
-
 export const dynamic = "force-dynamic";
+
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.SITE_URL ||
+  "https://revimed.site"
+).replace(/\/$/, "");
+
+const langs = [
+  { code: "ro", prefix: "" },
+  { code: "en", prefix: "/en" },
+  { code: "ru", prefix: "/ru" },
+  { code: "uk", prefix: "/ua" }
+];
+
+const routes = [
+  { path: "/", priority: "1.0", freq: "weekly" },
+  { path: "/despre-noi", priority: "0.8", freq: "monthly" },
+  { path: "/servicii", priority: "0.95", freq: "weekly" },
+  { path: "/servicii/consultatii-neurologice", priority: "0.98", freq: "weekly" },
+  { path: "/servicii/consultatii-neurochirurgie", priority: "0.98", freq: "weekly" },
+  { path: "/servicii/fizioterapie-si-reabilitare", priority: "0.98", freq: "weekly" },
+  { path: "/servicii/diagnostic-functional", priority: "0.9", freq: "weekly" },
+  { path: "/servicii/terapie-balneara", priority: "0.86", freq: "weekly" },
+  { path: "/servicii/electroterapie", priority: "0.86", freq: "weekly" },
+  { path: "/aplicatii", priority: "0.9", freq: "weekly" },
+  { path: "/aplicatii/teste-si-instrumente", priority: "0.95", freq: "weekly" },
+  { path: "/aplicatii/teste-si-instrumente/test-ayurveda-dosha", priority: "0.75", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/respiratie-terapeutica", priority: "0.75", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/screening-neurologic", priority: "0.82", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan", priority: "0.72", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata", priority: "0.82", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/test-postura-coloana", priority: "0.82", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/monitor-dureri-spate", priority: "0.82", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru", priority: "0.82", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice", priority: "0.76", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie", priority: "0.76", freq: "monthly" },
+  { path: "/aplicatii/teste-si-instrumente/pregatire-consultatie", priority: "0.82", freq: "monthly" },
+  { path: "/preturi", priority: "0.9", freq: "weekly" },
+  { path: "/galerie", priority: "0.75", freq: "monthly" },
+  { path: "/blog", priority: "0.7", freq: "weekly" },
+  { path: "/contact", priority: "0.92", freq: "weekly" },
+  { path: "/termeni-si-conditii", priority: "0.3", freq: "yearly" },
+  { path: "/cookies", priority: "0.3", freq: "yearly" }
+];
+
+function cleanUrl(prefix: string, path: string) {
+  if (path === "/") return `${SITE_URL}${prefix || ""}` || SITE_URL;
+  return `${SITE_URL}${prefix}${path}`.replace(/\/+$/, "");
+}
 
 function esc(value: string) {
   return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
-function urlEntry({
-  loc,
-  lastmod,
-  priority,
-  changefreq,
-  image,
-  imageTitle,
-  imageCaption
-}: {
-  loc: string;
-  lastmod?: string;
-  priority: string;
-  changefreq: string;
-  image?: string;
-  imageTitle?: string;
-  imageCaption?: string;
-}) {
-  const imageXml = image
-    ? `
-    <image:image>
-      <image:loc>${esc(new URL(image, site.url).toString())}</image:loc>
-      <image:title>${esc(imageTitle || "")}</image:title>
-      <image:caption>${esc(imageCaption || "")}</image:caption>
-    </image:image>`
-    : "";
+export function GET() {
+  const lastmod = new Date().toISOString();
 
-  return `
-  <url>
-    <loc>${esc(new URL(loc, site.url).toString())}</loc>
-    <lastmod>${lastmod || new Date().toISOString()}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>${imageXml}
+  const urls = langs.flatMap((lang) =>
+    routes.map((route) => {
+      const loc = cleanUrl(lang.prefix, route.path);
+
+      const alternates = langs
+        .map((alt) => {
+          const href = cleanUrl(alt.prefix, route.path);
+          return `<xhtml:link rel="alternate" hreflang="${alt.code}" href="${esc(href)}" />`;
+        })
+        .join("\n    ");
+
+      const xDefault = cleanUrl("", route.path);
+
+      return `  <url>
+    <loc>${esc(loc)}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${route.freq}</changefreq>
+    <priority>${route.priority}</priority>
+    ${alternates}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${esc(xDefault)}" />
   </url>`;
-}
-
-export async function GET() {
-  const urls: string[] = [];
-
-  const basePages = [
-    { loc: "/", priority: "1.0", changefreq: "weekly", image: site.image, title: site.name, caption: site.description },
-    { loc: "/despre-noi", priority: "0.8", changefreq: "monthly", image: site.image, title: "Despre Revimed PLUS+", caption: site.description },
-    { loc: "/servicii", priority: "0.95", changefreq: "weekly", image: site.image, title: "Servicii medicale", caption: "Servicii medicale Revimed PLUS+ în Chișinău." },
-    { loc: "/aplicatii", priority: "0.9", changefreq: "weekly", image: site.image, title: "Aplicații medicale", caption: "Aplicații digitale educaționale pentru pacienți." },
-    { loc: "/aplicatii/teste-si-instrumente", priority: "0.95", changefreq: "weekly", image: site.image, title: "Teste și Instrumente", caption: "Teste și instrumente medicale digitale." },
-    { loc: "/blog", priority: "0.9", changefreq: "daily", image: site.image, title: "Blog medical", caption: "Articole medicale Revimed PLUS+." },
-    { loc: "/preturi", priority: "0.75", changefreq: "monthly", image: site.image, title: "Prețuri", caption: "Prețuri servicii Revimed PLUS+." },
-    { loc: "/galerie", priority: "0.75", changefreq: "monthly", image: site.image, title: "Galerie", caption: "Galerie foto Revimed PLUS+." },
-    { loc: "/video-uri", priority: "0.7", changefreq: "monthly", image: site.image, title: "Video-uri", caption: "Video-uri Revimed PLUS+." },
-    { loc: "/contact", priority: "0.9", changefreq: "monthly", image: site.image, title: "Contact", caption: site.address },
-    { loc: "/termeni-si-conditii", priority: "0.35", changefreq: "yearly", image: site.image, title: "Termeni și Condiții", caption: "Termeni de utilizare Revimed PLUS+." },
-    { loc: "/cookies", priority: "0.35", changefreq: "yearly", image: site.image, title: "Cookies", caption: "Politica de cookies Revimed PLUS+." }
-  ];
-
-  for (const page of basePages) {
-    urls.push(urlEntry({
-      loc: page.loc,
-      priority: page.priority,
-      changefreq: page.changefreq,
-      image: page.image,
-      imageTitle: page.title,
-      imageCaption: page.caption
-    }));
-  }
-
-  for (const tool of tools) {
-    urls.push(urlEntry({
-      loc: tool.href,
-      priority: "0.92",
-      changefreq: "weekly",
-      image: tool.image,
-      imageTitle: tool.title,
-      imageCaption: tool.description
-    }));
-  }
-
-  for (const lang of languages) {
-    const langCode = lang as Lang;
-
-    if (langCode !== "ro") {
-      for (const page of basePages.filter((p) => !["/termeni-si-conditii", "/cookies"].includes(p.loc))) {
-        urls.push(urlEntry({
-          loc: withLang(page.loc, langCode),
-          priority: page.priority,
-          changefreq: page.changefreq,
-          image: page.image,
-          imageTitle: `${page.title} ${langCode.toUpperCase()}`,
-          imageCaption: page.caption
-        }));
-      }
-
-      for (const tool of tools) {
-        urls.push(urlEntry({
-          loc: withLang(tool.href, langCode),
-          priority: "0.9",
-          changefreq: "weekly",
-          image: tool.image,
-          imageTitle: `${tool.title} ${langCode.toUpperCase()}`,
-          imageCaption: tool.description
-        }));
-      }
-    }
-
-    const dbServices = getPublishedServicesAdmin(langCode);
-    for (const service of dbServices) {
-      urls.push(urlEntry({
-        loc: withLang(`/servicii/${service.slug}`, langCode),
-        lastmod: new Date(service.edited_at || service.created_at).toISOString(),
-        priority: "0.98",
-        changefreq: "weekly",
-        image: service.image,
-        imageTitle: service.title,
-        imageCaption: service.short_desc
-      }));
-    }
-
-    const posts = getPublishedPosts(langCode);
-    for (const post of posts) {
-      urls.push(urlEntry({
-        loc: withLang(`/blog/${post.slug}`, langCode),
-        lastmod: new Date(post.edited_at || post.created_at).toISOString(),
-        priority: "0.86",
-        changefreq: "monthly",
-        image: post.image,
-        imageTitle: post.title,
-        imageCaption: post.excerpt
-      }));
-    }
-  }
+    })
+  ).join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset 
+<urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${urls.join("")}
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls}
 </urlset>`;
 
-  return new NextResponse(xml, {
+  return new Response(xml, {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
       "Cache-Control": "public, max-age=0, s-maxage=3600"
