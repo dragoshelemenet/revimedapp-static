@@ -1,12 +1,12 @@
 import { makeAdvancedMetadata, appSeo } from "@/lib/seoAdvanced";
 import { notFound } from "next/navigation";
-import { isLang } from "@/lib/i18n";
+import { isLang, type Lang } from "@/lib/i18n";
 import Original from "@/app/aplicatii/teste-si-instrumente/planner-exercitii-zilnice/page";
 
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as any;
+  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
 
   return makeAdvancedMetadata({
     lang: safeLang,
