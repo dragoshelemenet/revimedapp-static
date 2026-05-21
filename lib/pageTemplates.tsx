@@ -468,7 +468,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
 export function BlogTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
- const posts = getPublishedPostsSmart(lang);
+ const posts = getPublishedPostsSmart(lang).filter((post: any) => !post.lang || post.lang === lang);
 
  return (
   <>
