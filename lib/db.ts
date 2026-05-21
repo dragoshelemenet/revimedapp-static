@@ -1,9 +1,7 @@
 import Database from "better-sqlite3";
 import path from "node:path";
 import fs from "node:fs";
-import type { Lang } from "./i18n";
 import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
-
 
 type Lang = "ro" | "en" | "ru" | "ua";
 
