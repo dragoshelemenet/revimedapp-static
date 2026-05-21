@@ -230,8 +230,8 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
    <section className="pageHero blogDetailHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.about}</p>
-     <h1>{hero?.title || text.aboutTitle}</h1>
-     <p className="lead">{hero?.text || text.aboutText1}</p>
+     <h1>{lang === "ro" ? (hero?.title || text.aboutTitle) : text.aboutTitle}</h1>
+     <p className="lead">{lang === "ro" ? (hero?.text || text.aboutText1) : text.aboutText1}</p>
     </div>
    </section>
    <section className="rmSection">
@@ -264,8 +264,8 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
    <section className="pageHero blogPostHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.services}</p>
-     <h1>{hero?.title || text.services}</h1>
-     <p className="lead">{hero?.text || text.noItems}</p>
+     <h1>{lang === "ro" ? (hero?.title || text.services) : text.services}</h1>
+     <p className="lead">{lang === "ro" ? (hero?.text || text.noItems) : text.noItems}</p>
     </div>
    </section>
    <section className="rmSection">
@@ -346,8 +346,8 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
    <section className="pageHero blogPostHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.apps}</p>
-     <h1>{hero?.title || text.toolsTitle}</h1>
-     <p className="lead">{hero?.text || text.toolsSubtitle}</p>
+     <h1>{lang === "ro" ? (hero?.title || text.toolsTitle) : text.toolsTitle}</h1>
+     <p className="lead">{lang === "ro" ? (hero?.text || text.toolsSubtitle) : text.toolsSubtitle}</p>
     </div>
    </section>
    <section className="rmSection">
