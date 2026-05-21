@@ -1,3 +1,4 @@
+import type { Lang } from "@/lib/i18n";
 import Database from "better-sqlite3";
 import path from "node:path";
 import fs from "node:fs";
@@ -252,9 +253,9 @@ export function getPublishedGalleryItems(lang: Lang = "ro") {
 }
 
 export function getPublishedPostsSmart(lang: Lang = "ro") {
- const rows = getPublishedPosts(lang);
- if (rows.length || lang === "ro") return rows;
- return getPublishedPosts("ro");
+  return db
+    .prepare("SELECT * FROM posts WHERE published = 1 AND lang = ? ORDER BY id DESC")
+    .all(lang) as any[];
 }
 
 export function getAllPostsSmart(lang: Lang = "ro") {
@@ -264,7 +265,9 @@ export function getAllPostsSmart(lang: Lang = "ro") {
 }
 
 export function getPostBySlugSmart(slug: string, lang: Lang = "ro") {
- return getPostBySlug(slug, lang) || getPostBySlug(slug, "ro");
+  return db
+    .prepare("SELECT * FROM posts WHERE published = 1 AND slug = ? AND lang = ? LIMIT 1")
+    .get(slug, lang) as any | null;
 }
 
 export function getPublishedPricesSmart(lang: Lang = "ro") {

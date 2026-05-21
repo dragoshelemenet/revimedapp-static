@@ -468,7 +468,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
 export function BlogTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
- const posts = getPublishedPostsSmart(lang).filter((post: any) => !post.lang || post.lang === lang);
+ const posts = getPublishedPostsSmart(lang).filter((post: any) => post.lang === lang);
 
  return (
   <>
@@ -497,7 +497,7 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
 }
 
 export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
- const post = getPostBySlugSmart(slug, lang);
+ const post = getPostBySlugSmart(slug, lang as Lang);
  if (!post) return null;
 
  return (
