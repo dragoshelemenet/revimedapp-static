@@ -12293,3 +12293,37 @@ body.heroScrolled .realHeroScrollHint{
     flex: 1 1 140px !important;
   }
 }
+
+/* FINAL FIX: remove white hero fade/overlay band completely */
+body main section.homeHero::after,
+body main section.pageHero::after,
+body main section.blogPostHero::after,
+body main section.blogDetailHero::after{
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+/* Also remove any real scroll hint button if it was injected */
+.realHeroScrollHint{
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Keep homepage hero clean with image + blue overlay only */
+body main section.homeHero{
+  background-image:
+    linear-gradient(90deg, rgba(8,28,55,.78) 0%, rgba(8,48,82,.56) 48%, rgba(11,143,216,.42) 100%),
+    url("/images/medical-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
