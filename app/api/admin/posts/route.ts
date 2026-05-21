@@ -25,7 +25,7 @@ export async function POST(req: Request) {
  }
 
  db.prepare(`
-  INSERT INTO posts (lang, title, slug, excerpt, content, image, keywords, published)
+  INSERT OR IGNORE INTO posts (lang, title, slug, excerpt, content, image, keywords, published)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?)
  `).run(lang, title, slug, excerpt, content, image, keywords, published);
 

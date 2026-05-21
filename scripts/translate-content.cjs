@@ -894,7 +894,7 @@ A consultation helps clarify symptoms, plan investigations and choose a responsi
   const exists = db.prepare("SELECT id FROM posts WHERE lang=? AND slug=?").get(lang, sample.slug);
   if (!exists) {
     db.prepare(`
-      INSERT INTO posts (lang,title,slug,excerpt,content,image,keywords,published)
+      INSERT OR IGNORE INTO posts (lang,title,slug,excerpt,content,image,keywords,published)
       VALUES (?, ?, ?, ?, ?, '/images/medical-bg.jpg', ?, 1)
     `).run(lang, sample.title, sample.slug, sample.excerpt, sample.content, sample.keywords);
   }

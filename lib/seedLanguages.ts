@@ -58,7 +58,7 @@ export function seedMissingLanguages() {
  if (tableExists("posts")) {
   const ro = db.prepare("SELECT * FROM posts WHERE lang='ro'").all() as any[];
   const insert = db.prepare(`
-   INSERT INTO posts
+   INSERT OR IGNORE INTO posts
    (lang,title,slug,excerpt,content,image,keywords,published)
    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
