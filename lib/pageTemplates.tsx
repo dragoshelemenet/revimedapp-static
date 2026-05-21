@@ -227,7 +227,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogDetailHero">
+   <section className="pageHero blogDetailHero forceImageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.about}</p>
      <h1>{lang === "ro" ? (hero?.title || text.aboutTitle) : text.aboutTitle}</h1>
@@ -387,7 +387,7 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero pricesHero">
+   <section className="pageHero pricesHero forceImageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.prices}</p>
      <h1>{text.pricesTitle}</h1>
@@ -413,7 +413,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero galleryHero">
+   <section className="pageHero galleryHero forceImageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.gallery}</p>
      <h1>{text.galleryTitle}</h1>
@@ -526,7 +526,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero contactHero">
+   <section className="pageHero contactHero forceImageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.contact}</p>
      <h1>{hero?.title || text.contactTitle}</h1>

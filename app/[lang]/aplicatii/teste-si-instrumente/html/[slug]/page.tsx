@@ -16,7 +16,7 @@ export default async function HtmlAppPage({ params }: { params: Promise<{ lang: 
 
  return (
   <>
-   <section className="pageHero">
+   <section className="pageHero forceImageHero">
     <div className="rmShell">
      <p className="crumb">Apps / HTML App</p>
      <h1>{title}</h1>
