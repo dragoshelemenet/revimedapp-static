@@ -576,6 +576,7 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
 }
 
 export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
+ const text = t(lang);
  const post = getPostBySlugSmart(slug, lang as Lang);
  if (!post) return null;
 
@@ -583,15 +584,17 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
   <>
    <section className="pageHero blogPostHero innerPageHero">
     <div className="rmShell">
-     <p className="crumb">Blog / {post.title}</p>
+     <p className="crumb">{text.blog} / {post.title}</p>
      <h1>{post.title}</h1>
      <p className="lead">{post.excerpt}</p>
     </div>
    </section>
-   <section className="rmSection">
-    <article className="rmShell adminCard prose">
+   <section className="rmSection blogPostSection">
+    <article className="rmShell adminCard prose blogPostArticle blogArticleCard">
      <div className="postHeroImage" style={{ backgroundImage: `url(${post.image})` }} />
-     <div dangerouslySetInnerHTML={{ __html: post.content.replaceAll("\n", "<br/>") }} />
+     <div className="blogReadableContent">
+      {renderBlogContent(post.content)}
+     </div>
     </article>
    </section>
   </>
