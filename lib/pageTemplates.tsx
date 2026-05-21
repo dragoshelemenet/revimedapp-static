@@ -306,7 +306,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogDetailHero">
+   <section className="pageHero aboutPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.about}</p>
      <h1>{lang === "ro" ? (hero?.title || text.aboutTitle) : text.aboutTitle}</h1>
