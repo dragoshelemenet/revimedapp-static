@@ -6,7 +6,7 @@ export const metadata = {
 export default function CookiesPage() {
  return (
   <>
-   <section className="pageHero forceImageHero innerHeroImage">
+   <section className="pageHero">
     <div className="rmShell">
      <p className="crumb">Acasă / Cookies</p>
      <h1>Cookies și Confidențialitate</h1>

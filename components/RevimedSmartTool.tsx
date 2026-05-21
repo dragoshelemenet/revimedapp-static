@@ -897,7 +897,7 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
 
  return (
   <>
-   <section className="pageHero smartToolHero forceImageHero innerHeroImage">
+   <section className="pageHero smartToolHero">
     <div className="rmShell">
      <p className="crumb">REVIMED PLUS+ / {cfg.tag[lang]}</p>
      <h1>{cfg.title[lang]}</h1>

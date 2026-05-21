@@ -11,7 +11,7 @@ export default async function HtmlAppPage({ params }: { params: Promise<{ slug: 
 
  return (
   <>
-   <section className="pageHero forceImageHero innerHeroImage">
+   <section className="pageHero">
     <div className="rmShell">
      <p className="crumb">Aplicații / HTML App</p>
      <h1>{data.app.title.ro}</h1>

@@ -181,7 +181,7 @@ export default function BreathingPage() {
 
  return (
   <>
-   <section className="pageHero forceImageHero innerHeroImage">
+   <section className="pageHero">
     <div className="rmShell">
      <p className="crumb">{t.crumb}</p>
      <h1>{t.title}</h1>

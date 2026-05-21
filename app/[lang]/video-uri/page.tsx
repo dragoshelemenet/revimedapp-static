@@ -15,7 +15,7 @@ export default async function SimpleLangPage({ params }: Props) {
 
  return (
   <>
-   <section className="pageHero forceImageHero innerHeroImage">
+   <section className="pageHero">
     <div className="rmShell">
      <p className="crumb">{text.home}</p>
      <h1>{titleMap["contact"] || text.contact}</h1>
