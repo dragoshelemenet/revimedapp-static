@@ -11,6 +11,7 @@ import "../lib/seedLanguages";
 
 import { JsonLdBlock, localMedicalBusinessJsonLd } from "@/lib/seoAdvanced";
 import BlogArticleEnhancer from "@/components/BlogArticleEnhancer";
+import SiteTranslationFixer from "@/components/SiteTranslationFixer";
 export const metadata: Metadata = {
  metadataBase: new URL(site.url),
  title: {
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <Footer />
     <MobileCallBar />
            <BlogArticleEnhancer />
+              <SiteTranslationFixer />
       </body>
   </html>
  );
