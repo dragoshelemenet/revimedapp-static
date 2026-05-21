@@ -11943,3 +11943,91 @@ body main section.blogDetailHero::after{
     height: 48px !important;
   }
 }
+
+/* FINAL: hero scroll arrow appears only before scroll */
+body:not(.heroScrolled) main section.homeHero::before,
+body:not(.heroScrolled) main section.pageHero::before,
+body:not(.heroScrolled) main section.blogPostHero::before,
+body:not(.heroScrolled) main section.blogDetailHero::before{
+  content: "⌄" !important;
+  display: grid !important;
+  place-items: center !important;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 16px !important;
+  transform: translateX(-50%) !important;
+  width: 38px !important;
+  height: 38px !important;
+  z-index: 7 !important;
+  pointer-events: none !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.68) !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
+  color: #08234a !important;
+  font-size: 28px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  box-shadow: 0 10px 26px rgba(8,35,74,.14) !important;
+  backdrop-filter: blur(8px) !important;
+  opacity: .75 !important;
+  visibility: visible !important;
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease !important;
+}
+
+/* Once user scrolls, hide the arrow completely */
+body.heroScrolled main section.homeHero::before,
+body.heroScrolled main section.pageHero::before,
+body.heroScrolled main section.blogPostHero::before,
+body.heroScrolled main section.blogDetailHero::before{
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Keep the soft bottom fade */
+body main section.homeHero::after,
+body main section.pageHero::after,
+body main section.blogPostHero::after,
+body main section.blogDetailHero::after{
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 70px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.16) 45%,
+    rgba(255,255,255,.65) 78%,
+    rgba(255,255,255,1) 100%
+  ) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+@media(max-width:760px){
+  body:not(.heroScrolled) main section.homeHero::before,
+  body:not(.heroScrolled) main section.pageHero::before,
+  body:not(.heroScrolled) main section.blogPostHero::before,
+  body:not(.heroScrolled) main section.blogDetailHero::before{
+    width: 32px !important;
+    height: 32px !important;
+    bottom: 10px !important;
+    font-size: 24px !important;
+    opacity: .62 !important;
+  }
+
+  body main section.homeHero::after,
+  body main section.pageHero::after,
+  body main section.blogPostHero::after,
+  body main section.blogDetailHero::after{
+    height: 48px !important;
+  }
+}
