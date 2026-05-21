@@ -71,6 +71,32 @@ function cleanHeroText(value: string | undefined | null, fallback: string) {
 }
 
 
+
+function isCorrectBlogLanguage(post: any, lang: Lang) {
+  const slug = String(post?.slug || "");
+  const title = String(post?.title || "");
+  const postLang = String(post?.lang || "ro");
+
+  if (postLang !== lang) return false;
+
+  const roOnlySlugs = [
+    "cum-reducem-riscul-de-cancer",
+    "7-alimente-sanatoase-pentru-energie-digestie-si-echilibru-metabolic"
+  ];
+
+  if (lang !== "ro" && roOnlySlugs.includes(slug)) return false;
+
+  if (lang !== "ro") {
+    const looksRomanian =
+      /ă|â|î|ș|ţ|ț/i.test(title) ||
+      /Cum reducem riscul|7 alimente sănătoase|prevenție|digestie|echilibru metabolic/i.test(title);
+
+    if (looksRomanian) return false;
+  }
+
+  return true;
+}
+
 function renderBlogContent(content: string) {
   const lines = String(content || "")
     .split(/\n+/)
@@ -521,7 +547,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
 export function BlogTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
- const posts = getPublishedPostsSmart(lang).filter((post: any) => post.lang === lang);
+ const posts = getPublishedPostsSmart(lang).filter((post: any) => isCorrectBlogLanguage(post, lang));
 
  return (
   <>
