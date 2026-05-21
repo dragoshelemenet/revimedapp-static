@@ -261,7 +261,7 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero">
+   <section className="pageHero blogPostHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.services}</p>
      <h1>{hero?.title || text.services}</h1>
@@ -301,7 +301,7 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
  return (
   <>
-   <section className="pageHero">
+   <section className="pageHero blogPostHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.services} / {cleanServiceText(service.title)}</p>
      <h1>{cleanServiceText(service.title)}</h1>
@@ -343,7 +343,7 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero">
+   <section className="pageHero blogPostHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.apps}</p>
      <h1>{hero?.title || text.toolsTitle}</h1>
@@ -472,7 +472,7 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero">
+   <section className="pageHero blogPostHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.blog}</p>
      <h1>{text.blogTitle}</h1>
@@ -502,7 +502,7 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
  return (
   <>
-   <section className="pageHero">
+   <section className="pageHero blogPostHero">
     <div className="rmShell">
      <p className="crumb">Blog / {post.title}</p>
      <h1>{post.title}</h1>

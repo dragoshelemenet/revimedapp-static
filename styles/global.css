@@ -11270,3 +11270,140 @@ body:has(.blogDetailHero) .pageHero > .rmShell{
     padding-top:30px!important;
   }
 }
+
+/* FINAL FIX: blog hero must not use global white gradient/scroll arrow */
+.blogPostHero{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:360px!important;
+  height:auto!important;
+  margin-bottom:0!important;
+  display:flex!important;
+  align-items:center!important;
+}
+
+/* remove old scroll arrow + white gradient */
+.blogPostHero::before,
+.blogPostHero::after{
+  display:none!important;
+  content:none!important;
+  background:none!important;
+  animation:none!important;
+}
+
+/* clean dark overlay only for blog cover */
+.blogPostHero{
+  background-blend-mode:multiply!important;
+}
+
+.blogPostHero .rmShell{
+  position:relative!important;
+  z-index:5!important;
+  transform:none!important;
+  left:auto!important;
+  bottom:auto!important;
+
+  width:min(920px, calc(100% - 36px))!important;
+  max-width:920px!important;
+  padding:34px 0!important;
+
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  color:#fff!important;
+}
+
+/* remove any forced white card from previous attempts */
+.blogPostHero .blogHeroTextCard{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  width:auto!important;
+  max-width:920px!important;
+  padding:34px 0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+
+/* Blog hero text */
+.blogPostHero .crumb{
+  margin:0 0 12px!important;
+  color:#fff!important;
+  opacity:.95!important;
+  font-size:15px!important;
+  font-weight:900!important;
+  line-height:1.35!important;
+  text-shadow:0 2px 16px rgba(0,0,0,.35)!important;
+}
+
+.blogPostHero h1{
+  margin:0!important;
+  max-width:760px!important;
+  color:#fff!important;
+  font-size:clamp(38px, 5vw, 68px)!important;
+  line-height:.96!important;
+  letter-spacing:-.06em!important;
+  text-shadow:0 4px 24px rgba(0,0,0,.38)!important;
+}
+
+.blogPostHero .lead{
+  margin:18px 0 0!important;
+  max-width:760px!important;
+  color:#fff!important;
+  opacity:.95!important;
+  font-size:22px!important;
+  line-height:1.45!important;
+  font-weight:500!important;
+  text-shadow:0 2px 16px rgba(0,0,0,.35)!important;
+}
+
+/* Put article content closer and clean */
+.blogPostHero + .rmSection{
+  padding-top:58px!important;
+}
+
+/* Kill previous :has blog hero rules if they still exist */
+body:has(.blogPostHero) .pageHero::before,
+body:has(.blogPostHero) .pageHero::after{
+  display:none!important;
+  content:none!important;
+  background:none!important;
+}
+
+body:has(.blogPostHero) .pageHero > .rmShell{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+}
+
+@media(max-width:760px){
+  .blogPostHero{
+    min-height:310px!important;
+  }
+
+  .blogPostHero .rmShell,
+  .blogPostHero .blogHeroTextCard{
+    width:calc(100% - 28px)!important;
+    padding:28px 0!important;
+  }
+
+  .blogPostHero h1{
+    font-size:34px!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+  }
+
+  .blogPostHero .lead{
+    font-size:16px!important;
+    line-height:1.5!important;
+  }
+
+  .blogPostHero + .rmSection{
+    padding-top:38px!important;
+  }
+}
