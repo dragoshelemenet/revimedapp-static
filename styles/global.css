@@ -10964,91 +10964,6 @@ html.route-ready .pageHero{
   }
 }
 
-/* Subtle scroll hint on hero sections */
-.pageHero{
-  position:relative!important;
-  overflow:hidden!important;
-}
-
-.pageHero > .rmShell{
-  position:relative!important;
-  z-index:3!important;
-}
-
-/* white fade from bottom edge upward */
-.pageHero::after{
-  content:""!important;
-  position:absolute!important;
-  left:0!important;
-  right:0!important;
-  bottom:-1px!important;
-  height:280px!important;
-  pointer-events:none!important;
-  z-index:2!important;
-  background:linear-gradient(
-    to top,
-    rgba(255,255,255,.92) 0%,
-    rgba(255,255,255,.72) 18%,
-    rgba(255,255,255,.38) 45%,
-    rgba(255,255,255,.12) 72%,
-    rgba(255,255,255,0) 100%
-  )!important;
-}
-
-/* scroll arrow near bottom edge */
-.pageHero::before{
-  content:"↓"!important;
-  position:absolute!important;
-  left:50%!important;
-  bottom:18px!important;
-  transform:translateX(-50%)!important;
-  width:44px!important;
-  height:44px!important;
-  border-radius:999px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  z-index:4!important;
-  pointer-events:none!important;
-
-  color:#ffffff!important;
-  font-size:28px!important;
-  font-weight:900!important;
-  line-height:1!important;
-  text-shadow:0 2px 14px rgba(0,45,90,.35)!important;
-
-  background:rgba(255,255,255,.20)!important;
-  border:1px solid rgba(255,255,255,.52)!important;
-  box-shadow:
-    0 10px 30px rgba(8,35,74,.18),
-    inset 0 1px 0 rgba(255,255,255,.38)!important;
-  backdrop-filter:blur(8px)!important;
-  animation:heroScrollArrow 1.65s ease-in-out infinite!important;
-}
-
-@keyframes heroScrollArrow{
-  0%,100%{
-    transform:translateX(-50%) translateY(0);
-    opacity:.72;
-  }
-  50%{
-    transform:translateX(-50%) translateY(8px);
-    opacity:1;
-  }
-}
-
-@media(max-width:760px){
-  .pageHero::after{
-    height:190px!important;
-  }
-
-  .pageHero::before{
-    bottom:12px!important;
-    width:38px!important;
-    height:38px!important;
-    font-size:24px!important;
-  }
-}
 
 /* BLOG ONLY: move hero text below cover, above article image */
 body:has(.blogArticleCard) .pageHero,
@@ -11637,5 +11552,16 @@ main section.blogDetailHero + section.rmSection{
   main section.blogDetailHero + section.rmSection{
     padding-top: 35px !important;
   }
+}
+
+/* FINAL: remove unwanted white fade and arrow from normal page heroes */
+main section.pageHero::before,
+main section.pageHero::after{
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  animation: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
 }
 
