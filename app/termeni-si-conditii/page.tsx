@@ -6,7 +6,7 @@ export const metadata = {
 export default function TermsPage() {
  return (
   <>
-   <section className="pageHero forceImageHero">
+   <section className="pageHero forceImageHero innerHeroImage">
     <div className="rmShell">
      <p className="crumb">Acasă / Termeni și Condiții</p>
      <h1>Termeni și Condiții</h1>

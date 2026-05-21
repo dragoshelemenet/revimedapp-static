@@ -11408,53 +11408,6 @@ body:has(.blogPostHero) .pageHero > .rmShell{
   }
 }
 
-/* BLOG MOBILE ONLY: make hero compact */
-@media(max-width:760px){
-  .blogPostHero{
-    min-height:245px!important;
-    height:auto!important;
-    padding:0!important;
-    margin-bottom:0!important;
-    align-items:flex-start!important;
-  }
-
-  .blogPostHero .rmShell,
-  .blogPostHero .blogHeroTextCard{
-    width:calc(100% - 28px)!important;
-    padding:28px 0 22px!important;
-  }
-
-  .blogPostHero .crumb{
-    margin-bottom:10px!important;
-    font-size:15px!important;
-    line-height:1.35!important;
-    display:-webkit-box!important;
-    -webkit-line-clamp:2!important;
-    -webkit-box-orient:vertical!important;
-    overflow:hidden!important;
-  }
-
-  .blogPostHero h1{
-    font-size:0!important;
-    line-height:0!important;
-    margin:0!important;
-  }
-
-  .blogPostHero h1::after{
-    content:attr(data-mobile-title);
-  }
-
-  .blogPostHero .lead{
-    margin-top:170px!important;
-    font-size:18px!important;
-    line-height:1.45!important;
-    max-width:310px!important;
-  }
-
-  .blogPostHero + .rmSection{
-    padding-top:26px!important;
-  }
-}
 
 /* fallback if data-mobile-title is not present */
 @media(max-width:760px){
@@ -11585,8 +11538,6 @@ body:has(.blogPostHero) .pageHero > .rmShell{
   }
 }
 
-
-
 /* remove bad white gradient / arrow from normal heroes */
 .pageHero:not(.blogPostHero)::before,
 .pageHero:not(.blogPostHero)::after{
@@ -11613,11 +11564,6 @@ body:has(.blogPostHero) .pageHero > .rmShell{
   text-shadow:0 3px 18px rgba(0,0,0,.35)!important;
 }
 
-/* Blog keeps clean dark style, no clinic image */
-.blogPostHero{
-  background:#082445!important;
-  background-image:none!important;
-}
 
 /* On mobile keep normal page hero compact */
 @media(max-width:760px){
@@ -11638,8 +11584,6 @@ body:has(.blogPostHero) .pageHero > .rmShell{
   }
 }
 
-
-
 /* remove wrong empty gradient/arrow on normal pages */
 .pageHero:not(.blogPostHero)::before,
 .pageHero:not(.blogPostHero)::after{
@@ -11696,8 +11640,6 @@ body:has(.blogPostHero) .pageHero > .rmShell{
   }
 }
 
-
-
 /* remove wrong empty gradient/arrow on normal pages */
 .pageHero:not(.blogPostHero)::before,
 .pageHero:not(.blogPostHero)::after{
@@ -11752,753 +11694,39 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     font-size:16px!important;
     line-height:1.45!important;
   }
-}
-
-
-/* FINAL HERO FIX — normal pages use homepage image, blog stays separate */
-html body main section.pageHero:not(.blogPostHero),
-html body .pageHero:not(.blogPostHero){
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  min-height: 260px !important;
-  height: 260px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  background:
-    linear-gradient(90deg, rgba(6, 24, 48, .82) 0%, rgba(8, 55, 90, .58) 48%, rgba(18, 154, 222, .42) 100%),
-    url("/images/hero-bg.jpg") center center / cover no-repeat !important;
-}
-
-html body main section.pageHero:not(.blogPostHero)::before,
-html body main section.pageHero:not(.blogPostHero)::after,
-html body .pageHero:not(.blogPostHero)::before,
-html body .pageHero:not(.blogPostHero)::after{
-  display: none !important;
-  content: none !important;
-  background: none !important;
-  animation: none !important;
-}
-
-html body main section.pageHero:not(.blogPostHero) .rmShell,
-html body .pageHero:not(.blogPostHero) .rmShell{
-  width: min(1120px, calc(100% - 40px)) !important;
-  margin: 0 auto !important;
-  position: relative !important;
-  z-index: 2 !important;
-  color: #fff !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  transform: none !important;
-}
-
-html body main section.pageHero:not(.blogPostHero) .crumb,
-html body main section.pageHero:not(.blogPostHero) h1,
-html body main section.pageHero:not(.blogPostHero) .lead,
-html body .pageHero:not(.blogPostHero) .crumb,
-html body .pageHero:not(.blogPostHero) h1,
-html body .pageHero:not(.blogPostHero) .lead{
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  color: #fff !important;
-  text-shadow: 0 3px 18px rgba(0,0,0,.38) !important;
-}
-
-html body main section.pageHero:not(.blogPostHero) .crumb,
-html body .pageHero:not(.blogPostHero) .crumb{
-  margin: 0 0 12px !important;
-  font-size: 17px !important;
-  font-weight: 800 !important;
-}
-
-html body main section.pageHero:not(.blogPostHero) h1,
-html body .pageHero:not(.blogPostHero) h1{
-  margin: 0 0 12px !important;
-  max-width: 900px !important;
-  font-size: clamp(46px, 5vw, 72px) !important;
-  line-height: .98 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body main section.pageHero:not(.blogPostHero) .lead,
-html body .pageHero:not(.blogPostHero) .lead{
-  max-width: 860px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-  font-weight: 500 !important;
-}
-
-/* Blog hero remains clean dark, not clinic image */
-html body main section.blogPostHero,
-html body .blogPostHero{
-  background: #082445 !important;
-  background-image: none !important;
 }
 
 /* Mobile */
 @media(max-width:760px){
-  html body main section.pageHero:not(.blogPostHero),
-  html body .pageHero:not(.blogPostHero){
-    min-height: 220px !important;
-    height: 220px !important;
-    background-position: center center !important;
-  }
-
-  html body main section.pageHero:not(.blogPostHero) .rmShell,
-  html body .pageHero:not(.blogPostHero) .rmShell{
-    width: calc(100% - 28px) !important;
-  }
-
-  html body main section.pageHero:not(.blogPostHero) h1,
-  html body .pageHero:not(.blogPostHero) h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  html body main section.pageHero:not(.blogPostHero) .lead,
-  html body .pageHero:not(.blogPostHero) .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-}
-
-
-/* ABSOLUTE FINAL HERO IMAGE FIX — use homepage interior photo everywhere except blog */
-html body main section.pageHero:not(.blogPostHero),
-html body section.pageHero:not(.blogPostHero),
-html body .pageHero:not(.blogPostHero){
-  position:relative!important;
-  isolation:isolate!important;
-  overflow:hidden!important;
-  min-height:270px!important;
-  height:270px!important;
-  padding:0!important;
-  display:flex!important;
-  align-items:center!important;
-  background:#082445!important;
-}
+  
 
 /* Force the interior photo as real visual layer */
-html body main section.pageHero:not(.blogPostHero)::before,
-html body section.pageHero:not(.blogPostHero)::before,
-html body .pageHero:not(.blogPostHero)::before{
-  content:""!important;
-  display:block!important;
-  position:absolute!important;
-  inset:0!important;
-  z-index:0!important;
-  opacity:1!important;
-  visibility:visible!important;
-  background-image:url("/images/medical-bg.jpg")!important;
-  background-size:cover!important;
-  background-position:center center!important;
-  background-repeat:no-repeat!important;
-  transform:none!important;
-  animation:none!important;
-}
 
 /* Blue overlay over the photo */
-html body main section.pageHero:not(.blogPostHero)::after,
-html body section.pageHero:not(.blogPostHero)::after,
-html body .pageHero:not(.blogPostHero)::after{
-  content:""!important;
-  display:block!important;
-  position:absolute!important;
-  inset:0!important;
-  z-index:1!important;
-  opacity:1!important;
-  visibility:visible!important;
-  background:
-    linear-gradient(90deg, rgba(5,23,48,.84) 0%, rgba(7,48,82,.64) 48%, rgba(15,150,220,.45) 100%)!important;
-  transform:none!important;
-  animation:none!important;
-}
 
 /* Put title/subtitle above image */
-html body main section.pageHero:not(.blogPostHero) > .rmShell,
-html body section.pageHero:not(.blogPostHero) > .rmShell,
-html body .pageHero:not(.blogPostHero) > .rmShell{
-  position:relative!important;
-  z-index:2!important;
-  width:min(1120px, calc(100% - 40px))!important;
-  margin:0 auto!important;
-  padding:0!important;
-  transform:none!important;
-  left:auto!important;
-  right:auto!important;
-  top:auto!important;
-  bottom:auto!important;
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
-  backdrop-filter:none!important;
-  color:#fff!important;
-}
-
-html body main section.pageHero:not(.blogPostHero) .crumb,
-html body main section.pageHero:not(.blogPostHero) h1,
-html body main section.pageHero:not(.blogPostHero) .lead,
-html body section.pageHero:not(.blogPostHero) .crumb,
-html body section.pageHero:not(.blogPostHero) h1,
-html body section.pageHero:not(.blogPostHero) .lead,
-html body .pageHero:not(.blogPostHero) .crumb,
-html body .pageHero:not(.blogPostHero) h1,
-html body .pageHero:not(.blogPostHero) .lead{
-  color:#fff!important;
-  opacity:1!important;
-  visibility:visible!important;
-  text-shadow:0 3px 18px rgba(0,0,0,.38)!important;
-}
-
-html body .pageHero:not(.blogPostHero) .crumb{
-  margin:0 0 12px!important;
-  font-size:17px!important;
-  font-weight:900!important;
-}
-
-html body .pageHero:not(.blogPostHero) h1{
-  margin:0 0 12px!important;
-  max-width:900px!important;
-  font-size:clamp(44px, 5vw, 72px)!important;
-  line-height:1!important;
-  letter-spacing:-.055em!important;
-  font-weight:900!important;
-}
-
-html body .pageHero:not(.blogPostHero) .lead{
-  max-width:840px!important;
-  margin:0!important;
-  font-size:22px!important;
-  line-height:1.45!important;
-  font-weight:500!important;
-}
 
 /* Blog stays dark, no clinic photo */
-html body main section.blogPostHero,
-html body section.blogPostHero,
-html body .blogPostHero{
-  background:#082445!important;
-  background-image:none!important;
-}
-
-html body main section.blogPostHero::before,
-html body main section.blogPostHero::after,
-html body section.blogPostHero::before,
-html body section.blogPostHero::after,
-html body .blogPostHero::before,
-html body .blogPostHero::after{
-  display:none!important;
-  content:none!important;
-}
-
-@media(max-width:760px){
-  html body main section.pageHero:not(.blogPostHero),
-  html body section.pageHero:not(.blogPostHero),
-  html body .pageHero:not(.blogPostHero){
-    min-height:220px!important;
-    height:220px!important;
-  }
-
-  html body .pageHero:not(.blogPostHero) > .rmShell{
-    width:calc(100% - 28px)!important;
-  }
-
-  html body .pageHero:not(.blogPostHero) h1{
-    font-size:34px!important;
-    line-height:1.05!important;
-  }
-
-  html body .pageHero:not(.blogPostHero) .lead{
-    font-size:16px!important;
-    line-height:1.45!important;
-  }
-}
-
-
-/* REVIMED REAL FINAL PAGE HERO FIX — keep this at the very end */
-html body main > section.pageHero:not(.blogPostHero),
-html body main section.pageHero:not(.blogPostHero),
-html body section.pageHero:not(.blogPostHero),
-html body .pageHero:not(.blogPostHero){
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  min-height: 270px !important;
-  height: 270px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  color: #fff !important;
-  background-color: #082445 !important;
-  background-image:
-    linear-gradient(90deg, rgba(5, 23, 48, .84) 0%, rgba(7, 48, 82, .62) 48%, rgba(15, 150, 220, .42) 100%),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
 
 /* Kill old pseudo overlays/arrows/empty gradients */
-html body main > section.pageHero:not(.blogPostHero)::before,
-html body main > section.pageHero:not(.blogPostHero)::after,
-html body main section.pageHero:not(.blogPostHero)::before,
-html body main section.pageHero:not(.blogPostHero)::after,
-html body section.pageHero:not(.blogPostHero)::before,
-html body section.pageHero:not(.blogPostHero)::after,
-html body .pageHero:not(.blogPostHero)::before,
-html body .pageHero:not(.blogPostHero)::after{
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  background-image: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  animation: none !important;
-  transform: none !important;
-}
-
-html body .pageHero:not(.blogPostHero) > .rmShell{
-  position: relative !important;
-  z-index: 5 !important;
-  width: min(1130px, calc(100% - 32px)) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  color: #fff !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  transform: none !important;
-  inset: auto !important;
-}
-
-html body .pageHero:not(.blogPostHero) .crumb,
-html body .pageHero:not(.blogPostHero) h1,
-html body .pageHero:not(.blogPostHero) .lead{
-  position: relative !important;
-  z-index: 6 !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  color: #fff !important;
-  text-shadow: 0 3px 18px rgba(0,0,0,.38) !important;
-}
-
-html body .pageHero:not(.blogPostHero) h1{
-  margin: 0 0 12px !important;
-  max-width: 900px !important;
-  font-size: clamp(44px, 5vw, 72px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body .pageHero:not(.blogPostHero) .lead{
-  max-width: 840px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-  font-weight: 500 !important;
-}
 
 /* Blog posts stay dark */
-html body section.blogPostHero,
-html body .blogPostHero{
-  background: #082445 !important;
-  background-image: none !important;
-}
-
-@media(max-width:760px){
-  html body .pageHero:not(.blogPostHero){
-    min-height: 220px !important;
-    height: 220px !important;
-  }
-
-  html body .pageHero:not(.blogPostHero) h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  html body .pageHero:not(.blogPostHero) .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-}
-
-/* =========================================================
-   FINAL REVIMED INNER HERO FIX
-   All normal pages = same image as homepage + same blue overlay
-   Homepage remains unchanged.
-   Blog post remains dark/simple.
-========================================================= */
 
 /* Normal inner pages: despre noi, servicii, aplicatii, preturi, galerie, blog list, contact */
-html body main section.pageHero:not(.blogPostHero),
-html body main .pageHero:not(.blogPostHero),
-html body section.pageHero:not(.blogPostHero),
-html body .pageHero:not(.blogPostHero),
-html body .galleryHero,
-html body .contactHero,
-html body .pricesHero,
-html body .ayurHero{
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  color: #fff !important;
-
-  background-color: #0a2554 !important;
-  background-image:
-    linear-gradient(90deg, rgba(0,63,120,.53), rgba(0,96,180,.42)),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
 
 /* Remove old grey/dark pseudo overlays that hide the image */
-html body main section.pageHero:not(.blogPostHero)::before,
-html body main section.pageHero:not(.blogPostHero)::after,
-html body main .pageHero:not(.blogPostHero)::before,
-html body main .pageHero:not(.blogPostHero)::after,
-html body section.pageHero:not(.blogPostHero)::before,
-html body section.pageHero:not(.blogPostHero)::after,
-html body .pageHero:not(.blogPostHero)::before,
-html body .pageHero:not(.blogPostHero)::after,
-html body .galleryHero::before,
-html body .galleryHero::after,
-html body .contactHero::before,
-html body .contactHero::after,
-html body .pricesHero::before,
-html body .pricesHero::after,
-html body .ayurHero::before,
-html body .ayurHero::after{
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
 
 /* Text inside hero */
-html body .pageHero:not(.blogPostHero) > .rmShell,
-html body .galleryHero > .rmShell,
-html body .contactHero > .rmShell,
-html body .pricesHero > .rmShell,
-html body .ayurHero > .rmShell{
-  position: relative !important;
-  z-index: 3 !important;
-  width: min(1130px, calc(100% - 32px)) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  background: transparent !important;
-}
-
-html body .pageHero:not(.blogPostHero) .crumb,
-html body .pageHero:not(.blogPostHero) h1,
-html body .pageHero:not(.blogPostHero) .lead,
-html body .galleryHero .crumb,
-html body .galleryHero h1,
-html body .galleryHero .lead,
-html body .contactHero .crumb,
-html body .contactHero h1,
-html body .contactHero .lead,
-html body .pricesHero .crumb,
-html body .pricesHero h1,
-html body .pricesHero .lead,
-html body .ayurHero .crumb,
-html body .ayurHero h1,
-html body .ayurHero .lead{
-  color: #fff !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-shadow: 0 3px 18px rgba(0,0,0,.32) !important;
-}
-
-html body .pageHero:not(.blogPostHero) h1,
-html body .galleryHero h1,
-html body .contactHero h1,
-html body .pricesHero h1,
-html body .ayurHero h1{
-  max-width: 920px !important;
-  margin: 0 0 12px !important;
-  font-size: clamp(44px, 5vw, 72px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body .pageHero:not(.blogPostHero) .lead,
-html body .galleryHero .lead,
-html body .contactHero .lead,
-html body .pricesHero .lead,
-html body .ayurHero .lead{
-  max-width: 780px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-}
 
 /* Blog post pages stay as you wanted: dark, clean, no medical background */
-html body .blogPostHero{
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  background: #082445 !important;
-  background-image: none !important;
-}
-
-/* Mobile: same size for all normal pages, but shorter */
-@media(max-width:760px){
-  html body main section.pageHero:not(.blogPostHero),
-  html body main .pageHero:not(.blogPostHero),
-  html body section.pageHero:not(.blogPostHero),
-  html body .pageHero:not(.blogPostHero),
-  html body .galleryHero,
-  html body .contactHero,
-  html body .pricesHero,
-  html body .ayurHero,
-  html body .blogPostHero{
-    min-height: 230px !important;
-    height: 230px !important;
-    padding: 0 !important;
-  }
-
-  html body .pageHero:not(.blogPostHero) h1,
-  html body .galleryHero h1,
-  html body .contactHero h1,
-  html body .pricesHero h1,
-  html body .ayurHero h1,
-  html body .blogPostHero h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  html body .pageHero:not(.blogPostHero) .lead,
-  html body .galleryHero .lead,
-  html body .contactHero .lead,
-  html body .pricesHero .lead,
-  html body .ayurHero .lead,
-  html body .blogPostHero .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-}
-
-
-/* =========================================================
-   FINAL REVIMED INNER HERO FIX
-   All normal pages = same image as homepage + same blue overlay
-   Homepage remains unchanged.
-   Blog post remains dark/simple.
-========================================================= */
 
 /* Normal inner pages: despre noi, servicii, aplicatii, preturi, galerie, blog list, contact */
-html body main section.pageHero:not(.blogPostHero),
-html body main .pageHero:not(.blogPostHero),
-html body section.pageHero:not(.blogPostHero),
-html body .pageHero:not(.blogPostHero),
-html body .galleryHero,
-html body .contactHero,
-html body .pricesHero,
-html body .ayurHero{
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  color: #fff !important;
-
-  background-color: #0a2554 !important;
-  background-image:
-    linear-gradient(90deg, rgba(0,63,120,.53), rgba(0,96,180,.42)),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
 
 /* Remove old grey/dark pseudo overlays that hide the image */
-html body main section.pageHero:not(.blogPostHero)::before,
-html body main section.pageHero:not(.blogPostHero)::after,
-html body main .pageHero:not(.blogPostHero)::before,
-html body main .pageHero:not(.blogPostHero)::after,
-html body section.pageHero:not(.blogPostHero)::before,
-html body section.pageHero:not(.blogPostHero)::after,
-html body .pageHero:not(.blogPostHero)::before,
-html body .pageHero:not(.blogPostHero)::after,
-html body .galleryHero::before,
-html body .galleryHero::after,
-html body .contactHero::before,
-html body .contactHero::after,
-html body .pricesHero::before,
-html body .pricesHero::after,
-html body .ayurHero::before,
-html body .ayurHero::after{
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
 
 /* Text inside hero */
-html body .pageHero:not(.blogPostHero) > .rmShell,
-html body .galleryHero > .rmShell,
-html body .contactHero > .rmShell,
-html body .pricesHero > .rmShell,
-html body .ayurHero > .rmShell{
-  position: relative !important;
-  z-index: 3 !important;
-  width: min(1130px, calc(100% - 32px)) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  background: transparent !important;
-}
-
-html body .pageHero:not(.blogPostHero) .crumb,
-html body .pageHero:not(.blogPostHero) h1,
-html body .pageHero:not(.blogPostHero) .lead,
-html body .galleryHero .crumb,
-html body .galleryHero h1,
-html body .galleryHero .lead,
-html body .contactHero .crumb,
-html body .contactHero h1,
-html body .contactHero .lead,
-html body .pricesHero .crumb,
-html body .pricesHero h1,
-html body .pricesHero .lead,
-html body .ayurHero .crumb,
-html body .ayurHero h1,
-html body .ayurHero .lead{
-  color: #fff !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-shadow: 0 3px 18px rgba(0,0,0,.32) !important;
-}
-
-html body .pageHero:not(.blogPostHero) h1,
-html body .galleryHero h1,
-html body .contactHero h1,
-html body .pricesHero h1,
-html body .ayurHero h1{
-  max-width: 920px !important;
-  margin: 0 0 12px !important;
-  font-size: clamp(44px, 5vw, 72px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body .pageHero:not(.blogPostHero) .lead,
-html body .galleryHero .lead,
-html body .contactHero .lead,
-html body .pricesHero .lead,
-html body .ayurHero .lead{
-  max-width: 780px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-}
 
 /* Blog post pages stay as you wanted: dark, clean, no medical background */
-html body .blogPostHero{
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  background: #082445 !important;
-  background-image: none !important;
-}
-
-/* Mobile: same size for all normal pages, but shorter */
-@media(max-width:760px){
-  html body main section.pageHero:not(.blogPostHero),
-  html body main .pageHero:not(.blogPostHero),
-  html body section.pageHero:not(.blogPostHero),
-  html body .pageHero:not(.blogPostHero),
-  html body .galleryHero,
-  html body .contactHero,
-  html body .pricesHero,
-  html body .ayurHero,
-  html body .blogPostHero{
-    min-height: 230px !important;
-    height: 230px !important;
-    padding: 0 !important;
-  }
-
-  html body .pageHero:not(.blogPostHero) h1,
-  html body .galleryHero h1,
-  html body .contactHero h1,
-  html body .pricesHero h1,
-  html body .ayurHero h1,
-  html body .blogPostHero h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  html body .pageHero:not(.blogPostHero) .lead,
-  html body .galleryHero .lead,
-  html body .contactHero .lead,
-  html body .pricesHero .lead,
-  html body .ayurHero .lead,
-  html body .blogPostHero .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-}
-
-
-/* =========================================================
-   REAL FINAL HERO FIX
-   Applies to first hero section on inner pages:
-   Services, Apps, Blog list, Gallery, Prices, Contact, About.
-   Excludes home page and individual blog posts.
-========================================================= */
-
-html body main > section:first-child:not(.homeHero):not(.blogPostHero),
-html body main > div:first-child section:first-child:not(.homeHero):not(.blogPostHero){
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #fff !important;
-
-  background-color: #0b376d !important;
-  background-image:
-    linear-gradient(90deg, rgba(0,67,132,.58) 0%, rgba(0,122,190,.44) 52%, rgba(27,169,226,.40) 100%),
-    url("/images/hero-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
 
 /* Remove old fake gradients/arrows only on inner first hero */
 html body main > section:first-child:not(.homeHero):not(.blogPostHero)::before,
@@ -12605,35 +11833,6 @@ html body .blogPostHero{
   }
 }
 
-
-/* =========================================================
-   REAL FINAL HERO FIX
-   Applies to first hero section on inner pages:
-   Services, Apps, Blog list, Gallery, Prices, Contact, About.
-   Excludes home page and individual blog posts.
-========================================================= */
-
-html body main > section:first-child:not(.homeHero):not(.blogPostHero),
-html body main > div:first-child section:first-child:not(.homeHero):not(.blogPostHero){
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #fff !important;
-
-  background-color: #0b376d !important;
-  background-image:
-    linear-gradient(90deg, rgba(0,67,132,.58) 0%, rgba(0,122,190,.44) 52%, rgba(27,169,226,.40) 100%),
-    url("/images/hero-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
-
 /* Remove old fake gradients/arrows only on inner first hero */
 html body main > section:first-child:not(.homeHero):not(.blogPostHero)::before,
 html body main > section:first-child:not(.homeHero):not(.blogPostHero)::after,
@@ -12681,493 +11880,24 @@ html body main > div:first-child section:first-child:not(.homeHero):not(.blogPos
   text-shadow: 0 3px 18px rgba(0,0,0,.34) !important;
 }
 
-html body main > section:first-child:not(.homeHero):not(.blogPostHero) h1,
-html body main > div:first-child section:first-child:not(.homeHero):not(.blogPostHero) h1{
-  max-width: 920px !important;
-  margin: 0 0 12px !important;
-  font-size: clamp(44px, 5vw, 72px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body main > section:first-child:not(.homeHero):not(.blogPostHero) .lead,
-html body main > div:first-child section:first-child:not(.homeHero):not(.blogPostHero) .lead{
-  max-width: 820px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-}
-
-/* Blog post only: keep fully dark, no image */
-html body main > section.blogPostHero,
-html body section.blogPostHero,
-html body .blogPostHero{
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  background: #082445 !important;
-  background-image: none !important;
-}
-
-/* Mobile */
-@media(max-width:760px){
-  html body main > section:first-child:not(.homeHero):not(.blogPostHero),
-  html body main > div:first-child section:first-child:not(.homeHero):not(.blogPostHero),
-  html body main > section.blogPostHero,
-  html body section.blogPostHero,
-  html body .blogPostHero{
-    min-height: 230px !important;
-    height: 230px !important;
-    padding: 0 !important;
-  }
-
-  html body main > section:first-child:not(.homeHero):not(.blogPostHero) h1,
-  html body main > div:first-child section:first-child:not(.homeHero):not(.blogPostHero) h1,
-  html body .blogPostHero h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  html body main > section:first-child:not(.homeHero):not(.blogPostHero) .lead,
-  html body main > div:first-child section:first-child:not(.homeHero):not(.blogPostHero) .lead,
-  html body .blogPostHero .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-}
-
-
-/* =========================================================
-   REAL LAST FIX — INNER HERO IMAGE + BLUE OVERLAY
-   Works even when scripts are before the hero section.
-   Home page unchanged. Blog post unchanged/dark.
-========================================================= */
-
-/* Any normal page hero inside main */
-html body main > section.pageHero:not(.blogPostHero),
-html body main > section.galleryHero,
-html body main > section.contactHero,
-html body main > section.pricesHero,
-html body main > section.ayurHero,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter),
-html body main section.pageHero:not(.blogPostHero){
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #fff !important;
-
-  background-color: #0a2554 !important;
-  background-image:
-    linear-gradient(90deg, rgba(0,63,120,.53), rgba(0,96,180,.42)),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
 
 /* Kill old pseudo overlays/arrows ONLY for normal page hero */
-html body main > section.pageHero:not(.blogPostHero)::before,
-html body main > section.pageHero:not(.blogPostHero)::after,
-html body main > section.galleryHero::before,
-html body main > section.galleryHero::after,
-html body main > section.contactHero::before,
-html body main > section.contactHero::after,
-html body main > section.pricesHero::before,
-html body main > section.pricesHero::after,
-html body main > section.ayurHero::before,
-html body main > section.ayurHero::after,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter)::before,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter)::after{
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  background-image: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  animation: none !important;
-  transform: none !important;
-}
 
 /* Hero content */
-html body main > section.pageHero:not(.blogPostHero) > .rmShell,
-html body main > section.galleryHero > .rmShell,
-html body main > section.contactHero > .rmShell,
-html body main > section.pricesHero > .rmShell,
-html body main > section.ayurHero > .rmShell,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) > .rmShell,
-html body main section.pageHero:not(.blogPostHero) > .rmShell{
-  position: relative !important;
-  z-index: 5 !important;
-  width: min(1130px, calc(100% - 32px)) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  color: #fff !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
 
 /* Hero text */
-html body main > section.pageHero:not(.blogPostHero) .crumb,
-html body main > section.pageHero:not(.blogPostHero) h1,
-html body main > section.pageHero:not(.blogPostHero) .lead,
-html body main > section.galleryHero .crumb,
-html body main > section.galleryHero h1,
-html body main > section.galleryHero .lead,
-html body main > section.contactHero .crumb,
-html body main > section.contactHero h1,
-html body main > section.contactHero .lead,
-html body main > section.pricesHero .crumb,
-html body main > section.pricesHero h1,
-html body main > section.pricesHero .lead,
-html body main > section.ayurHero .crumb,
-html body main > section.ayurHero h1,
-html body main > section.ayurHero .lead,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .crumb,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead{
-  position: relative !important;
-  z-index: 6 !important;
-  color: #fff !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-shadow: 0 3px 18px rgba(0,0,0,.32) !important;
-}
-
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
-html body main section.pageHero:not(.blogPostHero) h1{
-  max-width: 920px !important;
-  margin: 0 0 12px !important;
-  font-size: clamp(44px, 5vw, 72px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead,
-html body main section.pageHero:not(.blogPostHero) .lead{
-  max-width: 820px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-}
 
 /* Blog post individual = dark, no image */
-html body main > section.blogPostHero,
-html body main section.blogPostHero,
-html body section.blogPostHero,
-html body .blogPostHero{
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  background: #082445 !important;
-  background-image: none !important;
-}
-
-/* Mobile */
-@media(max-width:760px){
-  html body main > section.pageHero:not(.blogPostHero),
-  html body main > section.galleryHero,
-  html body main > section.contactHero,
-  html body main > section.pricesHero,
-  html body main > section.ayurHero,
-  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter),
-  html body main > section.blogPostHero,
-  html body main section.blogPostHero,
-  html body .blogPostHero{
-    min-height: 230px !important;
-    height: 230px !important;
-    padding: 0 !important;
-  }
-
-  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
-  html body main section.pageHero:not(.blogPostHero) h1,
-  html body .blogPostHero h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead,
-  html body main section.pageHero:not(.blogPostHero) .lead,
-  html body .blogPostHero .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-}
-
-
-/* =========================================================
-   REAL LAST FIX — INNER HERO IMAGE + BLUE OVERLAY
-   Works even when scripts are before the hero section.
-   Home page unchanged. Blog post unchanged/dark.
-========================================================= */
 
 /* Any normal page hero inside main */
-html body main > section.pageHero:not(.blogPostHero),
-html body main > section.galleryHero,
-html body main > section.contactHero,
-html body main > section.pricesHero,
-html body main > section.ayurHero,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter),
-html body main section.pageHero:not(.blogPostHero){
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #fff !important;
-
-  background-color: #0a2554 !important;
-  background-image:
-    linear-gradient(90deg, rgba(0,63,120,.53), rgba(0,96,180,.42)),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
 
 /* Kill old pseudo overlays/arrows ONLY for normal page hero */
-html body main > section.pageHero:not(.blogPostHero)::before,
-html body main > section.pageHero:not(.blogPostHero)::after,
-html body main > section.galleryHero::before,
-html body main > section.galleryHero::after,
-html body main > section.contactHero::before,
-html body main > section.contactHero::after,
-html body main > section.pricesHero::before,
-html body main > section.pricesHero::after,
-html body main > section.ayurHero::before,
-html body main > section.ayurHero::after,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter)::before,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter)::after{
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  background-image: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  animation: none !important;
-  transform: none !important;
-}
 
 /* Hero content */
-html body main > section.pageHero:not(.blogPostHero) > .rmShell,
-html body main > section.galleryHero > .rmShell,
-html body main > section.contactHero > .rmShell,
-html body main > section.pricesHero > .rmShell,
-html body main > section.ayurHero > .rmShell,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) > .rmShell,
-html body main section.pageHero:not(.blogPostHero) > .rmShell{
-  position: relative !important;
-  z-index: 5 !important;
-  width: min(1130px, calc(100% - 32px)) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  color: #fff !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
 
 /* Hero text */
-html body main > section.pageHero:not(.blogPostHero) .crumb,
-html body main > section.pageHero:not(.blogPostHero) h1,
-html body main > section.pageHero:not(.blogPostHero) .lead,
-html body main > section.galleryHero .crumb,
-html body main > section.galleryHero h1,
-html body main > section.galleryHero .lead,
-html body main > section.contactHero .crumb,
-html body main > section.contactHero h1,
-html body main > section.contactHero .lead,
-html body main > section.pricesHero .crumb,
-html body main > section.pricesHero h1,
-html body main > section.pricesHero .lead,
-html body main > section.ayurHero .crumb,
-html body main > section.ayurHero h1,
-html body main > section.ayurHero .lead,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .crumb,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead{
-  position: relative !important;
-  z-index: 6 !important;
-  color: #fff !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-shadow: 0 3px 18px rgba(0,0,0,.32) !important;
-}
-
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
-html body main section.pageHero:not(.blogPostHero) h1{
-  max-width: 920px !important;
-  margin: 0 0 12px !important;
-  font-size: clamp(44px, 5vw, 72px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead,
-html body main section.pageHero:not(.blogPostHero) .lead{
-  max-width: 820px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-}
 
 /* Blog post individual = dark, no image */
-html body main > section.blogPostHero,
-html body main section.blogPostHero,
-html body section.blogPostHero,
-html body .blogPostHero{
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  background: #082445 !important;
-  background-image: none !important;
-}
-
-/* Mobile */
-@media(max-width:760px){
-  html body main > section.pageHero:not(.blogPostHero),
-  html body main > section.galleryHero,
-  html body main > section.contactHero,
-  html body main > section.pricesHero,
-  html body main > section.ayurHero,
-  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter),
-  html body main > section.blogPostHero,
-  html body main section.blogPostHero,
-  html body .blogPostHero{
-    min-height: 230px !important;
-    height: 230px !important;
-    padding: 0 !important;
-  }
-
-  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
-  html body main section.pageHero:not(.blogPostHero) h1,
-  html body .blogPostHero h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead,
-  html body main section.pageHero:not(.blogPostHero) .lead,
-  html body .blogPostHero .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-}
-
-
-/* =========================================================
-   FORCE HERO IMAGE — direct class from JSX
-   Normal pages: image + blue overlay.
-   Blog post pages: dark, no image.
-========================================================= */
-
-html body main section.forceImageHero,
-html body section.forceImageHero,
-.forceImageHero{
-  position: relative !important;
-  overflow: hidden !important;
-  isolation: isolate !important;
-  min-height: 300px !important;
-  height: 300px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #fff !important;
-
-  background-color: #0a2554 !important;
-  background-image:
-    linear-gradient(90deg, rgba(0,63,120,.53), rgba(0,96,180,.42)),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover, cover !important;
-  background-position: center center, center center !important;
-  background-repeat: no-repeat, no-repeat !important;
-}
-
-html body main section.forceImageHero::before,
-html body main section.forceImageHero::after,
-html body section.forceImageHero::before,
-html body section.forceImageHero::after,
-.forceImageHero::before,
-.forceImageHero::after{
-  content: none !important;
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  background: none !important;
-  background-image: none !important;
-  animation: none !important;
-  transform: none !important;
-}
-
-html body main section.forceImageHero > .rmShell,
-html body section.forceImageHero > .rmShell,
-.forceImageHero > .rmShell{
-  position: relative !important;
-  z-index: 5 !important;
-  width: min(1130px, calc(100% - 32px)) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  color: #fff !important;
-}
-
-html body main section.forceImageHero .crumb,
-html body main section.forceImageHero h1,
-html body main section.forceImageHero .lead,
-html body section.forceImageHero .crumb,
-html body section.forceImageHero h1,
-html body section.forceImageHero .lead,
-.forceImageHero .crumb,
-.forceImageHero h1,
-.forceImageHero .lead{
-  position: relative !important;
-  z-index: 6 !important;
-  color: #fff !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-shadow: 0 3px 18px rgba(0,0,0,.32) !important;
-}
-
-html body main section.forceImageHero h1,
-html body section.forceImageHero h1,
-.forceImageHero h1{
-  max-width: 920px !important;
-  margin: 0 0 12px !important;
-  font-size: clamp(44px, 5vw, 72px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-}
-
-html body main section.forceImageHero .lead,
-html body section.forceImageHero .lead,
-.forceImageHero .lead{
-  max-width: 820px !important;
-  margin: 0 !important;
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-}
 
 /* Individual blog articles stay dark */
 html body main section.blogPostHero,
@@ -13212,3 +11942,114 @@ html body section.blogPostHero,
   }
 }
 
+
+/* REVIMED CLEAN INNER HERO
+   Main page keeps .homeHero.
+   Blog article keeps .blogPostHero dark.
+   All normal pages use the clinic image + blue overlay.
+*/
+.innerHeroImage,
+.pageHero:not(.blogPostHero){
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  min-height: 300px !important;
+  height: 300px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #fff !important;
+  background-color: #0a2554 !important;
+  background-image:
+    linear-gradient(90deg, rgba(0,63,120,.58), rgba(0,96,180,.42)),
+    url("/images/medical-bg.jpg") !important;
+  background-size: cover, cover !important;
+  background-position: center center, center center !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+
+.innerHeroImage::before,
+.innerHeroImage::after,
+.pageHero:not(.blogPostHero)::before,
+.pageHero:not(.blogPostHero)::after{
+  content: none !important;
+  display: none !important;
+}
+
+.innerHeroImage > .rmShell,
+.pageHero:not(.blogPostHero) > .rmShell{
+  position: relative !important;
+  z-index: 2 !important;
+  width: min(1130px, calc(100% - 32px)) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.innerHeroImage .crumb,
+.innerHeroImage h1,
+.innerHeroImage .lead,
+.pageHero:not(.blogPostHero) .crumb,
+.pageHero:not(.blogPostHero) h1,
+.pageHero:not(.blogPostHero) .lead{
+  color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: 0 3px 18px rgba(0,0,0,.34) !important;
+}
+
+.innerHeroImage h1,
+.pageHero:not(.blogPostHero) h1{
+  max-width: 920px !important;
+  margin: 0 0 12px !important;
+  font-size: clamp(44px, 5vw, 72px) !important;
+  line-height: 1 !important;
+  letter-spacing: -.055em !important;
+  font-weight: 900 !important;
+}
+
+.innerHeroImage .lead,
+.pageHero:not(.blogPostHero) .lead{
+  max-width: 820px !important;
+  margin: 0 !important;
+  font-size: 22px !important;
+  line-height: 1.45 !important;
+}
+
+/* Blog article hero: no image */
+.blogPostHero{
+  min-height: 300px !important;
+  height: 300px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #082445 !important;
+  background-image: none !important;
+}
+
+@media(max-width:760px){
+  .innerHeroImage,
+  .pageHero:not(.blogPostHero),
+  .blogPostHero{
+    min-height: 230px !important;
+    height: 230px !important;
+    padding: 0 !important;
+  }
+
+  .innerHeroImage h1,
+  .pageHero:not(.blogPostHero) h1,
+  .blogPostHero h1{
+    font-size: 34px !important;
+    line-height: 1.05 !important;
+  }
+
+  .innerHeroImage .lead,
+  .pageHero:not(.blogPostHero) .lead,
+  .blogPostHero .lead{
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+  }
+}

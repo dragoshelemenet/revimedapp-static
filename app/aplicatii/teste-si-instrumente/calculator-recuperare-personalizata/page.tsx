@@ -235,7 +235,7 @@ export default function RecoveryPlannerPage() {
 
  return (
   <>
-   <section className="pageHero forceImageHero">
+   <section className="pageHero forceImageHero innerHeroImage">
     <div className="rmShell">
      <p className="crumb">{t.crumb}</p>
      <h1>{t.title}</h1>
