@@ -241,7 +241,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
     </div>
    </section>
 
-   <HomeStats />
+   <HomeStats lang={lang} />
 
    <section className="rmSection aboutBlock">
     <div className="rmShell aboutGrid">
@@ -288,12 +288,12 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
     </div>
    </section>
 
-   <HomeCTA />
+   <HomeCTA lang={lang} />
 
    <section className="testimonialBand">
     <div className="rmShell">
-     <h2>Reviews</h2>
-     <ReviewCarousel />
+     <h2>{lang === "ro" ? "Reviews" : lang === "en" ? "Reviews" : lang === "ru" ? "Отзывы" : "Відгуки"}</h2>
+     <ReviewCarousel lang={lang} />
     </div>
    </section>
   </>
