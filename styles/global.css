@@ -12715,3 +12715,124 @@ body main section.homeHero{
     width:100% !important;
   }
 }
+
+/* FINAL BLOG HERO FIX: remove white broken H1 background */
+body main section.blogPostHero,
+body main section.blogDetailHero,
+body main section.pageHero.blogPostHero,
+body main section.pageHero.blogDetailHero{
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  min-height: 310px !important;
+  height: auto !important;
+  padding: 72px 0 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #08234a !important;
+  background-image: linear-gradient(135deg, #08234a 0%, #082b55 48%, #0b3d6d 100%) !important;
+}
+
+/* Make sure no white panel/fade appears behind title */
+body main section.blogPostHero::before,
+body main section.blogPostHero::after,
+body main section.blogDetailHero::before,
+body main section.blogDetailHero::after,
+body main section.pageHero.blogPostHero::before,
+body main section.pageHero.blogPostHero::after,
+body main section.pageHero.blogDetailHero::before,
+body main section.pageHero.blogDetailHero::after{
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Hero text clean like before */
+body main section.blogPostHero .rmShell,
+body main section.blogDetailHero .rmShell,
+body main section.pageHero.blogPostHero .rmShell,
+body main section.pageHero.blogDetailHero .rmShell{
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 980px !important;
+  margin: 0 auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+body main section.blogPostHero .crumb,
+body main section.blogDetailHero .crumb,
+body main section.pageHero.blogPostHero .crumb,
+body main section.pageHero.blogDetailHero .crumb{
+  color: rgba(255,255,255,.92) !important;
+  font-weight: 900 !important;
+  margin: 0 0 14px !important;
+  background: transparent !important;
+}
+
+body main section.blogPostHero h1,
+body main section.blogDetailHero h1,
+body main section.pageHero.blogPostHero h1,
+body main section.pageHero.blogDetailHero h1{
+  max-width: 880px !important;
+  margin: 0 0 16px !important;
+  color: #fff !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  text-shadow: none !important;
+  font-size: clamp(42px, 5.2vw, 76px) !important;
+  line-height: .98 !important;
+  letter-spacing: -.055em !important;
+  font-weight: 950 !important;
+}
+
+body main section.blogPostHero .lead,
+body main section.blogDetailHero .lead,
+body main section.pageHero.blogPostHero .lead,
+body main section.pageHero.blogDetailHero .lead{
+  max-width: 760px !important;
+  margin: 0 !important;
+  color: rgba(255,255,255,.88) !important;
+  background: transparent !important;
+  font-size: 21px !important;
+  line-height: 1.45 !important;
+}
+
+/* Do not affect article body improvements */
+.blogPostSection .blogPostArticle{
+  margin-top: 0 !important;
+}
+
+@media(max-width:760px){
+  body main section.blogPostHero,
+  body main section.blogDetailHero,
+  body main section.pageHero.blogPostHero,
+  body main section.pageHero.blogDetailHero{
+    min-height: 260px !important;
+    padding: 46px 0 48px !important;
+  }
+
+  body main section.blogPostHero h1,
+  body main section.blogDetailHero h1,
+  body main section.pageHero.blogPostHero h1,
+  body main section.pageHero.blogDetailHero h1{
+    font-size: clamp(34px, 10vw, 48px) !important;
+    line-height: 1.02 !important;
+  }
+
+  body main section.blogPostHero .lead,
+  body main section.blogDetailHero .lead,
+  body main section.pageHero.blogPostHero .lead,
+  body main section.pageHero.blogDetailHero .lead{
+    font-size: 16px !important;
+  }
+}
