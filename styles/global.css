@@ -11743,3 +11743,60 @@ main section.pageHero::after{
     width: 100% !important;
   }
 }
+
+/* FINAL HERO TEXT ALIGNMENT — match Despre Noi on every inner page, not homepage */
+body main section.pageHero:not(.homeHero) > .rmShell,
+body main section.blogPostHero > .rmShell,
+body main section.blogDetailHero > .rmShell,
+body main section.aboutPageHero > .rmShell{
+  width: min(860px, calc(100% - 32px)) !important;
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+}
+
+/* If old blog rules use inner text card, force same alignment too */
+body main section.blogPostHero .blogHeroTextCard,
+body main section.blogDetailHero .blogHeroTextCard{
+  width: min(860px, calc(100% - 32px)) !important;
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+}
+
+/* Same readable text width on hero */
+body main section.pageHero:not(.homeHero) h1,
+body main section.blogPostHero h1,
+body main section.blogDetailHero h1,
+body main section.aboutPageHero h1{
+  max-width: 860px !important;
+}
+
+body main section.pageHero:not(.homeHero) .lead,
+body main section.blogPostHero .lead,
+body main section.blogDetailHero .lead,
+body main section.aboutPageHero .lead{
+  max-width: 860px !important;
+}
+
+@media(max-width:760px){
+  body main section.pageHero:not(.homeHero) > .rmShell,
+  body main section.blogPostHero > .rmShell,
+  body main section.blogDetailHero > .rmShell,
+  body main section.aboutPageHero > .rmShell,
+  body main section.blogPostHero .blogHeroTextCard,
+  body main section.blogDetailHero .blogHeroTextCard{
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+  }
+}
