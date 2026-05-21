@@ -11537,3 +11537,50 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     border-radius:999px!important;
   }
 }
+
+/* FINAL: short active underline in mobile menu */
+@media(max-width:760px){
+  header a.active,
+  header nav a.active,
+  .rmHeader a.active,
+  .rmHeader nav a.active,
+  .mobileCallBar ~ * a.active{
+    border-bottom:0!important;
+    box-shadow:none!important;
+    background-image:none!important;
+    text-decoration:none!important;
+  }
+
+  header a.active::before,
+  header nav a.active::before,
+  .rmHeader a.active::before,
+  .rmHeader nav a.active::before,
+  header a.active::after,
+  header nav a.active::after,
+  .rmHeader a.active::after,
+  .rmHeader nav a.active::after{
+    content:""!important;
+    position:absolute!important;
+    left:50%!important;
+    right:auto!important;
+    bottom:7px!important;
+    top:auto!important;
+    transform:translateX(-50%)!important;
+    width:34px!important;
+    max-width:34px!important;
+    height:3px!important;
+    border-radius:999px!important;
+    background:#0b8fd8!important;
+    border:0!important;
+    opacity:1!important;
+  }
+
+  header nav a,
+  .rmHeader nav a{
+    position:relative!important;
+  }
+
+  header nav a.active{
+    padding-bottom:14px!important;
+  }
+}
