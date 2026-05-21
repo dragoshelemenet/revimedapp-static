@@ -16,6 +16,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "Vezi contact": "View contact",
 
     "Reviews": "Reviews",
+    "- DR R": "- Patient review",
+    "DR R": "Patient review",
     "După mult timp de umblat pe la medici, s-a depistat, în sfârșit, problema și am primit un tratament cu rezultat pozitiv. Mulțumesc mult, domnule Igor!": "After a long time visiting different doctors, the problem was finally identified and I received treatment with a positive result. Thank you very much, Mr. Igor!",
 
     "Program de lucru:": "Working hours:",
@@ -43,6 +45,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "Vezi contact": "Контакты",
 
     "Reviews": "Отзывы",
+    "- DR R": "- Отзыв пациента",
+    "DR R": "Отзыв пациента",
     "După mult timp de umblat pe la medici, s-a depistat, în sfârșit, problema și am primit un tratament cu rezultat pozitiv. Mulțumesc mult, domnule Igor!": "После долгих обращений к разным врачам проблему наконец выявили, и я получил лечение с положительным результатом. Большое спасибо, господин Игорь!",
 
     "Program de lucru:": "График работы:",
@@ -70,6 +74,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "Vezi contact": "Контакти",
 
     "Reviews": "Відгуки",
+    "- DR R": "- Відгук пацієнта",
+    "DR R": "Відгук пацієнта",
     "După mult timp de umblat pe la medici, s-a depistat, în sfârșit, problema și am primit un tratament cu rezultat pozitiv. Mulțumesc mult, domnule Igor!": "Після тривалих звернень до різних лікарів проблему нарешті виявили, і я отримав лікування з позитивним результатом. Щиро дякую, пане Ігорю!",
 
     "Program de lucru:": "Графік роботи:",
@@ -115,6 +121,63 @@ function replaceTextNode(node: Text, dict: Record<string, string>) {
   }
 }
 
+
+function translateReviews(lang: Lang) {
+  const reviewPack: Record<Lang, { title: string; quote: string; author: string }> = {
+    en: {
+      title: "Reviews",
+      quote: "After a long time visiting different doctors, the problem was finally identified and I received treatment with a positive result. Thank you very much, Mr. Igor!",
+      author: "- Patient review"
+    },
+    ru: {
+      title: "Отзывы",
+      quote: "После долгих обращений к разным врачам проблему наконец выявили, и я получил лечение с положительным результатом. Большое спасибо, господин Игорь!",
+      author: "- Отзыв пациента"
+    },
+    ua: {
+      title: "Відгуки",
+      quote: "Після тривалих звернень до різних лікарів проблему нарешті виявили, і я отримав лікування з позитивним результатом. Щиро дякую, пане Ігорю!",
+      author: "- Відгук пацієнта"
+    }
+  };
+
+  const pack = reviewPack[lang];
+
+  document.querySelectorAll("h2, h3, .reviewsTitle, .reviewTitle").forEach((el) => {
+    if ((el.textContent || "").trim() === "Reviews") {
+      el.textContent = pack.title;
+    }
+  });
+
+  document.querySelectorAll("section, div").forEach((el) => {
+    const txt = (el.textContent || "").replace(/\s+/g, " ").trim();
+
+    const looksLikeReview =
+      txt.includes("După mult timp de umblat pe la medici") ||
+      txt.includes("Mulțumesc mult, domnule Igor") ||
+      txt.includes("DR R") ||
+      txt.includes("1 / 24");
+
+    if (!looksLikeReview) return;
+
+    el.querySelectorAll("p, div, strong, span").forEach((child) => {
+      const childText = (child.textContent || "").replace(/\s+/g, " ").trim();
+
+      if (
+        childText.includes("După mult timp de umblat pe la medici") ||
+        childText.includes("Mulțumesc mult, domnule Igor")
+      ) {
+        child.textContent = `“${pack.quote}”`;
+      }
+
+      if (childText === "- DR R" || childText === "DR R" || childText === "-DR R") {
+        child.textContent = pack.author;
+      }
+    });
+  });
+}
+
+
 function translateDom(lang: Lang) {
   const dict = translations[lang];
 
@@ -138,6 +201,8 @@ function translateDom(lang: Lang) {
   nodes.forEach((node) => replaceTextNode(node, dict));
 
   // Also fix button/title aria labels if any.
+  translateReviews(lang);
+
   document.querySelectorAll<HTMLElement>("a, button, span, div, p, strong, h1, h2, h3").forEach((el) => {
     const aria = el.getAttribute("aria-label");
     if (aria && dict[aria]) el.setAttribute("aria-label", dict[aria]);
