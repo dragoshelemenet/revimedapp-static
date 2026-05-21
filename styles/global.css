@@ -11584,3 +11584,69 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     padding-bottom:14px!important;
   }
 }
+
+/* RESTORE original Revimed hero image for all normal pages */
+.pageHero:not(.blogPostHero){
+  position:relative!important;
+  overflow:hidden!important;
+  background-image:
+    linear-gradient(90deg, rgba(8,28,55,.82) 0%, rgba(8,48,82,.58) 46%, rgba(11,143,216,.48) 100%),
+    url("/images/hero-bg.jpg")!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  min-height:260px!important;
+  display:flex!important;
+  align-items:center!important;
+}
+
+/* remove bad white gradient / arrow from normal heroes */
+.pageHero:not(.blogPostHero)::before,
+.pageHero:not(.blogPostHero)::after{
+  display:none!important;
+  content:none!important;
+  background:none!important;
+  animation:none!important;
+}
+
+.pageHero:not(.blogPostHero) .rmShell{
+  position:relative!important;
+  z-index:2!important;
+  color:#fff!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  border:0!important;
+  backdrop-filter:none!important;
+}
+
+.pageHero:not(.blogPostHero) .crumb,
+.pageHero:not(.blogPostHero) h1,
+.pageHero:not(.blogPostHero) .lead{
+  color:#fff!important;
+  text-shadow:0 3px 18px rgba(0,0,0,.35)!important;
+}
+
+/* Blog keeps clean dark style, no clinic image */
+.blogPostHero{
+  background:#082445!important;
+  background-image:none!important;
+}
+
+/* On mobile keep normal page hero compact */
+@media(max-width:760px){
+  .pageHero:not(.blogPostHero){
+    min-height:220px!important;
+    padding:28px 0!important;
+    background-position:center!important;
+  }
+
+  .pageHero:not(.blogPostHero) h1{
+    font-size:36px!important;
+    line-height:1.05!important;
+  }
+
+  .pageHero:not(.blogPostHero) .lead{
+    font-size:17px!important;
+    line-height:1.45!important;
+  }
+}
