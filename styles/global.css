@@ -11473,3 +11473,67 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     margin-top:18px!important;
   }
 }
+
+/* Mobile menu active item — cleaner, no ugly bottom line */
+@media(max-width:760px){
+  .mobileMenu a,
+  .mobileNav a,
+  .rmMobileMenu a,
+  .mobileOverlay a,
+  .mobileDrawer a{
+    position:relative!important;
+    overflow:hidden!important;
+    border-bottom:0!important;
+    text-decoration:none!important;
+  }
+
+  .mobileMenu a.active,
+  .mobileNav a.active,
+  .rmMobileMenu a.active,
+  .mobileOverlay a.active,
+  .mobileDrawer a.active,
+  .mobileMenu .active,
+  .mobileNav .active,
+  .rmMobileMenu .active,
+  .mobileOverlay .active,
+  .mobileDrawer .active{
+    background:linear-gradient(135deg, #e8f6ff 0%, #dff2ff 100%)!important;
+    color:#087ec0!important;
+    border:1px solid #c7eaff!important;
+    box-shadow:0 8px 22px rgba(11,143,216,.10)!important;
+    border-radius:14px!important;
+    font-weight:900!important;
+  }
+
+  .mobileMenu a.active::after,
+  .mobileNav a.active::after,
+  .rmMobileMenu a.active::after,
+  .mobileOverlay a.active::after,
+  .mobileDrawer a.active::after,
+  .mobileMenu .active::after,
+  .mobileNav .active::after,
+  .rmMobileMenu .active::after,
+  .mobileOverlay .active::after,
+  .mobileDrawer .active::after{
+    content:""!important;
+    position:absolute!important;
+    left:50%!important;
+    bottom:7px!important;
+    transform:translateX(-50%)!important;
+    width:34px!important;
+    height:3px!important;
+    border-radius:999px!important;
+    background:#0b8fd8!important;
+    opacity:.9!important;
+  }
+
+  /* kill old full-width underline */
+  .mobileMenu a::before,
+  .mobileNav a::before,
+  .rmMobileMenu a::before,
+  .mobileOverlay a::before,
+  .mobileDrawer a::before{
+    max-width:34px!important;
+    border-radius:999px!important;
+  }
+}
