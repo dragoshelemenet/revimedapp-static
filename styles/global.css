@@ -12906,3 +12906,170 @@ html body .blogPostHero{
   }
 }
 
+
+/* =========================================================
+   REAL LAST FIX — INNER HERO IMAGE + BLUE OVERLAY
+   Works even when scripts are before the hero section.
+   Home page unchanged. Blog post unchanged/dark.
+========================================================= */
+
+/* Any normal page hero inside main */
+html body main > section.pageHero:not(.blogPostHero),
+html body main > section.galleryHero,
+html body main > section.contactHero,
+html body main > section.pricesHero,
+html body main > section.ayurHero,
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter),
+html body main section.pageHero:not(.blogPostHero){
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  min-height: 300px !important;
+  height: 300px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #fff !important;
+
+  background-color: #0a2554 !important;
+  background-image:
+    linear-gradient(90deg, rgba(0,63,120,.53), rgba(0,96,180,.42)),
+    url("/images/medical-bg.jpg") !important;
+  background-size: cover, cover !important;
+  background-position: center center, center center !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+
+/* Kill old pseudo overlays/arrows ONLY for normal page hero */
+html body main > section.pageHero:not(.blogPostHero)::before,
+html body main > section.pageHero:not(.blogPostHero)::after,
+html body main > section.galleryHero::before,
+html body main > section.galleryHero::after,
+html body main > section.contactHero::before,
+html body main > section.contactHero::after,
+html body main > section.pricesHero::before,
+html body main > section.pricesHero::after,
+html body main > section.ayurHero::before,
+html body main > section.ayurHero::after,
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter)::before,
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter)::after{
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Hero content */
+html body main > section.pageHero:not(.blogPostHero) > .rmShell,
+html body main > section.galleryHero > .rmShell,
+html body main > section.contactHero > .rmShell,
+html body main > section.pricesHero > .rmShell,
+html body main > section.ayurHero > .rmShell,
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) > .rmShell,
+html body main section.pageHero:not(.blogPostHero) > .rmShell{
+  position: relative !important;
+  z-index: 5 !important;
+  width: min(1130px, calc(100% - 32px)) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Hero text */
+html body main > section.pageHero:not(.blogPostHero) .crumb,
+html body main > section.pageHero:not(.blogPostHero) h1,
+html body main > section.pageHero:not(.blogPostHero) .lead,
+html body main > section.galleryHero .crumb,
+html body main > section.galleryHero h1,
+html body main > section.galleryHero .lead,
+html body main > section.contactHero .crumb,
+html body main > section.contactHero h1,
+html body main > section.contactHero .lead,
+html body main > section.pricesHero .crumb,
+html body main > section.pricesHero h1,
+html body main > section.pricesHero .lead,
+html body main > section.ayurHero .crumb,
+html body main > section.ayurHero h1,
+html body main > section.ayurHero .lead,
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .crumb,
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead{
+  position: relative !important;
+  z-index: 6 !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: 0 3px 18px rgba(0,0,0,.32) !important;
+}
+
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
+html body main section.pageHero:not(.blogPostHero) h1{
+  max-width: 920px !important;
+  margin: 0 0 12px !important;
+  font-size: clamp(44px, 5vw, 72px) !important;
+  line-height: 1 !important;
+  letter-spacing: -.055em !important;
+  font-weight: 900 !important;
+}
+
+html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead,
+html body main section.pageHero:not(.blogPostHero) .lead{
+  max-width: 820px !important;
+  margin: 0 !important;
+  font-size: 22px !important;
+  line-height: 1.45 !important;
+}
+
+/* Blog post individual = dark, no image */
+html body main > section.blogPostHero,
+html body main section.blogPostHero,
+html body section.blogPostHero,
+html body .blogPostHero{
+  min-height: 300px !important;
+  height: 300px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #082445 !important;
+  background-image: none !important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  html body main > section.pageHero:not(.blogPostHero),
+  html body main > section.galleryHero,
+  html body main > section.contactHero,
+  html body main > section.pricesHero,
+  html body main > section.ayurHero,
+  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter),
+  html body main > section.blogPostHero,
+  html body main section.blogPostHero,
+  html body .blogPostHero{
+    min-height: 230px !important;
+    height: 230px !important;
+    padding: 0 !important;
+  }
+
+  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) h1,
+  html body main section.pageHero:not(.blogPostHero) h1,
+  html body .blogPostHero h1{
+    font-size: 34px !important;
+    line-height: 1.05 !important;
+  }
+
+  html body main > section:has(> .rmShell h1):not(.homeHero):not(.blogPostHero):not(.testimonialBand):not(.rmFooter) .lead,
+  html body main section.pageHero:not(.blogPostHero) .lead,
+  html body .blogPostHero .lead{
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+  }
+}
+
