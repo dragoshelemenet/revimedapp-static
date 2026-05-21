@@ -1,9 +1,11 @@
-import type { Lang } from "@/lib/i18n";
 import Database from "better-sqlite3";
 import path from "node:path";
 import fs from "node:fs";
 import type { Lang } from "./i18n";
 import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
+
+
+type Lang = "ro" | "en" | "ru" | "ua";
 
 const dataDir = path.join(process.cwd(), "data");
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
