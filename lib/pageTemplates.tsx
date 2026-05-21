@@ -179,7 +179,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
    </section>
 
    <section className="rmSection servicesBlock">
-    <div className="rmShell">
+    <div className="rmShell blogHeroTextCard">
      <h2 className="centerTitle">{text.services}</h2>
      <div className="serviceGrid">
       {services.map((service) => (
@@ -227,7 +227,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero">
+   <section className="pageHero blogDetailHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.about}</p>
      <h1>{hero?.title || text.aboutTitle}</h1>
