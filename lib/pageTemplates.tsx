@@ -313,7 +313,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
      <p className="lead">{lang === "ro" ? (hero?.text || text.aboutText1) : text.aboutText1}</p>
     </div>
    </section>
-   <section className="rmSection">
+   <section className="rmSection aboutPageSection">
     <div className="rmShell aboutGrid">
      <div className="doctorVisual">
       <img src="/images/about-us.jpg" alt="Revimed PLUS+" />

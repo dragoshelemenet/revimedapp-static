@@ -12183,3 +12183,77 @@ body:has(a[href="/ua/despre-noi"].active) main section.pageHero + section.rmSect
     padding-top: 35px !important;
   }
 }
+
+/* ABOUT PAGE ONLY — safe local fix */
+.aboutPageHero{
+  min-height: 260px !important;
+  height: 260px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #082445 !important;
+  background-image: none !important;
+}
+
+.aboutPageHero > .rmShell{
+  padding: 0 !important;
+  margin: 0 auto !important;
+  transform: none !important;
+}
+
+.aboutPageHero .crumb{
+  margin-bottom: 10px !important;
+}
+
+.aboutPageHero h1{
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin: 0 0 12px !important;
+  font-size: clamp(44px, 5vw, 68px) !important;
+  line-height: 1 !important;
+  color: #fff !important;
+}
+
+.aboutPageHero .lead{
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  font-size: 20px !important;
+  line-height: 1.45 !important;
+  color: #fff !important;
+}
+
+.aboutPageSection{
+  padding-top: 65px !important;
+}
+
+.aboutPageSection .aboutGrid{
+  align-items: center !important;
+  gap: 48px !important;
+}
+
+@media(max-width:760px){
+  .aboutPageHero{
+    min-height: 210px !important;
+    height: 210px !important;
+  }
+
+  .aboutPageHero h1{
+    font-size: 34px !important;
+  }
+
+  .aboutPageHero .lead{
+    font-size: 16px !important;
+  }
+
+  .aboutPageSection{
+    padding-top: 35px !important;
+  }
+
+  .aboutPageSection .aboutGrid{
+    gap: 24px !important;
+  }
+}
