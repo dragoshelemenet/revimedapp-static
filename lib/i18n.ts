@@ -91,7 +91,7 @@ export const dictionary: Record<Lang, any> = {
   aboutText1: "Revimed PLUS+ Medical Center is focused on health, recovery and responsible patient care.",
   aboutText2: "The center provides clear medical guidance for neurology, rehabilitation and functional therapies.",
   toolsTitle: "Tests and Tools",
-  toolsSubtitle: "Clean, fast and easy-to-use educational tools.",
+  toolsSubtitle: "Educational tools for patients: self-assessment, monitoring and preparation for consultation.",
   pricesTitle: "Revimed PLUS+ Prices",
   pricesSubtitle: "Choose a category to view services. Lists are closed by default for easier reading.",
   galleryTitle: "Revimed PLUS+ Gallery",
@@ -119,7 +119,7 @@ export const dictionary: Record<Lang, any> = {
   photoGallery: "Photo Gallery",
   ourVideos: "Our Videos",
   noPosts: "No articles published yet.",
-  noItems: "Content will be added soon."
+  noItems: ""
  },
  ru: {
   home: "Главная",
@@ -139,7 +139,7 @@ export const dictionary: Record<Lang, any> = {
   aboutText1: "Медицинский центр Revimed PLUS+ ориентирован на здоровье, восстановление и ответственную заботу о пациентах.",
   aboutText2: "Центр предоставляет понятный медицинский маршрут по неврологии, реабилитации и функциональным терапиям.",
   toolsTitle: "Тесты и инструменты",
-  toolsSubtitle: "Удобные образовательные инструменты для пациентов.",
+  toolsSubtitle: "Образовательные инструменты для пациентов: самооценка, наблюдение и подготовка к консультации.",
   pricesTitle: "Цены Revimed PLUS+",
   pricesSubtitle: "Выберите категорию, чтобы увидеть услуги. Списки закрыты по умолчанию для удобства чтения.",
   galleryTitle: "Галерея Revimed PLUS+",
@@ -167,7 +167,7 @@ export const dictionary: Record<Lang, any> = {
   photoGallery: "Фотогалерея",
   ourVideos: "Наши видео",
   noPosts: "Пока нет опубликованных статей.",
-  noItems: "Контент будет добавлен позже."
+  noItems: ""
  },
  ua: {
   home: "Головна",
@@ -215,7 +215,7 @@ export const dictionary: Record<Lang, any> = {
   photoGallery: "Фотогалерея",
   ourVideos: "Наші відео",
   noPosts: "Поки немає опублікованих статей.",
-  noItems: "Контент буде додано пізніше."
+  noItems: ""
  }
 };
 

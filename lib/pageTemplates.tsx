@@ -18,6 +18,59 @@ import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 
 
 
+
+const pageHeroCopy = {
+  ro: {
+    servicesTitle: "Servicii medicale",
+    servicesLead: "Consultații, evaluări funcționale și programe de recuperare pentru sănătatea sistemului nervos.",
+    appsTitle: "Teste și Instrumente",
+    appsLead: "Instrumente educaționale pentru pacienți: autoevaluare, monitorizare și pregătire pentru consultație.",
+    blogTitle: "Blog Revimed PLUS+",
+    blogLead: "Articole educaționale despre sănătate, prevenție, recuperare și îngrijirea sistemului nervos."
+  },
+  en: {
+    servicesTitle: "Medical services",
+    servicesLead: "Consultations, functional assessments and rehabilitation programs focused on nervous system health.",
+    appsTitle: "Tests and Tools",
+    appsLead: "Educational tools for patients: self-assessment, monitoring and preparation for medical consultation.",
+    blogTitle: "Revimed PLUS+ Blog",
+    blogLead: "Educational articles about health, prevention, recovery and nervous system care."
+  },
+  ru: {
+    servicesTitle: "Медицинские услуги",
+    servicesLead: "Консультации, функциональная оценка и программы восстановления для здоровья нервной системы.",
+    appsTitle: "Тесты и инструменты",
+    appsLead: "Образовательные инструменты для пациентов: самооценка, наблюдение и подготовка к консультации.",
+    blogTitle: "Блог Revimed PLUS+",
+    blogLead: "Образовательные статьи о здоровье, профилактике, восстановлении и заботе о нервной системе."
+  },
+  ua: {
+    servicesTitle: "Медичні послуги",
+    servicesLead: "Консультації, функціональна оцінка та програми відновлення для здоров’я нервової системи.",
+    appsTitle: "Тести та інструменти",
+    appsLead: "Освітні інструменти для пацієнтів: самооцінка, спостереження та підготовка до консультації.",
+    blogTitle: "Блог Revimed PLUS+",
+    blogLead: "Освітні статті про здоров’я, профілактику, відновлення та догляд за нервовою системою."
+  }
+} as const;
+
+function cleanHeroText(value: string | undefined | null, fallback: string) {
+  const text = String(value || "").trim();
+  if (!text) return fallback;
+
+  const bad = [
+    "Content will be added soon.",
+    "Контент будет добавлен позже.",
+    "Conținutul va fi adăugat mai târziu.",
+    "Контент буде додано пізніше.",
+    "Consultații, diagnostic, terapii și reabilitare organizate clar."
+  ];
+
+  if (bad.includes(text)) return fallback;
+  return text;
+}
+
+
 function renderBlogContent(content: string) {
   const lines = String(content || "")
     .split(/\n+/)
