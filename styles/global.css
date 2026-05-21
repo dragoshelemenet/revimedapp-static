@@ -11868,3 +11868,155 @@ html body .blogPostHero{
   }
 }
 
+
+/* ABSOLUTE FINAL HERO IMAGE FIX — use homepage interior photo everywhere except blog */
+html body main section.pageHero:not(.blogPostHero),
+html body section.pageHero:not(.blogPostHero),
+html body .pageHero:not(.blogPostHero){
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  min-height:270px!important;
+  height:270px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  background:#082445!important;
+}
+
+/* Force the interior photo as real visual layer */
+html body main section.pageHero:not(.blogPostHero)::before,
+html body section.pageHero:not(.blogPostHero)::before,
+html body .pageHero:not(.blogPostHero)::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+  background-image:url("/images/medical-bg.jpg")!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+  transform:none!important;
+  animation:none!important;
+}
+
+/* Blue overlay over the photo */
+html body main section.pageHero:not(.blogPostHero)::after,
+html body section.pageHero:not(.blogPostHero)::after,
+html body .pageHero:not(.blogPostHero)::after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  opacity:1!important;
+  visibility:visible!important;
+  background:
+    linear-gradient(90deg, rgba(5,23,48,.84) 0%, rgba(7,48,82,.64) 48%, rgba(15,150,220,.45) 100%)!important;
+  transform:none!important;
+  animation:none!important;
+}
+
+/* Put title/subtitle above image */
+html body main section.pageHero:not(.blogPostHero) > .rmShell,
+html body section.pageHero:not(.blogPostHero) > .rmShell,
+html body .pageHero:not(.blogPostHero) > .rmShell{
+  position:relative!important;
+  z-index:2!important;
+  width:min(1120px, calc(100% - 40px))!important;
+  margin:0 auto!important;
+  padding:0!important;
+  transform:none!important;
+  left:auto!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:auto!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  color:#fff!important;
+}
+
+html body main section.pageHero:not(.blogPostHero) .crumb,
+html body main section.pageHero:not(.blogPostHero) h1,
+html body main section.pageHero:not(.blogPostHero) .lead,
+html body section.pageHero:not(.blogPostHero) .crumb,
+html body section.pageHero:not(.blogPostHero) h1,
+html body section.pageHero:not(.blogPostHero) .lead,
+html body .pageHero:not(.blogPostHero) .crumb,
+html body .pageHero:not(.blogPostHero) h1,
+html body .pageHero:not(.blogPostHero) .lead{
+  color:#fff!important;
+  opacity:1!important;
+  visibility:visible!important;
+  text-shadow:0 3px 18px rgba(0,0,0,.38)!important;
+}
+
+html body .pageHero:not(.blogPostHero) .crumb{
+  margin:0 0 12px!important;
+  font-size:17px!important;
+  font-weight:900!important;
+}
+
+html body .pageHero:not(.blogPostHero) h1{
+  margin:0 0 12px!important;
+  max-width:900px!important;
+  font-size:clamp(44px, 5vw, 72px)!important;
+  line-height:1!important;
+  letter-spacing:-.055em!important;
+  font-weight:900!important;
+}
+
+html body .pageHero:not(.blogPostHero) .lead{
+  max-width:840px!important;
+  margin:0!important;
+  font-size:22px!important;
+  line-height:1.45!important;
+  font-weight:500!important;
+}
+
+/* Blog stays dark, no clinic photo */
+html body main section.blogPostHero,
+html body section.blogPostHero,
+html body .blogPostHero{
+  background:#082445!important;
+  background-image:none!important;
+}
+
+html body main section.blogPostHero::before,
+html body main section.blogPostHero::after,
+html body section.blogPostHero::before,
+html body section.blogPostHero::after,
+html body .blogPostHero::before,
+html body .blogPostHero::after{
+  display:none!important;
+  content:none!important;
+}
+
+@media(max-width:760px){
+  html body main section.pageHero:not(.blogPostHero),
+  html body section.pageHero:not(.blogPostHero),
+  html body .pageHero:not(.blogPostHero){
+    min-height:220px!important;
+    height:220px!important;
+  }
+
+  html body .pageHero:not(.blogPostHero) > .rmShell{
+    width:calc(100% - 28px)!important;
+  }
+
+  html body .pageHero:not(.blogPostHero) h1{
+    font-size:34px!important;
+    line-height:1.05!important;
+  }
+
+  html body .pageHero:not(.blogPostHero) .lead{
+    font-size:16px!important;
+    line-height:1.45!important;
+  }
+}
+
