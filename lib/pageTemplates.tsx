@@ -306,7 +306,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero aboutPageHero">
+   <section className="pageHero aboutPageHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.about}</p>
      <h1>{lang === "ro" ? (hero?.title || text.aboutTitle) : text.aboutTitle}</h1>
@@ -340,7 +340,7 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero">
+   <section className="pageHero blogPostHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.services}</p>
      <h1>{lang === "ro" ? (hero?.title || text.services) : text.services}</h1>
@@ -380,7 +380,7 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero">
+   <section className="pageHero blogPostHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.services} / {cleanServiceText(service.title)}</p>
      <h1>{cleanServiceText(service.title)}</h1>
@@ -422,7 +422,7 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero">
+   <section className="pageHero blogPostHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.apps}</p>
      <h1>{lang === "ro" ? (hero?.title || text.toolsTitle) : text.toolsTitle}</h1>
@@ -466,7 +466,7 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero pricesHero">
+   <section className="pageHero pricesHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.prices}</p>
      <h1>{text.pricesTitle}</h1>
@@ -492,7 +492,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero galleryHero">
+   <section className="pageHero galleryHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.gallery}</p>
      <h1>{text.galleryTitle}</h1>
@@ -551,7 +551,7 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero">
+   <section className="pageHero blogPostHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.blog}</p>
      <h1>{text.blogTitle}</h1>
@@ -581,7 +581,7 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero">
+   <section className="pageHero blogPostHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">Blog / {post.title}</p>
      <h1>{post.title}</h1>
@@ -605,7 +605,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero contactHero">
+   <section className="pageHero contactHero innerPageHero">
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.contact}</p>
      <h1>{hero?.title || text.contactTitle}</h1>
