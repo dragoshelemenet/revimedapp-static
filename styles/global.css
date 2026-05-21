@@ -11800,3 +11800,96 @@ body main section.aboutPageHero .lead{
     max-width: calc(100% - 28px) !important;
   }
 }
+
+/* FINAL DESIGN: elegant fade-to-white at bottom of heroes */
+body main section.homeHero,
+body main section.pageHero,
+body main section.blogPostHero,
+body main section.blogDetailHero{
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Soft fade that removes the hard cut and invites scrolling */
+body main section.homeHero::after,
+body main section.pageHero::after,
+body main section.blogPostHero::after,
+body main section.blogDetailHero::after{
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 95px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.18) 38%,
+    rgba(255,255,255,.72) 76%,
+    rgba(255,255,255,1) 100%
+  ) !important;
+}
+
+/* Keep hero text above fade */
+body main section.homeHero > *,
+body main section.pageHero > *,
+body main section.blogPostHero > *,
+body main section.blogDetailHero > *{
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Small subtle scroll hint only on desktop */
+body main section.homeHero::before,
+body main section.pageHero::before,
+body main section.blogPostHero::before,
+body main section.blogDetailHero::before{
+  content: "⌄" !important;
+  display: grid !important;
+  place-items: center !important;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+  width: 42px !important;
+  height: 42px !important;
+  z-index: 6 !important;
+  pointer-events: none !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.72) !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
+  color: #08234a !important;
+  font-size: 32px !important;
+  line-height: 1 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 12px 32px rgba(8,35,74,.14) !important;
+  backdrop-filter: blur(8px) !important;
+  opacity: .78 !important;
+}
+
+/* Do not show arrow if hero is too short on mobile, keep only fade */
+@media(max-width:760px){
+  body main section.homeHero::after,
+  body main section.pageHero::after,
+  body main section.blogPostHero::after,
+  body main section.blogDetailHero::after{
+    height: 70px !important;
+  }
+
+  body main section.homeHero::before,
+  body main section.pageHero::before,
+  body main section.blogPostHero::before,
+  body main section.blogDetailHero::before{
+    width: 34px !important;
+    height: 34px !important;
+    bottom: 12px !important;
+    font-size: 26px !important;
+    opacity: .65 !important;
+  }
+}
