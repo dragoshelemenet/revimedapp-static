@@ -16,6 +16,40 @@ import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 
 
 
+
+
+function renderBlogContent(content: string) {
+  const lines = String(content || "")
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  return lines.map((line, idx) => {
+    const isNumberTitle = /^\d+\.\s+/.test(line);
+    const isDisclaimer = /informativ|informational|информационный|інформаційний|nu înlocuiește|does not replace|не заменяет|не замінює/i.test(line);
+    const isAppointment = /programare|appointments|запись|запис|sunați|call|звоните|телефонуйте/i.test(line);
+    const isPhone = /^(\+?\d[\d\s()–-]{5,})$/.test(line);
+
+    if (isNumberTitle) {
+      return <h2 className="blogContentHeading" key={idx}>{line}</h2>;
+    }
+
+    if (isPhone) {
+      return <p className="blogPhoneLine" key={idx}>{line}</p>;
+    }
+
+    if (isAppointment) {
+      return <p className="blogAppointmentLine" key={idx}>{line}</p>;
+    }
+
+    if (isDisclaimer) {
+      return <p className="blogDisclaimerLine" key={idx}>{line}</p>;
+    }
+
+    return <p key={idx}>{line}</p>;
+  });
+}
+
 const seoVisibleText = {
  ro: {
   servicesTitle: "Servicii medicale Revimed PLUS+ în Chișinău",
@@ -277,9 +311,9 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
    </section>
    <section className="rmSection">
     <div className="rmShell contentGrid">
-     <article className="adminCard serviceArticle">
+     <article className="adminCard serviceArticle blogArticleCard">
       <img src={service.image} alt={cleanServiceText(service.title)} className="serviceHeroImg" />
-      <div className="textContent">
+      <div className="textContent blogReadableContent">
        {service.full_content.split("\n").map((line, idx) => {
         const trimmed = line.trim();
         if (!trimmed) return <br key={idx} />;
