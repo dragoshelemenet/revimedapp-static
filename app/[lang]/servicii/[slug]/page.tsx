@@ -6,23 +6,23 @@ import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
-  const { lang, slug } = await params;
-  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
-  const seo = serviceSeo[slug]?.[safeLang as keyof typeof serviceSeo[typeof slug]];
+ const { lang, slug } = await params;
+ const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
+ const seo = serviceSeo[slug]?.[safeLang as keyof typeof serviceSeo[typeof slug]];
 
-  return makeAdvancedMetadata({
-    lang: safeLang,
-    path: `/servicii/${slug}`,
-    title: seo?.title || "Servicii medicale Revimed PLUS+",
-    description: seo?.description || "Servicii medicale Revimed PLUS+ Chișinău: neurologie, neurochirurgie, fizioterapie, recuperare și diagnostic.",
-    keywords: seo?.keywords || []
-  });
+ return makeAdvancedMetadata({
+  lang: safeLang,
+  path: `/servicii/${slug}`,
+  title: seo?.title || "Servicii medicale Revimed PLUS+",
+  description: seo?.description || "Servicii medicale Revimed PLUS+ Chișinău: neurologie, neurochirurgie, fizioterapie, recuperare și diagnostic.",
+  keywords: seo?.keywords || []
+ });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string; slug: string }> }) {
-  const { lang, slug } = await params;
-  if (!isLang(lang) || lang === "ro") notFound();
-  const page = ServiceTemplate({ lang: lang as Lang, slug });
-  if (!page) notFound();
-  return page;
+ const { lang, slug } = await params;
+ if (!isLang(lang) || lang === "ro") notFound();
+ const page = ServiceTemplate({ lang: lang as Lang, slug });
+ if (!page) notFound();
+ return page;
 }

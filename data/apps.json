@@ -1,310 +1,310 @@
 [
-  {
-    "id": "test-ayurveda-dosha",
-    "slug": "test-ayurveda-dosha",
-    "title": {
-      "ro": "Ayurveda Dosha Test",
-      "en": "Ayurveda Dosha Test",
-      "ru": "Тест Ayurveda Dosha",
-      "ua": "Тест Ayurveda Dosha"
-    },
-    "description": {
-      "ro": "Identifică orientativ profilul Vata, Pitta sau Kapha și primește recomandări educaționale.",
-      "en": "Identify your Vata, Pitta or Kapha tendency and receive educational recommendations.",
-      "ru": "Определите ориентировочный профиль Vata, Pitta или Kapha и получите образовательные рекомендации.",
-      "ua": "Визначте орієнтовний профіль Vata, Pitta або Kapha та отримайте освітні рекомендації."
-    },
-    "tag": {
-      "ro": "Ayurveda",
-      "en": "Ayurveda",
-      "ru": "Ayurveda",
-      "ua": "Ayurveda"
-    },
-    "href": "/aplicatii/teste-si-instrumente/test-ayurveda-dosha",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "",
-    "position": 1
+ {
+  "id": "test-ayurveda-dosha",
+  "slug": "test-ayurveda-dosha",
+  "title": {
+   "ro": "Ayurveda Dosha Test",
+   "en": "Ayurveda Dosha Test",
+   "ru": "Тест Ayurveda Dosha",
+   "ua": "Тест Ayurveda Dosha"
   },
-  {
-    "id": "respiratie-terapeutica",
-    "slug": "respiratie-terapeutica",
-    "title": {
-      "ro": "Respirație Terapeutică",
-      "en": "Therapeutic Breathing",
-      "ru": "Терапевтическое дыхание",
-      "ua": "Терапевтичне дихання"
-    },
-    "description": {
-      "ro": "Exerciții ghidate de respirație pentru calm, ritm și relaxare.",
-      "en": "Guided breathing exercises for calm, rhythm and relaxation.",
-      "ru": "Управляемые дыхательные упражнения для спокойствия, ритма и расслабления.",
-      "ua": "Керовані дихальні вправи для спокою, ритму та розслаблення."
-    },
-    "tag": {
-      "ro": "Respirație",
-      "en": "Breathing",
-      "ru": "Дыхание",
-      "ua": "Дихання"
-    },
-    "href": "/aplicatii/teste-si-instrumente/respiratie-terapeutica",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "",
-    "position": 2
+  "description": {
+   "ro": "Identifică orientativ profilul Vata, Pitta sau Kapha și primește recomandări educaționale.",
+   "en": "Identify your Vata, Pitta or Kapha tendency and receive educational recommendations.",
+   "ru": "Определите ориентировочный профиль Vata, Pitta или Kapha и получите образовательные рекомендации.",
+   "ua": "Визначте орієнтовний профіль Vata, Pitta або Kapha та отримайте освітні рекомендації."
   },
-  {
-    "id": "revimed-yoga-tibetan",
-    "slug": "revimed-yoga-tibetan",
-    "title": {
-      "ro": "REVIMED Yoga Tibetan",
-      "en": "REVIMED Tibetan Yoga",
-      "ru": "REVIMED Тибетская йога",
-      "ua": "REVIMED Тибетська йога"
-    },
-    "description": {
-      "ro": "Respirație ghidată cu programe pentru anxietate, somn, respirație, cardiovascular, digestiv și energie.",
-      "en": "Guided breathing programs for anxiety, sleep, breathing, cardiovascular, digestion and energy.",
-      "ru": "Дыхательные программы для тревоги, сна, дыхания, сердца, пищеварения и энергии.",
-      "ua": "Дихальні програми для тривоги, сну, дихання, серця, травлення та енергії."
-    },
-    "tag": {
-      "ro": "Respirație",
-      "en": "Breathing",
-      "ru": "Дыхание",
-      "ua": "Дихання"
-    },
-    "href": "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
-    "image": "/images/hero-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
-    "position": 3
+  "tag": {
+   "ro": "Ayurveda",
+   "en": "Ayurveda",
+   "ru": "Ayurveda",
+   "ua": "Ayurveda"
   },
-  {
-    "id": "screening-neurologic",
-    "slug": "screening-neurologic",
-    "title": {
-      "ro": "Screening Neurologic",
-      "en": "Neurological Screening",
-      "ru": "Неврологический скрининг",
-      "ua": "Неврологічний скринінг"
-    },
-    "description": {
-      "ro": "Chestionar educațional pentru simptome neurologice și semnale de alarmă.",
-      "en": "Educational questionnaire for neurological symptoms and red flags.",
-      "ru": "Образовательная анкета для неврологических симптомов и тревожных признаков.",
-      "ua": "Освітня анкета для неврологічних симптомів і тривожних ознак."
-    },
-    "tag": {
-      "ro": "Neurologie",
-      "en": "Neurology",
-      "ru": "Неврология",
-      "ua": "Неврологія"
-    },
-    "href": "/aplicatii/teste-si-instrumente/screening-neurologic",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "",
-    "position": 4
+  "href": "/aplicatii/teste-si-instrumente/test-ayurveda-dosha",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "",
+  "position": 1
+ },
+ {
+  "id": "respiratie-terapeutica",
+  "slug": "respiratie-terapeutica",
+  "title": {
+   "ro": "Respirație Terapeutică",
+   "en": "Therapeutic Breathing",
+   "ru": "Терапевтическое дыхание",
+   "ua": "Терапевтичне дихання"
   },
-  {
-    "id": "calculator-recuperare-personalizata",
-    "slug": "calculator-recuperare-personalizata",
-    "title": {
-      "ro": "Calculator Recuperare Personalizată",
-      "en": "Personalized Recovery Planner",
-      "ru": "План восстановления",
-      "ua": "План відновлення"
-    },
-    "description": {
-      "ro": "Instrument educațional care propune pași de recuperare în funcție de durere, mobilitate, zonă afectată și obiectiv.",
-      "en": "Educational tool that suggests recovery steps based on pain, mobility, affected area and goal.",
-      "ru": "Образовательный инструмент с рекомендациями по восстановлению с учетом боли, подвижности, зоны и цели.",
-      "ua": "Освітній інструмент з рекомендаціями відновлення з урахуванням болю, рухливості, зони та мети."
-    },
-    "tag": {
-      "ro": "Recuperare",
-      "en": "Recovery",
-      "ru": "Реабилитация",
-      "ua": "Відновлення"
-    },
-    "href": "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
-    "position": 5
+  "description": {
+   "ro": "Exerciții ghidate de respirație pentru calm, ritm și relaxare.",
+   "en": "Guided breathing exercises for calm, rhythm and relaxation.",
+   "ru": "Управляемые дыхательные упражнения для спокойствия, ритма и расслабления.",
+   "ua": "Керовані дихальні вправи для спокою, ритму та розслаблення."
   },
-  {
-    "id": "test-postura-coloana",
-    "slug": "test-postura-coloana",
-    "title": {
-      "ro": "Test Postură și Coloană",
-      "en": "Posture and Spine Test",
-      "ru": "Тест осанки и позвоночника",
-      "ua": "Тест постави та хребта"
-    },
-    "description": {
-      "ro": "Verifică orientativ postura, durerile cervicale/lombare și obiceiurile care pot afecta coloana.",
-      "en": "Check posture, neck/lower back pain and habits that may affect the spine.",
-      "ru": "Оценка осанки, боли в шее/пояснице и привычек, влияющих на позвоночник.",
-      "ua": "Оцінка постави, болю в шиї/попереку та звичок, що впливають на хребет."
-    },
-    "tag": {
-      "ro": "Coloană",
-      "en": "Spine",
-      "ru": "Позвоночник",
-      "ua": "Хребет"
-    },
-    "href": "/aplicatii/teste-si-instrumente/test-postura-coloana",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/test-postura-coloana",
-    "position": 6
+  "tag": {
+   "ro": "Respirație",
+   "en": "Breathing",
+   "ru": "Дыхание",
+   "ua": "Дихання"
   },
-  {
-    "id": "monitor-dureri-spate",
-    "slug": "monitor-dureri-spate",
-    "title": {
-      "ro": "Monitor Dureri de Spate",
-      "en": "Back Pain Monitor",
-      "ru": "Монитор боли в спине",
-      "ua": "Монітор болю в спині"
-    },
-    "description": {
-      "ro": "Rezumat educațional pentru durere, factori agravanți, limitări și semnale de alarmă.",
-      "en": "Educational summary for pain, aggravating factors, limitations and red flags.",
-      "ru": "Образовательное резюме боли, факторов ухудшения, ограничений и тревожных признаков.",
-      "ua": "Освітнє резюме болю, факторів погіршення, обмежень і тривожних ознак."
-    },
-    "tag": {
-      "ro": "Durere",
-      "en": "Pain",
-      "ru": "Боль",
-      "ua": "Біль"
-    },
-    "href": "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
-    "position": 7
+  "href": "/aplicatii/teste-si-instrumente/respiratie-terapeutica",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "",
+  "position": 2
+ },
+ {
+  "id": "revimed-yoga-tibetan",
+  "slug": "revimed-yoga-tibetan",
+  "title": {
+   "ro": "REVIMED Yoga Tibetan",
+   "en": "REVIMED Tibetan Yoga",
+   "ru": "REVIMED Тибетская йога",
+   "ua": "REVIMED Тибетська йога"
   },
-  {
-    "id": "test-risc-cadere-echilibru",
-    "slug": "test-risc-cadere-echilibru",
-    "title": {
-      "ro": "Test Risc Cădere / Echilibru",
-      "en": "Fall Risk / Balance Test",
-      "ru": "Тест риска падения / равновесия",
-      "ua": "Тест ризику падіння / рівноваги"
-    },
-    "description": {
-      "ro": "Evaluează orientativ mersul, echilibrul, amețeala și riscul de cădere.",
-      "en": "Assess walking, balance, dizziness and fall risk.",
-      "ru": "Оценка ходьбы, равновесия, головокружения и риска падения.",
-      "ua": "Оцінка ходи, рівноваги, запаморочення та ризику падіння."
-    },
-    "tag": {
-      "ro": "Echilibru",
-      "en": "Balance",
-      "ru": "Равновесие",
-      "ua": "Рівновага"
-    },
-    "href": "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru",
-    "position": 8
+  "description": {
+   "ro": "Respirație ghidată cu programe pentru anxietate, somn, respirație, cardiovascular, digestiv și energie.",
+   "en": "Guided breathing programs for anxiety, sleep, breathing, cardiovascular, digestion and energy.",
+   "ru": "Дыхательные программы для тревоги, сна, дыхания, сердца, пищеварения и энергии.",
+   "ua": "Дихальні програми для тривоги, сну, дихання, серця, травлення та енергії."
   },
-  {
-    "id": "planner-exercitii-zilnice",
-    "slug": "planner-exercitii-zilnice",
-    "title": {
-      "ro": "Planner Exerciții Zilnice",
-      "en": "Daily Exercise Planner",
-      "ru": "Планер ежедневных упражнений",
-      "ua": "Планер щоденних вправ"
-    },
-    "description": {
-      "ro": "Rutină educațională de 5–10 minute pentru mobilitate, forță, postură și echilibru.",
-      "en": "5–10 minute educational routine for mobility, strength, posture and balance.",
-      "ru": "Образовательная рутина 5–10 минут для подвижности, силы, осанки и равновесия.",
-      "ua": "Освітня рутина 5–10 хвилин для рухливості, сили, постави та рівноваги."
-    },
-    "tag": {
-      "ro": "Exerciții",
-      "en": "Exercises",
-      "ru": "Упражнения",
-      "ua": "Вправи"
-    },
-    "href": "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
-    "position": 9
+  "tag": {
+   "ro": "Respirație",
+   "en": "Breathing",
+   "ru": "Дыхание",
+   "ua": "Дихання"
   },
-  {
-    "id": "test-stres-somn-respiratie",
-    "slug": "test-stres-somn-respiratie",
-    "title": {
-      "ro": "Test Stres, Somn și Respirație",
-      "en": "Stress, Sleep and Breathing Test",
-      "ru": "Тест стреса, сна и дыхания",
-      "ua": "Тест стресу, сну та дихання"
-    },
-    "description": {
-      "ro": "Verifică orientativ stresul, somnul, respirația și tensiunea corporală.",
-      "en": "Check stress, sleep, breathing and body tension.",
-      "ru": "Оценка стресса, сна, дыхания и телесного напряжения.",
-      "ua": "Оцінка стресу, сну, дихання та тілесного напруження."
-    },
-    "tag": {
-      "ro": "Somn",
-      "en": "Sleep",
-      "ru": "Сон",
-      "ua": "Сон"
-    },
-    "href": "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie",
-    "position": 10
+  "href": "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
+  "image": "/images/hero-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
+  "position": 3
+ },
+ {
+  "id": "screening-neurologic",
+  "slug": "screening-neurologic",
+  "title": {
+   "ro": "Screening Neurologic",
+   "en": "Neurological Screening",
+   "ru": "Неврологический скрининг",
+   "ua": "Неврологічний скринінг"
   },
-  {
-    "id": "pregatire-consultatie",
-    "slug": "pregatire-consultatie",
-    "title": {
-      "ro": "Pregătire pentru Consultație",
-      "en": "Consultation Preparation",
-      "ru": "Подготовка к консультации",
-      "ua": "Підготовка до консультації"
-    },
-    "description": {
-      "ro": "Răspunde la întrebări și primești un rezumat util pentru medic.",
-      "en": "Answer questions and get a useful summary for the doctor.",
-      "ru": "Ответьте на вопросы и получите полезное резюме для врача.",
-      "ua": "Дайте відповіді й отримайте корисне резюме для лікаря."
-    },
-    "tag": {
-      "ro": "Consultație",
-      "en": "Consultation",
-      "ru": "Консультация",
-      "ua": "Консультація"
-    },
-    "href": "/aplicatii/teste-si-instrumente/pregatire-consultatie",
-    "image": "/images/medical-bg.jpg",
-    "visible": true,
-    "kind": "react",
-    "htmlPath": "/aplicatii/teste-si-instrumente/pregatire-consultatie",
-    "position": 11
-  }
+  "description": {
+   "ro": "Chestionar educațional pentru simptome neurologice și semnale de alarmă.",
+   "en": "Educational questionnaire for neurological symptoms and red flags.",
+   "ru": "Образовательная анкета для неврологических симптомов и тревожных признаков.",
+   "ua": "Освітня анкета для неврологічних симптомів і тривожних ознак."
+  },
+  "tag": {
+   "ro": "Neurologie",
+   "en": "Neurology",
+   "ru": "Неврология",
+   "ua": "Неврологія"
+  },
+  "href": "/aplicatii/teste-si-instrumente/screening-neurologic",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "",
+  "position": 4
+ },
+ {
+  "id": "calculator-recuperare-personalizata",
+  "slug": "calculator-recuperare-personalizata",
+  "title": {
+   "ro": "Calculator Recuperare Personalizată",
+   "en": "Personalized Recovery Planner",
+   "ru": "План восстановления",
+   "ua": "План відновлення"
+  },
+  "description": {
+   "ro": "Instrument educațional care propune pași de recuperare în funcție de durere, mobilitate, zonă afectată și obiectiv.",
+   "en": "Educational tool that suggests recovery steps based on pain, mobility, affected area and goal.",
+   "ru": "Образовательный инструмент с рекомендациями по восстановлению с учетом боли, подвижности, зоны и цели.",
+   "ua": "Освітній інструмент з рекомендаціями відновлення з урахуванням болю, рухливості, зони та мети."
+  },
+  "tag": {
+   "ro": "Recuperare",
+   "en": "Recovery",
+   "ru": "Реабилитация",
+   "ua": "Відновлення"
+  },
+  "href": "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
+  "position": 5
+ },
+ {
+  "id": "test-postura-coloana",
+  "slug": "test-postura-coloana",
+  "title": {
+   "ro": "Test Postură și Coloană",
+   "en": "Posture and Spine Test",
+   "ru": "Тест осанки и позвоночника",
+   "ua": "Тест постави та хребта"
+  },
+  "description": {
+   "ro": "Verifică orientativ postura, durerile cervicale/lombare și obiceiurile care pot afecta coloana.",
+   "en": "Check posture, neck/lower back pain and habits that may affect the spine.",
+   "ru": "Оценка осанки, боли в шее/пояснице и привычек, влияющих на позвоночник.",
+   "ua": "Оцінка постави, болю в шиї/попереку та звичок, що впливають на хребет."
+  },
+  "tag": {
+   "ro": "Coloană",
+   "en": "Spine",
+   "ru": "Позвоночник",
+   "ua": "Хребет"
+  },
+  "href": "/aplicatii/teste-si-instrumente/test-postura-coloana",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/test-postura-coloana",
+  "position": 6
+ },
+ {
+  "id": "monitor-dureri-spate",
+  "slug": "monitor-dureri-spate",
+  "title": {
+   "ro": "Monitor Dureri de Spate",
+   "en": "Back Pain Monitor",
+   "ru": "Монитор боли в спине",
+   "ua": "Монітор болю в спині"
+  },
+  "description": {
+   "ro": "Rezumat educațional pentru durere, factori agravanți, limitări și semnale de alarmă.",
+   "en": "Educational summary for pain, aggravating factors, limitations and red flags.",
+   "ru": "Образовательное резюме боли, факторов ухудшения, ограничений и тревожных признаков.",
+   "ua": "Освітнє резюме болю, факторів погіршення, обмежень і тривожних ознак."
+  },
+  "tag": {
+   "ro": "Durere",
+   "en": "Pain",
+   "ru": "Боль",
+   "ua": "Біль"
+  },
+  "href": "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
+  "position": 7
+ },
+ {
+  "id": "test-risc-cadere-echilibru",
+  "slug": "test-risc-cadere-echilibru",
+  "title": {
+   "ro": "Test Risc Cădere / Echilibru",
+   "en": "Fall Risk / Balance Test",
+   "ru": "Тест риска падения / равновесия",
+   "ua": "Тест ризику падіння / рівноваги"
+  },
+  "description": {
+   "ro": "Evaluează orientativ mersul, echilibrul, amețeala și riscul de cădere.",
+   "en": "Assess walking, balance, dizziness and fall risk.",
+   "ru": "Оценка ходьбы, равновесия, головокружения и риска падения.",
+   "ua": "Оцінка ходи, рівноваги, запаморочення та ризику падіння."
+  },
+  "tag": {
+   "ro": "Echilibru",
+   "en": "Balance",
+   "ru": "Равновесие",
+   "ua": "Рівновага"
+  },
+  "href": "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru",
+  "position": 8
+ },
+ {
+  "id": "planner-exercitii-zilnice",
+  "slug": "planner-exercitii-zilnice",
+  "title": {
+   "ro": "Planner Exerciții Zilnice",
+   "en": "Daily Exercise Planner",
+   "ru": "Планер ежедневных упражнений",
+   "ua": "Планер щоденних вправ"
+  },
+  "description": {
+   "ro": "Rutină educațională de 5–10 minute pentru mobilitate, forță, postură și echilibru.",
+   "en": "5–10 minute educational routine for mobility, strength, posture and balance.",
+   "ru": "Образовательная рутина 5–10 минут для подвижности, силы, осанки и равновесия.",
+   "ua": "Освітня рутина 5–10 хвилин для рухливості, сили, постави та рівноваги."
+  },
+  "tag": {
+   "ro": "Exerciții",
+   "en": "Exercises",
+   "ru": "Упражнения",
+   "ua": "Вправи"
+  },
+  "href": "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
+  "position": 9
+ },
+ {
+  "id": "test-stres-somn-respiratie",
+  "slug": "test-stres-somn-respiratie",
+  "title": {
+   "ro": "Test Stres, Somn și Respirație",
+   "en": "Stress, Sleep and Breathing Test",
+   "ru": "Тест стреса, сна и дыхания",
+   "ua": "Тест стресу, сну та дихання"
+  },
+  "description": {
+   "ro": "Verifică orientativ stresul, somnul, respirația și tensiunea corporală.",
+   "en": "Check stress, sleep, breathing and body tension.",
+   "ru": "Оценка стресса, сна, дыхания и телесного напряжения.",
+   "ua": "Оцінка стресу, сну, дихання та тілесного напруження."
+  },
+  "tag": {
+   "ro": "Somn",
+   "en": "Sleep",
+   "ru": "Сон",
+   "ua": "Сон"
+  },
+  "href": "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie",
+  "position": 10
+ },
+ {
+  "id": "pregatire-consultatie",
+  "slug": "pregatire-consultatie",
+  "title": {
+   "ro": "Pregătire pentru Consultație",
+   "en": "Consultation Preparation",
+   "ru": "Подготовка к консультации",
+   "ua": "Підготовка до консультації"
+  },
+  "description": {
+   "ro": "Răspunde la întrebări și primești un rezumat util pentru medic.",
+   "en": "Answer questions and get a useful summary for the doctor.",
+   "ru": "Ответьте на вопросы и получите полезное резюме для врача.",
+   "ua": "Дайте відповіді й отримайте корисне резюме для лікаря."
+  },
+  "tag": {
+   "ro": "Consultație",
+   "en": "Consultation",
+   "ru": "Консультация",
+   "ua": "Консультація"
+  },
+  "href": "/aplicatii/teste-si-instrumente/pregatire-consultatie",
+  "image": "/images/medical-bg.jpg",
+  "visible": true,
+  "kind": "react",
+  "htmlPath": "/aplicatii/teste-si-instrumente/pregatire-consultatie",
+  "position": 11
+ }
 ]

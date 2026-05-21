@@ -5,21 +5,21 @@ import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const seo = serviceSeo[slug]?.ro;
+ const { slug } = await params;
+ const seo = serviceSeo[slug]?.ro;
 
-  return makeAdvancedMetadata({
-    lang: "ro",
-    path: `/servicii/${slug}`,
-    title: seo?.title || "Servicii medicale Revimed PLUS+",
-    description: seo?.description || "Servicii medicale Revimed PLUS+ Chișinău: neurologie, neurochirurgie, fizioterapie, recuperare și diagnostic.",
-    keywords: seo?.keywords || []
-  });
+ return makeAdvancedMetadata({
+  lang: "ro",
+  path: `/servicii/${slug}`,
+  title: seo?.title || "Servicii medicale Revimed PLUS+",
+  description: seo?.description || "Servicii medicale Revimed PLUS+ Chișinău: neurologie, neurochirurgie, fizioterapie, recuperare și diagnostic.",
+  keywords: seo?.keywords || []
+ });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const page = ServiceTemplate({ lang: "ro", slug });
-  if (!page) notFound();
-  return page;
+ const { slug } = await params;
+ const page = ServiceTemplate({ lang: "ro", slug });
+ if (!page) notFound();
+ return page;
 }

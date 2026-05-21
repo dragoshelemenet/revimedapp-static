@@ -5,20 +5,20 @@ import Original from "@/app/aplicatii/teste-si-instrumente/test-postura-coloana/
 
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
+ const { lang } = await params;
+ const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
 
-  return makeAdvancedMetadata({
-    lang: safeLang,
-    path: "/aplicatii/teste-si-instrumente/test-postura-coloana",
-    title: appSeo["test-postura-coloana"]?.[safeLang]?.title || "Instrument medical educațional",
-    description: appSeo["test-postura-coloana"]?.[safeLang]?.description || "Instrument medical educațional Revimed PLUS+ — instrument educațional pentru pacienți, cu rezultat orientativ și raport printabil pentru consultație.",
-    keywords: appSeo["test-postura-coloana"]?.[safeLang]?.keywords || []
-  });
+ return makeAdvancedMetadata({
+  lang: safeLang,
+  path: "/aplicatii/teste-si-instrumente/test-postura-coloana",
+  title: appSeo["test-postura-coloana"]?.[safeLang]?.title || "Instrument medical educațional",
+  description: appSeo["test-postura-coloana"]?.[safeLang]?.description || "Instrument medical educațional Revimed PLUS+ — instrument educațional pentru pacienți, cu rezultat orientativ și raport printabil pentru consultație.",
+  keywords: appSeo["test-postura-coloana"]?.[safeLang]?.keywords || []
+ });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  if (!isLang(lang) || lang === "ro") notFound();
-  return <Original />;
+ const { lang } = await params;
+ if (!isLang(lang) || lang === "ro") notFound();
+ return <Original />;
 }

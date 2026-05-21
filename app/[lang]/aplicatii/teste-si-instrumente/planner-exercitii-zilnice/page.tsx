@@ -5,20 +5,20 @@ import Original from "@/app/aplicatii/teste-si-instrumente/planner-exercitii-zil
 
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
+ const { lang } = await params;
+ const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
 
-  return makeAdvancedMetadata({
-    lang: safeLang,
-    path: "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
-    title: appSeo["planner-exercitii-zilnice"]?.[safeLang]?.title || "Planner exerciții zilnice",
-    description: appSeo["planner-exercitii-zilnice"]?.[safeLang]?.description || "Planner exerciții zilnice Revimed PLUS+ — instrument educațional pentru pacienți, cu rezultat orientativ și raport printabil pentru consultație.",
-    keywords: appSeo["planner-exercitii-zilnice"]?.[safeLang]?.keywords || []
-  });
+ return makeAdvancedMetadata({
+  lang: safeLang,
+  path: "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
+  title: appSeo["planner-exercitii-zilnice"]?.[safeLang]?.title || "Planner exerciții zilnice",
+  description: appSeo["planner-exercitii-zilnice"]?.[safeLang]?.description || "Planner exerciții zilnice Revimed PLUS+ — instrument educațional pentru pacienți, cu rezultat orientativ și raport printabil pentru consultație.",
+  keywords: appSeo["planner-exercitii-zilnice"]?.[safeLang]?.keywords || []
+ });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  if (!isLang(lang) || lang === "ro") notFound();
-  return <Original />;
+ const { lang } = await params;
+ if (!isLang(lang) || lang === "ro") notFound();
+ return <Original />;
 }

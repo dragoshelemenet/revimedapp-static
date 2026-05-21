@@ -5,20 +5,20 @@ import Original from "@/app/aplicatii/teste-si-instrumente/monitor-dureri-spate/
 
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
+ const { lang } = await params;
+ const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
 
-  return makeAdvancedMetadata({
-    lang: safeLang,
-    path: "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
-    title: appSeo["monitor-dureri-spate"]?.[safeLang]?.title || "Instrument medical educațional",
-    description: appSeo["monitor-dureri-spate"]?.[safeLang]?.description || "Instrument medical educațional Revimed PLUS+ — instrument educațional pentru pacienți, cu rezultat orientativ și raport printabil pentru consultație.",
-    keywords: appSeo["monitor-dureri-spate"]?.[safeLang]?.keywords || []
-  });
+ return makeAdvancedMetadata({
+  lang: safeLang,
+  path: "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
+  title: appSeo["monitor-dureri-spate"]?.[safeLang]?.title || "Instrument medical educațional",
+  description: appSeo["monitor-dureri-spate"]?.[safeLang]?.description || "Instrument medical educațional Revimed PLUS+ — instrument educațional pentru pacienți, cu rezultat orientativ și raport printabil pentru consultație.",
+  keywords: appSeo["monitor-dureri-spate"]?.[safeLang]?.keywords || []
+ });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  if (!isLang(lang) || lang === "ro") notFound();
-  return <Original />;
+ const { lang } = await params;
+ if (!isLang(lang) || lang === "ro") notFound();
+ return <Original />;
 }
