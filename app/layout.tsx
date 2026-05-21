@@ -10,6 +10,7 @@ import { site } from "../lib/site";
 import "../lib/seedLanguages";
 
 import { JsonLdBlock, localMedicalBusinessJsonLd } from "@/lib/seoAdvanced";
+import BlogArticleEnhancer from "@/components/BlogArticleEnhancer";
 export const metadata: Metadata = {
  metadataBase: new URL(site.url),
  title: {
@@ -92,7 +93,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     {children}</main>
     <Footer />
     <MobileCallBar />
-   </body>
+           <BlogArticleEnhancer />
+      </body>
   </html>
  );
 }
