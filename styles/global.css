@@ -13581,10 +13581,7 @@ html body main section:has(.serviceTile) .rmCard h2{
 }
 
 /* If the card is pulled up by old negative margins, cancel only that */
-html body main section:has(.serviceTile) + section,
-html body main section:has(.serviceTile) + .rmSection{
-  margin-top: 0 !important;
-}
+
 
 /* Better text rhythm inside the informational card */
 html body main .servicesSeoCard p,
@@ -13664,10 +13661,7 @@ html body main .serviceSeoDetailsBlock .btnRow{
 }
 
 /* Important: do not cancel spacing between the service section and the next section */
-html body main section:has(.serviceTile) + section,
-html body main section:has(.serviceTile) + .rmSection{
-  margin-top: 28px !important;
-}
+
 
 @media(max-width:760px){
   html body main .servicesGrid + .serviceSeoText,
@@ -13679,14 +13673,9 @@ html body main section:has(.serviceTile) + .rmSection{
     margin-top: 28px !important;
   }
 
-  html body main section:has(.serviceTile) + section,
-  html body main section:has(.serviceTile) + .rmSection{
-    margin-top: 20px !important;
-  }
+  
 }
 
-/* TRUE FINAL SERVICES INFO CARD FIX
-   Moves the whole SEO/info card down. Does NOT add padding above the title. */
 
 /* The service cards grid must keep its normal layout */
 html body main section:has(.serviceTile){
@@ -13720,10 +13709,7 @@ html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) h2{
 }
 
 /* Do not allow old rules to cancel the gap after the service grid */
-html body main section:has(.serviceTile) + section,
-html body main section:has(.serviceTile) + .rmSection{
-  margin-top: 42px !important;
-}
+
 
 /* Better reading rhythm only */
 html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) p,
@@ -13750,6 +13736,194 @@ html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) .btnRow{
   html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]),
   html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]){
     margin-top: 46px !important;
+  }
+}
+
+/* SERVICES PAGE — final clean layout
+   Fixes the ugly overlap between service cards and the info/SEO block. */
+
+/* Keep the grid clean and give it real breathing space below */
+body main .serviceGrid{
+  position:relative !important;
+  z-index:2 !important;
+  margin-bottom:76px !important;
+  overflow:visible !important;
+}
+
+/* Service cards: balanced, not too huge, visually consistent */
+body main .serviceGrid .serviceTile{
+  min-height:220px !important;
+  padding:30px 28px !important;
+  border-radius:22px !important;
+  background:linear-gradient(180deg,#fbfdff 0%,#f6fbff 100%) !important;
+  border:1px solid #dbeafe !important;
+  box-shadow:0 14px 34px rgba(7,31,63,.06) !important;
+  transform:none !important;
+}
+
+body main .serviceGrid .serviceTile:hover{
+  transform:translateY(-4px) !important;
+  box-shadow:0 18px 42px rgba(7,31,63,.10) !important;
+}
+
+body main .serviceGrid .serviceTile h3{
+  color:#102033 !important;
+  font-size:21px !important;
+  line-height:1.12 !important;
+  margin:18px 0 12px !important;
+  letter-spacing:-.03em !important;
+}
+
+body main .serviceGrid .serviceTile p{
+  color:#5d6f86 !important;
+  font-size:15px !important;
+  line-height:1.52 !important;
+  font-weight:750 !important;
+  margin:0 !important;
+}
+
+body main .serviceGrid .tileIcon{
+  width:52px !important;
+  height:52px !important;
+  border-radius:16px !important;
+  display:grid !important;
+  place-items:center !important;
+  margin:0 0 18px !important;
+  background:#f2f9ff !important;
+  border:1px solid #dbeafe !important;
+  box-shadow:none !important;
+  font-size:28px !important;
+}
+
+/* The info/SEO card directly after services */
+body main .serviceGrid + .rmCard,
+body main .serviceGrid ~ .rmCard,
+body main .serviceGrid + .serviceSeoCard,
+body main .serviceGrid ~ .serviceSeoCard,
+body main .serviceGrid + .servicesSeoCard,
+body main .serviceGrid ~ .servicesSeoCard,
+body main .serviceGrid + .serviceSeoText,
+body main .serviceGrid ~ .serviceSeoText{
+  display:block !important;
+  max-width:1040px !important;
+  margin:0 auto 0 !important;
+  padding:38px 42px 34px !important;
+  border-radius:26px !important;
+  border:1px solid #dbeafe !important;
+  background:linear-gradient(180deg,#ffffff 0%,#f8fcff 100%) !important;
+  box-shadow:0 22px 60px rgba(7,31,63,.08) !important;
+  position:relative !important;
+  z-index:1 !important;
+  transform:none !important;
+  overflow:hidden !important;
+}
+
+/* Some layouts put the info card in the same section after the tiles */
+body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child,
+body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
+  display:block !important;
+  max-width:1040px !important;
+  margin:76px auto 0 !important;
+  padding:38px 42px 34px !important;
+  border-radius:26px !important;
+  border:1px solid #dbeafe !important;
+  background:linear-gradient(180deg,#ffffff 0%,#f8fcff 100%) !important;
+  box-shadow:0 22px 60px rgba(7,31,63,.08) !important;
+  position:relative !important;
+  z-index:1 !important;
+  transform:none !important;
+  overflow:hidden !important;
+}
+
+/* Title inside the card: clean, not glued to border */
+body main .serviceGrid + .rmCard h1,
+body main .serviceGrid + .rmCard h2,
+body main .serviceGrid ~ .rmCard h1,
+body main .serviceGrid ~ .rmCard h2,
+body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child h1,
+body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child h2,
+body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h1,
+body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h2{
+  margin:0 0 20px !important;
+  padding:0 !important;
+  color:#0a2554 !important;
+  font-size:clamp(30px,3vw,42px) !important;
+  line-height:1.08 !important;
+  letter-spacing:-.045em !important;
+}
+
+/* Text rhythm */
+body main .serviceGrid + .rmCard p,
+body main .serviceGrid ~ .rmCard p,
+body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child p,
+body main section:has(.serviceTile) > .rmShell > .rmCard:last-child p{
+  color:#405269 !important;
+  font-size:18px !important;
+  line-height:1.78 !important;
+  margin:0 0 18px !important;
+  max-width:960px !important;
+}
+
+/* Buttons inside SEO card */
+body main .serviceGrid + .rmCard .actions,
+body main .serviceGrid + .rmCard .btnRow,
+body main .serviceGrid ~ .rmCard .actions,
+body main .serviceGrid ~ .rmCard .btnRow,
+body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child .actions,
+body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child .btnRow,
+body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .actions,
+body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .btnRow{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:12px !important;
+  margin-top:26px !important;
+}
+
+/* Make pill buttons look intentional */
+body main .serviceGrid + .rmCard a,
+body main .serviceGrid ~ .rmCard a,
+body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child a,
+body main section:has(.serviceTile) > .rmShell > .rmCard:last-child a{
+  white-space:nowrap !important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  body main .serviceGrid{
+    margin-bottom:42px !important;
+  }
+
+  body main .serviceGrid .serviceTile{
+    min-height:auto !important;
+    padding:24px !important;
+  }
+
+  body main .serviceGrid + .rmCard,
+  body main .serviceGrid ~ .rmCard,
+  body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child,
+  body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
+    margin-top:42px !important;
+    padding:28px 22px !important;
+    border-radius:22px !important;
+  }
+
+  body main .serviceGrid + .rmCard h1,
+  body main .serviceGrid + .rmCard h2,
+  body main .serviceGrid ~ .rmCard h1,
+  body main .serviceGrid ~ .rmCard h2,
+  body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child h1,
+  body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child h2,
+  body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h1,
+  body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h2{
+    font-size:29px !important;
+  }
+
+  body main .serviceGrid + .rmCard p,
+  body main .serviceGrid ~ .rmCard p,
+  body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child p,
+  body main section:has(.serviceTile) > .rmShell > .rmCard:last-child p{
+    font-size:16px !important;
+    line-height:1.65 !important;
   }
 }
 
