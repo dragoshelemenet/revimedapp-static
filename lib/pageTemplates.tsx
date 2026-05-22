@@ -601,11 +601,25 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
  );
 }
 
+
+function normalizeContactValue(value: string | undefined | null) {
+ return String(value || "").replace(/[\s()–-]/g, "").trim();
+}
+
+function isUniqueContactValue(value: string | undefined | null, used: Set<string>) {
+ const normalized = normalizeContactValue(value);
+ if (!normalized) return false;
+ if (used.has(normalized)) return false;
+ used.add(normalized);
+ return true;
+}
+
 export function ContactTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const contact = getContactContentSmart(lang);
  const hero = getContentBlockSmart(lang, "contact", "hero");
 
+ const usedContactValues = new Set<string>();
  return (
   <>
    <section className="pageHero contactHero innerPageHero">
@@ -654,7 +668,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       </div>
 
       <div className="contactPhotoPair">
-       <a href={contact.image_one} target="_blank" rel="noopener noreferrer"><img src={contact.image_one} alt="Revimed PLUS+" /></a>
+       <a href={contact.image_one} target="_blank" rel="noopener noreferrer"><img src={contact.image_one && contact.image_one !== "/images/6.jpg" ? contact.image_one : ""} alt="Revimed PLUS+" /></a>
        <a href={contact.image_two} target="_blank" rel="noopener noreferrer"><img src={contact.image_two} alt="Revimed PLUS+ map" /></a>
       </div>
      </aside>

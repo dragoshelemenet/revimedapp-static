@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS contact_content (
  bus TEXT NOT NULL DEFAULT '113, 23, 5',
  trolleybus TEXT NOT NULL DEFAULT '12, 23, 24',
  tram TEXT NOT NULL DEFAULT '7, 10',
- image_one TEXT NOT NULL DEFAULT '/images/6.jpg',
+ image_one TEXT NOT NULL DEFAULT '',
  image_two TEXT NOT NULL DEFAULT '/images/1.jpg',
  map_link TEXT NOT NULL DEFAULT 'https://www.google.com/maps/place/REVIMED+-+Neurologie,+Diagnostic+Functional+si+Reabilitare,Salina+SPA./@47.0477497,28.8842622,17z/data=!3m1!4b1!4m5!3m4!1s0x40c97c92cf964149:0x39935b1c7bfd85fa!8m2!3d47.0477461!4d28.8887469?hl=en',
  map_embed TEXT NOT NULL DEFAULT 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.616804240469!2d28.88426222989308!3d47.047749667734834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c92cf964149%3A0x39935b1c7bfd85fa!2sREVIMED%20-%20Neurologie%2C%20Diagnostic%20Functional%20si%20Reabilitare%2CSalina%20SPA.!5e0!3m2!1sen!2sus!4v1674255096722!5m2!1sen!2sus',
@@ -42,6 +42,24 @@ const langs: Lang[] = ["ro", "en", "ru", "ua"];
 for (const lang of langs) {
  db.prepare("INSERT OR IGNORE INTO contact_content (lang) VALUES (?)").run(lang);
 }
+
+// Cleanup old duplicated contact data:
+// - phone must not duplicate fixed_phone
+// - /images/6.jpg must not appear on contact page
+db.exec(`
+ UPDATE contact_content
+ SET phone = ''
+ WHERE
+  REPLACE(REPLACE(REPLACE(REPLACE(phone, ' ', ''), '(', ''), ')', ''), '-', '') IN (
+   REPLACE(REPLACE(REPLACE(REPLACE(fixed_phone, ' ', ''), '(', ''), ')', ''), '-', ''),
+   '022605060',
+   '37379422908'
+  );
+
+ UPDATE contact_content
+ SET image_one = ''
+ WHERE image_one = '/images/6.jpg';
+`);
 
 const defaults = [
  ["ro", "contact", "hero", "Contactați-ne", "Adresă, telefon, program, transport și hartă pentru Centrul Medical Revimed PLUS+.", ""],
