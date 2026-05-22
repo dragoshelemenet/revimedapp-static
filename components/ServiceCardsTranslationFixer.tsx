@@ -1,5 +1,5 @@
 "use client";
 
-export default function ServiceCardsTranslationFixer() {
+export default function DisabledTemporaryFixer() {
   return null;
 }
