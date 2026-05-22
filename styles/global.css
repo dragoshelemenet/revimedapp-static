@@ -13556,7 +13556,7 @@ html body main [class*="Result"] em{
   }
 }
 
-/* FINAL SERVICES INFO CARD POLISH */
+
 /* Fix the info card under service cards without adding top padding to the h1 area */
 
 html body main .servicesSeoCard,
@@ -13619,3 +13619,80 @@ html body main section:has(.serviceTile) .rmCard .btnRow{
     margin-top: 24px !important;
   }
 }
+
+/* FINAL SERVICES PAGE INFO CARD — scoped and safe
+   Fixes overlap under service cards without adding inner title padding. */
+
+/* Space is created between the grid and the info card, not inside the title area */
+html body main .servicesGrid + .serviceSeoText,
+html body main .serviceGrid + .serviceSeoText,
+html body main .servicesGrid + .serviceSeoDetailsBlock,
+html body main .serviceGrid + .serviceSeoDetailsBlock,
+html body main .serviceTileGrid + .serviceSeoText,
+html body main .serviceTileGrid + .serviceSeoDetailsBlock{
+  margin-top: 42px !important;
+}
+
+/* Fallback for the real layout: if the info card is in the same section after service tiles */
+html body main section:has(.serviceTile) .serviceSeoText,
+html body main section:has(.serviceTile) .serviceSeoDetailsBlock{
+  margin-top: 42px !important;
+}
+
+/* Do not let broad rmCard rules move the SEO card into the service tiles */
+html body main section:has(.serviceTile) .serviceSeoText.rmCard,
+html body main section:has(.serviceTile) .serviceSeoDetailsBlock.rmCard{
+  transform: none !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Title stays clean. No extra padding added above the title. */
+html body main .serviceSeoText h1,
+html body main .serviceSeoText h2,
+html body main .serviceSeoDetailsBlock h1,
+html body main .serviceSeoDetailsBlock h2{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  line-height: 1.08 !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Better text and buttons only */
+html body main .serviceSeoText p,
+html body main .serviceSeoDetailsBlock p{
+  line-height: 1.72 !important;
+  max-width: 980px !important;
+}
+
+html body main .serviceSeoText .btnRow,
+html body main .serviceSeoDetailsBlock .btnRow{
+  margin-top: 22px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+/* Important: do not cancel spacing between the service section and the next section */
+html body main section:has(.serviceTile) + section,
+html body main section:has(.serviceTile) + .rmSection{
+  margin-top: 28px !important;
+}
+
+@media(max-width:760px){
+  html body main .servicesGrid + .serviceSeoText,
+  html body main .serviceGrid + .serviceSeoText,
+  html body main .servicesGrid + .serviceSeoDetailsBlock,
+  html body main .serviceGrid + .serviceSeoDetailsBlock,
+  html body main section:has(.serviceTile) .serviceSeoText,
+  html body main section:has(.serviceTile) .serviceSeoDetailsBlock{
+    margin-top: 28px !important;
+  }
+
+  html body main section:has(.serviceTile) + section,
+  html body main section:has(.serviceTile) + .rmSection{
+    margin-top: 20px !important;
+  }
+}
+
