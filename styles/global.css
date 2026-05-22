@@ -13557,188 +13557,6 @@ html body main [class*="Result"] em{
 }
 
 
-/* Fix the info card under service cards without adding top padding to the h1 area */
-
-html body main .servicesSeoCard,
-html body main .serviceSeoCard,
-html body main .servicesInfoCard,
-html body main .seoServiceCard,
-html body main section:has(.serviceTile) + section .rmCard,
-html body main section:has(.serviceTile) .rmCard{
-  margin-top: 34px !important;
-}
-
-/* Keep title clean: no extra top padding, no overlap with border */
-html body main .servicesSeoCard h2,
-html body main .serviceSeoCard h2,
-html body main .servicesInfoCard h2,
-html body main .seoServiceCard h2,
-html body main section:has(.serviceTile) + section .rmCard h2,
-html body main section:has(.serviceTile) .rmCard h2{
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  line-height: 1.08 !important;
-}
-
-/* If the card is pulled up by old negative margins, cancel only that */
-
-
-/* Better text rhythm inside the informational card */
-html body main .servicesSeoCard p,
-html body main .serviceSeoCard p,
-html body main .servicesInfoCard p,
-html body main .seoServiceCard p,
-html body main section:has(.serviceTile) + section .rmCard p,
-html body main section:has(.serviceTile) .rmCard p{
-  line-height: 1.75 !important;
-  max-width: 980px !important;
-}
-
-/* Buttons: nicer spacing, but no top padding change */
-html body main .servicesSeoCard .btnRow,
-html body main .serviceSeoCard .btnRow,
-html body main .servicesInfoCard .btnRow,
-html body main .seoServiceCard .btnRow,
-html body main section:has(.serviceTile) + section .rmCard .btnRow,
-html body main section:has(.serviceTile) .rmCard .btnRow{
-  margin-top: 22px !important;
-  gap: 12px !important;
-  flex-wrap: wrap !important;
-}
-
-@media(max-width:760px){
-  html body main .servicesSeoCard,
-  html body main .serviceSeoCard,
-  html body main .servicesInfoCard,
-  html body main .seoServiceCard,
-  html body main section:has(.serviceTile) + section .rmCard,
-  html body main section:has(.serviceTile) .rmCard{
-    margin-top: 24px !important;
-  }
-}
-
-
-
-/* Fallback for the real layout: if the info card is in the same section after service tiles */
-html body main section:has(.serviceTile) .serviceSeoText,
-html body main section:has(.serviceTile) .serviceSeoDetailsBlock{
-  margin-top: 42px !important;
-}
-
-/* Do not let broad rmCard rules move the SEO card into the service tiles */
-html body main section:has(.serviceTile) .serviceSeoText.rmCard,
-html body main section:has(.serviceTile) .serviceSeoDetailsBlock.rmCard{
-  transform: none !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-/* Title stays clean. No extra padding added above the title. */
-html body main .serviceSeoText h1,
-html body main .serviceSeoText h2,
-html body main .serviceSeoDetailsBlock h1,
-html body main .serviceSeoDetailsBlock h2{
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  line-height: 1.08 !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-/* Better text and buttons only */
-html body main .serviceSeoText p,
-html body main .serviceSeoDetailsBlock p{
-  line-height: 1.72 !important;
-  max-width: 980px !important;
-}
-
-html body main .serviceSeoText .btnRow,
-html body main .serviceSeoDetailsBlock .btnRow{
-  margin-top: 22px !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 12px !important;
-}
-
-/* Important: do not cancel spacing between the service section and the next section */
-
-
-@media(max-width:760px){
-  html body main .servicesGrid + .serviceSeoText,
-  html body main .serviceGrid + .serviceSeoText,
-  html body main .servicesGrid + .serviceSeoDetailsBlock,
-  html body main .serviceGrid + .serviceSeoDetailsBlock,
-  html body main section:has(.serviceTile) .serviceSeoText,
-  html body main section:has(.serviceTile) .serviceSeoDetailsBlock{
-    margin-top: 28px !important;
-  }
-
-  
-}
-
-
-/* The service cards grid must keep its normal layout */
-html body main section:has(.serviceTile){
-  overflow: visible !important;
-}
-
-/* Target only the informational card with CTA links under services */
-html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]),
-html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]),
-html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]),
-html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]){
-  margin-top: 92px !important;
-  clear: both !important;
-  position: relative !important;
-  z-index: 1 !important;
-  transform: none !important;
-}
-
-/* Title stays inside the card, no extra top padding */
-html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) h1,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) h2,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) h1,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) h2,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) h1,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) h2,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) h1,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) h2{
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  line-height: 1.08 !important;
-}
-
-/* Do not allow old rules to cancel the gap after the service grid */
-
-
-/* Better reading rhythm only */
-html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) p,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) p,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) p,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) p{
-  line-height: 1.72 !important;
-}
-
-/* Button spacing */
-html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) .btnRow,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) .btnRow,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) .btnRow,
-html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) .btnRow{
-  margin-top: 22px !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 12px !important;
-}
-
-@media(max-width:760px){
-  html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]),
-  html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]),
-  html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]),
-  html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]){
-    margin-top: 46px !important;
-  }
-}
-
 /* SERVICES PAGE — final clean layout
    Fixes the ugly overlap between service cards and the info/SEO block. */
 
@@ -13927,217 +13745,106 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child a{
   }
 }
 
-q
+/* APPLICATIONS PAGE — TRUE FINAL
+   Fixes bottom info card overlap on /aplicatii.
+   The page uses serviceGrid/serviceTile classes, so we target the applications content by its CTA links. */
 
-/* APPLICATIONS PAGE — final clean layout
-   Same visual fix as services: info card stays below app cards, not glued/overlapped. */
-
-/* Apps grid breathing space */
-body main .appsGrid,
-body main .appGrid,
-body main .toolsGrid,
-body main .applicationsGrid{
-  position:relative !important;
-  z-index:2 !important;
-  margin-bottom:76px !important;
-  overflow:visible !important;
+/* Keep application card grid above, with real space below */
+html body main section:has(.serviceTile):has(a[href*="aplicatii"]) .serviceGrid,
+html body main section:has(.serviceTile):has(a[href*="/aplicatii/"]) .serviceGrid,
+html body main section:has(.serviceTile):has(a[href*="teste"]) .serviceGrid,
+html body main section:has(.serviceTile):has(a[href*="servicii"]) .serviceGrid{
+  position: relative !important;
+  z-index: 2 !important;
+  margin-bottom: 96px !important;
+  overflow: visible !important;
 }
 
-/* App/tool cards */
-body main .appsGrid .appTile,
-body main .appGrid .appTile,
-body main .toolsGrid .appTile,
-body main .applicationsGrid .appTile,
-body main .appsGrid .toolTile,
-body main .appGrid .toolTile,
-body main .toolsGrid .toolTile,
-body main .applicationsGrid .toolTile,
-body main .appsGrid .rmCard,
-body main .appGrid .rmCard,
-body main .toolsGrid .rmCard,
-body main .applicationsGrid .rmCard{
-  min-height:220px !important;
-  padding:30px 28px !important;
-  border-radius:22px !important;
-  background:linear-gradient(180deg,#fbfdff 0%,#f6fbff 100%) !important;
-  border:1px solid #dbeafe !important;
-  box-shadow:0 14px 34px rgba(7,31,63,.06) !important;
-  transform:none !important;
+/* The real info card under applications is the last rmCard after the cards */
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
+  clear: both !important;
+  display: block !important;
+  max-width: 1040px !important;
+  margin: 110px auto 0 !important;
+  padding: 38px 42px 34px !important;
+  border-radius: 26px !important;
+  border: 1px solid #dbeafe !important;
+  background: linear-gradient(180deg,#ffffff 0%,#f8fcff 100%) !important;
+  box-shadow: 0 22px 60px rgba(7,31,63,.08) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  transform: none !important;
+  overflow: hidden !important;
 }
 
-body main .appsGrid .appTile:hover,
-body main .appGrid .appTile:hover,
-body main .toolsGrid .appTile:hover,
-body main .applicationsGrid .appTile:hover,
-body main .appsGrid .toolTile:hover,
-body main .appGrid .toolTile:hover,
-body main .toolsGrid .toolTile:hover,
-body main .applicationsGrid .toolTile:hover{
-  transform:translateY(-4px) !important;
-  box-shadow:0 18px 42px rgba(7,31,63,.10) !important;
+/* But do not style the actual service/app tiles as giant SEO cards */
+html body main section:has(.serviceTile) .serviceGrid .rmCard,
+html body main section:has(.serviceTile) .serviceGrid .serviceTile{
+  margin-top: 0 !important;
 }
 
-/* If applications use the same serviceTile class, style only on aplicatii page */
-body:has(a[href="/aplicatii"].active) main .serviceGrid,
-body:has(a[href$="/aplicatii"].active) main .serviceGrid,
-body main:has(.pageHero) .serviceGrid:has(a[href*="/aplicatii/"]){
-  position:relative !important;
-  z-index:2 !important;
-  margin-bottom:76px !important;
-  overflow:visible !important;
-}
-
-/* Info/SEO card under applications grid */
-body main .appsGrid + .rmCard,
-body main .appsGrid ~ .rmCard,
-body main .appGrid + .rmCard,
-body main .appGrid ~ .rmCard,
-body main .toolsGrid + .rmCard,
-body main .toolsGrid ~ .rmCard,
-body main .applicationsGrid + .rmCard,
-body main .applicationsGrid ~ .rmCard,
-body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child,
-body main section:has(a[href*="/aplicatii/"]) .rmCard:has(a[href*="servicii"]),
-body main section:has(a[href*="/aplicatii/"]) .rmCard:has(a[href*="contact"]),
-body main section:has(a[href*="/aplicatii/"]) .rmCard:has(a[href*="preturi"]){
-  display:block !important;
-  max-width:1040px !important;
-  margin:76px auto 0 !important;
-  padding:38px 42px 34px !important;
-  border-radius:26px !important;
-  border:1px solid #dbeafe !important;
-  background:linear-gradient(180deg,#ffffff 0%,#f8fcff 100%) !important;
-  box-shadow:0 22px 60px rgba(7,31,63,.08) !important;
-  position:relative !important;
-  z-index:1 !important;
-  transform:none !important;
-  overflow:hidden !important;
-}
-
-/* Title inside applications info card */
-body main .appsGrid + .rmCard h1,
-body main .appsGrid + .rmCard h2,
-body main .appsGrid ~ .rmCard h1,
-body main .appsGrid ~ .rmCard h2,
-body main .appGrid + .rmCard h1,
-body main .appGrid + .rmCard h2,
-body main .appGrid ~ .rmCard h1,
-body main .appGrid ~ .rmCard h2,
-body main .toolsGrid + .rmCard h1,
-body main .toolsGrid + .rmCard h2,
-body main .toolsGrid ~ .rmCard h1,
-body main .toolsGrid ~ .rmCard h2,
-body main .applicationsGrid + .rmCard h1,
-body main .applicationsGrid + .rmCard h2,
-body main .applicationsGrid ~ .rmCard h1,
-body main .applicationsGrid ~ .rmCard h2,
-body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h1,
-body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h2{
-  margin:0 0 20px !important;
-  padding:0 !important;
-  color:#0a2554 !important;
-  font-size:clamp(30px,3vw,42px) !important;
-  line-height:1.08 !important;
-  letter-spacing:-.045em !important;
+/* Title must sit inside the info card, never touching/escaping the border */
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h1,
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h2{
+  display: block !important;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  color: #0a2554 !important;
+  font-size: clamp(30px,3vw,42px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.045em !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 /* Text rhythm */
-body main .appsGrid + .rmCard p,
-body main .appsGrid ~ .rmCard p,
-body main .appGrid + .rmCard p,
-body main .appGrid ~ .rmCard p,
-body main .toolsGrid + .rmCard p,
-body main .toolsGrid ~ .rmCard p,
-body main .applicationsGrid + .rmCard p,
-body main .applicationsGrid ~ .rmCard p,
-body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child p{
-  color:#405269 !important;
-  font-size:18px !important;
-  line-height:1.78 !important;
-  margin:0 0 18px !important;
-  max-width:960px !important;
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child p,
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child li{
+  color: #405269 !important;
+  font-size: 18px !important;
+  line-height: 1.72 !important;
+}
+
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child p{
+  margin: 0 0 18px !important;
+  max-width: 960px !important;
+}
+
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child ul{
+  margin: 18px 0 0 22px !important;
+  padding: 0 !important;
 }
 
 /* Buttons */
-body main .appsGrid + .rmCard .actions,
-body main .appsGrid + .rmCard .btnRow,
-body main .appsGrid ~ .rmCard .actions,
-body main .appsGrid ~ .rmCard .btnRow,
-body main .appGrid + .rmCard .actions,
-body main .appGrid + .rmCard .btnRow,
-body main .appGrid ~ .rmCard .actions,
-body main .appGrid ~ .rmCard .btnRow,
-body main .toolsGrid + .rmCard .actions,
-body main .toolsGrid + .rmCard .btnRow,
-body main .toolsGrid ~ .rmCard .actions,
-body main .toolsGrid ~ .rmCard .btnRow,
-body main .applicationsGrid + .rmCard .actions,
-body main .applicationsGrid + .rmCard .btnRow,
-body main .applicationsGrid ~ .rmCard .actions,
-body main .applicationsGrid ~ .rmCard .btnRow,
-body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child .actions,
-body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child .btnRow{
-  display:flex !important;
-  flex-wrap:wrap !important;
-  gap:12px !important;
-  margin-top:26px !important;
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .btnRow,
+html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .actions{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin-top: 26px !important;
 }
 
 /* Mobile */
 @media(max-width:760px){
-  body main .appsGrid,
-  body main .appGrid,
-  body main .toolsGrid,
-  body main .applicationsGrid{
-    margin-bottom:42px !important;
+  html body main section:has(.serviceTile) .serviceGrid{
+    margin-bottom: 54px !important;
   }
 
-  body main .appsGrid + .rmCard,
-  body main .appsGrid ~ .rmCard,
-  body main .appGrid + .rmCard,
-  body main .appGrid ~ .rmCard,
-  body main .toolsGrid + .rmCard,
-  body main .toolsGrid ~ .rmCard,
-  body main .applicationsGrid + .rmCard,
-  body main .applicationsGrid ~ .rmCard,
-  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child{
-    margin-top:42px !important;
-    padding:28px 22px !important;
-    border-radius:22px !important;
+  html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
+    margin-top: 58px !important;
+    padding: 28px 22px !important;
+    border-radius: 22px !important;
   }
 
-  body main .appsGrid + .rmCard h1,
-  body main .appsGrid + .rmCard h2,
-  body main .appsGrid ~ .rmCard h1,
-  body main .appsGrid ~ .rmCard h2,
-  body main .appGrid + .rmCard h1,
-  body main .appGrid + .rmCard h2,
-  body main .appGrid ~ .rmCard h1,
-  body main .appGrid ~ .rmCard h2,
-  body main .toolsGrid + .rmCard h1,
-  body main .toolsGrid + .rmCard h2,
-  body main .toolsGrid ~ .rmCard h1,
-  body main .toolsGrid ~ .rmCard h2,
-  body main .applicationsGrid + .rmCard h1,
-  body main .applicationsGrid + .rmCard h2,
-  body main .applicationsGrid ~ .rmCard h1,
-  body main .applicationsGrid ~ .rmCard h2,
-  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h1,
-  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h2{
-    font-size:29px !important;
+  html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h1,
+  html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h2{
+    font-size: 29px !important;
   }
 
-  body main .appsGrid + .rmCard p,
-  body main .appsGrid ~ .rmCard p,
-  body main .appGrid + .rmCard p,
-  body main .appGrid ~ .rmCard p,
-  body main .toolsGrid + .rmCard p,
-  body main .toolsGrid ~ .rmCard p,
-  body main .applicationsGrid + .rmCard p,
-  body main .applicationsGrid ~ .rmCard p,
-  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child p{
-    font-size:16px !important;
-    line-height:1.65 !important;
+  html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child p,
+  html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child li{
+    font-size: 16px !important;
+    line-height: 1.65 !important;
   }
 }
 
