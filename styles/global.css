@@ -13803,3 +13803,27 @@ html body main *{
   text-decoration-thickness: auto;
 }
 
+
+/* FINAL CONTACT SOURCE CLEAN */
+.contactPhotoPair{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;
+  gap:16px!important;
+}
+
+.contactPhotoPair:has(a:only-child){
+  grid-template-columns:1fr!important;
+}
+
+.contactPhotoPair img{
+  width:100%!important;
+  height:190px!important;
+  object-fit:cover!important;
+  border-radius:18px!important;
+  display:block!important;
+}
+
+.contactPhotoPair img[src=""],
+.contactPhotoPair img[src*="/images/6.jpg"]{
+  display:none!important;
+}

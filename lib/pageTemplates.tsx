@@ -638,15 +638,40 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       <p className="contactIntro">{text.contactSubtitle}</p>
 
       <div className="contactInfoList">
-       <a href={`tel:${contact.fixed_phone.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" /><div><b>Contact</b><strong>{contact.fixed_phone}</strong></div></a>
-       <a href={`tel:${contact.phone.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" /><div><b>{text.contact}</b><strong>{contact.phone}</strong></div></a>
-       <a href={`tel:${contact.phone_alt.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/iphone.png" alt="phone" className="contactSmallIcon" /><div><b>Alt</b><strong>{contact.phone_alt}</strong></div></a>
-       <a href={`mailto:${contact.email}`}><IconVisual src="https://img.icons8.com/color/96/email.png" alt="email" className="contactSmallIcon" /><div><b>Email</b><strong>{contact.email}</strong></div></a>
-       <div className="contactInfoStatic"><IconVisual src="https://img.icons8.com/color/96/marker.png" alt="address" className="contactSmallIcon" /><div><b>{text.contact}</b><strong>{contact.address}</strong></div></div>
+       {contact.fixed_phone && (
+        <a href={`tel:${contact.fixed_phone.replaceAll(" ", "")}`}>
+         <IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" />
+         <div><b>Contact</b><strong>{contact.fixed_phone}</strong></div>
+        </a>
+       )}
+       {contact.phone && contact.phone.replaceAll(" ", "") !== contact.fixed_phone.replaceAll(" ", "") && (
+        <a href={`tel:${contact.phone.replaceAll(" ", "")}`}>
+         <IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" />
+         <div><b>{text.contact}</b><strong>{contact.phone}</strong></div>
+        </a>
+       )}
+       {contact.phone_alt && (
+        <a href={`tel:${contact.phone_alt.replaceAll(" ", "")}`}>
+         <IconVisual src="https://img.icons8.com/color/96/iphone.png" alt="phone" className="contactSmallIcon" />
+         <div><b>Alt</b><strong>{contact.phone_alt}</strong></div>
+        </a>
+       )}
+       {contact.email && (
+        <a href={`mailto:${contact.email}`}>
+         <IconVisual src="https://img.icons8.com/color/96/email.png" alt="email" className="contactSmallIcon" />
+         <div><b>Email</b><strong>{contact.email}</strong></div>
+        </a>
+       )}
+       {contact.address && (
+        <div className="contactInfoStatic">
+         <IconVisual src="https://img.icons8.com/color/96/marker.png" alt="address" className="contactSmallIcon" />
+         <div><b>{text.contact}</b><strong>{contact.address}</strong></div>
+        </div>
+       )}
       </div>
 
       <div className="contactActionRow">
-       <a className="blueBtn" href={`tel:${contact.phone.replaceAll(" ", "")}`}>{text.callNow}</a>
+       <a className="blueBtn" href={`tel:${(contact.fixed_phone || contact.phone_alt).replaceAll(" ", "")}`}>{text.callNow}</a>
        <a className="softBtn" href={contact.map_link} target="_blank" rel="noopener noreferrer">{text.openMap}</a>
       </div>
      </div>
@@ -667,10 +692,20 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
        </div>
       </div>
 
-      <div className="contactPhotoPair">
-       <a href={contact.image_one} target="_blank" rel="noopener noreferrer"><img src={contact.image_one && contact.image_one !== "/images/6.jpg" ? contact.image_one : ""} alt="Revimed PLUS+" /></a>
-       <a href={contact.image_two} target="_blank" rel="noopener noreferrer"><img src={contact.image_two} alt="Revimed PLUS+ map" /></a>
-      </div>
+      {(contact.image_one || contact.image_two) && (
+       <div className="contactPhotoPair">
+        {contact.image_one && contact.image_one !== "/images/6.jpg" && (
+         <a href={contact.image_one} target="_blank" rel="noopener noreferrer">
+          <img src={contact.image_one} alt="Revimed PLUS+" />
+         </a>
+        )}
+        {contact.image_two && (
+         <a href={contact.image_two} target="_blank" rel="noopener noreferrer">
+          <img src={contact.image_two} alt="Revimed PLUS+ map" />
+         </a>
+        )}
+       </div>
+      )}
      </aside>
     </div>
 

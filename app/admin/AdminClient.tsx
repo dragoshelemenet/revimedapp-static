@@ -655,9 +655,9 @@ export default function AdminClient({
       <form action={saveContact} className="adminFormSimple">
        <input type="hidden" name="lang" value={workingLang} />
        <div className="adminTwoCols">
-        <Field label="Contact"><input name="fixed_phone" defaultValue={contactContent?.fixed_phone || "(022) 60-50-60"} /></Field>
+        <Field label="Contact"><input name="fixed_phone" defaultValue={contactContent?.fixed_phone || "022 60 50 60"} /></Field>
         <Field label="Telefon"><input name="phone" defaultValue={contactContent?.phone || ""} /></Field>
-        <Field label="Telefon alternativ"><input name="phone_alt" defaultValue={contactContent?.phone_alt || "(+373) 079422908"} /></Field>
+        <Field label="Telefon alternativ"><input name="phone_alt" defaultValue={contactContent?.phone_alt || "+373 79 422 908"} /></Field>
         <Field label="Email"><input name="email" defaultValue={contactContent?.email || "doctor-revenco@ya.ru"} /></Field>
        </div>
        <Field label="Adresă"><input name="address" defaultValue={contactContent?.address || ""} /></Field>
