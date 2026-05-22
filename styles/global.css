@@ -13927,3 +13927,217 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child a{
   }
 }
 
+q
+
+/* APPLICATIONS PAGE — final clean layout
+   Same visual fix as services: info card stays below app cards, not glued/overlapped. */
+
+/* Apps grid breathing space */
+body main .appsGrid,
+body main .appGrid,
+body main .toolsGrid,
+body main .applicationsGrid{
+  position:relative !important;
+  z-index:2 !important;
+  margin-bottom:76px !important;
+  overflow:visible !important;
+}
+
+/* App/tool cards */
+body main .appsGrid .appTile,
+body main .appGrid .appTile,
+body main .toolsGrid .appTile,
+body main .applicationsGrid .appTile,
+body main .appsGrid .toolTile,
+body main .appGrid .toolTile,
+body main .toolsGrid .toolTile,
+body main .applicationsGrid .toolTile,
+body main .appsGrid .rmCard,
+body main .appGrid .rmCard,
+body main .toolsGrid .rmCard,
+body main .applicationsGrid .rmCard{
+  min-height:220px !important;
+  padding:30px 28px !important;
+  border-radius:22px !important;
+  background:linear-gradient(180deg,#fbfdff 0%,#f6fbff 100%) !important;
+  border:1px solid #dbeafe !important;
+  box-shadow:0 14px 34px rgba(7,31,63,.06) !important;
+  transform:none !important;
+}
+
+body main .appsGrid .appTile:hover,
+body main .appGrid .appTile:hover,
+body main .toolsGrid .appTile:hover,
+body main .applicationsGrid .appTile:hover,
+body main .appsGrid .toolTile:hover,
+body main .appGrid .toolTile:hover,
+body main .toolsGrid .toolTile:hover,
+body main .applicationsGrid .toolTile:hover{
+  transform:translateY(-4px) !important;
+  box-shadow:0 18px 42px rgba(7,31,63,.10) !important;
+}
+
+/* If applications use the same serviceTile class, style only on aplicatii page */
+body:has(a[href="/aplicatii"].active) main .serviceGrid,
+body:has(a[href$="/aplicatii"].active) main .serviceGrid,
+body main:has(.pageHero) .serviceGrid:has(a[href*="/aplicatii/"]){
+  position:relative !important;
+  z-index:2 !important;
+  margin-bottom:76px !important;
+  overflow:visible !important;
+}
+
+/* Info/SEO card under applications grid */
+body main .appsGrid + .rmCard,
+body main .appsGrid ~ .rmCard,
+body main .appGrid + .rmCard,
+body main .appGrid ~ .rmCard,
+body main .toolsGrid + .rmCard,
+body main .toolsGrid ~ .rmCard,
+body main .applicationsGrid + .rmCard,
+body main .applicationsGrid ~ .rmCard,
+body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child,
+body main section:has(a[href*="/aplicatii/"]) .rmCard:has(a[href*="servicii"]),
+body main section:has(a[href*="/aplicatii/"]) .rmCard:has(a[href*="contact"]),
+body main section:has(a[href*="/aplicatii/"]) .rmCard:has(a[href*="preturi"]){
+  display:block !important;
+  max-width:1040px !important;
+  margin:76px auto 0 !important;
+  padding:38px 42px 34px !important;
+  border-radius:26px !important;
+  border:1px solid #dbeafe !important;
+  background:linear-gradient(180deg,#ffffff 0%,#f8fcff 100%) !important;
+  box-shadow:0 22px 60px rgba(7,31,63,.08) !important;
+  position:relative !important;
+  z-index:1 !important;
+  transform:none !important;
+  overflow:hidden !important;
+}
+
+/* Title inside applications info card */
+body main .appsGrid + .rmCard h1,
+body main .appsGrid + .rmCard h2,
+body main .appsGrid ~ .rmCard h1,
+body main .appsGrid ~ .rmCard h2,
+body main .appGrid + .rmCard h1,
+body main .appGrid + .rmCard h2,
+body main .appGrid ~ .rmCard h1,
+body main .appGrid ~ .rmCard h2,
+body main .toolsGrid + .rmCard h1,
+body main .toolsGrid + .rmCard h2,
+body main .toolsGrid ~ .rmCard h1,
+body main .toolsGrid ~ .rmCard h2,
+body main .applicationsGrid + .rmCard h1,
+body main .applicationsGrid + .rmCard h2,
+body main .applicationsGrid ~ .rmCard h1,
+body main .applicationsGrid ~ .rmCard h2,
+body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h1,
+body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h2{
+  margin:0 0 20px !important;
+  padding:0 !important;
+  color:#0a2554 !important;
+  font-size:clamp(30px,3vw,42px) !important;
+  line-height:1.08 !important;
+  letter-spacing:-.045em !important;
+}
+
+/* Text rhythm */
+body main .appsGrid + .rmCard p,
+body main .appsGrid ~ .rmCard p,
+body main .appGrid + .rmCard p,
+body main .appGrid ~ .rmCard p,
+body main .toolsGrid + .rmCard p,
+body main .toolsGrid ~ .rmCard p,
+body main .applicationsGrid + .rmCard p,
+body main .applicationsGrid ~ .rmCard p,
+body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child p{
+  color:#405269 !important;
+  font-size:18px !important;
+  line-height:1.78 !important;
+  margin:0 0 18px !important;
+  max-width:960px !important;
+}
+
+/* Buttons */
+body main .appsGrid + .rmCard .actions,
+body main .appsGrid + .rmCard .btnRow,
+body main .appsGrid ~ .rmCard .actions,
+body main .appsGrid ~ .rmCard .btnRow,
+body main .appGrid + .rmCard .actions,
+body main .appGrid + .rmCard .btnRow,
+body main .appGrid ~ .rmCard .actions,
+body main .appGrid ~ .rmCard .btnRow,
+body main .toolsGrid + .rmCard .actions,
+body main .toolsGrid + .rmCard .btnRow,
+body main .toolsGrid ~ .rmCard .actions,
+body main .toolsGrid ~ .rmCard .btnRow,
+body main .applicationsGrid + .rmCard .actions,
+body main .applicationsGrid + .rmCard .btnRow,
+body main .applicationsGrid ~ .rmCard .actions,
+body main .applicationsGrid ~ .rmCard .btnRow,
+body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child .actions,
+body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child .btnRow{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:12px !important;
+  margin-top:26px !important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  body main .appsGrid,
+  body main .appGrid,
+  body main .toolsGrid,
+  body main .applicationsGrid{
+    margin-bottom:42px !important;
+  }
+
+  body main .appsGrid + .rmCard,
+  body main .appsGrid ~ .rmCard,
+  body main .appGrid + .rmCard,
+  body main .appGrid ~ .rmCard,
+  body main .toolsGrid + .rmCard,
+  body main .toolsGrid ~ .rmCard,
+  body main .applicationsGrid + .rmCard,
+  body main .applicationsGrid ~ .rmCard,
+  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child{
+    margin-top:42px !important;
+    padding:28px 22px !important;
+    border-radius:22px !important;
+  }
+
+  body main .appsGrid + .rmCard h1,
+  body main .appsGrid + .rmCard h2,
+  body main .appsGrid ~ .rmCard h1,
+  body main .appsGrid ~ .rmCard h2,
+  body main .appGrid + .rmCard h1,
+  body main .appGrid + .rmCard h2,
+  body main .appGrid ~ .rmCard h1,
+  body main .appGrid ~ .rmCard h2,
+  body main .toolsGrid + .rmCard h1,
+  body main .toolsGrid + .rmCard h2,
+  body main .toolsGrid ~ .rmCard h1,
+  body main .toolsGrid ~ .rmCard h2,
+  body main .applicationsGrid + .rmCard h1,
+  body main .applicationsGrid + .rmCard h2,
+  body main .applicationsGrid ~ .rmCard h1,
+  body main .applicationsGrid ~ .rmCard h2,
+  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h1,
+  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child h2{
+    font-size:29px !important;
+  }
+
+  body main .appsGrid + .rmCard p,
+  body main .appsGrid ~ .rmCard p,
+  body main .appGrid + .rmCard p,
+  body main .appGrid ~ .rmCard p,
+  body main .toolsGrid + .rmCard p,
+  body main .toolsGrid ~ .rmCard p,
+  body main .applicationsGrid + .rmCard p,
+  body main .applicationsGrid ~ .rmCard p,
+  body main section:has(a[href*="/aplicatii/"]) > .rmShell > .rmCard:last-child p{
+    font-size:16px !important;
+    line-height:1.65 !important;
+  }
+}
+
