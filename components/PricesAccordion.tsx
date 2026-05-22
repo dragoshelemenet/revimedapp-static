@@ -2,6 +2,14 @@
 
 import { useState } from "react";
 
+function formatPriceValue(value: string | number | null | undefined) {
+  const raw = String(value ?? "").trim();
+  if (!raw) return "";
+  if (/\bMDL\b|EUR|€|lei|gratis|gratuit|la cerere/i.test(raw)) return raw;
+  if (/^\d+(?:[.,]\d+)?$/.test(raw)) return `${raw} MDL`;
+  return raw;
+}
+
 type Price = {
  id: number;
  category: string;
