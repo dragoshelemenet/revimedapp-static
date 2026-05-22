@@ -12836,3 +12836,145 @@ body main section.pageHero.blogDetailHero .lead{
     font-size: 16px !important;
   }
 }
+
+/* FINAL BLOG POST HERO: same layout/height as normal inner pages, not homepage */
+body main section.blogPostHero,
+body main section.blogDetailHero,
+body main section.pageHero.blogPostHero,
+body main section.pageHero.blogDetailHero{
+  position: relative !important;
+  width: 100% !important;
+  min-height: 260px !important;
+  height: 260px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #08234a !important;
+  background-image:
+    linear-gradient(90deg, rgba(8,28,55,.82) 0%, rgba(8,48,82,.64) 48%, rgba(11,143,216,.42) 100%),
+    url("/images/medical-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Remove all old white/black overlays from blog hero */
+body main section.blogPostHero::before,
+body main section.blogPostHero::after,
+body main section.blogDetailHero::before,
+body main section.blogDetailHero::after,
+body main section.pageHero.blogPostHero::before,
+body main section.pageHero.blogPostHero::after,
+body main section.pageHero.blogDetailHero::before,
+body main section.pageHero.blogDetailHero::after{
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Same text alignment as other inner pages */
+body main section.blogPostHero > .rmShell,
+body main section.blogDetailHero > .rmShell,
+body main section.pageHero.blogPostHero > .rmShell,
+body main section.pageHero.blogDetailHero > .rmShell{
+  width: min(860px, calc(100% - 32px)) !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Blog title same visual scale as inner pages */
+body main section.blogPostHero .crumb,
+body main section.blogDetailHero .crumb,
+body main section.pageHero.blogPostHero .crumb,
+body main section.pageHero.blogDetailHero .crumb{
+  margin: 0 0 10px !important;
+  color: rgba(255,255,255,.92) !important;
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+  font-weight: 900 !important;
+  background: transparent !important;
+}
+
+body main section.blogPostHero h1,
+body main section.blogDetailHero h1,
+body main section.pageHero.blogPostHero h1,
+body main section.pageHero.blogDetailHero h1{
+  max-width: 860px !important;
+  margin: 0 0 12px !important;
+  color: #fff !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  text-shadow: none !important;
+  font-size: clamp(42px, 4.4vw, 64px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.055em !important;
+  font-weight: 950 !important;
+}
+
+body main section.blogPostHero .lead,
+body main section.blogDetailHero .lead,
+body main section.pageHero.blogPostHero .lead,
+body main section.pageHero.blogDetailHero .lead{
+  max-width: 760px !important;
+  margin: 0 !important;
+  color: rgba(255,255,255,.9) !important;
+  background: transparent !important;
+  font-size: 19px !important;
+  line-height: 1.45 !important;
+}
+
+/* Article starts normally after hero */
+.blogPostSection{
+  padding-top: 64px !important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  body main section.blogPostHero,
+  body main section.blogDetailHero,
+  body main section.pageHero.blogPostHero,
+  body main section.pageHero.blogDetailHero{
+    min-height: 240px !important;
+    height: 240px !important;
+  }
+
+  body main section.blogPostHero > .rmShell,
+  body main section.blogDetailHero > .rmShell,
+  body main section.pageHero.blogPostHero > .rmShell,
+  body main section.pageHero.blogDetailHero > .rmShell{
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+  }
+
+  body main section.blogPostHero h1,
+  body main section.blogDetailHero h1,
+  body main section.pageHero.blogPostHero h1,
+  body main section.pageHero.blogDetailHero h1{
+    font-size: clamp(30px, 9vw, 42px) !important;
+    line-height: 1.05 !important;
+  }
+
+  body main section.blogPostHero .lead,
+  body main section.blogDetailHero .lead,
+  body main section.pageHero.blogPostHero .lead,
+  body main section.pageHero.blogDetailHero .lead{
+    font-size: 15px !important;
+  }
+
+  .blogPostSection{
+    padding-top: 36px !important;
+  }
+}
