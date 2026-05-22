@@ -13620,18 +13620,7 @@ html body main section:has(.serviceTile) .rmCard .btnRow{
   }
 }
 
-/* FINAL SERVICES PAGE INFO CARD — scoped and safe
-   Fixes overlap under service cards without adding inner title padding. */
 
-/* Space is created between the grid and the info card, not inside the title area */
-html body main .servicesGrid + .serviceSeoText,
-html body main .serviceGrid + .serviceSeoText,
-html body main .servicesGrid + .serviceSeoDetailsBlock,
-html body main .serviceGrid + .serviceSeoDetailsBlock,
-html body main .serviceTileGrid + .serviceSeoText,
-html body main .serviceTileGrid + .serviceSeoDetailsBlock{
-  margin-top: 42px !important;
-}
 
 /* Fallback for the real layout: if the info card is in the same section after service tiles */
 html body main section:has(.serviceTile) .serviceSeoText,
@@ -13693,6 +13682,74 @@ html body main section:has(.serviceTile) + .rmSection{
   html body main section:has(.serviceTile) + section,
   html body main section:has(.serviceTile) + .rmSection{
     margin-top: 20px !important;
+  }
+}
+
+/* TRUE FINAL SERVICES INFO CARD FIX
+   Moves the whole SEO/info card down. Does NOT add padding above the title. */
+
+/* The service cards grid must keep its normal layout */
+html body main section:has(.serviceTile){
+  overflow: visible !important;
+}
+
+/* Target only the informational card with CTA links under services */
+html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]),
+html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]),
+html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]),
+html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]){
+  margin-top: 92px !important;
+  clear: both !important;
+  position: relative !important;
+  z-index: 1 !important;
+  transform: none !important;
+}
+
+/* Title stays inside the card, no extra top padding */
+html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) h1,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) h2,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) h1,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) h2,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) h1,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) h2,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) h1,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) h2{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  line-height: 1.08 !important;
+}
+
+/* Do not allow old rules to cancel the gap after the service grid */
+html body main section:has(.serviceTile) + section,
+html body main section:has(.serviceTile) + .rmSection{
+  margin-top: 42px !important;
+}
+
+/* Better reading rhythm only */
+html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) p,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) p,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) p,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) p{
+  line-height: 1.72 !important;
+}
+
+/* Button spacing */
+html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]) .btnRow,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]) .btnRow,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]) .btnRow,
+html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]) .btnRow{
+  margin-top: 22px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+@media(max-width:760px){
+  html body main section:has(.serviceTile) .rmCard:has(a[href*="preturi"]),
+  html body main section:has(.serviceTile) .rmCard:has(a[href*="program"]),
+  html body main section:has(.serviceTile) .rmCard:has(a[href*="aplicatii"]),
+  html body main section:has(.serviceTile) .rmCard:has(a[href*="teste"]){
+    margin-top: 46px !important;
   }
 }
 
