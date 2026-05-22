@@ -13229,3 +13229,230 @@ html body main section.rmSection.blogPostSection .blogArticleCard{
     width: 100% !important;
   }
 }
+
+/* FINAL CLEAN BLOG ARTICLE OVERRIDE — one source of truth at file end */
+
+/* Reduce gap between blog hero and article card */
+html body main section.pageHero.blogPostHero + section.rmSection,
+html body main section.blogPostHero + section.rmSection,
+html body main section.rmSection.blogPostSection,
+html body main section.blogPostSection{
+  padding-top: 20px !important;
+  margin-top: 0 !important;
+  padding-bottom: 70px !important;
+}
+
+/* Keep blog hero blue/image, flexible height for long titles */
+html body main section.pageHero.blogPostHero,
+html body main section.blogPostHero{
+  min-height: 250px !important;
+  height: auto !important;
+  padding: 42px 0 42px !important;
+  background-color: #0b8fd8 !important;
+  background-image:
+    linear-gradient(90deg, rgba(8,35,74,.74) 0%, rgba(8,58,98,.54) 48%, rgba(11,143,216,.38) 100%),
+    url("/images/medical-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  overflow: visible !important;
+}
+
+/* No pseudo overlays on blog hero */
+html body main section.pageHero.blogPostHero::before,
+html body main section.pageHero.blogPostHero::after,
+html body main section.blogPostHero::before,
+html body main section.blogPostHero::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* Blog article card */
+html body main .blogPostArticle,
+html body main .blogArticleCard{
+  max-width: 760px !important;
+  margin-top: 0 !important;
+  padding: 26px !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  border: 1px solid #dcecf8 !important;
+  box-shadow: 0 24px 70px rgba(8,35,74,.08) !important;
+}
+
+/* Top image */
+html body main .blogPostArticle .postHeroImage,
+html body main .blogArticleCard .postHeroImage{
+  height: 300px !important;
+  margin: 0 0 22px !important;
+  border-radius: 16px !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* Article text */
+html body main .blogReadableContent{
+  font-size: 16px !important;
+  line-height: 1.74 !important;
+  color: #34445c !important;
+}
+
+html body main .blogReadableContent p,
+html body main .blogPrettyParagraph{
+  margin: 0 0 16px !important;
+  padding: 0 !important;
+  color: #34445c !important;
+  font-weight: 500 !important;
+}
+
+/* Intro */
+html body main .blogReadableContent .blogIntroBox{
+  margin: 0 0 18px !important;
+  padding: 18px 20px !important;
+  background: linear-gradient(135deg, #eef8ff, #ffffff) !important;
+  border-left: 5px solid #0b8fd8 !important;
+  border-radius: 16px !important;
+  color: #10233f !important;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  font-weight: 850 !important;
+}
+
+/* Headings */
+html body main .blogReadableContent .blogAutoHeading{
+  margin: 28px 0 14px !important;
+  padding: 12px 16px !important;
+  border-radius: 14px !important;
+  background: #eef8ff !important;
+  border-left: 5px solid #0b8fd8 !important;
+  color: #08234a !important;
+  font-size: 20px !important;
+  line-height: 1.25 !important;
+  font-weight: 950 !important;
+}
+
+/* Highlights */
+html body main .blogReadableContent .blogAutoMark{
+  background: #fff3bf !important;
+  color: #08234a !important;
+  padding: 1px 5px !important;
+  border-radius: 6px !important;
+  font-weight: 850 !important;
+}
+
+/* Important/disclaimer/phones */
+html body main .blogImportantBox,
+html body main .blogDisclaimerLine{
+  margin: 18px 0 !important;
+  padding: 14px 16px !important;
+  border-radius: 14px !important;
+  border: 1px solid #ffd9a8 !important;
+  background: #fff8ef !important;
+  color: #10233f !important;
+  font-weight: 800 !important;
+}
+
+html body main .blogPhoneLine{
+  display: block !important;
+  margin: 8px 0 !important;
+  padding: 9px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid #cfe7f8 !important;
+  background: #f4fbff !important;
+  color: #10233f !important;
+  font-weight: 800 !important;
+}
+
+/* Download block */
+html body main .blogExportBox{
+  margin-top: 30px !important;
+  padding: 20px !important;
+  border-radius: 18px !important;
+  border: 1px solid #cfe7f8 !important;
+  background: linear-gradient(135deg, #eef8ff, #ffffff) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  box-shadow: 0 14px 36px rgba(8,35,74,.06) !important;
+}
+
+html body main .blogExportText{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+html body main .blogExportText strong{
+  color: #08234a !important;
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  font-weight: 950 !important;
+}
+
+html body main .blogExportText span{
+  color: #64748b !important;
+  font-size: 14px !important;
+}
+
+html body main .blogExportBtn{
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: #0b8fd8 !important;
+  color: #fff !important;
+  font-weight: 900 !important;
+  padding: 13px 18px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  box-shadow: 0 14px 30px rgba(11,143,216,.25) !important;
+}
+
+@media(max-width:760px){
+  html body main section.pageHero.blogPostHero,
+  html body main section.blogPostHero{
+    min-height: 220px !important;
+    padding: 30px 0 32px !important;
+  }
+
+  html body main section.pageHero.blogPostHero + section.rmSection,
+  html body main section.blogPostHero + section.rmSection,
+  html body main section.rmSection.blogPostSection,
+  html body main section.blogPostSection{
+    padding-top: 18px !important;
+    padding-bottom: 52px !important;
+  }
+
+  html body main .blogPostArticle,
+  html body main .blogArticleCard{
+    width: calc(100% - 28px) !important;
+    padding: 16px !important;
+  }
+
+  html body main .blogPostArticle .postHeroImage,
+  html body main .blogArticleCard .postHeroImage{
+    height: 220px !important;
+  }
+
+  html body main .blogReadableContent{
+    font-size: 15px !important;
+    line-height: 1.68 !important;
+  }
+
+  html body main .blogReadableContent .blogIntroBox{
+    font-size: 16px !important;
+    padding: 15px 16px !important;
+  }
+
+  html body main .blogReadableContent .blogAutoHeading{
+    font-size: 18px !important;
+    padding: 11px 14px !important;
+  }
+
+  html body main .blogExportBox{
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  html body main .blogExportBtn{
+    width: 100% !important;
+  }
+}
