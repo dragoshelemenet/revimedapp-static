@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 type Lang = "en" | "ru" | "ua";
 
@@ -26,7 +27,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "Electrostimulare și proceduri electroterapeutice pentru durere, mușchi și recuperare.":
       "Electrostimulation and electrotherapy procedures for pain, muscles and recovery.",
 
-    "Revimed PLUS+ medical services in Chisinau": "Revimed PLUS+ medical services in Chisinau"
+    "Revimed PLUS+ medical services in Chisinau":
+      "Revimed PLUS+ medical services in Chisinau"
   },
 
   ru: {
@@ -50,7 +52,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "Electrostimulare și proceduri electroterapeutice pentru durere, mușchi și recuperare.":
       "Электростимуляция и электротерапевтические процедуры при боли, для мышц и восстановления.",
 
-    "Revimed PLUS+ medical services in Chisinau": "Медицинские услуги Revimed PLUS+ в Кишинёве"
+    "Revimed PLUS+ medical services in Chisinau":
+      "Медицинские услуги Revimed PLUS+ в Кишинёве"
   },
 
   ua: {
@@ -74,72 +77,74 @@ const translations: Record<Lang, Record<string, string>> = {
     "Electrostimulare și proceduri electroterapeutice pentru durere, mușchi și recuperare.":
       "Електростимуляція та електротерапевтичні процедури при болю, для м’язів і відновлення.",
 
-    "Revimed PLUS+ medical services in Chisinau": "Медичні послуги Revimed PLUS+ у Кишиневі"
+    "Revimed PLUS+ medical services in Chisinau":
+      "Медичні послуги Revimed PLUS+ у Кишиневі"
   }
 };
 
-function getLang(): Lang | null {
-  const first = window.location.pathname.split("/").filter(Boolean)[0];
+function getLang(pathname: string | null): Lang | null {
+  const first = (pathname || "").split("/").filter(Boolean)[0];
   if (first === "en" || first === "ru" || first === "ua") return first;
   return null;
+}
+
+function shouldRun(pathname: string | null) {
+  const path = pathname || "";
+  return path.includes("/servicii") || path.includes("/services");
 }
 
 function normalize(value: string) {
   return value.replace(/\s+/g, " ").trim();
 }
 
-function translateNodeText(node: Text, dict: Record<string, string>) {
-  const raw = node.nodeValue || "";
-  const clean = normalize(raw);
-  if (!clean) return;
+function translateTextNodes(root: HTMLElement, dict: Record<string, string>) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes: Text[] = [];
 
-  for (const [from, to] of Object.entries(dict)) {
-    if (clean === from) {
-      node.nodeValue = raw.replace(raw.trim(), to);
-      return;
+  while (walker.nextNode()) {
+    const node = walker.currentNode as Text;
+    const parent = node.parentElement;
+
+    if (!parent) continue;
+    if (["SCRIPT", "STYLE", "TEXTAREA", "INPUT"].includes(parent.tagName)) continue;
+
+    nodes.push(node);
+  }
+
+  for (const node of nodes) {
+    const raw = node.nodeValue || "";
+    const clean = normalize(raw);
+    const translated = dict[clean];
+
+    if (translated && translated !== clean) {
+      node.nodeValue = raw.replace(raw.trim(), translated);
     }
   }
 }
 
-function runTranslation() {
-  const lang = getLang();
-  if (!lang) return;
-
-  const dict = translations[lang];
-
-  const walker = document.createTreeWalker(
-    document.body,
-    NodeFilter.SHOW_TEXT,
-    {
-      acceptNode(node) {
-        const parent = node.parentElement;
-        if (!parent) return NodeFilter.FILTER_REJECT;
-        if (["SCRIPT", "STYLE", "TEXTAREA", "INPUT"].includes(parent.tagName)) {
-          return NodeFilter.FILTER_REJECT;
-        }
-        return NodeFilter.FILTER_ACCEPT;
-      }
-    }
-  );
-
-  const nodes: Text[] = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode as Text);
-  nodes.forEach((node) => translateNodeText(node, dict));
-}
-
 export default function ServiceCardsTranslationFixer() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    runTranslation();
+    const lang = getLang(pathname);
+    if (!lang) return;
+    if (!shouldRun(pathname)) return;
 
-    const observer = new MutationObserver(() => runTranslation());
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      characterData: true
-    });
+    const dict = translations[lang];
 
-    return () => observer.disconnect();
-  }, []);
+    const timer1 = window.setTimeout(() => {
+      translateTextNodes(document.body, dict);
+    }, 80);
+
+    const timer2 = window.setTimeout(() => {
+      translateTextNodes(document.body, dict);
+    }, 500);
+
+    return () => {
+      window.clearTimeout(timer1);
+      window.clearTimeout(timer2);
+    };
+  }, [pathname]);
 
   return null;
 }
