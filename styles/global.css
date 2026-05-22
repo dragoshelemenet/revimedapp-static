@@ -13827,3 +13827,69 @@ html body main *{
 .contactPhotoPair img[src*="/images/6.jpg"]{
   display:none!important;
 }
+
+/* ABSOLUTE FINAL BLOG POST GAP FIX — must be last in file */
+
+/* Blog post hero keeps image/blue style, but does not create extra bottom gap */
+html body main section.pageHero.blogPostHero,
+html body main section.blogPostHero{
+  margin-bottom: 0 !important;
+  padding-bottom: 42px !important;
+  min-height: 250px !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* The section after blog hero must start immediately */
+html body main section.pageHero.blogPostHero + section,
+html body main section.blogPostHero + section,
+html body main section.blogPostSection,
+html body main section.rmSection.blogPostSection{
+  margin-top: -82px !important;
+  padding-top: 0 !important;
+  position: relative !important;
+  z-index: 8 !important;
+}
+
+/* Remove hidden shell/top padding inside blog section */
+html body main section.blogPostSection > .rmShell,
+html body main section.rmSection.blogPostSection > .rmShell,
+html body main section.pageHero.blogPostHero + section > .rmShell,
+html body main section.blogPostHero + section > .rmShell{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Article card itself starts at top of its section */
+html body main section.blogPostSection .blogPostArticle,
+html body main section.rmSection.blogPostSection .blogPostArticle,
+html body main section.blogPostSection .blogArticleCard,
+html body main section.rmSection.blogPostSection .blogArticleCard,
+html body main .blogPostArticle,
+html body main .blogArticleCard{
+  margin-top: 0 !important;
+}
+
+/* Keep the card readable and beautiful */
+html body main .blogPostArticle,
+html body main .blogArticleCard{
+  position: relative !important;
+  z-index: 9 !important;
+  max-width: 820px !important;
+}
+
+/* Mobile: smaller overlap */
+@media(max-width:760px){
+  html body main section.pageHero.blogPostHero + section,
+  html body main section.blogPostHero + section,
+  html body main section.blogPostSection,
+  html body main section.rmSection.blogPostSection{
+    margin-top: -38px !important;
+    padding-top: 0 !important;
+  }
+
+  html body main section.pageHero.blogPostHero,
+  html body main section.blogPostHero{
+    padding-bottom: 34px !important;
+  }
+}
