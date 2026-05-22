@@ -5,9 +5,9 @@ db.exec(`
 CREATE TABLE IF NOT EXISTS contact_content (
  id INTEGER PRIMARY KEY AUTOINCREMENT,
  lang TEXT NOT NULL DEFAULT 'ro' UNIQUE,
- fixed_phone TEXT NOT NULL DEFAULT '(022) 60-50-60',
+ fixed_phone TEXT NOT NULL DEFAULT '022 60 50 60',
  phone TEXT NOT NULL DEFAULT '',
- phone_alt TEXT NOT NULL DEFAULT '(+373) 079422908',
+ phone_alt TEXT NOT NULL DEFAULT '+373 79 422 908',
  email TEXT NOT NULL DEFAULT 'doctor-revenco@ya.ru',
  address TEXT NOT NULL DEFAULT 'str. Mircea cel Bătrân 13/2, Sector Ciocana, Chișinău',
  hours_week TEXT NOT NULL DEFAULT 'De luni până vineri: 09:00 - 16:00',
@@ -77,6 +77,18 @@ const insertBlock = db.prepare(`
  VALUES (?, ?, ?, ?, ?, ?)
 `);
 defaults.forEach((row) => insertBlock.run(...row));
+
+// Final contact phone normalization:
+// fixed_phone is the main visible contact number, phone is optional and must not duplicate it.
+db.exec(`
+ UPDATE contact_content
+ SET
+  fixed_phone = '022 60 50 60',
+  phone = '',
+  phone_alt = '+373 79 422 908'
+ WHERE lang IN ('ro','en','ru','ua');
+`);
+
 
 export type ContactContent = {
  id: number;

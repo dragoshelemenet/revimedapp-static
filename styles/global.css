@@ -13791,3 +13791,15 @@ html body main [class*="map"] img[src=""],
 html body main [class*="media"] img[src=""]{
   display:none!important;
 }
+
+/* FINAL CONTACT PHONE FIX */
+html body main img[src=""],
+html body main img[src*="/images/6.jpg"]{
+  display:none!important;
+}
+
+/* Keep valid phone values visible */
+html body main *{
+  text-decoration-thickness: auto;
+}
+
