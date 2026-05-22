@@ -624,7 +624,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       <p className="contactIntro">{text.contactSubtitle}</p>
 
       <div className="contactInfoList">
-       <a href={`tel:${contact.fixed_phone.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" /><div><b>Fix</b><strong>{contact.fixed_phone}</strong></div></a>
+       <a href={`tel:${contact.fixed_phone.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" /><div><b>Contact</b><strong>{contact.fixed_phone}</strong></div></a>
        <a href={`tel:${contact.phone.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" /><div><b>{text.contact}</b><strong>{contact.phone}</strong></div></a>
        <a href={`tel:${contact.phone_alt.replaceAll(" ", "")}`}><IconVisual src="https://img.icons8.com/color/96/iphone.png" alt="phone" className="contactSmallIcon" /><div><b>Alt</b><strong>{contact.phone_alt}</strong></div></a>
        <a href={`mailto:${contact.email}`}><IconVisual src="https://img.icons8.com/color/96/email.png" alt="email" className="contactSmallIcon" /><div><b>Email</b><strong>{contact.email}</strong></div></a>
