@@ -13448,3 +13448,110 @@ html body main .blogArticleCard .postHeroImage{
   }
 }
 
+
+/* FINAL PRICES PAGE POLISH */
+
+/* Remove weird white strip after Prices hero */
+html body main section.pageHero + section:has(.priceConverter),
+html body main section.pageHero + section:has(.pricesConverter),
+html body main section.pageHero + section:has(.currencyConverter),
+html body main section.pageHero + section:has(select),
+html body main section.rmSection:has(.priceConverter),
+html body main section.rmSection:has(.pricesConverter),
+html body main section.rmSection:has(.currencyConverter){
+  background:#f4f9fe!important;
+  margin-top:0!important;
+  padding-top:32px!important;
+}
+
+/* If the first section after hero is the prices area, make it flow cleanly */
+html body main section.pageHero + section.rmSection{
+  border-top:0!important;
+}
+
+/* Prices page card should sit on the same soft blue background */
+html body main section:has(.priceConverter) .rmShell,
+html body main section:has(.pricesConverter) .rmShell,
+html body main section:has(.currencyConverter) .rmShell{
+  background:transparent!important;
+}
+
+/* Generic converter layout polish */
+html body main .priceConverter,
+html body main .pricesConverter,
+html body main .currencyConverter,
+html body main [class*="converter"],
+html body main [class*="Converter"]{
+  align-items:center!important;
+}
+
+/* Result badge polish */
+html body main [class*="result"],
+html body main [class*="Result"]{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  line-height:1!important;
+  min-width:112px!important;
+  min-height:82px!important;
+  padding:10px 16px!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+}
+
+/* Small "Rezultat" label */
+html body main [class*="result"] small,
+html body main [class*="Result"] small,
+html body main [class*="result"] span:first-child,
+html body main [class*="Result"] span:first-child{
+  display:block!important;
+  font-size:12px!important;
+  font-weight:800!important;
+  line-height:1.05!important;
+  opacity:.9!important;
+  margin:0 0 3px!important;
+  letter-spacing:.02em!important;
+}
+
+/* Big amount */
+html body main [class*="result"] strong,
+html body main [class*="Result"] strong,
+html body main [class*="result"] b,
+html body main [class*="Result"] b{
+  display:block!important;
+  font-size:31px!important;
+  line-height:.95!important;
+  font-weight:900!important;
+  margin:0!important;
+}
+
+/* Currency line */
+html body main [class*="result"] em,
+html body main [class*="Result"] em{
+  display:block!important;
+  font-style:normal!important;
+  font-size:25px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  margin:2px 0 0!important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  html body main section.pageHero + section:has(.priceConverter),
+  html body main section.pageHero + section:has(.pricesConverter),
+  html body main section.pageHero + section:has(.currencyConverter),
+  html body main section.rmSection:has(.priceConverter),
+  html body main section.rmSection:has(.pricesConverter),
+  html body main section.rmSection:has(.currencyConverter){
+    padding-top:24px!important;
+  }
+
+  html body main [class*="result"],
+  html body main [class*="Result"]{
+    width:100%!important;
+    min-height:72px!important;
+  }
+}
