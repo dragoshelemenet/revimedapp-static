@@ -7,3 +7,9 @@ out
 data/*.sqlite
 data/*.sqlite-journal
 .DS_Store
+
+# Local generated files
+*.sqlite-shm
+*.sqlite-wal
+*.tsbuildinfo
+.next/
