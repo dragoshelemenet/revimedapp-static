@@ -12978,3 +12978,161 @@ body main section.pageHero.blogDetailHero .lead{
     padding-top: 36px !important;
   }
 }
+
+/* FINAL TRUE BLOG POST HERO:
+   - blue/image like other inner pages
+   - not black
+   - not white
+   - auto height so long blog titles fit
+*/
+html body main section.pageHero.blogPostHero,
+html body main section.blogPostHero,
+html body main section.pageHero.blogDetailHero,
+html body main section.blogDetailHero{
+  position: relative !important;
+  width: 100% !important;
+  min-height: 260px !important;
+  height: auto !important;
+  padding: 52px 0 56px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  background-color: #0b4f85 !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(8, 35, 74, .72) 0%,
+      rgba(8, 58, 98, .55) 45%,
+      rgba(11, 143, 216, .35) 100%
+    ),
+    url("/images/medical-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Remove old black/white overlays on blog hero */
+html body main section.pageHero.blogPostHero::before,
+html body main section.pageHero.blogPostHero::after,
+html body main section.blogPostHero::before,
+html body main section.blogPostHero::after,
+html body main section.pageHero.blogDetailHero::before,
+html body main section.pageHero.blogDetailHero::after,
+html body main section.blogDetailHero::before,
+html body main section.blogDetailHero::after{
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Same text alignment as inner pages */
+html body main section.pageHero.blogPostHero > .rmShell,
+html body main section.blogPostHero > .rmShell,
+html body main section.pageHero.blogDetailHero > .rmShell,
+html body main section.blogDetailHero > .rmShell{
+  width: min(860px, calc(100% - 32px)) !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 2 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Blog crumb */
+html body main section.pageHero.blogPostHero .crumb,
+html body main section.blogPostHero .crumb,
+html body main section.pageHero.blogDetailHero .crumb,
+html body main section.blogDetailHero .crumb{
+  margin: 0 0 10px !important;
+  color: rgba(255,255,255,.94) !important;
+  font-size: 15px !important;
+  line-height: 1.35 !important;
+  font-weight: 900 !important;
+  background: transparent !important;
+}
+
+/* Blog title: can wrap naturally, no clipping */
+html body main section.pageHero.blogPostHero h1,
+html body main section.blogPostHero h1,
+html body main section.pageHero.blogDetailHero h1,
+html body main section.blogDetailHero h1{
+  max-width: 860px !important;
+  margin: 0 0 12px !important;
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  text-shadow: 0 10px 30px rgba(0,0,0,.18) !important;
+  font-size: clamp(36px, 4.1vw, 58px) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -.052em !important;
+  font-weight: 950 !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+/* Blog excerpt */
+html body main section.pageHero.blogPostHero .lead,
+html body main section.blogPostHero .lead,
+html body main section.pageHero.blogDetailHero .lead,
+html body main section.blogDetailHero .lead{
+  max-width: 760px !important;
+  margin: 0 !important;
+  color: rgba(255,255,255,.9) !important;
+  background: transparent !important;
+  font-size: 18px !important;
+  line-height: 1.45 !important;
+  overflow: visible !important;
+}
+
+/* Keep article spacing normal */
+.blogPostSection{
+  padding-top: 56px !important;
+}
+
+/* Mobile blog post hero */
+@media(max-width:760px){
+  html body main section.pageHero.blogPostHero,
+  html body main section.blogPostHero,
+  html body main section.pageHero.blogDetailHero,
+  html body main section.blogDetailHero{
+    min-height: 230px !important;
+    height: auto !important;
+    padding: 34px 0 38px !important;
+  }
+
+  html body main section.pageHero.blogPostHero > .rmShell,
+  html body main section.blogPostHero > .rmShell,
+  html body main section.pageHero.blogDetailHero > .rmShell,
+  html body main section.blogDetailHero > .rmShell{
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+  }
+
+  html body main section.pageHero.blogPostHero h1,
+  html body main section.blogPostHero h1,
+  html body main section.pageHero.blogDetailHero h1,
+  html body main section.blogDetailHero h1{
+    font-size: clamp(28px, 8.5vw, 40px) !important;
+    line-height: 1.06 !important;
+  }
+
+  html body main section.pageHero.blogPostHero .lead,
+  html body main section.blogPostHero .lead,
+  html body main section.pageHero.blogDetailHero .lead,
+  html body main section.blogDetailHero .lead{
+    font-size: 15px !important;
+  }
+
+  .blogPostSection{
+    padding-top: 34px !important;
+  }
+}
