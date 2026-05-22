@@ -364,12 +364,15 @@ function addDownloadBox(article: HTMLElement) {
 
 export default function BlogArticleEnhancer() {
   useEffect(() => {
-    enhanceArticle();
+    if (!isBlogPostPage()) return;
 
-    const observer = new MutationObserver(() => enhanceArticle());
-    observer.observe(document.body, { childList: true, subtree: true });
+    const timer1 = window.setTimeout(() => enhanceArticle(), 80);
+    const timer2 = window.setTimeout(() => enhanceArticle(), 450);
 
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(timer1);
+      window.clearTimeout(timer2);
+    };
   }, []);
 
   return null;

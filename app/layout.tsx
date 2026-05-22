@@ -13,7 +13,6 @@ import { JsonLdBlock, localMedicalBusinessJsonLd } from "@/lib/seoAdvanced";
 import BlogArticleEnhancer from "@/components/BlogArticleEnhancer";
 import SiteTranslationFixer from "@/components/SiteTranslationFixer";
 import HeroBottomScrollHint from "@/components/HeroBottomScrollHint";
-import ServiceCardsTranslationFixer from "@/components/ServiceCardsTranslationFixer";
 export const metadata: Metadata = {
  metadataBase: new URL(site.url),
  title: {
@@ -99,8 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
            <BlogArticleEnhancer />
               <SiteTranslationFixer />
                     <HeroBottomScrollHint />
-              <ServiceCardsTranslationFixer />
-      </body>
+            </body>
   </html>
  );
 }
