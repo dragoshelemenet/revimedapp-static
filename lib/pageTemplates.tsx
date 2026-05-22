@@ -97,6 +97,125 @@ function isCorrectBlogLanguage(post: any, lang: Lang) {
   return true;
 }
 
+
+const serviceCardTranslations = {
+  ro: {
+    "Consultații Neurologice": {
+      title: "Consultații Neurologice",
+      desc: "Evaluări neurologice complete pentru diagnosticarea și gestionarea afecțiunilor neurologice."
+    },
+    "Consultații Neurochirurgie": {
+      title: "Consultații Neurochirurgie",
+      desc: "Consultații pentru evaluarea necesității intervențiilor chirurgicale și a patologiilor coloanei."
+    },
+    "Fizioterapie și Reabilitare": {
+      title: "Fizioterapie și Reabilitare",
+      desc: "Programe personalizate de reabilitare pentru recuperarea forței, mobilității și funcției."
+    },
+    "Diagnostic Funcțional": {
+      title: "Diagnostic Funcțional",
+      desc: "Evaluări funcționale pentru sistemul nervos, mușchi, coordonare și funcții asociate."
+    },
+    "Terapie Balneară": {
+      title: "Terapie Balneară",
+      desc: "Tratamente balneare, nămol, hidroterapie și terapii complementare."
+    },
+    "Electroterapie": {
+      title: "Electroterapie",
+      desc: "Electrostimulare și proceduri electroterapeutice pentru durere, mușchi și recuperare."
+    }
+  },
+  en: {
+    "Consultații Neurologice": {
+      title: "Neurology Consultations",
+      desc: "Complete neurological evaluations for diagnosis and management of neurological conditions."
+    },
+    "Consultații Neurochirurgie": {
+      title: "Neurosurgery Consultations",
+      desc: "Consultations for assessing surgical needs and spine-related conditions."
+    },
+    "Fizioterapie și Reabilitare": {
+      title: "Physiotherapy and Rehabilitation",
+      desc: "Personalized rehabilitation programs for restoring strength, mobility and function."
+    },
+    "Diagnostic Funcțional": {
+      title: "Functional Diagnostics",
+      desc: "Functional evaluations for the nervous system, muscles, coordination and related functions."
+    },
+    "Terapie Balneară": {
+      title: "Balneotherapy",
+      desc: "Balneotherapy, therapeutic mud, hydrotherapy and complementary treatments."
+    },
+    "Electroterapie": {
+      title: "Electrotherapy",
+      desc: "Electrostimulation and electrotherapy procedures for pain, muscles and recovery."
+    }
+  },
+  ru: {
+    "Consultații Neurologice": {
+      title: "Неврологические консультации",
+      desc: "Полная неврологическая оценка для диагностики и ведения неврологических состояний."
+    },
+    "Consultații Neurochirurgie": {
+      title: "Консультации нейрохирурга",
+      desc: "Консультации для оценки необходимости хирургического вмешательства и заболеваний позвоночника."
+    },
+    "Fizioterapie și Reabilitare": {
+      title: "Физиотерапия и реабилитация",
+      desc: "Индивидуальные программы восстановления силы, подвижности и функций."
+    },
+    "Diagnostic Funcțional": {
+      title: "Функциональная диагностика",
+      desc: "Функциональная оценка нервной системы, мышц, координации и связанных функций."
+    },
+    "Terapie Balneară": {
+      title: "Бальнеотерапия",
+      desc: "Бальнеологические процедуры, лечебная грязь, гидротерапия и дополнительные терапии."
+    },
+    "Electroterapie": {
+      title: "Электротерапия",
+      desc: "Электростимуляция и электротерапевтические процедуры при боли, для мышц и восстановления."
+    }
+  },
+  ua: {
+    "Consultații Neurologice": {
+      title: "Неврологічні консультації",
+      desc: "Повна неврологічна оцінка для діагностики та ведення неврологічних станів."
+    },
+    "Consultații Neurochirurgie": {
+      title: "Консультації нейрохірурга",
+      desc: "Консультації для оцінки потреби в хірургічному втручанні та станів хребта."
+    },
+    "Fizioterapie și Reabilitare": {
+      title: "Фізіотерапія та реабілітація",
+      desc: "Індивідуальні програми реабілітації для відновлення сили, рухливості та функції."
+    },
+    "Diagnostic Funcțional": {
+      title: "Функціональна діагностика",
+      desc: "Функціональна оцінка нервової системи, м’язів, координації та пов’язаних функцій."
+    },
+    "Terapie Balneară": {
+      title: "Бальнеотерапія",
+      desc: "Бальнеологічні процедури, лікувальні грязі, гідротерапія та додаткові терапії."
+    },
+    "Electroterapie": {
+      title: "Електротерапія",
+      desc: "Електростимуляція та електротерапевтичні процедури при болю, для м’язів і відновлення."
+    }
+  }
+} as const;
+
+function serviceCardCopy(service: any, lang: Lang) {
+  const originalTitle = cleanServiceText(service?.title || "");
+  const byLang = serviceCardTranslations[lang] || serviceCardTranslations.ro;
+  const translated = byLang[originalTitle as keyof typeof byLang];
+
+  return {
+    title: translated?.title || originalTitle,
+    desc: translated?.desc || service?.short_desc || ""
+  };
+}
+
 function renderBlogContent(content: string) {
   const lines = String(content || "")
     .split(/\n+/)
@@ -261,13 +380,16 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
     <div className="rmShell blogHeroTextCard">
      <h2 className="centerTitle">{text.services}</h2>
      <div className="serviceGrid">
-      {services.map((service) => (
-       <Link key={service.id} href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile">
-        <IconVisual src={service.icon} alt={cleanServiceText(service.title)} className="tileIconImg" />
-        <h3>{cleanServiceText(service.title)}</h3>
-        <p>{service.short_desc}</p>
-       </Link>
-      ))}
+      {services.map((service) => {
+       const copy = serviceCardCopy(service, lang);
+       return (
+        <Link key={service.id} href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile">
+         <IconVisual src={service.icon} alt={copy.title} className="tileIconImg" />
+         <h3>{copy.title}</h3>
+         <p>{copy.desc}</p>
+        </Link>
+       );
+      })}
      </div>
     </div>
    </section>
@@ -349,13 +471,16 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
    </section>
    <section className="rmSection">
     <div className="rmShell serviceGrid">
-     {services.map((service) => (
-      <Link href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile" key={service.id}>
-       <IconVisual src={service.icon} alt={cleanServiceText(service.title)} className="tileIconImg" />
-       <h3>{cleanServiceText(service.title)}</h3>
-       <p>{service.short_desc}</p>
-      </Link>
-     ))}
+     {services.map((service) => {
+      const copy = serviceCardCopy(service, lang);
+      return (
+       <Link href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile" key={service.id}>
+        <IconVisual src={service.icon} alt={copy.title} className="tileIconImg" />
+        <h3>{copy.title}</h3>
+        <p>{copy.desc}</p>
+       </Link>
+      );
+     })}
     </div>
 
     <div className="rmShell seoContentBlock">
