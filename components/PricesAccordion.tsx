@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type PriceLang = "ro" | "en" | "ru" | "ua";
 
@@ -111,6 +111,22 @@ export default function PricesAccordion({
 }) {
  const [open, setOpen] = useState<string | null>(null);
 
+ 
+ function togglePriceGroup(group: string) {
+  const nextGroup = openGroup === group ? "" : group;
+  setOpenGroup(nextGroup);
+
+  if (nextGroup) {
+   window.setTimeout(() => {
+    const el = groupRefs.current[nextGroup];
+    if (!el) return;
+
+    const y = el.getBoundingClientRect().top + window.scrollY - 92;
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+   }, 80);
+  }
+ }
+
  return (
   <div className="pricesAccordion">
    {groups.map((group) => {
@@ -118,7 +134,7 @@ export default function PricesAccordion({
     const rows = prices.filter((p) => p.category === group);
 
     return (
-     <section className={isOpen ? "priceAccordionGroup open" : "priceAccordionGroup"} key={translatePriceText(group)}>
+     <section ref={(el) => { groupRefs.current[group] = el; }} className={isOpen ? "priceAccordionGroup open" : "priceAccordionGroup"} key={translatePriceText(group)}>
       <button
        type="button"
        className="priceAccordionHead"

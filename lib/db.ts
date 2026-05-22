@@ -197,7 +197,7 @@ WHERE group_key IN ('neuro_5','neuro_6')
    OR lower(service) LIKE '%imagistic%'
    OR lower(service) LIKE '%tomograf%'
    OR lower(service) LIKE '%irm%'
-   OR lower(service) LIKE '%ct%';
+   OR lower(service) LIKE '%tomografie ct%';
 
 UPDATE prices
 SET
@@ -654,10 +654,9 @@ INSERT INTO prices (lang, group_key, category, service, price, note, position) V
 DELETE FROM prices
 WHERE lower(service) LIKE '%electromiografie%'
    OR lower(service) LIKE '%emg%'
-   OR lower(service) LIKE '%imagistic%'
-   OR lower(service) LIKE '%irm%'
-   OR lower(service) LIKE '%tomograf%'
-   OR lower(service) LIKE '%ct%';
+   OR lower(service) LIKE '%imagistică irm%'
+   OR lower(service) LIKE '%imagistica irm%'
+   OR lower(service) LIKE '%tomografie ct%';
 `);
 // FULL_PRICE_LIST_2026_05_END
 
