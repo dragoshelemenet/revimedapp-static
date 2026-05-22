@@ -157,11 +157,8 @@ if (priceCount.c === 0) {
  const prices: [string,string,string,string,string,number][] = [
   ["neuro_1","Consultații Neurologice","Consultație primară cu neurolog","500 MDL","Evaluare neurologică inițială",1],
   ["neuro_2","Consultații Neurologice","Consultație repetată cu neurolog","400 MDL","Consultație de control",2],
-  ["neuro_3","Consultații Neurologice","Electroencefalografie (EEG)","1000 MDL","Evaluarea activității electrice cerebrale",3],
-  ["neuro_4","Consultații Neurologice","Electromiografie (EMG)","800 MDL","Evaluarea nervilor și mușchilor",4],
-  ["neuro_5","Consultații Neurologice","Imagistică IRM","2000 MDL","Investigație imagistică",5],
-  ["neuro_6","Consultații Neurologice","Tomografie CT","1500 MDL","Investigație imagistică",6],
-  ["neurochir_1","Consultații Neurochirurgie","Consultație primară cu chirurg","300 MDL","Evaluare inițială",8],
+  ["neuro_3","Consultații Neurologice","Electroencefalogramă (EEG)","1400 MDL","Evaluarea activității electrice cerebrale",3],
+  ["neuro_4","Consultații Neurologice","Reoencefalogramă","500 MDL","Evaluarea circulației cerebrale",4],  ["neurochir_1","Consultații Neurochirurgie","Consultație primară cu chirurg","300 MDL","Evaluare inițială",8],
   ["neurochir_2","Consultații Neurochirurgie","Consultație repetată cu chirurg","300 MDL","Consultație de control",9],
   ["neurochir_3","Consultații Neurochirurgie","Planificare pre-operatorie","400 MDL","Recomandări și planificare",10],
   ["fizio_1","Fizioterapie și Reabilitare","Ședință de fizioterapie (30 min)","150 MDL","Ședință individuală",14],
@@ -190,6 +187,57 @@ export function getAllPosts(lang?: Lang) {
 export function getPostBySlug(slug: string, lang: Lang = "ro") {
  return db.prepare("SELECT * FROM posts WHERE slug = ? AND lang = ? AND published = 1").get(slug, lang) as Post | undefined;
 }
+
+
+// Permanent correction for neurology price list.
+// Keeps old seeded/admin data from returning after deploys.
+db.exec(`
+DELETE FROM prices
+WHERE group_key IN ('neuro_5','neuro_6')
+   OR lower(service) LIKE '%imagistic%'
+   OR lower(service) LIKE '%tomograf%'
+   OR lower(service) LIKE '%irm%'
+   OR lower(service) LIKE '%ct%';
+
+UPDATE prices
+SET
+  service = CASE lang
+    WHEN 'en' THEN 'Electroencephalogram (EEG)'
+    WHEN 'ru' THEN 'Электроэнцефалограмма (ЭЭГ)'
+    WHEN 'ua' THEN 'Електроенцефалограма (ЕЕГ)'
+    ELSE 'Electroencefalogramă (EEG)'
+  END,
+  price = '1400 MDL',
+  note = CASE lang
+    WHEN 'en' THEN 'Evaluation of brain electrical activity'
+    WHEN 'ru' THEN 'Оценка электрической активности мозга'
+    WHEN 'ua' THEN 'Оцінка електричної активності мозку'
+    ELSE 'Evaluarea activității electrice cerebrale'
+  END
+WHERE group_key = 'neuro_3';
+
+UPDATE prices
+SET
+  service = CASE lang
+    WHEN 'en' THEN 'Rheoencephalogram'
+    WHEN 'ru' THEN 'Реоэнцефалограмма'
+    WHEN 'ua' THEN 'Реоенцефалограма'
+    ELSE 'Reoencefalogramă'
+  END,
+  price = '500 MDL',
+  note = CASE lang
+    WHEN 'en' THEN 'Evaluation of cerebral blood circulation'
+    WHEN 'ru' THEN 'Оценка мозгового кровообращения'
+    WHEN 'ua' THEN 'Оцінка мозкового кровообігу'
+    ELSE 'Evaluarea circulației cerebrale'
+  END
+WHERE group_key = 'neuro_4';
+
+UPDATE prices SET category='Consultații Neurologice' WHERE lang='ro' AND group_key LIKE 'neuro_%';
+UPDATE prices SET category='Neurology Consultations' WHERE lang='en' AND group_key LIKE 'neuro_%';
+UPDATE prices SET category='Неврологические консультации' WHERE lang='ru' AND group_key LIKE 'neuro_%';
+UPDATE prices SET category='Неврологічні консультації' WHERE lang='ua' AND group_key LIKE 'neuro_%';
+`);
 
 export function getAllPrices(lang?: Lang) {
  if (lang) return db.prepare("SELECT * FROM prices WHERE lang = ? ORDER BY position ASC, id ASC").all(lang) as Price[];
