@@ -667,7 +667,7 @@ export default function AdminClient({
         <Field label="Autobuz"><input name="bus" defaultValue={contactContent?.bus || ""} /></Field>
         <Field label="Troleibuz"><input name="trolleybus" defaultValue={contactContent?.trolleybus || ""} /></Field>
         <Field label="Tramvai"><input name="tram" defaultValue={contactContent?.tram || ""} /></Field>
-        <Field label="Poza 1"><UploadInput name="image_one" defaultValue={contactContent?.image_one || "/images/6.jpg"} placeholder="/images/6.jpg sau /uploads/photo.jpg" /></Field>
+        <Field label="Poza 1"><UploadInput name="image_one" defaultValue={contactContent?.image_one || ""} placeholder="/uploads/photo.jpg" /></Field>
         <Field label="Poza 2"><UploadInput name="image_two" defaultValue={contactContent?.image_two || "/images/1.jpg"} placeholder="/images/1.jpg sau /uploads/photo.jpg" /></Field>
        </div>
        <Field label="Google Maps link"><textarea name="map_link" rows={3} defaultValue={contactContent?.map_link || ""} /></Field>

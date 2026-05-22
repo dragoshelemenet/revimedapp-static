@@ -13759,3 +13759,35 @@ html body main .blogReadableContent .blogAutoHeading::after{
     padding: 11px 14px !important;
   }
 }
+
+/* FINAL CONTACT CLEANUP */
+html body main img[src=""],
+html body main img[src*="/images/6.jpg"]{
+  display:none!important;
+}
+
+html body main .contactCard img:not([src]),
+html body main .contactCard img[src=""]{
+  display:none!important;
+}
+
+/* Make the map/transport side look clean if only map remains */
+html body main .contactMapGrid,
+html body main .contactImages,
+html body main .mapGrid,
+html body main .contactSideMedia{
+  gap:16px!important;
+}
+
+html body main .contactMapGrid:has(img[src=""]),
+html body main .contactImages:has(img[src=""]),
+html body main .mapGrid:has(img[src=""]){
+  grid-template-columns:1fr!important;
+}
+
+/* Broken removed image should not leave blue empty placeholder */
+html body main [class*="contact"] img[src=""],
+html body main [class*="map"] img[src=""],
+html body main [class*="media"] img[src=""]{
+  display:none!important;
+}

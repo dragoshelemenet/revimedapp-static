@@ -12,6 +12,7 @@ import "../lib/seedLanguages";
 import { JsonLdBlock, localMedicalBusinessJsonLd } from "@/lib/seoAdvanced";
 import BlogArticleEnhancer from "@/components/BlogArticleEnhancer";
 import HeroBottomScrollHint from "@/components/HeroBottomScrollHint";
+import ContactPageCleanup from "@/components/ContactPageCleanup";
 export const metadata: Metadata = {
  metadataBase: new URL(site.url),
  title: {
@@ -96,7 +97,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <MobileCallBar />
            <BlogArticleEnhancer />
                           <HeroBottomScrollHint />
-            </body>
+                    <ContactPageCleanup />
+      </body>
   </html>
  );
 }
