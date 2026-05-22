@@ -1,100 +1,146 @@
-export const dynamic = "force-dynamic";
+import { getPublishedPosts } from "@/lib/db";
 
-const SITE_URL = (
- process.env.NEXT_PUBLIC_SITE_URL ||
- process.env.SITE_URL ||
- "https://revimed.site"
-).replace(/\/$/, "");
+const SITE = "https://revimed.site";
+const langs = ["ro", "en", "ru", "ua"] as const;
 
-const langs = [
- { code: "ro", prefix: "" },
- { code: "en", prefix: "/en" },
- { code: "ru", prefix: "/ru" },
- { code: "uk", prefix: "/ua" }
+const staticPaths = [
+  "",
+  "/despre-noi",
+  "/servicii",
+  "/servicii/consultatii-neurologice",
+  "/servicii/consultatii-neurochirurgie",
+  "/servicii/fizioterapie-si-reabilitare",
+  "/servicii/diagnostic-functional",
+  "/servicii/terapie-balneara",
+  "/servicii/electroterapie",
+  "/aplicatii",
+  "/aplicatii/teste-si-instrumente",
+  "/aplicatii/teste-si-instrumente/test-ayurveda-dosha",
+  "/aplicatii/teste-si-instrumente/respiratie-terapeutica",
+  "/aplicatii/teste-si-instrumente/screening-neurologic",
+  "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan",
+  "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata",
+  "/aplicatii/teste-si-instrumente/test-postura-coloana",
+  "/aplicatii/teste-si-instrumente/monitor-dureri-spate",
+  "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru",
+  "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice",
+  "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie",
+  "/aplicatii/teste-si-instrumente/pregatire-consultatie",
+  "/preturi",
+  "/galerie",
+  "/blog",
+  "/contact",
+  "/termeni-si-conditii",
+  "/cookies",
 ];
 
-const routes = [
- { path: "/", priority: "1.0", freq: "weekly" },
- { path: "/despre-noi", priority: "0.8", freq: "monthly" },
- { path: "/servicii", priority: "0.95", freq: "weekly" },
- { path: "/servicii/consultatii-neurologice", priority: "0.98", freq: "weekly" },
- { path: "/servicii/consultatii-neurochirurgie", priority: "0.98", freq: "weekly" },
- { path: "/servicii/fizioterapie-si-reabilitare", priority: "0.98", freq: "weekly" },
- { path: "/servicii/diagnostic-functional", priority: "0.9", freq: "weekly" },
- { path: "/servicii/terapie-balneara", priority: "0.86", freq: "weekly" },
- { path: "/servicii/electroterapie", priority: "0.86", freq: "weekly" },
- { path: "/aplicatii", priority: "0.9", freq: "weekly" },
- { path: "/aplicatii/teste-si-instrumente", priority: "0.95", freq: "weekly" },
- { path: "/aplicatii/teste-si-instrumente/test-ayurveda-dosha", priority: "0.75", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/respiratie-terapeutica", priority: "0.75", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/screening-neurologic", priority: "0.82", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/revimed-yoga-tibetan", priority: "0.72", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/calculator-recuperare-personalizata", priority: "0.82", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/test-postura-coloana", priority: "0.82", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/monitor-dureri-spate", priority: "0.82", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/test-risc-cadere-echilibru", priority: "0.82", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/planner-exercitii-zilnice", priority: "0.76", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/test-stres-somn-respiratie", priority: "0.76", freq: "monthly" },
- { path: "/aplicatii/teste-si-instrumente/pregatire-consultatie", priority: "0.82", freq: "monthly" },
- { path: "/preturi", priority: "0.9", freq: "weekly" },
- { path: "/galerie", priority: "0.75", freq: "monthly" },
- { path: "/blog", priority: "0.7", freq: "weekly" },
- { path: "/contact", priority: "0.92", freq: "weekly" },
- { path: "/termeni-si-conditii", priority: "0.3", freq: "yearly" },
- { path: "/cookies", priority: "0.3", freq: "yearly" }
-];
+type PostLike = {
+  lang?: string;
+  slug?: string;
+  edited_at?: string | null;
+  created_at?: string | null;
+};
 
-function cleanUrl(prefix: string, path: string) {
- if (path === "/") return `${SITE_URL}${prefix || ""}` || SITE_URL;
- return `${SITE_URL}${prefix}${path}`.replace(/\/+$/, "");
+function xmlEscape(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
 }
 
-function esc(value: string) {
- return value
-  .replace(/&/g, "&amp;")
-  .replace(/</g, "&lt;")
-  .replace(/>/g, "&gt;")
-  .replace(/"/g, "&quot;");
+function withLang(lang: string, path: string) {
+  return lang === "ro" ? `${SITE}${path}` : `${SITE}/${lang}${path}`;
 }
 
-export function GET() {
- const lastmod = new Date().toISOString();
+function safeDate(value?: string | null) {
+  const date = value ? new Date(value) : new Date();
+  return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+}
 
- const urls = langs.flatMap((lang) =>
-  routes.map((route) => {
-   const loc = cleanUrl(lang.prefix, route.path);
+function urlNode(url: string, lastmod?: string | null, priority = "0.80", changefreq = "weekly") {
+  return [
+    "  <url>",
+    `    <loc>${xmlEscape(url)}</loc>`,
+    `    <lastmod>${xmlEscape(safeDate(lastmod))}</lastmod>`,
+    `    <changefreq>${changefreq}</changefreq>`,
+    `    <priority>${priority}</priority>`,
+    "  </url>",
+  ].join("\n");
+}
 
-   const alternates = langs
-    .map((alt) => {
-     const href = cleanUrl(alt.prefix, route.path);
-     return `<xhtml:link rel="alternate" hreflang="${alt.code}" href="${esc(href)}" />`;
-    })
-    .join("\n  ");
+function collectPosts() {
+  const all: PostLike[] = [];
 
-   const xDefault = cleanUrl("", route.path);
-
-   return ` <url>
-  <loc>${esc(loc)}</loc>
-  <lastmod>${lastmod}</lastmod>
-  <changefreq>${route.freq}</changefreq>
-  <priority>${route.priority}</priority>
-  ${alternates}
-  <xhtml:link rel="alternate" hreflang="x-default" href="${esc(xDefault)}" />
- </url>`;
-  })
- ).join("\n");
-
- const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset
- xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
- xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls}
-</urlset>`;
-
- return new Response(xml, {
-  headers: {
-   "Content-Type": "application/xml; charset=utf-8",
-   "Cache-Control": "public, max-age=0, s-maxage=3600"
+  for (const lang of langs) {
+    try {
+      const rows = (getPublishedPosts as any)(lang);
+      if (Array.isArray(rows)) {
+        for (const row of rows) all.push({ ...row, lang: row?.lang || lang });
+      }
+    } catch {}
   }
- });
+
+  try {
+    const rows = (getPublishedPosts as any)();
+    if (Array.isArray(rows)) {
+      for (const row of rows) all.push(row);
+    }
+  } catch {}
+
+  return all.filter((post) => post && post.slug);
+}
+
+export async function GET() {
+  const urls: string[] = [];
+
+  for (const lang of langs) {
+    for (const path of staticPaths) {
+      const priority =
+        path === "" ? "1.00" :
+        path === "/contact" ? "0.92" :
+        path === "/servicii" || path === "/preturi" ? "0.90" :
+        path.startsWith("/servicii/") ? "0.86" :
+        path === "/blog" ? "0.75" :
+        path === "/termeni-si-conditii" || path === "/cookies" ? "0.30" :
+        "0.80";
+
+      const changefreq =
+        path === "/termeni-si-conditii" || path === "/cookies"
+          ? "yearly"
+          : path === "/blog"
+            ? "weekly"
+            : "monthly";
+
+      urls.push(urlNode(withLang(lang, path), undefined, priority, changefreq));
+    }
+  }
+
+  const seen = new Set<string>();
+
+  for (const post of collectPosts()) {
+    const lang = langs.includes(post.lang as any) ? String(post.lang) : "ro";
+    const slug = String(post.slug || "").trim();
+    if (!slug) continue;
+
+    const url = withLang(lang, `/blog/${slug}`);
+    if (seen.has(url)) continue;
+    seen.add(url);
+
+    urls.push(urlNode(url, post.edited_at || post.created_at, "0.72", "monthly"));
+  }
+
+  const body = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join("\n")}
+</urlset>
+`;
+
+  return new Response(body, {
+    headers: {
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
+    },
+  });
 }
