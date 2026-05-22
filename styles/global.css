@@ -13555,3 +13555,67 @@ html body main [class*="Result"] em{
     min-height:72px!important;
   }
 }
+
+/* FINAL SERVICES INFO CARD POLISH */
+/* Fix the info card under service cards without adding top padding to the h1 area */
+
+html body main .servicesSeoCard,
+html body main .serviceSeoCard,
+html body main .servicesInfoCard,
+html body main .seoServiceCard,
+html body main section:has(.serviceTile) + section .rmCard,
+html body main section:has(.serviceTile) .rmCard{
+  margin-top: 34px !important;
+}
+
+/* Keep title clean: no extra top padding, no overlap with border */
+html body main .servicesSeoCard h2,
+html body main .serviceSeoCard h2,
+html body main .servicesInfoCard h2,
+html body main .seoServiceCard h2,
+html body main section:has(.serviceTile) + section .rmCard h2,
+html body main section:has(.serviceTile) .rmCard h2{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  line-height: 1.08 !important;
+}
+
+/* If the card is pulled up by old negative margins, cancel only that */
+html body main section:has(.serviceTile) + section,
+html body main section:has(.serviceTile) + .rmSection{
+  margin-top: 0 !important;
+}
+
+/* Better text rhythm inside the informational card */
+html body main .servicesSeoCard p,
+html body main .serviceSeoCard p,
+html body main .servicesInfoCard p,
+html body main .seoServiceCard p,
+html body main section:has(.serviceTile) + section .rmCard p,
+html body main section:has(.serviceTile) .rmCard p{
+  line-height: 1.75 !important;
+  max-width: 980px !important;
+}
+
+/* Buttons: nicer spacing, but no top padding change */
+html body main .servicesSeoCard .btnRow,
+html body main .serviceSeoCard .btnRow,
+html body main .servicesInfoCard .btnRow,
+html body main .seoServiceCard .btnRow,
+html body main section:has(.serviceTile) + section .rmCard .btnRow,
+html body main section:has(.serviceTile) .rmCard .btnRow{
+  margin-top: 22px !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+@media(max-width:760px){
+  html body main .servicesSeoCard,
+  html body main .serviceSeoCard,
+  html body main .servicesInfoCard,
+  html body main .seoServiceCard,
+  html body main section:has(.serviceTile) + section .rmCard,
+  html body main section:has(.serviceTile) .rmCard{
+    margin-top: 24px !important;
+  }
+}
