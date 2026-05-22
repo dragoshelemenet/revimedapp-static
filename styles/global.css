@@ -13972,3 +13972,74 @@ html body main .blogArticleCard{
     padding-bottom: 34px !important;
   }
 }
+
+/* TRUE FINAL HERO SPACING RESET — no content overlaps hero */
+
+/* Normal inner pages: services, apps, blog list, gallery, contact, prices */
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section,
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
+  margin-top: 34px !important;
+  padding-top: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Remove previous negative overlaps from inner page shells */
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section > .rmShell,
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection > .rmShell{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Blog post needs more room because hero title/subtitle can be tall */
+html body main section.pageHero.blogPostHero + section,
+html body main section.blogPostHero + section,
+html body main section.blogPostSection,
+html body main section.rmSection.blogPostSection{
+  margin-top: 56px !important;
+  padding-top: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Blog post card must never be pulled into hero */
+html body main section.pageHero.blogPostHero + section .blogPostArticle,
+html body main section.blogPostHero + section .blogPostArticle,
+html body main section.blogPostSection .blogPostArticle,
+html body main section.rmSection.blogPostSection .blogPostArticle,
+html body main section.blogPostSection .blogArticleCard,
+html body main section.rmSection.blogPostSection .blogArticleCard,
+html body main .blogPostArticle,
+html body main .blogArticleCard{
+  margin-top: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Blog hero: enough bottom padding for subtitle */
+html body main section.pageHero.blogPostHero,
+html body main section.blogPostHero{
+  padding-bottom: 58px !important;
+  margin-bottom: 0 !important;
+  overflow: visible !important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section,
+  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
+    margin-top: 24px !important;
+  }
+
+  html body main section.pageHero.blogPostHero + section,
+  html body main section.blogPostHero + section,
+  html body main section.blogPostSection,
+  html body main section.rmSection.blogPostSection{
+    margin-top: 34px !important;
+  }
+
+  html body main section.pageHero.blogPostHero,
+  html body main section.blogPostHero{
+    padding-bottom: 42px !important;
+  }
+}
