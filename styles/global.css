@@ -13233,494 +13233,7 @@ html body main section.rmSection.blogPostSection .blogArticleCard{
 /* FINAL CLEAN BLOG ARTICLE OVERRIDE — one source of truth at file end */
 
 /* Reduce gap between blog hero and article card */
-html body main section.pageHero.blogPostHero + section.rmSection,
-html body main section.blogPostHero + section.rmSection,
-html body main section.rmSection.blogPostSection,
-html body main section.blogPostSection{
-  padding-top: 20px !important;
-  margin-top: 0 !important;
-  padding-bottom: 70px !important;
-}
 
-/* Keep blog hero blue/image, flexible height for long titles */
-html body main section.pageHero.blogPostHero,
-html body main section.blogPostHero{
-  min-height: 250px !important;
-  height: auto !important;
-  padding: 42px 0 42px !important;
-  background-color: #0b8fd8 !important;
-  background-image:
-    linear-gradient(90deg, rgba(8,35,74,.74) 0%, rgba(8,58,98,.54) 48%, rgba(11,143,216,.38) 100%),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  overflow: visible !important;
-}
-
-/* No pseudo overlays on blog hero */
-html body main section.pageHero.blogPostHero::before,
-html body main section.pageHero.blogPostHero::after,
-html body main section.blogPostHero::before,
-html body main section.blogPostHero::after{
-  content: none !important;
-  display: none !important;
-}
-
-/* Blog article card */
-html body main .blogPostArticle,
-html body main .blogArticleCard{
-  max-width: 760px !important;
-  margin-top: 0 !important;
-  padding: 26px !important;
-  border-radius: 20px !important;
-  background: #fff !important;
-  border: 1px solid #dcecf8 !important;
-  box-shadow: 0 24px 70px rgba(8,35,74,.08) !important;
-}
-
-/* Top image */
-html body main .blogPostArticle .postHeroImage,
-html body main .blogArticleCard .postHeroImage{
-  height: 300px !important;
-  margin: 0 0 22px !important;
-  border-radius: 16px !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-/* Article text */
-html body main .blogReadableContent{
-  font-size: 16px !important;
-  line-height: 1.74 !important;
-  color: #34445c !important;
-}
-
-html body main .blogReadableContent p,
-html body main .blogPrettyParagraph{
-  margin: 0 0 16px !important;
-  padding: 0 !important;
-  color: #34445c !important;
-  font-weight: 500 !important;
-}
-
-/* Intro */
-html body main .blogReadableContent .blogIntroBox{
-  margin: 0 0 18px !important;
-  padding: 18px 20px !important;
-  background: linear-gradient(135deg, #eef8ff, #ffffff) !important;
-  border-left: 5px solid #0b8fd8 !important;
-  border-radius: 16px !important;
-  color: #10233f !important;
-  font-size: 17px !important;
-  line-height: 1.65 !important;
-  font-weight: 850 !important;
-}
-
-/* Headings */
-html body main .blogReadableContent .blogAutoHeading{
-  margin: 28px 0 14px !important;
-  padding: 12px 16px !important;
-  border-radius: 14px !important;
-  background: #eef8ff !important;
-  border-left: 5px solid #0b8fd8 !important;
-  color: #08234a !important;
-  font-size: 20px !important;
-  line-height: 1.25 !important;
-  font-weight: 950 !important;
-}
-
-/* Highlights */
-html body main .blogReadableContent .blogAutoMark{
-  background: #fff3bf !important;
-  color: #08234a !important;
-  padding: 1px 5px !important;
-  border-radius: 6px !important;
-  font-weight: 850 !important;
-}
-
-/* Important/disclaimer/phones */
-html body main .blogImportantBox,
-html body main .blogDisclaimerLine{
-  margin: 18px 0 !important;
-  padding: 14px 16px !important;
-  border-radius: 14px !important;
-  border: 1px solid #ffd9a8 !important;
-  background: #fff8ef !important;
-  color: #10233f !important;
-  font-weight: 800 !important;
-}
-
-html body main .blogPhoneLine{
-  display: block !important;
-  margin: 8px 0 !important;
-  padding: 9px 14px !important;
-  border-radius: 999px !important;
-  border: 1px solid #cfe7f8 !important;
-  background: #f4fbff !important;
-  color: #10233f !important;
-  font-weight: 800 !important;
-}
-
-/* Download block */
-html body main .blogExportBox{
-  margin-top: 30px !important;
-  padding: 20px !important;
-  border-radius: 18px !important;
-  border: 1px solid #cfe7f8 !important;
-  background: linear-gradient(135deg, #eef8ff, #ffffff) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 18px !important;
-  box-shadow: 0 14px 36px rgba(8,35,74,.06) !important;
-}
-
-html body main .blogExportText{
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 4px !important;
-}
-
-html body main .blogExportText strong{
-  color: #08234a !important;
-  font-size: 18px !important;
-  line-height: 1.25 !important;
-  font-weight: 950 !important;
-}
-
-html body main .blogExportText span{
-  color: #64748b !important;
-  font-size: 14px !important;
-}
-
-html body main .blogExportBtn{
-  border: 0 !important;
-  border-radius: 14px !important;
-  background: #0b8fd8 !important;
-  color: #fff !important;
-  font-weight: 900 !important;
-  padding: 13px 18px !important;
-  cursor: pointer !important;
-  white-space: nowrap !important;
-  box-shadow: 0 14px 30px rgba(11,143,216,.25) !important;
-}
-
-@media(max-width:760px){
-  html body main section.pageHero.blogPostHero,
-  html body main section.blogPostHero{
-    min-height: 220px !important;
-    padding: 30px 0 32px !important;
-  }
-
-  html body main section.pageHero.blogPostHero + section.rmSection,
-  html body main section.blogPostHero + section.rmSection,
-  html body main section.rmSection.blogPostSection,
-  html body main section.blogPostSection{
-    padding-top: 18px !important;
-    padding-bottom: 52px !important;
-  }
-
-  html body main .blogPostArticle,
-  html body main .blogArticleCard{
-    width: calc(100% - 28px) !important;
-    padding: 16px !important;
-  }
-
-  html body main .blogPostArticle .postHeroImage,
-  html body main .blogArticleCard .postHeroImage{
-    height: 220px !important;
-  }
-
-  html body main .blogReadableContent{
-    font-size: 15px !important;
-    line-height: 1.68 !important;
-  }
-
-  html body main .blogReadableContent .blogIntroBox{
-    font-size: 16px !important;
-    padding: 15px 16px !important;
-  }
-
-  html body main .blogReadableContent .blogAutoHeading{
-    font-size: 18px !important;
-    padding: 11px 14px !important;
-  }
-
-  html body main .blogExportBox{
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-
-  html body main .blogExportBtn{
-    width: 100% !important;
-  }
-}
-
-/* FINAL BLOG VISUAL POLISH — must stay at very end */
-
-/* 1) Reduce remaining large white gap after blog hero */
-html body main section.pageHero.blogPostHero + section.rmSection,
-html body main section.blogPostHero + section.rmSection,
-html body main section.rmSection.blogPostSection,
-html body main section.blogPostSection,
-html body:has(.blogPostArticle) main > section.rmSection:first-of-type,
-html body:has(.blogReadableContent) main > section.rmSection:first-of-type{
-  padding-top: 14px !important;
-  margin-top: 0 !important;
-}
-
-/* 2) Article card slightly wider and closer */
-html body main .blogPostArticle,
-html body main .blogArticleCard{
-  max-width: 820px !important;
-  margin-top: 0 !important;
-  padding: 26px !important;
-}
-
-/* 3) Hero image inside article a little more elegant */
-html body main .blogPostArticle .postHeroImage,
-html body main .blogArticleCard .postHeroImage{
-  height: 320px !important;
-  margin-bottom: 22px !important;
-  border-radius: 17px !important;
-}
-
-/* 4) Cleaner headings: remove double visual weight */
-html body main .blogReadableContent .blogAutoHeading{
-  position: relative !important;
-  display: block !important;
-  margin: 26px 0 14px !important;
-  padding: 12px 16px 12px 18px !important;
-  border-radius: 13px !important;
-  background: #eef8ff !important;
-  border-left: 5px solid #0b8fd8 !important;
-  color: #08234a !important;
-  font-size: 20px !important;
-  line-height: 1.25 !important;
-  font-weight: 950 !important;
-}
-
-/* Remove old pseudo/check circles if any previous CSS added them */
-html body main .blogReadableContent .blogAutoHeading::before,
-html body main .blogReadableContent .blogAutoHeading::after,
-html body main .blogContentHeading::before,
-html body main .blogContentHeading::after{
-  content: none !important;
-  display: none !important;
-}
-
-/* Hide the literal extra check when JS already inserted it too aggressively */
-html body main .blogReadableContent .blogAutoHeading{
-  text-indent: 0 !important;
-}
-
-/* 5) Body text slightly easier to read */
-html body main .blogReadableContent{
-  font-size: 16.5px !important;
-  line-height: 1.78 !important;
-}
-
-html body main .blogReadableContent p,
-html body main .blogPrettyParagraph{
-  margin-bottom: 15px !important;
-}
-
-/* 6) Intro box less heavy */
-html body main .blogReadableContent .blogIntroBox{
-  font-size: 17px !important;
-  line-height: 1.62 !important;
-  padding: 17px 19px !important;
-}
-
-/* 7) Download block cleaner */
-html body main .blogExportBox{
-  margin-top: 28px !important;
-  padding: 18px 20px !important;
-}
-
-html body main .blogExportBtn{
-  min-width: 170px !important;
-}
-
-/* 8) Mobile keeps compact spacing */
-@media(max-width:760px){
-  html body main section.pageHero.blogPostHero + section.rmSection,
-  html body main section.blogPostHero + section.rmSection,
-  html body main section.rmSection.blogPostSection,
-  html body main section.blogPostSection,
-  html body:has(.blogPostArticle) main > section.rmSection:first-of-type,
-  html body:has(.blogReadableContent) main > section.rmSection:first-of-type{
-    padding-top: 12px !important;
-  }
-
-  html body main .blogPostArticle,
-  html body main .blogArticleCard{
-    width: calc(100% - 26px) !important;
-    max-width: calc(100% - 26px) !important;
-    padding: 15px !important;
-  }
-
-  html body main .blogPostArticle .postHeroImage,
-  html body main .blogArticleCard .postHeroImage{
-    height: 210px !important;
-  }
-
-  html body main .blogReadableContent{
-    font-size: 15.5px !important;
-    line-height: 1.7 !important;
-  }
-
-  html body main .blogReadableContent .blogAutoHeading{
-    font-size: 18px !important;
-    padding: 11px 14px !important;
-  }
-}
-
-/* FINAL BLOG VISUAL POLISH — must stay at very end */
-
-/* 1) Reduce remaining large white gap after blog hero */
-html body main section.pageHero.blogPostHero + section.rmSection,
-html body main section.blogPostHero + section.rmSection,
-html body main section.rmSection.blogPostSection,
-html body main section.blogPostSection,
-html body:has(.blogPostArticle) main > section.rmSection:first-of-type,
-html body:has(.blogReadableContent) main > section.rmSection:first-of-type{
-  padding-top: 14px !important;
-  margin-top: 0 !important;
-}
-
-/* 2) Article card slightly wider and closer */
-html body main .blogPostArticle,
-html body main .blogArticleCard{
-  max-width: 820px !important;
-  margin-top: 0 !important;
-  padding: 26px !important;
-}
-
-/* 3) Hero image inside article a little more elegant */
-html body main .blogPostArticle .postHeroImage,
-html body main .blogArticleCard .postHeroImage{
-  height: 320px !important;
-  margin-bottom: 22px !important;
-  border-radius: 17px !important;
-}
-
-/* 4) Cleaner headings: remove double visual weight */
-html body main .blogReadableContent .blogAutoHeading{
-  position: relative !important;
-  display: block !important;
-  margin: 26px 0 14px !important;
-  padding: 12px 16px 12px 18px !important;
-  border-radius: 13px !important;
-  background: #eef8ff !important;
-  border-left: 5px solid #0b8fd8 !important;
-  color: #08234a !important;
-  font-size: 20px !important;
-  line-height: 1.25 !important;
-  font-weight: 950 !important;
-}
-
-/* Remove old pseudo/check circles if any previous CSS added them */
-html body main .blogReadableContent .blogAutoHeading::before,
-html body main .blogReadableContent .blogAutoHeading::after,
-html body main .blogContentHeading::before,
-html body main .blogContentHeading::after{
-  content: none !important;
-  display: none !important;
-}
-
-/* Hide the literal extra check when JS already inserted it too aggressively */
-html body main .blogReadableContent .blogAutoHeading{
-  text-indent: 0 !important;
-}
-
-/* 5) Body text slightly easier to read */
-html body main .blogReadableContent{
-  font-size: 16.5px !important;
-  line-height: 1.78 !important;
-}
-
-html body main .blogReadableContent p,
-html body main .blogPrettyParagraph{
-  margin-bottom: 15px !important;
-}
-
-/* 6) Intro box less heavy */
-html body main .blogReadableContent .blogIntroBox{
-  font-size: 17px !important;
-  line-height: 1.62 !important;
-  padding: 17px 19px !important;
-}
-
-/* 7) Download block cleaner */
-html body main .blogExportBox{
-  margin-top: 28px !important;
-  padding: 18px 20px !important;
-}
-
-html body main .blogExportBtn{
-  min-width: 170px !important;
-}
-
-/* 8) Mobile keeps compact spacing */
-@media(max-width:760px){
-  html body main section.pageHero.blogPostHero + section.rmSection,
-  html body main section.blogPostHero + section.rmSection,
-  html body main section.rmSection.blogPostSection,
-  html body main section.blogPostSection,
-  html body:has(.blogPostArticle) main > section.rmSection:first-of-type,
-  html body:has(.blogReadableContent) main > section.rmSection:first-of-type{
-    padding-top: 12px !important;
-  }
-
-  html body main .blogPostArticle,
-  html body main .blogArticleCard{
-    width: calc(100% - 26px) !important;
-    max-width: calc(100% - 26px) !important;
-    padding: 15px !important;
-  }
-
-  html body main .blogPostArticle .postHeroImage,
-  html body main .blogArticleCard .postHeroImage{
-    height: 210px !important;
-  }
-
-  html body main .blogReadableContent{
-    font-size: 15.5px !important;
-    line-height: 1.7 !important;
-  }
-
-  html body main .blogReadableContent .blogAutoHeading{
-    font-size: 18px !important;
-    padding: 11px 14px !important;
-  }
-}
-
-/* FINAL FINAL BLOG GAP FIX — move article closer to hero */
-
-/* Remove remaining vertical space after blog hero */
-html body main section.pageHero.blogPostHero + section.rmSection,
-html body main section.blogPostHero + section.rmSection,
-html body main section.rmSection.blogPostSection,
-html body main section.blogPostSection{
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* Pull the article card upward slightly so it feels connected to hero */
-html body main section.pageHero.blogPostHero + section.rmSection .blogPostArticle,
-html body main section.blogPostHero + section.rmSection .blogPostArticle,
-html body main section.rmSection.blogPostSection .blogPostArticle,
-html body main section.blogPostSection .blogPostArticle,
-html body main section.pageHero.blogPostHero + section.rmSection .blogArticleCard,
-html body main section.blogPostHero + section.rmSection .blogArticleCard,
-html body main section.rmSection.blogPostSection .blogArticleCard,
-html body main section.blogPostSection .blogArticleCard{
-  margin-top: -78px !important;
-  position: relative !important;
-  z-index: 5 !important;
-}
 
 /* Cleaner heading style, without heavy check icon */
 html body main .blogReadableContent .blogAutoHeading{
@@ -13828,218 +13341,110 @@ html body main *{
   display:none!important;
 }
 
-/* ABSOLUTE FINAL BLOG POST GAP FIX — must be last in file */
+/* CLEAN FINAL HERO / CONTENT SPACING SYSTEM
+   One source of truth. Do not add more emergency hero spacing blocks below this. */
 
-/* Blog post hero keeps image/blue style, but does not create extra bottom gap */
-html body main section.pageHero.blogPostHero,
-html body main section.blogPostHero{
+/* 1) Normal inner pages: services, apps, blog list, prices, gallery, contact */
+html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero){
   margin-bottom: 0 !important;
-  padding-bottom: 42px !important;
-  min-height: 250px !important;
+}
+
+html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section,
+html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
+  margin-top: 28px !important;
+  padding-top: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section > .rmShell,
+html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section.rmSection > .rmShell{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 2) Blog list cards: close but not glued */
+html body main section.pageHero + section .blogGrid,
+html body main section.pageHero + section .cardsGrid,
+html body main section.pageHero + section .servicesGrid,
+html body main section.pageHero + section .appsGrid{
+  margin-top: 0 !important;
+}
+
+/* 3) Blog post hero: keep enough space for long H1 and subtitle */
+html body main section.pageHero.blogPostHero,
+html body main section.blogPostHero,
+html body main section.pageHero.blogDetailHero,
+html body main section.blogDetailHero{
+  margin-bottom: 0 !important;
+  padding-bottom: 72px !important;
+  min-height: 360px !important;
   height: auto !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
-/* The section after blog hero must start immediately */
+/* 4) Blog post content: starts after hero, never overlaps title/subtitle */
 html body main section.pageHero.blogPostHero + section,
 html body main section.blogPostHero + section,
+html body main section.pageHero.blogDetailHero + section,
+html body main section.blogDetailHero + section,
 html body main section.blogPostSection,
 html body main section.rmSection.blogPostSection{
-  margin-top: -82px !important;
-  padding-top: 0 !important;
-  position: relative !important;
-  z-index: 8 !important;
-}
-
-/* Remove hidden shell/top padding inside blog section */
-html body main section.blogPostSection > .rmShell,
-html body main section.rmSection.blogPostSection > .rmShell,
-html body main section.pageHero.blogPostHero + section > .rmShell,
-html body main section.blogPostHero + section > .rmShell{
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* Article card itself starts at top of its section */
-html body main section.blogPostSection .blogPostArticle,
-html body main section.rmSection.blogPostSection .blogPostArticle,
-html body main section.blogPostSection .blogArticleCard,
-html body main section.rmSection.blogPostSection .blogArticleCard,
-html body main .blogPostArticle,
-html body main .blogArticleCard{
-  margin-top: 0 !important;
-}
-
-/* Keep the card readable and beautiful */
-html body main .blogPostArticle,
-html body main .blogArticleCard{
-  position: relative !important;
-  z-index: 9 !important;
-  max-width: 820px !important;
-}
-
-/* Mobile: smaller overlap */
-@media(max-width:760px){
-  html body main section.pageHero.blogPostHero + section,
-  html body main section.blogPostHero + section,
-  html body main section.blogPostSection,
-  html body main section.rmSection.blogPostSection{
-    margin-top: -38px !important;
-    padding-top: 0 !important;
-  }
-
-  html body main section.pageHero.blogPostHero,
-  html body main section.blogPostHero{
-    padding-bottom: 34px !important;
-  }
-}
-
-/* ABSOLUTE FINAL HERO SPACING BALANCE */
-
-/* Normal inner pages: small elegant overlap, not glued too much */
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection,
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section{
-  margin-top: -28px !important;
-  padding-top: 0 !important;
-  position: relative !important;
-  z-index: 3 !important;
-}
-
-/* Normal page first cards/content should sit nicely */
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection > .rmShell,
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section > .rmShell{
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* Blog post: no overlap into the title area */
-html body main section.pageHero.blogPostHero,
-html body main section.blogPostHero{
-  margin-bottom: 0 !important;
-  padding-bottom: 46px !important;
-  overflow: visible !important;
-}
-
-/* Blog post article should be close, but NOT cover hero text */
-html body main section.pageHero.blogPostHero + section,
-html body main section.blogPostHero + section,
-html body main section.blogPostSection,
-html body main section.rmSection.blogPostSection{
-  margin-top: 26px !important;
-  padding-top: 0 !important;
-  position: relative !important;
-  z-index: 3 !important;
-}
-
-/* Kill previous aggressive pull-up on blog article */
-html body main section.pageHero.blogPostHero + section .blogPostArticle,
-html body main section.blogPostHero + section .blogPostArticle,
-html body main section.rmSection.blogPostSection .blogPostArticle,
-html body main section.blogPostSection .blogPostArticle,
-html body main section.pageHero.blogPostHero + section .blogArticleCard,
-html body main section.blogPostHero + section .blogArticleCard,
-html body main section.rmSection.blogPostSection .blogArticleCard,
-html body main section.blogPostSection .blogArticleCard,
-html body main .blogPostArticle,
-html body main .blogArticleCard{
-  margin-top: 0 !important;
-}
-
-/* Blog article card stable */
-html body main .blogPostArticle,
-html body main .blogArticleCard{
-  max-width: 820px !important;
-  position: relative !important;
-  z-index: 4 !important;
-}
-
-/* Mobile spacing */
-@media(max-width:760px){
-  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection,
-  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section{
-    margin-top: -18px !important;
-  }
-
-  html body main section.pageHero.blogPostHero + section,
-  html body main section.blogPostHero + section,
-  html body main section.blogPostSection,
-  html body main section.rmSection.blogPostSection{
-    margin-top: 18px !important;
-  }
-
-  html body main section.pageHero.blogPostHero,
-  html body main section.blogPostHero{
-    padding-bottom: 34px !important;
-  }
-}
-
-/* TRUE FINAL HERO SPACING RESET — no content overlaps hero */
-
-/* Normal inner pages: services, apps, blog list, gallery, contact, prices */
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section,
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
   margin-top: 34px !important;
   padding-top: 0 !important;
   position: relative !important;
   z-index: 1 !important;
 }
 
-/* Remove previous negative overlaps from inner page shells */
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section > .rmShell,
-html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection > .rmShell{
+html body main section.blogPostSection > .rmShell,
+html body main section.rmSection.blogPostSection > .rmShell,
+html body main section.pageHero.blogPostHero + section > .rmShell,
+html body main section.blogPostHero + section > .rmShell{
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-/* Blog post needs more room because hero title/subtitle can be tall */
-html body main section.pageHero.blogPostHero + section,
-html body main section.blogPostHero + section,
-html body main section.blogPostSection,
-html body main section.rmSection.blogPostSection{
-  margin-top: 56px !important;
-  padding-top: 0 !important;
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-/* Blog post card must never be pulled into hero */
-html body main section.pageHero.blogPostHero + section .blogPostArticle,
-html body main section.blogPostHero + section .blogPostArticle,
+/* 5) Article card and hero image must never be pulled upward */
+html body main .blogPostArticle,
+html body main .blogArticleCard,
 html body main section.blogPostSection .blogPostArticle,
 html body main section.rmSection.blogPostSection .blogPostArticle,
 html body main section.blogPostSection .blogArticleCard,
-html body main section.rmSection.blogPostSection .blogArticleCard,
-html body main .blogPostArticle,
-html body main .blogArticleCard{
+html body main section.rmSection.blogPostSection .blogArticleCard{
   margin-top: 0 !important;
+  transform: none !important;
   position: relative !important;
   z-index: 1 !important;
 }
 
-/* Blog hero: enough bottom padding for subtitle */
-html body main section.pageHero.blogPostHero,
-html body main section.blogPostHero{
-  padding-bottom: 58px !important;
-  margin-bottom: 0 !important;
-  overflow: visible !important;
+html body main .blogPostArticle .postHeroImage,
+html body main .blogArticleCard .postHeroImage{
+  margin-top: 0 !important;
+  transform: none !important;
 }
 
-/* Mobile */
+/* 6) Mobile */
 @media(max-width:760px){
-  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section,
-  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
-    margin-top: 24px !important;
+  html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section,
+  html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
+    margin-top: 22px !important;
+  }
+
+  html body main section.pageHero.blogPostHero,
+  html body main section.blogPostHero,
+  html body main section.pageHero.blogDetailHero,
+  html body main section.blogDetailHero{
+    padding-bottom: 48px !important;
+    min-height: 300px !important;
   }
 
   html body main section.pageHero.blogPostHero + section,
   html body main section.blogPostHero + section,
+  html body main section.pageHero.blogDetailHero + section,
+  html body main section.blogDetailHero + section,
   html body main section.blogPostSection,
   html body main section.rmSection.blogPostSection{
-    margin-top: 34px !important;
-  }
-
-  html body main section.pageHero.blogPostHero,
-  html body main section.blogPostHero{
-    padding-bottom: 42px !important;
+    margin-top: 24px !important;
   }
 }
+
