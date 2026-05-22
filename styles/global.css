@@ -13893,3 +13893,82 @@ html body main .blogArticleCard{
     padding-bottom: 34px !important;
   }
 }
+
+/* ABSOLUTE FINAL HERO SPACING BALANCE */
+
+/* Normal inner pages: small elegant overlap, not glued too much */
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection,
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section{
+  margin-top: -28px !important;
+  padding-top: 0 !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Normal page first cards/content should sit nicely */
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection > .rmShell,
+html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section > .rmShell{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Blog post: no overlap into the title area */
+html body main section.pageHero.blogPostHero,
+html body main section.blogPostHero{
+  margin-bottom: 0 !important;
+  padding-bottom: 46px !important;
+  overflow: visible !important;
+}
+
+/* Blog post article should be close, but NOT cover hero text */
+html body main section.pageHero.blogPostHero + section,
+html body main section.blogPostHero + section,
+html body main section.blogPostSection,
+html body main section.rmSection.blogPostSection{
+  margin-top: 26px !important;
+  padding-top: 0 !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Kill previous aggressive pull-up on blog article */
+html body main section.pageHero.blogPostHero + section .blogPostArticle,
+html body main section.blogPostHero + section .blogPostArticle,
+html body main section.rmSection.blogPostSection .blogPostArticle,
+html body main section.blogPostSection .blogPostArticle,
+html body main section.pageHero.blogPostHero + section .blogArticleCard,
+html body main section.blogPostHero + section .blogArticleCard,
+html body main section.rmSection.blogPostSection .blogArticleCard,
+html body main section.blogPostSection .blogArticleCard,
+html body main .blogPostArticle,
+html body main .blogArticleCard{
+  margin-top: 0 !important;
+}
+
+/* Blog article card stable */
+html body main .blogPostArticle,
+html body main .blogArticleCard{
+  max-width: 820px !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+/* Mobile spacing */
+@media(max-width:760px){
+  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section.rmSection,
+  html body main section.pageHero:not(.blogPostHero):not(.blogDetailHero) + section{
+    margin-top: -18px !important;
+  }
+
+  html body main section.pageHero.blogPostHero + section,
+  html body main section.blogPostHero + section,
+  html body main section.blogPostSection,
+  html body main section.rmSection.blogPostSection{
+    margin-top: 18px !important;
+  }
+
+  html body main section.pageHero.blogPostHero,
+  html body main section.blogPostHero{
+    padding-bottom: 34px !important;
+  }
+}
