@@ -13696,3 +13696,66 @@ html body main .blogExportBtn{
     padding: 11px 14px !important;
   }
 }
+
+/* FINAL FINAL BLOG GAP FIX — move article closer to hero */
+
+/* Remove remaining vertical space after blog hero */
+html body main section.pageHero.blogPostHero + section.rmSection,
+html body main section.blogPostHero + section.rmSection,
+html body main section.rmSection.blogPostSection,
+html body main section.blogPostSection{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Pull the article card upward slightly so it feels connected to hero */
+html body main section.pageHero.blogPostHero + section.rmSection .blogPostArticle,
+html body main section.blogPostHero + section.rmSection .blogPostArticle,
+html body main section.rmSection.blogPostSection .blogPostArticle,
+html body main section.blogPostSection .blogPostArticle,
+html body main section.pageHero.blogPostHero + section.rmSection .blogArticleCard,
+html body main section.blogPostHero + section.rmSection .blogArticleCard,
+html body main section.rmSection.blogPostSection .blogArticleCard,
+html body main section.blogPostSection .blogArticleCard{
+  margin-top: -78px !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Cleaner heading style, without heavy check icon */
+html body main .blogReadableContent .blogAutoHeading{
+  margin: 26px 0 14px !important;
+  padding: 12px 16px !important;
+  border-radius: 13px !important;
+  background: #eef8ff !important;
+  border-left: 5px solid #0b8fd8 !important;
+  color: #08234a !important;
+  font-size: 20px !important;
+  line-height: 1.25 !important;
+  font-weight: 950 !important;
+}
+
+html body main .blogReadableContent .blogAutoHeading::before,
+html body main .blogReadableContent .blogAutoHeading::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* Keep enough space on mobile, but still reduce the gap */
+@media(max-width:760px){
+  html body main section.pageHero.blogPostHero + section.rmSection .blogPostArticle,
+  html body main section.blogPostHero + section.rmSection .blogPostArticle,
+  html body main section.rmSection.blogPostSection .blogPostArticle,
+  html body main section.blogPostSection .blogPostArticle,
+  html body main section.pageHero.blogPostHero + section.rmSection .blogArticleCard,
+  html body main section.blogPostHero + section.rmSection .blogArticleCard,
+  html body main section.rmSection.blogPostSection .blogArticleCard,
+  html body main section.blogPostSection .blogArticleCard{
+    margin-top: -38px !important;
+  }
+
+  html body main .blogReadableContent .blogAutoHeading{
+    font-size: 18px !important;
+    padding: 11px 14px !important;
+  }
+}

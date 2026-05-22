@@ -151,9 +151,15 @@ function enhanceArticle() {
     if (looksLikeHeading(text)) {
       el.classList.remove("blogPrettyParagraph");
       el.classList.add("blogAutoHeading");
-      if (!text.startsWith("✓")) {
-        el.textContent = `✓ ${text}`;
-      }
+
+      const cleanHeading = text
+        .replace(/^✓\s*/g, "")
+        .replace(/^(\d+)\.(\S)/, "$1. $2")
+        .replace(/^(\d+)\)\s*/, "$1. ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      el.textContent = cleanHeading;
       return;
     }
 
