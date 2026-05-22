@@ -60,7 +60,8 @@ export const metadata: Metadata = {
  }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  const htmlLang = params?.lang === 'ua' ? 'uk' : params?.lang === 'en' ? 'en' : params?.lang === 'ru' ? 'ru' : 'ro'; children, params }: { children: React.ReactNode; params?: { lang?: string } }) {
  const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
@@ -82,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
  };
 
  return (
-  <html lang="ro">
+  <html lang={htmlLang}">
    <body>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <RouteTransition />
