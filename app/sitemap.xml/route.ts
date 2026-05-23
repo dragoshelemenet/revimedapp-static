@@ -1,4 +1,5 @@
 import { getPublishedPosts } from "@/lib/db";
+import { equipmentItems } from "@/lib/equipment";
 
 const SITE = "https://revimed.site";
 const langs = ["ro", "en", "ru", "ua"] as const;
@@ -14,6 +15,7 @@ const staticPaths = [
   "/servicii/terapie-balneara",
   "/servicii/electroterapie",
   "/aplicatii",
+  "/utilaj",
   "/aplicatii/teste-si-instrumente",
   "/aplicatii/teste-si-instrumente/test-ayurveda-dosha",
   "/aplicatii/teste-si-instrumente/respiratie-terapeutica",
@@ -114,6 +116,12 @@ export async function GET() {
             : "monthly";
 
       urls.push(urlNode(withLang(lang, path), undefined, priority, changefreq));
+    }
+  }
+
+  for (const lang of langs) {
+    for (const item of equipmentItems) {
+      urls.push(urlNode(withLang(lang, `/utilaj/${item.slug}`), undefined, "0.70", "monthly"));
     }
   }
 
