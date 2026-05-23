@@ -38,7 +38,7 @@ export default async function Page({ params }: Props) {
         <div className="rmShell">
           <div className="equipmentGrid">
             {apps.map(([slug, title]) => (
-              <Link className="equipmentCard" href={`${prefix}/aplicatii/${slug}`} key={slug}>
+              <Link className="equipmentCard" href={`${prefix}/aplicatii/teste-si-instrumente/${slug}`} key={slug}>
                 <span className="equipmentBadge">{nav}</span>
                 <h2>{title}</h2>
                 <p>{subtitle}</p>

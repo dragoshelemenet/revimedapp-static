@@ -24,7 +24,7 @@ export default function Page() {
         <div className="rmShell">
           <div className="equipmentGrid">
             {apps.map(([slug, title, text]) => (
-              <Link className="equipmentCard" href={`/aplicatii/${slug}`} key={slug}>
+              <Link className="equipmentCard" href={`/aplicatii/teste-si-instrumente/${slug}`} key={slug}>
                 <span className="equipmentBadge">Aplicație</span>
                 <h2>{title}</h2>
                 <p>{text}</p>
