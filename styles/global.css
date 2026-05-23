@@ -14084,3 +14084,51 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
   .servicesNewGrid{grid-template-columns:1fr!important}
   .servicesNewDetailCard{padding:28px 22px!important}
 }
+
+/* FINAL BLOG LIST HERO HEIGHT FIX */
+html body main section.pageHero:has(+ section .blogGrid),
+html body main section.pageHero:has(+ section.rmSection .blogGrid){
+  min-height:260px!important;
+  height:260px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  overflow:hidden!important;
+}
+
+html body main section.pageHero:has(+ section .blogGrid) > .rmShell,
+html body main section.pageHero:has(+ section.rmSection .blogGrid) > .rmShell{
+  width:min(1120px,calc(100% - 32px))!important;
+  margin:0 auto!important;
+  padding:0!important;
+  transform:none!important;
+}
+
+html body main section.pageHero:has(+ section .blogGrid) h1,
+html body main section.pageHero:has(+ section.rmSection .blogGrid) h1{
+  font-size:clamp(46px,5.3vw,68px)!important;
+  line-height:.98!important;
+  margin:8px 0 14px!important;
+  max-width:900px!important;
+}
+
+html body main section.pageHero:has(+ section .blogGrid) p,
+html body main section.pageHero:has(+ section.rmSection .blogGrid) p,
+html body main section.pageHero:has(+ section .blogGrid) .lead,
+html body main section.pageHero:has(+ section.rmSection .blogGrid) .lead{
+  margin:0!important;
+  max-width:900px!important;
+}
+
+@media(max-width:700px){
+  html body main section.pageHero:has(+ section .blogGrid),
+  html body main section.pageHero:has(+ section.rmSection .blogGrid){
+    min-height:230px!important;
+    height:230px!important;
+  }
+
+  html body main section.pageHero:has(+ section .blogGrid) h1,
+  html body main section.pageHero:has(+ section.rmSection .blogGrid) h1{
+    font-size:clamp(38px,10vw,50px)!important;
+  }
+}
