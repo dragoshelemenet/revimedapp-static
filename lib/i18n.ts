@@ -79,6 +79,7 @@ export const dictionary: Record<Lang, any> = {
   about: "About",
   services: "Services",
   apps: "Apps",
+  equipment: "Equipment",
   prices: "Prices",
   gallery: "Gallery",
   blog: "Blog",
