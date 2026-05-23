@@ -63,6 +63,7 @@ export default function Header() {
      <Link className={isActive("/despre-noi") ? "activeNav" : ""} href={link("/despre-noi")} onClick={close}>{text.about}</Link>
      <Link className={isActive("/servicii") ? "activeNav" : ""} href={link("/servicii")} onClick={close}>{text.services}</Link>
      <Link className={isActive("/aplicatii") ? "activeNav" : ""} href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
+     <Link className={isActive("/utilaj") ? "activeNav" : ""} href={link("/utilaj")} onClick={close}>{text.equipment}</Link>
      <Link className={isActive("/preturi") ? "activeNav" : ""} href={link("/preturi")} onClick={close}>{text.prices}</Link>
      <Link className={isActive("/galerie") ? "activeNav" : ""} href={link("/galerie")} onClick={close}>{text.gallery}</Link>
      <Link className={isActive("/blog") ? "activeNav" : ""} href={link("/blog")} onClick={close}>{text.blog}</Link>
