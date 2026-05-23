@@ -1,15 +1,12 @@
-import { makeMetadata } from "@/lib/seo";
-import { ServicesTemplate } from "@/lib/pageTemplates";
-import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
+import type { Metadata } from "next";
+import { ServicesListPage } from "@/components/ServicesPages";
+import { servicesText } from "@/lib/services";
 
-export const metadata = makeMetadata({
- lang: "ro",
- path: "/servicii",
- title: "Servicii medicale",
- description: "Servicii medicale Revimed PLUS+: consultații neurologice, neurochirurgie, fizioterapie și reabilitare, diagnostic funcțional, terapie balneară și electroterapie."
-});
+export const metadata: Metadata = {
+  title: servicesText.ro.title,
+  description: servicesText.ro.subtitle,
+};
 
-export const dynamic = "force-dynamic";
 export default function Page() {
- return <ServicesTemplate lang="ro" />;
+  return <ServicesListPage lang="ro" />;
 }

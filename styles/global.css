@@ -428,12 +428,12 @@ p{margin:0 0 18px}
 .aboutBlock h2,.centerTitle{font-size:38px;color:#111;text-align:left}
 .centerTitle{text-align:center;margin-bottom:30px}
 .aboutBlock p{font-weight:600;color:#202833}
-.serviceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:900px;margin:auto}
-.serviceTile{background:linear-gradient(180deg,#f8fcff,#eaf7ff);border:1px solid #cde9ff;border-radius:16px;text-align:center;padding:28px 22px;box-shadow:0 12px 26px rgba(0,132,210,.2);transition:.2s}
-.serviceTile:hover{transform:translateY(-5px)}
-.tileIcon{font-size:42px;color:#56a9de;line-height:1}
-.serviceTile h3{font-size:20px;margin:15px 0 8px}
-.serviceTile p{font-size:13px;color:#202833;font-weight:600}
+
+
+
+
+
+
 .toolGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .toolTile{background:#fff;border:1px solid #d6ecff;border-radius:18px;padding:24px;box-shadow:0 12px 28px rgba(0,132,210,.13)}
 .toolTile span{display:inline-block;background:#e8f4ff;border-radius:999px;padding:6px 10px;color:#087bc0;font-weight:900;font-size:12px}
@@ -522,7 +522,7 @@ p{margin:0 0 18px}
   .homeHero,.heroOverlay{min-height:430px}
   .heroCenter h1{font-size:38px}
   .aboutGrid,.contactGrid,.rmFooterGrid,.adminColumns,.tibetanGrid{grid-template-columns:1fr}
-  .serviceGrid,.toolGrid,.reviewGrid,.priceGrid,.doshaGrid{grid-template-columns:1fr}
+.toolGrid,.reviewGrid,.priceGrid,.doshaGrid{grid-template-columns:1fr}
   .videoGrid{grid-template-columns:1fr}
   .bigVideo{height:180px}
 }
@@ -569,17 +569,8 @@ p{margin:0 0 18px}
   display:grid;
   gap:12px;
 }
-.serviceHeroImg{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:18px;
-  margin-bottom:24px;
-  background:#e8f4ff;
-}
-.serviceArticle{
-  overflow:hidden;
-}
+
+
 .textContent p{
   color:#334155;
   font-size:17px;
@@ -589,16 +580,8 @@ p{margin:0 0 18px}
   margin-bottom:8px;
   color:#334155;
 }
-.miniPrice{
-  display:grid;
-  gap:4px;
-  border-top:1px solid #e3effb;
-  padding:12px 0;
-}
-.miniPrice span{
-  color:#0a98ed;
-  font-weight:900;
-}
+
+
 
 /* Homepage cleanup */
 .pricePreview{
@@ -1005,37 +988,20 @@ p{margin:0 0 18px}
   }
 
   .toolGrid,
-  .serviceGrid,
-  .grid3{
+.grid3{
     grid-template-columns:1fr!important;
     gap:16px;
   }
 
   .toolTile,
-  .serviceTile,
-  .card,
+.card,
   .adminCard{
     border-radius:22px;
     padding:22px;
     box-shadow:0 10px 28px rgba(0,88,150,.10);
   }
-
-  .toolTile h3,
-  .serviceTile h3{
-    font-size:26px;
-    line-height:1.08;
-    margin-top:14px;
-    margin-bottom:12px;
-    word-break:normal;
-    overflow-wrap:normal;
-    hyphens:none;
-  }
-
-  .toolTile p,
-  .serviceTile p{
-    font-size:16px;
-    line-height:1.6;
-  }
+.toolTile p,
+  
 
   .toolTile b{
     display:inline-block;
@@ -1217,11 +1183,7 @@ p{margin:0 0 18px}
     font-size:39px;
   }
 
-  .toolTile h3,
-  .serviceTile h3{
-    font-size:24px;
   }
-}
 
 .langs{
   display:flex;
@@ -3008,27 +2970,11 @@ p{margin:0 0 18px}
   }
 
   .toolGrid,
-  .serviceGrid{
-    gap:14px!important;
-  }
+  
 
   .toolTile,
-  .serviceTile{
-    padding:20px!important;
-    border-radius:20px!important;
-  }
-
-  .toolTile h3,
-  .serviceTile h3{
-    font-size:23px!important;
-    line-height:1.12!important;
-  }
-
-  .toolTile p,
-  .serviceTile p{
-    font-size:15px!important;
-    line-height:1.5!important;
-  }
+.toolTile p,
+  
 
   .toolTile b,
   .serviceTile b{
@@ -3649,17 +3595,14 @@ p{margin:0 0 18px}
   }
 
   /* 2 cards per row on phone */
-  .serviceGrid,
-  .toolGrid,
+.toolGrid,
   .grid3,
   .doshaGrid{
     display:grid!important;
     grid-template-columns:1fr 1fr!important;
     gap:10px!important;
   }
-
-  .serviceTile,
-  .toolTile,
+.toolTile,
   .card{
     padding:14px!important;
     border-radius:16px!important;
@@ -3667,14 +3610,10 @@ p{margin:0 0 18px}
   }
 
   .serviceTile .tileIcon,
-  .tileIcon{
-    font-size:26px!important;
-    margin-bottom:6px!important;
-  }
+  
 
   .serviceTile h3,
-  .toolTile h3,
-  .card h2{
+.card h2{
     font-size:15px!important;
     line-height:1.15!important;
     margin:6px 0 6px!important;
@@ -3824,16 +3763,14 @@ p{margin:0 0 18px}
 
 /* On very narrow phones keep cards readable */
 @media(max-width:350px){
-  .serviceGrid,
-  .toolGrid,
+.toolGrid,
   .grid3,
   .doshaGrid{
     grid-template-columns:1fr!important;
   }
 
   .serviceTile h3,
-  .toolTile h3,
-  .card h2{
+.card h2{
     font-size:19px!important;
   }
 
@@ -4087,7 +4024,6 @@ body{
 
 /* Cards: remove heavy shadows/outlines, cleaner backgrounds */
 .card,
-.serviceTile,
 .toolTile,
 .adminCard,
 .contactPrimaryCard,
@@ -4109,8 +4045,6 @@ body{
   box-shadow:none!important;
   border:1px solid var(--clean-line)!important;
 }
-
-.serviceTile,
 .toolTile,
 .card{
   background:#fff!important;
@@ -4126,7 +4060,6 @@ body{
 }
 
 .serviceTile h3,
-.toolTile h3,
 .card h2{
   color:var(--clean-navy)!important;
 }
@@ -4313,16 +4246,13 @@ select:focus{
   .pageHero .lead{
     font-size:16px!important;
   }
-
-  .serviceTile,
-  .toolTile,
+.toolTile,
   .card{
     border-radius:14px!important;
   }
 
   .serviceTile h3,
-  .toolTile h3,
-  .card h2{
+.card h2{
     font-size:14px!important;
     line-height:1.15!important;
   }
@@ -4535,7 +4465,6 @@ p{
 }
 
 /* Better card grid desktop */
-.serviceGrid,
 .toolGrid{
   display:grid!important;
   grid-template-columns:repeat(3,1fr)!important;
@@ -4549,7 +4478,6 @@ p{
 }
 
 /* Premium card style: no heavy shadows, clean, easy */
-.serviceTile,
 .toolTile,
 .card{
   border-radius:18px!important;
@@ -4571,7 +4499,6 @@ p{
 }
 
 .serviceTile h3,
-.toolTile h3,
 .card h2{
   font-size:21px!important;
   line-height:1.18!important;
@@ -4734,8 +4661,7 @@ p{
 
 /* Tablet */
 @media(max-width:980px){
-  .serviceGrid,
-  .toolGrid,
+.toolGrid,
   .grid3{
     grid-template-columns:repeat(2,1fr)!important;
   }
@@ -4820,16 +4746,12 @@ p{
     font-size:26px!important;
     margin-bottom:18px!important;
   }
-
-  .serviceGrid,
-  .toolGrid,
+.toolGrid,
   .grid3{
     grid-template-columns:repeat(2,1fr)!important;
     gap:10px!important;
   }
-
-  .serviceTile,
-  .toolTile,
+.toolTile,
   .card{
     padding:14px!important;
     border-radius:14px!important;
@@ -4845,8 +4767,7 @@ p{
   }
 
   .serviceTile h3,
-  .toolTile h3,
-  .card h2{
+.card h2{
     font-size:14px!important;
     line-height:1.15!important;
     margin:2px 0!important;
@@ -4939,15 +4860,13 @@ p{
 
 /* Very small phones */
 @media(max-width:360px){
-  .serviceGrid,
-  .toolGrid,
+.toolGrid,
   .grid3{
     grid-template-columns:1fr!important;
   }
 
   .serviceTile h3,
-  .toolTile h3,
-  .card h2{
+.card h2{
     font-size:18px!important;
   }
 
@@ -5203,7 +5122,6 @@ select:focus-visible{
 }
 
 /* Cards premium details */
-.serviceTile,
 .toolTile,
 .card{
   position:relative;
@@ -5543,15 +5461,11 @@ select:focus-visible{
   .aboutGrid .softBtn{
     width:100%;
   }
-
-  .serviceGrid,
-  .toolGrid,
+.toolGrid,
   .grid3{
     gap:9px!important;
   }
-
-  .serviceTile,
-  .toolTile,
+.toolTile,
   .card{
     min-height:148px!important;
   }
@@ -6154,14 +6068,7 @@ html.route-ready .pageHero .crumb{
 }
 
 /* Service detail */
-.serviceHeroImg{
-  border-radius:20px!important;
-  margin-bottom:24px!important;
-  width:100%;
-  max-height:360px;
-  object-fit:cover;
-  border:1px solid #e4eef8;
-}
+
 
 .sideBox{
   align-self:start;
@@ -6430,9 +6337,7 @@ html.route-ready .pageHero .crumb{
     position:static!important;
   }
 
-  .serviceHeroImg{
-    max-height:240px!important;
-  }
+  
 }
 
 /* Very small mobile */
@@ -6440,9 +6345,7 @@ html.route-ready .pageHero .crumb{
   .homeStatsGrid{
     grid-template-columns:1fr!important;
   }
-
-  .serviceTile,
-  .toolTile,
+.toolTile,
   .card{
     min-height:auto!important;
   }
@@ -6871,13 +6774,10 @@ html.route-ready .pageHero .rmShell{
 }
 
 /* Services/app cards more modern, less empty */
-.serviceGrid,
 .toolGrid{
   max-width:760px!important;
   margin-inline:auto!important;
 }
-
-.serviceTile,
 .toolTile{
   border-radius:18px!important;
   padding:22px!important;
@@ -7014,14 +6914,10 @@ html.route-ready .pageHero .rmShell{
   .aboutGrid h2{
     font-size:27px!important;
   }
-
-  .serviceGrid,
-  .toolGrid{
+.toolGrid{
     max-width:100%!important;
   }
-
-  .serviceTile,
-  .toolTile{
+.toolTile{
     padding:14px!important;
     border-radius:15px!important;
   }
@@ -13561,57 +13457,18 @@ html body main [class*="Result"] em{
    Fixes the ugly overlap between service cards and the info/SEO block. */
 
 /* Keep the grid clean and give it real breathing space below */
-body main .serviceGrid{
-  position:relative !important;
-  z-index:2 !important;
-  margin-bottom:76px !important;
-  overflow:visible !important;
-}
+body main 
 
 /* Service cards: balanced, not too huge, visually consistent */
-body main .serviceGrid .serviceTile{
-  min-height:220px !important;
-  padding:30px 28px !important;
-  border-radius:22px !important;
-  background:linear-gradient(180deg,#fbfdff 0%,#f6fbff 100%) !important;
-  border:1px solid #dbeafe !important;
-  box-shadow:0 14px 34px rgba(7,31,63,.06) !important;
-  transform:none !important;
-}
+body main .serviceGrid 
 
-body main .serviceGrid .serviceTile:hover{
-  transform:translateY(-4px) !important;
-  box-shadow:0 18px 42px rgba(7,31,63,.10) !important;
-}
+body main .serviceGrid 
 
-body main .serviceGrid .serviceTile h3{
-  color:#102033 !important;
-  font-size:21px !important;
-  line-height:1.12 !important;
-  margin:18px 0 12px !important;
-  letter-spacing:-.03em !important;
-}
+body main .serviceGrid 
 
-body main .serviceGrid .serviceTile p{
-  color:#5d6f86 !important;
-  font-size:15px !important;
-  line-height:1.52 !important;
-  font-weight:750 !important;
-  margin:0 !important;
-}
+body main .serviceGrid 
 
-body main .serviceGrid .tileIcon{
-  width:52px !important;
-  height:52px !important;
-  border-radius:16px !important;
-  display:grid !important;
-  place-items:center !important;
-  margin:0 0 18px !important;
-  background:#f2f9ff !important;
-  border:1px solid #dbeafe !important;
-  box-shadow:none !important;
-  font-size:28px !important;
-}
+body main .serviceGrid 
 
 /* The info/SEO card directly after services */
 body main .serviceGrid + .rmCard,
@@ -13707,14 +13564,9 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child a{
 
 /* Mobile */
 @media(max-width:760px){
-  body main .serviceGrid{
-    margin-bottom:42px !important;
-  }
+  body main 
 
-  body main .serviceGrid .serviceTile{
-    min-height:auto !important;
-    padding:24px !important;
-  }
+  body main .serviceGrid 
 
   body main .serviceGrid + .rmCard,
   body main .serviceGrid ~ .rmCard,
@@ -13753,12 +13605,7 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child a{
 html body main section:has(.serviceTile):has(a[href*="aplicatii"]) .serviceGrid,
 html body main section:has(.serviceTile):has(a[href*="/aplicatii/"]) .serviceGrid,
 html body main section:has(.serviceTile):has(a[href*="teste"]) .serviceGrid,
-html body main section:has(.serviceTile):has(a[href*="servicii"]) .serviceGrid{
-  position: relative !important;
-  z-index: 2 !important;
-  margin-bottom: 96px !important;
-  overflow: visible !important;
-}
+html body main section:has(.serviceTile):has(a[href*="servicii"]) 
 
 /* The real info card under applications is the last rmCard after the cards */
 html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
@@ -13779,9 +13626,7 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
 
 /* But do not style the actual service/app tiles as giant SEO cards */
 html body main section:has(.serviceTile) .serviceGrid .rmCard,
-html body main section:has(.serviceTile) .serviceGrid .serviceTile{
-  margin-top: 0 !important;
-}
+html body main section:has(.serviceTile) .serviceGrid 
 
 /* Title must sit inside the info card, never touching/escaping the border */
 html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h1,
@@ -13826,9 +13671,7 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
 
 /* Mobile */
 @media(max-width:760px){
-  html body main section:has(.serviceTile) .serviceGrid{
-    margin-bottom: 54px !important;
-  }
+  html body main section:has(.serviceTile) 
 
   html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
     margin-top: 58px !important;
@@ -14117,4 +13960,127 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
 @media(max-width:620px){
   .equipmentGrid{grid-template-columns:1fr!important}
   .equipmentDetailCard{padding:28px 22px!important}
+}
+
+/* NEW SERVICES STATIC PAGES — utilaj-style */
+.servicesNewSection{padding-top:54px!important}
+.servicesNewGrid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:22px!important;
+  max-width:1120px!important;
+  margin:0 auto!important;
+}
+.servicesNewCard{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:12px!important;
+  min-height:240px!important;
+  padding:28px!important;
+  border-radius:24px!important;
+  border:1px solid #dbeafe!important;
+  background:linear-gradient(180deg,#fff 0%,#f6fbff 100%)!important;
+  box-shadow:0 16px 40px rgba(7,31,63,.06)!important;
+  color:#102033!important;
+  text-decoration:none!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important;
+}
+.servicesNewCard:hover{
+  transform:translateY(-5px)!important;
+  box-shadow:0 22px 52px rgba(7,31,63,.12)!important;
+  border-color:#b7defb!important;
+}
+.servicesNewBadge{
+  align-self:flex-start!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  min-height:30px!important;
+  padding:7px 12px!important;
+  border-radius:999px!important;
+  background:#eaf6ff!important;
+  color:#006bad!important;
+  font-weight:900!important;
+  font-size:13px!important;
+}
+.servicesNewCard h2{
+  margin:8px 0 0!important;
+  font-size:24px!important;
+  line-height:1.1!important;
+  letter-spacing:-.035em!important;
+  color:#102033!important;
+}
+.servicesNewCard p{
+  margin:0!important;
+  color:#5d6f86!important;
+  line-height:1.55!important;
+  font-weight:650!important;
+}
+.servicesNewCard b{
+  margin-top:auto!important;
+  color:#006bad!important;
+  font-weight:950!important;
+}
+.servicesNewDetailSection{padding-top:54px!important}
+.servicesNewDetailCard{
+  max-width:980px!important;
+  margin:0 auto!important;
+  padding:42px!important;
+  border-radius:28px!important;
+  border:1px solid #dbeafe!important;
+  background:linear-gradient(180deg,#fff 0%,#f7fbff 100%)!important;
+  box-shadow:0 22px 60px rgba(7,31,63,.08)!important;
+}
+.servicesNewDetailCard h2{
+  margin:18px 0 14px!important;
+  color:#0a2554!important;
+  font-size:clamp(34px,4vw,54px)!important;
+  line-height:1.03!important;
+  letter-spacing:-.055em!important;
+}
+.servicesNewLead{
+  color:#405269!important;
+  font-size:20px!important;
+  line-height:1.65!important;
+  font-weight:750!important;
+  margin:0 0 26px!important;
+}
+.servicesNewInfoBox{
+  margin:18px 0!important;
+  padding:24px 26px!important;
+  border-radius:20px!important;
+  border:1px solid #cfe9ff!important;
+  background:#f1f9ff!important;
+}
+.servicesNewInfoBox:nth-of-type(even){background:#fff!important}
+.servicesNewInfoBox h3{
+  margin:0 0 10px!important;
+  color:#0a2554!important;
+  font-size:23px!important;
+}
+.servicesNewInfoBox p,
+.servicesNewInfoBox li{
+  color:#405269!important;
+  line-height:1.7!important;
+  font-size:17px!important;
+}
+.servicesNewInfoBox ul{
+  margin:0!important;
+  padding-left:20px!important;
+}
+.servicesNewInfoBox li{margin:8px 0!important}
+.servicesNewNote{
+  margin:24px 0!important;
+  padding:15px 18px!important;
+  border-radius:16px!important;
+  border:1px solid #ffd69b!important;
+  background:#fff8ec!important;
+  color:#29384d!important;
+  font-weight:750!important;
+}
+@media(max-width:900px){
+  .servicesNewGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:620px){
+  .servicesNewGrid{grid-template-columns:1fr!important}
+  .servicesNewDetailCard{padding:28px 22px!important}
 }

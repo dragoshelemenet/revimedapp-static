@@ -1,4 +1,5 @@
 import { getPublishedPosts } from "@/lib/db";
+import { servicesRo } from "@/lib/services";
 import { equipmentItems } from "@/lib/equipment";
 
 const SITE = "https://revimed.site";
@@ -122,6 +123,12 @@ export async function GET() {
   for (const lang of langs) {
     for (const item of equipmentItems) {
       urls.push(urlNode(withLang(lang, `/utilaj/${item.slug}`), undefined, "0.70", "monthly"));
+    }
+  }
+
+  for (const lang of langs) {
+    for (const item of servicesRo) {
+      urls.push(urlNode(withLang(lang, `/servicii/${item.slug}`), undefined, "0.86", "monthly"));
     }
   }
 

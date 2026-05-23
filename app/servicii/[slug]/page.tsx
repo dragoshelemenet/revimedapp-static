@@ -1,25 +1,22 @@
-import { makeAdvancedMetadata, serviceSeo, faqJsonLd, breadcrumbJsonLd, medicalWebPageJsonLd, JsonLdBlock } from "@/lib/seoAdvanced";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ServiceTemplate } from "@/lib/pageTemplates";
-import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
-export const dynamic = "force-dynamic";
+import { ServiceDetailPage } from "@/components/ServicesPages";
+import { getLocalizedService } from "@/lib/servicesLocalized";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
- const { slug } = await params;
- const seo = serviceSeo[slug]?.ro;
+type Props = { params: Promise<{ slug: string }> };
 
- return makeAdvancedMetadata({
-  lang: "ro",
-  path: `/servicii/${slug}`,
-  title: seo?.title || "Servicii medicale Revimed PLUS+",
-  description: seo?.description || "Servicii medicale Revimed PLUS+ Chișinău: neurologie, neurochirurgie, fizioterapie, recuperare și diagnostic.",
-  keywords: seo?.keywords || []
- });
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const item = getLocalizedService("ro", slug);
+  if (!item) return {};
+  return {
+    title: `${item.title} | Servicii medicale Revimed PLUS+`,
+    description: item.short,
+  };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
- const { slug } = await params;
- const page = ServiceTemplate({ lang: "ro", slug });
- if (!page) notFound();
- return page;
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+  if (!getLocalizedService("ro", slug)) notFound();
+  return <ServiceDetailPage lang="ro" slug={slug} />;
 }

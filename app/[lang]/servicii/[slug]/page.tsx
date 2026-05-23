@@ -1,28 +1,31 @@
-import { makeAdvancedMetadata, serviceSeo, faqJsonLd, breadcrumbJsonLd, medicalWebPageJsonLd, JsonLdBlock } from "@/lib/seoAdvanced";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ServiceTemplate } from "@/lib/pageTemplates";
-import { isLang, type Lang } from "@/lib/i18n";
-import { cleanServiceText, getServiceSeo } from "@/lib/serviceSeoText";
-export const dynamic = "force-dynamic";
+import { ServiceDetailPage } from "@/components/ServicesPages";
+import { getLocalizedService } from "@/lib/servicesLocalized";
+import { normalizeLang } from "@/lib/services";
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
- const { lang, slug } = await params;
- const safeLang = (["ro", "en", "ru", "ua"].includes(lang) ? lang : "ro") as Lang;
- const seo = serviceSeo[slug]?.[safeLang as keyof typeof serviceSeo[typeof slug]];
+type Props = { params: Promise<{ lang: string; slug: string }> };
 
- return makeAdvancedMetadata({
-  lang: safeLang,
-  path: `/servicii/${slug}`,
-  title: seo?.title || "Servicii medicale Revimed PLUS+",
-  description: seo?.description || "Servicii medicale Revimed PLUS+ Chișinău: neurologie, neurochirurgie, fizioterapie, recuperare și diagnostic.",
-  keywords: seo?.keywords || []
- });
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang, slug } = await params;
+  const safeLang = normalizeLang(lang);
+  const item = getLocalizedService(safeLang, slug);
+  if (!item) return {};
+  const suffix =
+    safeLang === "en" ? "Medical services Revimed PLUS+" :
+    safeLang === "ru" ? "Медицинские услуги Revimed PLUS+" :
+    safeLang === "ua" ? "Медичні послуги Revimed PLUS+" :
+    "Servicii medicale Revimed PLUS+";
+
+  return {
+    title: `${item.title} | ${suffix}`,
+    description: item.short,
+  };
 }
 
-export default async function Page({ params }: { params: Promise<{ lang: string; slug: string }> }) {
- const { lang, slug } = await params;
- if (!isLang(lang) || lang === "ro") notFound();
- const page = ServiceTemplate({ lang: lang as Lang, slug });
- if (!page) notFound();
- return page;
+export default async function Page({ params }: Props) {
+  const { lang, slug } = await params;
+  const safeLang = normalizeLang(lang);
+  if (!getLocalizedService(safeLang, slug)) notFound();
+  return <ServiceDetailPage lang={safeLang} slug={slug} />;
 }
