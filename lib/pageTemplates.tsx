@@ -345,8 +345,6 @@ const seoVisibleText = {
 
 export function HomeTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
- const services = getPublishedServicesSmart(lang).slice(0, 6);
- const appTools = translatedTools(lang);
 
  return (
   <>
@@ -376,36 +374,22 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
     </div>
    </section>
 
-   <section className="rmSection servicesBlock">
-    <div className="rmShell blogHeroTextCard">
-     <h2 className="centerTitle">{text.services}</h2>
-     <div className="serviceGrid">
-      {services.map((service) => {
-       const copy = serviceCardCopy(service, lang);
-       return (
-        <Link key={service.id} href={withLang(`/servicii/${service.slug}`, lang)} className="serviceTile">
-         <IconVisual src={service.icon} alt={copy.title} className="tileIconImg" />
-         <h3>{copy.title}</h3>
-         <p>{copy.desc}</p>
-        </Link>
-       );
-      })}
-     </div>
-    </div>
-   </section>
-
-   <section className="rmSection appBlock">
+   <section className="rmSection homeEquipmentBlock">
     <div className="rmShell">
-     <h2 className="centerTitle">{text.tools}</h2>
-     <div className="toolGrid">
-      {appTools.map((tool) => (
-       <Link href={withLang(tool.href, lang)} className="toolTile" key={tool.slug}>
-        <span>{tool.tag}</span>
-        <h3>{tool.title}</h3>
-        <p>{tool.description}</p>
-        <b>{text.readMore}</b>
-       </Link>
-      ))}
+     <h2 className="centerTitle">Utilaje Revimed PLUS+</h2>
+     <div className="homeEquipmentGrid">
+      <Link href={withLang("/utilaj/electrosomn-3", lang)} className="homeEquipmentCard">
+       <img src="https://1profimed.ru/wp-content/uploads/electroson-03.jpg" alt="Electrosomn" />
+       <div><span>Electrosomn</span><h3>Terapie prin electrosomn</h3></div>
+      </Link>
+      <Link href={withLang("/utilaj/transair-01p-transair-05", lang)} className="homeEquipmentCard">
+       <img src="https://i.ytimg.com/vi/5CIIRU5jH68/maxresdefault.jpg" alt="Transair" />
+       <div><span>Transair</span><h3>Proceduri transcraniene</h3></div>
+      </Link>
+      <Link href={withLang("/utilaj/bi-lenar", lang)} className="homeEquipmentCard">
+       <img src="https://images.prom.ua/125888856_w300_h300_apparat-dlya-elektrostimulyatsii.jpg" alt="Bi-LENAR" />
+       <div><span>Bi-LENAR</span><h3>Neurostimulare funcțională</h3></div>
+      </Link>
      </div>
     </div>
    </section>
@@ -543,7 +527,6 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const seoText = seoVisibleText[lang] || seoVisibleText.ro;
  const hero = getContentBlockSmart(lang, "aplicatii", "hero");
- const appTools = translatedTools(lang);
 
  return (
   <>

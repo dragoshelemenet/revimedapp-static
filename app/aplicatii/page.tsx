@@ -1,15 +1,9 @@
 import Link from "next/link";
-
-const apps = [
-  ["test-ayurveda-dosha", "Test Ayurveda Dosha", "Test educațional pentru orientare."],
-  ["respiratie-terapeutica", "Respirație terapeutică", "Exerciții simple de respirație și relaxare."],
-  ["screening-neurologic", "Screening neurologic", "Întrebări simple despre simptome neurologice."],
-  ["revimed-yoga-tibetan", "Revimed Yoga Tibetan", "Respirație, concentrare și mișcare conștientă."],
-  ["calculator-recuperare-personalizata", "Calculator recuperare personalizată", "Orientare pentru recuperare și obiective."],
-  ["test-postura-coloana", "Test postură și coloană", "Checklist pentru postură și simptome de coloană."]
-];
+import { translatedTools } from "@/lib/appMeta";
 
 export default function Page() {
+  const apps = translatedTools("ro");
+
   return (
     <main>
       <section className="pageHero">
@@ -23,11 +17,11 @@ export default function Page() {
       <section className="rmSection">
         <div className="rmShell">
           <div className="equipmentGrid">
-            {apps.map(([slug, title, text]) => (
-              <Link className="equipmentCard" href={`/aplicatii/teste-si-instrumente/${slug}`} key={slug}>
-                <span className="equipmentBadge">Aplicație</span>
-                <h2>{title}</h2>
-                <p>{text}</p>
+            {apps.map((tool) => (
+              <Link className="equipmentCard" href={tool.href} key={tool.slug}>
+                <span className="equipmentBadge">{tool.tag}</span>
+                <h2>{tool.title}</h2>
+                <p>{tool.description}</p>
                 <b>Deschide →</b>
               </Link>
             ))}
