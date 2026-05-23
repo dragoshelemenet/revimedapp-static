@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { equipmentItems, equipmentText, getEquipmentItem, langPrefix, normalizeLang, type SiteLang } from "@/lib/equipment";
+import {
+  equipmentItems,
+  equipmentText,
+  getEquipmentItem,
+  langPrefix,
+  normalizeLang,
+} from "@/lib/equipment";
 
 export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
   const safeLang = normalizeLang(lang);
@@ -10,9 +16,9 @@ export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
     <main>
       <section className="pageHero equipmentHero">
         <div className="rmShell">
-          <p className="breadcrumbs">{t.breadcrumbHome} / {t.nav}</p>
-          <h1>{t.listTitle}</h1>
-          <p>{t.listSubtitle}</p>
+          <p className="breadcrumbs">{t.home} / {t.nav}</p>
+          <h1>{t.title}</h1>
+          <p>{t.subtitle}</p>
         </div>
       </section>
 
@@ -40,25 +46,13 @@ export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug
   const prefix = langPrefix(safeLang);
   const item = getEquipmentItem(slug);
 
-  if (!item) {
-    return (
-      <main>
-        <section className="pageHero equipmentHero">
-          <div className="rmShell">
-            <p className="breadcrumbs">{t.breadcrumbHome} / {t.nav}</p>
-            <h1>Utilaj</h1>
-            <p>{t.seoDescription}</p>
-          </div>
-        </section>
-      </main>
-    );
-  }
+  if (!item) return null;
 
   return (
     <main>
       <section className="pageHero equipmentHero">
         <div className="rmShell">
-          <p className="breadcrumbs">{t.breadcrumbHome} / {t.nav} / {item.title}</p>
+          <p className="breadcrumbs">{t.home} / {t.nav} / {item.title}</p>
           <h1>{item.title}</h1>
           <p>{item.short}</p>
         </div>
@@ -67,21 +61,24 @@ export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug
       <section className="rmSection equipmentDetailSection">
         <div className="rmShell">
           <article className="equipmentDetailCard">
-            <span className="equipmentBadge">{t.detailEyebrow}</span>
+            <span className="equipmentBadge">{item.category}</span>
             <h2>{item.title}</h2>
             <p className="equipmentLead">{item.short}</p>
 
-            <div className="equipmentInfoBox">
-              <h3>{t.usefulFor}</h3>
-              <p>{item.category}</p>
-            </div>
+            {item.sections.map((section) => (
+              <section className="equipmentInfoBox" key={section.title}>
+                <h3>{section.title}</h3>
+                {section.body.length > 1 ? (
+                  <ul>
+                    {section.body.map((line) => <li key={line}>{line}</li>)}
+                  </ul>
+                ) : (
+                  <p>{section.body[0]}</p>
+                )}
+              </section>
+            ))}
 
-            <div className="equipmentInfoBox soft">
-              <h3>{t.placeholderTitle}</h3>
-              <p>{t.placeholderText}</p>
-            </div>
-
-            <p className="equipmentNote">⚠️ {t.medicalNote}</p>
+            <p className="equipmentNote">⚠️ {t.note}</p>
 
             <Link className="rmBtn light" href={`${prefix}/utilaj`}>
               ← {t.back}

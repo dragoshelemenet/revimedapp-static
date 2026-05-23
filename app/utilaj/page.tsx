@@ -3,8 +3,8 @@ import { EquipmentListPage } from "@/components/EquipmentPages";
 import { equipmentText } from "@/lib/equipment";
 
 export const metadata: Metadata = {
-  title: equipmentText.ro.seoTitle,
-  description: equipmentText.ro.seoDescription,
+  title: equipmentText.ro.title,
+  description: equipmentText.ro.subtitle,
 };
 
 export default function Page() {

@@ -3,15 +3,13 @@ import { notFound } from "next/navigation";
 import { EquipmentDetailPage } from "@/components/EquipmentPages";
 import { getEquipmentItem, normalizeLang } from "@/lib/equipment";
 
-type Props = {
-  params: Promise<{ lang: string; slug: string }>;
-};
+type Props = { params: Promise<{ lang: string; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
+  const safeLang = normalizeLang(lang);
   const item = getEquipmentItem(slug);
   if (!item) return {};
-  const safeLang = normalizeLang(lang);
   const suffix =
     safeLang === "en" ? "Medical equipment Revimed PLUS+" :
     safeLang === "ru" ? "Медицинское оборудование Revimed PLUS+" :
@@ -26,7 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { lang, slug } = await params;
-  const item = getEquipmentItem(slug);
-  if (!item) notFound();
+  if (!getEquipmentItem(slug)) notFound();
   return <EquipmentDetailPage lang={lang} slug={slug} />;
 }

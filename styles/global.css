@@ -13997,3 +13997,124 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
     padding:28px 22px !important;
   }
 }
+
+/* UTILAJ / EQUIPMENT — safe static pages */
+.equipmentSection{padding-top:54px!important}
+.equipmentGrid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:22px!important;
+  max-width:1120px!important;
+  margin:0 auto!important;
+}
+.equipmentCard{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:12px!important;
+  min-height:240px!important;
+  padding:28px!important;
+  border-radius:24px!important;
+  border:1px solid #dbeafe!important;
+  background:linear-gradient(180deg,#fff 0%,#f6fbff 100%)!important;
+  box-shadow:0 16px 40px rgba(7,31,63,.06)!important;
+  color:#102033!important;
+  text-decoration:none!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important;
+}
+.equipmentCard:hover{
+  transform:translateY(-5px)!important;
+  box-shadow:0 22px 52px rgba(7,31,63,.12)!important;
+  border-color:#b7defb!important;
+}
+.equipmentBadge{
+  align-self:flex-start!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  min-height:30px!important;
+  padding:7px 12px!important;
+  border-radius:999px!important;
+  background:#eaf6ff!important;
+  color:#006bad!important;
+  font-weight:900!important;
+  font-size:13px!important;
+}
+.equipmentCard h2{
+  margin:8px 0 0!important;
+  font-size:24px!important;
+  line-height:1.1!important;
+  letter-spacing:-.035em!important;
+  color:#102033!important;
+}
+.equipmentCard p{
+  margin:0!important;
+  color:#5d6f86!important;
+  line-height:1.55!important;
+  font-weight:650!important;
+}
+.equipmentCard b{
+  margin-top:auto!important;
+  color:#006bad!important;
+  font-weight:950!important;
+}
+.equipmentDetailSection{padding-top:54px!important}
+.equipmentDetailCard{
+  max-width:980px!important;
+  margin:0 auto!important;
+  padding:42px!important;
+  border-radius:28px!important;
+  border:1px solid #dbeafe!important;
+  background:linear-gradient(180deg,#fff 0%,#f7fbff 100%)!important;
+  box-shadow:0 22px 60px rgba(7,31,63,.08)!important;
+}
+.equipmentDetailCard h2{
+  margin:18px 0 14px!important;
+  color:#0a2554!important;
+  font-size:clamp(34px,4vw,54px)!important;
+  line-height:1.03!important;
+  letter-spacing:-.055em!important;
+}
+.equipmentLead{
+  color:#405269!important;
+  font-size:20px!important;
+  line-height:1.65!important;
+  font-weight:750!important;
+  margin:0 0 26px!important;
+}
+.equipmentInfoBox{
+  margin:18px 0!important;
+  padding:24px 26px!important;
+  border-radius:20px!important;
+  border:1px solid #cfe9ff!important;
+  background:#f1f9ff!important;
+}
+.equipmentInfoBox:nth-of-type(even){background:#fff!important}
+.equipmentInfoBox h3{
+  margin:0 0 10px!important;
+  color:#0a2554!important;
+  font-size:23px!important;
+}
+.equipmentInfoBox p,
+.equipmentInfoBox li{
+  color:#405269!important;
+  line-height:1.7!important;
+  font-size:17px!important;
+}
+.equipmentInfoBox ul{
+  margin:0!important;
+  padding-left:20px!important;
+}
+.equipmentInfoBox li{margin:8px 0!important}
+.equipmentNote{
+  margin:24px 0!important;
+  padding:15px 18px!important;
+  border-radius:16px!important;
+  border:1px solid #ffd69b!important;
+  background:#fff8ec!important;
+  color:#29384d!important;
+  font-weight:750!important;
+}
+@media(max-width:900px){.equipmentGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){
+  .equipmentGrid{grid-template-columns:1fr!important}
+  .equipmentDetailCard{padding:28px 22px!important}
+}
