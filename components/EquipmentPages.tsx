@@ -1,16 +1,19 @@
 import Link from "next/link";
 import {
-  equipmentItems,
   equipmentText,
-  getEquipmentItem,
   langPrefix,
   normalizeLang,
 } from "@/lib/equipment";
+import {
+  getLocalizedEquipmentItem,
+  getLocalizedEquipmentItems,
+} from "@/lib/equipmentLocalized";
 
 export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
   const safeLang = normalizeLang(lang);
   const t = equipmentText[safeLang];
   const prefix = langPrefix(safeLang);
+  const items = getLocalizedEquipmentItems(safeLang);
 
   return (
     <main>
@@ -25,7 +28,7 @@ export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
       <section className="rmSection equipmentSection">
         <div className="rmShell">
           <div className="equipmentGrid">
-            {equipmentItems.map((item) => (
+            {items.map((item) => (
               <Link className="equipmentCard" href={`${prefix}/utilaj/${item.slug}`} key={item.slug}>
                 <span className="equipmentBadge">{item.category}</span>
                 <h2>{item.title}</h2>
@@ -44,7 +47,7 @@ export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug
   const safeLang = normalizeLang(lang);
   const t = equipmentText[safeLang];
   const prefix = langPrefix(safeLang);
-  const item = getEquipmentItem(slug);
+  const item = getLocalizedEquipmentItem(safeLang, slug);
 
   if (!item) return null;
 

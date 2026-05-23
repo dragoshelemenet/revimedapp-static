@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EquipmentDetailPage } from "@/components/EquipmentPages";
-import { getEquipmentItem, normalizeLang } from "@/lib/equipment";
+import { getLocalizedEquipmentItem } from "@/lib/equipmentLocalized";
+import { normalizeLang } from "@/lib/equipment";
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const safeLang = normalizeLang(lang);
-  const item = getEquipmentItem(slug);
+  const item = getLocalizedEquipmentItem(safeLang, slug);
   if (!item) return {};
+
   const suffix =
     safeLang === "en" ? "Medical equipment Revimed PLUS+" :
     safeLang === "ru" ? "Медицинское оборудование Revimed PLUS+" :
@@ -24,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { lang, slug } = await params;
-  if (!getEquipmentItem(slug)) notFound();
-  return <EquipmentDetailPage lang={lang} slug={slug} />;
+  const safeLang = normalizeLang(lang);
+  if (!getLocalizedEquipmentItem(safeLang, slug)) notFound();
+  return <EquipmentDetailPage lang={safeLang} slug={slug} />;
 }
