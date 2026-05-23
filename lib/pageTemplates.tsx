@@ -525,6 +525,7 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
 export function AppsTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
+ const appTools = translatedTools(lang);
  const seoText = seoVisibleText[lang] || seoVisibleText.ro;
  const hero = getContentBlockSmart(lang, "aplicatii", "hero");
 
