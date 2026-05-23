@@ -255,7 +255,7 @@ export default function RevimedYogaTibetanPage() {
   const [soundOn, setSoundOn] = useState(false);
   const [completed, setCompleted] = useState(false);
 
-  const audioRef = useRef<AudioContext | null>(null);
+  const audioCtxRef = useRef<AudioContext | null>(null);
   const oscRef = useRef<OscillatorNode | null>(null);
   const gainRef = useRef<GainNode | null>(null);
   const spokenRef = useRef("");
@@ -320,8 +320,8 @@ export default function RevimedYogaTibetanPage() {
   function startSound() {
     if (typeof window === "undefined") return;
 
-    if (!audioRef.current) audioRef.current = new AudioContext();
-    const ctx = audioRef.current;
+    if (!audioCtxRef.current) audioCtxRef.current = new AudioContext();
+    const ctx = audioCtxRef.current;
     if (ctx.state === "suspended") ctx.resume();
 
     stopSound();
@@ -344,7 +344,7 @@ export default function RevimedYogaTibetanPage() {
   function updateSound(phase: Phase) {
     if (!audioRef.current || !oscRef.current || !gainRef.current) startSound();
 
-    const ctx = audioRef.current;
+    const ctx = audioCtxRef.current;
     const osc = oscRef.current;
     const gain = gainRef.current;
     if (!ctx || !osc || !gain) return;
