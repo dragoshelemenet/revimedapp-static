@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const labels = {
-  ro: ["Acasă", "Aplicații", "Aplicații și teste educaționale Revimed PLUS+", "Instrumente simple pentru pacienți.", "Deschide"],
-  en: ["Home", "Applications", "Revimed PLUS+ educational apps and tests", "Simple tools for patients.", "Open"],
-  ru: ["Главная", "Приложения", "Образовательные приложения и тесты Revimed PLUS+", "Простые инструменты для пациентов.", "Открыть"],
-  ua: ["Головна", "Застосунки", "Освітні застосунки та тести Revimed PLUS+", "Прості інструменти для пацієнтів.", "Відкрити"]
+  ro: ["Acasă", "Aplicații", "Aplicații Revimed PLUS+", "Instrumente simple pentru pacienți.", "Deschide"],
+  en: ["Home", "Applications", "Applications Revimed PLUS+", "Simple tools for patients.", "Open"],
+  ru: ["Главная", "Приложения", "Приложения Revimed PLUS+", "Простые инструменты для пациентов.", "Открыть"],
+  ua: ["Головна", "Застосунки", "Застосунки Revimed PLUS+", "Прості інструменти для пацієнтів.", "Відкрити"]
 };
 
 const apps = [

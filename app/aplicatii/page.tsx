@@ -15,7 +15,7 @@ export default function Page() {
       <section className="pageHero">
         <div className="rmShell">
           <p className="breadcrumbs">Acasă / Aplicații</p>
-          <h1>Aplicații și teste educaționale Revimed PLUS+</h1>
+          <h1>Aplicații Revimed PLUS+</h1>
           <p>Instrumente simple pentru orientare, respirație, postură, recuperare și pregătire pentru consultație.</p>
         </div>
       </section>
