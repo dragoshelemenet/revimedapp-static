@@ -1,4 +1,11 @@
 import Link from "next/link";
+const staticLangs = ["en", "ru", "ua"];
+
+export function generateStaticParams() {
+  return staticLangs.map((lang) => ({ lang }));
+}
+
+
 
 const labels = {
   ro: ["Acasă", "Aplicații", "Aplicații Revimed PLUS+", "Instrumente simple pentru pacienți.", "Deschide"],

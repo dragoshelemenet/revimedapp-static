@@ -1,5 +1,15 @@
 import { notFound } from "next/navigation";
 import RevimedSmartTool from "@/components/RevimedSmartTool";
+const staticLangs = ['en', 'ru', 'ua'];
+const staticAppSlugs = ['test-postura-coloana', 'monitor-dureri-spate', 'test-risc-cadere-echilibru', 'planner-exercitii-zilnice', 'test-stres-somn-respiratie', 'pregatire-consultatie'];
+
+export function generateStaticParams() {
+  return staticLangs.flatMap((lang) => staticAppSlugs.map((slug) => ({ lang, slug })));
+}
+
+
+
+
 
 const tools = [
   "test-postura-coloana",

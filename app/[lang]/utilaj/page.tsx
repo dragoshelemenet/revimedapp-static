@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { EquipmentListPage } from "@/components/EquipmentPages";
 import { equipmentText, normalizeLang } from "@/lib/equipment";
+const staticLangs = ["en", "ru", "ua"];
+
+export function generateStaticParams() {
+  return staticLangs.map((lang) => ({ lang }));
+}
+
+
 
 type Props = { params: Promise<{ lang: string }> };
 

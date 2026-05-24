@@ -1,7 +1,13 @@
 import { notFound, redirect } from "next/navigation";
 import { BlogPostTemplate } from "@/lib/pageTemplates";
 import { getTranslatedBlogSlug } from "@/lib/blogSlugTranslations";
-export const dynamic = "force-dynamic";
+const staticBlogSlugs: string[] = [];
+
+export function generateStaticParams() {
+  return staticBlogSlugs.map((slug) => ({ slug }));
+}
+
+export const dynamic = "force-static";
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
  const { slug } = await params;
  

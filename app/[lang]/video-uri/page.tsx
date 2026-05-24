@@ -1,5 +1,12 @@
 import { notFound } from "next/navigation";
 import { isLang, t } from "@/lib/i18n";
+const staticLangs = ["en", "ru", "ua"];
+
+export function generateStaticParams() {
+  return staticLangs.map((lang) => ({ lang }));
+}
+
+
 
 type Props = { params: Promise<{ lang: string }> };
 

@@ -3,6 +3,21 @@ import { notFound } from "next/navigation";
 import { ServiceDetailPage } from "@/components/ServicesPages";
 import { getLocalizedService } from "@/lib/servicesLocalized";
 import { normalizeLang } from "@/lib/services";
+const staticLangs = ['en', 'ru', 'ua'];
+const staticServiceSlugs = ['consultatii-neurologice', 'consultatii-neurochirurgicale', 'fizioterapie-si-reabilitare', 'diagnostic-functional', 'terapie-balneara', 'electroterapie'];
+
+export function generateStaticParams() {
+  return staticLangs.flatMap((lang) => staticServiceSlugs.map((slug) => ({ lang, slug })));
+}
+
+
+
+
+
+
+
+
+
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
 

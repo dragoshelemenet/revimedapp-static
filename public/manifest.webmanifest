@@ -1,0 +1,16 @@
+{
+  "name": "Centrul Medical Revimed PLUS+",
+  "short_name": "Revimed PLUS+",
+  "description": "Centrul Medical Revimed PLUS+",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b8fcb",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

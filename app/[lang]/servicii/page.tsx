@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { ServicesListPage } from "@/components/ServicesPages";
 import { normalizeLang, servicesText } from "@/lib/services";
+const staticLangs = ["en", "ru", "ua"];
+
+export function generateStaticParams() {
+  return staticLangs.map((lang) => ({ lang }));
+}
+
+
 
 type Props = { params: Promise<{ lang: string }> };
 

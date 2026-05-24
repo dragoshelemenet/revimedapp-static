@@ -1,6 +1,13 @@
 import { notFound } from "next/navigation";
 import { GalleryTemplate } from "@/lib/pageTemplates";
 import { isLang, type Lang } from "@/lib/i18n";
+const staticLangs = ["en", "ru", "ua"];
+
+export function generateStaticParams() {
+  return staticLangs.map((lang) => ({ lang }));
+}
+
+
 
 
 function forcedGalleryTitle(title: string, image?: string, lang: "ro" | "en" | "ru" | "ua" = "ro") {
@@ -54,7 +61,7 @@ function forcedGalleryTitle(title: string, image?: string, lang: "ro" | "en" | "
  return title;
 }
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
  const { lang } = await params;
  if (!isLang(lang) || lang === "ro") notFound();

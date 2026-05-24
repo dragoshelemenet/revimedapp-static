@@ -8,7 +8,7 @@ export const metadata = makeMetadata({
  description: "Centrul Medical Revimed PLUS+ din Chișinău oferă consultații neurologice, neurochirurgie, recuperare medicală, fizioterapie, diagnostic funcțional și terapii complementare."
 });
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 export default function Page() {
  return <HomeTemplate lang="ro" />;
 }

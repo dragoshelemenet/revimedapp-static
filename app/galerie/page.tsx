@@ -52,7 +52,7 @@ function forcedGalleryTitle(title: string, image?: string, lang: "ro" | "en" | "
  return title;
 }
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 export const metadata = { title: "Galerie" };
 const lang: "ro" = "ro";
 

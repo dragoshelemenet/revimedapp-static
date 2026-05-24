@@ -1,4 +1,14 @@
 export const youtubeVideos = [
+  {
+    id: "zBsofda81VA",
+    videoId: "zBsofda81VA",
+    youtubeId: "zBsofda81VA",
+    title: "Video Revimed PLUS+",
+    description: "Material video educațional Revimed PLUS+.",
+    url: "https://www.youtube.com/watch?v=zBsofda81VA",
+    embedUrl: "https://www.youtube.com/embed/zBsofda81VA"
+  },
+
  {
   title: "Reabilitare Revimed PLUS+",
   embed: "https://www.youtube.com/embed/yW9QT_5vY9g"

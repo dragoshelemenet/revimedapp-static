@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import RevimedSmartTool from "@/components/RevimedSmartTool";
+const staticAppSlugs = ['test-postura-coloana', 'monitor-dureri-spate', 'test-risc-cadere-echilibru', 'planner-exercitii-zilnice', 'test-stres-somn-respiratie', 'pregatire-consultatie'];
+
+export function generateStaticParams() {
+  return staticAppSlugs.map((slug) => ({ slug }));
+}
+
+
+
 
 const tools = [
   "test-postura-coloana",
