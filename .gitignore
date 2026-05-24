@@ -13,3 +13,7 @@ data/*.sqlite-journal
 *.sqlite-wal
 *.tsbuildinfo
 .next/
+# static/export build artifacts
+out/
+node_modules/
+.vercel/
