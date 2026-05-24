@@ -2,6 +2,7 @@ import Link from "next/link";
 import { youtubeVideos } from "@/lib/videos";
 import { site } from "@/lib/site";
 import { translatedTools } from "@/lib/appMeta";
+import { getStaticPublishedPosts, getStaticPostBySlug } from "@/lib/staticBlogPosts";
 import { translateGalleryTitle } from "@/lib/galleryTranslate";
 import { getPublishedServicesSmart, getPublishedPricesSmart, getPublishedPostsSmart, getServiceBySlugSmart, getPostBySlugSmart } from "@/lib/db";
 import { getContactContentSmart, getContentBlockSmart, getPublishedGalleryItemsSmart } from "@/lib/content";
@@ -656,7 +657,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
 export function BlogTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
- const posts = getPublishedPostsSmart(lang).filter((post: any) => isCorrectBlogLanguage(post, lang));
+ const posts = getStaticPublishedPosts(lang).filter((post: any) => isCorrectBlogLanguage(post, lang));
 
  return (
   <>
@@ -686,7 +687,7 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
 
 export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
  const text = t(lang);
- const post = getPostBySlugSmart(slug, lang as Lang);
+ const post = getStaticPostBySlug(slug, lang as Lang);
  if (!post) return null;
 
  return (
