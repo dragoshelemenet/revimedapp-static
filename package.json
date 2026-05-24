@@ -3,15 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 0.0.0.0",
-    "build": "next build",
-    "start": "next start -H 0.0.0.0",
-    "translate:content": "node scripts/translate-content.cjs"
+    "build": "next build"
   },
   "dependencies": {
     "better-sqlite3": "^11.8.1",
-    "bcryptjs": "^2.4.3",
-    "jose": "^5.9.6",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -24,9 +19,5 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "typescript": "latest"
-  },
-  "engines": {
-    "node": "22.x",
-    "npm": "10.x"
   }
 }
