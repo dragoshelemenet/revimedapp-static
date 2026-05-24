@@ -1,4 +1,9 @@
 # Revimed PLUS+ Static Site
 
 Static export for DigitalOcean.
-Serve the public directory.
+
+DigitalOcean settings:
+- Branch: static-only
+- Build command: npm run build
+- Output directory: public
+- Route: /
