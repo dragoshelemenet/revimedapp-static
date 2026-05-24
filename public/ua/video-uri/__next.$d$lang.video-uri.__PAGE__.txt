@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/0w6v12296r7s-.js","/_next/static/chunks/0y6dzejklle~6.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[[["$","section",null,{"className":"pageHero","children":["$","div",null,{"className":"rmShell","children":[["$","p",null,{"className":"crumb","children":"Головна"}],["$","h1",null,{"children":"Контакти"}],["$","p",null,{"className":"lead","children":["Версія",": ","UA"]}]]}]}],["$","section",null,{"className":"rmSection","children":["$","div",null,{"className":"rmShell adminCard","children":["$","p",null,{"children":"Localized page placeholder. Main content can be translated from admin where applicable."}]}]}]],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"DlgVXk4VwDwZHoJSeHS8T"}
+4:null

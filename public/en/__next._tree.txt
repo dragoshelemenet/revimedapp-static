@@ -1,0 +1,6 @@
+:HL["/_next/static/chunks/0arcz_jzxt8re.css","style"]
+:HL["/images/about-us.jpg","image"]
+:HL["https://1profimed.ru/wp-content/uploads/electroson-03.jpg","image"]
+:HL["https://i.ytimg.com/vi/5CIIRU5jH68/maxresdefault.jpg","image"]
+:HL["https://images.prom.ua/125888856_w300_h300_apparat-dlya-elektrostimulyatsii.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"lang","param":{"type":"d","key":"en","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"DlgVXk4VwDwZHoJSeHS8T"}
