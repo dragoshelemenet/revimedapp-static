@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { isLang } from "@/lib/i18n";
 import Original from "@/app/aplicatii/teste-si-instrumente/test-ayurveda-dosha/page";
+export const dynamicParams = false;
+
 const staticLangs = ["en", "ru", "ua"];
 
 export function generateStaticParams() {

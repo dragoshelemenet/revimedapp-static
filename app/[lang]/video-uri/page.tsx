@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import { isLang, t } from "@/lib/i18n";
+export const dynamicParams = false;
+
 const staticLangs = ["en", "ru", "ua"];
 
 export function generateStaticParams() {

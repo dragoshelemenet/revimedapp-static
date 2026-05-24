@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceDetailPage } from "@/components/ServicesPages";
 import { getLocalizedService } from "@/lib/servicesLocalized";
+export const dynamicParams = false;
+
 const staticServiceSlugs = ['consultatii-neurologice', 'consultatii-neurochirurgicale', 'fizioterapie-si-reabilitare', 'diagnostic-functional', 'terapie-balneara', 'electroterapie'];
 
 export function generateStaticParams() {

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { ServiceDetailPage } from "@/components/ServicesPages";
 import { getLocalizedService } from "@/lib/servicesLocalized";
 import { normalizeLang } from "@/lib/services";
+export const dynamicParams = false;
+
 const staticLangs = ['en', 'ru', 'ua'];
 const staticServiceSlugs = ['consultatii-neurologice', 'consultatii-neurochirurgicale', 'fizioterapie-si-reabilitare', 'diagnostic-functional', 'terapie-balneara', 'electroterapie'];
 

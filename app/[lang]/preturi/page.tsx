@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { PricesTemplate } from "@/lib/pageTemplates";
 import { isLang, type Lang } from "@/lib/i18n";
+export const dynamicParams = false;
+
 const staticLangs = ["en", "ru", "ua"];
 
 export function generateStaticParams() {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ServicesListPage } from "@/components/ServicesPages";
 import { normalizeLang, servicesText } from "@/lib/services";
+export const dynamicParams = false;
+
 const staticLangs = ["en", "ru", "ua"];
 
 export function generateStaticParams() {

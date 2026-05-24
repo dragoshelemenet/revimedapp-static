@@ -1,4 +1,6 @@
 import Link from "next/link";
+export const dynamicParams = false;
+
 const staticLangs = ["en", "ru", "ua"];
 
 export function generateStaticParams() {

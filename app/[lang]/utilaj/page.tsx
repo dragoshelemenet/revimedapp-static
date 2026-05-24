@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { EquipmentListPage } from "@/components/EquipmentPages";
 import { equipmentText, normalizeLang } from "@/lib/equipment";
+export const dynamicParams = false;
+
 const staticLangs = ["en", "ru", "ua"];
 
 export function generateStaticParams() {
