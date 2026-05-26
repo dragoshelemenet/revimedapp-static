@@ -77,3 +77,10 @@ Do NOT replace /blog with custom static layout.
 For /blog, preserve the old page layout/classes and only update the card list inside the existing grid.
 New blogs must appear in that same old-style card grid.
 From Home, Blog link may need hard navigation to /blog/ to avoid stale client-side cached version.
+
+BLOG RECOVERY RULE:
+Keep old/injected-style blog index layout.
+Do not rebuild /blog with custom static design.
+If new blogs are missing, only replace the card list inside the existing old grid:
+<div class="rmShell grid3">...</div>
+Do not replace blog article header/footer/main layout.
