@@ -72,3 +72,16 @@ git commit -m "Clear message"
 git push origin static-only
 
 Never use `git add .` unless checked carefully.
+
+CRITICAL BLOG RULE:
+When adding new blogs, NEVER replace or remove existing blog cards/articles.
+Always preserve all old blog cards on:
+- public/blog/index.html
+- public/en/blog/index.html
+- public/ru/blog/index.html
+- public/ua/blog/index.html
+
+New blog cards should be added before the old ones, but old ones must stay visible.
+Before committing, check that old articles still exist on the blog index pages.
+Do not rebuild blog indexes with only the new batch.
+
