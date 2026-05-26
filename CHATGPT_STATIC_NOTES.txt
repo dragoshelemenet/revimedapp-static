@@ -1,0 +1,30 @@
+CHATGPT PROJECT NOTES — REVIMED STATIC
+
+Repo / branch:
+- Work only in: /workspaces/revimedapp-static/revimed_app
+- Live branch is: static-only
+- Do NOT work on main unless explicitly asked.
+
+Important workflow:
+cd /workspaces/revimedapp-static/revimed_app
+git checkout static-only
+git pull origin static-only
+
+Rules for utilaj pages:
+- Do not duplicate content.
+- If adding enhanced long SEO content + audio controls, hide or replace the original detail block so only one visible description remains.
+- For utilaj pages, plain static HTML may be overwritten by hydration.
+- Use post-hydration injector script for enhanced content/audio when needed.
+- Keep existing hero/header/nav/footer.
+- Make text readable, but not too large.
+
+Rules for future edits:
+- Preserve existing working content unless asked to replace it.
+- Add only the needed files with git add, never git add .
+- Ignore junk like node_modules/, .next/, out/, data/, revimedapp-static-work/.
+- If many files are modified locally, commit only the exact file(s) requested.
+
+For blogs:
+- Keep favicon working.
+- New and old blog pages should have the same audio/readability features when requested.
+- Add a short bold intro line at the beginning when useful.
