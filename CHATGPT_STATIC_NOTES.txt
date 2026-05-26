@@ -70,3 +70,10 @@ Do NOT rebuild /blog index with custom static layout again.
 Keep the original/injected Revimed blog index design because it matches the site.
 If blog cards need updates, preserve the existing layout/classes and only update the content source/cards.
 Do not replace /blog with a separate custom HTML design.
+
+BLOG INDEX FINAL RULE:
+User wants the old/injected-looking blog index layout, like the first 3 original blogs.
+Do NOT replace /blog with custom static layout.
+For /blog, preserve the old page layout/classes and only update the card list inside the existing grid.
+New blogs must appear in that same old-style card grid.
+From Home, Blog link may need hard navigation to /blog/ to avoid stale client-side cached version.
