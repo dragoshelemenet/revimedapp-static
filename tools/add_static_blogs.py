@@ -5,6 +5,11 @@ import json
 import re
 import sys
 
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+from blog_accessibility import apply_all as apply_blog_accessibility
+
 BASE = "https://revimed.site"
 TODAY = date.today().isoformat()
 CSS = "/_next/static/chunks/0arcz_jzxt8re.css"
@@ -180,6 +185,7 @@ def main():
         insert_cards_preserve_old(lang, cards, batch_id)
 
     count = regenerate_sitemap()
+    apply_blog_accessibility(verbose=False)
 
     for lang in LANG:
         s = LANG[lang]["index"].read_text(encoding="utf-8", errors="ignore")

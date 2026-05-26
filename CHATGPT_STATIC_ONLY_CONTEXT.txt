@@ -124,3 +124,13 @@ Keep controls compact:
 - slower / faster voice
 - + text / - text
 
+BLOG ACCESSIBILITY AUTOMATION:
+All blog article pages must have:
+- audio/read-aloud button over the main image
+- voice speed controls
+- readable larger article text
+Use tools/blog_accessibility.py and tools/apply_blog_accessibility.py.
+Future blog batches should call apply_blog_accessibility from tools/add_static_blogs.py automatically.
+If any article misses controls, run:
+python3 tools/apply_blog_accessibility.py
+

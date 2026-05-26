@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Neck pain, numbness or tingling in the hands: when to see a neurologist | Revimed PLUS+</title>
-<meta name="description" content="A simple guide for people with neck pain, cervical tension, numbness, tingling in the hands or pain going toward the shoulder and arm."/>
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://revimed.site/en/blog/neck-pain-numbness-tingling-hands-chisinau"/>
-<meta property="og:title" content="Neck pain, numbness or tingling in the hands: when to see a neurologist"/>
-<meta property="og:description" content="A simple guide for people with neck pain, cervical tension, numbness, tingling in the hands or pain going toward the shoulder and arm."/>
-<meta property="og:url" content="https://revimed.site/en/blog/neck-pain-numbness-tingling-hands-chisinau"/>
-<meta property="og:image" content="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=80"/>
-<meta property="og:type" content="article"/>
-<link rel="stylesheet" href="/_next/static/chunks/0arcz_jzxt8re.css"/>
-<link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Neck pain, numbness or tingling in the hands: when to see a neurologist", "description": "A simple guide for people with neck pain, cervical tension, numbness, tingling in the hands or pain going toward the shoulder and arm.", "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=80", "datePublished": "2026-05-26", "dateModified": "2026-05-26", "author": {"@type": "Organization", "name": "Centrul Medical Revimed PLUS+"}, "publisher": {"@type": "Organization", "name": "Centrul Medical Revimed PLUS+"}, "mainEntityOfPage": "https://revimed.site/en/blog/neck-pain-numbness-tingling-hands-chisinau"}</script>
+from pathlib import Path
+import re
 
+STYLE = """
 <style id="REVIMED_BLOG_ACCESSIBILITY_FINAL">
 .articleHeroMedia{
   position:relative!important;
@@ -105,7 +89,7 @@
   line-height:1!important;
 }
 
-article. {
+article.revimedBlogArticle{
   display:block!important;
   width:100%!important;
   max-width:920px!important;
@@ -115,17 +99,17 @@ article. {
   box-sizing:border-box!important;
 }
 
-article. ,
-article. p,
-article. li{
+article.revimedBlogArticle,
+article.revimedBlogArticle p,
+article.revimedBlogArticle li{
   font-size:23px!important;
   line-height:1.74!important;
   color:#334155!important;
   letter-spacing:.01em!important;
 }
 
-article. h2,
-article. h3{
+article.revimedBlogArticle h2,
+article.revimedBlogArticle h3{
   font-size:30px!important;
   line-height:1.28!important;
   margin-top:34px!important;
@@ -133,9 +117,9 @@ article. h3{
   color:#0f172a!important;
 }
 
-article. b,
-article. strong,
-article. a{
+article.revimedBlogArticle b,
+article.revimedBlogArticle strong,
+article.revimedBlogArticle a{
   font-size:inherit!important;
 }
 
@@ -163,60 +147,26 @@ article. a{
   .voiceRateBadge{
     width:100%!important;
   }
-  article. {
+  article.revimedBlogArticle{
     max-width:calc(100% - 24px)!important;
     padding:28px!important;
   }
-  article. ,
-  article. p,
-  article. li{
+  article.revimedBlogArticle,
+  article.revimedBlogArticle p,
+  article.revimedBlogArticle li{
     font-size:20px!important;
     line-height:1.7!important;
   }
-  article. h2,
-  article. h3{
+  article.revimedBlogArticle h2,
+  article.revimedBlogArticle h3{
     font-size:26px!important;
     line-height:1.28!important;
   }
 }
 </style>
+"""
 
-</head>
-<body>
-<header class="rmHeader">
-  <div class="rmTop"><div class="rmShell"><span></span><span class="langs"><a href="/blog/">RO</a><a href="/en/blog/">EN</a><a href="/ru/blog/">RU</a><a href="/ua/blog/">UA</a></span></div></div>
-  <nav class="rmNav rmShell">
-    <a class="rmLogo" href="/en"><img src="/images/logo.png" alt="REVIMED"/></a>
-    <div class="rmLinks"><a href="/en">Home</a><a class="activeNav" href="/en/blog/">Blog</a><a href="/en/contact/">Contact</a></div>
-  </nav>
-</header>
-<main>
-<section class="pageHero blogPostHero innerPageHero"><div class="rmShell"><p class="crumb">Home / Blog</p><h1>Neck pain, numbness or tingling in the hands: when to see a neurologist</h1><p class="lead">A simple guide for people with neck pain, cervical tension, numbness, tingling in the hands or pain going toward the shoulder and arm.</p></div></section>
-<section class="rmSection"><div class="rmShell" style="max-width:920px">
-<div class="articleHeroMedia"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=80" alt="Neck pain, numbness or tingling in the hands: when to see a neurologist" style="width:100%;border-radius:22px;margin-bottom:28px;max-height:420px;object-fit:cover"/>
-<div class="articleToolsOverlay">
-  <div class="articleToolsBox">
-    <div class="articleToolsGrid">
-      <button type="button" class="readAloudBtn" data-lang="ro-RO" data-start-text="🔊 Ascultă articolul" data-stop-text="⏹ Oprește citirea" data-unsupported="Browserul tău nu suportă citirea vocală.">🔊 Ascultă articolul</button>
-      <div class="articleVoicePanel">
-        <button type="button" class="articleSmallBtn" data-voice-speed="slower">− Mai lent</button>
-        <div class="voiceRateBadge"><span>Viteză</span><b class="voiceRateLabel">90%</b></div>
-        <button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<article class="card revimedBlogArticle" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:48px!important;">
-<p>Neck pain is one of those problems many people postpone. At first it may feel like simple fatigue: a tight neck, heavy shoulders, pain after computer work or poor sleep. But when numbness, tingling, weakness in the hand or pain going toward the shoulder and arm appears, it deserves more attention.</p><p>Not every neck pain means something serious. Sometimes it is muscle tension, poor posture, stress, lack of movement or too many hours at a desk. Other times it may be nerve irritation, a cervical spine problem, overload or a combination of several factors.</p><h2>Why can numbness or tingling appear?</h2><p>The nerves that go to the arms start in the cervical area. If this area is tense, inflamed or compressed, strange sensations can appear: tingling, numbness, burning, arm pain or the feeling that the hand is weaker.</p><p>Sometimes the problem is mostly muscular. Neck and shoulder muscles can become so tense that they create pain and discomfort along paths that feel like nerve pain. Other times there may be a disc issue, nerve root irritation or local circulation problem. This is why evaluation matters, not only guessing.</p><h2>When should you see a specialist?</h2><p>If the pain repeats, if you often wake up with a blocked neck, if numbness appears often, if pain goes down the arm or if the hand feels weak, it is worth speaking with a neurologist or recovery specialist.</p><p>Seek medical help faster if there is clear weakness, loss of control, strong pain after injury, fever, confusion or symptoms that worsen quickly.</p><h2>What can help?</h2><p>In many cases, the plan may include physiotherapy, gentle exercises, posture work, muscle relaxation, recovery procedures and simple routine changes. Sometimes medication is also needed, especially if pain is strong or the nerve is irritated.</p><p>There is no single treatment that fits everyone. One patient may improve with physiotherapy and exercises. Another may need temporary medication. Another may need a combination. The important thing is to choose a realistic and safe plan.</p><h2>Why Revimed PLUS+?</h2><p>Revimed PLUS+ is a clinic founded in 2005. Our doctor has more than 35 years of experience in the field, and treatment is selected individually for each patient.</p><p>If the patient prefers a gentler or more natural direction and the situation allows it, the doctor can take that into account. If classic medical treatment is needed, the reason is explained. Everything is discussed with the patient and done with agreement, considering symptoms, safety, preferences and possibilities.</p><h2>What can you do before consultation?</h2><p>Do not force the neck with sudden movements. Take breaks from screens. Avoid staying for hours with the head bent forward. Local warmth may help tense muscles sometimes, but if pain increases or arm symptoms appear, do not keep trying random methods.</p><p>The most important thing is not to ignore signals that repeat. The earlier you understand the cause, the better the chance to choose a simple and suitable solution.</p>
-<hr style="margin:28px 0;border:none;border-top:1px solid #e5e7eb"/>
-<p><b>Revimed PLUS+</b> — clinică fondată în 2005. Consultațiile și tratamentele se stabilesc individual, cu acordul pacientului.</p>
-<p><a class="primaryBtn" href="/en/contact/">Contact</a></p>
-</article>
-</div></section>
-</main>
-<footer class="rmFooter"><div class="rmShell rmFooterGrid"><div class="footerBrand"><img src="/images/logo.png" alt="REVIMED" class="footerLogo"/><p>© 2026 Centrul Medical Revimed PLUS+.</p></div><div class="footerSchedule"><h3>Program</h3><p>Str. Mircea cel Bătrân 13/2</p><p>Luni–Vineri: 09:00–15:00</p><p>022 60 50 60</p></div></div></footer>
-
+SCRIPT = """
 <script id="REVIMED_BLOG_ACCESSIBILITY_SCRIPT">
 (function(){
   var RATE_KEY = "revimedVoiceRate";
@@ -233,7 +183,7 @@ article. a{
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
   function getArticle(){ return document.querySelector("article"); }
-  function cleanText(text){ return (text || "").replace(/\s+/g," ").trim(); }
+  function cleanText(text){ return (text || "").replace(/\\s+/g," ").trim(); }
 
   function makeTextReadable(){
     var article = getArticle();
@@ -431,6 +381,138 @@ article. a{
   }
 })();
 </script>
+"""
 
-</body>
-</html>
+TEXTS = {
+    "ro": ["ro-RO", "🔊 Ascultă articolul", "⏹ Oprește citirea", "− Mai lent", "+ Mai rapid", "Viteză", "Browserul tău nu suportă citirea vocală."],
+    "en": ["en-US", "🔊 Listen to article", "⏹ Stop reading", "− Slower", "+ Faster", "Speed", "Your browser does not support text-to-speech."],
+    "ru": ["ru-RU", "🔊 Прослушать статью", "⏹ Остановить чтение", "− Медленнее", "+ Быстрее", "Скорость", "Ваш браузер не поддерживает чтение текста."],
+    "ua": ["uk-UA", "🔊 Прослухати статтю", "⏹ Зупинити читання", "− Повільніше", "+ Швидше", "Швидкість", "Ваш браузер не підтримує читання тексту."]
+}
+
+def lang_for_path(path: Path):
+    s = str(path)
+    if "/public/en/blog/" in s:
+        return "en"
+    if "/public/ru/blog/" in s:
+        return "ru"
+    if "/public/ua/blog/" in s:
+        return "ua"
+    return "ro"
+
+def make_overlay(lang):
+    t = TEXTS[lang]
+    return f"""
+<div class="articleToolsOverlay">
+  <div class="articleToolsBox">
+    <div class="articleToolsGrid">
+      <button type="button" class="readAloudBtn" data-lang="{t[0]}" data-start-text="{t[1]}" data-stop-text="{t[2]}" data-unsupported="{t[6]}">{t[1]}</button>
+      <div class="articleVoicePanel">
+        <button type="button" class="articleSmallBtn" data-voice-speed="slower">{t[3]}</button>
+        <div class="voiceRateBadge"><span>{t[5]}</span><b class="voiceRateLabel">90%</b></div>
+        <button type="button" class="articleSmallBtn" data-voice-speed="faster">{t[4]}</button>
+      </div>
+    </div>
+  </div>
+</div>
+"""
+
+def apply_to_file(p: Path):
+    rel = p.relative_to("public")
+    if rel.parts[-2] == "blog":
+        return False
+
+    s = p.read_text(encoding="utf-8", errors="ignore")
+    if "<article" not in s:
+        return False
+
+    lang = lang_for_path(p)
+    overlay = make_overlay(lang)
+
+    # remove old accessibility styles/scripts
+    s = re.sub(r'<style id="REVIMED_BLOG_ACCESSIBILITY_FINAL">.*?</style>\s*', "", s, flags=re.S)
+    s = re.sub(r'<script id="REVIMED_BLOG_ACCESSIBILITY_SCRIPT">.*?</script>\s*', "", s, flags=re.S)
+    s = re.sub(r'<style id="REVIMED_BLOG_TEXT_SIZE_FINAL">.*?</style>\s*', "", s, flags=re.S)
+    s = re.sub(r'<style id="REVIMED_FORCE_BIG_BLOG_TEXT">.*?</style>\s*', "", s, flags=re.S)
+    s = re.sub(r'<style id="REVIMED_INLINE_BIG_TEXT_HELPER">.*?</style>\s*', "", s, flags=re.S)
+
+    # remove older untagged accessibility attempts
+    s = re.sub(r"<style>\s*\.readAloudBox.*?</style>", "", s, flags=re.S)
+    s = re.sub(r"<style>\s*\.articleToolsBox.*?</style>", "", s, flags=re.S)
+    s = re.sub(r"<style>\s*\.articleHeroMedia.*?</style>", "", s, flags=re.S)
+    s = re.sub(r"<script>\s*\(function\(\)\{.*?speechSynthesis.*?</script>", "", s, flags=re.S)
+
+    # remove old controls and leftovers
+    s = re.sub(r"<div class=\"articleToolsOverlay\">.*?</div>\s*</div>\s*</div>", "", s, flags=re.S)
+    s = re.sub(r"<div class=\"articleToolsOverlay\">.*?</div>", "", s, flags=re.S)
+    s = re.sub(r"<div class=\"articleToolsBox\">.*?</div>", "", s, flags=re.S)
+    s = re.sub(r"<div class=\"readAloudBox\">.*?</div>", "", s, flags=re.S)
+    s = re.sub(r"<button[^>]*data-voice-speed=[\"'](?:slower|faster)[\"'][^>]*>.*?</button>\s*", "", s, flags=re.S)
+    s = re.sub(r"<button[^>]*data-text-size=[\"'][^\"']+[\"'][^>]*>.*?</button>\s*", "", s, flags=re.S)
+    s = re.sub(r"<div class=\"voiceRateBadge\">.*?</div>\s*", "", s, flags=re.S)
+    s = re.sub(r"<p class=\"articleToolsHint\">.*?</p>\s*", "", s, flags=re.S)
+    s = re.sub(r"<p class=\"articleVoiceHint\">.*?</p>\s*", "", s, flags=re.S)
+
+    # unwrap old/broken image wrappers
+    s = re.sub(r"<div class=\"articleHeroMedia\">\s*(<img[^>]+>)\s*</div>", r"\1", s, flags=re.S)
+    s = re.sub(r"<div class=\"articleHeroMedia\">\s*(<img[^>]+>)", r"\1", s, flags=re.S)
+    s = re.sub(r"</div>\s*</div>\s*(?=<article)", "", s, count=1, flags=re.S)
+
+    # clean old forced inline text sizes
+    s = re.sub(r'font-size:\s*\d+px!important;?', '', s)
+    s = re.sub(r'line-height:\s*[\d.]+!important;?', '', s)
+
+    # add final CSS
+    if "</head>" in s:
+        s = s.replace("</head>", STYLE + "\n</head>", 1)
+
+    # overlay on first article image
+    img_pattern = r'(<img[^>]+alt="[^"]*"[^>]*style="[^"]*object-fit:cover[^"]*"[^>]*/?>)'
+    if re.search(img_pattern, s, flags=re.S):
+        s = re.sub(img_pattern, r'<div class="articleHeroMedia">\1' + overlay + r'</div>', s, count=1, flags=re.S)
+    else:
+        s = re.sub(r"(<article\b[^>]*>)", overlay + r"\1", s, count=1)
+
+    # normalize article class
+    s = re.sub(r'\s*(revimedBlogArticle|revimedBigBlogText|articleReadableText)\s*', ' ', s)
+    if re.search(r'<article[^>]*class="', s):
+        s = re.sub(r'<article([^>]*class=")([^"]*)"', r'<article\1\2 revimedBlogArticle"', s, count=1)
+    else:
+        s = re.sub(r'<article', r'<article class="revimedBlogArticle"', s, count=1)
+
+    # ensure centered inline article layout
+    if re.search(r'<article[^>]*style="', s):
+        s = re.sub(
+            r'(<article[^>]*style=")([^"]*)"',
+            r'\1\2;max-width:920px!important;margin:0 auto!important;padding:48px!important;"',
+            s,
+            count=1
+        )
+    else:
+        s = re.sub(
+            r'(<article[^>]*)>',
+            r'\1 style="max-width:920px!important;margin:0 auto!important;padding:48px!important;">',
+            s,
+            count=1
+        )
+
+    if "</body>" in s:
+        s = s.replace("</body>", SCRIPT + "\n</body>", 1)
+    else:
+        s += SCRIPT
+
+    p.write_text(s, encoding="utf-8")
+    return True
+
+def apply_all(verbose=True):
+    changed = []
+    for p in Path("public").glob("**/blog/**/index.html"):
+        if apply_to_file(p):
+            changed.append(str(p))
+
+    if verbose:
+        print("Applied accessibility to blog article pages:", len(changed))
+        for x in changed:
+            print(x)
+
+    return changed
