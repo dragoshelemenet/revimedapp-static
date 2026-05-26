@@ -53,4 +53,27 @@
 })();
 </script>
 
+
+<script id="REVIMED_FORCE_NEUROCHIRURGIE_STATIC">
+(function(){
+  function go(){
+    window.location.href = "/servicii/consultatii-neurochirurgie/";
+  }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("a");
+    if(!a) return;
+    var href = a.getAttribute("href") || "";
+    try{
+      var u = new URL(href, window.location.origin);
+      if(u.origin === window.location.origin && u.pathname.replace(/\/$/, "") === "/servicii/consultatii-neurochirurgie"){
+        e.preventDefault();
+        e.stopPropagation();
+        if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+        go();
+      }
+    }catch(err){}
+  }, true);
+})();
+</script>
+
 </body></html>
