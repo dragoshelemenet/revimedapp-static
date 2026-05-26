@@ -23,4 +23,16 @@ document.addEventListener("click", function(e){
 });
 </script>
 
-</body></html>
+
+<script id="REVIMED_HOME_BLOG_HARD_NAV">
+document.addEventListener("click", function(e){
+  var a = e.target.closest("a");
+  if(!a) return;
+  var href = a.getAttribute("href") || "";
+  if(href === "/blog" || href === "/blog/"){
+    e.preventDefault();
+    window.location.href = "/blog/";
+  }
+});
+</script>
+\n</body></html>

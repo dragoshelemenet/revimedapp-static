@@ -97,3 +97,11 @@ Do not rebuild the whole /blog page.
 Keep old /blog layout and only replace cards inside existing rmShell grid3.
 Add only REVIMED_BLOG_INDEX_CARD_FIX CSS for card/grid consistency.
 Use real existing article folders for hrefs, never hardcode unknown slugs.
+
+BLOG FINAL FIX:
+User wants the /blog page to look like the old screenshot version:
+- same dark hero, centered 3-column cards, rounded white cards
+- all blog cards present from first load
+- no delayed injected/static mismatch
+- do not auto-extract images; use curated image URLs
+- homepage Blog click should hard-load /blog/
