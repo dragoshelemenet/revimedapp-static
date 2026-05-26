@@ -40,4 +40,32 @@
 })();
 </script>
 
+
+<script id="REVIMED_FORCE_AMP_STATIC_NAV">
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest("a");
+  if(!a) return;
+  var href = a.getAttribute("href") || "";
+  var map = {
+    "/utilaj/aparat-amp": "/utilaj/aparat-amp/",
+    "/utilaj/aparat-amp/": "/utilaj/aparat-amp/",
+    "/en/utilaj/aparat-amp": "/en/utilaj/aparat-amp/",
+    "/en/utilaj/aparat-amp/": "/en/utilaj/aparat-amp/",
+    "/ru/utilaj/aparat-amp": "/ru/utilaj/aparat-amp/",
+    "/ru/utilaj/aparat-amp/": "/ru/utilaj/aparat-amp/",
+    "/ua/utilaj/aparat-amp": "/ua/utilaj/aparat-amp/",
+    "/ua/utilaj/aparat-amp/": "/ua/utilaj/aparat-amp/"
+  };
+  try {
+    var u = new URL(href, window.location.origin);
+    if(u.origin === window.location.origin && map[u.pathname]){
+      e.preventDefault();
+      e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      window.location.href = map[u.pathname];
+    }
+  } catch(err) {}
+}, true);
+</script>
+
 </body></html>
