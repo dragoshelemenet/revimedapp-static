@@ -91,3 +91,9 @@ Then update only the cards inside the existing old <div class="rmShell grid3">.
 Do not auto-extract images from article HTML because it may pick logo/map/footer images.
 Use curated image URLs for blog cards.
 Do not create custom blog index layout.
+
+BLOG INDEX SAFE FIX:
+Do not rebuild the whole /blog page.
+Keep old /blog layout and only replace cards inside existing rmShell grid3.
+Add only REVIMED_BLOG_INDEX_CARD_FIX CSS for card/grid consistency.
+Use real existing article folders for hrefs, never hardcode unknown slugs.
