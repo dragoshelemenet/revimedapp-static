@@ -55,3 +55,12 @@ public/blog/index.html
 public/en/blog/index.html
 public/ru/blog/index.html
 public/ua/blog/index.html
+
+BLOG INDEX DESIGN RULE:
+The /blog index must be static but keep the original Revimed visual style:
+- rmHeader / rmNav / rmFooter
+- dark hero section
+- cards using card blogCard style
+- all article cards must exist directly in HTML
+Do not rebuild /blog with a separate ugly custom layout.
+Avoid delayed JS injection for blog cards.
