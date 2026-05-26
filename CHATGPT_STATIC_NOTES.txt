@@ -64,3 +64,9 @@ The /blog index must be static but keep the original Revimed visual style:
 - all article cards must exist directly in HTML
 Do not rebuild /blog with a separate ugly custom layout.
 Avoid delayed JS injection for blog cards.
+
+BLOG INDEX ROLLBACK RULE:
+Do NOT rebuild /blog index with custom static layout again.
+Keep the original/injected Revimed blog index design because it matches the site.
+If blog cards need updates, preserve the existing layout/classes and only update the content source/cards.
+Do not replace /blog with a separate custom HTML design.
