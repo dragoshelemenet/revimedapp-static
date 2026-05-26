@@ -36,3 +36,11 @@ All blog article pages and contact pages should end with a visible Revimed PLUS+
 - Dr. Igor Revenco, 35+ ani experiență
 - doctor phone: 079 422 908
 Do not duplicate this block. Replace existing REVIMED_CONTACT_CTA block if editing again.
+
+UTILAJ SEO IMPORTANT:
+For utilaj detail pages, do NOT use delayed injector for SEO text if avoidable.
+Correct pattern:
+- hide original short .equipmentDetailSection immediately with page CSS
+- place the long SEO/audio block directly in static HTML after the original section
+- keep only audio JS, not content-injection JS
+This prevents 1-second delay and lets Google see the long text in initial HTML.
