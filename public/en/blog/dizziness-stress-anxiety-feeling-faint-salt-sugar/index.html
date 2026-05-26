@@ -21,10 +21,13 @@
 
 
 
+
+
+
 <style>
 .articleToolsBox{
   margin:0 0 24px 0;
-  padding:18px;
+  padding:16px;
   border-radius:22px;
   background:#f8fafc;
   border:1px solid #e5e7eb;
@@ -35,73 +38,82 @@
   grid-template-columns:1fr;
   gap:12px;
 }
-.readAloudBtn,
-.textSizeBtn{
+.readAloudBtn{
   width:100%;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:10px;
   border:0;
   border-radius:18px;
-  padding:18px 22px;
+  padding:17px 20px;
   font-size:20px;
   font-weight:800;
   cursor:pointer;
-  box-shadow:0 10px 24px rgba(15,23,42,.12);
-}
-.readAloudBtn{
   background:#d71920;
   color:#fff;
   box-shadow:0 10px 24px rgba(215,25,32,.25);
 }
-.textSizeControls{
+.smallControlGrid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:10px;
 }
-.textSizeBtn{
-  background:#ffffff;
+.textSizeBtn,
+.voiceSpeedBtn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  padding:11px 12px;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+  background:#fff;
   color:#0f172a;
-  border:2px solid #d71920;
+  border:1.5px solid #d71920;
 }
-.textSizeBtn strong{
-  color:#d71920;
-  font-size:28px;
-  line-height:1;
+.voiceSpeedBtn{
+  border-color:#94a3b8;
 }
 .readAloudBtn:hover,
-.textSizeBtn:hover{filter:brightness(.97)}
+.textSizeBtn:hover,
+.voiceSpeedBtn:hover{filter:brightness(.97)}
 .readAloudBtn:active,
-.textSizeBtn:active{transform:translateY(1px)}
+.textSizeBtn:active,
+.voiceSpeedBtn:active{transform:translateY(1px)}
 .articleToolsHint{
   margin:10px 4px 0;
-  font-size:15px;
-  line-height:1.5;
+  font-size:14px;
+  line-height:1.45;
   color:#475569;
   text-align:center;
 }
 article.articleLargeText{
-  font-size:var(--article-font-size, 18px);
-  line-height:1.75;
+  font-size:var(--article-font-size, 20px);
+  line-height:1.78;
 }
 article.articleLargeText p,
 article.articleLargeText li{
-  font-size:var(--article-font-size, 18px);
-  line-height:1.75;
+  font-size:var(--article-font-size, 20px);
+  line-height:1.78;
 }
 article.articleLargeText h2{
-  font-size:calc(var(--article-font-size, 18px) + 8px);
+  font-size:calc(var(--article-font-size, 20px) + 7px);
   line-height:1.3;
 }
 @media(max-width:640px){
-  .readAloudBtn,
-  .textSizeBtn{
+  .readAloudBtn{
     font-size:18px;
-    padding:17px 14px;
+    padding:16px 14px;
   }
-  .textSizeControls{
-    grid-template-columns:1fr;
+  .smallControlGrid{
+    grid-template-columns:1fr 1fr;
+  }
+  .textSizeBtn,
+  .voiceSpeedBtn{
+    font-size:14px;
+    padding:10px 8px;
   }
 }
 </style>
@@ -121,6 +133,10 @@ article.articleLargeText h2{
 <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1400&q=80" alt="Dizziness, stress and feeling faint: why a little salt, sugar or honey can sometimes help" style="width:100%;border-radius:22px;margin-bottom:28px;max-height:420px;object-fit:cover"/>
 
 
+</div>
+  <p class="articleToolsHint">Poți asculta articolul sau poți mări textul dacă citești mai greu.</p>
+</div>
+
 <div class="articleToolsBox">
   <div class="articleToolsGrid">
     <button
@@ -132,16 +148,19 @@ article.articleLargeText h2{
       data-unsupported="Browserul tău nu suportă citirea vocală."
     >🔊 Ascultă articolul</button>
 
-    <div class="textSizeControls">
-      <button type="button" class="textSizeBtn" data-text-size="bigger">
-        <strong>A+</strong> Fă textul mai mare
-      </button>
-      <button type="button" class="textSizeBtn" data-text-size="smaller">
-        <strong>A−</strong> Fă textul mai mic
-      </button>
+    <div class="smallControlGrid">
+      <button type="button" class="voiceSpeedBtn" data-voice-speed="slower">− Voce mai lent</button>
+      <button type="button" class="voiceSpeedBtn" data-voice-speed="faster">+ Voce mai rapid</button>
+    </div>
+
+    <p class="articleToolsHint">Viteză voce: <b class="voiceRateLabel">92%</b></p>
+
+    <div class="smallControlGrid">
+      <button type="button" class="textSizeBtn" data-text-size="bigger">+ Text mai mare</button>
+      <button type="button" class="textSizeBtn" data-text-size="smaller">− Text mai mic</button>
     </div>
   </div>
-  <p class="articleToolsHint">Poți asculta articolul sau poți mări textul dacă citești mai greu.</p>
+  <p class="articleToolsHint">Poți asculta articolul, schimba viteza vocii sau mări textul.</p>
 </div>
 <article class="card" style="padding:28px">
 <p>Sometimes, during stress, poor sleep or intense mental work, the body starts sending strange signals. You stand up and feel dizzy. Your legs feel weak. You feel like you may faint. Light bothers you. Your heart beats faster. You get scared, and anxiety becomes even stronger.</p><p>This happens more often than people think. It does not automatically mean something serious, but it should not be ignored if it repeats. The nervous system may be tired, blood sugar may drop, blood pressure may change, breathing may become faster, muscles may stay tense, and the brain reads all of this as danger.</p><h2>Why can the feeling of fainting appear?</h2><p>The feeling of fainting often appears when the brain temporarily receives less blood flow, oxygen or energy than it needs. This can happen after poor sleep, skipped meals, too little water, long screen work, heat or a stressful period.</p><p>Anxiety can amplify everything. When you get scared, breathing changes, adrenaline rises, the heart beats differently and the body feels unsafe. Sometimes the main issue is not danger, but exhaustion and an over-reactive nervous system.</p><h2>Why can a little salt help?</h2><p>Salt helps the body hold water and may support blood pressure in some people, especially after sweating, low fluid intake, low food intake or naturally lower blood pressure. We are not talking about a lot of salt. A small salty snack or electrolytes may be enough for some people.</p><p>Important: if you have high blood pressure, kidney disease, heart problems, swelling or a medical recommendation to reduce salt, do not do this without your doctor’s advice.</p><h2>Why can a little sugar or honey help?</h2><p>If you skipped a meal, drank coffee on an empty stomach or worked for many hours without a break, blood sugar can drop or fluctuate. This can bring shakiness, weakness, sweating, hunger, anxiety, dizziness or brain fog.</p><p>In that moment, a small amount of sugar, honey, juice or a sweet snack can help some people recover faster. The idea is not to eat a lot of sweets, but to have something quick in case energy suddenly drops.</p><p>If you have diabetes or known blood sugar problems, follow your doctor’s plan.</p><h2>Why can sunglasses help?</h2><p>During stress, migraine, fatigue or after long screen time, strong light can become difficult to tolerate. Some people feel headache, nausea, dizziness or irritation from light. Sunglasses can reduce visual stimulation and help calm the nervous system in that moment.</p><p>But if light sensitivity appears suddenly, is very strong, or comes with a severe headache, fever, vision problems or confusion, it needs medical evaluation.</p><h2>What can you do in the moment?</h2><p>Stop. Sit or lie down. If possible, raise your legs a little. Breathe more slowly. Take a few sips of water. If you have eaten very little, take a small amount of sugar, honey or a snack. If you have been sweating or you know your blood pressure is low, a small salty snack or electrolytes may help.</p><p>Do not drive and do not keep standing if you feel you may faint. The body is asking for a pause.</p><h2>What should you do next?</h2><p>If it happened once after poor sleep, hunger, stress or heat, it may be a signal to hydrate, eat regularly, sleep and reduce overload. But if it repeats, if you faint, or if you have strong palpitations, chest pain, shortness of breath, one-sided weakness, confusion or an unusual headache, seek medical help.</p><p>At Revimed PLUS+, a clinic founded in 2005, our doctor with more than 35 years of experience can evaluate these symptoms from a neurological and recovery perspective. Sometimes physiotherapy, routine changes, sleep and gentler methods help. Other times tests or medical treatment are needed. The plan is discussed with the patient and selected individually, based on symptoms, safety, preferences and possibilities.</p>
@@ -156,12 +175,21 @@ article.articleLargeText h2{
 
 
 
+
+
+
 <script>
 (function(){
-  var STORAGE_KEY = "revimedArticleFontSize";
-  var DEFAULT_SIZE = 18;
+  var FONT_KEY = "revimedArticleFontSize";
+  var RATE_KEY = "revimedVoiceRate";
+
+  var DEFAULT_SIZE = 20;
   var MIN_SIZE = 16;
   var MAX_SIZE = 28;
+
+  var DEFAULT_RATE = 0.92;
+  var MIN_RATE = 0.7;
+  var MAX_RATE = 1.25;
 
   function cleanText(text){
     return text.replace(/\s+/g, " ").replace(/©.*$/g, "").trim();
@@ -171,26 +199,60 @@ article.articleLargeText h2{
     return document.querySelector("article");
   }
 
+  function clamp(num, min, max){
+    return Math.max(min, Math.min(max, num));
+  }
+
+  function getCurrentSize(){
+    try{
+      var saved = parseInt(localStorage.getItem(FONT_KEY) || DEFAULT_SIZE, 10);
+      if(!isNaN(saved)) return clamp(saved, MIN_SIZE, MAX_SIZE);
+    }catch(e){}
+    return DEFAULT_SIZE;
+  }
+
   function applyArticleSize(size){
     var article = getArticle();
     if(!article) return;
     article.classList.add("articleLargeText");
     article.style.setProperty("--article-font-size", size + "px");
-    try{ localStorage.setItem(STORAGE_KEY, String(size)); }catch(e){}
-  }
-
-  function getCurrentSize(){
-    try{
-      var saved = parseInt(localStorage.getItem(STORAGE_KEY) || DEFAULT_SIZE, 10);
-      if(!isNaN(saved)) return Math.max(MIN_SIZE, Math.min(MAX_SIZE, saved));
-    }catch(e){}
-    return DEFAULT_SIZE;
+    try{ localStorage.setItem(FONT_KEY, String(size)); }catch(e){}
   }
 
   function changeSize(delta){
-    var size = getCurrentSize() + delta;
-    size = Math.max(MIN_SIZE, Math.min(MAX_SIZE, size));
-    applyArticleSize(size);
+    applyArticleSize(clamp(getCurrentSize() + delta, MIN_SIZE, MAX_SIZE));
+  }
+
+  function getCurrentRate(){
+    try{
+      var saved = parseFloat(localStorage.getItem(RATE_KEY) || DEFAULT_RATE);
+      if(!isNaN(saved)) return clamp(saved, MIN_RATE, MAX_RATE);
+    }catch(e){}
+    return DEFAULT_RATE;
+  }
+
+  function saveRate(rate){
+    rate = Math.round(clamp(rate, MIN_RATE, MAX_RATE) * 100) / 100;
+    try{ localStorage.setItem(RATE_KEY, String(rate)); }catch(e){}
+    updateRateLabel(rate);
+    return rate;
+  }
+
+  function changeRate(delta){
+    var rate = saveRate(getCurrentRate() + delta);
+    if(window.speechSynthesis && window.speechSynthesis.speaking){
+      window.speechSynthesis.cancel();
+      var btn = document.querySelector(".readAloudBtn");
+      if(btn){
+        btn.innerHTML = btn.dataset.startText;
+        btn.dataset.playing = "0";
+      }
+    }
+  }
+
+  function updateRateLabel(rate){
+    var label = document.querySelector(".voiceRateLabel");
+    if(label) label.textContent = Math.round(rate * 100) + "%";
   }
 
   function getArticleText(){
@@ -227,7 +289,7 @@ article.articleLargeText h2{
     var lang = btn.dataset.lang || document.documentElement.lang || "ro-RO";
     var utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
-    utterance.rate = 0.92;
+    utterance.rate = getCurrentRate();
     utterance.pitch = 1;
 
     var voice = pickVoice(lang);
@@ -258,6 +320,12 @@ article.articleLargeText h2{
 
     var smaller = e.target.closest("[data-text-size='smaller']");
     if(smaller) changeSize(-2);
+
+    var faster = e.target.closest("[data-voice-speed='faster']");
+    if(faster) changeRate(0.08);
+
+    var slower = e.target.closest("[data-voice-speed='slower']");
+    if(slower) changeRate(-0.08);
   });
 
   window.addEventListener("beforeunload", function(){
@@ -265,6 +333,7 @@ article.articleLargeText h2{
   });
 
   applyArticleSize(getCurrentSize());
+  updateRateLabel(getCurrentRate());
 
   if("speechSynthesis" in window){
     window.speechSynthesis.onvoiceschanged = function(){};

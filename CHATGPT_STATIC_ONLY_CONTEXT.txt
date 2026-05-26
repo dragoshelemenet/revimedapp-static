@@ -108,3 +108,11 @@ Every blog article should include large visible controls near the start:
 Text size should apply to the article only and save in localStorage.
 This helps patients with dizziness, headaches, fatigue, visual sensitivity, or neurological difficulties.
 
+ARTICLE ACCESSIBILITY TOOLS UPDATE:
+Every blog article should include:
+- Large read aloud button
+- Voice speed controls: slower/faster
+- Smaller text controls: + Text bigger / - Text smaller
+Default article text should be slightly bigger, around 20px.
+Settings should save in localStorage.
+
