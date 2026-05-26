@@ -46,6 +46,9 @@
 
 
 
+
+
+
 <style>
 .articleHeroMedia{
   position:relative;
@@ -66,15 +69,15 @@
   left:18px;
   right:18px;
   bottom:18px;
-  z-index:3;
+  z-index:5;
 }
 .articleToolsBox{
   width:100%;
   margin:0;
   padding:14px;
   border-radius:22px;
-  background:rgba(15,23,42,0.48);
-  border:1px solid rgba(255,255,255,0.24);
+  background:rgba(15,23,42,0.50);
+  border:1px solid rgba(255,255,255,0.25);
   backdrop-filter:blur(20px) saturate(1.3);
   -webkit-backdrop-filter:blur(20px) saturate(1.3);
   box-shadow:0 10px 32px rgba(15,23,42,.28);
@@ -95,7 +98,7 @@
   font-size:19px;
   font-weight:900;
   cursor:pointer;
-  background:rgba(215,25,32,.95);
+  background:rgba(215,25,32,.96);
   color:#fff;
   box-shadow:0 8px 20px rgba(215,25,32,.30);
 }
@@ -111,7 +114,7 @@
   font-size:14px;
   font-weight:900;
   cursor:pointer;
-  background:rgba(255,255,255,.86);
+  background:rgba(255,255,255,.88);
   color:#0f172a;
   border:1px solid rgba(255,255,255,.50);
   min-height:44px;
@@ -123,8 +126,8 @@
   transform:translateY(1px);
 }
 .voiceRateBadge{
-  min-width:82px;
-  padding:10px 10px;
+  min-width:86px;
+  padding:10px;
   border-radius:14px;
   text-align:center;
   background:rgba(255,255,255,.18);
@@ -145,33 +148,44 @@
   font-weight:950;
   line-height:1;
 }
+
+/* force article layout back to centered card */
+.rmSection .,
 article.{
+  display:block !important;
+  width:100% !important;
   max-width:920px !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-  font-size:32px !important;
-  line-height:1.85 !important;
-  color:#334155 !important;
+  margin:0 auto !important;
+  padding:44px !important;
+  border-radius:22px !important;
+  box-sizing:border-box !important;
 }
+
+/* force big readable text */
+article.,
 article.p,
 article.li,
 article.div{
-  font-size:32px !important;
+  font-size:38px !important;
   line-height:1.85 !important;
   color:#334155 !important;
   letter-spacing:.01em !important;
 }
+
 article.h2{
-  font-size:42px !important;
+  font-size:48px !important;
   line-height:1.25 !important;
-  margin-top:38px !important;
-  margin-bottom:14px !important;
+  margin-top:42px !important;
+  margin-bottom:16px !important;
   color:#0f172a !important;
 }
+
 article.b,
-article.strong{
+article.strong,
+article.a{
   font-size:inherit !important;
 }
+
 @media(max-width:760px){
   .articleHeroMedia{
     margin-left:12px;
@@ -197,15 +211,20 @@ article.strong{
   .voiceRateBadge{
     width:100%;
   }
+  .rmSection .,
+  article.{
+    max-width:calc(100% - 24px) !important;
+    padding:26px !important;
+  }
   article.,
   article.p,
   article.li,
   article.div{
-    font-size:25px !important;
+    font-size:27px !important;
     line-height:1.78 !important;
   }
   article.h2{
-    font-size:32px !important;
+    font-size:34px !important;
   }
 }
 </style>
@@ -271,6 +290,12 @@ article.strong{
   </div>
 </div>
 </div>
+<button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
   </div>
 </div>
 </div>
@@ -283,7 +308,7 @@ article.strong{
 
 <div class="smallControlGrid">
       </div>
-  <article class="card  articleReadableText" style="padding:28px">
+  <article class="card   articleReadableText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;">
       
 <p>Când cauți „neurolog Chișinău”, probabil nu cauți doar un număr de telefon. Cauți să înțelegi ce se întâmplă cu corpul tău.</p>
 <p>Poate ai dureri de cap. Poate amețești. Poate ai dureri de spate, amorțeli în mâini sau picioare, somn rău, tensiune în corp sau stări de neliniște. Uneori simptomele sunt clare. Alteori sunt confuze și nu știi de unde să începi.</p>
@@ -344,6 +369,9 @@ article.strong{
 
 
 
+
+
+
 <script>
 (function(){
   var RATE_KEY = "revimedVoiceRate";
@@ -355,7 +383,8 @@ article.strong{
   var currentIndex = 0;
   var activeButton = null;
   var isReading = false;
-  var restartTimer = null;
+  var ignoreCancelEnd = false;
+  var resumeTimer = null;
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
@@ -399,13 +428,13 @@ article.strong{
       piece = cleanText(piece);
       if(!piece) return;
 
-      if(piece.length <= 220){
+      if(piece.length <= 180){
         out.push(piece);
       }else{
         var words = piece.split(" ");
         var buf = "";
         words.forEach(function(w){
-          if((buf + " " + w).trim().length > 180){
+          if((buf + " " + w).trim().length > 150){
             if(buf) out.push(buf.trim());
             buf = w;
           }else{
@@ -434,8 +463,7 @@ article.strong{
     });
 
     if(!arr.length){
-      var all = cleanText(article.innerText || article.textContent || "");
-      arr = splitIntoChunks(all);
+      arr = splitIntoChunks(article.innerText || article.textContent || "");
     }
 
     return arr;
@@ -460,6 +488,8 @@ article.strong{
   function speakCurrent(){
     if(!("speechSynthesis" in window)) return;
 
+    if(!isReading) return;
+
     if(!chunks.length || currentIndex >= chunks.length){
       isReading = false;
       currentIndex = 0;
@@ -479,12 +509,14 @@ article.strong{
     if(voice) utterance.voice = voice;
 
     utterance.onend = function(){
+      if(ignoreCancelEnd) return;
       if(!isReading) return;
       currentIndex += 1;
       speakCurrent();
     };
 
     utterance.onerror = function(){
+      if(ignoreCancelEnd) return;
       isReading = false;
       setButtonReading(false);
     };
@@ -502,6 +534,7 @@ article.strong{
     chunks = buildChunks();
     currentIndex = 0;
     isReading = true;
+    ignoreCancelEnd = false;
 
     window.speechSynthesis.cancel();
     setButtonReading(true);
@@ -510,24 +543,31 @@ article.strong{
 
   function stopReading(){
     isReading = false;
+    ignoreCancelEnd = true;
     window.speechSynthesis.cancel();
     setButtonReading(false);
+
+    setTimeout(function(){
+      ignoreCancelEnd = false;
+    }, 120);
   }
 
-  function updateSpeedLive(delta){
+  function updateSpeedAndContinue(delta){
     setRate(getRate() + delta);
 
     if(!isReading) return;
 
-    clearTimeout(restartTimer);
+    clearTimeout(resumeTimer);
 
-    try{
-      window.speechSynthesis.cancel();
-    }catch(e){}
+    ignoreCancelEnd = true;
+    window.speechSynthesis.cancel();
 
-    restartTimer = setTimeout(function(){
-      if(isReading) speakCurrent();
-    }, 60);
+    resumeTimer = setTimeout(function(){
+      ignoreCancelEnd = false;
+      if(isReading){
+        speakCurrent();
+      }
+    }, 120);
   }
 
   document.addEventListener("click", function(e){
@@ -539,12 +579,12 @@ article.strong{
     }
 
     if(e.target.closest("[data-voice-speed='slower']")){
-      updateSpeedLive(-0.08);
+      updateSpeedAndContinue(-0.08);
       return;
     }
 
     if(e.target.closest("[data-voice-speed='faster']")){
-      updateSpeedLive(0.08);
+      updateSpeedAndContinue(0.08);
       return;
     }
   });

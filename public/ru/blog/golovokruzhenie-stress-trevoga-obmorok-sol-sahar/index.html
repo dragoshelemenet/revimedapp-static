@@ -42,6 +42,9 @@
 
 
 
+
+
+
 <style>
 .articleHeroMedia{
   position:relative;
@@ -62,15 +65,15 @@
   left:18px;
   right:18px;
   bottom:18px;
-  z-index:3;
+  z-index:5;
 }
 .articleToolsBox{
   width:100%;
   margin:0;
   padding:14px;
   border-radius:22px;
-  background:rgba(15,23,42,0.48);
-  border:1px solid rgba(255,255,255,0.24);
+  background:rgba(15,23,42,0.50);
+  border:1px solid rgba(255,255,255,0.25);
   backdrop-filter:blur(20px) saturate(1.3);
   -webkit-backdrop-filter:blur(20px) saturate(1.3);
   box-shadow:0 10px 32px rgba(15,23,42,.28);
@@ -91,7 +94,7 @@
   font-size:19px;
   font-weight:900;
   cursor:pointer;
-  background:rgba(215,25,32,.95);
+  background:rgba(215,25,32,.96);
   color:#fff;
   box-shadow:0 8px 20px rgba(215,25,32,.30);
 }
@@ -107,7 +110,7 @@
   font-size:14px;
   font-weight:900;
   cursor:pointer;
-  background:rgba(255,255,255,.86);
+  background:rgba(255,255,255,.88);
   color:#0f172a;
   border:1px solid rgba(255,255,255,.50);
   min-height:44px;
@@ -119,8 +122,8 @@
   transform:translateY(1px);
 }
 .voiceRateBadge{
-  min-width:82px;
-  padding:10px 10px;
+  min-width:86px;
+  padding:10px;
   border-radius:14px;
   text-align:center;
   background:rgba(255,255,255,.18);
@@ -141,33 +144,44 @@
   font-weight:950;
   line-height:1;
 }
+
+/* force article layout back to centered card */
+.rmSection .,
 article.{
+  display:block !important;
+  width:100% !important;
   max-width:920px !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-  font-size:32px !important;
-  line-height:1.85 !important;
-  color:#334155 !important;
+  margin:0 auto !important;
+  padding:44px !important;
+  border-radius:22px !important;
+  box-sizing:border-box !important;
 }
+
+/* force big readable text */
+article.,
 article.p,
 article.li,
 article.div{
-  font-size:32px !important;
+  font-size:38px !important;
   line-height:1.85 !important;
   color:#334155 !important;
   letter-spacing:.01em !important;
 }
+
 article.h2{
-  font-size:42px !important;
+  font-size:48px !important;
   line-height:1.25 !important;
-  margin-top:38px !important;
-  margin-bottom:14px !important;
+  margin-top:42px !important;
+  margin-bottom:16px !important;
   color:#0f172a !important;
 }
+
 article.b,
-article.strong{
+article.strong,
+article.a{
   font-size:inherit !important;
 }
+
 @media(max-width:760px){
   .articleHeroMedia{
     margin-left:12px;
@@ -193,15 +207,20 @@ article.strong{
   .voiceRateBadge{
     width:100%;
   }
+  .rmSection .,
+  article.{
+    max-width:calc(100% - 24px) !important;
+    padding:26px !important;
+  }
   article.,
   article.p,
   article.li,
   article.div{
-    font-size:25px !important;
+    font-size:27px !important;
     line-height:1.78 !important;
   }
   article.h2{
-    font-size:32px !important;
+    font-size:34px !important;
   }
 }
 </style>
@@ -243,6 +262,12 @@ article.strong{
   </div>
 </div>
 </div>
+<button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
   </div>
 </div>
 </div>
@@ -255,7 +280,7 @@ article.strong{
 
 <div class="smallControlGrid">
       </div>
-  <article class="card  articleReadableText" style="padding:28px">
+  <article class="card   articleReadableText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;">
 <p>Иногда во время стресса, плохого сна или сильной умственной нагрузки тело начинает подавать странные сигналы. Вы встаете — и кружится голова. Ноги становятся мягкими. Кажется, что можно потерять сознание. Свет раздражает. Сердце бьется быстрее. Человек пугается, и тревога становится еще сильнее.</p><p>Такое случается чаще, чем кажется. Это не всегда означает что-то опасное, но если повторяется, игнорировать не стоит. Нервная система может быть уставшей, сахар в крови может снижаться, давление может колебаться, дыхание становится чаще, мышцы напряжены, и мозг воспринимает это как тревогу.</p><h2>Почему появляется ощущение обморока?</h2><p>Ощущение обморока часто появляется, когда мозг на короткое время получает меньше крови, кислорода или энергии, чем ему нужно. Это может быть после плохого сна, пропущенной еды, малого количества воды, долгой работы за экраном, жары или тяжелого стрессового периода.</p><p>Тревога усиливает всё. Когда человек пугается, меняется дыхание, повышается адреналин, сердце работает иначе, и тело ощущается небезопасно. Иногда причина не в реальной опасности, а в усталости и слишком сильной реакции нервной системы.</p><h2>Почему может помочь немного соли?</h2><p>Соль помогает организму удерживать воду и у некоторых людей может поддержать давление, особенно после пота, малого количества воды, недостатка еды или при склонности к низкому давлению. Речь не о большом количестве соли. Иногда достаточно маленькой соленой закуски или электролитов.</p><p>Важно: если у вас высокое давление, болезни почек, проблемы с сердцем, отеки или врач рекомендовал ограничить соль, не делайте это без согласования с врачом.</p><h2>Почему может помочь немного сахара или мёда?</h2><p>Если вы пропустили еду, выпили кофе натощак или работали много часов без паузы, сахар в крови может снижаться или резко колебаться. Тогда появляются дрожь, слабость, потливость, голод, тревога, головокружение или туман в голове.</p><p>В такой момент немного сахара, мёда, сока или сладкой закуски может помочь некоторым людям быстрее прийти в себя. Идея не в том, чтобы есть много сладкого, а в том, чтобы иметь быстрый вариант на случай резкого падения энергии.</p><p>Если у вас диабет или проблемы с сахаром, нужно следовать плану врача.</p><h2>Почему могут помочь солнцезащитные очки?</h2><p>Во время стресса, мигрени, усталости или после долгого времени за экраном яркий свет может раздражать. У некоторых людей от света усиливается головная боль, тошнота, головокружение или напряжение. Солнцезащитные очки могут уменьшить зрительную нагрузку и немного успокоить нервную систему.</p><p>Но если светобоязнь появилась резко, очень сильная или идет вместе с сильной головной болью, температурой, нарушением зрения или спутанностью, нужна медицинская оценка.</p><h2>Что делать в моменте?</h2><p>Остановитесь. Сядьте или лягте. Если можно, немного поднимите ноги. Дышите медленнее. Выпейте несколько глотков воды. Если вы мало ели, можно принять немного сахара, мёда или перекус. Если вы потели или знаете, что давление низкое, может помочь небольшая соленая закуска или электролиты.</p><p>Не садитесь за руль и не стойте дальше, если чувствуете, что можете упасть. Тело просит паузу.</p><h2>Что делать дальше?</h2><p>Если это случилось один раз после плохого сна, голода, стресса или жары, это может быть сигналом пить воду, питаться регулярнее, спать и уменьшить перегрузку. Но если это повторяется, если вы теряли сознание, есть сильное сердцебиение, боль в груди, нехватка воздуха, слабость с одной стороны, спутанность или необычная головная боль, нужно обратиться к врачу.</p><p>В Revimed PLUS+, клинике, основанной в 2005 году, наш врач с опытом более 35 лет может оценить такие симптомы с точки зрения неврологии и восстановления. Иногда помогают физиотерапия, режим, сон и более мягкие методы. Иногда нужны обследования или лечение. План обсуждается с пациентом и подбирается индивидуально.</p>
 <hr style="margin:28px 0;border:none;border-top:1px solid #e5e7eb"/>
 <p><b>Revimed PLUS+</b> — clinică fondată în 2005. Consultațiile și tratamentele se stabilesc individual, cu acordul pacientului.</p>
@@ -264,6 +289,9 @@ article.strong{
 </div></section>
 </main>
 <footer class="rmFooter"><div class="rmShell rmFooterGrid"><div class="footerBrand"><img src="/images/logo.png" alt="REVIMED" class="footerLogo"/><p>© 2026 Centrul Medical Revimed PLUS+.</p></div><div class="footerSchedule"><h3>Program</h3><p>Str. Mircea cel Bătrân 13/2</p><p>Luni–Vineri: 09:00–15:00</p><p>022 60 50 60</p></div></div></footer>
+
+
+
 
 
 
@@ -294,7 +322,8 @@ article.strong{
   var currentIndex = 0;
   var activeButton = null;
   var isReading = false;
-  var restartTimer = null;
+  var ignoreCancelEnd = false;
+  var resumeTimer = null;
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
@@ -338,13 +367,13 @@ article.strong{
       piece = cleanText(piece);
       if(!piece) return;
 
-      if(piece.length <= 220){
+      if(piece.length <= 180){
         out.push(piece);
       }else{
         var words = piece.split(" ");
         var buf = "";
         words.forEach(function(w){
-          if((buf + " " + w).trim().length > 180){
+          if((buf + " " + w).trim().length > 150){
             if(buf) out.push(buf.trim());
             buf = w;
           }else{
@@ -373,8 +402,7 @@ article.strong{
     });
 
     if(!arr.length){
-      var all = cleanText(article.innerText || article.textContent || "");
-      arr = splitIntoChunks(all);
+      arr = splitIntoChunks(article.innerText || article.textContent || "");
     }
 
     return arr;
@@ -399,6 +427,8 @@ article.strong{
   function speakCurrent(){
     if(!("speechSynthesis" in window)) return;
 
+    if(!isReading) return;
+
     if(!chunks.length || currentIndex >= chunks.length){
       isReading = false;
       currentIndex = 0;
@@ -418,12 +448,14 @@ article.strong{
     if(voice) utterance.voice = voice;
 
     utterance.onend = function(){
+      if(ignoreCancelEnd) return;
       if(!isReading) return;
       currentIndex += 1;
       speakCurrent();
     };
 
     utterance.onerror = function(){
+      if(ignoreCancelEnd) return;
       isReading = false;
       setButtonReading(false);
     };
@@ -441,6 +473,7 @@ article.strong{
     chunks = buildChunks();
     currentIndex = 0;
     isReading = true;
+    ignoreCancelEnd = false;
 
     window.speechSynthesis.cancel();
     setButtonReading(true);
@@ -449,24 +482,31 @@ article.strong{
 
   function stopReading(){
     isReading = false;
+    ignoreCancelEnd = true;
     window.speechSynthesis.cancel();
     setButtonReading(false);
+
+    setTimeout(function(){
+      ignoreCancelEnd = false;
+    }, 120);
   }
 
-  function updateSpeedLive(delta){
+  function updateSpeedAndContinue(delta){
     setRate(getRate() + delta);
 
     if(!isReading) return;
 
-    clearTimeout(restartTimer);
+    clearTimeout(resumeTimer);
 
-    try{
-      window.speechSynthesis.cancel();
-    }catch(e){}
+    ignoreCancelEnd = true;
+    window.speechSynthesis.cancel();
 
-    restartTimer = setTimeout(function(){
-      if(isReading) speakCurrent();
-    }, 60);
+    resumeTimer = setTimeout(function(){
+      ignoreCancelEnd = false;
+      if(isReading){
+        speakCurrent();
+      }
+    }, 120);
   }
 
   document.addEventListener("click", function(e){
@@ -478,12 +518,12 @@ article.strong{
     }
 
     if(e.target.closest("[data-voice-speed='slower']")){
-      updateSpeedLive(-0.08);
+      updateSpeedAndContinue(-0.08);
       return;
     }
 
     if(e.target.closest("[data-voice-speed='faster']")){
-      updateSpeedLive(0.08);
+      updateSpeedAndContinue(0.08);
       return;
     }
   });
