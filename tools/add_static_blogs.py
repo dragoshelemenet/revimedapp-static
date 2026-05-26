@@ -8,6 +8,10 @@ import sys
 TOOLS_DIR = Path(__file__).resolve().parent
 if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
 from blog_accessibility import apply_all as apply_blog_accessibility
 
 BASE = "https://revimed.site"
@@ -185,6 +189,7 @@ def main():
         insert_cards_preserve_old(lang, cards, batch_id)
 
     count = regenerate_sitemap()
+    exec(open(TOOLS_DIR / "repair_all_blog_articles.py", encoding="utf-8").read())
     apply_blog_accessibility(verbose=False)
 
     for lang in LANG:
