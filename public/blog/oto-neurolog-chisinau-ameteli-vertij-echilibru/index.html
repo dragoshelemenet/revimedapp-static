@@ -217,6 +217,72 @@ article.a{
 }
 </style>
 
+
+<style id="REVIMED_FORCE_BIG_BLOG_TEXT">
+/* Force readable blog article text on all static blog articles */
+article. ,
+article. *{
+  box-sizing:border-box!important;
+}
+
+article. {
+  width:100%!important;
+  max-width:920px!important;
+  margin:0 auto!important;
+  padding:48px!important;
+  border-radius:22px!important;
+  font-size:34px!important;
+  line-height:1.85!important;
+  color:#334155!important;
+}
+
+article. p,
+article. li,
+article. div{
+  font-size:34px!important;
+  line-height:1.85!important;
+  color:#334155!important;
+  letter-spacing:.01em!important;
+}
+
+article. h2,
+article. h3{
+  font-size:46px!important;
+  line-height:1.25!important;
+  margin-top:42px!important;
+  margin-bottom:18px!important;
+  color:#0f172a!important;
+}
+
+article. b,
+article. strong,
+article. a{
+  font-size:inherit!important;
+}
+
+@media(max-width:760px){
+  article. {
+    max-width:calc(100% - 24px)!important;
+    padding:28px!important;
+    font-size:26px!important;
+    line-height:1.78!important;
+  }
+
+  article. p,
+  article. li,
+  article. div{
+    font-size:26px!important;
+    line-height:1.78!important;
+  }
+
+  article. h2,
+  article. h3{
+    font-size:34px!important;
+    line-height:1.25!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="rmHeader">
@@ -285,7 +351,7 @@ article.a{
 
 <div class="smallControlGrid">
       </div>
-  <article class="card    articleReadableText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;;max-width:920px!important;margin:0 auto!important;padding:48px!important;">
+  <article class="card  revimedBigBlogText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;;max-width:920px!important;margin:0 auto!important;padding:48px!important;">
       
 <p>Mulți oameni caută „oto-neurolog” când au amețeli, vertij sau probleme de echilibru. Este o căutare normală, pentru că amețeala poate veni și de la urechea internă, și de la sistemul nervos.</p>
 <p>La Revimed PLUS+ nu ne prezentăm ca centru ORL. Dar un consult neurologic poate fi util când amețeala se repetă, apare cu dureri de cap, amorțeli, slăbiciune, mers nesigur sau senzație că pierzi controlul.</p>
@@ -367,7 +433,7 @@ article.a{
 
   function makeTextReadable(){
     var article = getArticle();
-    if(article) article.classList.add("articleReadableText");
+    if(article) article.classList.add(" ");
   }
 
   function getRate(){

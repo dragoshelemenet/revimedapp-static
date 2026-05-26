@@ -217,6 +217,72 @@ article.a{
 }
 </style>
 
+
+<style id="REVIMED_FORCE_BIG_BLOG_TEXT">
+/* Force readable blog article text on all static blog articles */
+article. ,
+article. *{
+  box-sizing:border-box!important;
+}
+
+article. {
+  width:100%!important;
+  max-width:920px!important;
+  margin:0 auto!important;
+  padding:48px!important;
+  border-radius:22px!important;
+  font-size:34px!important;
+  line-height:1.85!important;
+  color:#334155!important;
+}
+
+article. p,
+article. li,
+article. div{
+  font-size:34px!important;
+  line-height:1.85!important;
+  color:#334155!important;
+  letter-spacing:.01em!important;
+}
+
+article. h2,
+article. h3{
+  font-size:46px!important;
+  line-height:1.25!important;
+  margin-top:42px!important;
+  margin-bottom:18px!important;
+  color:#0f172a!important;
+}
+
+article. b,
+article. strong,
+article. a{
+  font-size:inherit!important;
+}
+
+@media(max-width:760px){
+  article. {
+    max-width:calc(100% - 24px)!important;
+    padding:28px!important;
+    font-size:26px!important;
+    line-height:1.78!important;
+  }
+
+  article. p,
+  article. li,
+  article. div{
+    font-size:26px!important;
+    line-height:1.78!important;
+  }
+
+  article. h2,
+  article. h3{
+    font-size:34px!important;
+    line-height:1.25!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="rmHeader">
@@ -285,7 +351,7 @@ article.a{
 
 <div class="smallControlGrid">
       </div>
-  <article class="card    articleReadableText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;;max-width:920px!important;margin:0 auto!important;padding:48px!important;">
+  <article class="card  revimedBigBlogText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;;max-width:920px!important;margin:0 auto!important;padding:48px!important;">
       
 <p>When you search for “neurologist Chisinau”, you are probably not just looking for a phone number. You are trying to understand what is happening in your body.</p>
 <p>You may have headaches. You may feel dizzy. You may have back pain, numbness in your hands or legs, poor sleep, body tension or constant uneasiness. Sometimes the symptoms are clear. Sometimes they are confusing and you do not know where to start.</p>
@@ -372,7 +438,7 @@ article.a{
 
   function makeTextReadable(){
     var article = getArticle();
-    if(article) article.classList.add("articleReadableText");
+    if(article) article.classList.add(" ");
   }
 
   function getRate(){
