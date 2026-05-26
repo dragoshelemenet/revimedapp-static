@@ -39,11 +39,14 @@
 
 
 
+
+
+
 <style>
 .articleHeroMedia{
   position:relative;
   max-width:920px;
-  margin:0 auto 32px auto;
+  margin:0 auto 36px auto;
   border-radius:22px;
   overflow:hidden;
 }
@@ -64,13 +67,13 @@
 .articleToolsBox{
   width:100%;
   margin:0;
-  padding:12px;
-  border-radius:20px;
-  background:rgba(15,23,42,0.42);
-  border:1px solid rgba(255,255,255,0.22);
-  backdrop-filter:blur(18px) saturate(1.25);
-  -webkit-backdrop-filter:blur(18px) saturate(1.25);
-  box-shadow:0 8px 28px rgba(15,23,42,.24);
+  padding:14px;
+  border-radius:22px;
+  background:rgba(15,23,42,0.48);
+  border:1px solid rgba(255,255,255,0.24);
+  backdrop-filter:blur(20px) saturate(1.3);
+  -webkit-backdrop-filter:blur(20px) saturate(1.3);
+  box-shadow:0 10px 32px rgba(15,23,42,.28);
 }
 .articleToolsBox *{
   box-sizing:border-box;
@@ -78,66 +81,92 @@
 .articleToolsGrid{
   display:grid;
   grid-template-columns:1fr;
-  gap:9px;
+  gap:10px;
 }
 .readAloudBtn{
   width:100%;
   border:0;
   border-radius:16px;
-  padding:14px 16px;
-  font-size:18px;
-  font-weight:800;
+  padding:15px 18px;
+  font-size:19px;
+  font-weight:900;
   cursor:pointer;
-  background:rgba(215,25,32,.94);
+  background:rgba(215,25,32,.95);
   color:#fff;
-  box-shadow:0 8px 20px rgba(215,25,32,.28);
+  box-shadow:0 8px 20px rgba(215,25,32,.30);
 }
-.articleControlsRow{
+.articleVoicePanel{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:10px;
 }
 .articleSmallBtn{
-  border-radius:12px;
-  padding:10px 8px;
-  font-size:13px;
-  font-weight:800;
+  border-radius:13px;
+  padding:12px 10px;
+  font-size:14px;
+  font-weight:900;
   cursor:pointer;
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.86);
   color:#0f172a;
-  border:1px solid rgba(255,255,255,.45);
-  min-height:40px;
+  border:1px solid rgba(255,255,255,.50);
+  min-height:44px;
 }
-.articleSmallBtn:hover{background:rgba(255,255,255,.96)}
-.articleSmallBtn:active{transform:translateY(1px)}
-.articleVoiceHint{
-  margin:7px 0 0;
-  font-size:12px;
-  line-height:1.3;
+.articleSmallBtn:hover{
+  background:rgba(255,255,255,.98);
+}
+.articleSmallBtn:active{
+  transform:translateY(1px);
+}
+.voiceRateBadge{
+  min-width:82px;
+  padding:10px 10px;
+  border-radius:14px;
+  text-align:center;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.24);
   color:#fff;
   text-shadow:0 1px 2px rgba(0,0,0,.35);
-  text-align:center;
+}
+.voiceRateBadge span{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  opacity:.9;
 }
 .voiceRateLabel{
-  font-weight:800;
-  color:#fff;
+  display:block;
+  margin-top:2px;
+  font-size:22px;
+  font-weight:950;
+  line-height:1;
 }
-article.articleReadableText{
-  max-width:920px;
-  margin-left:auto;
-  margin-right:auto;
-  font-size:30px;
-  line-height:1.75;
+article.{
+  max-width:920px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  font-size:32px !important;
+  line-height:1.85 !important;
+  color:#334155 !important;
 }
-article.articleReadableText p,
-article.articleReadableText li{
-  font-size:30px;
-  line-height:1.75;
+article.p,
+article.li,
+article.div{
+  font-size:32px !important;
+  line-height:1.85 !important;
+  color:#334155 !important;
+  letter-spacing:.01em !important;
 }
-article.articleReadableText h2{
-  font-size:38px;
-  line-height:1.25;
-  margin-top:34px;
+article.h2{
+  font-size:42px !important;
+  line-height:1.25 !important;
+  margin-top:38px !important;
+  margin-bottom:14px !important;
+  color:#0f172a !important;
+}
+article.b,
+article.strong{
+  font-size:inherit !important;
 }
 @media(max-width:760px){
   .articleHeroMedia{
@@ -153,19 +182,26 @@ article.articleReadableText h2{
     font-size:16px;
     padding:13px 12px;
   }
+  .articleVoicePanel{
+    grid-template-columns:1fr;
+  }
   .articleSmallBtn{
-    font-size:12px;
-    min-height:38px;
-    padding:9px 6px;
+    font-size:13px;
+    min-height:40px;
+    padding:10px 8px;
   }
-  article.articleReadableText,
-  article.articleReadableText p,
-  article.articleReadableText li{
-    font-size:24px;
-    line-height:1.72;
+  .voiceRateBadge{
+    width:100%;
   }
-  article.articleReadableText h2{
-    font-size:30px;
+  article.,
+  article.p,
+  article.li,
+  article.div{
+    font-size:25px !important;
+    line-height:1.78 !important;
+  }
+  article.h2{
+    font-size:32px !important;
   }
 }
 </style>
@@ -194,12 +230,19 @@ article.articleReadableText h2{
         data-stop-text="⏹ Oprește citirea"
         data-unsupported="Browserul tău nu suportă citirea vocală."
       >🔊 Ascultă articolul</button>
-      <div class="articleControlsRow">
+
+      <div class="articleVoicePanel">
         <button type="button" class="articleSmallBtn" data-voice-speed="slower">− Mai lent</button>
+        <div class="voiceRateBadge">
+          <span>Viteză</span>
+          <b class="voiceRateLabel">90%</b>
+        </div>
         <button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
       </div>
-      <p class="articleVoiceHint">Viteză: <span class="voiceRateLabel">90%</span></p>
     </div>
+  </div>
+</div>
+</div>
   </div>
 </div>
 </div>
@@ -212,10 +255,7 @@ article.articleReadableText h2{
 
 <div class="smallControlGrid">
       </div>
-  </div>
-  </div>
-
-<article class="card articleReadableText" style="padding:28px">
+  <article class="card  articleReadableText" style="padding:28px">
 <p>Іноді під час стресу, поганого сну або сильного розумового навантаження тіло починає подавати дивні сигнали. Ви встаєте — і паморочиться голова. Ноги стають слабкими. Здається, що можна втратити свідомість. Світло дратує. Серце б’ється швидше. Людина лякається, і тривога стає ще сильнішою.</p><p>Таке трапляється частіше, ніж здається. Це не завжди означає щось небезпечне, але якщо повторюється, ігнорувати не варто. Нервова система може бути втомленою, цукор у крові може знижуватися, тиск може коливатися, дихання стає частішим, м’язи напружені, і мозок сприймає це як тривогу.</p><h2>Чому з’являється відчуття непритомності?</h2><p>Відчуття непритомності часто з’являється, коли мозок на короткий час отримує менше крові, кисню або енергії, ніж потрібно. Це може бути після поганого сну, пропущеної їжі, малої кількості води, довгої роботи за екраном, спеки або важкого стресового періоду.</p><p>Тривога підсилює все. Коли людина лякається, змінюється дихання, підвищується адреналін, серце працює інакше, і тіло здається небезпечним. Іноді причина не в реальній небезпеці, а у втомі і занадто сильній реакції нервової системи.</p><h2>Чому може допомогти трохи солі?</h2><p>Сіль допомагає організму утримувати воду і в деяких людей може підтримати тиск, особливо після поту, малої кількості води, недостатньої їжі або при схильності до низького тиску. Мова не про багато солі. Іноді достатньо маленького солоного перекусу або електролітів.</p><p>Важливо: якщо у вас високий тиск, хвороби нирок, проблеми з серцем, набряки або лікар радив обмежити сіль, не робіть це без узгодження з лікарем.</p><h2>Чому може допомогти трохи цукру або меду?</h2><p>Якщо ви пропустили їжу, випили каву натщесерце або працювали багато годин без паузи, цукор у крові може знижуватися або різко коливатися. Тоді з’являються тремтіння, слабкість, пітливість, голод, тривога, запаморочення або туман у голові.</p><p>У такий момент трохи цукру, меду, соку або солодкий перекус може допомогти деяким людям швидше прийти до тями. Ідея не в тому, щоб їсти багато солодкого, а в тому, щоб мати швидкий варіант на випадок різкого падіння енергії.</p><p>Якщо у вас діабет або проблеми з цукром, потрібно дотримуватися плану лікаря.</p><h2>Чому можуть допомогти сонцезахисні окуляри?</h2><p>Під час стресу, мігрені, втоми або після довгого часу за екраном яскраве світло може дратувати. У деяких людей від світла посилюється головний біль, нудота, запаморочення або напруження. Сонцезахисні окуляри можуть зменшити зорове навантаження і трохи заспокоїти нервову систему.</p><p>Але якщо світлобоязнь з’явилася різко, дуже сильна або йде разом із сильним головним болем, температурою, порушенням зору чи сплутаністю, потрібна медична оцінка.</p><h2>Що робити в моменті?</h2><p>Зупиніться. Сядьте або ляжте. Якщо можна, трохи підніміть ноги. Дихайте повільніше. Випийте кілька ковтків води. Якщо ви мало їли, можна прийняти трохи цукру, меду або перекус. Якщо ви пітніли або знаєте, що тиск низький, може допомогти невеликий солоний перекус або електроліти.</p><p>Не сідайте за кермо і не стійте далі, якщо відчуваєте, що можете впасти. Тіло просить паузу.</p><h2>Що робити далі?</h2><p>Якщо це сталося один раз після поганого сну, голоду, стресу або спеки, це може бути сигналом пити воду, їсти регулярніше, спати і зменшити перевантаження. Але якщо це повторюється, якщо ви втрачали свідомість, є сильне серцебиття, біль у грудях, нестача повітря, слабкість з одного боку, сплутаність або незвичний головний біль, потрібно звернутися до лікаря.</p><p>У Revimed PLUS+, клініці, заснованій у 2005 році, наш лікар із досвідом понад 35 років може оцінити такі симптоми з точки зору неврології та відновлення. Іноді допомагають фізіотерапія, режим, сон і м’якші методи. Іноді потрібні обстеження або лікування. План обговорюється з пацієнтом і підбирається індивідуально.</p>
 <hr style="margin:28px 0;border:none;border-top:1px solid #e5e7eb"/>
 <p><b>Revimed PLUS+</b> — clinică fondată în 2005. Consultațiile și tratamentele se stabilesc individual, cu acordul pacientului.</p>
@@ -240,17 +280,21 @@ article.articleReadableText h2{
 
 
 
+
+
+
 <script>
 (function(){
   var RATE_KEY = "revimedVoiceRate";
   var DEFAULT_RATE = 0.9;
-  var MIN_RATE = 0.65;
-  var MAX_RATE = 1.25;
+  var MIN_RATE = 0.6;
+  var MAX_RATE = 1.35;
 
-  var paragraphs = [];
+  var chunks = [];
   var currentIndex = 0;
   var activeButton = null;
   var isReading = false;
+  var restartTimer = null;
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
@@ -283,19 +327,56 @@ article.articleReadableText h2{
     return rate;
   }
 
-  function buildParagraphs(){
+  function splitIntoChunks(text){
+    var cleaned = cleanText(text);
+    if(!cleaned) return [];
+
+    var pieces = cleaned.match(/[^.!?;:]+[.!?;:]?|[^.!?;:]+$/g) || [cleaned];
+    var out = [];
+
+    pieces.forEach(function(piece){
+      piece = cleanText(piece);
+      if(!piece) return;
+
+      if(piece.length <= 220){
+        out.push(piece);
+      }else{
+        var words = piece.split(" ");
+        var buf = "";
+        words.forEach(function(w){
+          if((buf + " " + w).trim().length > 180){
+            if(buf) out.push(buf.trim());
+            buf = w;
+          }else{
+            buf += " " + w;
+          }
+        });
+        if(buf.trim()) out.push(buf.trim());
+      }
+    });
+
+    return out;
+  }
+
+  function buildChunks(){
     var article = getArticle();
     if(!article) return [];
-    var nodes = article.querySelectorAll("h1,h2,h3,p,li");
+
+    var nodes = article.querySelectorAll("h2,h3,p,li");
     var arr = [];
+
     nodes.forEach(function(node){
       var text = cleanText(node.innerText || node.textContent || "");
-      if(text && !text.includes("Revimed PLUS+ — clinică fondată")) arr.push(text);
+      if(!text) return;
+      if(text.includes("Revimed PLUS+ — clinică fondată")) return;
+      splitIntoChunks(text).forEach(function(chunk){ arr.push(chunk); });
     });
+
     if(!arr.length){
       var all = cleanText(article.innerText || article.textContent || "");
-      if(all) arr = [all];
+      arr = splitIntoChunks(all);
     }
+
     return arr;
   }
 
@@ -317,7 +398,8 @@ article.articleReadableText h2{
 
   function speakCurrent(){
     if(!("speechSynthesis" in window)) return;
-    if(!paragraphs.length || currentIndex >= paragraphs.length){
+
+    if(!chunks.length || currentIndex >= chunks.length){
       isReading = false;
       currentIndex = 0;
       setButtonReading(false);
@@ -326,7 +408,8 @@ article.articleReadableText h2{
 
     var btn = activeButton || document.querySelector(".readAloudBtn");
     var lang = btn?.dataset.lang || document.documentElement.lang || "ro-RO";
-    var utterance = new SpeechSynthesisUtterance(paragraphs[currentIndex]);
+
+    var utterance = new SpeechSynthesisUtterance(chunks[currentIndex]);
     utterance.lang = lang;
     utterance.rate = getRate();
     utterance.pitch = 1;
@@ -353,10 +436,12 @@ article.articleReadableText h2{
       alert(btn.dataset.unsupported || "Text-to-speech is not supported in this browser.");
       return;
     }
+
     activeButton = btn;
-    paragraphs = buildParagraphs();
+    chunks = buildChunks();
     currentIndex = 0;
     isReading = true;
+
     window.speechSynthesis.cancel();
     setButtonReading(true);
     setTimeout(speakCurrent, 80);
@@ -368,12 +453,20 @@ article.articleReadableText h2{
     setButtonReading(false);
   }
 
-  function restartCurrentParagraph(){
+  function updateSpeedLive(delta){
+    setRate(getRate() + delta);
+
     if(!isReading) return;
-    window.speechSynthesis.cancel();
-    setTimeout(function(){
+
+    clearTimeout(restartTimer);
+
+    try{
+      window.speechSynthesis.cancel();
+    }catch(e){}
+
+    restartTimer = setTimeout(function(){
       if(isReading) speakCurrent();
-    }, 100);
+    }, 60);
   }
 
   document.addEventListener("click", function(e){
@@ -385,14 +478,12 @@ article.articleReadableText h2{
     }
 
     if(e.target.closest("[data-voice-speed='slower']")){
-      setRate(getRate() - 0.08);
-      restartCurrentParagraph();
+      updateSpeedLive(-0.08);
       return;
     }
 
     if(e.target.closest("[data-voice-speed='faster']")){
-      setRate(getRate() + 0.08);
-      restartCurrentParagraph();
+      updateSpeedLive(0.08);
       return;
     }
   });

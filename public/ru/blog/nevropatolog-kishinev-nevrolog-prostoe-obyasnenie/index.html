@@ -39,11 +39,14 @@
 
 
 
+
+
+
 <style>
 .articleHeroMedia{
   position:relative;
   max-width:920px;
-  margin:0 auto 32px auto;
+  margin:0 auto 36px auto;
   border-radius:22px;
   overflow:hidden;
 }
@@ -64,13 +67,13 @@
 .articleToolsBox{
   width:100%;
   margin:0;
-  padding:12px;
-  border-radius:20px;
-  background:rgba(15,23,42,0.42);
-  border:1px solid rgba(255,255,255,0.22);
-  backdrop-filter:blur(18px) saturate(1.25);
-  -webkit-backdrop-filter:blur(18px) saturate(1.25);
-  box-shadow:0 8px 28px rgba(15,23,42,.24);
+  padding:14px;
+  border-radius:22px;
+  background:rgba(15,23,42,0.48);
+  border:1px solid rgba(255,255,255,0.24);
+  backdrop-filter:blur(20px) saturate(1.3);
+  -webkit-backdrop-filter:blur(20px) saturate(1.3);
+  box-shadow:0 10px 32px rgba(15,23,42,.28);
 }
 .articleToolsBox *{
   box-sizing:border-box;
@@ -78,66 +81,92 @@
 .articleToolsGrid{
   display:grid;
   grid-template-columns:1fr;
-  gap:9px;
+  gap:10px;
 }
 .readAloudBtn{
   width:100%;
   border:0;
   border-radius:16px;
-  padding:14px 16px;
-  font-size:18px;
-  font-weight:800;
+  padding:15px 18px;
+  font-size:19px;
+  font-weight:900;
   cursor:pointer;
-  background:rgba(215,25,32,.94);
+  background:rgba(215,25,32,.95);
   color:#fff;
-  box-shadow:0 8px 20px rgba(215,25,32,.28);
+  box-shadow:0 8px 20px rgba(215,25,32,.30);
 }
-.articleControlsRow{
+.articleVoicePanel{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:10px;
 }
 .articleSmallBtn{
-  border-radius:12px;
-  padding:10px 8px;
-  font-size:13px;
-  font-weight:800;
+  border-radius:13px;
+  padding:12px 10px;
+  font-size:14px;
+  font-weight:900;
   cursor:pointer;
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.86);
   color:#0f172a;
-  border:1px solid rgba(255,255,255,.45);
-  min-height:40px;
+  border:1px solid rgba(255,255,255,.50);
+  min-height:44px;
 }
-.articleSmallBtn:hover{background:rgba(255,255,255,.96)}
-.articleSmallBtn:active{transform:translateY(1px)}
-.articleVoiceHint{
-  margin:7px 0 0;
-  font-size:12px;
-  line-height:1.3;
+.articleSmallBtn:hover{
+  background:rgba(255,255,255,.98);
+}
+.articleSmallBtn:active{
+  transform:translateY(1px);
+}
+.voiceRateBadge{
+  min-width:82px;
+  padding:10px 10px;
+  border-radius:14px;
+  text-align:center;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.24);
   color:#fff;
   text-shadow:0 1px 2px rgba(0,0,0,.35);
-  text-align:center;
+}
+.voiceRateBadge span{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  opacity:.9;
 }
 .voiceRateLabel{
-  font-weight:800;
-  color:#fff;
+  display:block;
+  margin-top:2px;
+  font-size:22px;
+  font-weight:950;
+  line-height:1;
 }
-article.articleReadableText{
-  max-width:920px;
-  margin-left:auto;
-  margin-right:auto;
-  font-size:30px;
-  line-height:1.75;
+article.{
+  max-width:920px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  font-size:32px !important;
+  line-height:1.85 !important;
+  color:#334155 !important;
 }
-article.articleReadableText p,
-article.articleReadableText li{
-  font-size:30px;
-  line-height:1.75;
+article.p,
+article.li,
+article.div{
+  font-size:32px !important;
+  line-height:1.85 !important;
+  color:#334155 !important;
+  letter-spacing:.01em !important;
 }
-article.articleReadableText h2{
-  font-size:38px;
-  line-height:1.25;
-  margin-top:34px;
+article.h2{
+  font-size:42px !important;
+  line-height:1.25 !important;
+  margin-top:38px !important;
+  margin-bottom:14px !important;
+  color:#0f172a !important;
+}
+article.b,
+article.strong{
+  font-size:inherit !important;
 }
 @media(max-width:760px){
   .articleHeroMedia{
@@ -153,19 +182,26 @@ article.articleReadableText h2{
     font-size:16px;
     padding:13px 12px;
   }
+  .articleVoicePanel{
+    grid-template-columns:1fr;
+  }
   .articleSmallBtn{
-    font-size:12px;
-    min-height:38px;
-    padding:9px 6px;
+    font-size:13px;
+    min-height:40px;
+    padding:10px 8px;
   }
-  article.articleReadableText,
-  article.articleReadableText p,
-  article.articleReadableText li{
-    font-size:24px;
-    line-height:1.72;
+  .voiceRateBadge{
+    width:100%;
   }
-  article.articleReadableText h2{
-    font-size:30px;
+  article.,
+  article.p,
+  article.li,
+  article.div{
+    font-size:25px !important;
+    line-height:1.78 !important;
+  }
+  article.h2{
+    font-size:32px !important;
   }
 }
 </style>
@@ -211,12 +247,19 @@ article.articleReadableText h2{
         data-stop-text="⏹ Oprește citirea"
         data-unsupported="Browserul tău nu suportă citirea vocală."
       >🔊 Ascultă articolul</button>
-      <div class="articleControlsRow">
+
+      <div class="articleVoicePanel">
         <button type="button" class="articleSmallBtn" data-voice-speed="slower">− Mai lent</button>
+        <div class="voiceRateBadge">
+          <span>Viteză</span>
+          <b class="voiceRateLabel">90%</b>
+        </div>
         <button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
       </div>
-      <p class="articleVoiceHint">Viteză: <span class="voiceRateLabel">90%</span></p>
     </div>
+  </div>
+</div>
+</div>
   </div>
 </div>
 </div>
@@ -229,10 +272,7 @@ article.articleReadableText h2{
 
 <div class="smallControlGrid">
       </div>
-  </div>
-  </div>
-
-<article class="card articleReadableText" style="padding:28px">
+  <article class="card  articleReadableText" style="padding:28px">
       
 <p>В Молдове многие люди всё еще используют слово «невропатолог». Очень часто, когда человек ищет «невропатолог Кишинев», он на самом деле ищет невролога.</p>
 
@@ -282,17 +322,21 @@ article.articleReadableText h2{
 
 
 
+
+
+
 <script>
 (function(){
   var RATE_KEY = "revimedVoiceRate";
   var DEFAULT_RATE = 0.9;
-  var MIN_RATE = 0.65;
-  var MAX_RATE = 1.25;
+  var MIN_RATE = 0.6;
+  var MAX_RATE = 1.35;
 
-  var paragraphs = [];
+  var chunks = [];
   var currentIndex = 0;
   var activeButton = null;
   var isReading = false;
+  var restartTimer = null;
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
@@ -325,19 +369,56 @@ article.articleReadableText h2{
     return rate;
   }
 
-  function buildParagraphs(){
+  function splitIntoChunks(text){
+    var cleaned = cleanText(text);
+    if(!cleaned) return [];
+
+    var pieces = cleaned.match(/[^.!?;:]+[.!?;:]?|[^.!?;:]+$/g) || [cleaned];
+    var out = [];
+
+    pieces.forEach(function(piece){
+      piece = cleanText(piece);
+      if(!piece) return;
+
+      if(piece.length <= 220){
+        out.push(piece);
+      }else{
+        var words = piece.split(" ");
+        var buf = "";
+        words.forEach(function(w){
+          if((buf + " " + w).trim().length > 180){
+            if(buf) out.push(buf.trim());
+            buf = w;
+          }else{
+            buf += " " + w;
+          }
+        });
+        if(buf.trim()) out.push(buf.trim());
+      }
+    });
+
+    return out;
+  }
+
+  function buildChunks(){
     var article = getArticle();
     if(!article) return [];
-    var nodes = article.querySelectorAll("h1,h2,h3,p,li");
+
+    var nodes = article.querySelectorAll("h2,h3,p,li");
     var arr = [];
+
     nodes.forEach(function(node){
       var text = cleanText(node.innerText || node.textContent || "");
-      if(text && !text.includes("Revimed PLUS+ — clinică fondată")) arr.push(text);
+      if(!text) return;
+      if(text.includes("Revimed PLUS+ — clinică fondată")) return;
+      splitIntoChunks(text).forEach(function(chunk){ arr.push(chunk); });
     });
+
     if(!arr.length){
       var all = cleanText(article.innerText || article.textContent || "");
-      if(all) arr = [all];
+      arr = splitIntoChunks(all);
     }
+
     return arr;
   }
 
@@ -359,7 +440,8 @@ article.articleReadableText h2{
 
   function speakCurrent(){
     if(!("speechSynthesis" in window)) return;
-    if(!paragraphs.length || currentIndex >= paragraphs.length){
+
+    if(!chunks.length || currentIndex >= chunks.length){
       isReading = false;
       currentIndex = 0;
       setButtonReading(false);
@@ -368,7 +450,8 @@ article.articleReadableText h2{
 
     var btn = activeButton || document.querySelector(".readAloudBtn");
     var lang = btn?.dataset.lang || document.documentElement.lang || "ro-RO";
-    var utterance = new SpeechSynthesisUtterance(paragraphs[currentIndex]);
+
+    var utterance = new SpeechSynthesisUtterance(chunks[currentIndex]);
     utterance.lang = lang;
     utterance.rate = getRate();
     utterance.pitch = 1;
@@ -395,10 +478,12 @@ article.articleReadableText h2{
       alert(btn.dataset.unsupported || "Text-to-speech is not supported in this browser.");
       return;
     }
+
     activeButton = btn;
-    paragraphs = buildParagraphs();
+    chunks = buildChunks();
     currentIndex = 0;
     isReading = true;
+
     window.speechSynthesis.cancel();
     setButtonReading(true);
     setTimeout(speakCurrent, 80);
@@ -410,12 +495,20 @@ article.articleReadableText h2{
     setButtonReading(false);
   }
 
-  function restartCurrentParagraph(){
+  function updateSpeedLive(delta){
+    setRate(getRate() + delta);
+
     if(!isReading) return;
-    window.speechSynthesis.cancel();
-    setTimeout(function(){
+
+    clearTimeout(restartTimer);
+
+    try{
+      window.speechSynthesis.cancel();
+    }catch(e){}
+
+    restartTimer = setTimeout(function(){
       if(isReading) speakCurrent();
-    }, 100);
+    }, 60);
   }
 
   document.addEventListener("click", function(e){
@@ -427,14 +520,12 @@ article.articleReadableText h2{
     }
 
     if(e.target.closest("[data-voice-speed='slower']")){
-      setRate(getRate() - 0.08);
-      restartCurrentParagraph();
+      updateSpeedLive(-0.08);
       return;
     }
 
     if(e.target.closest("[data-voice-speed='faster']")){
-      setRate(getRate() + 0.08);
-      restartCurrentParagraph();
+      updateSpeedLive(0.08);
       return;
     }
   });
