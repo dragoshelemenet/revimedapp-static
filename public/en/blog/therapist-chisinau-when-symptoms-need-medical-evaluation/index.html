@@ -279,23 +279,7 @@ article. b,article. strong,article. a{font-size:inherit!important}
 
 </head>
 <body>
-<header class="rmHeader">
-  <div class="rmTop"><div class="rmShell"><span></span><span class="langs"><a href="/blog/">RO</a><a href="/en/blog/">EN</a><a href="/ru/blog/">RU</a><a href="/ua/blog/">UA</a></span></div></div>
-  <nav class="rmNav rmShell">
-    <a class="rmLogo" href="/en"><img src="/images/logo.png" alt="REVIMED"/></a>
-    <div class="rmLinks">
-      <a href="/en">Home</a>
-      <a href="/en/despre-noi/">About Us</a>
-      <a href="/en/servicii/">Services</a>
-      <a href="/en/aplicatii/">Apps</a>
-      <a href="/en/utilaj/">Equipment</a>
-      <a href="/en/preturi/">Prices</a>
-      <a href="/en/galerie/">Gallery</a>
-      <a class="activeNav" href="/en/blog/">Blog</a>
-      
-    </div>
-  </nav>
-</header>
+<header class="rmHeader"><div class="rmTop"><div class="rmShell"><span></span><span class="langs"><a class="langActive" href="/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">RO</a><a class="" href="/en/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">EN</a><a class="" href="/ru/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">RU</a><a class="" href="/ua/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">UA</a></span></div></div><nav class="rmNav rmShell"><a class="rmLogo" aria-label="Centrul Medical Revimed PLUS+" href="/"><img src="/images/logo.png" alt="REVIMED"/></a><button class="hamburger" type="button" aria-label="Meniu" aria-expanded="false"><span></span><span></span><span></span></button><div class="rmLinks"><a class="" href="/">Acasă</a><a class="" href="/despre-noi/">Despre Noi</a><a class="" href="/servicii/">Servicii</a><a class="" href="/aplicatii/">Aplicații</a><a class="" href="/utilaj/">Utilaj</a><a class="" href="/preturi/">Prețuri</a><a class="" href="/galerie/">Galerie</a><a class="activeNav" href="/blog/">Blog</a></div></nav></header>
 <main>
 <section class="pageHero blogPostHero innerPageHero">
   <div class="rmShell">
@@ -339,6 +323,19 @@ article. b,article. strong,article. a{font-size:inherit!important}
   window.addEventListener("beforeunload",function(){if("speechSynthesis"in window)window.speechSynthesis.cancel()});
   makeTextReadable();setRate(getRate());if("speechSynthesis"in window){window.speechSynthesis.onvoiceschanged=function(){}}
 })();
+</script>
+
+
+<script id="REVIMED_FORCE_BLOG_HARD_NAV">
+document.addEventListener("click", function(e){
+  var a = e.target.closest("a");
+  if(!a) return;
+  var href = a.getAttribute("href") || "";
+  if(href === "/blog" || href === "/blog/" || href.endsWith("/blog/")){
+    e.preventDefault();
+    window.location.href = href.endsWith("/") ? href : href + "/";
+  }
+});
 </script>
 
 </body>

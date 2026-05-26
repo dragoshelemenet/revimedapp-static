@@ -70,3 +70,9 @@ Do NOT rebuild /blog index with custom static layout again.
 Keep the original/injected Revimed blog index design because it matches the site.
 If blog cards need updates, preserve the existing layout/classes and only update the content source/cards.
 Do not replace /blog with a separate custom HTML design.
+
+BLOG FIX RULE:
+All new blog articles must use the same header/menu/footer as the first original blogs.
+The /blog index must not be rebuilt with a totally custom layout.
+If users see old /blog until refresh, add hard navigation for Blog links from main pages.
+Preserve the Revimed layout/classes and only update cards/content.

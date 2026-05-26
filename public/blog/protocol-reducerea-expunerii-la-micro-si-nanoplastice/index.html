@@ -327,4 +327,17 @@ article. b,article. strong,article. a{font-size:inherit!important}
 })();
 </script>
 
+
+<script id="REVIMED_FORCE_BLOG_HARD_NAV">
+document.addEventListener("click", function(e){
+  var a = e.target.closest("a");
+  if(!a) return;
+  var href = a.getAttribute("href") || "";
+  if(href === "/blog" || href === "/blog/" || href.endsWith("/blog/")){
+    e.preventDefault();
+    window.location.href = href.endsWith("/") ? href : href + "/";
+  }
+});
+</script>
+
 </body></html>
