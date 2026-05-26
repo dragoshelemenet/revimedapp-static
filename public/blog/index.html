@@ -12,8 +12,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 
 
-<style id="REVIMED_BLOG_INDEX_COMPACT_REFERENCE_STYLE">
-/* Main blog page only: closer to the old injected/reference design */
+
+<style id="REVIMED_BLOG_INDEX_FINAL_CARD_TUNE">
 .blogSection{
   padding:42px 0 68px!important;
 }
@@ -28,7 +28,7 @@
 .blogCard{
   display:flex!important;
   flex-direction:column!important;
-  min-height:355px!important;
+  min-height:300px!important;
   background:#fff!important;
   border:1px solid #dbe7f0!important;
   border-radius:18px!important;
@@ -44,19 +44,21 @@
 }
 .blogCard img{
   display:block!important;
-  width:100%!important;
-  height:152px!important;
+  width:calc(100% - 20px)!important;
+  height:150px!important;
+  margin:10px 10px 0!important;
+  border-radius:14px!important;
   object-fit:cover!important;
   background:#e2e8f0!important;
 }
 .cardBody{
-  padding:20px 20px 22px!important;
+  padding:18px 20px 18px!important;
   display:flex!important;
   flex-direction:column!important;
   flex:1!important;
 }
 .blogCard h2{
-  margin:0 0 18px!important;
+  margin:0 0 14px!important;
   font-size:22px!important;
   line-height:1.18!important;
   color:#0f172a!important;
@@ -79,17 +81,11 @@
   font-weight:950!important;
 }
 @media(max-width:900px){
-  .grid{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  }
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
 @media(max-width:640px){
-  .grid{
-    grid-template-columns:1fr!important;
-  }
-  .blogCard{
-    min-height:auto!important;
-  }
+  .grid{grid-template-columns:1fr!important}
+  .blogCard{min-height:auto!important}
 }
 </style>
 
