@@ -4,6 +4,10 @@ import type { MetadataRoute } from "next";
 
 const SITE_URL = "https://revimed.site";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+
+
 function normalizeRoute(filePath: string) {
   let route = filePath
     .replace(process.cwd(), "")
