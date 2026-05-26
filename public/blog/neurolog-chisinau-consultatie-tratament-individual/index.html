@@ -253,6 +253,30 @@ article h3 {
 }
 </style>
 
+
+<style id="REVIMED_BLOG_GAP_FIX">
+.articleHeroMedia{
+  margin-bottom:12px!important;
+}
+.articleHeroMedia + article,
+.articleHeroMedia + .card,
+.articleHeroMedia ~ article{
+  margin-top:0!important;
+}
+.rmSection:has(.articleHeroMedia){
+  padding-bottom:12px!important;
+}
+.rmSection .articleReadableText,
+article.articleReadableText{
+  margin-top:0!important;
+}
+@media(max-width:760px){
+  .articleHeroMedia{
+    margin-bottom:10px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="rmHeader">
