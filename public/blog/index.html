@@ -11,59 +11,85 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 
-<style id="REVIMED_BLOG_INDEX_CARD_FIX">
-/* Keep old Revimed blog page, only fix card/grid presentation */
-.rmShell.grid3{
+
+<style id="REVIMED_BLOG_INDEX_COMPACT_REFERENCE_STYLE">
+/* Main blog page only: closer to the old injected/reference design */
+.blogSection{
+  padding:42px 0 68px!important;
+}
+.grid{
+  width:min(900px,calc(100% - 32px))!important;
+  margin:0 auto!important;
   display:grid!important;
   grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:24px!important;
+  gap:22px!important;
   align-items:stretch!important;
 }
-.rmShell.grid3 .blogCard{
+.blogCard{
   display:flex!important;
   flex-direction:column!important;
-  min-height:0!important;
-  height:auto!important;
-  overflow:hidden!important;
-  border-radius:18px!important;
-  border:1px solid #dbe7f0!important;
+  min-height:355px!important;
   background:#fff!important;
-  box-shadow:0 10px 28px rgba(15,23,42,.06)!important;
+  border:1px solid #dbe7f0!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  box-shadow:0 8px 26px rgba(15,23,42,.05)!important;
   text-decoration:none!important;
   color:inherit!important;
+  transition:transform .18s ease, box-shadow .18s ease!important;
 }
-.rmShell.grid3 .blogCard img{
+.blogCard:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 14px 34px rgba(15,23,42,.09)!important;
+}
+.blogCard img{
   display:block!important;
   width:100%!important;
-  height:190px!important;
-  min-height:190px!important;
-  max-height:190px!important;
+  height:152px!important;
   object-fit:cover!important;
   background:#e2e8f0!important;
 }
-.rmShell.grid3 .blogCard h2{
-  margin:18px 20px 10px!important;
+.cardBody{
+  padding:20px 20px 22px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  flex:1!important;
+}
+.blogCard h2{
+  margin:0 0 18px!important;
   font-size:22px!important;
-  line-height:1.22!important;
+  line-height:1.18!important;
   color:#0f172a!important;
+  letter-spacing:-.02em!important;
 }
-.rmShell.grid3 .blogCard p{
-  margin:0 20px 16px!important;
-  font-size:16px!important;
-  line-height:1.55!important;
-  color:#64748b!important;
+.blogCard p{
+  display:none!important;
 }
-.rmShell.grid3 .blogCard span{
-  margin:0 20px 20px!important;
+.blogCard span{
+  margin-top:auto!important;
+  align-self:flex-start!important;
+  display:inline-flex!important;
+  align-items:center!important;
   color:#0b8ed0!important;
-  font-weight:900!important;
-  font-size:15px!important;
+  background:#eef8fd!important;
+  border-radius:999px!important;
+  padding:8px 13px!important;
+  font-size:14px!important;
+  line-height:1!important;
+  font-weight:950!important;
 }
 @media(max-width:900px){
-  .rmShell.grid3{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
 }
 @media(max-width:640px){
-  .rmShell.grid3{grid-template-columns:1fr!important}
+  .grid{
+    grid-template-columns:1fr!important;
+  }
+  .blogCard{
+    min-height:auto!important;
+  }
 }
 </style>
 
@@ -101,63 +127,54 @@
         <a class="card blogCard" href="/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">
           <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Protocol practic pentru reducerea expunerii la micro și nanoplastice" loading="lazy"/>
           <h2>Protocol practic pentru reducerea expunerii la micro și nanoplastice</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/7-alimente-sanatoase-pentru-energie-digestie-si-metabolism/">
           <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="7 alimente sănătoase pentru energie, digestie și echilibru metabolic" loading="lazy"/>
           <h2>7 alimente sănătoase pentru energie, digestie și echilibru metabolic</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/cum-reducem-riscul-de-cancer/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Cum reducem riscul de cancer: prevenție, analize și controale regulate" loading="lazy"/>
           <h2>Cum reducem riscul de cancer: prevenție, analize și controale regulate</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/nevropatolog-chisinau-neurolog-explicat-simplu/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Nevropatolog în Chișinău: este același lucru cu neurologul?" loading="lazy"/>
           <h2>Nevropatolog în Chișinău: este același lucru cu neurologul?</h2>
-          <p>Mulți pacienți caută nevropatolog, dar de multe ori au nevoie de neurolog. Explicăm simplu ce înseamnă și când merită consultația.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/durere-cervicala-amorteli-furnicaturi-maini-chisinau/">
           <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Durere cervicală, amorțeli sau furnicături în mâini: când merită să mergi la neurolog" loading="lazy"/>
           <h2>Durere cervicală, amorțeli sau furnicături în mâini: când merită să mergi la neurolog</h2>
-          <p>Un ghid simplu pentru oamenii care au durere de gât, tensiune cervicală, amorțeli, furnicături în mâini sau durere care coboară spre umăr.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/ameteli-stres-anxietate-senzatie-lesin-sare-zahar/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Amețeală, stres și senzația că leșini: de ce pot ajuta puțină sare, zahăr sau miere" loading="lazy"/>
           <h2>Amețeală, stres și senzația că leșini: de ce pot ajuta puțină sare, zahăr sau miere</h2>
-          <p>Un ghid simplu pentru momentele când în perioade de stres, somn prost sau muncă intelectuală intensă simți amețeală, slăbiciune sau senzația că pierzi controlul.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/neurolog-chisinau-consultatie-tratament-individual/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Neurolog în Chișinău: când merită să mergi la consultație" loading="lazy"/>
           <h2>Neurolog în Chișinău: când merită să mergi la consultație</h2>
-          <p>Un ghid simplu pentru oameni care au dureri de cap, amețeli, amorțeli, dureri de spate sau stări de tensiune și caută un neurolog în Chișinău.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/terapeut-chisinau-cand-ai-nevoie-de-evaluare-medicala/">
           <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Terapeut în Chișinău: când simptomele merită evaluate mai atent" loading="lazy"/>
           <h2>Terapeut în Chișinău: când simptomele merită evaluate mai atent</h2>
-          <p>Mulți caută terapeut când au dureri, amețeli, oboseală sau tensiune. Uneori problema ține de neurologie, recuperare sau fizioterapie.</p>
           <span>Citește →</span>
         </a>
 
         <a class="card blogCard" href="/blog/oto-neurolog-chisinau-ameteli-vertij-echilibru/">
           <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Cauți oto-neurolog în Chișinău? Ce poate însemna amețeala" loading="lazy"/>
           <h2>Cauți oto-neurolog în Chișinău? Ce poate însemna amețeala</h2>
-          <p>Mulți oameni caută oto-neurolog când au amețeli sau vertij. Explicăm simplu când poate ajuta neurologul și când poate fi nevoie de ORL.</p>
           <span>Citește →</span>
         </a>
       </div>

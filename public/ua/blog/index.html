@@ -11,59 +11,85 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 
-<style id="REVIMED_BLOG_INDEX_CARD_FIX">
-/* Keep old Revimed blog page, only fix card/grid presentation */
-.rmShell.grid3{
+
+<style id="REVIMED_BLOG_INDEX_COMPACT_REFERENCE_STYLE">
+/* Main blog page only: closer to the old injected/reference design */
+.blogSection{
+  padding:42px 0 68px!important;
+}
+.grid{
+  width:min(900px,calc(100% - 32px))!important;
+  margin:0 auto!important;
   display:grid!important;
   grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:24px!important;
+  gap:22px!important;
   align-items:stretch!important;
 }
-.rmShell.grid3 .blogCard{
+.blogCard{
   display:flex!important;
   flex-direction:column!important;
-  min-height:0!important;
-  height:auto!important;
-  overflow:hidden!important;
-  border-radius:18px!important;
-  border:1px solid #dbe7f0!important;
+  min-height:355px!important;
   background:#fff!important;
-  box-shadow:0 10px 28px rgba(15,23,42,.06)!important;
+  border:1px solid #dbe7f0!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  box-shadow:0 8px 26px rgba(15,23,42,.05)!important;
   text-decoration:none!important;
   color:inherit!important;
+  transition:transform .18s ease, box-shadow .18s ease!important;
 }
-.rmShell.grid3 .blogCard img{
+.blogCard:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 14px 34px rgba(15,23,42,.09)!important;
+}
+.blogCard img{
   display:block!important;
   width:100%!important;
-  height:190px!important;
-  min-height:190px!important;
-  max-height:190px!important;
+  height:152px!important;
   object-fit:cover!important;
   background:#e2e8f0!important;
 }
-.rmShell.grid3 .blogCard h2{
-  margin:18px 20px 10px!important;
+.cardBody{
+  padding:20px 20px 22px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  flex:1!important;
+}
+.blogCard h2{
+  margin:0 0 18px!important;
   font-size:22px!important;
-  line-height:1.22!important;
+  line-height:1.18!important;
   color:#0f172a!important;
+  letter-spacing:-.02em!important;
 }
-.rmShell.grid3 .blogCard p{
-  margin:0 20px 16px!important;
-  font-size:16px!important;
-  line-height:1.55!important;
-  color:#64748b!important;
+.blogCard p{
+  display:none!important;
 }
-.rmShell.grid3 .blogCard span{
-  margin:0 20px 20px!important;
+.blogCard span{
+  margin-top:auto!important;
+  align-self:flex-start!important;
+  display:inline-flex!important;
+  align-items:center!important;
   color:#0b8ed0!important;
-  font-weight:900!important;
-  font-size:15px!important;
+  background:#eef8fd!important;
+  border-radius:999px!important;
+  padding:8px 13px!important;
+  font-size:14px!important;
+  line-height:1!important;
+  font-weight:950!important;
 }
 @media(max-width:900px){
-  .rmShell.grid3{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
 }
 @media(max-width:640px){
-  .rmShell.grid3{grid-template-columns:1fr!important}
+  .grid{
+    grid-template-columns:1fr!important;
+  }
+  .blogCard{
+    min-height:auto!important;
+  }
 }
 </style>
 
@@ -101,84 +127,72 @@
         <a class="card blogCard" href="/ua/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">
           <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Protocol practic pentru reducerea expunerii la micro și nanoplastice" loading="lazy"/>
           <h2>Protocol practic pentru reducerea expunerii la micro și nanoplastice</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/7-alimente-sanatoase-pentru-energie-digestie-si-metabolism/">
           <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="7 alimente sănătoase pentru energie, digestie și echilibru metabolic" loading="lazy"/>
           <h2>7 alimente sănătoase pentru energie, digestie și echilibru metabolic</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/cum-reducem-riscul-de-cancer/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Cum reducem riscul de cancer: prevenție, analize și controale regulate" loading="lazy"/>
           <h2>Cum reducem riscul de cancer: prevenție, analize și controale regulate</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/terapevt-kyshyniv-koly-potribna-medychna-otsinka/">
           <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Терапевт у Кишиневі: коли симптоми варто перевірити уважніше" loading="lazy"/>
           <h2>Терапевт у Кишиневі: коли симптоми варто перевірити уважніше</h2>
-          <p>Багато людей шукають терапевта при болю, запамороченні, втомі або напруженні. Іноді причина може бути пов’язана з неврологією або відновленням.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/zapamorochennia-stres-tryvoha-neprytomnist-sil-tsukor/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Запаморочення, стрес і відчуття непритомності: чому іноді допомагають трохи солі, цукру або меду" loading="lazy"/>
           <h2>Запаморочення, стрес і відчуття непритомності: чому іноді допомагають трохи солі, цукру або меду</h2>
-          <p>Просте пояснення для ситуацій, коли через стрес, поганий сон або розумове навантаження з’являється слабкість, запаморочення і страх втратити свідомість.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/nevrolog-kyshyniv-indyvidualne-likuvannia/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Невролог у Кишиневі: коли варто записатися на консультацію" loading="lazy"/>
           <h2>Невролог у Кишиневі: коли варто записатися на консультацію</h2>
-          <p>Просте пояснення для людей із головним болем, запамороченням, онімінням, болем у спині, поганим сном або напруженням у тілі.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/7-korysnyh-produktiv-dlya-energiyi-travlennya-i-metabolizmu/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="7 корисних продуктів для енергії, травлення та обміну речовин" loading="lazy"/>
           <h2>7 корисних продуктів для енергії, травлення та обміну речовин</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/bil-u-shyi-oniminnia-pokoliuvannia-ruk-kyshyniv/">
           <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Біль у шиї, оніміння або поколювання в руках: коли варто звернутися до невролога" loading="lazy"/>
           <h2>Біль у шиї, оніміння або поколювання в руках: коли варто звернутися до невролога</h2>
-          <p>Просте пояснення для людей із болем у шиї, напруженням, онімінням, поколюванням у руках або болем, що йде в плече і руку.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/otonevrolog-kyshyniv-zapamorochennia-rivnovaha/">
           <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Шукаєте отоневролога в Кишиневі? Що може означати запаморочення" loading="lazy"/>
           <h2>Шукаєте отоневролога в Кишиневі? Що може означати запаморочення</h2>
-          <p>Багато людей шукають отоневролога при запамороченні або проблемах з рівновагою. Пояснюємо, коли може допомогти невролог і коли потрібен ЛОР.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/nevropatolog-kyshyniv-nevrolog-proste-poyasnennia/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Невропатолог у Кишиневі: це те саме, що невролог?" loading="lazy"/>
           <h2>Невропатолог у Кишиневі: це те саме, що невролог?</h2>
-          <p>Багато пацієнтів шукають невропатолога, але часто їм потрібен невролог. Просте пояснення, що це означає і коли потрібна консультація.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/praktychnyi-protokol-zmenshennia-vplyvu-mikro-ta-nanoplastyku/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Практичний протокол зменшення впливу мікро- та нанопластику" loading="lazy"/>
           <h2>Практичний протокол зменшення впливу мікро- та нанопластику</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Відкрити →</span>
         </a>
 
         <a class="card blogCard" href="/ua/blog/yak-znyzyty-ryzyk-raku/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Як знизити ризик раку: профілактика, аналізи та регулярні обстеження" loading="lazy"/>
           <h2>Як знизити ризик раку: профілактика, аналізи та регулярні обстеження</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Відкрити →</span>
         </a>
       </div>

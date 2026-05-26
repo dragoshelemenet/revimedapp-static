@@ -11,59 +11,85 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 
-<style id="REVIMED_BLOG_INDEX_CARD_FIX">
-/* Keep old Revimed blog page, only fix card/grid presentation */
-.rmShell.grid3{
+
+<style id="REVIMED_BLOG_INDEX_COMPACT_REFERENCE_STYLE">
+/* Main blog page only: closer to the old injected/reference design */
+.blogSection{
+  padding:42px 0 68px!important;
+}
+.grid{
+  width:min(900px,calc(100% - 32px))!important;
+  margin:0 auto!important;
   display:grid!important;
   grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:24px!important;
+  gap:22px!important;
   align-items:stretch!important;
 }
-.rmShell.grid3 .blogCard{
+.blogCard{
   display:flex!important;
   flex-direction:column!important;
-  min-height:0!important;
-  height:auto!important;
-  overflow:hidden!important;
-  border-radius:18px!important;
-  border:1px solid #dbe7f0!important;
+  min-height:355px!important;
   background:#fff!important;
-  box-shadow:0 10px 28px rgba(15,23,42,.06)!important;
+  border:1px solid #dbe7f0!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  box-shadow:0 8px 26px rgba(15,23,42,.05)!important;
   text-decoration:none!important;
   color:inherit!important;
+  transition:transform .18s ease, box-shadow .18s ease!important;
 }
-.rmShell.grid3 .blogCard img{
+.blogCard:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 14px 34px rgba(15,23,42,.09)!important;
+}
+.blogCard img{
   display:block!important;
   width:100%!important;
-  height:190px!important;
-  min-height:190px!important;
-  max-height:190px!important;
+  height:152px!important;
   object-fit:cover!important;
   background:#e2e8f0!important;
 }
-.rmShell.grid3 .blogCard h2{
-  margin:18px 20px 10px!important;
+.cardBody{
+  padding:20px 20px 22px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  flex:1!important;
+}
+.blogCard h2{
+  margin:0 0 18px!important;
   font-size:22px!important;
-  line-height:1.22!important;
+  line-height:1.18!important;
   color:#0f172a!important;
+  letter-spacing:-.02em!important;
 }
-.rmShell.grid3 .blogCard p{
-  margin:0 20px 16px!important;
-  font-size:16px!important;
-  line-height:1.55!important;
-  color:#64748b!important;
+.blogCard p{
+  display:none!important;
 }
-.rmShell.grid3 .blogCard span{
-  margin:0 20px 20px!important;
+.blogCard span{
+  margin-top:auto!important;
+  align-self:flex-start!important;
+  display:inline-flex!important;
+  align-items:center!important;
   color:#0b8ed0!important;
-  font-weight:900!important;
-  font-size:15px!important;
+  background:#eef8fd!important;
+  border-radius:999px!important;
+  padding:8px 13px!important;
+  font-size:14px!important;
+  line-height:1!important;
+  font-weight:950!important;
 }
 @media(max-width:900px){
-  .rmShell.grid3{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
 }
 @media(max-width:640px){
-  .rmShell.grid3{grid-template-columns:1fr!important}
+  .grid{
+    grid-template-columns:1fr!important;
+  }
+  .blogCard{
+    min-height:auto!important;
+  }
 }
 </style>
 
@@ -101,84 +127,72 @@
         <a class="card blogCard" href="/ru/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">
           <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Protocol practic pentru reducerea expunerii la micro și nanoplastice" loading="lazy"/>
           <h2>Protocol practic pentru reducerea expunerii la micro și nanoplastice</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/7-alimente-sanatoase-pentru-energie-digestie-si-metabolism/">
           <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="7 alimente sănătoase pentru energie, digestie și echilibru metabolic" loading="lazy"/>
           <h2>7 alimente sănătoase pentru energie, digestie și echilibru metabolic</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/cum-reducem-riscul-de-cancer/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Cum reducem riscul de cancer: prevenție, analize și controale regulate" loading="lazy"/>
           <h2>Cum reducem riscul de cancer: prevenție, analize și controale regulate</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/nevrolog-kishinev-individualnoe-lechenie/">
           <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Невролог в Кишинёве: когда стоит записаться на консультацию" loading="lazy"/>
           <h2>Невролог в Кишинёве: когда стоит записаться на консультацию</h2>
-          <p>Простое объяснение для людей с головной болью, головокружением, онемением, болью в спине, плохим сном или напряжением в теле.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/otonevrolog-kishinev-golovokruzhenie-ravnovesie/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Ищете отоневролога в Кишинёве? Что может означать головокружение" loading="lazy"/>
           <h2>Ищете отоневролога в Кишинёве? Что может означать головокружение</h2>
-          <p>Многие ищут отоневролога при головокружении или нарушении равновесия. Объясняем, когда может помочь невролог и когда нужен ЛОР.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/kak-snizit-risk-raka/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Как снизить риск рака: профилактика, анализы и регулярные обследования" loading="lazy"/>
           <h2>Как снизить риск рака: профилактика, анализы и регулярные обследования</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/golovokruzhenie-stress-trevoga-obmorok-sol-sahar/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Головокружение, стресс и ощущение обморока: почему иногда помогают немного соли, сахара или мёда" loading="lazy"/>
           <h2>Головокружение, стресс и ощущение обморока: почему иногда помогают немного соли, сахара или мёда</h2>
-          <p>Простое объяснение для ситуаций, когда из-за стресса, плохого сна или умственной нагрузки появляется слабость, головокружение и страх потерять сознание.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/prakticheskiy-protokol-snizhenie-vozdeystviya-mikro-i-nanoplastika/">
           <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Практический протокол снижения воздействия микро- и нанопластика" loading="lazy"/>
           <h2>Практический протокол снижения воздействия микро- и нанопластика</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/nevropatolog-kishinev-nevrolog-prostoe-obyasnenie/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Невропатолог в Кишинёве: это то же самое, что невролог?" loading="lazy"/>
           <h2>Невропатолог в Кишинёве: это то же самое, что невролог?</h2>
-          <p>Многие пациенты ищут невропатолога, но часто им нужен невролог. Простое объяснение, что это значит и когда нужна консультация.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/7-poleznyh-produktov-dlya-energii-pishchevareniya-i-metabolizma/">
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="7 полезных продуктов для энергии, пищеварения и обмена веществ" loading="lazy"/>
           <h2>7 полезных продуктов для энергии, пищеварения и обмена веществ</h2>
-          <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/bol-v-shee-onemenie-pokalyvanie-ruk-kishinev/">
           <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Боль в шее, онемение или покалывание в руках: когда стоит обратиться к неврологу" loading="lazy"/>
           <h2>Боль в шее, онемение или покалывание в руках: когда стоит обратиться к неврологу</h2>
-          <p>Простое объяснение для людей с болью в шее, напряжением, онемением, покалыванием в руках или болью, которая идет в плечо и руку.</p>
           <span>Открыть →</span>
         </a>
 
         <a class="card blogCard" href="/ru/blog/terapevt-kishinev-kogda-nuzhna-meditsinskaya-otsenka/">
           <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Терапевт в Кишинёве: когда симптомы стоит проверить внимательнее" loading="lazy"/>
           <h2>Терапевт в Кишинёве: когда симптомы стоит проверить внимательнее</h2>
-          <p>Многие ищут терапевта при боли, головокружении, усталости или напряжении. Иногда причина может быть связана с неврологией или восстановлением.</p>
           <span>Открыть →</span>
         </a>
       </div>
