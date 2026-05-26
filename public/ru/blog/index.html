@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ro">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Блог Revimed PLUS+ | Revimed PLUS+</title>
 <meta name="description" content="Простые и полезные статьи о неврологии, восстановлении, физиотерапии и здоровье."/>
-<link rel="stylesheet" href="/_next/static/chunks/0arcz_jzxt8re.css"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -13,84 +12,52 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 <link rel="manifest" href="/site.webmanifest"/>
 <meta name="theme-color" content="#ffffff"/>
-<style id="REVIMED_STATIC_BLOG_INDEX_STYLE">
-.blogIndexHero{
-  padding:58px 0 34px;
-  background:linear-gradient(135deg,#eef7fc,#ffffff);
-}
-.blogIndexHero .langs a{
-  margin-left:8px;
-  font-weight:800;
-}
-.blogIndexHero h1{
-  margin:18px 0 12px;
-  font-size:46px;
-  line-height:1.1;
-  color:#0f172a;
-}
-.blogIndexHero p{
-  max-width:760px;
-  font-size:20px;
-  line-height:1.6;
-  color:#475569;
-}
-.blogStaticGrid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-}
-.blogStaticCard{
-  display:block;
-  overflow:hidden;
-  border-radius:24px;
-  background:#fff;
-  border:1px solid #e2e8f0;
-  box-shadow:0 12px 32px rgba(15,23,42,.07);
-  text-decoration:none;
-  color:inherit;
-}
-.blogStaticCard img{
-  display:block;
-  width:100%;
-  height:210px;
-  object-fit:cover;
-}
-.blogStaticBody{
-  padding:22px;
-}
-.blogStaticBody h2{
-  margin:0 0 10px;
-  font-size:23px;
-  line-height:1.25;
-  color:#0f172a;
-}
-.blogStaticBody p{
-  margin:0 0 16px;
-  font-size:17px;
-  line-height:1.55;
-  color:#475569;
-}
-.blogStaticBody span{
-  color:#d71920;
-  font-weight:900;
-}
-@media(max-width:900px){
-  .blogStaticGrid{grid-template-columns:1fr 1fr}
-}
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:#0f172a;background:#fff}
+.rmTop{height:25px;background:#1195d2;color:#fff;font-size:13px;font-weight:800}
+.rmShell{width:min(1060px,calc(100% - 32px));margin:0 auto}
+.rmTop .rmShell{display:flex;justify-content:flex-end;align-items:center;height:25px;gap:12px}
+.rmTop a{color:#fff;text-decoration:none;margin-left:10px}
+.rmNav{height:62px;display:flex;align-items:center;justify-content:space-between}
+.rmLogo img{height:38px;width:auto}
+.rmLinks{display:flex;gap:24px;font-size:14px;font-weight:900}
+.rmLinks a{color:#0f172a;text-decoration:none}
+.rmLinks a.activeNav{color:#0b8ed0;border-bottom:2px solid #0b8ed0;padding-bottom:7px}
+.blogIndexHero{padding:70px 0 50px;background:#f1f8fc}
+.breadcrumbs{margin:0 0 18px;color:#64748b;font-size:17px}
+.blogIndexHero h1{margin:0 0 12px;font-size:42px;line-height:1.1;color:#0f172a}
+.blogIndexHero p{max-width:760px;font-size:19px;line-height:1.55;color:#475569}
+.blogSection{padding:56px 0 70px}
+.blogStaticGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.blogStaticCard{display:block;overflow:hidden;border-radius:20px;background:#fff;border:1px solid #dbe7f0;box-shadow:0 10px 28px rgba(15,23,42,.06);text-decoration:none;color:inherit}
+.blogStaticCard img{display:block;width:100%;height:210px;object-fit:cover;background:#e2e8f0}
+.blogStaticBody{padding:22px}
+.blogStaticBody h2{margin:0 0 10px;font-size:22px;line-height:1.22;color:#0f172a}
+.blogStaticBody p{margin:0 0 16px;font-size:17px;line-height:1.55;color:#64748b}
+.blogStaticBody span{color:#d71920;font-size:15px;font-weight:950}
+.rmFooter{background:#f1f8fc;border-top:1px solid #dbe7f0;padding:36px 0;color:#64748b}
+.rmFooterGrid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.footerLogo{height:42px}
+.rmFooter h3{margin:0 0 10px;color:#0f172a;font-size:18px}
+.rmFooter p{margin:5px 0;font-size:14px}
+@media(max-width:900px){.blogStaticGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){
-  .blogIndexHero h1{font-size:36px}
+  .rmLinks{gap:12px;font-size:12px}
+  .blogIndexHero h1{font-size:34px}
   .blogStaticGrid{grid-template-columns:1fr}
+  .rmFooterGrid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-<header class="rmHeader">
-  <div class="rmTop"><div class="rmShell"><span></span><span class="langs"><a class="" href="/blog/">RO</a><a class="" href="/en/blog/">EN</a><a class="langActive" href="/ru/blog/">RU</a><a class="" href="/ua/blog/">UA</a></span></div></div>
+<header>
+  <div class="rmTop"><div class="rmShell"><a href="/blog/">RO</a><a href="/en/blog/">EN</a><a href="/ru/blog/">RU</a><a href="/ua/blog/">UA</a></div></div>
   <nav class="rmNav rmShell">
-    <a class="rmLogo" aria-label="Centrul Medical Revimed PLUS+" href="/"><img src="/images/logo.png" alt="REVIMED"/></a>
+    <a class="rmLogo" href="/"><img src="/images/logo.png" alt="REVIMED"></a>
     <div class="rmLinks">
       <a href="/">Главная</a>
-      <a class="activeNav" href="/ru/blog/">Блог</a>
+      <a class="activeNav" href="/ru/blog/">Blog</a>
       <a href="/contact/">Contact</a>
     </div>
   </nav>
@@ -99,17 +66,16 @@
 <main>
   <section class="blogIndexHero">
     <div class="rmShell">
-      <p class="breadcrumbs">Главная / Блог</p>
+      <p class="breadcrumbs">Главная / Blog</p>
       <h1>Блог Revimed PLUS+</h1>
       <p>Простые и полезные статьи о неврологии, восстановлении, физиотерапии и здоровье.</p>
     </div>
   </section>
-
-  <section class="rmSection">
+  <section class="blogSection">
     <div class="rmShell blogStaticGrid">
       
 <a class="blogStaticCard" href="/ru/blog/nevrolog-kishinev-individualnoe-lechenie/">
-  <img src="/images/logo.png" alt="Невролог в Кишинёве: когда стоит записаться на консультацию" loading="lazy"/>
+  <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Невролог в Кишинёве: когда стоит записаться на консультацию" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Невролог в Кишинёве: когда стоит записаться на консультацию</h2>
     <p>Простое объяснение для людей с головной болью, головокружением, онемением, болью в спине, плохим сном или напряжением в теле.</p>
@@ -118,7 +84,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/7-alimente-sanatoase-pentru-energie-digestie-si-metabolism/">
-  <img src="/images/logo.png" alt="7 alimente sănătoase pentru energie, digestie și echilibru metabolic" loading="lazy"/>
+  <img src="https://img.icons8.com/color/96/marker.png" alt="7 alimente sănătoase pentru energie, digestie și echilibru metabolic" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>7 alimente sănătoase pentru energie, digestie și echilibru metabolic</h2>
     <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
@@ -127,7 +93,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/otonevrolog-kishinev-golovokruzhenie-ravnovesie/">
-  <img src="/images/logo.png" alt="Ищете отоневролога в Кишинёве? Что может означать головокружение" loading="lazy"/>
+  <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Ищете отоневролога в Кишинёве? Что может означать головокружение" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Ищете отоневролога в Кишинёве? Что может означать головокружение</h2>
     <p>Многие ищут отоневролога при головокружении или нарушении равновесия. Объясняем, когда может помочь невролог и когда нужен ЛОР.</p>
@@ -136,7 +102,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/kak-snizit-risk-raka/">
-  <img src="/images/logo.png" alt="Как снизить риск рака: профилактика, анализы и регулярные обследования" loading="lazy"/>
+  <img src="https://img.icons8.com/color/96/marker.png" alt="Как снизить риск рака: профилактика, анализы и регулярные обследования" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Как снизить риск рака: профилактика, анализы и регулярные обследования</h2>
     <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
@@ -145,7 +111,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/golovokruzhenie-stress-trevoga-obmorok-sol-sahar/">
-  <img src="/images/logo.png" alt="Головокружение, стресс и ощущение обморока: почему иногда помогают немного соли, сахара или мёда" loading="lazy"/>
+  <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Головокружение, стресс и ощущение обморока: почему иногда помогают немного соли, сахара или мёда" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Головокружение, стресс и ощущение обморока: почему иногда помогают немного соли, сахара или мёда</h2>
     <p>Простое объяснение для ситуаций, когда из-за стресса, плохого сна или умственной нагрузки появляется слабость, головокружение и страх потерять сознание.</p>
@@ -154,7 +120,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/prakticheskiy-protokol-snizhenie-vozdeystviya-mikro-i-nanoplastika/">
-  <img src="/images/logo.png" alt="Практический протокол снижения воздействия микро- и нанопластика" loading="lazy"/>
+  <img src="https://img.icons8.com/color/96/marker.png" alt="Практический протокол снижения воздействия микро- и нанопластика" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Практический протокол снижения воздействия микро- и нанопластика</h2>
     <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
@@ -163,7 +129,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/nevropatolog-kishinev-nevrolog-prostoe-obyasnenie/">
-  <img src="/images/logo.png" alt="Невропатолог в Кишинёве: это то же самое, что невролог?" loading="lazy"/>
+  <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Невропатолог в Кишинёве: это то же самое, что невролог?" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Невропатолог в Кишинёве: это то же самое, что невролог?</h2>
     <p>Многие пациенты ищут невропатолога, но часто им нужен невролог. Простое объяснение, что это значит и когда нужна консультация.</p>
@@ -172,7 +138,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/7-poleznyh-produktov-dlya-energii-pishchevareniya-i-metabolizma/">
-  <img src="/images/logo.png" alt="7 полезных продуктов для энергии, пищеварения и обмена веществ" loading="lazy"/>
+  <img src="https://img.icons8.com/color/96/marker.png" alt="7 полезных продуктов для энергии, пищеварения и обмена веществ" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>7 полезных продуктов для энергии, пищеварения и обмена веществ</h2>
     <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
@@ -181,7 +147,7 @@
 </a>
 
 <a class="blogStaticCard" href="/ru/blog/bol-v-shee-onemenie-pokalyvanie-ruk-kishinev/">
-  <img src="/images/logo.png" alt="Боль в шее, онемение или покалывание в руках: когда стоит обратиться к неврологу" loading="lazy"/>
+  <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Боль в шее, онемение или покалывание в руках: когда стоит обратиться к неврологу" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Боль в шее, онемение или покалывание в руках: когда стоит обратиться к неврологу</h2>
     <p>Простое объяснение для людей с болью в шее, напряжением, онемением, покалыванием в руках или болью, которая идет в плечо и руку.</p>
@@ -189,17 +155,8 @@
   </div>
 </a>
 
-<a class="blogStaticCard" href="/ru/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">
-  <img src="/images/logo.png" alt="Protocol practic pentru reducerea expunerii la micro și nanoplastice" loading="lazy"/>
-  <div class="blogStaticBody">
-    <h2>Protocol practic pentru reducerea expunerii la micro și nanoplastice</h2>
-    <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
-    <span>Читать статью →</span>
-  </div>
-</a>
-
 <a class="blogStaticCard" href="/ru/blog/terapevt-kishinev-kogda-nuzhna-meditsinskaya-otsenka/">
-  <img src="/images/logo.png" alt="Терапевт в Кишинёве: когда симптомы стоит проверить внимательнее" loading="lazy"/>
+  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Терапевт в Кишинёве: когда симптомы стоит проверить внимательнее" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Терапевт в Кишинёве: когда симптомы стоит проверить внимательнее</h2>
     <p>Многие ищут терапевта при боли, головокружении, усталости или напряжении. Иногда причина может быть связана с неврологией или восстановлением.</p>
@@ -207,8 +164,17 @@
   </div>
 </a>
 
+<a class="blogStaticCard" href="/ru/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">
+  <img src="https://img.icons8.com/color/96/marker.png" alt="Protocol practic pentru reducerea expunerii la micro și nanoplastice" loading="lazy"/>
+  <div class="blogStaticBody">
+    <h2>Protocol practic pentru reducerea expunerii la micro și nanoplastice</h2>
+    <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
+    <span>Читать статью →</span>
+  </div>
+</a>
+
 <a class="blogStaticCard" href="/ru/blog/cum-reducem-riscul-de-cancer/">
-  <img src="/images/logo.png" alt="Cum reducem riscul de cancer: prevenție, analize și controale regulate" loading="lazy"/>
+  <img src="https://img.icons8.com/color/96/marker.png" alt="Cum reducem riscul de cancer: prevenție, analize și controale regulate" loading="lazy"/>
   <div class="blogStaticBody">
     <h2>Cum reducem riscul de cancer: prevenție, analize și controale regulate</h2>
     <p>Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.</p>
@@ -221,11 +187,11 @@
 
 <footer class="rmFooter">
   <div class="rmShell rmFooterGrid">
-    <div class="footerBrand">
+    <div>
       <img src="/images/logo.png" alt="REVIMED" class="footerLogo"/>
       <p>© 2026 Centrul Medical Revimed PLUS+.</p>
     </div>
-    <div class="footerSchedule">
+    <div>
       <h3>Program de lucru:</h3>
       <p>Str. Mircea cel Bătrân 13/2</p>
       <p>Luni–Vineri: 09:00–15:00</p>
