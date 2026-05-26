@@ -44,3 +44,14 @@ Correct pattern:
 - place the long SEO/audio block directly in static HTML after the original section
 - keep only audio JS, not content-injection JS
 This prevents 1-second delay and lets Google see the long text in initial HTML.
+
+BLOG INDEX SEO IMPORTANT:
+Blog index pages must be static HTML with all article cards present immediately.
+Do NOT use delayed JS injection for blog cards.
+If /blog first shows only the old 3 cards and later injects the rest, rebuild indexes:
+python3 tools/rebuild_blog_indexes_static.py
+Then commit:
+public/blog/index.html
+public/en/blog/index.html
+public/ru/blog/index.html
+public/ua/blog/index.html
