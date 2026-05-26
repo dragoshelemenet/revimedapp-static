@@ -10,7 +10,7 @@ IMPORTANT:
 Live site uses branch `static-only`.
 Always work on `static-only`, NOT `main`.
 
-Start every session with:
+Start every session:
 git checkout static-only
 git pull origin static-only
 
@@ -38,17 +38,19 @@ Sitemap must NOT include:
 
 Blogs:
 When adding blogs, always:
-1. Create real static pages in public/.../blog/.../index.html
-2. Add blog cards so they appear on:
-   /blog/
-   /en/blog/
-   /ru/blog/
-   /ua/blog/
-3. Regenerate sitemap.xml and public/sitemap.xml
-4. Use all 4 languages: RO, EN, RU, UA
-5. Keep language simple, human, useful, not GPT-like
-6. Use SEO topics from real patient searches
-7. Mention naturally:
+1. Create real static article pages:
+   public/.../blog/.../index.html
+2. Add visible blog cards directly into these clean static blog index pages:
+   public/blog/index.html
+   public/en/blog/index.html
+   public/ru/blog/index.html
+   public/ua/blog/index.html
+3. Do NOT rely only on old Next.js embedded script payloads. The blog index pages were rebuilt as clean static HTML so new cards must be inserted in the visible HTML.
+4. Regenerate sitemap.xml and public/sitemap.xml
+5. Use all 4 languages: RO, EN, RU, UA
+6. Keep language simple, human, useful, not GPT-like
+7. Use SEO topics from real patient searches
+8. Mention naturally:
    - Revimed PLUS+ founded in 2005
    - doctor has 35+ years experience
    - treatment is selected individually
@@ -56,7 +58,12 @@ When adding blogs, always:
    - everything is discussed and done with patient agreement
    - some patients improve with physiotherapy/gentler methods, others need medication
    - medication can be adjusted to find a suitable option with fewer side effects when possible
-8. Do not overpromise or say “best clinic”. Explain calmly why Revimed is a good choice.
+9. Do not overpromise or say “best clinic”. Explain calmly why Revimed is a good choice.
+
+Recent important fix:
+Blog index pages were rebuilt as clean static HTML and pushed on static-only:
+commit 7705b2e
+Message: Rebuild blog index pages as static HTML
 
 Clean workflow:
 git status
