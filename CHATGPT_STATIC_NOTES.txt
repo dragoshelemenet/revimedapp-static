@@ -105,3 +105,11 @@ User wants the /blog page to look like the old screenshot version:
 - no delayed injected/static mismatch
 - do not auto-extract images; use curated image URLs
 - homepage Blog click should hard-load /blog/
+
+MAIN PAGE / FAQ BUSINESS RULE:
+- Mention Dr. Igor Revenco has 35+ years experience.
+- Mention Revimed PLUS+ has 20+ years clinic experience.
+- Treatment is selected individually for each patient.
+- Patient may discuss traditional medicine or gentler/naturist direction when medically safe.
+- Everything is explained and done with patient agreement.
+- Keep /intrebari/ in menu.
