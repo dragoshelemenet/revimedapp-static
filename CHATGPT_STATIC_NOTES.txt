@@ -28,3 +28,11 @@ For blogs:
 - Keep favicon working.
 - New and old blog pages should have the same audio/readability features when requested.
 - Add a short bold intro line at the beginning when useful.
+
+CONTACT CTA RULE:
+All blog article pages and contact pages should end with a visible Revimed PLUS+ contact block:
+- Revimed PLUS+ activează de peste 20 ani
+- clinic phone: 022 60 50 60
+- Dr. Igor Revenco, 35+ ani experiență
+- doctor phone: 079 422 908
+Do not duplicate this block. Replace existing REVIMED_CONTACT_CTA block if editing again.
