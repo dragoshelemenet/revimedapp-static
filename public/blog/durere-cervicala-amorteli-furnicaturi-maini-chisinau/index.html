@@ -155,5 +155,47 @@ article. b,article. strong,article. a{font-size:inherit!important}
 })();
 </script>
 
+
+<script id="REVIMED_GLOBAL_BLOG_HARD_NAV">
+(function(){
+  function normalizeBlogHref(href){
+    if(!href) return null;
+
+    // internal blog paths only
+    if(href === "/blog" || href === "/blog/") return "/blog/";
+    if(href === "/en/blog" || href === "/en/blog/") return "/en/blog/";
+    if(href === "/ru/blog" || href === "/ru/blog/") return "/ru/blog/";
+    if(href === "/ua/blog" || href === "/ua/blog/") return "/ua/blog/";
+
+    // absolute same-domain URLs
+    try{
+      var u = new URL(href, window.location.origin);
+      if(u.origin !== window.location.origin) return null;
+      if(u.pathname === "/blog" || u.pathname === "/blog/") return "/blog/";
+      if(u.pathname === "/en/blog" || u.pathname === "/en/blog/") return "/en/blog/";
+      if(u.pathname === "/ru/blog" || u.pathname === "/ru/blog/") return "/ru/blog/";
+      if(u.pathname === "/ua/blog" || u.pathname === "/ua/blog/") return "/ua/blog/";
+    }catch(e){}
+
+    return null;
+  }
+
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("a");
+    if(!a) return;
+
+    var target = normalizeBlogHref(a.getAttribute("href"));
+    if(!target) return;
+
+    // Stop client-side/Next navigation and force real page load.
+    e.preventDefault();
+    e.stopPropagation();
+    if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+
+    window.location.href = target + "?v=blog-hard-load";
+  }, true);
+})();
+</script>
+
 </body>
 </html>
