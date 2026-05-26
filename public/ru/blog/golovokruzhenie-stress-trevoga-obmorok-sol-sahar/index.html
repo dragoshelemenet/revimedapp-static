@@ -45,182 +45,170 @@
 
 
 
+
+
+
 <style>
+/* FINAL BLOG READABILITY FIX */
 .articleHeroMedia{
-  position:relative;
-  max-width:920px;
-  margin:0 auto 36px auto;
-  border-radius:22px;
-  overflow:hidden;
+  position:relative!important;
+  max-width:920px!important;
+  margin:0 auto 36px auto!important;
+  border-radius:22px!important;
+  overflow:hidden!important;
 }
-.articleHeroMedia > img{
-  display:block;
-  width:100%;
-  max-height:420px;
-  object-fit:cover;
-  border-radius:22px;
+.articleHeroMedia>img{
+  display:block!important;
+  width:100%!important;
+  max-height:420px!important;
+  object-fit:cover!important;
+  border-radius:22px!important;
 }
 .articleToolsOverlay{
-  position:absolute;
-  left:18px;
-  right:18px;
-  bottom:18px;
-  z-index:5;
+  position:absolute!important;
+  left:18px!important;
+  right:18px!important;
+  bottom:18px!important;
+  z-index:5!important;
 }
 .articleToolsBox{
-  width:100%;
-  margin:0;
-  padding:14px;
-  border-radius:22px;
-  background:rgba(15,23,42,0.50);
-  border:1px solid rgba(255,255,255,0.25);
-  backdrop-filter:blur(20px) saturate(1.3);
-  -webkit-backdrop-filter:blur(20px) saturate(1.3);
-  box-shadow:0 10px 32px rgba(15,23,42,.28);
-}
-.articleToolsBox *{
-  box-sizing:border-box;
+  width:100%!important;
+  margin:0!important;
+  padding:14px!important;
+  border-radius:22px!important;
+  background:rgba(15,23,42,.52)!important;
+  border:1px solid rgba(255,255,255,.25)!important;
+  backdrop-filter:blur(20px) saturate(1.3)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(1.3)!important;
+  box-shadow:0 10px 32px rgba(15,23,42,.28)!important;
 }
 .articleToolsGrid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:10px!important;
 }
 .readAloudBtn{
-  width:100%;
-  border:0;
-  border-radius:16px;
-  padding:15px 18px;
-  font-size:19px;
-  font-weight:900;
-  cursor:pointer;
-  background:rgba(215,25,32,.96);
-  color:#fff;
-  box-shadow:0 8px 20px rgba(215,25,32,.30);
+  width:100%!important;
+  border:0!important;
+  border-radius:16px!important;
+  padding:15px 18px!important;
+  font-size:19px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  background:#d71920!important;
+  color:#fff!important;
 }
 .articleVoicePanel{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:10px;
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr!important;
+  align-items:center!important;
+  gap:10px!important;
 }
 .articleSmallBtn{
-  border-radius:13px;
-  padding:12px 10px;
-  font-size:14px;
-  font-weight:900;
-  cursor:pointer;
-  background:rgba(255,255,255,.88);
-  color:#0f172a;
-  border:1px solid rgba(255,255,255,.50);
-  min-height:44px;
-}
-.articleSmallBtn:hover{
-  background:rgba(255,255,255,.98);
-}
-.articleSmallBtn:active{
-  transform:translateY(1px);
+  border-radius:13px!important;
+  padding:12px 10px!important;
+  font-size:14px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  background:rgba(255,255,255,.9)!important;
+  color:#0f172a!important;
+  border:1px solid rgba(255,255,255,.55)!important;
+  min-height:44px!important;
 }
 .voiceRateBadge{
-  min-width:86px;
-  padding:10px;
-  border-radius:14px;
-  text-align:center;
-  background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.24);
-  color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.35);
+  min-width:86px!important;
+  padding:10px!important;
+  border-radius:14px!important;
+  text-align:center!important;
+  background:rgba(255,255,255,.18)!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  color:#fff!important;
 }
 .voiceRateBadge span{
-  display:block;
-  font-size:12px;
-  font-weight:700;
-  opacity:.9;
+  display:block!important;
+  font-size:12px!important;
+  font-weight:700!important;
 }
 .voiceRateLabel{
-  display:block;
-  margin-top:2px;
-  font-size:22px;
-  font-weight:950;
-  line-height:1;
+  display:block!important;
+  font-size:22px!important;
+  font-weight:950!important;
+  line-height:1!important;
 }
 
-/* force article layout back to centered card */
-.rmSection .,
+/* article card centered */
+.rmSection article.,
 article.{
-  display:block !important;
-  width:100% !important;
-  max-width:920px !important;
-  margin:0 auto !important;
-  padding:44px !important;
-  border-radius:22px !important;
-  box-sizing:border-box !important;
+  display:block!important;
+  width:100%!important;
+  max-width:920px!important;
+  margin:0 auto!important;
+  padding:48px!important;
+  border-radius:22px!important;
+  box-sizing:border-box!important;
 }
 
-/* force big readable text */
+/* make text much bigger */
 article.,
 article.p,
-article.li,
-article.div{
-  font-size:38px !important;
-  line-height:1.85 !important;
-  color:#334155 !important;
-  letter-spacing:.01em !important;
+article.li{
+  font-size:44px!important;
+  line-height:1.85!important;
+  color:#334155!important;
+  letter-spacing:.01em!important;
 }
 
 article.h2{
-  font-size:48px !important;
-  line-height:1.25 !important;
-  margin-top:42px !important;
-  margin-bottom:16px !important;
-  color:#0f172a !important;
+  font-size:56px!important;
+  line-height:1.25!important;
+  margin-top:46px!important;
+  margin-bottom:18px!important;
+  color:#0f172a!important;
 }
 
 article.b,
 article.strong,
 article.a{
-  font-size:inherit !important;
+  font-size:inherit!important;
 }
 
 @media(max-width:760px){
   .articleHeroMedia{
-    margin-left:12px;
-    margin-right:12px;
+    margin-left:12px!important;
+    margin-right:12px!important;
   }
   .articleToolsOverlay{
-    left:10px;
-    right:10px;
-    bottom:10px;
-  }
-  .readAloudBtn{
-    font-size:16px;
-    padding:13px 12px;
+    left:10px!important;
+    right:10px!important;
+    bottom:10px!important;
   }
   .articleVoicePanel{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr!important;
+  }
+  .readAloudBtn{
+    font-size:16px!important;
+    padding:13px 12px!important;
   }
   .articleSmallBtn{
-    font-size:13px;
-    min-height:40px;
-    padding:10px 8px;
+    font-size:13px!important;
+    min-height:40px!important;
   }
   .voiceRateBadge{
-    width:100%;
+    width:100%!important;
   }
-  .rmSection .,
+  .rmSection article.,
   article.{
-    max-width:calc(100% - 24px) !important;
-    padding:26px !important;
+    max-width:calc(100% - 24px)!important;
+    padding:28px!important;
   }
   article.,
   article.p,
-  article.li,
-  article.div{
-    font-size:27px !important;
-    line-height:1.78 !important;
+  article.li{
+    font-size:30px!important;
+    line-height:1.78!important;
   }
   article.h2{
-    font-size:34px !important;
+    font-size:38px!important;
   }
 }
 </style>
@@ -241,29 +229,18 @@ article.a{
 <div class="articleToolsOverlay">
   <div class="articleToolsBox">
     <div class="articleToolsGrid">
-      <button
-        type="button"
-        class="readAloudBtn"
-        data-lang="ro-RO"
-        data-start-text="🔊 Ascultă articolul"
-        data-stop-text="⏹ Oprește citirea"
-        data-unsupported="Browserul tău nu suportă citirea vocală."
-      >🔊 Ascultă articolul</button>
-
+      <button type="button" class="readAloudBtn" data-lang="ro-RO" data-start-text="🔊 Ascultă articolul" data-stop-text="⏹ Oprește citirea" data-unsupported="Browserul tău nu suportă citirea vocală.">🔊 Ascultă articolul</button>
       <div class="articleVoicePanel">
         <button type="button" class="articleSmallBtn" data-voice-speed="slower">− Mai lent</button>
-        <div class="voiceRateBadge">
-          <span>Viteză</span>
-          <b class="voiceRateLabel">90%</b>
-        </div>
+        <div class="voiceRateBadge"><span>Viteză</span><b class="voiceRateLabel">90%</b></div>
         <button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
       </div>
     </div>
   </div>
 </div>
 </div>
-<button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
-      </div>
+</div>
+</div>
     </div>
   </div>
 </div>
@@ -280,7 +257,7 @@ article.a{
 
 <div class="smallControlGrid">
       </div>
-  <article class="card   articleReadableText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;">
+  <article class="card    articleReadableText" style="padding:28px;max-width:920px!important;margin:0 auto!important;padding:44px!important;;max-width:920px!important;margin:0 auto!important;padding:48px!important;">
 <p>Иногда во время стресса, плохого сна или сильной умственной нагрузки тело начинает подавать странные сигналы. Вы встаете — и кружится голова. Ноги становятся мягкими. Кажется, что можно потерять сознание. Свет раздражает. Сердце бьется быстрее. Человек пугается, и тревога становится еще сильнее.</p><p>Такое случается чаще, чем кажется. Это не всегда означает что-то опасное, но если повторяется, игнорировать не стоит. Нервная система может быть уставшей, сахар в крови может снижаться, давление может колебаться, дыхание становится чаще, мышцы напряжены, и мозг воспринимает это как тревогу.</p><h2>Почему появляется ощущение обморока?</h2><p>Ощущение обморока часто появляется, когда мозг на короткое время получает меньше крови, кислорода или энергии, чем ему нужно. Это может быть после плохого сна, пропущенной еды, малого количества воды, долгой работы за экраном, жары или тяжелого стрессового периода.</p><p>Тревога усиливает всё. Когда человек пугается, меняется дыхание, повышается адреналин, сердце работает иначе, и тело ощущается небезопасно. Иногда причина не в реальной опасности, а в усталости и слишком сильной реакции нервной системы.</p><h2>Почему может помочь немного соли?</h2><p>Соль помогает организму удерживать воду и у некоторых людей может поддержать давление, особенно после пота, малого количества воды, недостатка еды или при склонности к низкому давлению. Речь не о большом количестве соли. Иногда достаточно маленькой соленой закуски или электролитов.</p><p>Важно: если у вас высокое давление, болезни почек, проблемы с сердцем, отеки или врач рекомендовал ограничить соль, не делайте это без согласования с врачом.</p><h2>Почему может помочь немного сахара или мёда?</h2><p>Если вы пропустили еду, выпили кофе натощак или работали много часов без паузы, сахар в крови может снижаться или резко колебаться. Тогда появляются дрожь, слабость, потливость, голод, тревога, головокружение или туман в голове.</p><p>В такой момент немного сахара, мёда, сока или сладкой закуски может помочь некоторым людям быстрее прийти в себя. Идея не в том, чтобы есть много сладкого, а в том, чтобы иметь быстрый вариант на случай резкого падения энергии.</p><p>Если у вас диабет или проблемы с сахаром, нужно следовать плану врача.</p><h2>Почему могут помочь солнцезащитные очки?</h2><p>Во время стресса, мигрени, усталости или после долгого времени за экраном яркий свет может раздражать. У некоторых людей от света усиливается головная боль, тошнота, головокружение или напряжение. Солнцезащитные очки могут уменьшить зрительную нагрузку и немного успокоить нервную систему.</p><p>Но если светобоязнь появилась резко, очень сильная или идет вместе с сильной головной болью, температурой, нарушением зрения или спутанностью, нужна медицинская оценка.</p><h2>Что делать в моменте?</h2><p>Остановитесь. Сядьте или лягте. Если можно, немного поднимите ноги. Дышите медленнее. Выпейте несколько глотков воды. Если вы мало ели, можно принять немного сахара, мёда или перекус. Если вы потели или знаете, что давление низкое, может помочь небольшая соленая закуска или электролиты.</p><p>Не садитесь за руль и не стойте дальше, если чувствуете, что можете упасть. Тело просит паузу.</p><h2>Что делать дальше?</h2><p>Если это случилось один раз после плохого сна, голода, стресса или жары, это может быть сигналом пить воду, питаться регулярнее, спать и уменьшить перегрузку. Но если это повторяется, если вы теряли сознание, есть сильное сердцебиение, боль в груди, нехватка воздуха, слабость с одной стороны, спутанность или необычная головная боль, нужно обратиться к врачу.</p><p>В Revimed PLUS+, клинике, основанной в 2005 году, наш врач с опытом более 35 лет может оценить такие симптомы с точки зрения неврологии и восстановления. Иногда помогают физиотерапия, режим, сон и более мягкие методы. Иногда нужны обследования или лечение. План обсуждается с пациентом и подбирается индивидуально.</p>
 <hr style="margin:28px 0;border:none;border-top:1px solid #e5e7eb"/>
 <p><b>Revimed PLUS+</b> — clinică fondată în 2005. Consultațiile și tratamentele se stabilesc individual, cu acordul pacientului.</p>
@@ -289,6 +266,9 @@ article.a{
 </div></section>
 </main>
 <footer class="rmFooter"><div class="rmShell rmFooterGrid"><div class="footerBrand"><img src="/images/logo.png" alt="REVIMED" class="footerLogo"/><p>© 2026 Centrul Medical Revimed PLUS+.</p></div><div class="footerSchedule"><h3>Program</h3><p>Str. Mircea cel Bătrân 13/2</p><p>Luni–Vineri: 09:00–15:00</p><p>022 60 50 60</p></div></div></footer>
+
+
+
 
 
 
@@ -326,14 +306,8 @@ article.a{
   var resumeTimer = null;
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
-
-  function getArticle(){
-    return document.querySelector("article");
-  }
-
-  function cleanText(text){
-    return (text || "").replace(/\s+/g," ").trim();
-  }
+  function getArticle(){ return document.querySelector("article"); }
+  function cleanText(text){ return (text || "").replace(/\s+/g," ").trim(); }
 
   function makeTextReadable(){
     var article = getArticle();
@@ -359,7 +333,6 @@ article.a{
   function splitIntoChunks(text){
     var cleaned = cleanText(text);
     if(!cleaned) return [];
-
     var pieces = cleaned.match(/[^.!?;:]+[.!?;:]?|[^.!?;:]+$/g) || [cleaned];
     var out = [];
 
@@ -367,13 +340,13 @@ article.a{
       piece = cleanText(piece);
       if(!piece) return;
 
-      if(piece.length <= 180){
+      if(piece.length <= 160){
         out.push(piece);
       }else{
         var words = piece.split(" ");
         var buf = "";
         words.forEach(function(w){
-          if((buf + " " + w).trim().length > 150){
+          if((buf + " " + w).trim().length > 135){
             if(buf) out.push(buf.trim());
             buf = w;
           }else{
@@ -390,7 +363,6 @@ article.a{
   function buildChunks(){
     var article = getArticle();
     if(!article) return [];
-
     var nodes = article.querySelectorAll("h2,h3,p,li");
     var arr = [];
 
@@ -426,7 +398,6 @@ article.a{
 
   function speakCurrent(){
     if(!("speechSynthesis" in window)) return;
-
     if(!isReading) return;
 
     if(!chunks.length || currentIndex >= chunks.length){
@@ -485,27 +456,20 @@ article.a{
     ignoreCancelEnd = true;
     window.speechSynthesis.cancel();
     setButtonReading(false);
-
-    setTimeout(function(){
-      ignoreCancelEnd = false;
-    }, 120);
+    setTimeout(function(){ ignoreCancelEnd = false; }, 120);
   }
 
   function updateSpeedAndContinue(delta){
     setRate(getRate() + delta);
-
     if(!isReading) return;
 
     clearTimeout(resumeTimer);
-
     ignoreCancelEnd = true;
     window.speechSynthesis.cancel();
 
     resumeTimer = setTimeout(function(){
       ignoreCancelEnd = false;
-      if(isReading){
-        speakCurrent();
-      }
+      if(isReading) speakCurrent();
     }, 120);
   }
 

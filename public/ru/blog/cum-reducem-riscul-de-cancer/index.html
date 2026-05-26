@@ -29,182 +29,170 @@
 
 
 
+
+
+
 <style>
+/* FINAL BLOG READABILITY FIX */
 .articleHeroMedia{
-  position:relative;
-  max-width:920px;
-  margin:0 auto 36px auto;
-  border-radius:22px;
-  overflow:hidden;
+  position:relative!important;
+  max-width:920px!important;
+  margin:0 auto 36px auto!important;
+  border-radius:22px!important;
+  overflow:hidden!important;
 }
-.articleHeroMedia > img{
-  display:block;
-  width:100%;
-  max-height:420px;
-  object-fit:cover;
-  border-radius:22px;
+.articleHeroMedia>img{
+  display:block!important;
+  width:100%!important;
+  max-height:420px!important;
+  object-fit:cover!important;
+  border-radius:22px!important;
 }
 .articleToolsOverlay{
-  position:absolute;
-  left:18px;
-  right:18px;
-  bottom:18px;
-  z-index:5;
+  position:absolute!important;
+  left:18px!important;
+  right:18px!important;
+  bottom:18px!important;
+  z-index:5!important;
 }
 .articleToolsBox{
-  width:100%;
-  margin:0;
-  padding:14px;
-  border-radius:22px;
-  background:rgba(15,23,42,0.50);
-  border:1px solid rgba(255,255,255,0.25);
-  backdrop-filter:blur(20px) saturate(1.3);
-  -webkit-backdrop-filter:blur(20px) saturate(1.3);
-  box-shadow:0 10px 32px rgba(15,23,42,.28);
-}
-.articleToolsBox *{
-  box-sizing:border-box;
+  width:100%!important;
+  margin:0!important;
+  padding:14px!important;
+  border-radius:22px!important;
+  background:rgba(15,23,42,.52)!important;
+  border:1px solid rgba(255,255,255,.25)!important;
+  backdrop-filter:blur(20px) saturate(1.3)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(1.3)!important;
+  box-shadow:0 10px 32px rgba(15,23,42,.28)!important;
 }
 .articleToolsGrid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:10px!important;
 }
 .readAloudBtn{
-  width:100%;
-  border:0;
-  border-radius:16px;
-  padding:15px 18px;
-  font-size:19px;
-  font-weight:900;
-  cursor:pointer;
-  background:rgba(215,25,32,.96);
-  color:#fff;
-  box-shadow:0 8px 20px rgba(215,25,32,.30);
+  width:100%!important;
+  border:0!important;
+  border-radius:16px!important;
+  padding:15px 18px!important;
+  font-size:19px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  background:#d71920!important;
+  color:#fff!important;
 }
 .articleVoicePanel{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:10px;
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr!important;
+  align-items:center!important;
+  gap:10px!important;
 }
 .articleSmallBtn{
-  border-radius:13px;
-  padding:12px 10px;
-  font-size:14px;
-  font-weight:900;
-  cursor:pointer;
-  background:rgba(255,255,255,.88);
-  color:#0f172a;
-  border:1px solid rgba(255,255,255,.50);
-  min-height:44px;
-}
-.articleSmallBtn:hover{
-  background:rgba(255,255,255,.98);
-}
-.articleSmallBtn:active{
-  transform:translateY(1px);
+  border-radius:13px!important;
+  padding:12px 10px!important;
+  font-size:14px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  background:rgba(255,255,255,.9)!important;
+  color:#0f172a!important;
+  border:1px solid rgba(255,255,255,.55)!important;
+  min-height:44px!important;
 }
 .voiceRateBadge{
-  min-width:86px;
-  padding:10px;
-  border-radius:14px;
-  text-align:center;
-  background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.24);
-  color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.35);
+  min-width:86px!important;
+  padding:10px!important;
+  border-radius:14px!important;
+  text-align:center!important;
+  background:rgba(255,255,255,.18)!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  color:#fff!important;
 }
 .voiceRateBadge span{
-  display:block;
-  font-size:12px;
-  font-weight:700;
-  opacity:.9;
+  display:block!important;
+  font-size:12px!important;
+  font-weight:700!important;
 }
 .voiceRateLabel{
-  display:block;
-  margin-top:2px;
-  font-size:22px;
-  font-weight:950;
-  line-height:1;
+  display:block!important;
+  font-size:22px!important;
+  font-weight:950!important;
+  line-height:1!important;
 }
 
-/* force article layout back to centered card */
-.rmSection .,
+/* article card centered */
+.rmSection article.,
 article.{
-  display:block !important;
-  width:100% !important;
-  max-width:920px !important;
-  margin:0 auto !important;
-  padding:44px !important;
-  border-radius:22px !important;
-  box-sizing:border-box !important;
+  display:block!important;
+  width:100%!important;
+  max-width:920px!important;
+  margin:0 auto!important;
+  padding:48px!important;
+  border-radius:22px!important;
+  box-sizing:border-box!important;
 }
 
-/* force big readable text */
+/* make text much bigger */
 article.,
 article.p,
-article.li,
-article.div{
-  font-size:38px !important;
-  line-height:1.85 !important;
-  color:#334155 !important;
-  letter-spacing:.01em !important;
+article.li{
+  font-size:44px!important;
+  line-height:1.85!important;
+  color:#334155!important;
+  letter-spacing:.01em!important;
 }
 
 article.h2{
-  font-size:48px !important;
-  line-height:1.25 !important;
-  margin-top:42px !important;
-  margin-bottom:16px !important;
-  color:#0f172a !important;
+  font-size:56px!important;
+  line-height:1.25!important;
+  margin-top:46px!important;
+  margin-bottom:18px!important;
+  color:#0f172a!important;
 }
 
 article.b,
 article.strong,
 article.a{
-  font-size:inherit !important;
+  font-size:inherit!important;
 }
 
 @media(max-width:760px){
   .articleHeroMedia{
-    margin-left:12px;
-    margin-right:12px;
+    margin-left:12px!important;
+    margin-right:12px!important;
   }
   .articleToolsOverlay{
-    left:10px;
-    right:10px;
-    bottom:10px;
-  }
-  .readAloudBtn{
-    font-size:16px;
-    padding:13px 12px;
+    left:10px!important;
+    right:10px!important;
+    bottom:10px!important;
   }
   .articleVoicePanel{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr!important;
+  }
+  .readAloudBtn{
+    font-size:16px!important;
+    padding:13px 12px!important;
   }
   .articleSmallBtn{
-    font-size:13px;
-    min-height:40px;
-    padding:10px 8px;
+    font-size:13px!important;
+    min-height:40px!important;
   }
   .voiceRateBadge{
-    width:100%;
+    width:100%!important;
   }
-  .rmSection .,
+  .rmSection article.,
   article.{
-    max-width:calc(100% - 24px) !important;
-    padding:26px !important;
+    max-width:calc(100% - 24px)!important;
+    padding:28px!important;
   }
   article.,
   article.p,
-  article.li,
-  article.div{
-    font-size:27px !important;
-    line-height:1.78 !important;
+  article.li{
+    font-size:30px!important;
+    line-height:1.78!important;
   }
   article.h2{
-    font-size:34px !important;
+    font-size:38px!important;
   }
 }
 </style>
@@ -225,34 +213,24 @@ article.a{
 
 </div>
   
-<button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
-      </div>
-    </div>
-  
+</div>
+    
 <div class="articleToolsOverlay">
   <div class="articleToolsBox">
     <div class="articleToolsGrid">
-      <button
-        type="button"
-        class="readAloudBtn"
-        data-lang="ro-RO"
-        data-start-text="🔊 Ascultă articolul"
-        data-stop-text="⏹ Oprește citirea"
-        data-unsupported="Browserul tău nu suportă citirea vocală."
-      >🔊 Ascultă articolul</button>
-
+      <button type="button" class="readAloudBtn" data-lang="ro-RO" data-start-text="🔊 Ascultă articolul" data-stop-text="⏹ Oprește citirea" data-unsupported="Browserul tău nu suportă citirea vocală.">🔊 Ascultă articolul</button>
       <div class="articleVoicePanel">
         <button type="button" class="articleSmallBtn" data-voice-speed="slower">− Mai lent</button>
-        <div class="voiceRateBadge">
-          <span>Viteză</span>
-          <b class="voiceRateLabel">90%</b>
-        </div>
+        <div class="voiceRateBadge"><span>Viteză</span><b class="voiceRateLabel">90%</b></div>
         <button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
       </div>
     </div>
   </div>
 </div>
-<article class="rmShell adminCard prose blogPostArticle blogArticleCard   articleReadableText" style="max-width:920px!important;margin:0 auto!important;padding:44px!important;"><div class="postHeroImage" style="background-image:url(https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80)"></div><div class="blogReadableContent"><p>Cancerul este una dintre bolile care poate evolua mult timp fără simptome clare. Uneori omul se simte bine, lucrează, doarme normal și nu are dureri evidente, dar în organism pot exista procese care merită verificate din timp. De aceea prevenția nu înseamnă frică și nu înseamnă să căutăm singuri diagnostice pe internet. Prevenția înseamnă controale regulate, analize corect alese și interpretarea lor de către medic.</p><p class="blogDisclaimerLine">Un lucru important trebuie spus clar: Revimed PLUS+ nu este centru oncologic și nu înlocuiește medicul oncolog. Activitatea noastră este orientată spre sistemul nervos, neurologie, recuperare medicală și evaluare funcțională. Totuși, în practica medicală generală, starea organismului, inflamația, metabolismul, oboseala, durerile, slăbiciunea sau simptomele neurologice pot ridica întrebări care necesită o evaluare mai largă. Dacă există suspiciune oncologică, diagnosticul și tratamentul aparțin medicului oncolog, iar pacientul trebuie să urmeze recomandările acestuia.</p><p>De ce nu ajunge un singur oncomarker?</p><p>Mulți pacienți cred că există o analiză simplă care poate spune sigur dacă există sau nu cancer. În realitate, markerii tumorali nu sunt suficienți ca test unic pentru screening general. Ei pot fi utili în anumite situații, mai ales la recomandarea medicului, dar nu pot confirma sau exclude singuri toate tipurile de cancer.</p><p>Un marker tumoral poate fi normal chiar dacă există o problemă. În același timp, poate fi crescut și din cauze care nu sunt oncologice. Din acest motiv, medicul nu se uită la o singură cifră, ci la context: vârstă, simptome, istoric familial, examen clinic, analize generale și investigații imagistice.</p><p>De ce este importantă fosfataza alcalină?</p><p>Fosfataza alcalină este o analiză care oferă informații despre anumite procese din organism, mai ales despre ficat, căile biliare și sistemul osos. Ea nu este o analiză care diagnostichează cancerul. Totuși, este importantă pentru că poate semnala că în organism există o modificare care trebuie înțeleasă.</p><p>O valoare crescută a fosfatazei alcaline poate apărea în probleme hepatice, biliare, osoase, în inflamații, în anumite tulburări metabolice sau în alte situații medicale. Uneori, tocmai astfel de modificări nespecifice îi arată medicului că trebuie investigat mai departe: ficatul, bila, oasele, inflamația sau alte organe.</p><p>De aceea, fosfataza alcalină este utilă ca parte dintr-un complex de analize, nu ca verdict. Ea trebuie comparată cu GGT, bilirubină, transaminaze, calciu, vitamina D, hemoleucogramă, markeri de inflamație și cu simptomele pacientului. Numai așa se poate înțelege dacă modificarea este importantă sau dacă are o explicație benignă.</p><p>Ce analize pot intra într-o evaluare generală de risc?</p><p>Medicul poate recomanda, în funcție de vârstă, simptome și istoric:</p><p>- hemoleucogramă completă;</p><p>- VSH, CRP și alți markeri de inflamație;</p><p>- glicemie și profil metabolic;</p><p>- funcție hepatică: ALT, AST, GGT, bilirubină, fosfatază alcalină;</p><p>- funcție renală;</p><p>- calciu, vitamina D și alți indicatori pentru metabolismul osos;</p><p>- ecografie abdominală;</p><p>- investigații imagistice atunci când există indicație;</p><p>- screening specific pentru vârstă, sex și istoric familial.</p><p>Nu toți pacienții au nevoie de același set de analize. Un plan bun este personalizat.</p><p>Când trebuie să mergi la medic?</p><p>Merită să programezi o evaluare dacă apar semne precum:</p><p>- scădere inexplicabilă în greutate;</p><p>- oboseală persistentă;</p><p>- dureri care nu trec;</p><p>- sângerări neobișnuite;</p><p>- noduli sau modificări ale pielii;</p><p>- tuse persistentă;</p><p>- tulburări digestive repetate;</p><p>- febră sau transpirații nocturne fără explicație;</p><p>- slăbiciune, amorțeli, tulburări de mers sau simptome neurologice noi.</p><p>Aceste semne nu înseamnă automat cancer, dar nu trebuie ignorate.</p><p>Cum reducem riscul în viața de zi cu zi?</p><p>Prevenția reală începe cu lucruri simple, dar constante:</p><p>- renunțarea la fumat;</p><p>- limitarea alcoolului;</p><p>- alimentație echilibrată;</p><p>- greutate controlată;</p><p>- mișcare regulată;</p><p>- somn suficient;</p><p>- tratarea inflamațiilor cronice;</p><p>- controale medicale periodice;</p><p>- screening recomandat de medic.</p><p>La Revimed PLUS+, pacientul poate primi o evaluare orientată pe starea generală, sistemul nervos, funcție, recuperare și simptome asociate. Dacă medicul observă semne care necesită investigație oncologică, pacientul trebuie direcționat către specialistul potrivit. Medicina bună înseamnă colaborare între specialități, nu promisiuni exagerate.</p><p class="blogAppointmentLine">Pentru detalii despre evaluare și programare:</p><p class="blogPhoneLine">+373 79 422 908</p><p class="blogPhoneLine">022 60 50 60</p><p class="blogDisclaimerLine">Acest articol este informativ și nu înlocuiește consultația medicală.</p></div></article></section><!--$--><!--/$--></main><footer class="rmFooter"><div class="rmShell rmFooterGrid"><div class="footerBrand"><img src="/images/logo.png" alt="REVIMED" class="footerLogo"/><p>© <!-- -->2026<!-- --> Centrul Medical Revimed PLUS+. <!-- -->Все права защищены.</p></div><div class="footerSchedule"><h3>График работы:</h3><p class="footerAddress"><img class="footerMiniIcon" src="https://img.icons8.com/color/96/marker.png" alt="address" loading="lazy"/> <!-- -->ул. Мирча чел Бэтрын 13/2</p><p>Понедельник–Пятница: 09:00–15:00</p><p>022 60 50 60</p></div><div class="footerLinks"><h3>Полезные ссылки</h3><div><a href="/ru/">Главная</a><a href="/ru/despre-noi/">О нас</a><a href="/ru/servicii/">Услуги</a><a href="/ru/preturi/">Цены</a><a href="/ru/aplicatii/teste-si-instrumente/">Тесты и инструменты</a><a href="/ru/contact/">Контакты</a><a href="/ru/termeni-si-conditii/">Условия использования</a><a href="/ru/cookies/">Cookies</a></div></div><div class="footerSocial"><h3>Мы в соцсетях</h3><a class="fbIcon8" href="https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed"><img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook"/></a></div></div></footer><div class="mobileCallBar"><a href="tel:+37379422908">Sună</a><a href="/contact">Contact</a></div><script src="/_next/static/chunks/0p8tu7idk~nwx.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[20037,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n3:I[70119,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n4:I[93219,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n10:I[68027,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0arcz_jzxt8re.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"ru\",\"blog\",\"cum-reducem-riscul-de-cancer\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[[\"lang\",\"ru\",\"d\",null],{\"children\":[\"blog\",{\"children\":[[\"slug\",\"cum-reducem-riscul-de-cancer\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0arcz_jzxt8re.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0w6v12296r7s-.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/0y6dzejklle~6.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ro\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"MedicalClinic\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"image\\\":\\\"https://revimed.site/images/medical-bg.jpg\\\",\\\"description\\\":\\\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\\\",\\\"telephone\\\":\\\"022 60 50 60\\\",\\\"email\\\":\\\"revimed@revimed.md\\\",\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Ciocana\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"openingHours\\\":\\\"Mo-Fr 09:00-19:00\\\",\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"PhysicalTherapy\\\",\\\"Rehabilitation\\\"]}\"}}],[\"$\",\"$L2\",null,{}],[\"$\",\"$L3\",null,{}],[\"$\",\"$L4\",null,{}],[\"$\",\"main\",null,{\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"MedicalClinic\\\",\\\"@id\\\":\\\"https://revimed.site/#medical-clinic\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"logo\\\":\\\"https://revimed.site/images/logo.png\\\",\\\"image\\\":\\\"https://revimed.site/images/hero-bg.jpg\\\",\\\"telephone\\\":[\\\"022 60 50 60\\\",\\\"+373 79 422 908\\\"],\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Chișinău\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"geo\\\":{\\\"@type\\\":\\\"GeoCoordinates\\\",\\\"latitude\\\":47.044,\\\"longitude\\\":28.883},\\\"openingHoursSpecification\\\":[{\\\"@type\\\":\\\"OpeningHoursSpecification\\\",\\\"dayOfWeek\\\":[\\\"Monday\\\",\\\"Tuesday\\\",\\\"Wednesday\\\",\\\"Thursday\\\",\\\"Friday\\\"],\\\"opens\\\":\\\"09:00\\\",\\\"closes\\\":\\\"19:00\\\"}],\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"Physiotherapy\\\",\\\"PhysicalTherapy\\\",\\\"Rehabilitation\\\"],\\\"availableLanguage\\\":[\\\"Romanian\\\",\\\"English\\\",\\\"Russian\\\",\\\"Ukrainian\\\"],\\\"priceRange\\\":\\\"$$\\\",\\\"sameAs\\\":[]}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"@id\\\":\\\"https://revimed.site/#website\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"potentialAction\\\":{\\\"@type\\\":\\\"SearchAction\\\",\\\"target\\\":\\\"https://revimed.site/?s={search_term_string}\\\",\\\"query-input\\\":\\\"required name=search_term_string\\\"}}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":[\\\"MedicalClinic\\\",\\\"LocalBusiness\\\"],\\\"@id\\\":\\\"https://revimed.site/#revimed-plus\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"alternateName\\\":\\\"Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"image\\\":\\\"https://revimed.site/images/hero-bg.jpg\\\",\\\"logo\\\":\\\"https://revimed.site/images/logo.png\\\",\\\"telephone\\\":[\\\"022 60 50 60\\\",\\\"+373 79 422 908\\\"],\\\"priceRange\\\":\\\"$$\\\",\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Chișinău\\\",\\\"postalCode\\\":\\\"\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"areaServed\\\":[\\\"Chișinău\\\",\\\"Ciocana\\\",\\\"Moldova\\\"],\\\"openingHours\\\":\\\"Mo-Fr 09:00-19:00\\\",\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"Physical therapy\\\",\\\"Rehabilitation\\\",\\\"Functional diagnostics\\\"],\\\"availableLanguage\\\":[\\\"Romanian\\\",\\\"English\\\",\\\"Russian\\\",\\\"Ukrainian\\\"],\\\"hasMap\\\":\\\"https://revimed.site/contact\\\"}\"}}],\"$L5\"]}],\"$L6\",\"$L7\",\"$L8\",\"$L9\"]}]}]]}],{\"children\":[\"$La\",{\"children\":[\"$Lb\",{\"children\":[\"$Lc\",{\"children\":[\"$Ld\",{},null,false,null]},null,false,\"$@e\"]},null,false,\"$@e\"]},null,false,\"$@e\"]},null,false,null],\"$Lf\",false]],\"m\":\"$undefined\",\"G\":[\"$10\",[\"$L11\"]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"DlgVXk4VwDwZHoJSeHS8T\"}\n"])</script><script>self.__next_f.push([1,"12:I[39756,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n13:I[37457,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n14:I[56691,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n15:I[69717,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n16:I[956,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n18:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"OutletBoundary\"]\n19:\"$Sreact.suspense\"\n1c:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"ViewportBoundary\"]\n1e:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"MetadataBoundary\"]\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]\n"])</script><script>self.__next_f.push([1,"6:[\"$\",\"$L14\",null,{}]\n7:[\"$\",\"div\",null,{\"className\":\"mobileCallBar\",\"children\":[[\"$\",\"a\",null,{\"href\":\"tel:+37379422908\",\"children\":\"Sună\"}],[\"$\",\"a\",null,{\"href\":\"/contact\",\"children\":\"Contact\"}]]}]\n8:[\"$\",\"$L15\",null,{}]\n9:[\"$\",\"$L16\",null,{}]\na:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nb:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nc:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nd:[\"$\",\"$1\",\"c\",{\"children\":[\"$L17\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/049xb2g0pobge.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L18\",null,{\"children\":[\"$\",\"$19\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@1a\"}]}]]}]\n1b:[]\ne:\"$W1b\"\nf:[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L1c\",null,{\"children\":\"$L1d\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$L1e\",null,{\"children\":[\"$\",\"$19\",null,{\"name\":\"Next.Metadata\",\"children\":\"$L1f\"}]}]}],null]}]\n11:[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0arcz_jzxt8re.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]\n"])</script><script>self.__next_f.push([1,"17:[[\"$\",\"section\",null,{\"className\":\"pageHero blogPostHero innerPageHero\",\"children\":[\"$\",\"div\",null,{\"className\":\"rmShell\",\"children\":[[\"$\",\"p\",null,{\"className\":\"crumb\",\"children\":[\"Блог\",\" / \",\"Cum reducem riscul de cancer: prevenție, analize și controale regulate\"]}],[\"$\",\"h1\",null,{\"children\":\"Cum reducem riscul de cancer: prevenție, analize și controale regulate\"}],[\"$\",\"p\",null,{\"className\":\"lead\",\"children\":\"Cancerul poate evolua fără simptome. Prevenția înseamnă controale regulate, analize interpretate corect și evaluarea factorilor de risc.\"}]]}]}],[\"$\",\"section\",null,{\"className\":\"rmSection blogPostSection\",\"children\":[\"$\",\"article\",null,{\"className\":\"rmShell adminCard prose blogPostArticle blogArticleCard\",\"children\":[[\"$\",\"div\",null,{\"className\":\"postHeroImage\",\"style\":{\"backgroundImage\":\"url(https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format\u0026fit=crop\u0026w=1400\u0026q=80)\"}}],[\"$\",\"div\",null,{\"className\":\"blogReadableContent\",\"children\":[[\"$\",\"p\",\"0\",{\"children\":\"Cancerul este una dintre bolile care poate evolua mult timp fără simptome clare. Uneori omul se simte bine, lucrează, doarme normal și nu are dureri evidente, dar în organism pot exista procese care merită verificate din timp. De aceea prevenția nu înseamnă frică și nu înseamnă să căutăm singuri diagnostice pe internet. Prevenția înseamnă controale regulate, analize corect alese și interpretarea lor de către medic.\"}],[\"$\",\"p\",\"1\",{\"className\":\"blogDisclaimerLine\",\"children\":\"Un lucru important trebuie spus clar: Revimed PLUS+ nu este centru oncologic și nu înlocuiește medicul oncolog. Activitatea noastră este orientată spre sistemul nervos, neurologie, recuperare medicală și evaluare funcțională. Totuși, în practica medicală generală, starea organismului, inflamația, metabolismul, oboseala, durerile, slăbiciunea sau simptomele neurologice pot ridica întrebări care necesită o evaluare mai largă. Dacă există suspiciune oncologică, diagnosticul și tratamentul aparțin medicului oncolog, iar pacientul trebuie să urmeze recomandările acestuia.\"}],[\"$\",\"p\",\"2\",{\"children\":\"De ce nu ajunge un singur oncomarker?\"}],[\"$\",\"p\",\"3\",{\"children\":\"Mulți pacienți cred că există o analiză simplă care poate spune sigur dacă există sau nu cancer. În realitate, markerii tumorali nu sunt suficienți ca test unic pentru screening general. Ei pot fi utili în anumite situații, mai ales la recomandarea medicului, dar nu pot confirma sau exclude singuri toate tipurile de cancer.\"}],[\"$\",\"p\",\"4\",{\"children\":\"Un marker tumoral poate fi normal chiar dacă există o problemă. În același timp, poate fi crescut și din cauze care nu sunt oncologice. Din acest motiv, medicul nu se uită la o singură cifră, ci la context: vârstă, simptome, istoric familial, examen clinic, analize generale și investigații imagistice.\"}],[\"$\",\"p\",\"5\",{\"children\":\"De ce este importantă fosfataza alcalină?\"}],[\"$\",\"p\",\"6\",{\"children\":\"Fosfataza alcalină este o analiză care oferă informații despre anumite procese din organism, mai ales despre ficat, căile biliare și sistemul osos. Ea nu este o analiză care diagnostichează cancerul. Totuși, este importantă pentru că poate semnala că în organism există o modificare care trebuie înțeleasă.\"}],[\"$\",\"p\",\"7\",{\"children\":\"O valoare crescută a fosfatazei alcaline poate apărea în probleme hepatice, biliare, osoase, în inflamații, în anumite tulburări metabolice sau în alte situații medicale. Uneori, tocmai astfel de modificări nespecifice îi arată medicului că trebuie investigat mai departe: ficatul, bila, oasele, inflamația sau alte organe.\"}],\"$L20\",\"$L21\",\"$L22\",\"$L23\",\"$L24\",\"$L25\",\"$L26\",\"$L27\",\"$L28\",\"$L29\",\"$L2a\",\"$L2b\",\"$L2c\",\"$L2d\",\"$L2e\",\"$L2f\",\"$L30\",\"$L31\",\"$L32\",\"$L33\",\"$L34\",\"$L35\",\"$L36\",\"$L37\",\"$L38\",\"$L39\",\"$L3a\",\"$L3b\",\"$L3c\",\"$L3d\",\"$L3e\",\"$L3f\",\"$L40\",\"$L41\",\"$L42\",\"$L43\",\"$L44\",\"$L45\",\"$L46\",\"$L47\",\"$L48\"]}]]}]}]]\n"])</script><script>self.__next_f.push([1,"20:[\"$\",\"p\",\"8\",{\"children\":\"De aceea, fosfataza alcalină este utilă ca parte dintr-un complex de analize, nu ca verdict. Ea trebuie comparată cu GGT, bilirubină, transaminaze, calciu, vitamina D, hemoleucogramă, markeri de inflamație și cu simptomele pacientului. Numai așa se poate înțelege dacă modificarea este importantă sau dacă are o explicație benignă.\"}]\n21:[\"$\",\"p\",\"9\",{\"children\":\"Ce analize pot intra într-o evaluare generală de risc?\"}]\n22:[\"$\",\"p\",\"10\",{\"children\":\"Medicul poate recomanda, în funcție de vârstă, simptome și istoric:\"}]\n23:[\"$\",\"p\",\"11\",{\"children\":\"- hemoleucogramă completă;\"}]\n24:[\"$\",\"p\",\"12\",{\"children\":\"- VSH, CRP și alți markeri de inflamație;\"}]\n25:[\"$\",\"p\",\"13\",{\"children\":\"- glicemie și profil metabolic;\"}]\n26:[\"$\",\"p\",\"14\",{\"children\":\"- funcție hepatică: ALT, AST, GGT, bilirubină, fosfatază alcalină;\"}]\n27:[\"$\",\"p\",\"15\",{\"children\":\"- funcție renală;\"}]\n28:[\"$\",\"p\",\"16\",{\"children\":\"- calciu, vitamina D și alți indicatori pentru metabolismul osos;\"}]\n29:[\"$\",\"p\",\"17\",{\"children\":\"- ecografie abdominală;\"}]\n2a:[\"$\",\"p\",\"18\",{\"children\":\"- investigații imagistice atunci când există indicație;\"}]\n2b:[\"$\",\"p\",\"19\",{\"children\":\"- screening specific pentru vârstă, sex și istoric familial.\"}]\n2c:[\"$\",\"p\",\"20\",{\"children\":\"Nu toți pacienții au nevoie de același set de analize. Un plan bun este personalizat.\"}]\n2d:[\"$\",\"p\",\"21\",{\"children\":\"Când trebuie să mergi la medic?\"}]\n2e:[\"$\",\"p\",\"22\",{\"children\":\"Merită să programezi o evaluare dacă apar semne precum:\"}]\n2f:[\"$\",\"p\",\"23\",{\"children\":\"- scădere inexplicabilă în greutate;\"}]\n30:[\"$\",\"p\",\"24\",{\"children\":\"- oboseală persistentă;\"}]\n31:[\"$\",\"p\",\"25\",{\"children\":\"- dureri care nu trec;\"}]\n32:[\"$\",\"p\",\"26\",{\"children\":\"- sângerări neobișnuite;\"}]\n33:[\"$\",\"p\",\"27\",{\"children\":\"- noduli sau modificări ale pielii;\"}]\n34:[\"$\",\"p\",\"28\",{\"children\":\"- tuse persistentă;\"}]\n35:[\"$\",\"p\",\"29\",{\"children\":\"- tulburări digestive repetate;\"}]\n36:[\"$\",\"p\",\"30\",{\"children\":\"- febră sau transpirații nocturne fără explicație;\"}]\n37:[\"$\",\"p\",\"31\",{\"children\":\"- slăbiciune, amorțeli, tulburări de mers sau simptome neurologice noi.\"}]\n38:[\"$\",\"p\",\"32\",{\"children\":\"Aceste semne nu înseamnă automat cancer, dar nu trebuie ignorate.\"}]\n39:[\"$\",\"p\",\"33\",{\"children\":\"Cum reducem riscul în viața de zi cu zi?\"}]\n3a:[\"$\",\"p\",\"34\",{\"children\":\"Prevenția reală începe cu lucruri simple, dar constante:\"}]\n3b:[\"$\",\"p\",\"35\",{\"children\":\"- renunțarea la fumat;\"}]\n3c:[\"$\",\"p\",\"36\",{\"children\":\"- limitarea alcoolului;\"}]\n3d:[\"$\",\"p\",\"37\",{\"children\":\"- alimentație echilibrată;\"}]\n3e:[\"$\",\"p\",\"38\",{\"children\":\"- greutate controlată;\"}]\n3f:[\"$\",\"p\",\"39\",{\"children\":\"- mișcare regulată;\"}]\n40:[\"$\",\"p\",\"40\",{\"children\":\"- somn suficient;\"}]\n41:[\"$\",\"p\",\"41\",{\"children\":\"- tratarea inflamațiilor cronice;\"}]\n42:[\"$\",\"p\",\"42\",{\"children\":\"- controale medicale periodice;\"}]\n43:[\"$\",\"p\",\"43\",{\"children\":\"- screening recomandat de medic.\"}]\n44:[\"$\",\"p\",\"44\",{\"children\":\"La Revimed PLUS+, pacientul poate primi o evaluare orientată pe starea generală, sistemul nervos, funcție, recuperare și simptome asociate. Dacă medicul observă semne care necesită investigație oncologică, pacientul trebuie direcționat către specialistul potrivit. Medicina bună înseamnă colaborare între specialități, nu promisiuni exagerate.\"}]\n45:[\"$\",\"p\",\"45\",{\"className\":\"blogAppointmentLine\",\"children\":\"Pentru detalii despre evaluare și programare:\"}]\n46:[\"$\",\"p\",\"46\",{\"className\":\"blogPhoneLine\",\"children\":\"+373 79 422 908\"}]\n47:[\"$\",\"p\",\"47\",{\"className\":\"blogPhoneLine\",\"children\":\"022 60 50 60\"}]\n48:[\"$\",\"p\",\"48\",{\"className\":\"blogDisclaimerLine\",\"children\":\"Acest articol este informativ și nu înlocuiește consultația medicală.\"}]\n"])</script><script>self.__next_f.push([1,"1d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"49:I[27201,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"IconMark\"]\n1a:null\n"])</script><script>self.__next_f.push([1,"1f:[[\"$\",\"title\",\"0\",{\"children\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"Revimed,centru medical Chișinău,neurolog Chișinău,neurochirurg Chișinău,fizioterapie Chișinău,reabilitare medicală Chișinău\"}],[\"$\",\"meta\",\"3\",{\"name\":\"robots\",\"content\":\"index, follow\"}],[\"$\",\"meta\",\"4\",{\"name\":\"googlebot\",\"content\":\"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:title\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:url\",\"content\":\"https://revimed.site/\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:locale\",\"content\":\"ro_MD\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image\",\"content\":\"https://revimed.site/images/medical-bg.jpg\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:image:alt\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"14\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:title\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image\",\"content\":\"https://revimed.site/images/medical-bg.jpg\"}],[\"$\",\"link\",\"19\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"20\",{\"rel\":\"icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"21\",{\"rel\":\"apple-touch-icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"$L49\",\"22\",{}]]\n"])</script>
+<article class="rmShell adminCard prose blogPostArticle blogArticleCard    articleReadableText" style="max-width:920px!important;margin:0 auto!important;padding:44px!important;;max-width:920px!important;margin:0 auto!important;padding:48px!important;"><div class="postHeroImage" style="background-image:url(https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&amp;fit=crop&amp;w=1400&amp;q=80)"></div><div class="blogReadableContent"><p>Cancerul este una dintre bolile care poate evolua mult timp fără simptome clare. Uneori omul se simte bine, lucrează, doarme normal și nu are dureri evidente, dar în organism pot exista procese care merită verificate din timp. De aceea prevenția nu înseamnă frică și nu înseamnă să căutăm singuri diagnostice pe internet. Prevenția înseamnă controale regulate, analize corect alese și interpretarea lor de către medic.</p><p class="blogDisclaimerLine">Un lucru important trebuie spus clar: Revimed PLUS+ nu este centru oncologic și nu înlocuiește medicul oncolog. Activitatea noastră este orientată spre sistemul nervos, neurologie, recuperare medicală și evaluare funcțională. Totuși, în practica medicală generală, starea organismului, inflamația, metabolismul, oboseala, durerile, slăbiciunea sau simptomele neurologice pot ridica întrebări care necesită o evaluare mai largă. Dacă există suspiciune oncologică, diagnosticul și tratamentul aparțin medicului oncolog, iar pacientul trebuie să urmeze recomandările acestuia.</p><p>De ce nu ajunge un singur oncomarker?</p><p>Mulți pacienți cred că există o analiză simplă care poate spune sigur dacă există sau nu cancer. În realitate, markerii tumorali nu sunt suficienți ca test unic pentru screening general. Ei pot fi utili în anumite situații, mai ales la recomandarea medicului, dar nu pot confirma sau exclude singuri toate tipurile de cancer.</p><p>Un marker tumoral poate fi normal chiar dacă există o problemă. În același timp, poate fi crescut și din cauze care nu sunt oncologice. Din acest motiv, medicul nu se uită la o singură cifră, ci la context: vârstă, simptome, istoric familial, examen clinic, analize generale și investigații imagistice.</p><p>De ce este importantă fosfataza alcalină?</p><p>Fosfataza alcalină este o analiză care oferă informații despre anumite procese din organism, mai ales despre ficat, căile biliare și sistemul osos. Ea nu este o analiză care diagnostichează cancerul. Totuși, este importantă pentru că poate semnala că în organism există o modificare care trebuie înțeleasă.</p><p>O valoare crescută a fosfatazei alcaline poate apărea în probleme hepatice, biliare, osoase, în inflamații, în anumite tulburări metabolice sau în alte situații medicale. Uneori, tocmai astfel de modificări nespecifice îi arată medicului că trebuie investigat mai departe: ficatul, bila, oasele, inflamația sau alte organe.</p><p>De aceea, fosfataza alcalină este utilă ca parte dintr-un complex de analize, nu ca verdict. Ea trebuie comparată cu GGT, bilirubină, transaminaze, calciu, vitamina D, hemoleucogramă, markeri de inflamație și cu simptomele pacientului. Numai așa se poate înțelege dacă modificarea este importantă sau dacă are o explicație benignă.</p><p>Ce analize pot intra într-o evaluare generală de risc?</p><p>Medicul poate recomanda, în funcție de vârstă, simptome și istoric:</p><p>- hemoleucogramă completă;</p><p>- VSH, CRP și alți markeri de inflamație;</p><p>- glicemie și profil metabolic;</p><p>- funcție hepatică: ALT, AST, GGT, bilirubină, fosfatază alcalină;</p><p>- funcție renală;</p><p>- calciu, vitamina D și alți indicatori pentru metabolismul osos;</p><p>- ecografie abdominală;</p><p>- investigații imagistice atunci când există indicație;</p><p>- screening specific pentru vârstă, sex și istoric familial.</p><p>Nu toți pacienții au nevoie de același set de analize. Un plan bun este personalizat.</p><p>Când trebuie să mergi la medic?</p><p>Merită să programezi o evaluare dacă apar semne precum:</p><p>- scădere inexplicabilă în greutate;</p><p>- oboseală persistentă;</p><p>- dureri care nu trec;</p><p>- sângerări neobișnuite;</p><p>- noduli sau modificări ale pielii;</p><p>- tuse persistentă;</p><p>- tulburări digestive repetate;</p><p>- febră sau transpirații nocturne fără explicație;</p><p>- slăbiciune, amorțeli, tulburări de mers sau simptome neurologice noi.</p><p>Aceste semne nu înseamnă automat cancer, dar nu trebuie ignorate.</p><p>Cum reducem riscul în viața de zi cu zi?</p><p>Prevenția reală începe cu lucruri simple, dar constante:</p><p>- renunțarea la fumat;</p><p>- limitarea alcoolului;</p><p>- alimentație echilibrată;</p><p>- greutate controlată;</p><p>- mișcare regulată;</p><p>- somn suficient;</p><p>- tratarea inflamațiilor cronice;</p><p>- controale medicale periodice;</p><p>- screening recomandat de medic.</p><p>La Revimed PLUS+, pacientul poate primi o evaluare orientată pe starea generală, sistemul nervos, funcție, recuperare și simptome asociate. Dacă medicul observă semne care necesită investigație oncologică, pacientul trebuie direcționat către specialistul potrivit. Medicina bună înseamnă colaborare între specialități, nu promisiuni exagerate.</p><p class="blogAppointmentLine">Pentru detalii despre evaluare și programare:</p><p class="blogPhoneLine">+373 79 422 908</p><p class="blogPhoneLine">022 60 50 60</p><p class="blogDisclaimerLine">Acest articol este informativ și nu înlocuiește consultația medicală.</p></div></article></section><!--$--><!--/$--></main><footer class="rmFooter"><div class="rmShell rmFooterGrid"><div class="footerBrand"><img src="/images/logo.png" alt="REVIMED" class="footerLogo"/><p>© <!-- -->2026<!-- --> Centrul Medical Revimed PLUS+. <!-- -->Все права защищены.</p></div><div class="footerSchedule"><h3>График работы:</h3><p class="footerAddress"><img class="footerMiniIcon" src="https://img.icons8.com/color/96/marker.png" alt="address" loading="lazy"/> <!-- -->ул. Мирча чел Бэтрын 13/2</p><p>Понедельник–Пятница: 09:00–15:00</p><p>022 60 50 60</p></div><div class="footerLinks"><h3>Полезные ссылки</h3><div><a href="/ru/">Главная</a><a href="/ru/despre-noi/">О нас</a><a href="/ru/servicii/">Услуги</a><a href="/ru/preturi/">Цены</a><a href="/ru/aplicatii/teste-si-instrumente/">Тесты и инструменты</a><a href="/ru/contact/">Контакты</a><a href="/ru/termeni-si-conditii/">Условия использования</a><a href="/ru/cookies/">Cookies</a></div></div><div class="footerSocial"><h3>Мы в соцсетях</h3><a class="fbIcon8" href="https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed"><img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook"/></a></div></div></footer><div class="mobileCallBar"><a href="tel:+37379422908">Sună</a><a href="/contact">Contact</a></div><script src="/_next/static/chunks/0p8tu7idk~nwx.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[20037,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n3:I[70119,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n4:I[93219,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n10:I[68027,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0arcz_jzxt8re.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"ru\",\"blog\",\"cum-reducem-riscul-de-cancer\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[[\"lang\",\"ru\",\"d\",null],{\"children\":[\"blog\",{\"children\":[[\"slug\",\"cum-reducem-riscul-de-cancer\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0arcz_jzxt8re.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0w6v12296r7s-.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/0y6dzejklle~6.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ro\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"MedicalClinic\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"image\\\":\\\"https://revimed.site/images/medical-bg.jpg\\\",\\\"description\\\":\\\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\\\",\\\"telephone\\\":\\\"022 60 50 60\\\",\\\"email\\\":\\\"revimed@revimed.md\\\",\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Ciocana\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"openingHours\\\":\\\"Mo-Fr 09:00-19:00\\\",\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"PhysicalTherapy\\\",\\\"Rehabilitation\\\"]}\"}}],[\"$\",\"$L2\",null,{}],[\"$\",\"$L3\",null,{}],[\"$\",\"$L4\",null,{}],[\"$\",\"main\",null,{\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"MedicalClinic\\\",\\\"@id\\\":\\\"https://revimed.site/#medical-clinic\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"logo\\\":\\\"https://revimed.site/images/logo.png\\\",\\\"image\\\":\\\"https://revimed.site/images/hero-bg.jpg\\\",\\\"telephone\\\":[\\\"022 60 50 60\\\",\\\"+373 79 422 908\\\"],\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Chișinău\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"geo\\\":{\\\"@type\\\":\\\"GeoCoordinates\\\",\\\"latitude\\\":47.044,\\\"longitude\\\":28.883},\\\"openingHoursSpecification\\\":[{\\\"@type\\\":\\\"OpeningHoursSpecification\\\",\\\"dayOfWeek\\\":[\\\"Monday\\\",\\\"Tuesday\\\",\\\"Wednesday\\\",\\\"Thursday\\\",\\\"Friday\\\"],\\\"opens\\\":\\\"09:00\\\",\\\"closes\\\":\\\"19:00\\\"}],\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"Physiotherapy\\\",\\\"PhysicalTherapy\\\",\\\"Rehabilitation\\\"],\\\"availableLanguage\\\":[\\\"Romanian\\\",\\\"English\\\",\\\"Russian\\\",\\\"Ukrainian\\\"],\\\"priceRange\\\":\\\"$$\\\",\\\"sameAs\\\":[]}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"@id\\\":\\\"https://revimed.site/#website\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"potentialAction\\\":{\\\"@type\\\":\\\"SearchAction\\\",\\\"target\\\":\\\"https://revimed.site/?s={search_term_string}\\\",\\\"query-input\\\":\\\"required name=search_term_string\\\"}}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":[\\\"MedicalClinic\\\",\\\"LocalBusiness\\\"],\\\"@id\\\":\\\"https://revimed.site/#revimed-plus\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"alternateName\\\":\\\"Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"image\\\":\\\"https://revimed.site/images/hero-bg.jpg\\\",\\\"logo\\\":\\\"https://revimed.site/images/logo.png\\\",\\\"telephone\\\":[\\\"022 60 50 60\\\",\\\"+373 79 422 908\\\"],\\\"priceRange\\\":\\\"$$\\\",\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Chișinău\\\",\\\"postalCode\\\":\\\"\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"areaServed\\\":[\\\"Chișinău\\\",\\\"Ciocana\\\",\\\"Moldova\\\"],\\\"openingHours\\\":\\\"Mo-Fr 09:00-19:00\\\",\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"Physical therapy\\\",\\\"Rehabilitation\\\",\\\"Functional diagnostics\\\"],\\\"availableLanguage\\\":[\\\"Romanian\\\",\\\"English\\\",\\\"Russian\\\",\\\"Ukrainian\\\"],\\\"hasMap\\\":\\\"https://revimed.site/contact\\\"}\"}}],\"$L5\"]}],\"$L6\",\"$L7\",\"$L8\",\"$L9\"]}]}]]}],{\"children\":[\"$La\",{\"children\":[\"$Lb\",{\"children\":[\"$Lc\",{\"children\":[\"$Ld\",{},null,false,null]},null,false,\"$@e\"]},null,false,\"$@e\"]},null,false,\"$@e\"]},null,false,null],\"$Lf\",false]],\"m\":\"$undefined\",\"G\":[\"$10\",[\"$L11\"]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"DlgVXk4VwDwZHoJSeHS8T\"}\n"])</script><script>self.__next_f.push([1,"12:I[39756,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n13:I[37457,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n14:I[56691,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n15:I[69717,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n16:I[956,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n18:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"OutletBoundary\"]\n19:\"$Sreact.suspense\"\n1c:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"ViewportBoundary\"]\n1e:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"MetadataBoundary\"]\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]\n"])</script><script>self.__next_f.push([1,"6:[\"$\",\"$L14\",null,{}]\n7:[\"$\",\"div\",null,{\"className\":\"mobileCallBar\",\"children\":[[\"$\",\"a\",null,{\"href\":\"tel:+37379422908\",\"children\":\"Sună\"}],[\"$\",\"a\",null,{\"href\":\"/contact\",\"children\":\"Contact\"}]]}]\n8:[\"$\",\"$L15\",null,{}]\n9:[\"$\",\"$L16\",null,{}]\na:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nb:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nc:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nd:[\"$\",\"$1\",\"c\",{\"children\":[\"$L17\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/049xb2g0pobge.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L18\",null,{\"children\":[\"$\",\"$19\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@1a\"}]}]]}]\n1b:[]\ne:\"$W1b\"\nf:[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L1c\",null,{\"children\":\"$L1d\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$L1e\",null,{\"children\":[\"$\",\"$19\",null,{\"name\":\"Next.Metadata\",\"children\":\"$L1f\"}]}]}],null]}]\n11:[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0arcz_jzxt8re.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]\n"])</script><script>self.__next_f.push([1,"17:[[\"$\",\"section\",null,{\"className\":\"pageHero blogPostHero innerPageHero\",\"children\":[\"$\",\"div\",null,{\"className\":\"rmShell\",\"children\":[[\"$\",\"p\",null,{\"className\":\"crumb\",\"children\":[\"Блог\",\" / \",\"Cum reducem riscul de cancer: prevenție, analize și controale regulate\"]}],[\"$\",\"h1\",null,{\"children\":\"Cum reducem riscul de cancer: prevenție, analize și controale regulate\"}],[\"$\",\"p\",null,{\"className\":\"lead\",\"children\":\"Cancerul poate evolua fără simptome. Prevenția înseamnă controale regulate, analize interpretate corect și evaluarea factorilor de risc.\"}]]}]}],[\"$\",\"section\",null,{\"className\":\"rmSection blogPostSection\",\"children\":[\"$\",\"article\",null,{\"className\":\"rmShell adminCard prose blogPostArticle blogArticleCard\",\"children\":[[\"$\",\"div\",null,{\"className\":\"postHeroImage\",\"style\":{\"backgroundImage\":\"url(https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format\u0026fit=crop\u0026w=1400\u0026q=80)\"}}],[\"$\",\"div\",null,{\"className\":\"blogReadableContent\",\"children\":[[\"$\",\"p\",\"0\",{\"children\":\"Cancerul este una dintre bolile care poate evolua mult timp fără simptome clare. Uneori omul se simte bine, lucrează, doarme normal și nu are dureri evidente, dar în organism pot exista procese care merită verificate din timp. De aceea prevenția nu înseamnă frică și nu înseamnă să căutăm singuri diagnostice pe internet. Prevenția înseamnă controale regulate, analize corect alese și interpretarea lor de către medic.\"}],[\"$\",\"p\",\"1\",{\"className\":\"blogDisclaimerLine\",\"children\":\"Un lucru important trebuie spus clar: Revimed PLUS+ nu este centru oncologic și nu înlocuiește medicul oncolog. Activitatea noastră este orientată spre sistemul nervos, neurologie, recuperare medicală și evaluare funcțională. Totuși, în practica medicală generală, starea organismului, inflamația, metabolismul, oboseala, durerile, slăbiciunea sau simptomele neurologice pot ridica întrebări care necesită o evaluare mai largă. Dacă există suspiciune oncologică, diagnosticul și tratamentul aparțin medicului oncolog, iar pacientul trebuie să urmeze recomandările acestuia.\"}],[\"$\",\"p\",\"2\",{\"children\":\"De ce nu ajunge un singur oncomarker?\"}],[\"$\",\"p\",\"3\",{\"children\":\"Mulți pacienți cred că există o analiză simplă care poate spune sigur dacă există sau nu cancer. În realitate, markerii tumorali nu sunt suficienți ca test unic pentru screening general. Ei pot fi utili în anumite situații, mai ales la recomandarea medicului, dar nu pot confirma sau exclude singuri toate tipurile de cancer.\"}],[\"$\",\"p\",\"4\",{\"children\":\"Un marker tumoral poate fi normal chiar dacă există o problemă. În același timp, poate fi crescut și din cauze care nu sunt oncologice. Din acest motiv, medicul nu se uită la o singură cifră, ci la context: vârstă, simptome, istoric familial, examen clinic, analize generale și investigații imagistice.\"}],[\"$\",\"p\",\"5\",{\"children\":\"De ce este importantă fosfataza alcalină?\"}],[\"$\",\"p\",\"6\",{\"children\":\"Fosfataza alcalină este o analiză care oferă informații despre anumite procese din organism, mai ales despre ficat, căile biliare și sistemul osos. Ea nu este o analiză care diagnostichează cancerul. Totuși, este importantă pentru că poate semnala că în organism există o modificare care trebuie înțeleasă.\"}],[\"$\",\"p\",\"7\",{\"children\":\"O valoare crescută a fosfatazei alcaline poate apărea în probleme hepatice, biliare, osoase, în inflamații, în anumite tulburări metabolice sau în alte situații medicale. Uneori, tocmai astfel de modificări nespecifice îi arată medicului că trebuie investigat mai departe: ficatul, bila, oasele, inflamația sau alte organe.\"}],\"$L20\",\"$L21\",\"$L22\",\"$L23\",\"$L24\",\"$L25\",\"$L26\",\"$L27\",\"$L28\",\"$L29\",\"$L2a\",\"$L2b\",\"$L2c\",\"$L2d\",\"$L2e\",\"$L2f\",\"$L30\",\"$L31\",\"$L32\",\"$L33\",\"$L34\",\"$L35\",\"$L36\",\"$L37\",\"$L38\",\"$L39\",\"$L3a\",\"$L3b\",\"$L3c\",\"$L3d\",\"$L3e\",\"$L3f\",\"$L40\",\"$L41\",\"$L42\",\"$L43\",\"$L44\",\"$L45\",\"$L46\",\"$L47\",\"$L48\"]}]]}]}]]\n"])</script><script>self.__next_f.push([1,"20:[\"$\",\"p\",\"8\",{\"children\":\"De aceea, fosfataza alcalină este utilă ca parte dintr-un complex de analize, nu ca verdict. Ea trebuie comparată cu GGT, bilirubină, transaminaze, calciu, vitamina D, hemoleucogramă, markeri de inflamație și cu simptomele pacientului. Numai așa se poate înțelege dacă modificarea este importantă sau dacă are o explicație benignă.\"}]\n21:[\"$\",\"p\",\"9\",{\"children\":\"Ce analize pot intra într-o evaluare generală de risc?\"}]\n22:[\"$\",\"p\",\"10\",{\"children\":\"Medicul poate recomanda, în funcție de vârstă, simptome și istoric:\"}]\n23:[\"$\",\"p\",\"11\",{\"children\":\"- hemoleucogramă completă;\"}]\n24:[\"$\",\"p\",\"12\",{\"children\":\"- VSH, CRP și alți markeri de inflamație;\"}]\n25:[\"$\",\"p\",\"13\",{\"children\":\"- glicemie și profil metabolic;\"}]\n26:[\"$\",\"p\",\"14\",{\"children\":\"- funcție hepatică: ALT, AST, GGT, bilirubină, fosfatază alcalină;\"}]\n27:[\"$\",\"p\",\"15\",{\"children\":\"- funcție renală;\"}]\n28:[\"$\",\"p\",\"16\",{\"children\":\"- calciu, vitamina D și alți indicatori pentru metabolismul osos;\"}]\n29:[\"$\",\"p\",\"17\",{\"children\":\"- ecografie abdominală;\"}]\n2a:[\"$\",\"p\",\"18\",{\"children\":\"- investigații imagistice atunci când există indicație;\"}]\n2b:[\"$\",\"p\",\"19\",{\"children\":\"- screening specific pentru vârstă, sex și istoric familial.\"}]\n2c:[\"$\",\"p\",\"20\",{\"children\":\"Nu toți pacienții au nevoie de același set de analize. Un plan bun este personalizat.\"}]\n2d:[\"$\",\"p\",\"21\",{\"children\":\"Când trebuie să mergi la medic?\"}]\n2e:[\"$\",\"p\",\"22\",{\"children\":\"Merită să programezi o evaluare dacă apar semne precum:\"}]\n2f:[\"$\",\"p\",\"23\",{\"children\":\"- scădere inexplicabilă în greutate;\"}]\n30:[\"$\",\"p\",\"24\",{\"children\":\"- oboseală persistentă;\"}]\n31:[\"$\",\"p\",\"25\",{\"children\":\"- dureri care nu trec;\"}]\n32:[\"$\",\"p\",\"26\",{\"children\":\"- sângerări neobișnuite;\"}]\n33:[\"$\",\"p\",\"27\",{\"children\":\"- noduli sau modificări ale pielii;\"}]\n34:[\"$\",\"p\",\"28\",{\"children\":\"- tuse persistentă;\"}]\n35:[\"$\",\"p\",\"29\",{\"children\":\"- tulburări digestive repetate;\"}]\n36:[\"$\",\"p\",\"30\",{\"children\":\"- febră sau transpirații nocturne fără explicație;\"}]\n37:[\"$\",\"p\",\"31\",{\"children\":\"- slăbiciune, amorțeli, tulburări de mers sau simptome neurologice noi.\"}]\n38:[\"$\",\"p\",\"32\",{\"children\":\"Aceste semne nu înseamnă automat cancer, dar nu trebuie ignorate.\"}]\n39:[\"$\",\"p\",\"33\",{\"children\":\"Cum reducem riscul în viața de zi cu zi?\"}]\n3a:[\"$\",\"p\",\"34\",{\"children\":\"Prevenția reală începe cu lucruri simple, dar constante:\"}]\n3b:[\"$\",\"p\",\"35\",{\"children\":\"- renunțarea la fumat;\"}]\n3c:[\"$\",\"p\",\"36\",{\"children\":\"- limitarea alcoolului;\"}]\n3d:[\"$\",\"p\",\"37\",{\"children\":\"- alimentație echilibrată;\"}]\n3e:[\"$\",\"p\",\"38\",{\"children\":\"- greutate controlată;\"}]\n3f:[\"$\",\"p\",\"39\",{\"children\":\"- mișcare regulată;\"}]\n40:[\"$\",\"p\",\"40\",{\"children\":\"- somn suficient;\"}]\n41:[\"$\",\"p\",\"41\",{\"children\":\"- tratarea inflamațiilor cronice;\"}]\n42:[\"$\",\"p\",\"42\",{\"children\":\"- controale medicale periodice;\"}]\n43:[\"$\",\"p\",\"43\",{\"children\":\"- screening recomandat de medic.\"}]\n44:[\"$\",\"p\",\"44\",{\"children\":\"La Revimed PLUS+, pacientul poate primi o evaluare orientată pe starea generală, sistemul nervos, funcție, recuperare și simptome asociate. Dacă medicul observă semne care necesită investigație oncologică, pacientul trebuie direcționat către specialistul potrivit. Medicina bună înseamnă colaborare între specialități, nu promisiuni exagerate.\"}]\n45:[\"$\",\"p\",\"45\",{\"className\":\"blogAppointmentLine\",\"children\":\"Pentru detalii despre evaluare și programare:\"}]\n46:[\"$\",\"p\",\"46\",{\"className\":\"blogPhoneLine\",\"children\":\"+373 79 422 908\"}]\n47:[\"$\",\"p\",\"47\",{\"className\":\"blogPhoneLine\",\"children\":\"022 60 50 60\"}]\n48:[\"$\",\"p\",\"48\",{\"className\":\"blogDisclaimerLine\",\"children\":\"Acest articol este informativ și nu înlocuiește consultația medicală.\"}]\n"])</script><script>self.__next_f.push([1,"1d:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"49:I[27201,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"IconMark\"]\n1a:null\n"])</script><script>self.__next_f.push([1,"1f:[[\"$\",\"title\",\"0\",{\"children\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"Revimed,centru medical Chișinău,neurolog Chișinău,neurochirurg Chișinău,fizioterapie Chișinău,reabilitare medicală Chișinău\"}],[\"$\",\"meta\",\"3\",{\"name\":\"robots\",\"content\":\"index, follow\"}],[\"$\",\"meta\",\"4\",{\"name\":\"googlebot\",\"content\":\"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:title\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:url\",\"content\":\"https://revimed.site/\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:locale\",\"content\":\"ro_MD\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image\",\"content\":\"https://revimed.site/images/medical-bg.jpg\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:image:alt\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"14\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:title\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image\",\"content\":\"https://revimed.site/images/medical-bg.jpg\"}],[\"$\",\"link\",\"19\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"20\",{\"rel\":\"icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"21\",{\"rel\":\"apple-touch-icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"$L49\",\"22\",{}]]\n"])</script>
+
+
+
 
 
 
@@ -289,14 +267,8 @@ article.a{
   var resumeTimer = null;
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
-
-  function getArticle(){
-    return document.querySelector("article");
-  }
-
-  function cleanText(text){
-    return (text || "").replace(/\s+/g," ").trim();
-  }
+  function getArticle(){ return document.querySelector("article"); }
+  function cleanText(text){ return (text || "").replace(/\s+/g," ").trim(); }
 
   function makeTextReadable(){
     var article = getArticle();
@@ -322,7 +294,6 @@ article.a{
   function splitIntoChunks(text){
     var cleaned = cleanText(text);
     if(!cleaned) return [];
-
     var pieces = cleaned.match(/[^.!?;:]+[.!?;:]?|[^.!?;:]+$/g) || [cleaned];
     var out = [];
 
@@ -330,13 +301,13 @@ article.a{
       piece = cleanText(piece);
       if(!piece) return;
 
-      if(piece.length <= 180){
+      if(piece.length <= 160){
         out.push(piece);
       }else{
         var words = piece.split(" ");
         var buf = "";
         words.forEach(function(w){
-          if((buf + " " + w).trim().length > 150){
+          if((buf + " " + w).trim().length > 135){
             if(buf) out.push(buf.trim());
             buf = w;
           }else{
@@ -353,7 +324,6 @@ article.a{
   function buildChunks(){
     var article = getArticle();
     if(!article) return [];
-
     var nodes = article.querySelectorAll("h2,h3,p,li");
     var arr = [];
 
@@ -389,7 +359,6 @@ article.a{
 
   function speakCurrent(){
     if(!("speechSynthesis" in window)) return;
-
     if(!isReading) return;
 
     if(!chunks.length || currentIndex >= chunks.length){
@@ -448,27 +417,20 @@ article.a{
     ignoreCancelEnd = true;
     window.speechSynthesis.cancel();
     setButtonReading(false);
-
-    setTimeout(function(){
-      ignoreCancelEnd = false;
-    }, 120);
+    setTimeout(function(){ ignoreCancelEnd = false; }, 120);
   }
 
   function updateSpeedAndContinue(delta){
     setRate(getRate() + delta);
-
     if(!isReading) return;
 
     clearTimeout(resumeTimer);
-
     ignoreCancelEnd = true;
     window.speechSynthesis.cancel();
 
     resumeTimer = setTimeout(function(){
       ignoreCancelEnd = false;
-      if(isReading){
-        speakCurrent();
-      }
+      if(isReading) speakCurrent();
     }, 120);
   }
 
