@@ -67,6 +67,7 @@ export default function Header() {
      <Link className={isActive("/preturi") ? "activeNav" : ""} href={link("/preturi")} onClick={close}>{text.prices}</Link>
      <Link className={isActive("/galerie") ? "activeNav" : ""} href={link("/galerie")} onClick={close}>{text.gallery}</Link>
      <Link className={isActive("/blog") ? "activeNav" : ""} href={link("/blog")} onClick={close}>{text.blog}</Link>
+     <Link className={isActive("/intrebari") ? "activeNav" : ""} href={link("/intrebari")} onClick={close}>{text.questions || "Întrebări"}</Link>
      <Link className={isActive("/contact") ? "activeNav" : ""} href={link("/contact")} onClick={close}>{text.contact}</Link>
     </div>
    </nav>
