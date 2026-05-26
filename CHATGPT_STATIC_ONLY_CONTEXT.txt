@@ -100,3 +100,11 @@ RU: Прослушать статью
 UA: Прослухати статтю
 Use browser SpeechSynthesis. Keep it accessible and large because it helps patients with dizziness, headaches, fatigue, or neurological difficulties.
 
+ARTICLE ACCESSIBILITY TOOLS:
+Every blog article should include large visible controls near the start:
+- Read aloud button
+- A+ button: make text bigger
+- A− button: make text smaller
+Text size should apply to the article only and save in localStorage.
+This helps patients with dizziness, headaches, fatigue, visual sensitivity, or neurological difficulties.
+
