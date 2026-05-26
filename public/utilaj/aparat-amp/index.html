@@ -130,7 +130,7 @@ body:has(#revimedAmpInjectedDetail) .equipmentDetailSection{
 </style>
 
 
-<style id="REVIMED_AMP_ORIGINAL_CARD_TEXT_STYLE">
+<style id="REVIMED_AMP_ORIGINAL_TEXT_ONLY_STYLE">
 .equipmentDetailCard h2{font-size:30px!important;line-height:1.25!important;margin:24px 0 14px!important;color:#0f172a!important}
 .equipmentDetailCard h3{font-size:22px!important;line-height:1.3!important;margin:24px 0 10px!important;color:#0f172a!important}
 .equipmentDetailCard p,.equipmentDetailCard li{font-size:18px!important;line-height:1.68!important;color:#334155!important}
@@ -143,28 +143,23 @@ body:has(#revimedAmpInjectedDetail) .equipmentDetailSection{
 <h1>Aparat AMP</h1>
 <p><strong>Analizator spectral al formulei sanguine / laborator expres pentru evaluare rapidă, neinvazivă.</strong></p>
 <h2>Diagnostic expres în Chișinău: Aparat AMP pentru evaluare rapidă și orientare medicală</h2>
-<p class="ampNote"><b>Pe scurt:</b> Aparatul AMP este folosit pentru diagnostic expres și evaluare orientativă rapidă. La Revimed PLUS+ Chișinău, el nu înlocuiește analizele clasice, dar poate ajuta medicul să înțeleagă mai repede direcția posibilă a problemei și pașii potriviți pentru pacient.</p>
+<p class="ampNote">Aparatul AMP este folosit pentru diagnostic expres și evaluare orientativă rapidă. La Revimed PLUS+ Chișinău, el nu înlocuiește analizele clasice, dar poate ajuta medicul să înțeleagă mai repede direcția posibilă a problemei și pașii potriviți pentru pacient.</p>
 <h3>Ce este Aparatul AMP?</h3>
-<p>Aparatul AMP este inclus în categoria utilajelor pentru diagnostic expres. În practică, este folosit pentru o evaluare rapidă, neinvazivă și orientativă. Pacientul nu trebuie să îl înțeleagă ca pe o analiză clasică de laborator, ci ca pe o metodă suplimentară care oferă medicului informații de pornire.</p>
-<h3>De ce este important un diagnostic expres?</h3>
-<p>În Chișinău și Moldova, mulți oameni caută o evaluare rapidă pentru că nu știu de unde să înceapă: neurolog, terapeut, analize, fizioterapie, recuperare sau tratament pentru stres. Diagnostic expres poate fi util ca prim pas pentru structurarea consultației.</p>
-<h3>Ce poate arăta și ce nu trebuie să promitem?</h3>
-<p>Un aparat de diagnostic expres poate oferi indicii și direcții orientative, dar nu trebuie prezentat ca aparat care vede toate bolile. El nu înlocuiește analizele de sânge, investigațiile imagistice sau consultațiile de specialitate.</p>
-<h3>De ce contează interpretarea medicului?</h3>
-<p>Un rezultat izolat nu este suficient. Contează simptomele, vârsta, stresul, somnul, alimentația, istoricul bolilor, medicamentele și reacția corpului la tratamente anterioare. La Revimed PLUS+, rezultatul se discută cu medicul.</p>
-<h3>Abordarea Revimed PLUS+</h3>
-<p>Revimed PLUS+ este o clinică fondată în 2005, în Chișinău, Moldova. Medicul nostru are peste 35 de ani de experiență în domeniu, iar tratamentul se alege individual pentru fiecare pacient.</p>
+<p>Aparatul AMP este inclus în categoria utilajelor pentru diagnostic expres. În practică, este folosit pentru o evaluare rapidă, neinvazivă și orientativă. Nu este o analiză clasică de laborator, ci o metodă suplimentară de orientare.</p>
+<h3>Când poate fi util?</h3>
+<p>Poate fi util când pacientul are simptome neclare: oboseală, amețeală, dureri de cap, tensiune nervoasă, somn slab, slăbiciune sau recuperare lentă.</p>
+<h3>Ce nu trebuie să promitem?</h3>
+<p>Aparatul poate oferi indicii orientative, dar nu vede toate bolile și nu înlocuiește analizele de sânge, investigațiile imagistice sau consultațiile de specialitate.</p>
+<h3>De ce contează medicul?</h3>
+<p>Rezultatul se interpretează împreună cu simptomele, istoricul pacientului, stresul, somnul, tratamentele anterioare și starea generală. La Revimed PLUS+, decizia se ia individual, cu acordul pacientului.</p>
+<h3>Revimed PLUS+</h3>
+<p>Revimed PLUS+ este o clinică fondată în 2005, în Chișinău, Moldova. Medicul nostru are peste 35 de ani de experiență în domeniu.</p>
 <p class="ampWarning">⚠️ Informațiile au caracter educațional și nu înlocuiesc consultația medicală.</p>
 <a href="../">← Înapoi la utilaj</a>
 </article></div></section>
 
 <section class="equipmentAmpDetail" id="revimedAmpInjectedDetail">
-  <div class="equipmentAudioBox">
-    <button type="button" class="equipmentReadBtn" data-lang="ro-RO" data-start-text="🔊 Ascultă descrierea utilajului" data-stop-text="⏹ Oprește citirea">🔊 Ascultă descrierea utilajului</button>
-    <div class="equipmentVoicePanel">
-      <button type="button" class="equipmentVoiceBtn" data-equipment-voice="slower">− Mai lent</button>
-      <div class="equipmentRateBadge"><span>Viteză</span><b class="equipmentRateLabel">90%</b></div>
-      <button type="button" class="equipmentVoiceBtn" data-equipment-voice="faster">+ Mai rapid</button>
+  <button type="button" class="equipmentVoiceBtn" data-equipment-voice="faster">+ Mai rapid</button>
     </div>
   </div>
 
@@ -224,106 +219,5 @@ body:has(#revimedAmpInjectedDetail) .equipmentDetailSection{
 
 
 
-
-<script id="REVIMED_AMP_STATIC_AUDIO_SCRIPT">
-(function(){
-  if(window.__revimedAmpAudioReady) return;
-  window.__revimedAmpAudioReady = true;
-
-  var RATE_KEY="revimedEquipmentVoiceRate";
-  var DEFAULT_RATE=.9,MIN_RATE=.6,MAX_RATE=1.35;
-  var chunks=[],currentIndex=0,activeButton=null,isReading=false,ignoreCancelEnd=false,resumeTimer=null;
-
-  function clamp(n,min,max){return Math.max(min,Math.min(max,n))}
-  function cleanText(text){return(text||"").replace(/\s+/g," ").trim()}
-  function getBox(){return document.getElementById("revimedAmpInjectedDetail")}
-  function getRate(){try{var r=parseFloat(localStorage.getItem(RATE_KEY)||DEFAULT_RATE);if(!isNaN(r))return clamp(r,MIN_RATE,MAX_RATE)}catch(e){}return DEFAULT_RATE}
-  function setRate(rate){
-    rate=Math.round(clamp(rate,MIN_RATE,MAX_RATE)*100)/100;
-    try{localStorage.setItem(RATE_KEY,String(rate))}catch(e){}
-    var label=document.querySelector(".equipmentRateLabel");
-    if(label)label.textContent=Math.round(rate*100)+"%";
-    return rate;
-  }
-  function splitIntoChunks(text){
-    var c=cleanText(text);if(!c)return[];
-    var pieces=c.match(/[^.!?;:]+[.!?;:]?|[^.!?;:]+$/g)||[c],out=[];
-    pieces.forEach(function(piece){
-      piece=cleanText(piece);if(!piece)return;
-      if(piece.length<=160){out.push(piece)}
-      else{
-        var words=piece.split(" "),buf="";
-        words.forEach(function(w){
-          if((buf+" "+w).trim().length>135){if(buf)out.push(buf.trim());buf=w}
-          else{buf+=" "+w}
-        });
-        if(buf.trim())out.push(buf.trim());
-      }
-    });
-    return out;
-  }
-  function buildChunks(){
-    var box=getBox();if(!box)return[];
-    var nodes=box.querySelectorAll("h2,h3,p,li"),arr=[];
-    nodes.forEach(function(n){
-      if(n.closest(".equipmentAudioBox"))return;
-      splitIntoChunks(n.innerText||n.textContent||"").forEach(function(c){arr.push(c)});
-    });
-    return arr;
-  }
-  function pickVoice(lang){
-    var voices=window.speechSynthesis.getVoices()||[];
-    if(!voices.length)return null;
-    var shortLang=lang.split("-")[0].toLowerCase();
-    return voices.find(v=>(v.lang||"").toLowerCase()===lang.toLowerCase())||voices.find(v=>(v.lang||"").toLowerCase().startsWith(shortLang))||null;
-  }
-  function setButton(reading){
-    var btn=activeButton||document.querySelector(".equipmentReadBtn");
-    if(!btn)return;
-    btn.innerHTML=reading?btn.dataset.stopText:btn.dataset.startText;
-  }
-  function speakCurrent(){
-    if(!("speechSynthesis"in window))return;
-    if(!isReading)return;
-    if(!chunks.length||currentIndex>=chunks.length){
-      isReading=false;currentIndex=0;setButton(false);return;
-    }
-    var btn=activeButton||document.querySelector(".equipmentReadBtn");
-    var lang=btn?.dataset.lang||"ro-RO";
-    var u=new SpeechSynthesisUtterance(chunks[currentIndex]);
-    u.lang=lang;u.rate=getRate();u.pitch=1;
-    var voice=pickVoice(lang);if(voice)u.voice=voice;
-    u.onend=function(){if(ignoreCancelEnd)return;if(!isReading)return;currentIndex+=1;speakCurrent()};
-    u.onerror=function(){if(ignoreCancelEnd)return;isReading=false;setButton(false)};
-    window.speechSynthesis.speak(u);
-  }
-  function start(btn){
-    if(!("speechSynthesis"in window)){alert("Browserul tău nu suportă citirea vocală.");return}
-    activeButton=btn;chunks=buildChunks();currentIndex=0;isReading=true;ignoreCancelEnd=false;
-    window.speechSynthesis.cancel();setButton(true);setTimeout(speakCurrent,80);
-  }
-  function stop(){
-    isReading=false;ignoreCancelEnd=true;window.speechSynthesis.cancel();setButton(false);
-    setTimeout(function(){ignoreCancelEnd=false},120);
-  }
-  function updateSpeed(delta){
-    setRate(getRate()+delta);
-    if(!isReading)return;
-    clearTimeout(resumeTimer);
-    ignoreCancelEnd=true;
-    window.speechSynthesis.cancel();
-    resumeTimer=setTimeout(function(){ignoreCancelEnd=false;if(isReading)speakCurrent()},120);
-  }
-  document.addEventListener("click",function(e){
-    var read=e.target.closest(".equipmentReadBtn");
-    if(read){if(isReading||window.speechSynthesis.speaking)stop();else start(read);return}
-    if(e.target.closest("[data-equipment-voice='slower']")){updateSpeed(-.08);return}
-    if(e.target.closest("[data-equipment-voice='faster']")){updateSpeed(.08);return}
-  });
-  window.addEventListener("beforeunload",function(){if("speechSynthesis"in window)window.speechSynthesis.cancel()});
-  setRate(getRate());
-  if("speechSynthesis"in window){window.speechSynthesis.onvoiceschanged=function(){}}
-})();
-</script>
 
 </body></html>
