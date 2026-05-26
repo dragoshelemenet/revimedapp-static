@@ -5,13 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Aparat AMP — Diagnostic expres Chișinău | Revimed PLUS+</title>
 <meta name="description" content="Aparat AMP pentru diagnostic expres în Chișinău. Evaluare rapidă, neinvazivă și orientativă la Revimed PLUS+, clinică fondată în 2005."/>
-<link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-<link rel="manifest" href="/site.webmanifest"/>
-<meta name="theme-color" content="#ffffff"/>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter,Arial,sans-serif;color:#0f172a;background:#fff}
@@ -62,6 +55,140 @@ a{text-decoration:none;color:inherit}
   .footerGrid{grid-template-columns:1fr}
 }
 </style>
+
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="theme-color" content="#ffffff"/>
+
+<style id="REVIMED_AMP_FINAL_STATIC_STYLE">
+/* AMP only: hide old short utilaj card because new full content is below */
+.equipmentDetailSection,
+.equipmentDetailCard{
+  display:none!important;
+}
+
+.ampFullPage{
+  max-width:980px!important;
+  margin:42px auto 60px!important;
+  padding:34px!important;
+  border-radius:26px!important;
+  background:#f8fafc!important;
+  border:1px solid #e5e7eb!important;
+  box-shadow:0 14px 36px rgba(15,23,42,.07)!important;
+}
+.ampFullPage h2{
+  font-size:34px!important;
+  line-height:1.22!important;
+  margin:0 0 18px!important;
+  color:#0f172a!important;
+}
+.ampFullPage h3{
+  font-size:25px!important;
+  line-height:1.3!important;
+  margin:30px 0 12px!important;
+  color:#0f172a!important;
+}
+.ampFullPage p,
+.ampFullPage li{
+  font-size:20px!important;
+  line-height:1.72!important;
+  color:#334155!important;
+}
+.ampFullPage ul{
+  padding-left:28px!important;
+}
+.ampNote{
+  background:#fff!important;
+  border-left:5px solid #d71920!important;
+  padding:18px 20px!important;
+  border-radius:16px!important;
+  margin:0 0 24px!important;
+}
+.ampBadge{
+  display:inline-block!important;
+  margin-bottom:16px!important;
+  padding:8px 13px!important;
+  border-radius:999px!important;
+  background:#e8f4fb!important;
+  color:#0877b8!important;
+  font-weight:900!important;
+  font-size:14px!important;
+}
+.ampAudioBox{
+  margin:0 0 26px!important;
+  padding:15px!important;
+  border-radius:22px!important;
+  background:rgba(15,23,42,.06)!important;
+  border:1px solid #e2e8f0!important;
+}
+.ampReadBtn{
+  width:100%!important;
+  border:0!important;
+  border-radius:17px!important;
+  padding:17px 20px!important;
+  font-size:20px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  background:#d71920!important;
+  color:#fff!important;
+}
+.ampVoicePanel{
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr!important;
+  gap:10px!important;
+  align-items:center!important;
+  margin-top:10px!important;
+}
+.ampVoiceBtn{
+  border-radius:14px!important;
+  padding:12px 10px!important;
+  font-size:15px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  background:#fff!important;
+  color:#0f172a!important;
+  border:1px solid #cbd5e1!important;
+}
+.ampRateBadge{
+  min-width:88px!important;
+  padding:10px!important;
+  border-radius:14px!important;
+  text-align:center!important;
+  background:#fff!important;
+  border:1px solid #cbd5e1!important;
+}
+.ampRateBadge span{
+  display:block!important;
+  font-size:12px!important;
+}
+.ampRateLabel{
+  display:block!important;
+  font-size:22px!important;
+  font-weight:950!important;
+  color:#d71920!important;
+  line-height:1!important;
+}
+@media(max-width:760px){
+  .ampFullPage{
+    max-width:calc(100% - 24px)!important;
+    padding:24px!important;
+  }
+  .ampFullPage h2{font-size:28px!important}
+  .ampFullPage h3{font-size:23px!important}
+  .ampFullPage p,
+  .ampFullPage li{
+    font-size:19px!important;
+    line-height:1.68!important;
+  }
+  .ampVoicePanel{grid-template-columns:1fr!important}
+  .ampRateBadge{width:100%!important}
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -153,6 +280,56 @@ a{text-decoration:none;color:inherit}
     <a class="back" href="/utilaj/">← Înapoi la utilaj</a>
   </article>
 </main>
+
+
+<!-- REVIMED_AMP_FINAL_STATIC_START -->
+<section class="ampFullPage" id="ampFullArticle">
+  <div class="ampAudioBox">
+    <button type="button" class="ampReadBtn" data-start-text="🔊 Ascultă descrierea utilajului" data-stop-text="⏹ Oprește citirea">🔊 Ascultă descrierea utilajului</button>
+    <div class="ampVoicePanel">
+      <button type="button" class="ampVoiceBtn" data-speed="slower">− Mai lent</button>
+      <div class="ampRateBadge"><span>Viteză</span><b class="ampRateLabel">90%</b></div>
+      <button type="button" class="ampVoiceBtn" data-speed="faster">+ Mai rapid</button>
+    </div>
+  </div>
+
+  <span class="ampBadge">Diagnostic expres</span>
+  <h2>Diagnostic expres în Chișinău: Aparat AMP pentru evaluare rapidă și orientare medicală</h2>
+
+  <p class="ampNote"><b>Pe scurt:</b> Aparatul AMP este folosit pentru diagnostic expres și evaluare orientativă rapidă. La Revimed PLUS+ Chișinău, el nu înlocuiește analizele clasice, dar poate ajuta medicul să înțeleagă mai repede direcția posibilă a problemei și pașii potriviți pentru pacient.</p>
+
+  <h3>Ce este Aparatul AMP?</h3>
+  <p>Aparatul AMP este inclus în categoria utilajelor pentru diagnostic expres. În practică, acest tip de echipament este folosit pentru o evaluare rapidă, neinvazivă și orientativă. Pacientul nu trebuie să îl înțeleagă ca pe o analiză clasică de laborator, ci ca pe o metodă suplimentară care oferă medicului informații de pornire.</p>
+  <p>Mulți pacienți ajung la clinică cu simptome care nu arată imediat o singură cauză: oboseală, amețeală, dureri de cap, tensiune nervoasă, somn slab, dureri de spate, slăbiciune, anxietate sau senzația că organismul nu se mai recuperează normal.</p>
+
+  <h3>De ce este important un diagnostic expres?</h3>
+  <p>În Chișinău și Moldova, mulți oameni caută o evaluare rapidă pentru că nu știu de unde să înceapă: neurolog, terapeut, analize, fizioterapie, recuperare sau tratament pentru stres. Diagnostic expres poate fi util ca prim pas, pentru structurarea consultației și alegerea unei direcții mai clare.</p>
+
+  <h3>Ce poate arăta și ce nu trebuie să promitem?</h3>
+  <p>Este important să explicăm cinstit. Un aparat de diagnostic expres poate oferi indicii și direcții orientative, dar nu trebuie prezentat ca aparat care „vede toate bolile” sau care înlocuiește analizele de sânge, imagistica sau consultațiile de specialitate.</p>
+  <p>Dacă există simptome serioase — leșin, slăbiciune pe o parte, durere toracică, febră, scădere mare în greutate, confuzie, durere puternică bruscă sau simptome neurologice noi — pacientul are nevoie de evaluare medicală completă și uneori urgentă.</p>
+
+  <h3>Cui i se poate potrivi această evaluare?</h3>
+  <ul>
+    <li>persoanelor cu oboseală persistentă și cauză neclară;</li>
+    <li>pacienților cu amețeli, tensiune nervoasă sau somn slab;</li>
+    <li>persoanelor care simt slăbiciune sau recuperare lentă;</li>
+    <li>pacienților cu mai multe simptome mici, dar repetate;</li>
+    <li>oamenilor care caută o direcție medicală de pornire în Chișinău.</li>
+  </ul>
+
+  <h3>De ce contează interpretarea medicului?</h3>
+  <p>Un rezultat izolat nu este suficient. Contează omul, simptomele lui, vârsta, stresul, somnul, alimentația, istoricul bolilor, medicamentele, tensiunea arterială și reacția corpului la tratamente anterioare.</p>
+  <p>La Revimed PLUS+, rezultatul unei evaluări expres se discută cu medicul. Medicul poate decide dacă este nevoie de analize clasice, fizioterapie, consultație neurologică, recuperare, proceduri blânde, regim sau tratament medicamentos.</p>
+
+  <h3>Diagnostic expres și abordarea Revimed PLUS+</h3>
+  <p>Revimed PLUS+ este o clinică fondată în 2005, în Chișinău, Moldova. Medicul nostru are peste 35 de ani de experiență în domeniu, iar tratamentul este ales individual pentru fiecare pacient.</p>
+  <p>Unii pacienți se simt mai bine cu fizioterapie, recuperare, proceduri blânde și schimbări de regim. Alții au nevoie de medicamente. Uneori este nevoie de combinație. Dacă pacientul preferă o direcție mai naturistă sau mai blândă și situația permite, medicul poate ține cont de asta.</p>
+
+  <h3>Concluzie</h3>
+  <p>Aparatul AMP pentru diagnostic expres poate fi un instrument util pentru pacienții din Chișinău și Moldova care vor o evaluare rapidă și o direcție medicală clară. Folosit responsabil, el poate ajuta consultația. La Revimed PLUS+, accentul este pe explicație simplă, experiență medicală, tratament individual și acordul pacientului.</p>
+</section>
+<!-- REVIMED_AMP_FINAL_STATIC_END -->
 
 <footer class="footer">
   <div class="rmShell footerGrid">
@@ -288,6 +465,89 @@ a{text-decoration:none;color:inherit}
 
     window.location.href = target + "?v=blog-hard-load";
   }, true);
+})();
+</script>
+
+
+<script id="REVIMED_AMP_FINAL_AUDIO_SCRIPT">
+(function(){
+  var RATE_KEY="revimedEquipmentVoiceRate";
+  var DEFAULT_RATE=.9,MIN_RATE=.6,MAX_RATE=1.35;
+  var chunks=[],currentIndex=0,activeButton=null,isReading=false,ignoreCancelEnd=false,resumeTimer=null;
+
+  function clamp(n,min,max){return Math.max(min,Math.min(max,n))}
+  function cleanText(text){return(text||"").replace(/\s+/g," ").trim()}
+  function getRate(){try{var r=parseFloat(localStorage.getItem(RATE_KEY)||DEFAULT_RATE);if(!isNaN(r))return clamp(r,MIN_RATE,MAX_RATE)}catch(e){}return DEFAULT_RATE}
+  function setRate(rate){
+    rate=Math.round(clamp(rate,MIN_RATE,MAX_RATE)*100)/100;
+    try{localStorage.setItem(RATE_KEY,String(rate))}catch(e){}
+    var label=document.querySelector(".ampRateLabel");
+    if(label)label.textContent=Math.round(rate*100)+"%";
+    return rate;
+  }
+  function splitIntoChunks(text){
+    var c=cleanText(text);if(!c)return[];
+    var pieces=c.match(/[^.!?;:]+[.!?;:]?|[^.!?;:]+$/g)||[c],out=[];
+    pieces.forEach(function(piece){
+      piece=cleanText(piece);if(!piece)return;
+      if(piece.length<=160){out.push(piece)}
+      else{
+        var words=piece.split(" "),buf="";
+        words.forEach(function(w){
+          if((buf+" "+w).trim().length>135){if(buf)out.push(buf.trim());buf=w}else{buf+=" "+w}
+        });
+        if(buf.trim())out.push(buf.trim());
+      }
+    });
+    return out;
+  }
+  function buildChunks(){
+    var article=document.getElementById("ampFullArticle");if(!article)return[];
+    var nodes=article.querySelectorAll("h2,h3,p,li"),arr=[];
+    nodes.forEach(function(n){
+      if(n.closest(".ampAudioBox"))return;
+      splitIntoChunks(n.innerText||n.textContent||"").forEach(function(c){arr.push(c)});
+    });
+    return arr;
+  }
+  function setButton(reading){
+    var btn=activeButton||document.querySelector(".ampReadBtn");
+    if(!btn)return;
+    btn.innerHTML=reading?btn.dataset.stopText:btn.dataset.startText;
+  }
+  function speakCurrent(){
+    if(!("speechSynthesis"in window))return;
+    if(!isReading)return;
+    if(!chunks.length||currentIndex>=chunks.length){isReading=false;currentIndex=0;setButton(false);return}
+    var u=new SpeechSynthesisUtterance(chunks[currentIndex]);
+    u.lang="ro-RO";u.rate=getRate();u.pitch=1;
+    u.onend=function(){if(ignoreCancelEnd)return;if(!isReading)return;currentIndex+=1;speakCurrent()};
+    u.onerror=function(){if(ignoreCancelEnd)return;isReading=false;setButton(false)};
+    window.speechSynthesis.speak(u);
+  }
+  function start(btn){
+    if(!("speechSynthesis"in window)){alert("Browserul tău nu suportă citirea vocală.");return}
+    activeButton=btn;chunks=buildChunks();currentIndex=0;isReading=true;ignoreCancelEnd=false;
+    window.speechSynthesis.cancel();setButton(true);setTimeout(speakCurrent,80);
+  }
+  function stop(){
+    isReading=false;ignoreCancelEnd=true;window.speechSynthesis.cancel();setButton(false);
+    setTimeout(function(){ignoreCancelEnd=false},120);
+  }
+  function updateSpeed(delta){
+    setRate(getRate()+delta);
+    if(!isReading)return;
+    clearTimeout(resumeTimer);ignoreCancelEnd=true;window.speechSynthesis.cancel();
+    resumeTimer=setTimeout(function(){ignoreCancelEnd=false;if(isReading)speakCurrent()},120);
+  }
+  document.addEventListener("click",function(e){
+    var read=e.target.closest(".ampReadBtn");
+    if(read){if(isReading||window.speechSynthesis.speaking)stop();else start(read);return}
+    if(e.target.closest("[data-speed='slower']")){updateSpeed(-.08);return}
+    if(e.target.closest("[data-speed='faster']")){updateSpeed(.08);return}
+  });
+  window.addEventListener("beforeunload",function(){if("speechSynthesis"in window)window.speechSynthesis.cancel()});
+  setRate(getRate());
 })();
 </script>
 
