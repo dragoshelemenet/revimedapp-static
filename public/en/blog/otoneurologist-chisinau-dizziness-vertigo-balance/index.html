@@ -22,6 +22,49 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Looking for an otoneurologist in Chisinau? What dizziness can mean", "description": "People often search for an otoneurologist when they feel dizzy or have vertigo. Here is when a neurologist can help and when ENT may be needed.", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80", "datePublished": "2026-05-26", "dateModified": "2026-05-26", "author": {"@type": "Organization", "name": "Centrul Medical Revimed PLUS+"}, "publisher": {"@type": "Organization", "name": "Centrul Medical Revimed PLUS+", "logo": {"@type": "ImageObject", "url": "https://revimed.site/images/logo.png"}}, "mainEntityOfPage": "https://revimed.site/en/blog/otoneurologist-chisinau-dizziness-vertigo-balance"}</script>
+
+<style>
+.readAloudBox{
+  margin:0 0 24px 0;
+  padding:18px;
+  border-radius:20px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  box-shadow:0 8px 24px rgba(15,23,42,.06);
+}
+.readAloudBtn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  border:0;
+  border-radius:18px;
+  padding:18px 22px;
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+  background:#d71920;
+  color:#fff;
+  box-shadow:0 10px 24px rgba(215,25,32,.25);
+}
+.readAloudBtn:hover{filter:brightness(.96)}
+.readAloudBtn:active{transform:translateY(1px)}
+.readAloudHint{
+  margin:10px 4px 0;
+  font-size:15px;
+  line-height:1.5;
+  color:#475569;
+  text-align:center;
+}
+@media(max-width:640px){
+  .readAloudBtn{
+    font-size:18px;
+    padding:17px 18px;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="rmHeader">
@@ -59,7 +102,19 @@
 <section class="rmSection">
   <div class="rmShell" style="max-width:920px">
     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80" alt="Looking for an otoneurologist in Chisinau? What dizziness can mean" style="width:100%;border-radius:22px;margin-bottom:28px;max-height:420px;object-fit:cover"/>
-    <article class="card" style="padding:28px">
+    
+<div class="readAloudBox">
+  <button
+    type="button"
+    class="readAloudBtn"
+    data-lang="ro-RO"
+    data-start-text="🔊 Ascultă articolul"
+    data-stop-text="⏹ Oprește citirea"
+    data-unsupported="Browserul tău nu suportă citirea vocală."
+  >🔊 Ascultă articolul</button>
+  <p class="readAloudHint">Buton util pentru persoane care obosesc ușor la citit, au amețeli, dureri de cap sau probleme neurologice.</p>
+</div>
+<article class="card" style="padding:28px">
       
 <p>Many people search for an “otoneurologist” when they have dizziness, vertigo or balance problems. It is understandable, because dizziness can come from the inner ear, but it can also come from the nervous system.</p>
 <p>Revimed PLUS+ does not present itself as an ENT centre. But a neurological consultation can be useful when dizziness repeats, appears with headaches, numbness, weakness, unstable walking or the feeling that you are losing control.</p>
@@ -96,5 +151,87 @@
     <div class="footerSchedule"><h3>Program</h3><p>Str. Mircea cel Bătrân 13/2</p><p>Luni–Vineri: 09:00–15:00</p><p>022 60 50 60</p></div>
   </div>
 </footer>
+
+<script>
+(function(){
+  function cleanText(text){
+    return text
+      .replace(/\s+/g, " ")
+      .replace(/©.*$/g, "")
+      .trim();
+  }
+
+  function getArticleText(btn){
+    var article = btn.closest(".rmShell")?.querySelector("article");
+    if(!article) article = document.querySelector("article");
+    if(!article) return "";
+    return cleanText(article.innerText || article.textContent || "");
+  }
+
+  function pickVoice(lang){
+    var voices = window.speechSynthesis.getVoices() || [];
+    if(!voices.length) return null;
+    var shortLang = lang.split("-")[0];
+    return voices.find(v => (v.lang || "").toLowerCase() === lang.toLowerCase())
+      || voices.find(v => (v.lang || "").toLowerCase().startsWith(shortLang))
+      || null;
+  }
+
+  function speak(btn){
+    if(!("speechSynthesis" in window)){
+      alert(btn.dataset.unsupported || "Text-to-speech is not supported in this browser.");
+      return;
+    }
+
+    if(window.speechSynthesis.speaking){
+      window.speechSynthesis.cancel();
+      btn.innerHTML = btn.dataset.startText;
+      btn.dataset.playing = "0";
+      return;
+    }
+
+    var text = getArticleText(btn);
+    if(!text) return;
+
+    var lang = btn.dataset.lang || document.documentElement.lang || "ro-RO";
+    var utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+    utterance.rate = 0.92;
+    utterance.pitch = 1;
+
+    var voice = pickVoice(lang);
+    if(voice) utterance.voice = voice;
+
+    btn.innerHTML = btn.dataset.stopText;
+    btn.dataset.playing = "1";
+
+    utterance.onend = function(){
+      btn.innerHTML = btn.dataset.startText;
+      btn.dataset.playing = "0";
+    };
+    utterance.onerror = function(){
+      btn.innerHTML = btn.dataset.startText;
+      btn.dataset.playing = "0";
+    };
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  window.addEventListener("beforeunload", function(){
+    if("speechSynthesis" in window) window.speechSynthesis.cancel();
+  });
+
+  document.addEventListener("click", function(e){
+    var btn = e.target.closest(".readAloudBtn");
+    if(btn) speak(btn);
+  });
+
+  if("speechSynthesis" in window){
+    window.speechSynthesis.onvoiceschanged = function(){};
+  }
+})();
+</script>
+
 </body>
 </html>

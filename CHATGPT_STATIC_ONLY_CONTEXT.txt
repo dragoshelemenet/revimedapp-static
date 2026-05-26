@@ -91,3 +91,12 @@ This tool preserves old cards, inserts new cards first, creates pages, and updat
 Command pattern:
 python3 tools/add_static_blogs.py batchN /tmp/batchN_articles.json
 \n
+
+READ ALOUD BUTTON:
+Every blog article should have a large visible text-to-speech button near the start:
+RO: Ascultă articolul
+EN: Listen to article
+RU: Прослушать статью
+UA: Прослухати статтю
+Use browser SpeechSynthesis. Keep it accessible and large because it helps patients with dizziness, headaches, fatigue, or neurological difficulties.
+
