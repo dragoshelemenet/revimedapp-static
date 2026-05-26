@@ -116,3 +116,11 @@ Every blog article should include:
 Default article text should be slightly bigger, around 20px.
 Settings should save in localStorage.
 
+BLOG UI NOTE:
+On article pages, accessibility controls should sit over the main article image when that image exists.
+Use a glass / blur overlay style.
+Keep controls compact:
+- read aloud
+- slower / faster voice
+- + text / - text
+
