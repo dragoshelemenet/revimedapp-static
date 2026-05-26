@@ -249,6 +249,32 @@ function renderBlogContent(content: string) {
   });
 }
 
+
+function HomeTrustSection() {
+ return (
+  <section className="rmSection revimedHomeTrust">
+   <div className="rmShell">
+    <div className="revimedTrustGrid">
+     <div className="revimedTrustText">
+      <span className="revimedTrustBadge">Revimed PLUS+</span>
+      <h2>Experiență medicală, tratament individual și acordul pacientului</h2>
+      <p><b>Dr. Igor Revenco</b> are peste <b>35 de ani de experiență</b>, iar clinica <b>Revimed PLUS+</b> activează de peste <b>20 de ani</b> în Chișinău.</p>
+      <p>La Revimed PLUS+, tratamentul se alege individual pentru fiecare pacient. Medicul discută simptomele, istoricul, preferințele, reacțiile anterioare la tratament și posibilitățile reale ale fiecărui caz.</p>
+      <p>Dacă situația permite, pacientul poate opta pentru o abordare mai tradițională sau pentru metode mai blânde, cu direcție mai naturistă. Totul trebuie să fie sigur, explicat clar și făcut cu acordul pacientului.</p>
+     </div>
+     <div className="revimedTrustCards">
+      <div><strong>35+ ani</strong><span>experiență medicală Dr. Igor Revenco</span></div>
+      <div><strong>20+ ani</strong><span>experiență clinică Revimed PLUS+</span></div>
+      <div><strong>Individual</strong><span>tratamentul se alege pentru fiecare pacient</span></div>
+      <div><strong>Cu acord</strong><span>pacientul înțelege și acceptă planul</span></div>
+     </div>
+    </div>
+   </div>
+  </section>
+ );
+}
+
+
 const seoVisibleText = {
  ro: {
   servicesTitle: "Servicii medicale Revimed PLUS+ în Chișinău",
@@ -397,7 +423,9 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 
    <HomeCTA lang={lang} />
 
-   <section className="testimonialBand">
+   <HomeTrustSection />
+
+      <section className="testimonialBand">
     <div className="rmShell">
      <h2>{lang === "ro" ? "Reviews" : lang === "en" ? "Reviews" : lang === "ru" ? "Отзывы" : "Відгуки"}</h2>
      <ReviewCarousel lang={lang} />
