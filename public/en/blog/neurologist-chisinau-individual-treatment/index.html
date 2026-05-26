@@ -281,17 +281,26 @@ article. b,article. strong,article. a{font-size:inherit!important}
 }
 </style>
 
+
+<style id="REVIMED_FULL_BLOG_ARTICLE_MENU_FIX">
+.rmHeader .langs a{margin-left:10px!important}
+.rmLinks{display:flex!important;gap:22px!important;align-items:center!important}
+@media(max-width:900px){
+  .rmLinks{gap:12px!important;font-size:12px!important;flex-wrap:wrap!important;justify-content:flex-end!important}
+}
+</style>
+
 </head>
 <body>
 <header class="rmHeader">
-  <div class="rmTop"><div class="rmShell"><span></span><span class="langs">
-    <a class="" href="/blog/neurolog-chisinau-consultatie-tratament-individual/">RO</a>
-    <a class="langActive" href="/en/blog/neurologist-chisinau-individual-treatment/">EN</a>
-    <a class="" href="/ru/blog/nevrolog-kishinev-individualnoe-lechenie/">RU</a>
-    <a class="" href="/ua/blog/nevrolog-kyshyniv-indyvidualne-likuvannia/">UA</a>
-  </span></div></div>
+  <div class="rmTop">
+    <div class="rmShell">
+      <span></span>
+      <span class="langs"><a href="/blog/neurolog-chisinau-consultatie-tratament-individual/">RO</a><a href="/en/blog/neurologist-chisinau-individual-treatment/">EN</a><a href="/ru/blog/nevrolog-kishinev-individualnoe-lechenie/">RU</a><a href="/ua/blog/nevrolog-kyshyniv-indyvidualne-likuvannia/">UA</a></span>
+    </div>
+  </div>
   <nav class="rmNav rmShell">
-    <a class="rmLogo" href="/en/"><img src="/images/logo.png" alt="REVIMED"/></a>
+    <a class="rmLogo" href="/en"><img src="/images/logo.png" alt="REVIMED"/></a>
     <div class="rmLinks">
       <a href="/en/">Home</a>
       <a href="/en/despre-noi/">About Us</a>
@@ -301,7 +310,7 @@ article. b,article. strong,article. a{font-size:inherit!important}
       <a href="/en/preturi/">Prices</a>
       <a href="/en/galerie/">Gallery</a>
       <a class="activeNav" href="/en/blog/">Blog</a>
-      
+      <a href="/en/contact/">Contact</a>
     </div>
   </nav>
 </header>
