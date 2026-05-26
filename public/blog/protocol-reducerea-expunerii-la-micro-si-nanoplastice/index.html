@@ -5,99 +5,7 @@
 
 
 
-<style>
-.articleToolsBox{
-  margin:0 0 24px 0;
-  padding:16px;
-  border-radius:22px;
-  background:#f8fafc;
-  border:1px solid #e5e7eb;
-  box-shadow:0 8px 24px rgba(15,23,42,.06);
-}
-.articleToolsGrid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-}
-.readAloudBtn{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  border:0;
-  border-radius:18px;
-  padding:17px 20px;
-  font-size:20px;
-  font-weight:800;
-  cursor:pointer;
-  background:#d71920;
-  color:#fff;
-  box-shadow:0 10px 24px rgba(215,25,32,.25);
-}
-.smallControlGrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-.textSizeBtn,
-.voiceSpeedBtn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:14px;
-  padding:11px 12px;
-  font-size:15px;
-  font-weight:800;
-  cursor:pointer;
-  background:#fff;
-  color:#0f172a;
-  border:1.5px solid #d71920;
-}
-.voiceSpeedBtn{
-  border-color:#94a3b8;
-}
-.readAloudBtn:hover,
-.textSizeBtn:hover,
-.voiceSpeedBtn:hover{filter:brightness(.97)}
-.readAloudBtn:active,
-.textSizeBtn:active,
-.voiceSpeedBtn:active{transform:translateY(1px)}
-.articleToolsHint{
-  margin:10px 4px 0;
-  font-size:14px;
-  line-height:1.45;
-  color:#475569;
-  text-align:center;
-}
-article.articleLargeText{
-  font-size:var(--article-font-size, 20px);
-  line-height:1.78;
-}
-article.articleLargeText p,
-article.articleLargeText li{
-  font-size:var(--article-font-size, 20px);
-  line-height:1.78;
-}
-article.articleLargeText h2{
-  font-size:calc(var(--article-font-size, 20px) + 7px);
-  line-height:1.3;
-}
-@media(max-width:640px){
-  .readAloudBtn{
-    font-size:18px;
-    padding:16px 14px;
-  }
-  .smallControlGrid{
-    grid-template-columns:1fr 1fr;
-  }
-  .textSizeBtn,
-  .voiceSpeedBtn{
-    font-size:14px;
-    padding:10px 8px;
-  }
-}
-</style>
+
 
 
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -108,10 +16,118 @@ article.articleLargeText h2{
 <link rel="manifest" href="/site.webmanifest"/>
 <meta name="theme-color" content="#ffffff"/>
 
+
+<style>
+.articleToolsBox{
+  max-width:920px;
+  margin:0 auto 24px auto;
+  padding:14px;
+  border-radius:18px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  box-shadow:0 8px 22px rgba(15,23,42,.06);
+}
+.articleToolsBox *{
+  box-sizing:border-box;
+}
+.articleToolsGrid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.readAloudBtn{
+  width:100%;
+  border:0;
+  border-radius:16px;
+  padding:16px 18px;
+  font-size:19px;
+  font-weight:800;
+  cursor:pointer;
+  background:#d71920;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(215,25,32,.22);
+}
+.articleControlsRow{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+.articleSmallBtn{
+  border-radius:12px;
+  padding:10px 8px;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  background:#fff;
+  color:#0f172a;
+  border:1px solid #cbd5e1;
+  min-height:42px;
+}
+.articleSmallBtn.textBtn{
+  border-color:#d71920;
+}
+.articleSmallBtn:hover{background:#f1f5f9}
+.articleSmallBtn:active{transform:translateY(1px)}
+.articleToolsHint{
+  margin:8px 0 0;
+  font-size:13px;
+  line-height:1.4;
+  color:#64748b;
+  text-align:center;
+}
+.voiceRateLabel{
+  font-weight:800;
+  color:#d71920;
+}
+article.articleReadableText{
+  max-width:920px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:var(--article-font-size,20px);
+  line-height:1.8;
+}
+article.articleReadableText p,
+article.articleReadableText li{
+  font-size:var(--article-font-size,20px);
+  line-height:1.8;
+}
+article.articleReadableText h2{
+  font-size:calc(var(--article-font-size,20px) + 7px);
+  line-height:1.3;
+  margin-top:26px;
+}
+@media(max-width:760px){
+  .articleToolsBox{
+    margin-left:12px;
+    margin-right:12px;
+  }
+  .articleControlsRow{
+    grid-template-columns:1fr 1fr;
+  }
+  .readAloudBtn{
+    font-size:18px;
+    padding:15px 14px;
+  }
+  .articleSmallBtn{
+    font-size:14px;
+  }
+}
+</style>
+
 </head><body><div hidden=""><!--$--><!--/$--></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalClinic","name":"Centrul Medical Revimed PLUS+","url":"https://revimed.site","image":"https://revimed.site/images/medical-bg.jpg","description":"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.","telephone":"022 60 50 60","email":"revimed@revimed.md","address":{"@type":"PostalAddress","streetAddress":"Str. Mircea cel Bătrân 13/2","addressLocality":"Chișinău","addressRegion":"Ciocana","addressCountry":"MD"},"openingHours":"Mo-Fr 09:00-19:00","medicalSpecialty":["Neurology","Neurosurgery","PhysicalTherapy","Rehabilitation"]}</script><header class="rmHeader"><div class="rmTop"><div class="rmShell"><span></span><span class="langs"><a class="langActive" href="/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">RO</a><a class="" href="/en/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">EN</a><a class="" href="/ru/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">RU</a><a class="" href="/ua/blog/protocol-reducerea-expunerii-la-micro-si-nanoplastice/">UA</a></span></div></div><nav class="rmNav rmShell"><a class="rmLogo" aria-label="Centrul Medical Revimed PLUS+" href="/"><img src="/images/logo.png" alt="REVIMED"/></a><button class="hamburger" type="button" aria-label="Meniu" aria-expanded="false"><span></span><span></span><span></span></button><div class="rmLinks"><a class="" href="/">Acasă</a><a class="" href="/despre-noi/">Despre Noi</a><a class="" href="/servicii/">Servicii</a><a class="" href="/aplicatii/">Aplicații</a><a class="" href="/utilaj/">Utilaj</a><a class="" href="/preturi/">Prețuri</a><a class="" href="/galerie/">Galerie</a><a class="activeNav" href="/blog/">Blog</a><a class="" href="/contact/">Contact</a></div></nav></header><div class="languageFlagOverlay flag-ro" aria-hidden="true"><span class="flagEmoji">🇷🇴</span><span class="flagLabel">Română</span></div><main><script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalClinic","@id":"https://revimed.site/#medical-clinic","name":"Centrul Medical Revimed PLUS+","url":"https://revimed.site","logo":"https://revimed.site/images/logo.png","image":"https://revimed.site/images/hero-bg.jpg","telephone":["022 60 50 60","+373 79 422 908"],"address":{"@type":"PostalAddress","streetAddress":"Str. Mircea cel Bătrân 13/2","addressLocality":"Chișinău","addressRegion":"Chișinău","addressCountry":"MD"},"geo":{"@type":"GeoCoordinates","latitude":47.044,"longitude":28.883},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"}],"medicalSpecialty":["Neurology","Neurosurgery","Physiotherapy","PhysicalTherapy","Rehabilitation"],"availableLanguage":["Romanian","English","Russian","Ukrainian"],"priceRange":"$$","sameAs":[]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://revimed.site/#website","name":"Centrul Medical Revimed PLUS+","url":"https://revimed.site","potentialAction":{"@type":"SearchAction","target":"https://revimed.site/?s={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":["MedicalClinic","LocalBusiness"],"@id":"https://revimed.site/#revimed-plus","name":"Centrul Medical Revimed PLUS+","alternateName":"Revimed PLUS+","url":"https://revimed.site","image":"https://revimed.site/images/hero-bg.jpg","logo":"https://revimed.site/images/logo.png","telephone":["022 60 50 60","+373 79 422 908"],"priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"Str. Mircea cel Bătrân 13/2","addressLocality":"Chișinău","addressRegion":"Chișinău","postalCode":"","addressCountry":"MD"},"areaServed":["Chișinău","Ciocana","Moldova"],"openingHours":"Mo-Fr 09:00-19:00","medicalSpecialty":["Neurology","Neurosurgery","Physical therapy","Rehabilitation","Functional diagnostics"],"availableLanguage":["Romanian","English","Russian","Ukrainian"],"hasMap":"https://revimed.site/contact"}</script><section class="pageHero blogPostHero innerPageHero"><div class="rmShell"><p class="crumb">Blog<!-- --> / <!-- -->Protocol practic pentru reducerea expunerii la micro și nanoplastice</p><h1>Protocol practic pentru reducerea expunerii la micro și nanoplastice</h1><p class="lead">Măsuri practice pentru reducerea expunerii la micro și nanoplastice, susținerea intestinului, ficatului, metabolismului și protecției antioxidante.</p></div></section><section class="rmSection blogPostSection">
 
 </div>
   <p class="articleToolsHint">Poți asculta articolul sau poți mări textul dacă citești mai greu.</p>
+</div>
+
+<p class="articleToolsHint">Viteză voce: <b class="voiceRateLabel">92%</b></p>
+
+    <div class="smallControlGrid">
+      <button type="button" class="textSizeBtn" data-text-size="bigger">+ Text mai mare</button>
+      <button type="button" class="textSizeBtn" data-text-size="smaller">− Text mai mic</button>
+    </div>
+  </div>
+  <p class="articleToolsHint">Poți asculta articolul, schimba viteza vocii sau mări textul.</p>
 </div>
 
 <div class="articleToolsBox">
@@ -125,21 +141,19 @@ article.articleLargeText h2{
       data-unsupported="Browserul tău nu suportă citirea vocală."
     >🔊 Ascultă articolul</button>
 
-    <div class="smallControlGrid">
-      <button type="button" class="voiceSpeedBtn" data-voice-speed="slower">− Voce mai lent</button>
-      <button type="button" class="voiceSpeedBtn" data-voice-speed="faster">+ Voce mai rapid</button>
-    </div>
-
-    <p class="articleToolsHint">Viteză voce: <b class="voiceRateLabel">92%</b></p>
-
-    <div class="smallControlGrid">
-      <button type="button" class="textSizeBtn" data-text-size="bigger">+ Text mai mare</button>
-      <button type="button" class="textSizeBtn" data-text-size="smaller">− Text mai mic</button>
+    <div class="articleControlsRow">
+      <button type="button" class="articleSmallBtn" data-voice-speed="slower">− Mai lent</button>
+      <button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
+      <button type="button" class="articleSmallBtn textBtn" data-text-size="bigger">+ Text</button>
+      <button type="button" class="articleSmallBtn textBtn" data-text-size="smaller">− Text</button>
     </div>
   </div>
-  <p class="articleToolsHint">Poți asculta articolul, schimba viteza vocii sau mări textul.</p>
+  <p class="articleToolsHint">Poți asculta articolul, regla viteza vocii sau mări textul. Viteză: <span class="voiceRateLabel">90%</span></p>
 </div>
 <article class="rmShell adminCard prose blogPostArticle blogArticleCard"><div class="postHeroImage" style="background-image:url(https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&amp;fit=crop&amp;w=1400&amp;q=80)"></div><div class="blogReadableContent"><p>Protocol practic pentru reducerea expunerii la micro și nanoplastice</p><p>Microplasticele și nanoplasticele sunt particule foarte mici provenite din degradarea plasticului, ambalaje, textile sintetice, praf, apă, alimente procesate și unele obiecte folosite zilnic. În prezent, subiectul este discutat intens deoarece aceste particule pot ajunge în apă, hrană, aer și în mediul interior al locuinței.</p><p>Scopul acestui protocol este practic: reducerea expunerii cronice și susținerea mecanismelor naturale ale organismului — intestin, ficat, piele, rinichi, metabolism, inflamație și protecție antioxidantă.</p><p class="blogDisclaimerLine">Important: acest articol este informativ. Nu există, în prezent, o metodă clinic demonstrată care să elimine complet nanoplasticele din organism. Orice supliment, procedură sau schimbare majoră de rutină trebuie adaptată individual, mai ales în sarcină, boli cronice, tratamente medicamentoase, afecțiuni cardiovasculare, renale, hepatice sau neurologice.</p><h2 class="blogContentHeading">1. Ideea principală: nu “detox agresiv”, ci expunere mai mică</h2><p>Cea mai realistă strategie este să reducem intrările zilnice. Organismul are mecanisme proprii de eliminare și protecție, dar acestea pot fi suprasolicitate dacă expunerea este constantă.</p><p>Măsuri simple cu impact mare:</p><p>- nu încălziți mâncarea în plastic;</p><p>- nu turnați lichide fierbinți în pahare sau recipiente de plastic;</p><p>- evitați sticlele PET ținute la soare sau în mașină;</p><p>- folosiți sticlă, inox sau ceramică pentru depozitare;</p><p>- reduceți alimentele ultra-procesate și excesiv ambalate;</p><p>- evitați tocătoarele din plastic uzate;</p><p>- înlocuiți tigăile antiaderente deteriorate;</p><p>- aerisiți și aspirați regulat praful fin din locuință.</p><h2 class="blogContentHeading">2. Apă: filtrare și depozitare corectă</h2><p>Apa este considerată una dintre sursele posibile de expunere la particule microscopice. Nu toată lumea are nevoie de sisteme complexe, dar filtrarea poate fi o măsură utilă.</p><p>Opțiuni practice:</p><p>- filtru de apă de calitate pentru uz casnic;</p><p>- sistem cu osmoză inversă, dacă este posibil;</p><p>- depozitarea apei în sticlă sau inox;</p><p>- evitarea sticlelor PET expuse la temperaturi mari;</p><p>- schimbarea filtrelor conform recomandărilor producătorului.</p><p>Un sistem de filtrare nu este o garanție absolută, dar poate reduce expunerea dintr-o sursă importantă.</p><h2 class="blogContentHeading">3. Bucătărie fără plastic inutil</h2><p>Cele mai problematice situații apar când plasticul este încălzit, zgâriat, frecat sau expus la grăsimi și temperaturi mari.</p><p>Recomandări:</p><p>- folosiți caserole din sticlă pentru mâncare;</p><p>- încălziți mâncarea în farfurii de ceramică sau sticlă;</p><p>- evitați folia alimentară în contact cu alimente fierbinți;</p><p>- înlocuiți spatulele de plastic deteriorate;</p><p>- folosiți tocătoare din lemn, bambus sau materiale sigure;</p><p>- nu folosiți tigăi antiaderente zgâriate.</p><h2 class="blogContentHeading">4. Alimentație protectoare pentru intestin</h2><p>Intestinul este o barieră importantă. O dietă bogată în fibre susține tranzitul, microbiomul și eliminarea regulată.</p><p>Alimente utile:</p><p>- fibre: ovăz, psyllium, legume, semințe de in;</p><p>- pectină: mere, citrice;</p><p>- legume crucifere: broccoli, varză, conopidă;</p><p>- alimente fermentate: chefir, iaurt, murături naturale;</p><p>- proteine de calitate;</p><p>- apă suficientă zilnic.</p><p>Este important să creștem fibrele treptat. La persoanele cu balonare, colon iritabil sau afecțiuni digestive, schimbările trebuie făcute gradual.</p><h2 class="blogContentHeading">5. Suport antioxidant și antiinflamator</h2><p>Expunerea cronică la poluanți poate fi asociată cu stres oxidativ și inflamație. Nu înseamnă că suplimentele sunt obligatorii, dar alimentația poate ajuta.</p><p>Surse utile:</p><p>- vitamina C din fructe și legume;</p><p>- omega-3 din pește gras sau surse recomandate medical;</p><p>- polifenoli din ceai verde, fructe de pădure, cacao de calitate;</p><p>- curcumină din turmeric;</p><p>- sulforafan din broccoli;</p><p>- quercetină și N-acetilcisteină doar la recomandare medicală.</p><p>Suplimentele nu trebuie folosite ca soluție magică. Ele pot interacționa cu tratamente și nu sunt potrivite pentru toată lumea.</p><h2 class="blogContentHeading">6. Ficat, rinichi, piele și mișcare</h2><p>Organismul elimină compuși prin mai multe sisteme: ficat, bilă, intestin, rinichi, transpirație și respirație. Scopul este să susținem aceste mecanisme, nu să le forțăm.</p><p>Măsuri realiste:</p><p>- somn suficient;</p><p>- activitate fizică regulată;</p><p>- hidratare adecvată;</p><p>- tranzit intestinal regulat;</p><p>- reducerea alcoolului;</p><p>- reducerea zahărului în exces;</p><p>- menținerea greutății corporale într-un interval sănătos.</p><h2 class="blogContentHeading">7. Sauna: posibil ajutor, dar nu tratament garantat</h2><p>Sauna moderată poate susține transpirația, circulația și adaptarea organismului la stres termic. Unele persoane o folosesc ca parte dintr-o rutină de reducere a încărcării toxice.</p><p>Recomandare prudentă:</p><p>- începeți cu sesiuni scurte;</p><p>- hidratați-vă corect;</p><p>- evitați sauna dacă aveți contraindicații cardiovasculare, sarcină, febră, deshidratare, hipotensiune sau afecțiuni acute;</p><p>- nu combinați sauna cu suplimente sau proceduri agresive fără aviz medical.</p><p>Sauna nu trebuie prezentată ca metodă sigură de eliminare a nanoplasticelor. Poate fi o componentă de stil de viață, dar nu un tratament universal.</p><h2 class="blogContentHeading">8. Cazul Bryan Johnson: interesant, dar anecdotic</h2><p>Biohackerul Bryan Johnson a afirmat public că, după reducerea agresivă a expunerii la plastic și introducerea unor intervenții zilnice, ar fi redus semnificativ particulele de microplastice detectate în sânge și ar fi ajuns la nivel nedetectabil în spermă. Protocolul său include, potrivit afirmațiilor sale publice, saună uscată zilnică, evitarea plasticului în bucătărie, eliminarea ambalajelor plastice când este posibil, evitarea vaselor antiaderente deteriorate și filtrarea apei prin osmoză inversă.</p><p>Acest caz este util ca exemplu de interes public, dar trebuie interpretat cu prudență. Este un caz individual, de tip N=1, nu un studiu clinic controlat. Nu știm dacă rezultatele pot fi reproduse la alte persoane, ce rol a avut fiecare intervenție și dacă protocolul este potrivit pentru publicul larg.</p><p>Ce putem prelua prudent din această discuție:</p><p>- reducerea expunerii la plastic este logică și sigură în majoritatea cazurilor;</p><p>- filtrarea apei poate fi utilă;</p><p>- evitarea încălzirii plasticului este o măsură simplă;</p><p>- sauna poate fi folosită doar dacă este bine tolerată și nu există contraindicații;</p><p>- concluziile medicale trebuie bazate pe studii, nu pe un singur caz.</p><h2 class="blogContentHeading">9. Măsuri pentru copii și familie</h2><p>Copiii pot fi mai vulnerabili la expuneri de mediu, de aceea merită aplicate reguli simple în casă.</p><p>Recomandări:</p><p>- nu încălziți laptele sau mâncarea copiilor în plastic;</p><p>- folosiți biberoane și vase din sticlă când este posibil;</p><p>- evitați jucăriile plastice ieftine cu miros puternic;</p><p>- spălați textilele noi înainte de folosire;</p><p>- aerisiți frecvent;</p><p>- aspirați praful fin;</p><p>- evitați parfumurile de cameră și produsele inutile cu aerosoli.</p><h2 class="blogContentHeading">10. Ce trebuie evitat</h2><p>Nu orice metodă numită “detox” este sigură.</p><p>Evitați:</p><p>- chelatori fără indicație medicală;</p><p>- cure agresive de detoxifiere;</p><p>- suplimente promovate ca eliminând complet nanoplasticele;</p><p>- posturi extreme fără supraveghere;</p><p>- saună excesivă;</p><p>- automedicație;</p><p>- combinații de suplimente luate fără analize și fără recomandare.</p><h2 class="blogContentHeading">11. Protocol simplu de 14 zile</h2><p>Zilele 1–3:</p><p>- scoateți plasticul din încălzirea alimentelor;</p><p>- cumpărați sau pregătiți recipiente din sticlă;</p><p>- evitați apa din PET expusă la căldură.</p><p>Zilele 4–7:</p><p>- introduceți mai multe fibre;</p><p>- adăugați alimente fermentate dacă sunt tolerate;</p><p>- creșteți hidratarea;</p><p>- reduceți alimentele ultra-procesate.</p><p>Zilele 8–10:</p><p>- curățați bucătăria de tigăi și ustensile deteriorate;</p><p>- verificați filtrarea apei;</p><p>- reduceți ambalajele inutile.</p><p>Zilele 11–14:</p><p>- includeți mișcare ușoară zilnică;</p><p>- îmbunătățiți somnul;</p><p>- luați în calcul saună moderată doar dacă este sigură pentru dumneavoastră;</p><p>- discutați cu medicul dacă doriți suplimente.</p><p>Concluzie</p><p>Reducerea expunerii la micro și nanoplastice nu se bazează pe o soluție miraculoasă, ci pe consecvență. Cele mai utile măsuri sunt simple: mai puțin plastic încălzit, apă mai bine filtrată, alimentație bogată în fibre, somn, mișcare, reducerea inflamației și evitarea intervențiilor extreme.</p><p>La Revimed PLUS+, recomandările pot fi adaptate în funcție de starea de sănătate, vârstă, digestie, stil de viață, analize și obiectivele pacientului.</p></div></article></section><!--$--><!--/$--></main><footer class="rmFooter"><div class="rmShell rmFooterGrid"><div class="footerBrand"><img src="/images/logo.png" alt="REVIMED" class="footerLogo"/><p>© <!-- -->2026<!-- --> Centrul Medical Revimed PLUS+. <!-- -->Toate drepturile rezervate.</p></div><div class="footerSchedule"><h3>Program de lucru:</h3><p class="footerAddress"><img class="footerMiniIcon" src="https://img.icons8.com/color/96/marker.png" alt="address" loading="lazy"/> <!-- -->Str. Mircea cel Bătrân 13/2</p><p>Luni–Vineri: 09:00–15:00</p><p>022 60 50 60</p></div><div class="footerLinks"><h3>Linkuri utile</h3><div><a href="/">Acasă</a><a href="/despre-noi/">Despre Noi</a><a href="/servicii/">Servicii</a><a href="/preturi/">Prețuri</a><a href="/aplicatii/teste-si-instrumente/">Teste și Instrumente</a><a href="/contact/">Contact</a><a href="/termeni-si-conditii/">Termeni și Condiții</a><a href="/cookies/">Cookies</a></div></div><div class="footerSocial"><h3>Urmăriți-ne</h3><a class="fbIcon8" href="https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed"><img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook"/></a></div></div></footer><div class="mobileCallBar"><a href="tel:+37379422908">Sună</a><a href="/contact">Contact</a></div><script src="/_next/static/chunks/0p8tu7idk~nwx.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[20037,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n3:I[70119,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n4:I[93219,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\nf:I[68027,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0arcz_jzxt8re.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"blog\",\"protocol-reducerea-expunerii-la-micro-si-nanoplastice\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"protocol-reducerea-expunerii-la-micro-si-nanoplastice\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0arcz_jzxt8re.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0w6v12296r7s-.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/0y6dzejklle~6.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ro\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"MedicalClinic\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"image\\\":\\\"https://revimed.site/images/medical-bg.jpg\\\",\\\"description\\\":\\\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\\\",\\\"telephone\\\":\\\"022 60 50 60\\\",\\\"email\\\":\\\"revimed@revimed.md\\\",\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Ciocana\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"openingHours\\\":\\\"Mo-Fr 09:00-19:00\\\",\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"PhysicalTherapy\\\",\\\"Rehabilitation\\\"]}\"}}],[\"$\",\"$L2\",null,{}],[\"$\",\"$L3\",null,{}],[\"$\",\"$L4\",null,{}],[\"$\",\"main\",null,{\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"MedicalClinic\\\",\\\"@id\\\":\\\"https://revimed.site/#medical-clinic\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"logo\\\":\\\"https://revimed.site/images/logo.png\\\",\\\"image\\\":\\\"https://revimed.site/images/hero-bg.jpg\\\",\\\"telephone\\\":[\\\"022 60 50 60\\\",\\\"+373 79 422 908\\\"],\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Chișinău\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"geo\\\":{\\\"@type\\\":\\\"GeoCoordinates\\\",\\\"latitude\\\":47.044,\\\"longitude\\\":28.883},\\\"openingHoursSpecification\\\":[{\\\"@type\\\":\\\"OpeningHoursSpecification\\\",\\\"dayOfWeek\\\":[\\\"Monday\\\",\\\"Tuesday\\\",\\\"Wednesday\\\",\\\"Thursday\\\",\\\"Friday\\\"],\\\"opens\\\":\\\"09:00\\\",\\\"closes\\\":\\\"19:00\\\"}],\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"Physiotherapy\\\",\\\"PhysicalTherapy\\\",\\\"Rehabilitation\\\"],\\\"availableLanguage\\\":[\\\"Romanian\\\",\\\"English\\\",\\\"Russian\\\",\\\"Ukrainian\\\"],\\\"priceRange\\\":\\\"$$\\\",\\\"sameAs\\\":[]}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"@id\\\":\\\"https://revimed.site/#website\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"potentialAction\\\":{\\\"@type\\\":\\\"SearchAction\\\",\\\"target\\\":\\\"https://revimed.site/?s={search_term_string}\\\",\\\"query-input\\\":\\\"required name=search_term_string\\\"}}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":[\\\"MedicalClinic\\\",\\\"LocalBusiness\\\"],\\\"@id\\\":\\\"https://revimed.site/#revimed-plus\\\",\\\"name\\\":\\\"Centrul Medical Revimed PLUS+\\\",\\\"alternateName\\\":\\\"Revimed PLUS+\\\",\\\"url\\\":\\\"https://revimed.site\\\",\\\"image\\\":\\\"https://revimed.site/images/hero-bg.jpg\\\",\\\"logo\\\":\\\"https://revimed.site/images/logo.png\\\",\\\"telephone\\\":[\\\"022 60 50 60\\\",\\\"+373 79 422 908\\\"],\\\"priceRange\\\":\\\"$$\\\",\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Str. Mircea cel Bătrân 13/2\\\",\\\"addressLocality\\\":\\\"Chișinău\\\",\\\"addressRegion\\\":\\\"Chișinău\\\",\\\"postalCode\\\":\\\"\\\",\\\"addressCountry\\\":\\\"MD\\\"},\\\"areaServed\\\":[\\\"Chișinău\\\",\\\"Ciocana\\\",\\\"Moldova\\\"],\\\"openingHours\\\":\\\"Mo-Fr 09:00-19:00\\\",\\\"medicalSpecialty\\\":[\\\"Neurology\\\",\\\"Neurosurgery\\\",\\\"Physical therapy\\\",\\\"Rehabilitation\\\",\\\"Functional diagnostics\\\"],\\\"availableLanguage\\\":[\\\"Romanian\\\",\\\"English\\\",\\\"Russian\\\",\\\"Ukrainian\\\"],\\\"hasMap\\\":\\\"https://revimed.site/contact\\\"}\"}}],\"$L5\"]}],\"$L6\",\"$L7\",\"$L8\",\"$L9\"]}]}]]}],{\"children\":[\"$La\",{\"children\":[\"$Lb\",{\"children\":[\"$Lc\",{},null,false,null]},null,false,\"$@d\"]},null,false,\"$@d\"]},null,false,null],\"$Le\",false]],\"m\":\"$undefined\",\"G\":[\"$f\",[\"$L10\"]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"DlgVXk4VwDwZHoJSeHS8T\"}\n"])</script><script>self.__next_f.push([1,"11:I[39756,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n12:I[37457,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n13:I[56691,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n14:I[69717,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n15:I[956,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"default\"]\n17:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"OutletBoundary\"]\n18:\"$Sreact.suspense\"\n1b:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"ViewportBoundary\"]\n1d:I[97367,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"MetadataBoundary\"]\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$L11\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L12\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]\n"])</script><script>self.__next_f.push([1,"6:[\"$\",\"$L13\",null,{}]\n7:[\"$\",\"div\",null,{\"className\":\"mobileCallBar\",\"children\":[[\"$\",\"a\",null,{\"href\":\"tel:+37379422908\",\"children\":\"Sună\"}],[\"$\",\"a\",null,{\"href\":\"/contact\",\"children\":\"Contact\"}]]}]\n8:[\"$\",\"$L14\",null,{}]\n9:[\"$\",\"$L15\",null,{}]\na:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L11\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L12\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nb:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L11\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L12\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nc:[\"$\",\"$1\",\"c\",{\"children\":[\"$L16\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/049xb2g0pobge.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L17\",null,{\"children\":[\"$\",\"$18\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@19\"}]}]]}]\n1a:[]\nd:\"$W1a\"\ne:[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L1b\",null,{\"children\":\"$L1c\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$L1d\",null,{\"children\":[\"$\",\"$18\",null,{\"name\":\"Next.Metadata\",\"children\":\"$L1e\"}]}]}],null]}]\n10:[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0arcz_jzxt8re.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]\n"])</script><script>self.__next_f.push([1,"16:[[\"$\",\"section\",null,{\"className\":\"pageHero blogPostHero innerPageHero\",\"children\":[\"$\",\"div\",null,{\"className\":\"rmShell\",\"children\":[[\"$\",\"p\",null,{\"className\":\"crumb\",\"children\":[\"Blog\",\" / \",\"Protocol practic pentru reducerea expunerii la micro și nanoplastice\"]}],[\"$\",\"h1\",null,{\"children\":\"Protocol practic pentru reducerea expunerii la micro și nanoplastice\"}],[\"$\",\"p\",null,{\"className\":\"lead\",\"children\":\"Măsuri practice pentru reducerea expunerii la micro și nanoplastice, susținerea intestinului, ficatului, metabolismului și protecției antioxidante.\"}]]}]}],[\"$\",\"section\",null,{\"className\":\"rmSection blogPostSection\",\"children\":[\"$\",\"article\",null,{\"className\":\"rmShell adminCard prose blogPostArticle blogArticleCard\",\"children\":[[\"$\",\"div\",null,{\"className\":\"postHeroImage\",\"style\":{\"backgroundImage\":\"url(https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format\u0026fit=crop\u0026w=1400\u0026q=80)\"}}],[\"$\",\"div\",null,{\"className\":\"blogReadableContent\",\"children\":[[\"$\",\"p\",\"0\",{\"children\":\"Protocol practic pentru reducerea expunerii la micro și nanoplastice\"}],[\"$\",\"p\",\"1\",{\"children\":\"Microplasticele și nanoplasticele sunt particule foarte mici provenite din degradarea plasticului, ambalaje, textile sintetice, praf, apă, alimente procesate și unele obiecte folosite zilnic. În prezent, subiectul este discutat intens deoarece aceste particule pot ajunge în apă, hrană, aer și în mediul interior al locuinței.\"}],[\"$\",\"p\",\"2\",{\"children\":\"Scopul acestui protocol este practic: reducerea expunerii cronice și susținerea mecanismelor naturale ale organismului — intestin, ficat, piele, rinichi, metabolism, inflamație și protecție antioxidantă.\"}],[\"$\",\"p\",\"3\",{\"className\":\"blogDisclaimerLine\",\"children\":\"Important: acest articol este informativ. Nu există, în prezent, o metodă clinic demonstrată care să elimine complet nanoplasticele din organism. Orice supliment, procedură sau schimbare majoră de rutină trebuie adaptată individual, mai ales în sarcină, boli cronice, tratamente medicamentoase, afecțiuni cardiovasculare, renale, hepatice sau neurologice.\"}],[\"$\",\"h2\",\"4\",{\"className\":\"blogContentHeading\",\"children\":\"1. Ideea principală: nu “detox agresiv”, ci expunere mai mică\"}],[\"$\",\"p\",\"5\",{\"children\":\"Cea mai realistă strategie este să reducem intrările zilnice. Organismul are mecanisme proprii de eliminare și protecție, dar acestea pot fi suprasolicitate dacă expunerea este constantă.\"}],[\"$\",\"p\",\"6\",{\"children\":\"Măsuri simple cu impact mare:\"}],[\"$\",\"p\",\"7\",{\"children\":\"- nu încălziți mâncarea în plastic;\"}],[\"$\",\"p\",\"8\",{\"children\":\"- nu turnați lichide fierbinți în pahare sau recipiente de plastic;\"}],[\"$\",\"p\",\"9\",{\"children\":\"- evitați sticlele PET ținute la soare sau în mașină;\"}],[\"$\",\"p\",\"10\",{\"children\":\"- folosiți sticlă, inox sau ceramică pentru depozitare;\"}],[\"$\",\"p\",\"11\",{\"children\":\"- reduceți alimentele ultra-procesate și excesiv ambalate;\"}],[\"$\",\"p\",\"12\",{\"children\":\"- evitați tocătoarele din plastic uzate;\"}],[\"$\",\"p\",\"13\",{\"children\":\"- înlocuiți tigăile antiaderente deteriorate;\"}],[\"$\",\"p\",\"14\",{\"children\":\"- aerisiți și aspirați regulat praful fin din locuință.\"}],[\"$\",\"h2\",\"15\",{\"className\":\"blogContentHeading\",\"children\":\"2. Apă: filtrare și depozitare corectă\"}],[\"$\",\"p\",\"16\",{\"children\":\"Apa este considerată una dintre sursele posibile de expunere la particule microscopice. Nu toată lumea are nevoie de sisteme complexe, dar filtrarea poate fi o măsură utilă.\"}],[\"$\",\"p\",\"17\",{\"children\":\"Opțiuni practice:\"}],[\"$\",\"p\",\"18\",{\"children\":\"- filtru de apă de calitate pentru uz casnic;\"}],[\"$\",\"p\",\"19\",{\"children\":\"- sistem cu osmoză inversă, dacă este posibil;\"}],[\"$\",\"p\",\"20\",{\"children\":\"- depozitarea apei în sticlă sau inox;\"}],\"$L1f\",\"$L20\",\"$L21\",\"$L22\",\"$L23\",\"$L24\",\"$L25\",\"$L26\",\"$L27\",\"$L28\",\"$L29\",\"$L2a\",\"$L2b\",\"$L2c\",\"$L2d\",\"$L2e\",\"$L2f\",\"$L30\",\"$L31\",\"$L32\",\"$L33\",\"$L34\",\"$L35\",\"$L36\",\"$L37\",\"$L38\",\"$L39\",\"$L3a\",\"$L3b\",\"$L3c\",\"$L3d\",\"$L3e\",\"$L3f\",\"$L40\",\"$L41\",\"$L42\",\"$L43\",\"$L44\",\"$L45\",\"$L46\",\"$L47\",\"$L48\",\"$L49\",\"$L4a\",\"$L4b\",\"$L4c\",\"$L4d\",\"$L4e\",\"$L4f\",\"$L50\",\"$L51\",\"$L52\",\"$L53\",\"$L54\",\"$L55\",\"$L56\",\"$L57\",\"$L58\",\"$L59\",\"$L5a\",\"$L5b\",\"$L5c\",\"$L5d\",\"$L5e\",\"$L5f\",\"$L60\",\"$L61\",\"$L62\",\"$L63\",\"$L64\",\"$L65\",\"$L66\",\"$L67\",\"$L68\",\"$L69\",\"$L6a\",\"$L6b\",\"$L6c\",\"$L6d\",\"$L6e\",\"$L6f\",\"$L70\",\"$L71\",\"$L72\",\"$L73\",\"$L74\",\"$L75\",\"$L76\",\"$L77\",\"$L78\",\"$L79\",\"$L7a\",\"$L7b\",\"$L7c\",\"$L7d\",\"$L7e\",\"$L7f\",\"$L80\",\"$L81\",\"$L82\",\"$L83\"]}]]}]}]]\n"])</script><script>self.__next_f.push([1,"1f:[\"$\",\"p\",\"21\",{\"children\":\"- evitarea sticlelor PET expuse la temperaturi mari;\"}]\n20:[\"$\",\"p\",\"22\",{\"children\":\"- schimbarea filtrelor conform recomandărilor producătorului.\"}]\n21:[\"$\",\"p\",\"23\",{\"children\":\"Un sistem de filtrare nu este o garanție absolută, dar poate reduce expunerea dintr-o sursă importantă.\"}]\n22:[\"$\",\"h2\",\"24\",{\"className\":\"blogContentHeading\",\"children\":\"3. Bucătărie fără plastic inutil\"}]\n23:[\"$\",\"p\",\"25\",{\"children\":\"Cele mai problematice situații apar când plasticul este încălzit, zgâriat, frecat sau expus la grăsimi și temperaturi mari.\"}]\n24:[\"$\",\"p\",\"26\",{\"children\":\"Recomandări:\"}]\n25:[\"$\",\"p\",\"27\",{\"children\":\"- folosiți caserole din sticlă pentru mâncare;\"}]\n26:[\"$\",\"p\",\"28\",{\"children\":\"- încălziți mâncarea în farfurii de ceramică sau sticlă;\"}]\n27:[\"$\",\"p\",\"29\",{\"children\":\"- evitați folia alimentară în contact cu alimente fierbinți;\"}]\n28:[\"$\",\"p\",\"30\",{\"children\":\"- înlocuiți spatulele de plastic deteriorate;\"}]\n29:[\"$\",\"p\",\"31\",{\"children\":\"- folosiți tocătoare din lemn, bambus sau materiale sigure;\"}]\n2a:[\"$\",\"p\",\"32\",{\"children\":\"- nu folosiți tigăi antiaderente zgâriate.\"}]\n2b:[\"$\",\"h2\",\"33\",{\"className\":\"blogContentHeading\",\"children\":\"4. Alimentație protectoare pentru intestin\"}]\n2c:[\"$\",\"p\",\"34\",{\"children\":\"Intestinul este o barieră importantă. O dietă bogată în fibre susține tranzitul, microbiomul și eliminarea regulată.\"}]\n2d:[\"$\",\"p\",\"35\",{\"children\":\"Alimente utile:\"}]\n2e:[\"$\",\"p\",\"36\",{\"children\":\"- fibre: ovăz, psyllium, legume, semințe de in;\"}]\n2f:[\"$\",\"p\",\"37\",{\"children\":\"- pectină: mere, citrice;\"}]\n30:[\"$\",\"p\",\"38\",{\"children\":\"- legume crucifere: broccoli, varză, conopidă;\"}]\n31:[\"$\",\"p\",\"39\",{\"children\":\"- alimente fermentate: chefir, iaurt, murături naturale;\"}]\n32:[\"$\",\"p\",\"40\",{\"children\":\"- proteine de calitate;\"}]\n33:[\"$\",\"p\",\"41\",{\"children\":\"- apă suficientă zilnic.\"}]\n34:[\"$\",\"p\",\"42\",{\"children\":\"Este important să creștem fibrele treptat. La persoanele cu balonare, colon iritabil sau afecțiuni digestive, schimbările trebuie făcute gradual.\"}]\n35:[\"$\",\"h2\",\"43\",{\"className\":\"blogContentHeading\",\"children\":\"5. Suport antioxidant și antiinflamator\"}]\n36:[\"$\",\"p\",\"44\",{\"children\":\"Expunerea cronică la poluanți poate fi asociată cu stres oxidativ și inflamație. Nu înseamnă că suplimentele sunt obligatorii, dar alimentația poate ajuta.\"}]\n37:[\"$\",\"p\",\"45\",{\"children\":\"Surse utile:\"}]\n38:[\"$\",\"p\",\"46\",{\"children\":\"- vitamina C din fructe și legume;\"}]\n39:[\"$\",\"p\",\"47\",{\"children\":\"- omega-3 din pește gras sau surse recomandate medical;\"}]\n3a:[\"$\",\"p\",\"48\",{\"children\":\"- polifenoli din ceai verde, fructe de pădure, cacao de calitate;\"}]\n3b:[\"$\",\"p\",\"49\",{\"children\":\"- curcumină din turmeric;\"}]\n3c:[\"$\",\"p\",\"50\",{\"children\":\"- sulforafan din broccoli;\"}]\n3d:[\"$\",\"p\",\"51\",{\"children\":\"- quercetină și N-acetilcisteină doar la recomandare medicală.\"}]\n3e:[\"$\",\"p\",\"52\",{\"children\":\"Suplimentele nu trebuie folosite ca soluție magică. Ele pot interacționa cu tratamente și nu sunt potrivite pentru toată lumea.\"}]\n3f:[\"$\",\"h2\",\"53\",{\"className\":\"blogContentHeading\",\"children\":\"6. Ficat, rinichi, piele și mișcare\"}]\n40:[\"$\",\"p\",\"54\",{\"children\":\"Organismul elimină compuși prin mai multe sisteme: ficat, bilă, intestin, rinichi, transpirație și respirație. Scopul este să susținem aceste mecanisme, nu să le forțăm.\"}]\n41:[\"$\",\"p\",\"55\",{\"children\":\"Măsuri realiste:\"}]\n42:[\"$\",\"p\",\"56\",{\"children\":\"- somn suficient;\"}]\n43:[\"$\",\"p\",\"57\",{\"children\":\"- activitate fizică regulată;\"}]\n44:[\"$\",\"p\",\"58\",{\"children\":\"- hidratare adecvată;\"}]\n45:[\"$\",\"p\",\"59\",{\"children\":\"- tranzit intestinal regulat;\"}]\n46:[\"$\",\"p\",\"60\",{\"children\":\"- reducerea alcoolului;\"}]\n47:[\"$\",\"p\",\"61\",{\"children\":\"- reducerea zahărului în exces;\"}]\n48:[\"$\",\"p\",\"62\",{\"children\":\"- menținerea greutății corporale într-un interval sănătos.\"}]\n49:[\"$\",\"h2\",\"63\",{\"className\":\"blogContentHeading\",\"children\":\"7. Sauna: posibil ajutor, dar nu tratament garantat\"}]\n4a:[\"$\",\"p\",\"64\",{\"children\":\"Sauna moderată "])</script><script>self.__next_f.push([1,"poate susține transpirația, circulația și adaptarea organismului la stres termic. Unele persoane o folosesc ca parte dintr-o rutină de reducere a încărcării toxice.\"}]\n4b:[\"$\",\"p\",\"65\",{\"children\":\"Recomandare prudentă:\"}]\n4c:[\"$\",\"p\",\"66\",{\"children\":\"- începeți cu sesiuni scurte;\"}]\n4d:[\"$\",\"p\",\"67\",{\"children\":\"- hidratați-vă corect;\"}]\n4e:[\"$\",\"p\",\"68\",{\"children\":\"- evitați sauna dacă aveți contraindicații cardiovasculare, sarcină, febră, deshidratare, hipotensiune sau afecțiuni acute;\"}]\n4f:[\"$\",\"p\",\"69\",{\"children\":\"- nu combinați sauna cu suplimente sau proceduri agresive fără aviz medical.\"}]\n50:[\"$\",\"p\",\"70\",{\"children\":\"Sauna nu trebuie prezentată ca metodă sigură de eliminare a nanoplasticelor. Poate fi o componentă de stil de viață, dar nu un tratament universal.\"}]\n51:[\"$\",\"h2\",\"71\",{\"className\":\"blogContentHeading\",\"children\":\"8. Cazul Bryan Johnson: interesant, dar anecdotic\"}]\n52:[\"$\",\"p\",\"72\",{\"children\":\"Biohackerul Bryan Johnson a afirmat public că, după reducerea agresivă a expunerii la plastic și introducerea unor intervenții zilnice, ar fi redus semnificativ particulele de microplastice detectate în sânge și ar fi ajuns la nivel nedetectabil în spermă. Protocolul său include, potrivit afirmațiilor sale publice, saună uscată zilnică, evitarea plasticului în bucătărie, eliminarea ambalajelor plastice când este posibil, evitarea vaselor antiaderente deteriorate și filtrarea apei prin osmoză inversă.\"}]\n53:[\"$\",\"p\",\"73\",{\"children\":\"Acest caz este util ca exemplu de interes public, dar trebuie interpretat cu prudență. Este un caz individual, de tip N=1, nu un studiu clinic controlat. Nu știm dacă rezultatele pot fi reproduse la alte persoane, ce rol a avut fiecare intervenție și dacă protocolul este potrivit pentru publicul larg.\"}]\n54:[\"$\",\"p\",\"74\",{\"children\":\"Ce putem prelua prudent din această discuție:\"}]\n55:[\"$\",\"p\",\"75\",{\"children\":\"- reducerea expunerii la plastic este logică și sigură în majoritatea cazurilor;\"}]\n56:[\"$\",\"p\",\"76\",{\"children\":\"- filtrarea apei poate fi utilă;\"}]\n57:[\"$\",\"p\",\"77\",{\"children\":\"- evitarea încălzirii plasticului este o măsură simplă;\"}]\n58:[\"$\",\"p\",\"78\",{\"children\":\"- sauna poate fi folosită doar dacă este bine tolerată și nu există contraindicații;\"}]\n59:[\"$\",\"p\",\"79\",{\"children\":\"- concluziile medicale trebuie bazate pe studii, nu pe un singur caz.\"}]\n5a:[\"$\",\"h2\",\"80\",{\"className\":\"blogContentHeading\",\"children\":\"9. Măsuri pentru copii și familie\"}]\n5b:[\"$\",\"p\",\"81\",{\"children\":\"Copiii pot fi mai vulnerabili la expuneri de mediu, de aceea merită aplicate reguli simple în casă.\"}]\n5c:[\"$\",\"p\",\"82\",{\"children\":\"Recomandări:\"}]\n5d:[\"$\",\"p\",\"83\",{\"children\":\"- nu încălziți laptele sau mâncarea copiilor în plastic;\"}]\n5e:[\"$\",\"p\",\"84\",{\"children\":\"- folosiți biberoane și vase din sticlă când este posibil;\"}]\n5f:[\"$\",\"p\",\"85\",{\"children\":\"- evitați jucăriile plastice ieftine cu miros puternic;\"}]\n60:[\"$\",\"p\",\"86\",{\"children\":\"- spălați textilele noi înainte de folosire;\"}]\n61:[\"$\",\"p\",\"87\",{\"children\":\"- aerisiți frecvent;\"}]\n62:[\"$\",\"p\",\"88\",{\"children\":\"- aspirați praful fin;\"}]\n63:[\"$\",\"p\",\"89\",{\"children\":\"- evitați parfumurile de cameră și produsele inutile cu aerosoli.\"}]\n64:[\"$\",\"h2\",\"90\",{\"className\":\"blogContentHeading\",\"children\":\"10. Ce trebuie evitat\"}]\n65:[\"$\",\"p\",\"91\",{\"children\":\"Nu orice metodă numită “detox” este sigură.\"}]\n66:[\"$\",\"p\",\"92\",{\"children\":\"Evitați:\"}]\n67:[\"$\",\"p\",\"93\",{\"children\":\"- chelatori fără indicație medicală;\"}]\n68:[\"$\",\"p\",\"94\",{\"children\":\"- cure agresive de detoxifiere;\"}]\n69:[\"$\",\"p\",\"95\",{\"children\":\"- suplimente promovate ca eliminând complet nanoplasticele;\"}]\n6a:[\"$\",\"p\",\"96\",{\"children\":\"- posturi extreme fără supraveghere;\"}]\n6b:[\"$\",\"p\",\"97\",{\"children\":\"- saună excesivă;\"}]\n6c:[\"$\",\"p\",\"98\",{\"children\":\"- automedicație;\"}]\n6d:[\"$\",\"p\",\"99\",{\"children\":\"- combinații de suplimente luate fără analize și fără recomandare.\"}]\n6e:[\"$\",\"h2\",\"100\",{\"className\":\"blogContentHeading\",\"children\":\"11. Protoc"])</script><script>self.__next_f.push([1,"ol simplu de 14 zile\"}]\n6f:[\"$\",\"p\",\"101\",{\"children\":\"Zilele 1–3:\"}]\n70:[\"$\",\"p\",\"102\",{\"children\":\"- scoateți plasticul din încălzirea alimentelor;\"}]\n71:[\"$\",\"p\",\"103\",{\"children\":\"- cumpărați sau pregătiți recipiente din sticlă;\"}]\n72:[\"$\",\"p\",\"104\",{\"children\":\"- evitați apa din PET expusă la căldură.\"}]\n73:[\"$\",\"p\",\"105\",{\"children\":\"Zilele 4–7:\"}]\n74:[\"$\",\"p\",\"106\",{\"children\":\"- introduceți mai multe fibre;\"}]\n75:[\"$\",\"p\",\"107\",{\"children\":\"- adăugați alimente fermentate dacă sunt tolerate;\"}]\n76:[\"$\",\"p\",\"108\",{\"children\":\"- creșteți hidratarea;\"}]\n77:[\"$\",\"p\",\"109\",{\"children\":\"- reduceți alimentele ultra-procesate.\"}]\n78:[\"$\",\"p\",\"110\",{\"children\":\"Zilele 8–10:\"}]\n79:[\"$\",\"p\",\"111\",{\"children\":\"- curățați bucătăria de tigăi și ustensile deteriorate;\"}]\n7a:[\"$\",\"p\",\"112\",{\"children\":\"- verificați filtrarea apei;\"}]\n7b:[\"$\",\"p\",\"113\",{\"children\":\"- reduceți ambalajele inutile.\"}]\n7c:[\"$\",\"p\",\"114\",{\"children\":\"Zilele 11–14:\"}]\n7d:[\"$\",\"p\",\"115\",{\"children\":\"- includeți mișcare ușoară zilnică;\"}]\n7e:[\"$\",\"p\",\"116\",{\"children\":\"- îmbunătățiți somnul;\"}]\n7f:[\"$\",\"p\",\"117\",{\"children\":\"- luați în calcul saună moderată doar dacă este sigură pentru dumneavoastră;\"}]\n80:[\"$\",\"p\",\"118\",{\"children\":\"- discutați cu medicul dacă doriți suplimente.\"}]\n81:[\"$\",\"p\",\"119\",{\"children\":\"Concluzie\"}]\n82:[\"$\",\"p\",\"120\",{\"children\":\"Reducerea expunerii la micro și nanoplastice nu se bazează pe o soluție miraculoasă, ci pe consecvență. Cele mai utile măsuri sunt simple: mai puțin plastic încălzit, apă mai bine filtrată, alimentație bogată în fibre, somn, mișcare, reducerea inflamației și evitarea intervențiilor extreme.\"}]\n83:[\"$\",\"p\",\"121\",{\"children\":\"La Revimed PLUS+, recomandările pot fi adaptate în funcție de starea de sănătate, vârstă, digestie, stil de viață, analize și obiectivele pacientului.\"}]\n"])</script><script>self.__next_f.push([1,"1c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"84:I[27201,[\"/_next/static/chunks/0w6v12296r7s-.js\",\"/_next/static/chunks/0y6dzejklle~6.js\"],\"IconMark\"]\n19:null\n"])</script><script>self.__next_f.push([1,"1e:[[\"$\",\"title\",\"0\",{\"children\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"Revimed,centru medical Chișinău,neurolog Chișinău,neurochirurg Chișinău,fizioterapie Chișinău,reabilitare medicală Chișinău\"}],[\"$\",\"meta\",\"3\",{\"name\":\"robots\",\"content\":\"index, follow\"}],[\"$\",\"meta\",\"4\",{\"name\":\"googlebot\",\"content\":\"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:title\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:url\",\"content\":\"https://revimed.site/\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:locale\",\"content\":\"ro_MD\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image\",\"content\":\"https://revimed.site/images/medical-bg.jpg\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:image:alt\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"14\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:title\",\"content\":\"Centrul Medical Revimed PLUS+\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:description\",\"content\":\"Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image\",\"content\":\"https://revimed.site/images/medical-bg.jpg\"}],[\"$\",\"link\",\"19\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"20\",{\"rel\":\"icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"link\",\"21\",{\"rel\":\"apple-touch-icon\",\"href\":\"/favicon.svg\"}],[\"$\",\"$L84\",\"22\",{}]]\n"])</script>
+
+
+
 
 
 
@@ -155,23 +169,26 @@ article.articleLargeText h2{
   var MIN_SIZE = 16;
   var MAX_SIZE = 28;
 
-  var DEFAULT_RATE = 0.92;
-  var MIN_RATE = 0.7;
+  var DEFAULT_RATE = 0.9;
+  var MIN_RATE = 0.65;
   var MAX_RATE = 1.25;
 
-  function cleanText(text){
-    return text.replace(/\s+/g, " ").replace(/©.*$/g, "").trim();
-  }
+  var paragraphs = [];
+  var currentIndex = 0;
+  var activeButton = null;
+  var isReading = false;
+
+  function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
   function getArticle(){
     return document.querySelector("article");
   }
 
-  function clamp(num, min, max){
-    return Math.max(min, Math.min(max, num));
+  function cleanText(text){
+    return (text || "").replace(/\s+/g," ").trim();
   }
 
-  function getCurrentSize(){
+  function getSize(){
     try{
       var saved = parseInt(localStorage.getItem(FONT_KEY) || DEFAULT_SIZE, 10);
       if(!isNaN(saved)) return clamp(saved, MIN_SIZE, MAX_SIZE);
@@ -179,19 +196,16 @@ article.articleLargeText h2{
     return DEFAULT_SIZE;
   }
 
-  function applyArticleSize(size){
+  function setSize(size){
     var article = getArticle();
     if(!article) return;
-    article.classList.add("articleLargeText");
+    size = clamp(size, MIN_SIZE, MAX_SIZE);
+    article.classList.add("articleReadableText");
     article.style.setProperty("--article-font-size", size + "px");
     try{ localStorage.setItem(FONT_KEY, String(size)); }catch(e){}
   }
 
-  function changeSize(delta){
-    applyArticleSize(clamp(getCurrentSize() + delta, MIN_SIZE, MAX_SIZE));
-  }
-
-  function getCurrentRate(){
+  function getRate(){
     try{
       var saved = parseFloat(localStorage.getItem(RATE_KEY) || DEFAULT_RATE);
       if(!isNaN(saved)) return clamp(saved, MIN_RATE, MAX_RATE);
@@ -199,109 +213,144 @@ article.articleLargeText h2{
     return DEFAULT_RATE;
   }
 
-  function saveRate(rate){
+  function setRate(rate){
     rate = Math.round(clamp(rate, MIN_RATE, MAX_RATE) * 100) / 100;
     try{ localStorage.setItem(RATE_KEY, String(rate)); }catch(e){}
-    updateRateLabel(rate);
+    var label = document.querySelector(".voiceRateLabel");
+    if(label) label.textContent = Math.round(rate * 100) + "%";
     return rate;
   }
 
-  function changeRate(delta){
-    var rate = saveRate(getCurrentRate() + delta);
-    if(window.speechSynthesis && window.speechSynthesis.speaking){
-      window.speechSynthesis.cancel();
-      var btn = document.querySelector(".readAloudBtn");
-      if(btn){
-        btn.innerHTML = btn.dataset.startText;
-        btn.dataset.playing = "0";
-      }
-    }
-  }
-
-  function updateRateLabel(rate){
-    var label = document.querySelector(".voiceRateLabel");
-    if(label) label.textContent = Math.round(rate * 100) + "%";
-  }
-
-  function getArticleText(){
+  function buildParagraphs(){
     var article = getArticle();
-    if(!article) return "";
-    return cleanText(article.innerText || article.textContent || "");
+    if(!article) return [];
+    var nodes = article.querySelectorAll("h1,h2,h3,p,li");
+    var arr = [];
+    nodes.forEach(function(node){
+      var text = cleanText(node.innerText || node.textContent || "");
+      if(text && !text.includes("Revimed PLUS+ — clinică fondată")) arr.push(text);
+    });
+    if(!arr.length){
+      var all = cleanText(article.innerText || article.textContent || "");
+      if(all) arr = [all];
+    }
+    return arr;
   }
 
   function pickVoice(lang){
     var voices = window.speechSynthesis.getVoices() || [];
     if(!voices.length) return null;
-    var shortLang = lang.split("-")[0];
+    var shortLang = lang.split("-")[0].toLowerCase();
     return voices.find(v => (v.lang || "").toLowerCase() === lang.toLowerCase())
       || voices.find(v => (v.lang || "").toLowerCase().startsWith(shortLang))
       || null;
   }
 
-  function speak(btn){
-    if(!("speechSynthesis" in window)){
-      alert(btn.dataset.unsupported || "Text-to-speech is not supported in this browser.");
+  function setButtonReading(reading){
+    var btn = activeButton || document.querySelector(".readAloudBtn");
+    if(!btn) return;
+    btn.innerHTML = reading ? btn.dataset.stopText : btn.dataset.startText;
+    btn.dataset.playing = reading ? "1" : "0";
+  }
+
+  function speakCurrent(){
+    if(!("speechSynthesis" in window)) return;
+    if(!paragraphs.length || currentIndex >= paragraphs.length){
+      isReading = false;
+      currentIndex = 0;
+      setButtonReading(false);
       return;
     }
 
-    if(window.speechSynthesis.speaking){
-      window.speechSynthesis.cancel();
-      btn.innerHTML = btn.dataset.startText;
-      btn.dataset.playing = "0";
-      return;
-    }
-
-    var text = getArticleText();
-    if(!text) return;
-
-    var lang = btn.dataset.lang || document.documentElement.lang || "ro-RO";
-    var utterance = new SpeechSynthesisUtterance(text);
+    var btn = activeButton || document.querySelector(".readAloudBtn");
+    var lang = btn?.dataset.lang || document.documentElement.lang || "ro-RO";
+    var utterance = new SpeechSynthesisUtterance(paragraphs[currentIndex]);
     utterance.lang = lang;
-    utterance.rate = getCurrentRate();
+    utterance.rate = getRate();
     utterance.pitch = 1;
 
     var voice = pickVoice(lang);
     if(voice) utterance.voice = voice;
 
-    btn.innerHTML = btn.dataset.stopText;
-    btn.dataset.playing = "1";
-
     utterance.onend = function(){
-      btn.innerHTML = btn.dataset.startText;
-      btn.dataset.playing = "0";
-    };
-    utterance.onerror = function(){
-      btn.innerHTML = btn.dataset.startText;
-      btn.dataset.playing = "0";
+      if(!isReading) return;
+      currentIndex += 1;
+      speakCurrent();
     };
 
-    window.speechSynthesis.cancel();
+    utterance.onerror = function(){
+      isReading = false;
+      setButtonReading(false);
+    };
+
     window.speechSynthesis.speak(utterance);
+  }
+
+  function startReading(btn){
+    if(!("speechSynthesis" in window)){
+      alert(btn.dataset.unsupported || "Text-to-speech is not supported in this browser.");
+      return;
+    }
+    activeButton = btn;
+    paragraphs = buildParagraphs();
+    currentIndex = 0;
+    isReading = true;
+    window.speechSynthesis.cancel();
+    setButtonReading(true);
+    setTimeout(speakCurrent, 80);
+  }
+
+  function stopReading(){
+    isReading = false;
+    window.speechSynthesis.cancel();
+    setButtonReading(false);
+  }
+
+  function restartCurrentParagraph(){
+    if(!isReading) return;
+    window.speechSynthesis.cancel();
+    setTimeout(function(){
+      if(isReading) speakCurrent();
+    }, 100);
   }
 
   document.addEventListener("click", function(e){
     var readBtn = e.target.closest(".readAloudBtn");
-    if(readBtn) speak(readBtn);
+    if(readBtn){
+      if(isReading || window.speechSynthesis.speaking) stopReading();
+      else startReading(readBtn);
+      return;
+    }
 
-    var bigger = e.target.closest("[data-text-size='bigger']");
-    if(bigger) changeSize(2);
+    if(e.target.closest("[data-text-size='bigger']")){
+      setSize(getSize() + 2);
+      return;
+    }
 
-    var smaller = e.target.closest("[data-text-size='smaller']");
-    if(smaller) changeSize(-2);
+    if(e.target.closest("[data-text-size='smaller']")){
+      setSize(getSize() - 2);
+      return;
+    }
 
-    var faster = e.target.closest("[data-voice-speed='faster']");
-    if(faster) changeRate(0.08);
+    if(e.target.closest("[data-voice-speed='slower']")){
+      setRate(getRate() - 0.08);
+      restartCurrentParagraph();
+      return;
+    }
 
-    var slower = e.target.closest("[data-voice-speed='slower']");
-    if(slower) changeRate(-0.08);
+    if(e.target.closest("[data-voice-speed='faster']")){
+      setRate(getRate() + 0.08);
+      restartCurrentParagraph();
+      return;
+    }
   });
 
   window.addEventListener("beforeunload", function(){
     if("speechSynthesis" in window) window.speechSynthesis.cancel();
   });
 
-  applyArticleSize(getCurrentSize());
-  updateRateLabel(getCurrentRate());
+  setSize(getSize());
+  setRate(getRate());
 
   if("speechSynthesis" in window){
     window.speechSynthesis.onvoiceschanged = function(){};

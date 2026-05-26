@@ -25,99 +25,7 @@
 
 
 
-<style>
-.articleToolsBox{
-  margin:0 0 24px 0;
-  padding:16px;
-  border-radius:22px;
-  background:#f8fafc;
-  border:1px solid #e5e7eb;
-  box-shadow:0 8px 24px rgba(15,23,42,.06);
-}
-.articleToolsGrid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-}
-.readAloudBtn{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  border:0;
-  border-radius:18px;
-  padding:17px 20px;
-  font-size:20px;
-  font-weight:800;
-  cursor:pointer;
-  background:#d71920;
-  color:#fff;
-  box-shadow:0 10px 24px rgba(215,25,32,.25);
-}
-.smallControlGrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-.textSizeBtn,
-.voiceSpeedBtn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:14px;
-  padding:11px 12px;
-  font-size:15px;
-  font-weight:800;
-  cursor:pointer;
-  background:#fff;
-  color:#0f172a;
-  border:1.5px solid #d71920;
-}
-.voiceSpeedBtn{
-  border-color:#94a3b8;
-}
-.readAloudBtn:hover,
-.textSizeBtn:hover,
-.voiceSpeedBtn:hover{filter:brightness(.97)}
-.readAloudBtn:active,
-.textSizeBtn:active,
-.voiceSpeedBtn:active{transform:translateY(1px)}
-.articleToolsHint{
-  margin:10px 4px 0;
-  font-size:14px;
-  line-height:1.45;
-  color:#475569;
-  text-align:center;
-}
-article.articleLargeText{
-  font-size:var(--article-font-size, 20px);
-  line-height:1.78;
-}
-article.articleLargeText p,
-article.articleLargeText li{
-  font-size:var(--article-font-size, 20px);
-  line-height:1.78;
-}
-article.articleLargeText h2{
-  font-size:calc(var(--article-font-size, 20px) + 7px);
-  line-height:1.3;
-}
-@media(max-width:640px){
-  .readAloudBtn{
-    font-size:18px;
-    padding:16px 14px;
-  }
-  .smallControlGrid{
-    grid-template-columns:1fr 1fr;
-  }
-  .textSizeBtn,
-  .voiceSpeedBtn{
-    font-size:14px;
-    padding:10px 8px;
-  }
-}
-</style>
+
 
 
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -127,6 +35,104 @@ article.articleLargeText h2{
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 <link rel="manifest" href="/site.webmanifest"/>
 <meta name="theme-color" content="#ffffff"/>
+
+
+<style>
+.articleToolsBox{
+  max-width:920px;
+  margin:0 auto 24px auto;
+  padding:14px;
+  border-radius:18px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  box-shadow:0 8px 22px rgba(15,23,42,.06);
+}
+.articleToolsBox *{
+  box-sizing:border-box;
+}
+.articleToolsGrid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.readAloudBtn{
+  width:100%;
+  border:0;
+  border-radius:16px;
+  padding:16px 18px;
+  font-size:19px;
+  font-weight:800;
+  cursor:pointer;
+  background:#d71920;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(215,25,32,.22);
+}
+.articleControlsRow{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+.articleSmallBtn{
+  border-radius:12px;
+  padding:10px 8px;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  background:#fff;
+  color:#0f172a;
+  border:1px solid #cbd5e1;
+  min-height:42px;
+}
+.articleSmallBtn.textBtn{
+  border-color:#d71920;
+}
+.articleSmallBtn:hover{background:#f1f5f9}
+.articleSmallBtn:active{transform:translateY(1px)}
+.articleToolsHint{
+  margin:8px 0 0;
+  font-size:13px;
+  line-height:1.4;
+  color:#64748b;
+  text-align:center;
+}
+.voiceRateLabel{
+  font-weight:800;
+  color:#d71920;
+}
+article.articleReadableText{
+  max-width:920px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:var(--article-font-size,20px);
+  line-height:1.8;
+}
+article.articleReadableText p,
+article.articleReadableText li{
+  font-size:var(--article-font-size,20px);
+  line-height:1.8;
+}
+article.articleReadableText h2{
+  font-size:calc(var(--article-font-size,20px) + 7px);
+  line-height:1.3;
+  margin-top:26px;
+}
+@media(max-width:760px){
+  .articleToolsBox{
+    margin-left:12px;
+    margin-right:12px;
+  }
+  .articleControlsRow{
+    grid-template-columns:1fr 1fr;
+  }
+  .readAloudBtn{
+    font-size:18px;
+    padding:15px 14px;
+  }
+  .articleSmallBtn{
+    font-size:14px;
+  }
+}
+</style>
 
 </head>
 <body>
@@ -171,6 +177,16 @@ article.articleLargeText h2{
   <p class="articleToolsHint">Poți asculta articolul sau poți mări textul dacă citești mai greu.</p>
 </div>
 
+<p class="articleToolsHint">Viteză voce: <b class="voiceRateLabel">92%</b></p>
+
+    <div class="smallControlGrid">
+      <button type="button" class="textSizeBtn" data-text-size="bigger">+ Text mai mare</button>
+      <button type="button" class="textSizeBtn" data-text-size="smaller">− Text mai mic</button>
+    </div>
+  </div>
+  <p class="articleToolsHint">Poți asculta articolul, schimba viteza vocii sau mări textul.</p>
+</div>
+
 <div class="articleToolsBox">
   <div class="articleToolsGrid">
     <button
@@ -182,19 +198,14 @@ article.articleLargeText h2{
       data-unsupported="Browserul tău nu suportă citirea vocală."
     >🔊 Ascultă articolul</button>
 
-    <div class="smallControlGrid">
-      <button type="button" class="voiceSpeedBtn" data-voice-speed="slower">− Voce mai lent</button>
-      <button type="button" class="voiceSpeedBtn" data-voice-speed="faster">+ Voce mai rapid</button>
-    </div>
-
-    <p class="articleToolsHint">Viteză voce: <b class="voiceRateLabel">92%</b></p>
-
-    <div class="smallControlGrid">
-      <button type="button" class="textSizeBtn" data-text-size="bigger">+ Text mai mare</button>
-      <button type="button" class="textSizeBtn" data-text-size="smaller">− Text mai mic</button>
+    <div class="articleControlsRow">
+      <button type="button" class="articleSmallBtn" data-voice-speed="slower">− Mai lent</button>
+      <button type="button" class="articleSmallBtn" data-voice-speed="faster">+ Mai rapid</button>
+      <button type="button" class="articleSmallBtn textBtn" data-text-size="bigger">+ Text</button>
+      <button type="button" class="articleSmallBtn textBtn" data-text-size="smaller">− Text</button>
     </div>
   </div>
-  <p class="articleToolsHint">Poți asculta articolul, schimba viteza vocii sau mări textul.</p>
+  <p class="articleToolsHint">Poți asculta articolul, regla viteza vocii sau mări textul. Viteză: <span class="voiceRateLabel">90%</span></p>
 </div>
 <article class="card" style="padding:28px">
       
@@ -245,6 +256,9 @@ article.articleLargeText h2{
 
 
 
+
+
+
 <script>
 (function(){
   var FONT_KEY = "revimedArticleFontSize";
@@ -254,23 +268,26 @@ article.articleLargeText h2{
   var MIN_SIZE = 16;
   var MAX_SIZE = 28;
 
-  var DEFAULT_RATE = 0.92;
-  var MIN_RATE = 0.7;
+  var DEFAULT_RATE = 0.9;
+  var MIN_RATE = 0.65;
   var MAX_RATE = 1.25;
 
-  function cleanText(text){
-    return text.replace(/\s+/g, " ").replace(/©.*$/g, "").trim();
-  }
+  var paragraphs = [];
+  var currentIndex = 0;
+  var activeButton = null;
+  var isReading = false;
+
+  function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
 
   function getArticle(){
     return document.querySelector("article");
   }
 
-  function clamp(num, min, max){
-    return Math.max(min, Math.min(max, num));
+  function cleanText(text){
+    return (text || "").replace(/\s+/g," ").trim();
   }
 
-  function getCurrentSize(){
+  function getSize(){
     try{
       var saved = parseInt(localStorage.getItem(FONT_KEY) || DEFAULT_SIZE, 10);
       if(!isNaN(saved)) return clamp(saved, MIN_SIZE, MAX_SIZE);
@@ -278,19 +295,16 @@ article.articleLargeText h2{
     return DEFAULT_SIZE;
   }
 
-  function applyArticleSize(size){
+  function setSize(size){
     var article = getArticle();
     if(!article) return;
-    article.classList.add("articleLargeText");
+    size = clamp(size, MIN_SIZE, MAX_SIZE);
+    article.classList.add("articleReadableText");
     article.style.setProperty("--article-font-size", size + "px");
     try{ localStorage.setItem(FONT_KEY, String(size)); }catch(e){}
   }
 
-  function changeSize(delta){
-    applyArticleSize(clamp(getCurrentSize() + delta, MIN_SIZE, MAX_SIZE));
-  }
-
-  function getCurrentRate(){
+  function getRate(){
     try{
       var saved = parseFloat(localStorage.getItem(RATE_KEY) || DEFAULT_RATE);
       if(!isNaN(saved)) return clamp(saved, MIN_RATE, MAX_RATE);
@@ -298,109 +312,144 @@ article.articleLargeText h2{
     return DEFAULT_RATE;
   }
 
-  function saveRate(rate){
+  function setRate(rate){
     rate = Math.round(clamp(rate, MIN_RATE, MAX_RATE) * 100) / 100;
     try{ localStorage.setItem(RATE_KEY, String(rate)); }catch(e){}
-    updateRateLabel(rate);
+    var label = document.querySelector(".voiceRateLabel");
+    if(label) label.textContent = Math.round(rate * 100) + "%";
     return rate;
   }
 
-  function changeRate(delta){
-    var rate = saveRate(getCurrentRate() + delta);
-    if(window.speechSynthesis && window.speechSynthesis.speaking){
-      window.speechSynthesis.cancel();
-      var btn = document.querySelector(".readAloudBtn");
-      if(btn){
-        btn.innerHTML = btn.dataset.startText;
-        btn.dataset.playing = "0";
-      }
-    }
-  }
-
-  function updateRateLabel(rate){
-    var label = document.querySelector(".voiceRateLabel");
-    if(label) label.textContent = Math.round(rate * 100) + "%";
-  }
-
-  function getArticleText(){
+  function buildParagraphs(){
     var article = getArticle();
-    if(!article) return "";
-    return cleanText(article.innerText || article.textContent || "");
+    if(!article) return [];
+    var nodes = article.querySelectorAll("h1,h2,h3,p,li");
+    var arr = [];
+    nodes.forEach(function(node){
+      var text = cleanText(node.innerText || node.textContent || "");
+      if(text && !text.includes("Revimed PLUS+ — clinică fondată")) arr.push(text);
+    });
+    if(!arr.length){
+      var all = cleanText(article.innerText || article.textContent || "");
+      if(all) arr = [all];
+    }
+    return arr;
   }
 
   function pickVoice(lang){
     var voices = window.speechSynthesis.getVoices() || [];
     if(!voices.length) return null;
-    var shortLang = lang.split("-")[0];
+    var shortLang = lang.split("-")[0].toLowerCase();
     return voices.find(v => (v.lang || "").toLowerCase() === lang.toLowerCase())
       || voices.find(v => (v.lang || "").toLowerCase().startsWith(shortLang))
       || null;
   }
 
-  function speak(btn){
-    if(!("speechSynthesis" in window)){
-      alert(btn.dataset.unsupported || "Text-to-speech is not supported in this browser.");
+  function setButtonReading(reading){
+    var btn = activeButton || document.querySelector(".readAloudBtn");
+    if(!btn) return;
+    btn.innerHTML = reading ? btn.dataset.stopText : btn.dataset.startText;
+    btn.dataset.playing = reading ? "1" : "0";
+  }
+
+  function speakCurrent(){
+    if(!("speechSynthesis" in window)) return;
+    if(!paragraphs.length || currentIndex >= paragraphs.length){
+      isReading = false;
+      currentIndex = 0;
+      setButtonReading(false);
       return;
     }
 
-    if(window.speechSynthesis.speaking){
-      window.speechSynthesis.cancel();
-      btn.innerHTML = btn.dataset.startText;
-      btn.dataset.playing = "0";
-      return;
-    }
-
-    var text = getArticleText();
-    if(!text) return;
-
-    var lang = btn.dataset.lang || document.documentElement.lang || "ro-RO";
-    var utterance = new SpeechSynthesisUtterance(text);
+    var btn = activeButton || document.querySelector(".readAloudBtn");
+    var lang = btn?.dataset.lang || document.documentElement.lang || "ro-RO";
+    var utterance = new SpeechSynthesisUtterance(paragraphs[currentIndex]);
     utterance.lang = lang;
-    utterance.rate = getCurrentRate();
+    utterance.rate = getRate();
     utterance.pitch = 1;
 
     var voice = pickVoice(lang);
     if(voice) utterance.voice = voice;
 
-    btn.innerHTML = btn.dataset.stopText;
-    btn.dataset.playing = "1";
-
     utterance.onend = function(){
-      btn.innerHTML = btn.dataset.startText;
-      btn.dataset.playing = "0";
-    };
-    utterance.onerror = function(){
-      btn.innerHTML = btn.dataset.startText;
-      btn.dataset.playing = "0";
+      if(!isReading) return;
+      currentIndex += 1;
+      speakCurrent();
     };
 
-    window.speechSynthesis.cancel();
+    utterance.onerror = function(){
+      isReading = false;
+      setButtonReading(false);
+    };
+
     window.speechSynthesis.speak(utterance);
+  }
+
+  function startReading(btn){
+    if(!("speechSynthesis" in window)){
+      alert(btn.dataset.unsupported || "Text-to-speech is not supported in this browser.");
+      return;
+    }
+    activeButton = btn;
+    paragraphs = buildParagraphs();
+    currentIndex = 0;
+    isReading = true;
+    window.speechSynthesis.cancel();
+    setButtonReading(true);
+    setTimeout(speakCurrent, 80);
+  }
+
+  function stopReading(){
+    isReading = false;
+    window.speechSynthesis.cancel();
+    setButtonReading(false);
+  }
+
+  function restartCurrentParagraph(){
+    if(!isReading) return;
+    window.speechSynthesis.cancel();
+    setTimeout(function(){
+      if(isReading) speakCurrent();
+    }, 100);
   }
 
   document.addEventListener("click", function(e){
     var readBtn = e.target.closest(".readAloudBtn");
-    if(readBtn) speak(readBtn);
+    if(readBtn){
+      if(isReading || window.speechSynthesis.speaking) stopReading();
+      else startReading(readBtn);
+      return;
+    }
 
-    var bigger = e.target.closest("[data-text-size='bigger']");
-    if(bigger) changeSize(2);
+    if(e.target.closest("[data-text-size='bigger']")){
+      setSize(getSize() + 2);
+      return;
+    }
 
-    var smaller = e.target.closest("[data-text-size='smaller']");
-    if(smaller) changeSize(-2);
+    if(e.target.closest("[data-text-size='smaller']")){
+      setSize(getSize() - 2);
+      return;
+    }
 
-    var faster = e.target.closest("[data-voice-speed='faster']");
-    if(faster) changeRate(0.08);
+    if(e.target.closest("[data-voice-speed='slower']")){
+      setRate(getRate() - 0.08);
+      restartCurrentParagraph();
+      return;
+    }
 
-    var slower = e.target.closest("[data-voice-speed='slower']");
-    if(slower) changeRate(-0.08);
+    if(e.target.closest("[data-voice-speed='faster']")){
+      setRate(getRate() + 0.08);
+      restartCurrentParagraph();
+      return;
+    }
   });
 
   window.addEventListener("beforeunload", function(){
     if("speechSynthesis" in window) window.speechSynthesis.cancel();
   });
 
-  applyArticleSize(getCurrentSize());
-  updateRateLabel(getCurrentRate());
+  setSize(getSize());
+  setRate(getRate());
 
   if("speechSynthesis" in window){
     window.speechSynthesis.onvoiceschanged = function(){};
