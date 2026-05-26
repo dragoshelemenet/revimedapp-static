@@ -1,0 +1,67 @@
+REVIMED STATIC SITE — IMPORTANT CONTEXT
+
+Repo:
+https://github.com/dragoshelemenet/revimedapp-static
+
+Work folder:
+cd /workspaces/revimedapp-static/revimed_app
+
+IMPORTANT:
+Live site uses branch `static-only`.
+Always work on `static-only`, NOT `main`.
+
+Start every session with:
+git checkout static-only
+git pull origin static-only
+
+Deploy:
+git push origin static-only
+
+Do not commit junk folders:
+node_modules/
+.next/
+out/
+data/
+revimedapp-static-work/
+
+Sitemap:
+Sitemap is static and must be updated directly:
+sitemap.xml
+public/sitemap.xml
+
+Sitemap must NOT include:
+/out
+/public
+/404
+/_not-found
+/not-found
+
+Blogs:
+When adding blogs, always:
+1. Create real static pages in public/.../blog/.../index.html
+2. Add blog cards so they appear on:
+   /blog/
+   /en/blog/
+   /ru/blog/
+   /ua/blog/
+3. Regenerate sitemap.xml and public/sitemap.xml
+4. Use all 4 languages: RO, EN, RU, UA
+5. Keep language simple, human, useful, not GPT-like
+6. Use SEO topics from real patient searches
+7. Mention naturally:
+   - Revimed PLUS+ founded in 2005
+   - doctor has 35+ years experience
+   - treatment is selected individually
+   - patient can choose classic medical treatment or gentler/naturopathic direction when safe
+   - everything is discussed and done with patient agreement
+   - some patients improve with physiotherapy/gentler methods, others need medication
+   - medication can be adjusted to find a suitable option with fewer side effects when possible
+8. Do not overpromise or say “best clinic”. Explain calmly why Revimed is a good choice.
+
+Clean workflow:
+git status
+git add ONLY needed files
+git commit -m "Clear message"
+git push origin static-only
+
+Never use `git add .` unless checked carefully.
