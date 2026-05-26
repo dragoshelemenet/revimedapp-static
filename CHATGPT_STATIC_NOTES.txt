@@ -84,3 +84,10 @@ Do not rebuild /blog with custom static design.
 If new blogs are missing, only replace the card list inside the existing old grid:
 <div class="rmShell grid3">...</div>
 Do not replace blog article header/footer/main layout.
+
+BLOG INDEX IMAGE/DESIGN RULE:
+For /blog index, restore from commit "Restore old blog cards with SEO articles" if design breaks.
+Then update only the cards inside the existing old <div class="rmShell grid3">.
+Do not auto-extract images from article HTML because it may pick logo/map/footer images.
+Use curated image URLs for blog cards.
+Do not create custom blog index layout.
