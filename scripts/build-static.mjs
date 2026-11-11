@@ -14,6 +14,8 @@ function walk(dir) {
 for (const dir of ['app','components','lib','content','styles','scripts']) {
  for (const file of walk(dir)) hash.update(file).update(readFileSync(file));
 }
+for (const file of ['package.json', 'package-lock.json', 'next.config.mjs']) hash.update(file).update(readFileSync(file));
+for (const file of walk('public')) hash.update(file).update(readFileSync(file));
 const release = { sourceVersion: hash.digest('hex').slice(0,20), builtAt: new Date().toISOString() };
 for (const args of [['node_modules/next/dist/bin/next','build'], ['scripts/generate-search-files.mjs']]) {
  const result = spawnSync(process.execPath,args,{stdio:'inherit'});

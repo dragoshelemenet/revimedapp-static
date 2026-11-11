@@ -1,3 +1,5 @@
+
+import PageHeading from "@/components/PageHeading";
 import { makeMetadata } from "@/lib/seo";
 export const metadata = makeMetadata({ lang: "ro", path: "/termeni-si-conditii", localized: false,
  title: "Termeni și Condiții",
@@ -7,13 +9,13 @@ export const metadata = makeMetadata({ lang: "ro", path: "/termeni-si-conditii",
 export default function TermsPage() {
  return (
   <>
-   <section className="pageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">Acasă / Termeni și Condiții</p>
      <h1>Termeni și Condiții</h1>
      <p className="lead">Reguli generale pentru utilizarea site-ului și a instrumentelor educaționale Revimed PLUS+.</p>
     </div>
-   </section>
+   </PageHeading>
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard">

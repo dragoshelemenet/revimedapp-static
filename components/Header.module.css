@@ -1,0 +1,22 @@
+.header { position: sticky; top: 0; z-index: 100; background: white; box-shadow: 0 2px 16px #001b3810; }
+.shell, .nav { max-width: 1200px; margin: auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.top { background: #f4f8fb; border-bottom: 1px solid #e5edf3; }
+.languages { display: flex; gap: 16px; padding: 7px 0; }
+.languages a { color: #516575; text-decoration: none; font-size: 13px; }
+.languages .selectedLanguage { color: #0878b8; font-weight: 800; }
+.nav { min-height: 84px; gap: 22px; }
+.logo { flex-shrink: 0; }
+.logo img { display: block; width: 150px; height: auto; }
+.links { display: flex; align-items: center; gap: 16px; }
+.links a { color: #19364e; text-decoration: none; font-size: 14px; font-weight: 700; white-space: nowrap; padding: 12px 0; }
+.links a:hover, .links .active { color: #0878b8; }
+.toggle { display: none; background: transparent; border: 0; padding: 12px; }
+.toggle span { display: block; width: 24px; height: 2px; margin: 5px; background: #123553; }
+.backdrop { position: fixed; inset: 0; z-index: -1; border: 0; background: #00152b55; }
+@media (max-width: 1100px) {
+ .nav { min-height: 72px; position: relative; background: white; }
+ .toggle { display: block; }
+ .links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 16px 24px; max-height: calc(100dvh - 120px); overflow: auto; box-shadow: 0 12px 20px #001b381a; }
+ .links.open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+ .links a { padding: 12px 0; }
+}

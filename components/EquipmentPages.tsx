@@ -1,3 +1,5 @@
+
+import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
 import {
   equipmentText,
@@ -17,13 +19,13 @@ export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
 
   return (
     <div>
-      <section className="pageHero equipmentHero">
+      <PageHeading>
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav}</p>
           <h1>{t.title}</h1>
           <p>{t.subtitle}</p>
         </div>
-      </section>
+      </PageHeading>
 
       <section className="rmSection equipmentSection">
         <div className="rmShell">
@@ -53,13 +55,13 @@ export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug
 
   return (
     <div>
-      <section className="pageHero equipmentHero">
+      <PageHeading>
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav} / {item.title}</p>
           <h1>{item.title}</h1>
           <p>{item.short}</p>
         </div>
-      </section>
+      </PageHeading>
 
       <section className="rmSection equipmentDetailSection">
         <div className="rmShell">

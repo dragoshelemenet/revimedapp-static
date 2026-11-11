@@ -1,3 +1,5 @@
+
+import PageHeading from "@/components/PageHeading";
 import { makeMetadata } from "@/lib/seo";
 import { isLang } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -38,13 +40,13 @@ export default async function Page({ params }: Props) {
 
   return (
     <div>
-      <section className="pageHero">
+      <PageHeading>
         <div className="rmShell">
           <p className="breadcrumbs">{home} / {nav}</p>
           <h1>{title}</h1>
           <p>{subtitle}</p>
         </div>
-      </section>
+      </PageHeading>
 
       <section className="rmSection">
         <div className="rmShell">

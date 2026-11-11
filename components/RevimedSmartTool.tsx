@@ -1,5 +1,7 @@
 "use client";
 
+import PageHeading from "@/components/PageHeading";
+
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { isLang, type Lang } from "@/lib/i18n";
@@ -897,13 +899,13 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
 
  return (
   <>
-   <section className="pageHero smartToolHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">REVIMED PLUS+ / {cfg.tag[lang]}</p>
      <h1>{cfg.title[lang]}</h1>
      <p className="lead">{cfg.lead[lang]}</p>
     </div>
-   </section>
+   </PageHeading>
 
    <section className="rmSection smartToolSection">
     <div className="rmShell smartToolWrap">

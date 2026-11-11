@@ -1,3 +1,5 @@
+
+import PageHeading from "@/components/PageHeading";
 import { notFound } from "next/navigation";
 import { isLang, t } from "@/lib/i18n";
 export const dynamicParams = false;
@@ -25,13 +27,13 @@ export default async function SimpleLangPage({ params }: Props) {
 
  return (
   <>
-   <section className="pageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home}</p>
      <h1>{titleMap["contact"] || text.contact}</h1>
      <p className="lead">{text.languageVersion}: {lang.toUpperCase()}</p>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection">
     <div className="rmShell adminCard">
      <p>Localized page placeholder. Main content can be translated from admin where applicable.</p>

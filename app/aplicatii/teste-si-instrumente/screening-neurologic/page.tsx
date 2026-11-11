@@ -1,5 +1,7 @@
 "use client";
 
+import PageHeading from "@/components/PageHeading";
+
 import { useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { isLang, type Lang } from "@/lib/i18n";
@@ -503,13 +505,13 @@ export default function NeuroScreeningPage() {
 
   return (
     <>
-      <section className="pageHero">
+      <PageHeading>
         <div className="rmShell">
           <p className="crumb">{t.crumb}</p>
           <h1>{t.title}</h1>
           <p className="lead">{t.lead}</p>
         </div>
-      </section>
+      </PageHeading>
 
       <section className="rmSection neuroWizardSection">
         <div className="rmShell neuroWizardShell">

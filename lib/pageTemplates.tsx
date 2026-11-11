@@ -1,3 +1,6 @@
+import { JsonLd, absoluteUrl } from "@/lib/seo";
+
+import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
 import { youtubeVideos } from "@/lib/videos";
 import { site } from "@/lib/site";
@@ -418,13 +421,13 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero aboutPageHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.about}</p>
      <h1>{lang === "ro" ? (hero?.title || text.aboutTitle) : text.aboutTitle}</h1>
      <p className="lead">{lang === "ro" ? (hero?.text || text.aboutText1) : text.aboutText1}</p>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection aboutPageSection">
     <div className="rmShell aboutGrid">
      <div className="doctorVisual">
@@ -452,13 +455,13 @@ export function ServicesTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.services}</p>
      <h1>{lang === "ro" ? (hero?.title || text.services) : text.services}</h1>
      <p className="lead">{lang === "ro" ? (hero?.text || text.noItems) : text.noItems}</p>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection">
     <div className="rmShell serviceGrid">
      {services.map((service) => {
@@ -495,14 +498,14 @@ export function ServiceTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.services} / {cleanServiceText(service.title)}</p>
      <h1>{cleanServiceText(service.title)}</h1>
      <p className="lead">{service.short_desc}</p>
      <Link className="blueBtn" href={withLang("/contact", lang)}>{text.appointment}</Link>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection">
     <div className="rmShell contentGrid">
      <article className="adminCard serviceArticle blogArticleCard">
@@ -537,13 +540,13 @@ export function AppsTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.apps}</p>
      <h1>{lang === "ro" ? (hero?.title || text.toolsTitle) : text.toolsTitle}</h1>
      <p className="lead">{lang === "ro" ? (hero?.text || text.toolsSubtitle) : text.toolsSubtitle}</p>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection">
     <div className="rmShell toolGrid">
      {appTools.map((tool) => (
@@ -581,13 +584,13 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero pricesHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.prices}</p>
      <h1>{text.pricesTitle}</h1>
      <p className="lead">{text.pricesSubtitle}</p>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection pricesCleanSection">
     <div className="rmShell pricesModernLayout">
      <CurrencyConverter labels={text} />
@@ -607,13 +610,13 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero galleryHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.gallery}</p>
      <h1>{text.galleryTitle}</h1>
      <p className="lead">{text.gallerySubtitle}</p>
     </div>
-   </section>
+   </PageHeading>
 
    <section className="rmSection galleryPageSection">
     <div className="rmShell">
@@ -666,13 +669,13 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.blog}</p>
      <h1>{text.blogTitle}</h1>
      <p className="lead">{text.blogSubtitle}</p>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection">
     <div className="rmShell grid3">
      {posts.length === 0 && <div className="adminCard"><p>{text.noPosts}</p></div>}
@@ -697,13 +700,21 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
 
  return (
   <>
-   <section className="pageHero blogPostHero innerPageHero">
+   <JsonLd data={{
+    "@context": "https://schema.org", "@type": "BlogPosting",
+    headline: post.title, description: post.excerpt,
+    mainEntityOfPage: absoluteUrl(withLang(`/blog/${post.slug}/`, lang)),
+    inLanguage: lang === "ua" ? "uk" : lang,
+    image: post.image.startsWith("http") ? post.image : absoluteUrl(post.image),
+    publisher: { "@type": "Organization", name: site.name, url: site.url }
+   }} />
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.blog} / {post.title}</p>
      <h1>{post.title}</h1>
      <p className="lead">{post.excerpt}</p>
     </div>
-   </section>
+   </PageHeading>
    <section className="rmSection blogPostSection">
     <article className="rmShell adminCard prose blogPostArticle blogArticleCard">
      <div className="postHeroImage" style={{ backgroundImage: `url(${post.image})` }} />
@@ -737,13 +748,13 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
  const usedContactValues = new Set<string>();
  return (
   <>
-   <section className="pageHero contactHero innerPageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">{text.home} / {text.contact}</p>
      <h1>{hero?.title || text.contactTitle}</h1>
      <p className="lead">{hero?.text || text.contactSubtitle}</p>
     </div>
-   </section>
+   </PageHeading>
 
    <section className="rmSection contactModernSection">
     <div className="rmShell contactModernGrid">

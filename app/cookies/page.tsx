@@ -1,3 +1,5 @@
+
+import PageHeading from "@/components/PageHeading";
 import { makeMetadata } from "@/lib/seo";
 export const metadata = makeMetadata({ lang: "ro", path: "/cookies", localized: false,
  title: "Cookies și Confidențialitate",
@@ -7,13 +9,13 @@ export const metadata = makeMetadata({ lang: "ro", path: "/cookies", localized: 
 export default function CookiesPage() {
  return (
   <>
-   <section className="pageHero">
+   <PageHeading>
     <div className="rmShell">
      <p className="crumb">Acasă / Cookies</p>
      <h1>Cookies și Confidențialitate</h1>
      <p className="lead">Informații despre cookies, date personale și confidențialitate.</p>
     </div>
-   </section>
+   </PageHeading>
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard">

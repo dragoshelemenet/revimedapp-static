@@ -260,11 +260,6 @@ p{margin:0 0 18px}
   margin-bottom:18px;
 }
 .contactBand{background:linear-gradient(135deg,var(--navy),var(--blue));color:white}
-.pageHero{
-  padding:88px 0;
-  background:linear-gradient(135deg,var(--navy),var(--blue));
-  color:white;
-}
 .crumb{color:#b9dcff;font-weight:800}
 .contentGrid{
   display:grid;
@@ -407,18 +402,8 @@ p{margin:0 0 18px}
   .stats{grid-template-columns:1fr}
   .sideBox{position:static}
 }
-
-/* Revimed visual system */
 .rmShell{width:min(1130px,calc(100% - 32px));margin:auto}
-.rmTop{height:28px;background:#0696e8;color:white;font-size:13px}
-.rmTop .rmShell{display:flex;align-items:center;justify-content:space-between;height:28px}
-.rmHeader{position:sticky;top:0;z-index:100;background:var(--rm-surface-white);box-shadow:0 2px 16px rgba(0,0,0,.06)}
-.rmNav{height:64px;display:flex;align-items:center;justify-content:space-between}
-.rmLogo{display:flex;align-items:center;gap:10px}
-.rmLogo img{height:44px;max-width:170px;object-fit:contain}
 .rmLogoText{font-weight:900;color:#c12b2b;display:none}
-.rmLinks{display:flex;align-items:center;gap:23px;font-size:14px;font-weight:800;color:#101827}
-.rmLinks a:hover{color:#0a96e8}
 .rmDrop{position:relative}
 .rmDropPanel{display:none;position:absolute;top:26px;right:0;width:360px;background:var(--rm-surface-white);border:1px solid var(--rm-border-blue);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.14);padding:10px}
 .rmDrop:hover .rmDropPanel{display:block}
@@ -440,11 +425,6 @@ p{margin:0 0 18px}
 .aboutBlock h2,.centerTitle{font-size:38px;color:#111;text-align:left}
 .centerTitle{text-align:center;margin-bottom:30px}
 .aboutBlock p{font-weight:600;color:#202833}
-
-
-
-
-
 
 .toolGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .toolTile{background:var(--rm-surface-white);border:1px solid #d6ecff;border-radius:18px;padding:24px;box-shadow:0 12px 28px rgba(0,132,210,.13)}
@@ -470,8 +450,6 @@ p{margin:0 0 18px}
 .rmFooter a{display:inline-block;margin:0 12px 8px 0;font-weight:700}
 .footerLogo{height:45px;object-fit:contain}
 .fb{width:45px;height:45px;background:#118ee9;color:var(--rm-surface-white);border-radius:50%;display:grid;place-items:center;font-size:30px;font-weight:900}
-
-.pageHero{background:linear-gradient(135deg,var(--rm-heading-deep),#069df2);color:white;padding:78px 0}
 .crumb{color:#dceeff;font-weight:800}
 .lead{font-size:20px;color:#edf8ff}
 .adminBg{min-height:80vh;background:#f2f8ff;padding:60px 0}
@@ -529,8 +507,6 @@ p{margin:0 0 18px}
 .effect{padding:8px;border-bottom:1px solid rgba(255,255,255,.12)}
 
 @media(max-width:900px){
-  .rmNav{height:auto;align-items:flex-start;flex-direction:column;padding:12px 0}
-  .rmLinks{gap:10px}
   .homeHero,.heroOverlay{min-height:430px}
   .heroCenter h1{font-size:38px}
   .aboutGrid,.contactGrid,.rmFooterGrid,.adminColumns,.tibetanGrid{grid-template-columns:1fr}
@@ -582,7 +558,6 @@ p{margin:0 0 18px}
   gap:12px;
 }
 
-
 .textContent p{
   color:#334155;
   font-size:17px;
@@ -592,10 +567,6 @@ p{margin:0 0 18px}
   margin-bottom:8px;
   color:#334155;
 }
-
-
-
-/* Homepage cleanup */
 .pricePreview{
   display:none!important;
 }
@@ -655,11 +626,6 @@ p{margin:0 0 18px}
 .reviewSlide small{
   color:#66758a;
   margin-top:8px;
-}
-
-/* Cleaner prices page */
-.pricesHero{
-  padding:64px 0;
 }
 
 .pricesCleanSection{
@@ -776,8 +742,6 @@ p{margin:0 0 18px}
   padding:18px;
   font-weight:850;
 }
-
-/* Fixed map feeling */
 .fixedMapCard{
   position:sticky!important;
   top:110px!important;
@@ -823,12 +787,6 @@ p{margin:0 0 18px}
   .priceItemClean strong{
     font-size:20px;
   }
-}
-
-.galleryHero{
-  background:
-    linear-gradient(135deg,rgba(10,37,84,.92),rgba(6,157,242,.76)),
-    url('/images/medical-bg.jpg') center/cover no-repeat;
 }
 
 .galleryPageSection{
@@ -898,8 +856,6 @@ p{margin:0 0 18px}
     grid-row:auto;
   }
 }
-
-/* MOBILE FIXES */
 @media(max-width:700px){
   body{
     overflow-x:hidden;
@@ -909,44 +865,6 @@ p{margin:0 0 18px}
     width:calc(100% - 28px);
   }
 
-  .rmTop{
-    height:26px;
-  }
-
-  .rmTop .rmShell{
-    height:26px;
-    justify-content:flex-end;
-  }
-
-  .rmNav{
-    min-height:auto;
-    height:auto;
-    padding:10px 14px 12px;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:8px;
-  }
-
-  .rmLogo{
-    justify-content:center;
-    width:100%;
-  }
-
-  .rmLogo img{
-    height:44px;
-    max-width:190px;
-  }
-
-  .rmLinks{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:6px;
-    font-size:13px;
-    line-height:1.15;
-  }
-
-  .rmLinks > a,
   .rmDrop > a{
     display:flex;
     align-items:center;
@@ -973,23 +891,6 @@ p{margin:0 0 18px}
     z-index:999;
   }
 
-  .pageHero{
-    padding:48px 0 54px;
-  }
-
-  .pageHero h1{
-    font-size:42px;
-    line-height:1.08;
-    letter-spacing:-1.5px;
-    max-width:320px;
-  }
-
-  .pageHero .lead{
-    font-size:20px;
-    line-height:1.55;
-    max-width:320px;
-  }
-
   .crumb{
     font-size:16px;
     line-height:1.35;
@@ -1007,13 +908,12 @@ p{margin:0 0 18px}
 
   .toolTile,
 .card,
-  .adminCard{
+.adminCard{
     border-radius:22px;
     padding:22px;
     box-shadow:0 10px 28px rgba(0,88,150,.10);
   }
 .toolTile p,
-  
 
   .toolTile b{
     display:inline-block;
@@ -1186,17 +1086,6 @@ p{margin:0 0 18px}
   }
 }
 
-@media(max-width:390px){
-  .rmLinks{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .pageHero h1{
-    font-size:39px;
-  }
-
-  }
-
 .langs{
   display:flex;
   gap:12px;
@@ -1254,8 +1143,6 @@ p{margin:0 0 18px}
     gap:9px;
   }
 }
-
-/* Gallery video fix */
 .galleryVideoSection{
   background:var(--rm-surface-white);
   padding-top:48px;
@@ -1312,88 +1199,11 @@ p{margin:0 0 18px}
     font-size:17px;
   }
 }
-
-/* Unified inner-page hero: image + blue overlay, except homepage */
-.pageHero{
-  position:relative;
-  overflow:hidden;
-  min-height:320px;
-  display:flex;
-  align-items:center;
-  background:
-    linear-gradient(90deg,rgba(7,31,63,.78),rgba(0,148,232,.72)),
-    url('/images/medical-bg.jpg') center/cover no-repeat!important;
-  color:white;
-}
-
-.pageHero .rmShell{
-  position:relative;
-  z-index:2;
-}
-
-.pageHero h1{
-  color:white;
-  text-shadow:0 3px 18px rgba(0,0,0,.22);
-}
-
-.pageHero .lead{
-  color:#f0f8ff;
-  text-shadow:0 2px 12px rgba(0,0,0,.18);
-}
-
-.pageHero .crumb{
-  color:var(--rm-surface-white);
-  opacity:.95;
-  font-weight:900;
-}
-
-/* Remove separate hero overrides so all inner pages look consistent */
-.galleryHero,
-.contactHero,
-.pricesHero,
 .ayurHero{
   background:
     linear-gradient(90deg,rgba(7,31,63,.78),rgba(0,148,232,.72)),
     url('/images/medical-bg.jpg') center/cover no-repeat!important;
 }
-
-/* Better spacing on desktop inner pages */
-@media(min-width:901px){
-  .pageHero{
-    padding:86px 0;
-  }
-
-  .pageHero h1{
-    max-width:900px;
-  }
-
-  .pageHero .lead{
-    max-width:720px;
-  }
-}
-
-/* Mobile version */
-@media(max-width:700px){
-  .pageHero{
-    min-height:260px;
-    padding:48px 0 52px!important;
-    background:
-      linear-gradient(90deg,rgba(7,31,63,.84),rgba(0,148,232,.75)),
-      url('/images/medical-bg.jpg') center/cover no-repeat!important;
-  }
-
-  .pageHero h1{
-    font-size:40px;
-    line-height:1.08;
-  }
-
-  .pageHero .lead{
-    font-size:19px;
-    line-height:1.5;
-  }
-}
-
-/* Old contact layout restored, editable from admin */
 .contactOldLayout{
   max-width:1140px;
 }
@@ -1836,11 +1646,8 @@ p{margin:0 0 18px}
 }
 
 @media print{
-  .rmHeader,
   .rmFooter,
-  .neuroSide,
-  .hamburger,
-  .menuBackdrop{
+  .neuroSide{
     display:none!important;
   }
 
@@ -1848,72 +1655,13 @@ p{margin:0 0 18px}
     grid-template-columns:1fr!important;
   }
 
-  .pageHero{
-    min-height:auto!important;
-    padding:20px 0!important;
-  }
-
   .neuroResult{
     break-inside:avoid;
   }
 }
 
-/* HARD HEADER FIX: desktop normal, hamburger only mobile */
-.hamburger,
-.menuBackdrop{
-  display:none;
-}
-
 @media(min-width:701px){
-  .rmHeader{
-    position:sticky;
-    top:0;
-    z-index:1000;
-  }
 
-  .rmNav{
-    height:64px!important;
-    min-height:64px!important;
-    padding:0!important;
-    display:flex!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:space-between!important;
-  }
-
-  .rmLogo{
-    width:auto!important;
-    justify-content:flex-start!important;
-  }
-
-  .rmLogo img{
-    height:44px!important;
-    max-width:180px!important;
-  }
-
-  .rmLinks{
-    position:static!important;
-    display:flex!important;
-    flex-direction:row!important;
-    grid-template-columns:none!important;
-    align-items:center!important;
-    justify-content:flex-end!important;
-    gap:22px!important;
-    width:auto!important;
-    opacity:1!important;
-    visibility:visible!important;
-    pointer-events:auto!important;
-    transform:none!important;
-    max-height:none!important;
-    overflow:visible!important;
-    padding:0!important;
-    background:transparent!important;
-    border:0!important;
-    border-radius:0!important;
-    box-shadow:none!important;
-  }
-
-  .rmLinks > a,
   .rmDrop > a{
     background:transparent!important;
     padding:0!important;
@@ -1955,158 +1703,6 @@ p{margin:0 0 18px}
   }
 }
 
-@media(max-width:700px){
-  .rmHeader{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:var(--rm-surface-white);
-  }
-
-  .rmTop{
-    height:26px!important;
-  }
-
-  .rmTop .rmShell{
-    height:26px!important;
-    justify-content:flex-end!important;
-  }
-
-  .rmNav{
-    height:auto!important;
-    min-height:auto!important;
-    padding:9px 14px 12px!important;
-    display:flex!important;
-    flex-direction:column!important;
-    align-items:center!important;
-    justify-content:center!important;
-    gap:8px!important;
-  }
-
-  .rmLogo{
-    width:100%!important;
-    justify-content:center!important;
-    position:relative;
-    z-index:1003;
-  }
-
-  .rmLogo img{
-    height:44px!important;
-    max-width:190px!important;
-  }
-
-  .hamburger{
-    display:flex!important;
-    width:44px!important;
-    height:34px!important;
-    border:1px solid #9aa8b8!important;
-    border-radius:6px!important;
-    background:white!important;
-    padding:5px 8px!important;
-    flex-direction:column!important;
-    justify-content:center!important;
-    gap:4px!important;
-    cursor:pointer!important;
-    z-index:1003!important;
-  }
-
-  .hamburger span{
-    display:block!important;
-    height:2px!important;
-    width:100%!important;
-    border-radius:10px!important;
-    background:var(--rm-text-primary)!important;
-    margin:0!important;
-    transition:.2s ease!important;
-  }
-
-  .hamburger.active span:nth-child(1){
-    transform:translateY(6px) rotate(45deg)!important;
-  }
-
-  .hamburger.active span:nth-child(2){
-    opacity:0!important;
-  }
-
-  .hamburger.active span:nth-child(3){
-    transform:translateY(-6px) rotate(-45deg)!important;
-  }
-
-  .rmLinks{
-    display:none!important;
-  }
-
-  .rmLinks.mobileOpen{
-    display:grid!important;
-    position:fixed!important;
-    top:104px!important;
-    left:14px!important;
-    right:14px!important;
-    width:auto!important;
-    grid-template-columns:1fr!important;
-    gap:8px!important;
-    padding:14px!important;
-    background:var(--rm-surface-white)!important;
-    border:1px solid var(--rm-border-blue)!important;
-    border-radius:22px!important;
-    box-shadow:0 24px 70px rgba(7,31,63,.28)!important;
-    z-index:1003!important;
-    max-height:calc(100vh - 120px)!important;
-    overflow:auto!important;
-    opacity:1!important;
-    visibility:visible!important;
-    pointer-events:auto!important;
-    transform:none!important;
-  }
-
-  .rmLinks.mobileOpen > a,
-  .rmLinks.mobileOpen .rmDrop > a{
-    width:100%!important;
-    min-height:44px!important;
-    display:flex!important;
-    align-items:center!important;
-    justify-content:flex-start!important;
-    text-align:left!important;
-    padding:12px 14px!important;
-    border-radius:14px!important;
-    background:#f4f9ff!important;
-    color:var(--rm-text-primary)!important;
-    font-size:16px!important;
-    font-weight:900!important;
-  }
-
-  .rmLinks.mobileOpen .rmDropPanel{
-    display:block!important;
-    position:static!important;
-    width:100%!important;
-    border:0!important;
-    box-shadow:none!important;
-    padding:6px 0 0!important;
-    background:transparent!important;
-  }
-
-  .rmLinks.mobileOpen .rmDropPanel a{
-    display:block!important;
-    background:var(--rm-surface-blue)!important;
-    margin-top:6px!important;
-    border-radius:12px!important;
-    padding:11px 13px!important;
-  }
-
-  .rmLinks.mobileOpen .rmDropPanel small{
-    display:none!important;
-  }
-
-  .menuBackdrop{
-    display:block!important;
-    position:fixed!important;
-    inset:0!important;
-    border:0!important;
-    background:rgba(7,31,63,.34)!important;
-    z-index:1001!important;
-  }
-}
-
 .bottomGenerateBox{
   background:var(--rm-surface-white);
   border:1px solid var(--rm-border-blue);
@@ -2125,8 +1721,6 @@ p{margin:0 0 18px}
   color:#66758a;
   font-weight:750;
 }
-
-/* Modern Contact redesign */
 .contactModernSection{
   background:linear-gradient(180deg,#f6fbff,var(--rm-surface-white));
 }
@@ -2323,8 +1917,6 @@ p{margin:0 0 18px}
   border-radius:20px;
   display:block;
 }
-
-/* Prices accordion + converter */
 .pricesModernLayout{
   display:grid;
   gap:22px;
@@ -2517,8 +2109,6 @@ p{margin:0 0 18px}
     font-size:20px;
   }
 }
-
-/* Clean neurological screening layout */
 .neuroCleanLayout{
   display:grid;
   gap:22px;
@@ -2663,8 +2253,6 @@ p{margin:0 0 18px}
     grid-template-columns:1fr 1fr!important;
   }
 }
-
-/* Beautiful admin login */
 .adminLoginPage{
   min-height:calc(100vh - 90px);
   display:grid;
@@ -2811,156 +2399,16 @@ p{margin:0 0 18px}
     padding:28px;
   }
 }
-
-/* Final mobile usability pass */
 .rmDrop,
 .rmDropPanel{
   display:none!important;
 }
 
-@media(min-width:701px){
-  .rmNav{
-    max-width:1120px!important;
-  }
-
-  .rmLinks{
-    gap:20px!important;
-  }
-
-  .rmLinks > a{
-    white-space:nowrap;
-  }
-}
-
 @media(max-width:700px){
-  .rmHeader{
-    box-shadow:0 2px 14px rgba(0,0,0,.08)!important;
-  }
-
-  .rmTop{
-    height:24px!important;
-  }
-
-  .rmTop .rmShell{
-    width:calc(100% - 24px)!important;
-    height:24px!important;
-  }
 
   .langs{
     gap:10px!important;
     font-size:13px!important;
-  }
-
-  .rmNav{
-    width:100%!important;
-    height:62px!important;
-    min-height:62px!important;
-    padding:0 14px!important;
-    display:flex!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:space-between!important;
-    gap:12px!important;
-  }
-
-  .rmLogo{
-    width:auto!important;
-    justify-content:flex-start!important;
-  }
-
-  .rmLogo img{
-    height:42px!important;
-    max-width:172px!important;
-  }
-
-  .hamburger{
-    width:44px!important;
-    height:38px!important;
-    border-radius:10px!important;
-    border:1px solid #b8c7d8!important;
-    background:var(--rm-surface-white)!important;
-    display:flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    flex-direction:column!important;
-    gap:5px!important;
-    padding:7px 9px!important;
-    flex:0 0 auto!important;
-  }
-
-  .hamburger span{
-    height:2px!important;
-    width:23px!important;
-    background:var(--rm-text-primary)!important;
-    margin:0!important;
-  }
-
-  .hamburger.active span:nth-child(1){
-    transform:translateY(7px) rotate(45deg)!important;
-  }
-
-  .hamburger.active span:nth-child(3){
-    transform:translateY(-7px) rotate(-45deg)!important;
-  }
-
-  .rmLinks{
-    display:none!important;
-  }
-
-  .rmLinks.mobileOpen{
-    display:grid!important;
-    position:fixed!important;
-    top:88px!important;
-    left:12px!important;
-    right:12px!important;
-    grid-template-columns:1fr 1fr!important;
-    gap:8px!important;
-    padding:12px!important;
-    background:var(--rm-surface-white)!important;
-    border:1px solid var(--rm-border-blue)!important;
-    border-radius:18px!important;
-    box-shadow:0 24px 70px rgba(7,31,63,.28)!important;
-    z-index:1003!important;
-  }
-
-  .rmLinks.mobileOpen > a{
-    min-height:42px!important;
-    display:flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    text-align:center!important;
-    border-radius:13px!important;
-    background:#f4f9ff!important;
-    color:var(--rm-text-primary)!important;
-    font-size:14px!important;
-    font-weight:900!important;
-    padding:10px 8px!important;
-  }
-
-  .menuBackdrop{
-    display:block!important;
-    position:fixed!important;
-    inset:0!important;
-    background:rgba(7,31,63,.28)!important;
-    border:0!important;
-    z-index:1001!important;
-  }
-
-  .pageHero{
-    min-height:230px!important;
-    padding:36px 0 38px!important;
-  }
-
-  .pageHero h1{
-    font-size:34px!important;
-    line-height:1.05!important;
-    max-width:315px!important;
-  }
-
-  .pageHero .lead{
-    font-size:17px!important;
-    line-height:1.45!important;
-    max-width:315px!important;
   }
 
   .crumb{
@@ -2973,13 +2421,13 @@ p{margin:0 0 18px}
   }
 
   .toolGrid,
-  
 
   .toolTile,
-.toolTile p,
-  
+
+  .toolTile p,
 
   .toolTile b,
+
   .serviceTile b{
     font-size:15px!important;
   }
@@ -3051,9 +2499,6 @@ p{margin:0 0 18px}
 }
 
 @media(max-width:380px){
-  .rmLinks.mobileOpen{
-    grid-template-columns:1fr!important;
-  }
 
   .rmFooterGrid{
     grid-template-columns:1fr!important;
@@ -3064,8 +2509,6 @@ p{margin:0 0 18px}
     grid-column:1 / -1!important;
   }
 }
-
-/* Footer mobile final fix */
 .fb{
   display:inline-flex!important;
   align-items:center!important;
@@ -3168,8 +2611,6 @@ p{margin:0 0 18px}
     grid-template-columns:1fr 1fr!important;
   }
 }
-
-/* Simple admin dashboard */
 .adminSimplePage{
   min-height:100vh;
   display:grid;
@@ -3541,8 +2982,6 @@ p{margin:0 0 18px}
     border-radius:20px;
   }
 }
-
-/* Compact mobile homepage/site layout */
 .fb,
 .fb span{
   display:none!important;
@@ -3596,8 +3035,6 @@ p{margin:0 0 18px}
     font-size:14px!important;
     line-height:1.5!important;
   }
-
-  /* 2 cards per row on phone */
 .toolGrid,
   .grid3,
   .doshaGrid{
@@ -3613,10 +3050,10 @@ p{margin:0 0 18px}
   }
 
   .serviceTile .tileIcon,
-  
 
   .serviceTile h3,
-.card h2{
+
+  .card h2{
     font-size:15px!important;
     line-height:1.15!important;
     margin:6px 0 6px!important;
@@ -3646,8 +3083,6 @@ p{margin:0 0 18px}
     margin-top:10px!important;
     font-size:12px!important;
   }
-
-  /* Keep very text-heavy pages one column */
   .pricesAccordion,
   .priceAccordionBody,
   .contactModernGrid,
@@ -3656,8 +3091,6 @@ p{margin:0 0 18px}
   .neuroQuestions{
     grid-template-columns:1fr!important;
   }
-
-  /* Reviews smaller */
   .testimonialBand{
     padding:32px 0!important;
   }
@@ -3687,8 +3120,6 @@ p{margin:0 0 18px}
   .reviewSlide .stars{
     font-size:16px!important;
   }
-
-  /* Footer compact */
   .rmFooter{
     padding:22px 0!important;
   }
@@ -3763,8 +3194,6 @@ p{margin:0 0 18px}
     height:42px!important;
   }
 }
-
-/* On very narrow phones keep cards readable */
 @media(max-width:350px){
 .toolGrid,
   .grid3,
@@ -3792,8 +3221,6 @@ p{margin:0 0 18px}
     grid-template-columns:1fr!important;
   }
 }
-
-/* Remove blue box from Program de lucru on mobile footer */
 @media(max-width:700px){
   .footerSchedule{
     background:transparent!important;
@@ -3802,8 +3229,6 @@ p{margin:0 0 18px}
     border-radius:0!important;
   }
 }
-
-/* Icons8 image icons instead of emoji */
 .tileIconImg{
   width:46px;
   height:46px;
@@ -3860,8 +3285,6 @@ p{margin:0 0 18px}
     padding:5px!important;
   }
 }
-
-/* Admin drag/drop upload */
 .uploadInput{
   display:grid;
   gap:10px;
@@ -3919,8 +3342,6 @@ p{margin:0 0 18px}
   color:#607086;
   word-break:break-all;
 }
-
-/* Clean clinical UI refresh: calmer, less shadow, more readable */
 :root{
   --clean-blue:#0b8fd8;
   --clean-blue-dark:#075f9e;
@@ -3936,8 +3357,6 @@ body{
   color:var(--clean-text);
   background:var(--rm-surface-white);
 }
-
-/* Layout rhythm */
 .rmShell{
   max-width:1120px;
 }
@@ -3952,28 +3371,10 @@ body{
   }
 }
 
-/* Header cleaner */
-.rmHeader{
-  background:var(--rm-surface-white);
-  border-bottom:1px solid var(--clean-line);
-  box-shadow:none!important;
-}
-
-.rmNav{
-  box-shadow:none!important;
-}
-
-.rmLinks > a,
 .rmDrop > a{
   color:var(--clean-navy)!important;
   font-weight:850!important;
 }
-
-.rmLinks > a:hover{
-  color:var(--clean-blue)!important;
-}
-
-/* Hero cleaner */
 .homeHero{
   background-position:center!important;
 }
@@ -3982,18 +3383,9 @@ body{
   background:linear-gradient(90deg,rgba(8,31,58,.62),rgba(0,142,214,.38))!important;
 }
 
-.heroCenter h1,
-.pageHero h1{
+.heroCenter h1{
   letter-spacing:-.04em;
 }
-
-.pageHero{
-  background:
-    linear-gradient(90deg,rgba(8,31,58,.72),rgba(0,142,214,.48)),
-    url('/images/medical-bg.jpg') center/cover no-repeat!important;
-}
-
-/* Buttons cleaner */
 .blueBtn{
   background:var(--clean-blue)!important;
   color:var(--rm-surface-white)!important;
@@ -4020,8 +3412,6 @@ body{
 .softBtn:hover{
   background:#dff0ff!important;
 }
-
-/* Cards: remove heavy shadows/outlines, cleaner backgrounds */
 .card,
 .toolTile,
 .adminCard,
@@ -4068,8 +3458,6 @@ body{
 .card p{
   color:var(--clean-muted)!important;
 }
-
-/* Service/app icons cleaner */
 .tileIconImg{
   width:44px;
   height:44px;
@@ -4085,8 +3473,6 @@ body{
     padding:3px!important;
   }
 }
-
-/* About section cleaner */
 .doctorVisual{
   box-shadow:none!important;
 }
@@ -4095,8 +3481,6 @@ body{
   box-shadow:none!important;
   border:1px solid var(--clean-line);
 }
-
-/* Forms/inputs */
 input,
 textarea,
 select{
@@ -4109,14 +3493,10 @@ select:focus{
   outline:2px solid rgba(11,143,216,.18)!important;
   border-color:#99d5f7!important;
 }
-
-/* Gallery cleaner */
 .galleryPhoto span{
   background:rgba(16,32,51,.74)!important;
   box-shadow:none!important;
 }
-
-/* Contact cleaner */
 .contactModernSection{
   background:var(--rm-surface-white)!important;
 }
@@ -4141,8 +3521,6 @@ select:focus{
 .contactMapModern iframe{
   border:1px solid var(--clean-line)!important;
 }
-
-/* Prices cleaner */
 .priceAccordionHead{
   background:var(--rm-surface-white)!important;
 }
@@ -4165,8 +3543,6 @@ select:focus{
 .currencyResult{
   box-shadow:none!important;
 }
-
-/* Reviews cleaner */
 .testimonialBand{
   background:linear-gradient(135deg,var(--rm-brand-blue-dark),var(--rm-brand-blue))!important;
 }
@@ -4175,8 +3551,6 @@ select:focus{
   box-shadow:none!important;
   border:1px solid rgba(255,255,255,.45)!important;
 }
-
-/* Footer cleaner */
 .rmFooter{
   border-top:1px solid var(--clean-line)!important;
   background:var(--rm-surface-white)!important;
@@ -4186,8 +3560,6 @@ select:focus{
   background:transparent!important;
   border:0!important;
 }
-
-/* Admin cleaner */
 .adminSidebar,
 .adminLoginBrand{
   box-shadow:none!important;
@@ -4209,17 +3581,7 @@ select:focus{
   transform:none!important;
   background:var(--rm-surface-soft)!important;
 }
-
-/* Mobile cleaner and shorter */
 @media(max-width:700px){
-  .rmHeader{
-    border-bottom:1px solid var(--clean-line)!important;
-  }
-
-  .rmLinks.mobileOpen{
-    box-shadow:none!important;
-    border:1px solid var(--clean-line)!important;
-  }
 
   .homeHero,
   .heroOverlay{
@@ -4231,18 +3593,6 @@ select:focus{
   }
 
   .heroCenter p{
-    font-size:16px!important;
-  }
-
-  .pageHero{
-    min-height:220px!important;
-  }
-
-  .pageHero h1{
-    font-size:32px!important;
-  }
-
-  .pageHero .lead{
     font-size:16px!important;
   }
 .toolTile,
@@ -4268,8 +3618,6 @@ select:focus{
   box-shadow:none!important;
   border:1px solid var(--clean-line)!important;
 }
-
-/* Subtle active language flag overlay */
 .languageFlagOverlay{
   position:fixed;
   top:78px;
@@ -4331,12 +3679,6 @@ select:focus{
     opacity:.5;
   }
 }
-
-/* =========================================================
-   PREMIUM STABILITY + READABILITY PATCH
-   ========================================================= */
-
-/* Prevent page shift/jump between routes */
 html{
   overflow-y:scroll;
   scroll-behavior:smooth;
@@ -4346,34 +3688,11 @@ body{
   min-width:320px;
   overflow-x:hidden;
 }
-
-/* Header always same height */
-.rmHeader{
-  height:92px!important;
-  min-height:92px!important;
-  max-height:92px!important;
-}
-
-.rmTop{
-  height:28px!important;
-  min-height:28px!important;
-  max-height:28px!important;
-}
-
-.rmNav{
-  height:64px!important;
-  min-height:64px!important;
-  max-height:64px!important;
-}
-
-/* Reserve normal page width so content does not shift */
 .rmShell{
   width:min(1120px,calc(100% - 32px))!important;
   margin-left:auto!important;
   margin-right:auto!important;
 }
-
-/* Make flag overlay stable and non-layout affecting */
 .languageFlagOverlay{
   position:fixed!important;
   top:92px!important;
@@ -4384,39 +3703,9 @@ body{
   z-index:850!important;
 }
 
-/* Stable internal hero height */
-.pageHero{
-  min-height:300px!important;
-  height:300px!important;
-  display:flex!important;
-  align-items:center!important;
-  padding:0!important;
-}
-
-.pageHero .rmShell{
-  padding-top:0!important;
-  padding-bottom:0!important;
-}
-
-.pageHero h1{
-  font-size:clamp(38px,5vw,58px)!important;
-  line-height:1.02!important;
-  margin:0 0 14px!important;
-  max-width:900px!important;
-}
-
-.pageHero .lead{
-  font-size:clamp(17px,2.2vw,21px)!important;
-  line-height:1.55!important;
-  max-width:760px!important;
-  margin:0!important;
-}
-
 .crumb{
   margin:0 0 14px!important;
 }
-
-/* Homepage hero stable */
 .homeHero,
 .heroOverlay{
   min-height:500px!important;
@@ -4433,8 +3722,6 @@ body{
   font-size:clamp(20px,2.8vw,30px)!important;
   margin-bottom:26px!important;
 }
-
-/* Better typography */
 h1,h2,h3{
   text-wrap:balance;
 }
@@ -4449,8 +3736,6 @@ p{
   color:var(--rm-text-primary)!important;
   margin-bottom:28px!important;
 }
-
-/* Cleaner section rhythm */
 .rmSection{
   padding:70px 0!important;
 }
@@ -4462,8 +3747,6 @@ p{
 .contactModernSection{
   background:var(--rm-surface-white)!important;
 }
-
-/* Better card grid desktop */
 .toolGrid{
   display:grid!important;
   grid-template-columns:repeat(3,1fr)!important;
@@ -4475,8 +3758,6 @@ p{
   grid-template-columns:repeat(3,1fr)!important;
   gap:18px!important;
 }
-
-/* Premium card style: no heavy shadows, clean, easy */
 .toolTile,
 .card{
   border-radius:18px!important;
@@ -4521,8 +3802,6 @@ p{
   margin-top:auto!important;
   color:var(--rm-brand-blue)!important;
 }
-
-/* More elegant icons */
 .tileIconImg{
   width:48px!important;
   height:48px!important;
@@ -4531,8 +3810,6 @@ p{
   padding:6px!important;
   margin:0 0 8px!important;
 }
-
-/* About area cleaner */
 .aboutGrid{
   grid-template-columns:320px 1fr!important;
   gap:56px!important;
@@ -4543,8 +3820,6 @@ p{
   font-size:17px!important;
   line-height:1.75!important;
 }
-
-/* Contact readable */
 .contactModernGrid{
   gap:22px!important;
 }
@@ -4570,8 +3845,6 @@ p{
   border-radius:16px!important;
   padding:14px!important;
 }
-
-/* Prices easier */
 .priceAccordionHead{
   padding:20px 22px!important;
 }
@@ -4583,8 +3856,6 @@ p{
 .priceAccordionBody{
   padding:0 18px 18px!important;
 }
-
-/* Gallery cleaner */
 .galleryMasonry{
   gap:14px!important;
 }
@@ -4601,14 +3872,10 @@ p{
   border-radius:18px!important;
   padding:12px!important;
 }
-
-/* Blog cards */
 .blogImage,
 .postHeroImage{
   border-radius:16px!important;
 }
-
-/* Buttons consistently usable */
 .blueBtn,
 .softBtn{
   min-height:44px!important;
@@ -4616,8 +3883,6 @@ p{
   border-radius:12px!important;
   transition:background .15s ease,color .15s ease,border-color .15s ease!important;
 }
-
-/* Footer clearer */
 .rmFooter{
   padding:38px 0!important;
 }
@@ -4625,40 +3890,10 @@ p{
 .rmFooterGrid{
   gap:28px!important;
 }
-
-/* Language bar stable */
 .langs{
   min-width:150px!important;
   justify-content:flex-end!important;
 }
-
-/* Desktop header stable no jumps */
-@media(min-width:701px){
-  .rmLinks{
-    height:64px!important;
-    align-items:center!important;
-  }
-
-  .rmLinks > a{
-    height:64px!important;
-    display:inline-flex!important;
-    align-items:center!important;
-  }
-
-  .rmLogo{
-    height:64px!important;
-    display:flex!important;
-    align-items:center!important;
-  }
-
-  .rmLogo img{
-    height:42px!important;
-    width:auto!important;
-    display:block!important;
-  }
-}
-
-/* Tablet */
 @media(max-width:980px){
 .toolGrid,
   .grid3{
@@ -4675,26 +3910,7 @@ p{
     margin:auto!important;
   }
 }
-
-/* Mobile stable header and cleaner cards */
 @media(max-width:700px){
-  .rmHeader{
-    height:86px!important;
-    min-height:86px!important;
-    max-height:86px!important;
-  }
-
-  .rmTop{
-    height:24px!important;
-    min-height:24px!important;
-    max-height:24px!important;
-  }
-
-  .rmNav{
-    height:62px!important;
-    min-height:62px!important;
-    max-height:62px!important;
-  }
 
   .rmShell{
     width:calc(100% - 24px)!important;
@@ -4719,22 +3935,6 @@ p{
   .heroCenter p{
     font-size:17px!important;
     line-height:1.35!important;
-  }
-
-  .pageHero{
-    height:230px!important;
-    min-height:230px!important;
-  }
-
-  .pageHero h1{
-    font-size:32px!important;
-    line-height:1.05!important;
-    margin-bottom:10px!important;
-  }
-
-  .pageHero .lead{
-    font-size:15.5px!important;
-    line-height:1.45!important;
   }
 
   .rmSection{
@@ -4805,8 +4005,6 @@ p{
     font-size:14px!important;
     line-height:1.55!important;
   }
-
-  /* Mobile contact less tall */
   .contactPrimaryCard,
   .contactSidePanel,
   .contactMapModern{
@@ -4830,8 +4028,6 @@ p{
   .contactMapModern iframe{
     height:310px!important;
   }
-
-  /* Prices mobile */
   .currencyBox{
     padding:18px!important;
     border-radius:18px!important;
@@ -4848,16 +4044,7 @@ p{
   .priceAccordionHead b{
     font-size:18px!important;
   }
-
-  /* Mobile menu no jumping */
-  .rmLinks.mobileOpen{
-    top:86px!important;
-    max-height:calc(100vh - 100px)!important;
-    overflow:auto!important;
-  }
 }
-
-/* Very small phones */
 @media(max-width:360px){
 .toolGrid,
   .grid3{
@@ -4876,11 +4063,6 @@ p{
   }
 }
 
-/* =========================================================
-   SUPER POLISH DESIGN PATCH
-   Cleaner, premium, easier to read, no heavy shadows
-   ========================================================= */
-
 :root{
   --ui-bg:#ffffff;
   --ui-soft:#f7fbff;
@@ -4896,8 +4078,6 @@ p{
   --ui-radius:18px;
   --ui-radius-lg:26px;
 }
-
-/* Better base readability */
 body{
   font-size:16px;
   line-height:1.55;
@@ -4919,8 +4099,6 @@ img{
   background:#dff2ff;
   color:#071f3f;
 }
-
-/* Visible but elegant keyboard navigation */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -4929,43 +4107,6 @@ select:focus-visible{
   outline:3px solid rgba(11,143,216,.22)!important;
   outline-offset:3px!important;
 }
-
-/* Header polish */
-.rmHeader{
-  backdrop-filter:saturate(1.1) blur(10px);
-}
-
-.rmTop{
-  font-size:13px;
-}
-
-.rmNav{
-  border-left:0!important;
-  border-right:0!important;
-}
-
-.rmLinks > a{
-  position:relative;
-}
-
-.rmLinks > a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:13px;
-  height:2px;
-  background:var(--ui-blue);
-  transform:scaleX(0);
-  transform-origin:center;
-  transition:transform .16s ease;
-}
-
-.rmLinks > a:hover::after{
-  transform:scaleX(1);
-}
-
-/* Hero premium */
 .homeHero{
   position:relative;
   background:
@@ -4996,33 +4137,6 @@ select:focus-visible{
 .heroCenter .blueBtn{
   min-width:170px;
 }
-
-/* Inner hero */
-.pageHero{
-  isolation:isolate;
-}
-
-.pageHero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 24% 25%,rgba(255,255,255,.09),transparent 24%),
-    linear-gradient(90deg,rgba(7,31,63,.74),rgba(0,143,216,.42));
-  z-index:0;
-}
-
-.pageHero .rmShell{
-  z-index:1;
-}
-
-.pageHero h1,
-.pageHero .lead,
-.pageHero .crumb{
-  text-shadow:none!important;
-}
-
-/* Section eyebrow */
 .sectionEyebrow,
 .contactBadge{
   display:inline-flex;
@@ -5036,8 +4150,6 @@ select:focus-visible{
   font-size:12px;
   letter-spacing:.02em;
 }
-
-/* Buttons */
 .blueBtn,
 .softBtn{
   display:inline-flex;
@@ -5062,8 +4174,6 @@ select:focus-visible{
 .softBtn:hover{
   background:#e1f1ff!important;
 }
-
-/* Homepage about */
 .aboutBlock{
   background:var(--rm-surface-white)!important;
 }
@@ -5102,8 +4212,6 @@ select:focus-visible{
   border-radius:28px!important;
   object-fit:cover;
 }
-
-/* Service and app section headers */
 .servicesBlock .rmShell > .centerTitle,
 .appBlock .rmShell > .centerTitle{
   margin-bottom:10px!important;
@@ -5119,8 +4227,6 @@ select:focus-visible{
   border-radius:999px;
   margin:14px auto 0;
 }
-
-/* Cards premium details */
 .toolTile,
 .card{
   position:relative;
@@ -5152,8 +4258,6 @@ select:focus-visible{
   border-radius:999px!important;
   font-weight:900!important;
 }
-
-/* CTA band */
 .homeCtaBand{
   padding:0 0 70px;
   background:var(--rm-surface-white);
@@ -5195,8 +4299,6 @@ select:focus-visible{
   gap:12px;
   flex-wrap:wrap;
 }
-
-/* Testimonial band */
 .testimonialBand{
   background:
     linear-gradient(180deg,#0879ba,#0769a5)!important;
@@ -5209,8 +4311,6 @@ select:focus-visible{
   font-size:clamp(30px,4vw,44px);
   margin-bottom:24px;
 }
-
-/* Contact polish */
 .contactModernSection{
   background:linear-gradient(180deg,var(--rm-surface-white),#f9fcff)!important;
 }
@@ -5247,8 +4347,6 @@ select:focus-visible{
 .mapHeader h2{
   line-height:1.1;
 }
-
-/* Prices polish */
 .pricesCleanSection{
   background:#f9fcff!important;
 }
@@ -5277,8 +4375,6 @@ select:focus-visible{
 .priceItemClean{
   border-radius:14px!important;
 }
-
-/* Gallery polish */
 .galleryPageSection{
   background:var(--rm-surface-white)!important;
 }
@@ -5290,8 +4386,6 @@ select:focus-visible{
 .galleryVideoSection{
   background:#f9fcff!important;
 }
-
-/* Blog polish */
 .blogCard{
   min-height:100%;
 }
@@ -5302,8 +4396,6 @@ select:focus-visible{
   background-position:center;
   margin-bottom:12px;
 }
-
-/* Legal pages */
 .legalSection{
   background:#f9fcff!important;
 }
@@ -5315,8 +4407,6 @@ select:focus-visible{
 .legalCard h2{
   color:var(--ui-heading)!important;
 }
-
-/* Apps */
 .appBlock{
   background:#f9fcff!important;
 }
@@ -5324,8 +4414,6 @@ select:focus-visible{
 .appBlock .toolTile{
   background:var(--rm-surface-white)!important;
 }
-
-/* Admin login/dashboard polish */
 .adminSimplePage{
   background:#f7fbff!important;
 }
@@ -5346,8 +4434,6 @@ select:focus-visible{
 .adminActionGrid button{
   transition:background .15s ease,border-color .15s ease;
 }
-
-/* Footer polish */
 .rmFooter{
   background:#fbfdff!important;
 }
@@ -5355,30 +4441,13 @@ select:focus-visible{
 .footerLinks a:hover{
   color:var(--ui-blue)!important;
 }
-
-/* Tables/lists */
 .priceItemClean h3,
 .adminSimpleItem b{
   text-wrap:pretty;
 }
-
-/* Mobile premium */
 @media(max-width:700px){
   body{
     font-size:15px;
-  }
-
-  .rmTop{
-    font-size:12px;
-  }
-
-  .rmLogo img{
-    height:38px!important;
-  }
-
-  .hamburger{
-    width:42px!important;
-    height:36px!important;
   }
 
   .homeHero,
@@ -5399,20 +4468,6 @@ select:focus-visible{
   .heroCenter p{
     font-size:15.5px!important;
     max-width:280px;
-  }
-
-  .pageHero{
-    height:210px!important;
-    min-height:210px!important;
-  }
-
-  .pageHero h1{
-    font-size:29px!important;
-    max-width:310px!important;
-  }
-
-  .pageHero .lead{
-    max-width:315px!important;
   }
 
   .crumb{
@@ -5534,8 +4589,6 @@ select:focus-visible{
     padding:24px 0!important;
   }
 }
-
-/* Ultra small phones */
 @media(max-width:360px){
   .homeCtaActions{
     grid-template-columns:1fr;
@@ -5546,8 +4599,6 @@ select:focus-visible{
     grid-auto-rows:210px!important;
   }
 }
-
-/* Translated apps polish */
 .breathSection,
 .ayurSection{
   background:#f9fcff;
@@ -5773,23 +4824,15 @@ select:focus-visible{
     font-size:15px;
   }
 }
-
-/* Smooth route + hero transition */
 main,
-.pageHero,
 .homeHero,
 .heroOverlay,
-.heroCenter,
-.pageHero .rmShell,
-.pageHero h1,
-.pageHero .lead,
-.pageHero .crumb{
+.heroCenter{
   backface-visibility:hidden;
   transform-style:preserve-3d;
 }
 
-.homeHero,
-.pageHero{
+.homeHero{
   transform-origin:top center;
   transition:
     height .42s cubic-bezier(.22,.61,.36,1),
@@ -5807,57 +4850,17 @@ main,
     background .42s ease;
 }
 
-.heroCenter,
-.pageHero .rmShell{
+.heroCenter{
   transition:
     transform .44s cubic-bezier(.22,.61,.36,1),
     opacity .28s ease;
 }
 
 .heroCenter h1,
-.heroCenter p,
-.pageHero h1,
-.pageHero .lead,
-.pageHero .crumb{
+.heroCenter p{
   transition:
     transform .44s cubic-bezier(.22,.61,.36,1),
     opacity .32s ease;
-}
-
-/* When route changes, slightly compress and fade the current hero */
-html.route-changing .homeHero,
-html.route-changing .pageHero{
-  opacity:.88;
-  transform:translateY(-4px) scale(.992);
-  filter:saturate(.96);
-}
-
-html.route-changing .heroCenter,
-html.route-changing .pageHero .rmShell{
-  opacity:.72;
-  transform:translateY(12px);
-}
-
-/* New route settles into place */
-html.route-ready .homeHero,
-html.route-ready .pageHero{
-  animation:heroSettle .52s cubic-bezier(.22,.61,.36,1) both;
-}
-
-html.route-ready .heroCenter,
-html.route-ready .pageHero .rmShell{
-  animation:heroTextSettle .56s cubic-bezier(.22,.61,.36,1) both;
-}
-
-html.route-ready .heroCenter h1,
-html.route-ready .pageHero h1{
-  animation:titleSettle .62s cubic-bezier(.22,.61,.36,1) both;
-}
-
-html.route-ready .heroCenter p,
-html.route-ready .pageHero .lead,
-html.route-ready .pageHero .crumb{
-  animation:leadSettle .68s cubic-bezier(.22,.61,.36,1) both;
 }
 
 @keyframes heroSettle{
@@ -5905,8 +4908,6 @@ html.route-ready .pageHero .crumb{
     transform:translateY(0);
   }
 }
-
-/* Content enters smoother below hero */
 .rmSection{
   animation:sectionFadeIn .42s ease both;
 }
@@ -5921,8 +4922,6 @@ html.route-ready .pageHero .crumb{
     transform:translateY(0);
   }
 }
-
-/* Avoid too much motion for accessibility */
 @media(prefers-reduced-motion:reduce){
   *,
   *::before,
@@ -5932,51 +4931,6 @@ html.route-ready .pageHero .crumb{
     scroll-behavior:auto!important;
   }
 }
-
-/* Mobile: smaller animation so it feels stable */
-@media(max-width:700px){
-  html.route-changing .homeHero,
-  html.route-changing .pageHero{
-    transform:translateY(-2px) scale(.996);
-  }
-
-  html.route-changing .heroCenter,
-  html.route-changing .pageHero .rmShell{
-    transform:translateY(8px);
-  }
-
-  html.route-ready .homeHero,
-  html.route-ready .pageHero{
-    animation-duration:.38s;
-  }
-
-  html.route-ready .heroCenter,
-  html.route-ready .pageHero .rmShell{
-    animation-duration:.42s;
-  }
-}
-
-/* =========================================================
-   PREMIUM DESIGN ENHANCEMENT CONTINUATION
-   ========================================================= */
-
-/* Active menu */
-.rmLinks > a.activeNav{
-  color:var(--rm-brand-blue)!important;
-}
-
-.rmLinks > a.activeNav::after{
-  transform:scaleX(1)!important;
-}
-
-@media(max-width:700px){
-  .rmLinks.mobileOpen > a.activeNav{
-    background:#e4f4ff!important;
-    color:var(--rm-brand-blue-dark)!important;
-  }
-}
-
-/* Homepage trust stats */
 .homeStatsBand{
   background:var(--rm-surface-white);
   margin-top:-42px;
@@ -6014,8 +4968,6 @@ html.route-ready .pageHero .crumb{
   font-size:14px;
   margin-top:6px;
 }
-
-/* More beautiful section transitions */
 .aboutBlock,
 .servicesBlock,
 .appBlock,
@@ -6041,8 +4993,6 @@ html.route-ready .pageHero .crumb{
   height:1px;
   background:linear-gradient(90deg,transparent,#e4eef8,transparent);
 }
-
-/* Better page content readability */
 .prose,
 .textContent{
   max-width:780px;
@@ -6062,17 +5012,12 @@ html.route-ready .pageHero .crumb{
   line-height:1.65;
 }
 
-/* Service detail */
-
-
 .sideBox{
   align-self:start;
   position:sticky;
   top:116px;
   background:var(--rm-surface-soft)!important;
 }
-
-/* Cards have clearer bottom action */
 .serviceTile b,
 .toolTile b,
 .card b{
@@ -6087,8 +5032,6 @@ html.route-ready .pageHero .crumb{
   font-size:13px;
   font-weight:900;
 }
-
-/* Better app cards */
 .toolTile{
   min-height:220px!important;
 }
@@ -6096,8 +5039,6 @@ html.route-ready .pageHero .crumb{
 .toolTile span{
   margin-bottom:8px;
 }
-
-/* Better contact info rhythm */
 .contactPrimaryCard{
   background:
     linear-gradient(180deg,#ffffff,#fbfdff)!important;
@@ -6110,8 +5051,6 @@ html.route-ready .pageHero .crumb{
 .contactInfoStatic{
   grid-column:1 / -1;
 }
-
-/* Cleaner mini cards */
 .contactMiniCard h3{
   font-size:21px!important;
 }
@@ -6120,8 +5059,6 @@ html.route-ready .pageHero .crumb{
   display:flex!important;
   align-items:center!important;
 }
-
-/* Prices refined */
 .currencyBox{
   background:
     linear-gradient(180deg,#ffffff,#fbfdff)!important;
@@ -6158,8 +5095,6 @@ html.route-ready .pageHero .crumb{
   gap:16px!important;
   padding:16px!important;
 }
-
-/* Gallery better */
 .galleryMasonry{
   display:grid!important;
   grid-template-columns:repeat(4,1fr)!important;
@@ -6174,8 +5109,6 @@ html.route-ready .pageHero .crumb{
   transform:scale(1.035);
   filter:saturate(1.06);
 }
-
-/* Blog */
 .blogCard{
   padding:14px!important;
 }
@@ -6192,8 +5125,6 @@ html.route-ready .pageHero .crumb{
   margin-left:6px;
   margin-bottom:4px;
 }
-
-/* Apps smoother */
 .breathPanel,
 .breathMain,
 .ayurQuestion,
@@ -6209,8 +5140,6 @@ html.route-ready .pageHero .crumb{
 .neuroQuestion h3{
   max-width:680px;
 }
-
-/* Footer better alignment */
 .rmFooterGrid{
   align-items:start!important;
 }
@@ -6219,8 +5148,6 @@ html.route-ready .pageHero .crumb{
 .footerSchedule p{
   color:#65758a;
 }
-
-/* Floating mobile call bar */
 .mobileCallBar{
   display:none;
 }
@@ -6263,8 +5190,6 @@ html.route-ready .pageHero .crumb{
     border:1px solid #d4e9f8;
   }
 }
-
-/* Mobile refinements */
 @media(max-width:700px){
   .homeStatsBand{
     margin-top:0;
@@ -6332,10 +5257,7 @@ html.route-ready .pageHero .crumb{
     position:static!important;
   }
 
-  
 }
-
-/* Very small mobile */
 @media(max-width:360px){
   .homeStatsGrid{
     grid-template-columns:1fr!important;
@@ -6345,8 +5267,6 @@ html.route-ready .pageHero .crumb{
     min-height:auto!important;
   }
 }
-
-/* Admin Applications manager */
 .adminAppsList{
   display:grid;
   gap:12px;
@@ -6568,30 +5488,19 @@ html.route-ready .pageHero .crumb{
     min-height:680px;
   }
 }
-
-/* =========================================================
-   FINAL HERO ANIMATION FIX + PREMIUM DESIGN POLISH
-   No white edges, no jump, smoother page transitions
-   ========================================================= */
-
-/* Stop white flashes around hero images */
 body,
 main{
   background:var(--rm-surface-white)!important;
 }
 
-.homeHero,
-.pageHero{
+.homeHero{
   overflow:hidden!important;
   isolation:isolate!important;
   background-color:#071f3f!important;
   transform:none!important;
   will-change:auto!important;
 }
-
-/* The image/background must never show white edges */
-.homeHero::after,
-.pageHero::after{
+.homeHero::after{
   content:"";
   position:absolute;
   inset:-2px;
@@ -6600,53 +5509,17 @@ main{
   background:inherit;
   opacity:0;
 }
-
-/* Keep actual hero content above overlays */
-.heroOverlay,
-.pageHero .rmShell{
+.heroOverlay{
   position:relative!important;
   z-index:2!important;
 }
-
-/* Remove scale-based route animation that caused white edges */
-html.route-changing .homeHero,
-html.route-changing .pageHero,
-html.route-ready .homeHero,
-html.route-ready .pageHero{
-  transform:none!important;
-  filter:none!important;
-}
-
-/* Smooth transition using opacity/gradient only */
 .homeHero,
-.pageHero,
 .heroOverlay{
   transition:
     opacity .32s ease,
     background-position .5s cubic-bezier(.22,.61,.36,1),
     height .42s cubic-bezier(.22,.61,.36,1),
     min-height .42s cubic-bezier(.22,.61,.36,1)!important;
-}
-
-html.route-changing .homeHero,
-html.route-changing .pageHero{
-  opacity:.94!important;
-}
-
-html.route-changing .heroOverlay,
-html.route-changing .pageHero .rmShell{
-  opacity:.78!important;
-  transform:translateY(8px)!important;
-}
-
-html.route-ready .homeHero,
-html.route-ready .pageHero{
-  animation:heroFadeStable .45s cubic-bezier(.22,.61,.36,1) both!important;
-}
-
-html.route-ready .heroOverlay,
-html.route-ready .pageHero .rmShell{
-  animation:heroContentStable .5s cubic-bezier(.22,.61,.36,1) both!important;
 }
 
 @keyframes heroFadeStable{
@@ -6668,14 +5541,10 @@ html.route-ready .pageHero .rmShell{
     transform:translateY(0);
   }
 }
-
-/* Override old scale animations completely */
 @keyframes heroSettle{
   from{ opacity:.9; transform:none; filter:none; }
   to{ opacity:1; transform:none; filter:none; }
 }
-
-/* Better hero composition */
 .homeHero{
   background:
     linear-gradient(90deg,rgba(7,31,63,.72),rgba(7,31,63,.22) 48%,rgba(0,143,216,.2)),
@@ -6687,21 +5556,6 @@ html.route-ready .pageHero .rmShell{
     radial-gradient(circle at 50% 42%,rgba(255,255,255,.14),transparent 26%),
     linear-gradient(90deg,rgba(7,31,63,.58),rgba(0,143,216,.18))!important;
 }
-
-.pageHero{
-  background:
-    linear-gradient(90deg,rgba(7,31,63,.78),rgba(7,31,63,.42) 42%,rgba(0,143,216,.36)),
-    url('/images/medical-bg.jpg') center center/cover no-repeat!important;
-}
-
-.pageHero::before{
-  inset:-1px!important;
-  background:
-    radial-gradient(circle at 25% 30%,rgba(255,255,255,.11),transparent 27%),
-    linear-gradient(90deg,rgba(7,31,63,.68),rgba(0,143,216,.34))!important;
-}
-
-/* Hero text premium */
 .heroCenter{
   max-width:760px!important;
   margin-inline:auto!important;
@@ -6724,8 +5578,6 @@ html.route-ready .pageHero .rmShell{
   padding:14px 22px!important;
   min-height:48px!important;
 }
-
-/* Make top stat cards cleaner and not glued to hero */
 .homeStatsBand{
   margin-top:0!important;
   padding:18px 0 0!important;
@@ -6747,8 +5599,6 @@ html.route-ready .pageHero .rmShell{
 .homeStatsGrid span{
   font-size:13px!important;
 }
-
-/* Homepage sections look more premium */
 .aboutBlock{
   padding-top:64px!important;
 }
@@ -6767,8 +5617,6 @@ html.route-ready .pageHero .rmShell{
   font-size:16px!important;
   line-height:1.75!important;
 }
-
-/* Services/app cards more modern, less empty */
 .toolGrid{
   max-width:760px!important;
   margin-inline:auto!important;
@@ -6795,8 +5643,6 @@ html.route-ready .pageHero .rmShell{
   background:#f3f9ff!important;
   border:1px solid #e5eff8!important;
 }
-
-/* CTA more premium and not too heavy */
 .homeCtaInner{
   max-width:880px!important;
   margin-inline:auto!important;
@@ -6810,8 +5656,6 @@ html.route-ready .pageHero .rmShell{
 .homeCtaInner h2{
   letter-spacing:-.045em!important;
 }
-
-/* Reviews more polished */
 .testimonialBand{
   background:
     radial-gradient(circle at 50% 0%,rgba(255,255,255,.18),transparent 30%),
@@ -6822,27 +5666,10 @@ html.route-ready .pageHero .rmShell{
   border:0!important;
   border-radius:18px!important;
 }
-
-/* Footer calmer */
 .rmFooter{
   background:#f8fbff!important;
   border-top:1px solid #e5eff8!important;
 }
-
-/* Header stable and premium */
-.rmHeader{
-  background:var(--rm-surface-white)!important;
-}
-
-.rmTop{
-  background:#1296db!important;
-}
-
-.rmNav{
-  border-bottom:1px solid #e5eff8!important;
-}
-
-/* Mobile: no hero image jump, no white edge */
 @media(max-width:700px){
   .homeHero{
     background-position:center center!important;
@@ -6852,16 +5679,6 @@ html.route-ready .pageHero .rmShell{
   .heroOverlay{
     height:360px!important;
     min-height:360px!important;
-  }
-
-  .pageHero{
-    height:220px!important;
-    min-height:220px!important;
-  }
-
-  html.route-changing .heroOverlay,
-  html.route-changing .pageHero .rmShell{
-    transform:translateY(5px)!important;
   }
 
   .heroCenter{
@@ -6931,8 +5748,6 @@ html.route-ready .pageHero .rmShell{
     border-radius:20px!important;
   }
 }
-
-/* Disable old section fade shifting too much */
 .rmSection{
   animation:sectionSoftFade .3s ease both!important;
 }
@@ -6945,17 +5760,7 @@ html.route-ready .pageHero .rmShell{
     opacity:1;
   }
 }
-
-/* =========================================================
-   ADMIN REAL VISUAL FIX
-   Removes duplicate public/header feel, duplicate logo,
-   adds visible language edge flag, makes dashboard cleaner.
-   ========================================================= */
-
-/* Hide normal public site header/footer on admin dashboard */
-body:has(.adminSimplePage) .rmHeader,
 body:has(.adminSimplePage) .rmFooter,
-body:has(.adminLoginPage) .rmHeader,
 body:has(.adminLoginPage) .rmFooter,
 body:has(.adminSimplePage) .mobileCallBar,
 body:has(.adminLoginPage) .mobileCallBar,
@@ -6963,8 +5768,6 @@ body:has(.adminSimplePage) .languageFlagOverlay,
 body:has(.adminLoginPage) .languageFlagOverlay{
   display:none!important;
 }
-
-/* Admin page should fill whole viewport */
 .adminSimplePage{
   min-height:100vh!important;
   display:grid!important;
@@ -6972,8 +5775,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   background:#f4f8fc!important;
   color:var(--rm-text-primary)!important;
 }
-
-/* Sidebar without duplicate logo image */
 .adminSidebar{
   background:linear-gradient(180deg,#062246,#082f5f)!important;
   padding:26px 20px!important;
@@ -7015,8 +5816,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   color:rgba(255,255,255,.62);
   letter-spacing:0;
 }
-
-/* Sidebar buttons */
 .adminSidebar button{
   min-height:46px!important;
   border-radius:13px!important;
@@ -7044,8 +5843,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   background:#e53935!important;
   border-color:#e53935!important;
 }
-
-/* Main admin area */
 .adminSimpleMain{
   position:relative!important;
   overflow:hidden!important;
@@ -7053,8 +5850,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   max-width:1180px!important;
   width:100%!important;
 }
-
-/* Top header inside admin */
 .adminSimpleTop{
   position:relative!important;
   z-index:2!important;
@@ -7079,8 +5874,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   font-weight:950!important;
   font-size:15px!important;
 }
-
-/* Language selector */
 .adminLangSelect{
   position:relative!important;
   z-index:3!important;
@@ -7114,8 +5907,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   background:#139be8!important;
   color:white!important;
 }
-
-/* Edge language flag — visible right edge */
 .adminEdgeFlag{
   position:absolute!important;
   top:88px!important;
@@ -7148,8 +5939,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   font-weight:950!important;
   opacity:.78!important;
 }
-
-/* Dashboard cards more modern */
 .adminHomeGrid{
   position:relative!important;
   z-index:2!important;
@@ -7194,8 +5983,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   font-size:15px!important;
   font-weight:900!important;
 }
-
-/* Admin cards/forms */
 .adminSimpleCard{
   position:relative!important;
   z-index:2!important;
@@ -7207,8 +5994,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   letter-spacing:-.04em!important;
   color:var(--rm-heading-navy)!important;
 }
-
-/* Login page redesign also */
 .adminLoginPage{
   min-height:100vh!important;
   background:
@@ -7253,8 +6038,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   color:var(--rm-heading-navy)!important;
   letter-spacing:-.04em!important;
 }
-
-/* Mobile admin */
 @media(max-width:900px){
   .adminSimplePage{
     grid-template-columns:1fr!important;
@@ -7310,12 +6093,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
     justify-content:space-between!important;
   }
 }
-
-/* =========================================================
-   ADMIN LOGO BACK + FLAG BOTTOM LEFT + HERO EDGE FLASH FIX
-   ========================================================= */
-
-/* Admin sidebar logo restored as link */
 .adminSideLogo.withLogo{
   display:grid!important;
   gap:12px!important;
@@ -7361,13 +6138,9 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   color:rgba(255,255,255,.62);
   letter-spacing:0;
 }
-
-/* Override previous rule that hid sidebar logo images */
 .adminSidebar .adminSideLogo.withLogo img{
   display:block!important;
 }
-
-/* Admin language flag: visible bottom-left instead of hidden right edge */
 .adminEdgeFlag{
   position:fixed!important;
   left:255px!important;
@@ -7390,8 +6163,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   mask-image:none!important;
   pointer-events:none!important;
 }
-
-/* Mobile admin flag */
 @media(max-width:900px){
   .adminEdgeFlag{
     left:14px!important;
@@ -7408,12 +6179,6 @@ body:has(.adminLoginPage) .languageFlagOverlay{
     font-size:12px!important;
   }
 }
-
-/* =========================================================
-   HERO WHITE EDGE / WHITE OVERLAY FLASH FIX
-   ========================================================= */
-
-/* Make the entire first paint behind hero blue, never white */
 html,
 body{
   background:#071f3f!important;
@@ -7430,19 +6195,13 @@ main,
 .rmFooter{
   background-color:var(--rm-surface-white);
 }
-
-/* Hero must own a solid image layer that overfills the container */
-.homeHero,
-.pageHero{
+.homeHero{
   position:relative!important;
   overflow:hidden!important;
   background:#071f3f!important;
   contain:paint!important;
 }
-
-/* Create a dedicated overfilled background image layer */
-.homeHero::before,
-.pageHero::after{
+.homeHero::before{
   content:""!important;
   position:absolute!important;
   inset:-18px!important;
@@ -7452,8 +6211,6 @@ main,
   transform:none!important;
   opacity:1!important;
 }
-
-/* Put gradient overlay on top of image layer */
 .homeHero::after{
   content:""!important;
   position:absolute!important;
@@ -7465,94 +6222,36 @@ main,
     linear-gradient(90deg,rgba(7,31,63,.76),rgba(7,31,63,.34) 48%,rgba(0,143,216,.28))!important;
   opacity:1!important;
 }
-
-.pageHero::before{
-  content:""!important;
-  position:absolute!important;
-  inset:-2px!important;
-  z-index:1!important;
-  pointer-events:none!important;
-  background:
-    radial-gradient(circle at 25% 30%,rgba(255,255,255,.09),transparent 27%),
-    linear-gradient(90deg,rgba(7,31,63,.76),rgba(7,31,63,.45) 42%,rgba(0,143,216,.36))!important;
-  opacity:1!important;
-}
-
-/* Disable any background on hero itself that could flash while CSS swaps */
-.homeHero,
-.pageHero{
+.homeHero{
   background-image:none!important;
 }
-
-/* Content above both layers */
-.heroOverlay,
-.pageHero .rmShell{
+.heroOverlay{
   position:relative!important;
   z-index:3!important;
 }
-
-/* The old heroOverlay should no longer paint a separate background */
 .heroOverlay{
   background:transparent!important;
 }
-
-/* Stop all route animations from touching hero background/image layers */
 .homeHero,
-.pageHero,
 .homeHero::before,
-.homeHero::after,
-.pageHero::before,
-.pageHero::after{
+.homeHero::after{
   transform:none!important;
   filter:none!important;
   transition:opacity .22s ease!important;
 }
-
-/* Only animate text, not image */
-html.route-changing .homeHero,
-html.route-changing .pageHero{
-  opacity:1!important;
-}
-
-html.route-changing .heroOverlay,
-html.route-changing .pageHero .rmShell{
-  opacity:.78!important;
-  transform:translateY(6px)!important;
-}
-
-html.route-ready .heroOverlay,
-html.route-ready .pageHero .rmShell{
-  animation:heroContentStable .38s cubic-bezier(.22,.61,.36,1) both!important;
-}
-
-/* Prevent old route-ready animation on the whole hero */
-html.route-ready .homeHero,
-html.route-ready .pageHero{
-  animation:none!important;
-}
-
-/* Keep following content white after hero */
 .homeStatsBand{
   background:var(--rm-surface-white)!important;
 }
 
 @media(max-width:700px){
-  .homeHero::before,
-  .pageHero::after{
+  .homeHero::before{
     inset:-24px!important;
   }
 
-  .homeHero::after,
-  .pageHero::before{
+  .homeHero::after{
     inset:-3px!important;
   }
 }
-
-/* =========================================================
-   FOOTER + TESTIMONIALS PREMIUM POLISH
-   ========================================================= */
-
-/* Testimonials section narrower and more elegant */
 .testimonialBand{
   padding:58px 0!important;
   background:
@@ -7612,8 +6311,6 @@ html.route-ready .pageHero{
   font-size:13px!important;
   font-weight:900!important;
 }
-
-/* Nicer testimonial arrows */
 .reviewArrow{
   width:46px!important;
   height:46px!important;
@@ -7641,8 +6338,6 @@ html.route-ready .pageHero{
   display:block!important;
   object-fit:contain!important;
 }
-
-/* Fallback if the component still uses text arrows */
 .reviewArrow::before{
   content:"";
   width:22px;
@@ -7662,8 +6357,6 @@ html.route-ready .pageHero{
 .reviewArrow:has(img)::before{
   display:none!important;
 }
-
-/* Footer should be narrower like testimonials, cleaner and tighter */
 .rmFooter{
   background:#f7fbff!important;
   border-top:1px solid #e1edf8!important;
@@ -7737,21 +6430,15 @@ html.route-ready .pageHero{
   width:40px!important;
   height:40px!important;
 }
-
-/* Make footer visually centered under content */
 .rmFooterGrid > *{
   min-width:0!important;
 }
-
-/* Desktop fine tune */
 @media(min-width:900px){
   .rmFooter{
     padding-left:0!important;
     padding-right:0!important;
   }
 }
-
-/* Tablet footer */
 @media(max-width:900px){
   .testimonialBand .rmShell,
   .rmFooter .rmShell{
@@ -7767,8 +6454,6 @@ html.route-ready .pageHero{
     grid-column:1 / -1!important;
   }
 }
-
-/* Mobile testimonial + footer */
 @media(max-width:700px){
   .testimonialBand{
     padding:42px 0!important;
@@ -7881,10 +6566,6 @@ html.route-ready .pageHero{
   }
 }
 
-/* =========================================================
-   PRICES PAGE PREMIUM CENTERED POLISH
-   ========================================================= */
-
 .pricesCleanSection{
   background:#f7fbff!important;
 }
@@ -7892,8 +6573,6 @@ html.route-ready .pageHero{
 .pricesCleanSection .rmShell{
   max-width:940px!important;
 }
-
-/* Currency converter centered and more beautiful */
 .currencyBox{
   max-width:940px!important;
   margin:0 auto 22px!important;
@@ -7937,8 +6616,6 @@ html.route-ready .pageHero{
   font-size:12px!important;
   font-weight:950!important;
 }
-
-/* Currency fields line */
 .currencyGrid{
   display:grid!important;
   grid-template-columns:1fr 1fr 1fr 1.2fr!important;
@@ -7990,8 +6667,6 @@ html.route-ready .pageHero{
   line-height:1.05!important;
   font-weight:950!important;
 }
-
-/* Info notice */
 .priceNotice{
   max-width:940px!important;
   margin:0 auto 24px!important;
@@ -8002,8 +6677,6 @@ html.route-ready .pageHero{
   color:#475569!important;
   font-size:16px!important;
 }
-
-/* Accordion centered and cleaner */
 .pricesAccordion{
   max-width:940px!important;
   margin:0 auto!important;
@@ -8046,8 +6719,6 @@ html.route-ready .pageHero{
   font-size:14px!important;
   font-weight:950!important;
 }
-
-/* Plus button with Icons8 style */
 .priceAccordionHead i,
 .priceAccordionHead button,
 .pricePlus{
@@ -8086,8 +6757,6 @@ html.route-ready .pageHero{
   height:24px!important;
   display:block!important;
 }
-
-/* Price rows inside accordion */
 .priceAccordionBody{
   background:#fbfdff!important;
   border-top:1px solid #e5eff8!important;
@@ -8120,21 +6789,15 @@ html.route-ready .pageHero{
   font-size:19px!important;
   white-space:nowrap!important;
 }
-
-/* Move floating language flag away from content on price pages */
 .languageFlagOverlay{
   right:12px!important;
   opacity:.42!important;
 }
-
-/* Desktop better vertical rhythm */
 @media(min-width:901px){
   .pricesCleanSection{
     padding-top:54px!important;
   }
 }
-
-/* Tablet */
 @media(max-width:900px){
   .pricesCleanSection .rmShell{
     max-width:calc(100% - 28px)!important;
@@ -8153,8 +6816,6 @@ html.route-ready .pageHero{
     grid-column:1 / -1!important;
   }
 }
-
-/* Mobile */
 @media(max-width:700px){
   .pricesCleanSection{
     padding-top:28px!important;
@@ -8239,8 +6900,6 @@ html.route-ready .pageHero{
     padding:14px!important;
   }
 }
-
-/* Full Ayurveda Dosha wizard */
 
 .ayurStepCard,
 .ayurResultWizard{
@@ -8340,12 +6999,6 @@ html.route-ready .pageHero{
     grid-template-columns:72px 1fr 34px;
   }
 }
-
-/* =========================================================
-   STRONG BLUE HERO OVERLAY RESTORE + ADMIN FLAG RIGHT EDGE
-   ========================================================= */
-
-/* Restore intense beautiful blue overlay, but keep image overfilled to avoid white edges */
 .homeHero::after{
   content:""!important;
   position:absolute!important;
@@ -8362,58 +7015,26 @@ html.route-ready .pageHero{
     )!important;
   opacity:1!important;
 }
-
-.pageHero::before{
-  content:""!important;
-  position:absolute!important;
-  inset:-3px!important;
-  z-index:1!important;
-  pointer-events:none!important;
-  background:
-    radial-gradient(circle at 70% 22%,rgba(0,166,255,.24),transparent 34%),
-    linear-gradient(90deg,
-      rgba(5,24,55,.86) 0%,
-      rgba(7,48,92,.72) 38%,
-      rgba(0,119,190,.60) 70%,
-      rgba(0,159,232,.55) 100%
-    )!important;
-  opacity:1!important;
-}
-
-/* Keep the actual image layer bigger than the hero so no white edges appear */
-.homeHero::before,
-.pageHero::after{
+.homeHero::before{
   inset:-28px!important;
   background:url('/images/medical-bg.jpg') center center/cover no-repeat!important;
   transform:none!important;
 }
-
-/* Text contrast on stronger overlay */
-.heroCenter h1,
-.pageHero h1{
+.heroCenter h1{
   color:var(--rm-surface-white)!important;
   text-shadow:0 2px 18px rgba(0,0,0,.18)!important;
 }
 
-.heroCenter p,
-.pageHero .lead,
-.pageHero .crumb{
+.heroCenter p{
   color:rgba(255,255,255,.94)!important;
   text-shadow:0 1px 10px rgba(0,0,0,.14)!important;
 }
-
-/* Do not animate/scale background layers */
 .homeHero,
-.pageHero,
 .homeHero::before,
-.homeHero::after,
-.pageHero::before,
-.pageHero::after{
+.homeHero::after{
   transform:none!important;
   filter:none!important;
 }
-
-/* Admin language flag: bottom-right edge */
 .adminEdgeFlag{
   position:fixed!important;
   right:14px!important;
@@ -8470,13 +7091,11 @@ html.route-ready .pageHero{
 }
 
 @media(max-width:700px){
-  .homeHero::before,
-  .pageHero::after{
+  .homeHero::before{
     inset:-34px!important;
   }
 
-  .homeHero::after,
-  .pageHero::before{
+  .homeHero::after{
     inset:-4px!important;
   }
 
@@ -8488,18 +7107,7 @@ html.route-ready .pageHero{
         rgba(0,143,216,.58) 100%
       )!important;
   }
-
-  .pageHero::before{
-    background:
-      linear-gradient(180deg,
-        rgba(5,24,55,.80) 0%,
-        rgba(7,48,92,.68) 48%,
-        rgba(0,143,216,.58) 100%
-      )!important;
-  }
 }
-
-/* Ayurveda wizard safe UI */
 .ayurWizardSection{background:#f7fbff!important}
 .ayurWizardShell{max-width:900px!important}
 .ayurProgressCard{background:var(--rm-surface-white);border:1px solid var(--rm-border-soft);border-radius:22px;padding:18px 20px;margin-bottom:18px}
@@ -8546,8 +7154,6 @@ html.route-ready .pageHero{
   .ayurResultHead h2{font-size:32px}
   .ayurScoreItem{grid-template-columns:72px 1fr 34px}
 }
-
-/* Neurological Screening wizard */
 .neuroWizardSection{background:#f7fbff!important}
 .neuroWizardShell{max-width:920px!important}
 .neuroProgressCard{background:var(--rm-surface-white);border:1px solid var(--rm-border-soft);border-radius:22px;padding:18px 20px;margin-bottom:18px}
@@ -8600,32 +7206,6 @@ html.route-ready .pageHero{
   .neuroCategoryGrid{grid-template-columns:1fr}
   .neuroCategoryGrid article{grid-template-columns:88px 1fr 28px}
 }
-
-/* =========================================================
-   PRICES PAGE NORMAL DESKTOP LAYOUT FIX
-   ========================================================= */
-
-/* Make prices page use normal readable width */
-
-/* Currency converter: normal desktop card */
-
-/* Notice aligns with content */
-
-/* Accordion should be normal width, not tiny */
-
-/* Fix title + count layout */
-
-/* If the count is inline next to title, force it lower */
-
-/* Plus button stable */
-
-/* Inside opened category */
-
-/* If old price row has table/list class names */
-
-/* Remove accidental tiny inline service count */
-
-/* Desktop page spacing */
 @media(min-width:901px){
   .pricesCleanSection{
     padding:58px 0 74px!important;
@@ -8635,8 +7215,6 @@ html.route-ready .pageHero{
     padding-bottom:18px!important;
   }
 }
-
-/* Tablet */
 @media(max-width:900px){
   .pricesCleanSection .rmShell,
   .pricesPage .rmShell,
@@ -8669,8 +7247,6 @@ html.route-ready .pageHero{
     max-width:100%!important;
   }
 }
-
-/* Mobile: clean, readable */
 @media(max-width:700px){
   .pricesCleanSection .rmShell,
   .pricesPage .rmShell,
@@ -8745,19 +7321,11 @@ html.route-ready .pageHero{
     justify-self:start!important;
   }
 }
-
-/* =========================================================
-   PRICES PAGE NORMAL DESKTOP LAYOUT FIX
-   ========================================================= */
-
-/* Make prices page use normal readable width */
 .pricesCleanSection .rmShell,
 .pricesPage .rmShell,
 .pricePage .rmShell{
   max-width:1120px!important;
 }
-
-/* Currency converter: normal desktop card */
 .currencyBox{
   max-width:980px!important;
   width:100%!important;
@@ -8802,15 +7370,11 @@ html.route-ready .pageHero{
   border-radius:16px!important;
   padding:12px 16px!important;
 }
-
-/* Notice aligns with content */
 .priceNotice{
   max-width:980px!important;
   margin:0 auto 34px!important;
   padding:16px 22px!important;
 }
-
-/* Accordion should be normal width, not tiny */
 .pricesAccordion{
   max-width:760px!important;
   width:100%!important;
@@ -8823,8 +7387,6 @@ html.route-ready .pageHero{
   border-radius:20px!important;
   overflow:hidden!important;
 }
-
-/* Fix title + count layout */
 .priceAccordionHead{
   min-height:82px!important;
   width:100%!important;
@@ -8859,15 +7421,11 @@ html.route-ready .pageHero{
   color:var(--rm-text-muted)!important;
   font-weight:900!important;
 }
-
-/* If the count is inline next to title, force it lower */
 .priceAccordionHead b + span,
 .priceAccordionHead h2 + span,
 .priceAccordionHead h3 + span{
   margin-top:6px!important;
 }
-
-/* Plus button stable */
 .priceAccordionHead i,
 .priceAccordionHead button,
 .pricePlus{
@@ -8878,8 +7436,6 @@ html.route-ready .pageHero{
   justify-self:end!important;
   align-self:center!important;
 }
-
-/* Inside opened category */
 .priceAccordionBody{
   padding:18px 20px 22px!important;
 }
@@ -8891,8 +7447,6 @@ html.route-ready .pageHero{
   align-items:center!important;
   padding:16px 18px!important;
 }
-
-/* If old price row has table/list class names */
 .priceRow,
 .priceItem,
 .priceLine{
@@ -8910,8 +7464,6 @@ html.route-ready .pageHero{
   color:var(--rm-brand-blue-dark)!important;
   font-weight:950!important;
 }
-
-/* Remove accidental tiny inline service count */
 .priceAccordionHead small{
   display:block!important;
   margin-top:6px!important;
@@ -8919,8 +7471,6 @@ html.route-ready .pageHero{
   font-size:13px!important;
   font-weight:900!important;
 }
-
-/* Desktop page spacing */
 @media(min-width:901px){
   .pricesCleanSection{
     padding:58px 0 74px!important;
@@ -8930,8 +7480,6 @@ html.route-ready .pageHero{
     padding-bottom:18px!important;
   }
 }
-
-/* Tablet */
 @media(max-width:900px){
   .pricesCleanSection .rmShell,
   .pricesPage .rmShell,
@@ -8964,8 +7512,6 @@ html.route-ready .pageHero{
     max-width:100%!important;
   }
 }
-
-/* Mobile: clean, readable */
 @media(max-width:700px){
   .pricesCleanSection .rmShell,
   .pricesPage .rmShell,
@@ -9040,8 +7586,6 @@ html.route-ready .pageHero{
     justify-self:start!important;
   }
 }
-
-/* Admin language editing note */
 .adminLangHelp{
   margin:8px 0 18px!important;
   color:var(--rm-text-muted)!important;
@@ -9050,8 +7594,6 @@ html.route-ready .pageHero{
   line-height:1.45!important;
   max-width:780px!important;
 }
-
-/* Service detail SEO text polish */
 .serviceSeoText,
 .serviceDetailText{
   display:grid!important;
@@ -9066,10 +7608,6 @@ html.route-ready .pageHero{
   margin:0!important;
 }
 
-.pageHero h1{
-  overflow-wrap:break-word!important;
-}
-
 @media(max-width:700px){
   .serviceSeoText p,
   .serviceDetailText p{
@@ -9077,8 +7615,6 @@ html.route-ready .pageHero{
     line-height:1.65!important;
   }
 }
-
-/* Reviews with real names */
 .reviewAuthor,
 .testimonialAuthor,
 .reviewName,
@@ -9102,8 +7638,6 @@ html.route-ready .pageHero{
 .reviewSlide p{
   line-height:1.65!important;
 }
-
-/* Full service SEO section */
 .serviceSeoDetailsBlock{
   display:grid!important;
   gap:14px!important;
@@ -9146,11 +7680,6 @@ html.route-ready .pageHero{
   margin-top:6px!important;
 }
 
-.pageHero h1{
-  overflow-wrap:break-word!important;
-  word-break:normal!important;
-}
-
 @media(max-width:700px){
   .serviceSeoDetailsBlock{
     border-radius:18px!important;
@@ -9162,8 +7691,6 @@ html.route-ready .pageHero{
     line-height:1.65!important;
   }
 }
-
-/* REVIMED Yoga Tibetan V2 */
 .yogaV2Section{
   background:#f7fbff!important;
 }
@@ -9575,8 +8102,6 @@ html.route-ready .pageHero{
     grid-template-columns:1fr!important;
   }
 }
-
-/* Neurological screening translated result polish */
 .neuroCategoryGrid span,
 .neuroResultStats span{
   text-transform:none!important;
@@ -9589,8 +8114,6 @@ html.route-ready .pageHero{
 .neuroResultHead h2{
   overflow-wrap:break-word!important;
 }
-
-/* Gallery label readability */
 .galleryCardTitle,
 .galleryOverlay,
 .galleryItemTitle{
@@ -9601,8 +8124,6 @@ html.route-ready .pageHero{
 .galleryCard img{
   object-fit:cover!important;
 }
-
-/* Admin service rows: prevent raw icon URLs from ruining titles */
 .adminServiceIcon{
   width:32px!important;
   height:32px!important;
@@ -9616,9 +8137,6 @@ html.route-ready .pageHero{
 .adminSimpleCard *{
   overflow-wrap:break-word;
 }
-
-
-/* Recovery Planner App */
 .recoveryApp{
   background:#f7fbff!important;
 }
@@ -9838,8 +8356,6 @@ html.route-ready .pageHero{
     width:100%!important;
   }
 }
-
-/* REVIMED smart medical tools */
 .smartToolSection{
   background:#f7fbff!important;
 }
@@ -10054,8 +8570,6 @@ html.route-ready .pageHero{
 .smartPrep{background:#f0fdf4!important;border-color:#bbf7d0!important}
 .smartPrep h3{color:#166534!important}
 .smartPrep li{color:#14532d!important}
-
-/* Better printable reports for all smart tools */
 .smartPrintReport{
   margin-top:18px!important;
   border:2px solid #cfe4f8!important;
@@ -10147,8 +8661,6 @@ html.route-ready .pageHero{
 .smartTips li{
   font-size:16px!important;
 }
-
-/* Print mode: clean report for doctor */
 @media print{
   body{
     background:var(--rm-surface-white)!important;
@@ -10159,7 +8671,6 @@ html.route-ready .pageHero{
   nav,
   .siteHeader,
   .topLangBar,
-  .pageHero,
   .smartProgress,
   .smartQuestion,
   .smartActions,
@@ -10250,8 +8761,6 @@ html.route-ready .pageHero{
     margin:16mm;
   }
 }
-
-/* SEO content sections */
 .seoContentBlock{
   max-width:980px!important;
   margin:40px auto 0!important;
@@ -10278,8 +8787,6 @@ html.route-ready .pageHero{
   color:#475569!important;
   line-height:1.7!important;
 }
-
-/* Visible SEO content blocks */
 .seoContentBlock{
   margin-top:42px!important;
   padding:30px!important;
@@ -10355,8 +8862,6 @@ html.route-ready .pageHero{
     font-size:16px!important;
   }
 }
-
-/* Better blog article readability */
 .blogArticleCard{
   max-width:820px!important;
   margin-left:auto!important;
@@ -10451,386 +8956,10 @@ html.route-ready .pageHero{
     font-size:24px!important;
   }
 }
-
-
-/* BLOG ONLY: move hero text below cover, above article image */
-body:has(.blogArticleCard) .pageHero,
-body:has(.blogReadableContent) .pageHero{
-  min-height:300px!important;
-  margin-bottom:185px!important;
-  overflow:visible!important;
-}
-
-/* remove scroll arrow/fade only on blog detail pages */
-body:has(.blogArticleCard) .pageHero::before,
-body:has(.blogArticleCard) .pageHero::after,
-body:has(.blogReadableContent) .pageHero::before,
-body:has(.blogReadableContent) .pageHero::after{
-  display:none!important;
-  content:none!important;
-}
-
-/* the blog title block becomes part of the article area */
-body:has(.blogArticleCard) .pageHero > .rmShell,
-body:has(.blogReadableContent) .pageHero > .rmShell{
-  position:absolute!important;
-  left:50%!important;
-  bottom:-145px!important;
-  transform:translateX(-50%)!important;
-  z-index:20!important;
-
-  width:min(920px, calc(100% - 36px))!important;
-  max-width:920px!important;
-  padding:26px 30px!important;
-
-  background:rgba(255,255,255,.96)!important;
-  border:1px solid #dcecf8!important;
-  border-radius:24px!important;
-  box-shadow:0 20px 60px rgba(8,35,74,.10)!important;
-  backdrop-filter:blur(10px)!important;
-
-  color:var(--rm-heading-navy)!important;
-}
-
-/* breadcrumb moved below cover */
-body:has(.blogArticleCard) .pageHero .crumb,
-body:has(.blogReadableContent) .pageHero .crumb{
-  margin:0 0 10px!important;
-  color:var(--rm-brand-blue)!important;
-  font-size:15px!important;
-  font-weight:900!important;
-  line-height:1.3!important;
-  text-shadow:none!important;
-}
-
-/* title moved below cover */
-body:has(.blogArticleCard) .pageHero h1,
-body:has(.blogReadableContent) .pageHero h1{
-  margin:0!important;
-  max-width:100%!important;
-  color:var(--rm-heading-navy)!important;
-  font-size:clamp(34px, 4.2vw, 58px)!important;
-  line-height:.98!important;
-  letter-spacing:-.055em!important;
-  text-shadow:none!important;
-}
-
-/* intro/excerpt moved below cover */
-body:has(.blogArticleCard) .pageHero .lead,
-body:has(.blogReadableContent) .pageHero .lead{
-  margin:14px 0 0!important;
-  max-width:760px!important;
-  color:#52647b!important;
-  font-size:20px!important;
-  line-height:1.55!important;
-  font-weight:500!important;
-  text-shadow:none!important;
-}
-
-/* reduce gap to article card because title is now between hero and image */
 body:has(.blogArticleCard) .rmSection:first-of-type,
 body:has(.blogReadableContent) .rmSection:first-of-type{
   padding-top:34px!important;
 }
-
-@media(max-width:760px){
-  body:has(.blogArticleCard) .pageHero,
-  body:has(.blogReadableContent) .pageHero{
-    min-height:245px!important;
-    margin-bottom:190px!important;
-  }
-
-  body:has(.blogArticleCard) .pageHero > .rmShell,
-  body:has(.blogReadableContent) .pageHero > .rmShell{
-    bottom:-165px!important;
-    width:calc(100% - 24px)!important;
-    padding:20px!important;
-    border-radius:20px!important;
-  }
-
-  body:has(.blogArticleCard) .pageHero h1,
-  body:has(.blogReadableContent) .pageHero h1{
-    font-size:34px!important;
-    line-height:1.02!important;
-  }
-
-  body:has(.blogArticleCard) .pageHero .lead,
-  body:has(.blogReadableContent) .pageHero .lead{
-    font-size:16px!important;
-    line-height:1.5!important;
-  }
-}
-
-/* BLOG DETAIL ONLY — clean cover + title card below */
-.blogDetailHero{
-  min-height:330px!important;
-  height:330px!important;
-  margin-bottom:185px!important;
-  overflow:visible!important;
-  display:block!important;
-  position:relative!important;
-}
-
-/* Remove global hero arrow/fade from blog detail */
-.blogDetailHero::before,
-.blogDetailHero::after{
-  display:none!important;
-  content:none!important;
-}
-
-/* White card under the cover image */
-.blogDetailHero .blogHeroTextCard{
-  position:absolute!important;
-  left:50%!important;
-  bottom:-145px!important;
-  transform:translateX(-50%)!important;
-  width:min(900px, calc(100% - 40px))!important;
-  max-width:900px!important;
-  z-index:10!important;
-
-  padding:26px 32px 28px!important;
-  border-radius:26px!important;
-  background:rgba(255,255,255,.98)!important;
-  border:1px solid #dcecf8!important;
-  box-shadow:0 22px 65px rgba(8,35,74,.12)!important;
-  backdrop-filter:blur(10px)!important;
-}
-
-/* Blog breadcrumb in card */
-.blogDetailHero .crumb{
-  margin:0 0 12px!important;
-  color:var(--rm-brand-blue)!important;
-  font-size:15px!important;
-  font-weight:900!important;
-  line-height:1.3!important;
-  text-shadow:none!important;
-}
-
-/* Blog title in card */
-.blogDetailHero h1{
-  margin:0!important;
-  max-width:100%!important;
-  color:var(--rm-heading-navy)!important;
-  font-size:clamp(34px, 4.2vw, 58px)!important;
-  line-height:1!important;
-  letter-spacing:-.055em!important;
-  text-shadow:none!important;
-}
-
-/* Blog excerpt in card */
-.blogDetailHero .lead{
-  margin:16px 0 0!important;
-  max-width:780px!important;
-  color:#52647b!important;
-  font-size:20px!important;
-  line-height:1.55!important;
-  font-weight:500!important;
-  text-shadow:none!important;
-}
-
-/* Article starts after title card */
-.blogDetailHero + .rmSection{
-  padding-top:42px!important;
-}
-
-/* Undo previous broken :has blog hero experiment if browser applies it */
-body:has(.blogDetailHero) .pageHero{
-  margin-bottom:185px!important;
-}
-
-body:has(.blogDetailHero) .pageHero > .rmShell{
-  position:absolute!important;
-  left:50%!important;
-  bottom:-145px!important;
-  transform:translateX(-50%)!important;
-}
-
-@media(max-width:760px){
-  .blogDetailHero{
-    min-height:250px!important;
-    height:250px!important;
-    margin-bottom:205px!important;
-  }
-
-  .blogDetailHero .blogHeroTextCard{
-    bottom:-175px!important;
-    width:calc(100% - 24px)!important;
-    padding:20px!important;
-    border-radius:20px!important;
-  }
-
-  .blogDetailHero h1{
-    font-size:32px!important;
-    line-height:1.04!important;
-  }
-
-  .blogDetailHero .lead{
-    font-size:16px!important;
-    line-height:1.5!important;
-  }
-
-  .blogDetailHero + .rmSection{
-    padding-top:30px!important;
-  }
-}
-
-/* FINAL FIX: blog hero must not use global white gradient/scroll arrow */
-.blogPostHero{
-  position:relative!important;
-  overflow:hidden!important;
-  min-height:360px!important;
-  height:auto!important;
-  margin-bottom:0!important;
-  display:flex!important;
-  align-items:center!important;
-}
-
-/* remove old scroll arrow + white gradient */
-.blogPostHero::before,
-.blogPostHero::after{
-  display:none!important;
-  content:none!important;
-  background:none!important;
-  animation:none!important;
-}
-
-/* clean dark overlay only for blog cover */
-.blogPostHero{
-  background-blend-mode:multiply!important;
-}
-
-.blogPostHero .rmShell{
-  position:relative!important;
-  z-index:5!important;
-  transform:none!important;
-  left:auto!important;
-  bottom:auto!important;
-
-  width:min(920px, calc(100% - 36px))!important;
-  max-width:920px!important;
-  padding:34px 0!important;
-
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
-  backdrop-filter:none!important;
-  color:var(--rm-surface-white)!important;
-}
-
-/* remove any forced white card from previous attempts */
-.blogPostHero .blogHeroTextCard{
-  position:relative!important;
-  left:auto!important;
-  bottom:auto!important;
-  transform:none!important;
-  width:auto!important;
-  max-width:920px!important;
-  padding:34px 0!important;
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
-  backdrop-filter:none!important;
-}
-
-/* Blog hero text */
-.blogPostHero .crumb{
-  margin:0 0 12px!important;
-  color:var(--rm-surface-white)!important;
-  opacity:.95!important;
-  font-size:15px!important;
-  font-weight:900!important;
-  line-height:1.35!important;
-  text-shadow:0 2px 16px rgba(0,0,0,.35)!important;
-}
-
-.blogPostHero h1{
-  margin:0!important;
-  max-width:760px!important;
-  color:var(--rm-surface-white)!important;
-  font-size:clamp(38px, 5vw, 68px)!important;
-  line-height:.96!important;
-  letter-spacing:-.06em!important;
-  text-shadow:0 4px 24px rgba(0,0,0,.38)!important;
-}
-
-.blogPostHero .lead{
-  margin:18px 0 0!important;
-  max-width:760px!important;
-  color:var(--rm-surface-white)!important;
-  opacity:.95!important;
-  font-size:22px!important;
-  line-height:1.45!important;
-  font-weight:500!important;
-  text-shadow:0 2px 16px rgba(0,0,0,.35)!important;
-}
-
-/* Put article content closer and clean */
-.blogPostHero + .rmSection{
-  padding-top:58px!important;
-}
-
-/* Kill previous :has blog hero rules if they still exist */
-body:has(.blogPostHero) .pageHero::before,
-body:has(.blogPostHero) .pageHero::after{
-  display:none!important;
-  content:none!important;
-  background:none!important;
-}
-
-body:has(.blogPostHero) .pageHero > .rmShell{
-  position:relative!important;
-  left:auto!important;
-  bottom:auto!important;
-  transform:none!important;
-}
-
-@media(max-width:760px){
-  .blogPostHero{
-    min-height:310px!important;
-  }
-
-  .blogPostHero .rmShell,
-  .blogPostHero .blogHeroTextCard{
-    width:calc(100% - 28px)!important;
-    padding:28px 0!important;
-  }
-
-  .blogPostHero h1{
-    font-size:34px!important;
-    line-height:1.02!important;
-    letter-spacing:-.045em!important;
-  }
-
-  .blogPostHero .lead{
-    font-size:16px!important;
-    line-height:1.5!important;
-  }
-
-  .blogPostHero + .rmSection{
-    padding-top:38px!important;
-  }
-}
-
-
-/* fallback if data-mobile-title is not present */
-@media(max-width:760px){
-  .blogPostHero h1{
-    font-size:30px!important;
-    line-height:1.05!important;
-    letter-spacing:-.045em!important;
-    max-width:330px!important;
-    display:-webkit-box!important;
-    -webkit-line-clamp:3!important;
-    -webkit-box-orient:vertical!important;
-    overflow:hidden!important;
-  }
-
-  .blogPostHero .lead{
-    margin-top:18px!important;
-  }
-}
-
-/* Mobile menu active item — cleaner, no ugly bottom line */
 @media(max-width:760px){
   .mobileMenu a,
   .mobileNav a,
@@ -10882,8 +9011,6 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     background:var(--rm-brand-blue)!important;
     opacity:.9!important;
   }
-
-  /* kill old full-width underline */
   .mobileMenu a::before,
   .mobileNav a::before,
   .rmMobileMenu a::before,
@@ -10893,13 +9020,9 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     border-radius:999px!important;
   }
 }
-
-/* FINAL: short active underline in mobile menu */
 @media(max-width:760px){
   header a.active,
   header nav a.active,
-  .rmHeader a.active,
-  .rmHeader nav a.active,
   .mobileCallBar ~ * a.active{
     border-bottom:0!important;
     box-shadow:none!important;
@@ -10909,12 +9032,8 @@ body:has(.blogPostHero) .pageHero > .rmShell{
 
   header a.active::before,
   header nav a.active::before,
-  .rmHeader a.active::before,
-  .rmHeader nav a.active::before,
   header a.active::after,
-  header nav a.active::after,
-  .rmHeader a.active::after,
-  .rmHeader nav a.active::after{
+  header nav a.active::after{
     content:""!important;
     position:absolute!important;
     left:50%!important;
@@ -10931,8 +9050,7 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     opacity:1!important;
   }
 
-  header nav a,
-  .rmHeader nav a{
+  header nav a{
     position:relative!important;
   }
 
@@ -10940,121 +9058,6 @@ body:has(.blogPostHero) .pageHero > .rmShell{
     padding-bottom:14px!important;
   }
 }
-
-/* remove bad white gradient / arrow from normal heroes */
-
-/* REVIMED FINAL INNER HERO HEIGHT SYSTEM
-   Only controls size/spacing for inner pages.
-   Homepage .homeHero is not touched.
-*/
-main section.pageHero,
-main section.blogPostHero,
-main section.blogDetailHero{
-  min-height: 260px !important;
-  height: 260px !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  overflow: hidden !important;
-}
-
-main section.pageHero > .rmShell,
-main section.blogPostHero > .rmShell,
-main section.blogDetailHero > .rmShell{
-  position: relative !important;
-  z-index: 5 !important;
-  width: min(1130px, calc(100% - 32px)) !important;
-  margin: 0 auto !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  transform: none !important;
-}
-
-main section.pageHero .crumb,
-main section.blogPostHero .crumb,
-main section.blogDetailHero .crumb{
-  display: block !important;
-  margin: 0 0 10px !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-main section.pageHero h1,
-main section.blogPostHero h1,
-main section.blogDetailHero h1{
-  display: block !important;
-  max-width: 920px !important;
-  margin: 0 0 12px !important;
-  font-size: clamp(44px, 5vw, 68px) !important;
-  line-height: 1 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 900 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-main section.pageHero .lead,
-main section.blogPostHero .lead,
-main section.blogDetailHero .lead{
-  display: block !important;
-  max-width: 820px !important;
-  margin: 0 !important;
-  font-size: 20px !important;
-  line-height: 1.45 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Same gap after hero */
-main section.pageHero + section.rmSection,
-main section.blogPostHero + section.rmSection,
-main section.blogDetailHero + section.rmSection{
-  padding-top: 60px !important;
-}
-
-@media(max-width:760px){
-  main section.pageHero,
-  main section.blogPostHero,
-  main section.blogDetailHero{
-    min-height: 210px !important;
-    height: 210px !important;
-  }
-
-  main section.pageHero h1,
-  main section.blogPostHero h1,
-  main section.blogDetailHero h1{
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-  }
-
-  main section.pageHero .lead,
-  main section.blogPostHero .lead,
-  main section.blogDetailHero .lead{
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-  }
-
-  main section.pageHero + section.rmSection,
-  main section.blogPostHero + section.rmSection,
-  main section.blogDetailHero + section.rmSection{
-    padding-top: 35px !important;
-  }
-}
-
-/* FINAL: remove unwanted white fade and arrow from normal page heroes */
-main section.pageHero::before,
-main section.pageHero::after{
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  animation: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
-
-
-/* BLOG ARTICLE READABILITY UPGRADE */
 .blogEnhancedArticle{
   max-width: 860px !important;
   margin-left: auto !important;
@@ -11222,78 +9225,11 @@ main section.pageHero::after{
     width: 100% !important;
   }
 }
-
-/* FINAL HERO TEXT ALIGNMENT — match Despre Noi on every inner page, not homepage */
-body main section.pageHero:not(.homeHero) > .rmShell,
-body main section.blogPostHero > .rmShell,
-body main section.blogDetailHero > .rmShell,
-body main section.aboutPageHero > .rmShell{
-  width: min(860px, calc(100% - 32px)) !important;
-  max-width: 860px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  left: auto !important;
-  right: auto !important;
-  transform: none !important;
-}
-
-/* If old blog rules use inner text card, force same alignment too */
-body main section.blogPostHero .blogHeroTextCard,
-body main section.blogDetailHero .blogHeroTextCard{
-  width: min(860px, calc(100% - 32px)) !important;
-  max-width: 860px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  left: auto !important;
-  right: auto !important;
-  transform: none !important;
-}
-
-/* Same readable text width on hero */
-body main section.pageHero:not(.homeHero) h1,
-body main section.blogPostHero h1,
-body main section.blogDetailHero h1,
-body main section.aboutPageHero h1{
-  max-width: 860px !important;
-}
-
-body main section.pageHero:not(.homeHero) .lead,
-body main section.blogPostHero .lead,
-body main section.blogDetailHero .lead,
-body main section.aboutPageHero .lead{
-  max-width: 860px !important;
-}
-
-@media(max-width:760px){
-  body main section.pageHero:not(.homeHero) > .rmShell,
-  body main section.blogPostHero > .rmShell,
-  body main section.blogDetailHero > .rmShell,
-  body main section.aboutPageHero > .rmShell,
-  body main section.blogPostHero .blogHeroTextCard,
-  body main section.blogDetailHero .blogHeroTextCard{
-    width: calc(100% - 28px) !important;
-    max-width: calc(100% - 28px) !important;
-  }
-}
-
-/* FINAL DESIGN: elegant fade-to-white at bottom of heroes */
-body main section.homeHero,
-body main section.pageHero,
-body main section.blogPostHero,
-body main section.blogDetailHero{
+body main section.homeHero{
   position: relative !important;
   overflow: hidden !important;
 }
-
-/* Soft fade that removes the hard cut and invites scrolling */
-body main section.homeHero::after,
-body main section.pageHero::after,
-body main section.blogPostHero::after,
-body main section.blogDetailHero::after{
+body main section.homeHero::after{
   content: "" !important;
   display: block !important;
   position: absolute !important;
@@ -11314,21 +9250,11 @@ body main section.blogDetailHero::after{
     rgba(255,255,255,1) 100%
   ) !important;
 }
-
-/* Keep hero text above fade */
-body main section.homeHero > *,
-body main section.pageHero > *,
-body main section.blogPostHero > *,
-body main section.blogDetailHero > *{
+body main section.homeHero > *{
   position: relative !important;
   z-index: 5 !important;
 }
-
-/* Small subtle scroll hint only on desktop */
-body main section.homeHero::before,
-body main section.pageHero::before,
-body main section.blogPostHero::before,
-body main section.blogDetailHero::before{
+body main section.homeHero::before{
   content: "⌄" !important;
   display: grid !important;
   place-items: center !important;
@@ -11351,20 +9277,12 @@ body main section.blogDetailHero::before{
   backdrop-filter: blur(8px) !important;
   opacity: .78 !important;
 }
-
-/* Do not show arrow if hero is too short on mobile, keep only fade */
 @media(max-width:760px){
-  body main section.homeHero::after,
-  body main section.pageHero::after,
-  body main section.blogPostHero::after,
-  body main section.blogDetailHero::after{
+  body main section.homeHero::after{
     height: 70px !important;
   }
 
-  body main section.homeHero::before,
-  body main section.pageHero::before,
-  body main section.blogPostHero::before,
-  body main section.blogDetailHero::before{
+  body main section.homeHero::before{
     width: 34px !important;
     height: 34px !important;
     bottom: 12px !important;
@@ -11372,12 +9290,7 @@ body main section.blogDetailHero::before{
     opacity: .65 !important;
   }
 }
-
-/* FINAL: no arrow inside hero, only subtle bottom fade */
-body main section.homeHero::before,
-body main section.pageHero::before,
-body main section.blogPostHero::before,
-body main section.blogDetailHero::before{
+body main section.homeHero::before{
   content: none !important;
   display: none !important;
   opacity: 0 !important;
@@ -11388,64 +9301,12 @@ body main section.blogDetailHero::before{
   animation: none !important;
 }
 
-/* Keep only smooth fade at the bottom edge of hero */
-
 @media(max-width:760px){
-  body main section.homeHero::after,
-  body main section.pageHero::after,
-  body main section.blogPostHero::after,
-  body main section.blogDetailHero::after{
+  body main section.homeHero::after{
     height: 48px !important;
   }
 }
-
-/* FINAL: hero scroll arrow appears only before scroll */
-body:not(.heroScrolled) main section.homeHero::before,
-body:not(.heroScrolled) main section.pageHero::before,
-body:not(.heroScrolled) main section.blogPostHero::before,
-body:not(.heroScrolled) main section.blogDetailHero::before{
-  content: "⌄" !important;
-  display: grid !important;
-  place-items: center !important;
-  position: absolute !important;
-  left: 50% !important;
-  bottom: 16px !important;
-  transform: translateX(-50%) !important;
-  width: 38px !important;
-  height: 38px !important;
-  z-index: 7 !important;
-  pointer-events: none !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,.68) !important;
-  border: 1px solid rgba(255,255,255,.82) !important;
-  color: var(--rm-heading-navy) !important;
-  font-size: 28px !important;
-  line-height: 1 !important;
-  font-weight: 900 !important;
-  box-shadow: 0 10px 26px rgba(8,35,74,.14) !important;
-  backdrop-filter: blur(8px) !important;
-  opacity: .75 !important;
-  visibility: visible !important;
-  transition: opacity .25s ease, transform .25s ease, visibility .25s ease !important;
-}
-
-/* Once user scrolls, hide the arrow completely */
-body.heroScrolled main section.homeHero::before,
-body.heroScrolled main section.pageHero::before,
-body.heroScrolled main section.blogPostHero::before,
-body.heroScrolled main section.blogDetailHero::before{
-  content: none !important;
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* Keep the soft bottom fade */
-body main section.homeHero::after,
-body main section.pageHero::after,
-body main section.blogPostHero::after,
-body main section.blogDetailHero::after{
+body main section.homeHero::after{
   content: "" !important;
   display: block !important;
   position: absolute !important;
@@ -11468,40 +9329,12 @@ body main section.blogDetailHero::after{
 }
 
 @media(max-width:760px){
-  body:not(.heroScrolled) main section.homeHero::before,
-  body:not(.heroScrolled) main section.pageHero::before,
-  body:not(.heroScrolled) main section.blogPostHero::before,
-  body:not(.heroScrolled) main section.blogDetailHero::before{
-    width: 32px !important;
-    height: 32px !important;
-    bottom: 10px !important;
-    font-size: 24px !important;
-    opacity: .62 !important;
-  }
 
-  body main section.homeHero::after,
-  body main section.pageHero::after,
-  body main section.blogPostHero::after,
-  body main section.blogDetailHero::after{
+  body main section.homeHero::after{
     height: 48px !important;
   }
 }
-
-/* FINAL RESTORE: homepage cards, CTA and real bottom scroll hint */
-
-/* 1) Kill all old pseudo arrows completely */
-body main section.homeHero::before,
-body main section.pageHero::before,
-body main section.blogPostHero::before,
-body main section.blogDetailHero::before,
-body:not(.heroScrolled) main section.homeHero::before,
-body:not(.heroScrolled) main section.pageHero::before,
-body:not(.heroScrolled) main section.blogPostHero::before,
-body:not(.heroScrolled) main section.blogDetailHero::before,
-body.heroScrolled main section.homeHero::before,
-body.heroScrolled main section.pageHero::before,
-body.heroScrolled main section.blogPostHero::before,
-body.heroScrolled main section.blogDetailHero::before{
+body main section.homeHero::before{
   content: none !important;
   display: none !important;
   opacity: 0 !important;
@@ -11511,8 +9344,6 @@ body.heroScrolled main section.blogDetailHero::before{
   box-shadow: none !important;
   animation: none !important;
 }
-
-/* 2) Restore homepage hero image and keep bottom fade only */
 body main section.homeHero{
   position: relative !important;
   overflow: hidden !important;
@@ -11525,10 +9356,7 @@ body main section.homeHero{
   background-repeat: no-repeat !important;
 }
 
-body main section.homeHero::after,
-body main section.pageHero::after,
-body main section.blogPostHero::after,
-body main section.blogDetailHero::after{
+body main section.homeHero::after{
   content: "" !important;
   display: block !important;
   position: absolute !important;
@@ -11548,41 +9376,6 @@ body main section.blogDetailHero::after{
   border: 0 !important;
   box-shadow: none !important;
 }
-
-/* 3) Real arrow: bottom edge, not in H1 area, disappears after scroll */
-.realHeroScrollHint{
-  position: absolute !important;
-  left: 50% !important;
-  bottom: 14px !important;
-  transform: translateX(-50%) !important;
-  z-index: 20 !important;
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(255,255,255,.85) !important;
-  background: rgba(255,255,255,.72) !important;
-  color: var(--rm-heading-navy) !important;
-  display: grid !important;
-  place-items: center !important;
-  font-size: 28px !important;
-  line-height: 1 !important;
-  font-weight: 900 !important;
-  cursor: pointer !important;
-  box-shadow: 0 10px 28px rgba(8,35,74,.16) !important;
-  backdrop-filter: blur(8px) !important;
-  opacity: .78 !important;
-  visibility: visible !important;
-  transition: opacity .22s ease, transform .22s ease, visibility .22s ease !important;
-}
-
-body.heroScrolled .realHeroScrollHint{
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transform: translateX(-50%) translateY(8px) !important;
-}
-
-/* 4) Restore stats cards under homepage hero */
 .homeStats{
   position: relative !important;
   z-index: 10 !important;
@@ -11619,8 +9412,6 @@ body.heroScrolled .realHeroScrollHint{
   line-height: 1.45 !important;
   color: var(--rm-text-muted) !important;
 }
-
-/* 5) Restore blue CTA image card */
 .homeCtaWrap{
   padding: 70px 0 !important;
   background: var(--rm-surface-white) !important;
@@ -11684,25 +9475,13 @@ body.heroScrolled .realHeroScrollHint{
   min-width: 145px !important;
   justify-content: center !important;
 }
-
-/* 6) Keep review band clean after CTA */
 .testimonialBand{
   padding-top: 70px !important;
   padding-bottom: 70px !important;
 }
-
-/* Mobile */
 @media(max-width:760px){
   body main section.homeHero{
     min-height: 430px !important;
-  }
-
-  .realHeroScrollHint{
-    width: 32px !important;
-    height: 32px !important;
-    bottom: 10px !important;
-    font-size: 24px !important;
-    opacity: .68 !important;
   }
 
   .homeStats{
@@ -11748,12 +9527,7 @@ body.heroScrolled .realHeroScrollHint{
     flex: 1 1 140px !important;
   }
 }
-
-/* FINAL FIX: remove white hero fade/overlay band completely */
-body main section.homeHero::after,
-body main section.pageHero::after,
-body main section.blogPostHero::after,
-body main section.blogDetailHero::after{
+body main section.homeHero::after{
   content: none !important;
   display: none !important;
   opacity: 0 !important;
@@ -11764,16 +9538,6 @@ body main section.blogDetailHero::after{
   box-shadow: none !important;
   animation: none !important;
 }
-
-/* Also remove any real scroll hint button if it was injected */
-.realHeroScrollHint{
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* Keep homepage hero clean with image + blue overlay only */
 body main section.homeHero{
   background-image:
     linear-gradient(90deg, rgba(8,28,55,.78) 0%, rgba(8,48,82,.56) 48%, rgba(11,143,216,.42) 100%),
@@ -11782,8 +9546,6 @@ body main section.homeHero{
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
-
-/* FINAL BLOG: readable article + download document button */
 
 @media(max-width:760px){
   .blogPostSection{
@@ -11829,8 +9591,6 @@ body main section.homeHero{
     width:100% !important;
   }
 }
-
-/* FINAL BLOG: readable article + download document button */
 .blogPostSection{
   background:var(--rm-surface-white) !important;
   padding-top:64px !important;
@@ -12012,412 +9772,27 @@ body main section.homeHero{
     width:100% !important;
   }
 }
-
-/* FINAL BLOG HERO FIX: remove white broken H1 background */
-body main section.blogPostHero,
-body main section.blogDetailHero,
-body main section.pageHero.blogPostHero,
-body main section.pageHero.blogDetailHero{
-  position: relative !important;
-  overflow: hidden !important;
-  width: 100% !important;
-  min-height: 310px !important;
-  height: auto !important;
-  padding: 72px 0 72px !important;
-  display: flex !important;
-  align-items: center !important;
-  background: var(--rm-heading-navy) !important;
-  background-image: linear-gradient(135deg, var(--rm-heading-navy) 0%, #082b55 48%, #0b3d6d 100%) !important;
-}
-
-/* Make sure no white panel/fade appears behind title */
-
-/* Hero text clean like before */
-body main section.blogPostHero .rmShell,
-body main section.blogDetailHero .rmShell,
-body main section.pageHero.blogPostHero .rmShell,
-body main section.pageHero.blogDetailHero .rmShell{
-  position: relative !important;
-  z-index: 2 !important;
-  max-width: 980px !important;
-  margin: 0 auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
-
-body main section.blogPostHero .crumb,
-body main section.blogDetailHero .crumb,
-body main section.pageHero.blogPostHero .crumb,
-body main section.pageHero.blogDetailHero .crumb{
-  color: rgba(255,255,255,.92) !important;
-  font-weight: 900 !important;
-  margin: 0 0 14px !important;
-  background: transparent !important;
-}
-
-body main section.blogPostHero h1,
-body main section.blogDetailHero h1,
-body main section.pageHero.blogPostHero h1,
-body main section.pageHero.blogDetailHero h1{
-  max-width: 880px !important;
-  margin: 0 0 16px !important;
-  color: var(--rm-surface-white) !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  text-shadow: none !important;
-  font-size: clamp(42px, 5.2vw, 76px) !important;
-  line-height: .98 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 950 !important;
-}
-
-body main section.blogPostHero .lead,
-body main section.blogDetailHero .lead,
-body main section.pageHero.blogPostHero .lead,
-body main section.pageHero.blogDetailHero .lead{
-  max-width: 760px !important;
-  margin: 0 !important;
-  color: rgba(255,255,255,.88) !important;
-  background: transparent !important;
-  font-size: 21px !important;
-  line-height: 1.45 !important;
-}
-
-/* Do not affect article body improvements */
 .blogPostSection .blogPostArticle{
   margin-top: 0 !important;
 }
-
-@media(max-width:760px){
-  body main section.blogPostHero,
-  body main section.blogDetailHero,
-  body main section.pageHero.blogPostHero,
-  body main section.pageHero.blogDetailHero{
-    min-height: 260px !important;
-    padding: 46px 0 48px !important;
-  }
-
-  body main section.blogPostHero h1,
-  body main section.blogDetailHero h1,
-  body main section.pageHero.blogPostHero h1,
-  body main section.pageHero.blogDetailHero h1{
-    font-size: clamp(34px, 10vw, 48px) !important;
-    line-height: 1.02 !important;
-  }
-
-  body main section.blogPostHero .lead,
-  body main section.blogDetailHero .lead,
-  body main section.pageHero.blogPostHero .lead,
-  body main section.pageHero.blogDetailHero .lead{
-    font-size: 16px !important;
-  }
-}
-
-/* FINAL BLOG POST HERO: same layout/height as normal inner pages, not homepage */
-body main section.blogPostHero,
-body main section.blogDetailHero,
-body main section.pageHero.blogPostHero,
-body main section.pageHero.blogDetailHero{
-  position: relative !important;
-  width: 100% !important;
-  min-height: 260px !important;
-  height: 260px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  background: var(--rm-heading-navy) !important;
-  background-image:
-    linear-gradient(90deg, rgba(8,28,55,.82) 0%, rgba(8,48,82,.64) 48%, rgba(11,143,216,.42) 100%),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-}
-
-/* Remove all old white/black overlays from blog hero */
-body main section.blogPostHero::before,
-body main section.blogPostHero::after,
-body main section.blogDetailHero::before,
-body main section.blogDetailHero::after,
-body main section.pageHero.blogPostHero::before,
-body main section.pageHero.blogPostHero::after,
-body main section.pageHero.blogDetailHero::before,
-body main section.pageHero.blogDetailHero::after{
-  content: none !important;
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  background: none !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
-
-/* Same text alignment as other inner pages */
-body main section.blogPostHero > .rmShell,
-body main section.blogDetailHero > .rmShell,
-body main section.pageHero.blogPostHero > .rmShell,
-body main section.pageHero.blogDetailHero > .rmShell{
-  width: min(860px, calc(100% - 32px)) !important;
-  max-width: 860px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-/* Blog title same visual scale as inner pages */
-body main section.blogPostHero .crumb,
-body main section.blogDetailHero .crumb,
-body main section.pageHero.blogPostHero .crumb,
-body main section.pageHero.blogDetailHero .crumb{
-  margin: 0 0 10px !important;
-  color: rgba(255,255,255,.92) !important;
-  font-size: 16px !important;
-  line-height: 1.3 !important;
-  font-weight: 900 !important;
-  background: transparent !important;
-}
-
-body main section.blogPostHero h1,
-body main section.blogDetailHero h1,
-body main section.pageHero.blogPostHero h1,
-body main section.pageHero.blogDetailHero h1{
-  max-width: 860px !important;
-  margin: 0 0 12px !important;
-  color: var(--rm-surface-white) !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  text-shadow: none !important;
-  font-size: clamp(42px, 4.4vw, 64px) !important;
-  line-height: 1.02 !important;
-  letter-spacing: -.055em !important;
-  font-weight: 950 !important;
-}
-
-body main section.blogPostHero .lead,
-body main section.blogDetailHero .lead,
-body main section.pageHero.blogPostHero .lead,
-body main section.pageHero.blogDetailHero .lead{
-  max-width: 760px !important;
-  margin: 0 !important;
-  color: rgba(255,255,255,.9) !important;
-  background: transparent !important;
-  font-size: 19px !important;
-  line-height: 1.45 !important;
-}
-
-/* Article starts normally after hero */
 .blogPostSection{
   padding-top: 64px !important;
 }
-
-/* Mobile */
 @media(max-width:760px){
-  body main section.blogPostHero,
-  body main section.blogDetailHero,
-  body main section.pageHero.blogPostHero,
-  body main section.pageHero.blogDetailHero{
-    min-height: 240px !important;
-    height: 240px !important;
-  }
-
-  body main section.blogPostHero > .rmShell,
-  body main section.blogDetailHero > .rmShell,
-  body main section.pageHero.blogPostHero > .rmShell,
-  body main section.pageHero.blogDetailHero > .rmShell{
-    width: calc(100% - 28px) !important;
-    max-width: calc(100% - 28px) !important;
-  }
-
-  body main section.blogPostHero h1,
-  body main section.blogDetailHero h1,
-  body main section.pageHero.blogPostHero h1,
-  body main section.pageHero.blogDetailHero h1{
-    font-size: clamp(30px, 9vw, 42px) !important;
-    line-height: 1.05 !important;
-  }
-
-  body main section.blogPostHero .lead,
-  body main section.blogDetailHero .lead,
-  body main section.pageHero.blogPostHero .lead,
-  body main section.pageHero.blogDetailHero .lead{
-    font-size: 15px !important;
-  }
 
   .blogPostSection{
     padding-top: 36px !important;
   }
 }
-
-/* FINAL TRUE BLOG POST HERO:
-   - blue/image like other inner pages
-   - not black
-   - not white
-   - auto height so long blog titles fit
-*/
-html body main section.pageHero.blogPostHero,
-html body main section.blogPostHero,
-html body main section.pageHero.blogDetailHero,
-html body main section.blogDetailHero{
-  position: relative !important;
-  width: 100% !important;
-  min-height: 260px !important;
-  height: auto !important;
-  padding: 52px 0 56px !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  background-color: #0b4f85 !important;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(8, 35, 74, .72) 0%,
-      rgba(8, 58, 98, .55) 45%,
-      rgba(11, 143, 216, .35) 100%
-    ),
-    url("/images/medical-bg.jpg") !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-}
-
-/* Remove old black/white overlays on blog hero */
-html body main section.pageHero.blogPostHero::before,
-html body main section.pageHero.blogPostHero::after,
-html body main section.blogPostHero::before,
-html body main section.blogPostHero::after,
-html body main section.pageHero.blogDetailHero::before,
-html body main section.pageHero.blogDetailHero::after,
-html body main section.blogDetailHero::before,
-html body main section.blogDetailHero::after{
-  content: none !important;
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  background: none !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
-
-/* Same text alignment as inner pages */
-html body main section.pageHero.blogPostHero > .rmShell,
-html body main section.blogPostHero > .rmShell,
-html body main section.pageHero.blogDetailHero > .rmShell,
-html body main section.blogDetailHero > .rmShell{
-  width: min(860px, calc(100% - 32px)) !important;
-  max-width: 860px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  position: relative !important;
-  z-index: 2 !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Blog crumb */
-html body main section.pageHero.blogPostHero .crumb,
-html body main section.blogPostHero .crumb,
-html body main section.pageHero.blogDetailHero .crumb,
-html body main section.blogDetailHero .crumb{
-  margin: 0 0 10px !important;
-  color: rgba(255,255,255,.94) !important;
-  font-size: 15px !important;
-  line-height: 1.35 !important;
-  font-weight: 900 !important;
-  background: transparent !important;
-}
-
-/* Blog title: can wrap naturally, no clipping */
-html body main section.pageHero.blogPostHero h1,
-html body main section.blogPostHero h1,
-html body main section.pageHero.blogDetailHero h1,
-html body main section.blogDetailHero h1{
-  max-width: 860px !important;
-  margin: 0 0 12px !important;
-  color: var(--rm-surface-white) !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  text-shadow: 0 10px 30px rgba(0,0,0,.18) !important;
-  font-size: clamp(36px, 4.1vw, 58px) !important;
-  line-height: 1.03 !important;
-  letter-spacing: -.052em !important;
-  font-weight: 950 !important;
-  overflow: visible !important;
-  display: block !important;
-}
-
-/* Blog excerpt */
-html body main section.pageHero.blogPostHero .lead,
-html body main section.blogPostHero .lead,
-html body main section.pageHero.blogDetailHero .lead,
-html body main section.blogDetailHero .lead{
-  max-width: 760px !important;
-  margin: 0 !important;
-  color: rgba(255,255,255,.9) !important;
-  background: transparent !important;
-  font-size: 18px !important;
-  line-height: 1.45 !important;
-  overflow: visible !important;
-}
-
-/* Keep article spacing normal */
 .blogPostSection{
   padding-top: 56px !important;
 }
-
-/* Mobile blog post hero */
 @media(max-width:760px){
-  html body main section.pageHero.blogPostHero,
-  html body main section.blogPostHero,
-  html body main section.pageHero.blogDetailHero,
-  html body main section.blogDetailHero{
-    min-height: 230px !important;
-    height: auto !important;
-    padding: 34px 0 38px !important;
-  }
-
-  html body main section.pageHero.blogPostHero > .rmShell,
-  html body main section.blogPostHero > .rmShell,
-  html body main section.pageHero.blogDetailHero > .rmShell,
-  html body main section.blogDetailHero > .rmShell{
-    width: calc(100% - 28px) !important;
-    max-width: calc(100% - 28px) !important;
-  }
-
-  html body main section.pageHero.blogPostHero h1,
-  html body main section.blogPostHero h1,
-  html body main section.pageHero.blogDetailHero h1,
-  html body main section.blogDetailHero h1{
-    font-size: clamp(28px, 8.5vw, 40px) !important;
-    line-height: 1.06 !important;
-  }
-
-  html body main section.pageHero.blogPostHero .lead,
-  html body main section.blogPostHero .lead,
-  html body main section.pageHero.blogDetailHero .lead,
-  html body main section.blogDetailHero .lead{
-    font-size: 15px !important;
-  }
 
   .blogPostSection{
     padding-top: 34px !important;
   }
 }
-
-/* FINAL BLOG SPACING + DOC DOWNLOAD BUTTON */
 html body main section.blogPostSection,
 html body main section.rmSection.blogPostSection{
   padding-top: 30px !important;
@@ -12430,14 +9805,10 @@ html body main section.blogPostSection .blogArticleCard,
 html body main section.rmSection.blogPostSection .blogArticleCard{
   margin-top: 0 !important;
 }
-
-/* Slightly reduce top image gap inside article */
 .blogPostArticle .postHeroImage,
 .blogArticleCard .postHeroImage{
   margin-bottom: 22px !important;
 }
-
-/* Download DOC block */
 .blogExportBox{
   margin-top: 34px !important;
   padding: 22px !important;
@@ -12509,13 +9880,6 @@ html body main section.rmSection.blogPostSection .blogArticleCard{
     width: 100% !important;
   }
 }
-
-/* FINAL CLEAN BLOG ARTICLE OVERRIDE — one source of truth at file end */
-
-/* Reduce gap between blog hero and article card */
-
-
-/* Cleaner heading style, without heavy check icon */
 html body main .blogReadableContent .blogAutoHeading{
   margin: 26px 0 14px !important;
   padding: 12px 16px !important;
@@ -12533,15 +9897,9 @@ html body main .blogReadableContent .blogAutoHeading::after{
   content: none !important;
   display: none !important;
 }
-
-/* Keep enough space on mobile, but still reduce the gap */
 @media(max-width:760px){
-  html body main section.pageHero.blogPostHero + section.rmSection .blogPostArticle,
-  html body main section.blogPostHero + section.rmSection .blogPostArticle,
   html body main section.rmSection.blogPostSection .blogPostArticle,
   html body main section.blogPostSection .blogPostArticle,
-  html body main section.pageHero.blogPostHero + section.rmSection .blogArticleCard,
-  html body main section.blogPostHero + section.rmSection .blogArticleCard,
   html body main section.rmSection.blogPostSection .blogArticleCard,
   html body main section.blogPostSection .blogArticleCard{
     margin-top: -38px !important;
@@ -12553,14 +9911,10 @@ html body main .blogReadableContent .blogAutoHeading::after{
   }
 }
 
-/* FINAL CONTACT CLEANUP */
-
 html body main .contactCard img:not([src]),
 html body main .contactCard img[src=""]{
   display:none!important;
 }
-
-/* Make the map/transport side look clean if only map remains */
 html body main .contactMapGrid,
 html body main .contactImages,
 html body main .mapGrid,
@@ -12573,27 +9927,18 @@ html body main .contactImages:has(img[src=""]),
 html body main .mapGrid:has(img[src=""]){
   grid-template-columns:1fr!important;
 }
-
-/* Broken removed image should not leave blue empty placeholder */
 html body main [class*="contact"] img[src=""],
 html body main [class*="map"] img[src=""],
 html body main [class*="media"] img[src=""]{
   display:none!important;
 }
-
-/* FINAL CONTACT PHONE FIX */
 html body main img[src=""],
 html body main img[src*="/images/6.jpg"]{
   display:none!important;
 }
-
-/* Keep valid phone values visible */
 html body main *{
   text-decoration-thickness: auto;
 }
-
-
-/* FINAL CONTACT SOURCE CLEAN */
 .contactPhotoPair{
   display:grid!important;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;
@@ -12616,54 +9961,6 @@ html body main *{
 .contactPhotoPair img[src*="/images/6.jpg"]{
   display:none!important;
 }
-
-/* CLEAN FINAL HERO / CONTENT SPACING SYSTEM
-   One source of truth. Do not add more emergency hero spacing blocks below this. */
-
-/* 1) Normal inner pages: services, apps, blog list, prices, gallery, contact */
-html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero){
-  margin-bottom: 0 !important;
-}
-
-html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section,
-html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
-  margin-top: 28px !important;
-  padding-top: 0 !important;
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section > .rmShell,
-html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section.rmSection > .rmShell{
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* 2) Blog list cards: close but not glued */
-html body main section.pageHero + section .blogGrid,
-html body main section.pageHero + section .cardsGrid,
-html body main section.pageHero + section .servicesGrid,
-html body main section.pageHero + section .appsGrid{
-  margin-top: 0 !important;
-}
-
-/* 3) Blog post hero: keep enough space for long H1 and subtitle */
-html body main section.pageHero.blogPostHero,
-html body main section.blogPostHero,
-html body main section.pageHero.blogDetailHero,
-html body main section.blogDetailHero{
-  margin-bottom: 0 !important;
-  padding-bottom: 72px !important;
-  min-height: 360px !important;
-  height: auto !important;
-  overflow: hidden !important;
-}
-
-/* 4) Blog post content: starts after hero, never overlaps title/subtitle */
-html body main section.pageHero.blogPostHero + section,
-html body main section.blogPostHero + section,
-html body main section.pageHero.blogDetailHero + section,
-html body main section.blogDetailHero + section,
 html body main section.blogPostSection,
 html body main section.rmSection.blogPostSection{
   margin-top: 34px !important;
@@ -12673,14 +9970,10 @@ html body main section.rmSection.blogPostSection{
 }
 
 html body main section.blogPostSection > .rmShell,
-html body main section.rmSection.blogPostSection > .rmShell,
-html body main section.pageHero.blogPostHero + section > .rmShell,
-html body main section.blogPostHero + section > .rmShell{
+html body main section.rmSection.blogPostSection > .rmShell{
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
-
-/* 5) Article card and hero image must never be pulled upward */
 html body main .blogPostArticle,
 html body main .blogArticleCard,
 html body main section.blogPostSection .blogPostArticle,
@@ -12698,40 +9991,13 @@ html body main .blogArticleCard .postHeroImage{
   margin-top: 0 !important;
   transform: none !important;
 }
-
-/* 6) Mobile */
 @media(max-width:760px){
-  html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section,
-  html body main section.pageHero:not(.homeHero):not(.blogPostHero):not(.blogDetailHero) + section.rmSection{
-    margin-top: 22px !important;
-  }
 
-  html body main section.pageHero.blogPostHero,
-  html body main section.blogPostHero,
-  html body main section.pageHero.blogDetailHero,
-  html body main section.blogDetailHero{
-    padding-bottom: 48px !important;
-    min-height: 300px !important;
-  }
-
-  html body main section.pageHero.blogPostHero + section,
-  html body main section.blogPostHero + section,
-  html body main section.pageHero.blogDetailHero + section,
-  html body main section.blogDetailHero + section,
   html body main section.blogPostSection,
   html body main section.rmSection.blogPostSection{
     margin-top: 24px !important;
   }
 }
-
-
-/* FINAL PRICES PAGE POLISH */
-
-/* Remove weird white strip after Prices hero */
-html body main section.pageHero + section:has(.priceConverter),
-html body main section.pageHero + section:has(.pricesConverter),
-html body main section.pageHero + section:has(.currencyConverter),
-html body main section.pageHero + section:has(select),
 html body main section.rmSection:has(.priceConverter),
 html body main section.rmSection:has(.pricesConverter),
 html body main section.rmSection:has(.currencyConverter){
@@ -12739,20 +10005,11 @@ html body main section.rmSection:has(.currencyConverter){
   margin-top:0!important;
   padding-top:32px!important;
 }
-
-/* If the first section after hero is the prices area, make it flow cleanly */
-html body main section.pageHero + section.rmSection{
-  border-top:0!important;
-}
-
-/* Prices page card should sit on the same soft blue background */
 html body main section:has(.priceConverter) .rmShell,
 html body main section:has(.pricesConverter) .rmShell,
 html body main section:has(.currencyConverter) .rmShell{
   background:transparent!important;
 }
-
-/* Generic converter layout polish */
 html body main .priceConverter,
 html body main .pricesConverter,
 html body main .currencyConverter,
@@ -12760,8 +10017,6 @@ html body main [class*="converter"],
 html body main [class*="Converter"]{
   align-items:center!important;
 }
-
-/* Result badge polish */
 html body main [class*="result"],
 html body main [class*="Result"]{
   display:flex!important;
@@ -12776,8 +10031,6 @@ html body main [class*="Result"]{
   border-radius:18px!important;
   overflow:hidden!important;
 }
-
-/* Small "Rezultat" label */
 html body main [class*="result"] small,
 html body main [class*="Result"] small,
 html body main [class*="result"] span:first-child,
@@ -12790,8 +10043,6 @@ html body main [class*="Result"] span:first-child{
   margin:0 0 3px!important;
   letter-spacing:.02em!important;
 }
-
-/* Big amount */
 html body main [class*="result"] strong,
 html body main [class*="Result"] strong,
 html body main [class*="result"] b,
@@ -12802,8 +10053,6 @@ html body main [class*="Result"] b{
   font-weight:900!important;
   margin:0!important;
 }
-
-/* Currency line */
 html body main [class*="result"] em,
 html body main [class*="Result"] em{
   display:block!important;
@@ -12813,12 +10062,7 @@ html body main [class*="Result"] em{
   font-weight:900!important;
   margin:2px 0 0!important;
 }
-
-/* Mobile */
 @media(max-width:760px){
-  html body main section.pageHero + section:has(.priceConverter),
-  html body main section.pageHero + section:has(.pricesConverter),
-  html body main section.pageHero + section:has(.currencyConverter),
   html body main section.rmSection:has(.priceConverter),
   html body main section.rmSection:has(.pricesConverter),
   html body main section.rmSection:has(.currencyConverter){
@@ -12831,12 +10075,6 @@ html body main [class*="Result"] em{
     min-height:72px!important;
   }
 }
-
-
-/* SERVICES PAGE — final clean layout
-   Fixes the ugly overlap between service cards and the info/SEO block. */
-
-/* Keep the grid clean and give it real breathing space below */
 body main 
 
 /* Service cards: balanced, not too huge, visually consistent */
@@ -12872,8 +10110,6 @@ body main .serviceGrid ~ .serviceSeoText{
   transform:none !important;
   overflow:hidden !important;
 }
-
-/* Some layouts put the info card in the same section after the tiles */
 body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child,
 body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
   display:block !important;
@@ -12889,8 +10125,6 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
   transform:none !important;
   overflow:hidden !important;
 }
-
-/* Title inside the card: clean, not glued to border */
 body main .serviceGrid + .rmCard h1,
 body main .serviceGrid + .rmCard h2,
 body main .serviceGrid ~ .rmCard h1,
@@ -12906,8 +10140,6 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h2{
   line-height:1.08 !important;
   letter-spacing:-.045em !important;
 }
-
-/* Text rhythm */
 body main .serviceGrid + .rmCard p,
 body main .serviceGrid ~ .rmCard p,
 body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child p,
@@ -12918,8 +10150,6 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child p{
   margin:0 0 18px !important;
   max-width:960px !important;
 }
-
-/* Buttons inside SEO card */
 body main .serviceGrid + .rmCard .actions,
 body main .serviceGrid + .rmCard .btnRow,
 body main .serviceGrid ~ .rmCard .actions,
@@ -12933,16 +10163,12 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .btnRow{
   gap:12px !important;
   margin-top:26px !important;
 }
-
-/* Make pill buttons look intentional */
 body main .serviceGrid + .rmCard a,
 body main .serviceGrid ~ .rmCard a,
 body main section:has(.serviceGrid) > .rmShell > .rmCard:last-child a,
 body main section:has(.serviceTile) > .rmShell > .rmCard:last-child a{
   white-space:nowrap !important;
 }
-
-/* Mobile */
 @media(max-width:760px){
   body main 
 
@@ -12976,12 +10202,6 @@ body main section:has(.serviceTile) > .rmShell > .rmCard:last-child a{
     line-height:1.65 !important;
   }
 }
-
-/* APPLICATIONS PAGE — TRUE FINAL
-   Fixes bottom info card overlap on /aplicatii.
-   The page uses serviceGrid/serviceTile classes, so we target the applications content by its CTA links. */
-
-/* Keep application card grid above, with real space below */
 html body main section:has(.serviceTile):has(a[href*="aplicatii"]) .serviceGrid,
 html body main section:has(.serviceTile):has(a[href*="/aplicatii/"]) .serviceGrid,
 html body main section:has(.serviceTile):has(a[href*="teste"]) .serviceGrid,
@@ -13003,8 +10223,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child{
   transform: none !important;
   overflow: hidden !important;
 }
-
-/* But do not style the actual service/app tiles as giant SEO cards */
 html body main section:has(.serviceTile) .serviceGrid .rmCard,
 html body main section:has(.serviceTile) .serviceGrid 
 
@@ -13021,8 +10239,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child h2{
   position: relative !important;
   z-index: 2 !important;
 }
-
-/* Text rhythm */
 html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child p,
 html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child li{
   color: #405269 !important;
@@ -13039,8 +10255,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child ul{
   margin: 18px 0 0 22px !important;
   padding: 0 !important;
 }
-
-/* Buttons */
 html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .btnRow,
 html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .actions{
   display: flex !important;
@@ -13048,8 +10262,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
   gap: 12px !important;
   margin-top: 26px !important;
 }
-
-/* Mobile */
 @media(max-width:760px){
   html body main section:has(.serviceTile) 
 
@@ -13070,9 +10282,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
     line-height: 1.65 !important;
   }
 }
-
-
-/* UTILAJ / EQUIPMENT PAGES */
 
 .equipmentGrid{
   display:grid !important;
@@ -13157,8 +10366,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
     padding:28px 22px !important;
   }
 }
-
-/* UTILAJ / EQUIPMENT — safe static pages */
 .equipmentSection{padding-top:54px!important}
 .equipmentGrid{
   display:grid!important;
@@ -13278,8 +10485,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
   .equipmentGrid{grid-template-columns:1fr!important}
   .equipmentDetailCard{padding:28px 22px!important}
 }
-
-/* NEW SERVICES STATIC PAGES — utilaj-style */
 .servicesNewSection{padding-top:54px!important}
 .servicesNewGrid{
   display:grid!important;
@@ -13401,56 +10606,6 @@ html body main section:has(.serviceTile) > .rmShell > .rmCard:last-child .action
   .servicesNewGrid{grid-template-columns:1fr!important}
   .servicesNewDetailCard{padding:28px 22px!important}
 }
-
-/* FINAL BLOG LIST HERO HEIGHT FIX */
-html body main section.pageHero:has(+ section .blogGrid),
-html body main section.pageHero:has(+ section.rmSection .blogGrid){
-  min-height:260px!important;
-  height:260px!important;
-  padding:0!important;
-  display:flex!important;
-  align-items:center!important;
-  overflow:hidden!important;
-}
-
-html body main section.pageHero:has(+ section .blogGrid) > .rmShell,
-html body main section.pageHero:has(+ section.rmSection .blogGrid) > .rmShell{
-  width:min(1120px,calc(100% - 32px))!important;
-  margin:0 auto!important;
-  padding:0!important;
-  transform:none!important;
-}
-
-html body main section.pageHero:has(+ section .blogGrid) h1,
-html body main section.pageHero:has(+ section.rmSection .blogGrid) h1{
-  font-size:clamp(46px,5.3vw,68px)!important;
-  line-height:.98!important;
-  margin:8px 0 14px!important;
-  max-width:900px!important;
-}
-
-html body main section.pageHero:has(+ section .blogGrid) p,
-html body main section.pageHero:has(+ section.rmSection .blogGrid) p,
-html body main section.pageHero:has(+ section .blogGrid) .lead,
-html body main section.pageHero:has(+ section.rmSection .blogGrid) .lead{
-  margin:0!important;
-  max-width:900px!important;
-}
-
-@media(max-width:700px){
-  html body main section.pageHero:has(+ section .blogGrid),
-  html body main section.pageHero:has(+ section.rmSection .blogGrid){
-    min-height:230px!important;
-    height:230px!important;
-  }
-
-  html body main section.pageHero:has(+ section .blogGrid) h1,
-  html body main section.pageHero:has(+ section.rmSection .blogGrid) h1{
-    font-size:clamp(38px,10vw,50px)!important;
-  }
-}
-
-/* FINAL HOMEPAGE EQUIPMENT GALLERY */
 .homeEquipmentBlock{background:var(--rm-surface-white)!important;padding:74px 0!important}
 .homeEquipmentGrid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:24px!important;margin-top:28px!important}
 .homeEquipmentCard{position:relative!important;min-height:310px!important;border-radius:26px!important;overflow:hidden!important;text-decoration:none!important;display:flex!important;align-items:flex-end!important;box-shadow:0 22px 55px rgba(9,31,63,.14)!important;background:#071f3f!important}
@@ -13461,8 +10616,6 @@ html body main section.pageHero:has(+ section.rmSection .blogGrid) .lead{
 .homeEquipmentCard span{display:inline-flex!important;background:white!important;color:#006bad!important;font-weight:900!important;border-radius:999px!important;padding:7px 12px!important;margin-bottom:12px!important}
 .homeEquipmentCard h3{color:white!important;margin:0!important;font-size:26px!important;line-height:1.12!important}
 @media(max-width:900px){.homeEquipmentGrid{grid-template-columns:1fr!important}.homeEquipmentCard{min-height:250px!important}}
-
-/* Revimed homepage trust section */
 .revimedHomeTrust{
  background:#f8fbfd;
  border-top:1px solid #e2eef6;

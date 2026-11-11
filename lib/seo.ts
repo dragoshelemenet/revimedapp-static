@@ -32,7 +32,8 @@ export function absoluteUrl(path = "/") {
 }
 
 export function seoTitle(title: string) {
- return `${title} | Revimed PLUS+ Chișinău`;
+ const clean = title.replace(/\s*\|\s*Revimed PLUS\+(?: Chișinău)?\s*$/i, "");
+ return `${clean} | Revimed PLUS+ Chișinău`;
 }
 
 export function makeMetadata({

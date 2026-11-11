@@ -1,3 +1,5 @@
+
+import PageHeading from "@/components/PageHeading";
 import { makeMetadata } from "@/lib/seo";
 import { isLang } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -9,13 +11,13 @@ export default function Page() {
 
   return (
     <div>
-      <section className="pageHero">
+      <PageHeading>
         <div className="rmShell">
           <p className="breadcrumbs">Acasă / Aplicații</p>
           <h1>Aplicații Revimed PLUS+</h1>
           <p>Instrumente simple pentru orientare, respirație, postură, recuperare și pregătire pentru consultație.</p>
         </div>
-      </section>
+      </PageHeading>
 
       <section className="rmSection">
         <div className="rmShell">

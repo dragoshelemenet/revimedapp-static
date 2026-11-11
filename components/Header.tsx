@@ -2,6 +2,7 @@
 
 import { getTranslatedBlogSlug } from "@/lib/blogSlugTranslations";
 import Link from "next/link";
+import styles from "./Header.module.css";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/lib/site";
@@ -32,16 +33,16 @@ export default function Header() {
  };
 
  return (
-  <header className="rmHeader">
-   <div className="rmTop">
-    <div className="rmShell">
+  <header className={styles.header}>
+   <div className={styles.top}>
+    <div className={styles.shell}>
      <span></span>
-     <span className="langs">
+     <span className={styles.languages}>
       {languages.map((l) => (
        <Link
         key={l}
         href={languageHref(l)}
-        className={l === lang ? "langActive" : ""}
+        className={l === lang ? styles.selectedLanguage : ""}
         onClick={close}
        >
         {langLabels[l]}
@@ -51,13 +52,13 @@ export default function Header() {
     </div>
    </div>
 
-   <nav className="rmNav rmShell">
-    <Link href={link("/")} className="rmLogo" aria-label={site.name} onClick={close}>
+   <nav className={styles.nav}>
+    <Link href={link("/")} className={styles.logo} aria-label={site.name} onClick={close}>
      <img src="/images/logo.png" alt="REVIMED" />
     </Link>
 
     <button
-     className={open ? "hamburger active" : "hamburger"}
+     className={styles.toggle}
      type="button"
      aria-label="Meniu"
      aria-expanded={open}
@@ -68,21 +69,21 @@ export default function Header() {
      <span></span>
     </button>
 
-    <div className={open ? "rmLinks mobileOpen" : "rmLinks"}>
-     <Link className={isActive("/") ? "activeNav" : ""} href={link("/")} onClick={close}>{text.home}</Link>
-     <Link className={isActive("/despre-noi") ? "activeNav" : ""} href={link("/despre-noi")} onClick={close}>{text.about}</Link>
-     <Link className={isActive("/servicii") ? "activeNav" : ""} href={link("/servicii")} onClick={close}>{text.services}</Link>
-     <Link className={isActive("/aplicatii") ? "activeNav" : ""} href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
-     <Link className={isActive("/utilaj") ? "activeNav" : ""} href={link("/utilaj")} onClick={close}>{text.equipment || "Equipment"}</Link>
-     <Link className={isActive("/preturi") ? "activeNav" : ""} href={link("/preturi")} onClick={close}>{text.prices}</Link>
-     <Link className={isActive("/galerie") ? "activeNav" : ""} href={link("/galerie")} onClick={close}>{text.gallery}</Link>
-     <Link className={isActive("/blog") ? "activeNav" : ""} href={link("/blog")} onClick={close}>{text.blog}</Link>
-     <Link className={isActive("/intrebari") ? "activeNav" : ""} href={link("/intrebari")} onClick={close}>{text.questions || "Întrebări"}</Link>
-     <Link className={isActive("/contact") ? "activeNav" : ""} href={link("/contact")} onClick={close}>{text.contact}</Link>
+    <div className={`${styles.links} ${open ? styles.open : ""}`}>
+     <Link className={isActive("/") ? styles.active : ""} href={link("/")} onClick={close}>{text.home}</Link>
+     <Link className={isActive("/despre-noi") ? styles.active : ""} href={link("/despre-noi")} onClick={close}>{text.about}</Link>
+     <Link className={isActive("/servicii") ? styles.active : ""} href={link("/servicii")} onClick={close}>{text.services}</Link>
+     <Link className={isActive("/aplicatii") ? styles.active : ""} href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
+     <Link className={isActive("/utilaj") ? styles.active : ""} href={link("/utilaj")} onClick={close}>{text.equipment || "Equipment"}</Link>
+     <Link className={isActive("/preturi") ? styles.active : ""} href={link("/preturi")} onClick={close}>{text.prices}</Link>
+     <Link className={isActive("/galerie") ? styles.active : ""} href={link("/galerie")} onClick={close}>{text.gallery}</Link>
+     <Link className={isActive("/blog") ? styles.active : ""} href={link("/blog")} onClick={close}>{text.blog}</Link>
+     <Link className={isActive("/intrebari") ? styles.active : ""} href={link("/intrebari")} onClick={close}>{text.questions || "Întrebări"}</Link>
+     <Link className={isActive("/contact") ? styles.active : ""} href={link("/contact")} onClick={close}>{text.contact}</Link>
     </div>
    </nav>
 
-   {open && <button className="menuBackdrop" aria-label="Închide meniul" onClick={close}></button>}
+   {open && <button className={styles.backdrop} aria-label="Închide meniul" onClick={close}></button>}
   </header>
  );
 }

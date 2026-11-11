@@ -29,7 +29,12 @@ async function indexPages(directory) {
       html = localizedHtml;
       const tags = html.match(/<meta\b[^>]*>/gi) || [];
       if (tags.some((tag) => /name=["'](?:robots|googlebot)["']/i.test(tag) && /content=["'][^"']*\bnoindex\b/i.test(tag))) continue;
-      pages.push(new URL(route === '/' ? '/' : `${route}/`, origin).href);
+      const pageUrl = new URL(route === '/' ? '/' : `${route}/`, origin).href;
+      const canonicalTag = (html.match(/<link\b[^>]*>/gi) || []).find(tag => /rel="canonical"/.test(tag));
+      const canonical = canonicalTag?.match(/href="([^"]+)"/)?.[1];
+      // Export legacy aliases for visitors; index only their canonical articles.
+      if (canonical && canonical !== pageUrl) continue;
+      pages.push(pageUrl);
     }
   }
   return pages;

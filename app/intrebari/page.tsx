@@ -1,4 +1,6 @@
-import { makeMetadata } from "@/lib/seo";
+
+import PageHeading from "@/components/PageHeading";
+import { JsonLd, makeMetadata } from "@/lib/seo";
 
 export const metadata = makeMetadata({ lang: "ro", path: "/intrebari", localized: false,
   title: "Întrebări frecvente | Revimed PLUS+",
@@ -17,14 +19,15 @@ const faqs = [
 export default function QuestionsPage() {
   return (
     <>
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }} />
       <div>
-        <section className="pageHero servicesNewHero">
+        <PageHeading>
           <div className="rmShell">
             <p className="breadcrumbs">Acasă / Întrebări</p>
             <h1>Întrebări frecvente</h1>
             <p>Răspunsuri simple despre consultații, tratament individual, fizioterapie, recuperare, neurologie, neurochirurgie și modul în care lucrăm la Revimed PLUS+.</p>
           </div>
-        </section>
+        </PageHeading>
 
         <section className="rmSection servicesNewSection">
           <div className="rmShell">

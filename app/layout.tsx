@@ -4,12 +4,12 @@ import { JsonLd, clinicJsonLd, websiteJsonLd } from "@/lib/seo";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
-import RouteTransition from "../components/RouteTransition";
+
 import MobileCallBar from "../components/MobileCallBar";
 import { site } from "../lib/site";
 import "../lib/seedLanguages";
 
-import HeroBottomScrollHint from "@/components/HeroBottomScrollHint";
+
 export const metadata: Metadata = {
  metadataBase: new URL(site.url),
  title: {
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
  return (
   <html lang="ro" suppressHydrationWarning>
    <body>
-    <RouteTransition />
+
     <Header />
     <LanguageFlagOverlay />
     <main><JsonLd data={clinicJsonLd("ro")} />
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     {children}</main>
     <Footer />
     <MobileCallBar />
-                          <HeroBottomScrollHint />
+
       </body>
   </html>
  );

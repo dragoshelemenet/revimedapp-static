@@ -1,3 +1,5 @@
+
+import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
 import { langPrefix, normalizeLang, servicesText } from "@/lib/services";
 import { getLocalizedService, getLocalizedServices } from "@/lib/servicesLocalized";
@@ -10,13 +12,13 @@ export function ServicesListPage({ lang = "ro" }: { lang?: string }) {
 
   return (
     <div>
-      <section className="pageHero servicesNewHero">
+      <PageHeading>
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav}</p>
           <h1>{t.title}</h1>
           <p>{t.subtitle}</p>
         </div>
-      </section>
+      </PageHeading>
 
       <section className="rmSection servicesNewSection">
         <div className="rmShell">
@@ -46,13 +48,13 @@ export function ServiceDetailPage({ lang = "ro", slug }: { lang?: string; slug: 
 
   return (
     <div>
-      <section className="pageHero servicesNewHero">
+      <PageHeading>
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav} / {item.title}</p>
           <h1>{item.title}</h1>
           <p>{item.short}</p>
         </div>
-      </section>
+      </PageHeading>
 
       <section className="rmSection servicesNewDetailSection">
         <div className="rmShell">
