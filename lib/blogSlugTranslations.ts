@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 
 export const blogSlugGroups: Record<string, Record<Lang, string>> = {
+  plastics: { ro: "protocol-reducerea-expunerii-la-micro-si-nanoplastice", en: "practical-protocol-reducing-exposure-to-micro-and-nanoplastics", ru: "prakticheskiy-protokol-snizhenie-vozdeystviya-mikro-i-nanoplastika", ua: "praktychnyi-protokol-zmenshennia-vplyvu-mikro-ta-nanoplastyku" },
   cancer: {
     ro: "cum-reducem-riscul-de-cancer",
     en: "how-to-reduce-cancer-risk",

@@ -209,7 +209,7 @@ export default function BreathingPage() {
             <div className="noteBox">{t.warning}</div>
           </aside>
 
-          <main className="breathMain">
+          <div className="breathMain">
             <div className="breathCircleWrap">
               <div className={`breathCircle ${running ? "running" : ""}`}>
                 <span>{phase?.label}</span>
@@ -248,7 +248,7 @@ export default function BreathingPage() {
               <h2>{t.infoTitle}</h2>
               <p>{t.info}</p>
             </article>
-          </main>
+          </div>
         </div>
       </section>
     </>

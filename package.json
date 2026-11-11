@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "next build"
+    "build": "node scripts/build-static.mjs",
+    "verify:batch-01": "node scripts/verify-batch-01.mjs",
+    "verify:batch-02": "node scripts/verify-batch-02.mjs",
+    "verify:batch-04": "python3 scripts/verify-batch-04.py",
+    "check:seo": "node scripts/verify-static-release.mjs"
   },
   "dependencies": {
     "better-sqlite3": "^11.8.1",

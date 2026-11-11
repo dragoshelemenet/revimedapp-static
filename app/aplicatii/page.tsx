@@ -1,3 +1,6 @@
+import { makeMetadata } from "@/lib/seo";
+import { isLang } from "@/lib/i18n";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import { translatedTools } from "@/lib/appMeta";
 
@@ -5,7 +8,7 @@ export default function Page() {
   const apps = translatedTools("ro");
 
   return (
-    <main>
+    <div>
       <section className="pageHero">
         <div className="rmShell">
           <p className="breadcrumbs">Acasă / Aplicații</p>
@@ -28,6 +31,8 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
+
+export const metadata = makeMetadata({ lang: "ro", path: "/aplicatii", title: "Aplicații Revimed PLUS+", description: "Instrumente simple pentru orientare, respirație, postură, recuperare și pregătire pentru consultație." });

@@ -1,3 +1,6 @@
+import { makeMetadata } from "@/lib/seo";
+import { isLang } from "@/lib/i18n";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 export const dynamicParams = false;
 
@@ -34,7 +37,7 @@ export default async function Page({ params }: Props) {
   const prefix = safeLang === "ro" ? "" : `/${safeLang}`;
 
   return (
-    <main>
+    <div>
       <section className="pageHero">
         <div className="rmShell">
           <p className="breadcrumbs">{home} / {nav}</p>
@@ -57,6 +60,12 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
+}
+
+export async function generateMetadata({ params }: Props) {
+ const { lang } = await params;
+ if (!isLang(lang) || lang === "ro") notFound();
+ return makeMetadata({ lang, path: "/aplicatii", title: labels[lang][2], description: labels[lang][3] });
 }

@@ -1,7 +1,8 @@
-export const metadata = {
+import { makeMetadata } from "@/lib/seo";
+export const metadata = makeMetadata({ lang: "ro", path: "/termeni-si-conditii", localized: false,
  title: "Termeni și Condiții",
  description: "Termeni și condiții pentru utilizarea site-ului Revimed PLUS+."
-};
+});
 
 export default function TermsPage() {
  return (

@@ -1,5 +1,6 @@
 "use client";
 
+import { getTranslatedBlogSlug } from "@/lib/blogSlugTranslations";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -14,7 +15,16 @@ export default function Header() {
  const text = t(lang);
  const currentCleanPath = cleanPath(pathname);
  const close = () => setOpen(false);
- const link = (path: string) => withLang(path, lang);
+ const languageHref = (target: Lang) => {
+  if (currentCleanPath === "/_not-found" || currentCleanPath === "/404") return withLang("/", target);
+  if (currentCleanPath === "/video-uri" && target === "ro") return "/galerie";
+  if (target === lang) return pathname;
+  if (["/intrebari", "/cookies", "/termeni-si-conditii"].includes(currentCleanPath)) return withLang("/", target);
+  // Article slugs differ by language; use the translated listing until pairs are curated.
+  if (currentCleanPath.startsWith("/blog/")) return withLang("/blog/" + getTranslatedBlogSlug(currentCleanPath.split("/")[2], target), target);
+  return withLang(currentCleanPath, target);
+ };
+ const link = (path: string) => path === "/intrebari" ? path : withLang(path, lang);
  const isActive = (path: string) => {
   const clean = cleanPath(pathname);
   if (path === "/") return clean === "/";
@@ -30,7 +40,7 @@ export default function Header() {
       {languages.map((l) => (
        <Link
         key={l}
-        href={withLang(currentCleanPath, l)}
+        href={languageHref(l)}
         className={l === lang ? "langActive" : ""}
         onClick={close}
        >

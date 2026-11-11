@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function HeroBottomScrollHint() {
+ const pathname = usePathname();
   useEffect(() => {
     const hero = document.querySelector<HTMLElement>(
       "main section.homeHero, main section.pageHero, main section.blogPostHero, main section.blogDetailHero"
@@ -48,7 +50,7 @@ export default function HeroBottomScrollHint() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

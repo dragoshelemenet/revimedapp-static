@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://revimed.site/sitemap.xml

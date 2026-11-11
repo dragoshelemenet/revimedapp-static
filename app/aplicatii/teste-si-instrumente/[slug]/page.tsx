@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { toolMetadata } from "@/lib/toolMetadata";
+import { isLang } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import RevimedSmartTool from "@/components/RevimedSmartTool";
 export const dynamicParams = false;
@@ -23,14 +24,6 @@ const tools = [
 
 type ToolSlug = typeof tools[number];
 
-const toolTitles: Record<ToolSlug, string> = {
-  "test-postura-coloana": "Test postură și coloană",
-  "monitor-dureri-spate": "Monitor dureri de spate",
-  "test-risc-cadere-echilibru": "Test risc cădere și echilibru",
-  "planner-exercitii-zilnice": "Planner exerciții zilnice",
-  "test-stres-somn-respiratie": "Test stres, somn și respirație",
-  "pregatire-consultatie": "Pregătire pentru consultație",
-};
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -38,18 +31,16 @@ function isToolSlug(slug: string): slug is ToolSlug {
   return tools.includes(slug as ToolSlug);
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  if (!isToolSlug(slug)) return {};
-  return {
-    title: `${toolTitles[slug]} | Aplicații Revimed PLUS+`,
-    description: "Instrument educațional Revimed PLUS+ pentru pacienți.",
-  };
-}
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
   if (!isToolSlug(slug)) notFound();
 
   return <RevimedSmartTool slug={slug as any} />;
+}
+
+export async function generateMetadata({ params }: Props) {
+ const { slug } = await params;
+ if (!isToolSlug(slug)) notFound();
+ return toolMetadata("ro", slug);
 }

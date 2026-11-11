@@ -16,7 +16,7 @@ export async function saveFilePersistent({
   content: string;
   message?: string;
 }) {
-  const fullPath = path.join(process.cwd(), filePath);
+  const fullPath = path.join(/* turbopackIgnore: true */ process.cwd(), filePath);
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   fs.writeFileSync(fullPath, content, "utf8");
 
@@ -28,7 +28,7 @@ export async function saveFilePersistent({
 
 export async function readTextFileSafe(filePath: string, fallback = "") {
   try {
-    const fullPath = path.join(process.cwd(), filePath);
+    const fullPath = path.join(/* turbopackIgnore: true */ process.cwd(), filePath);
     if (!fs.existsSync(fullPath)) return fallback;
     return fs.readFileSync(fullPath, "utf8");
   } catch {

@@ -1,12 +1,9 @@
-import { createElement } from "react";
+import { JsonLd, clinicJsonLd, siteUrl } from "@/lib/seo";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 import type { Lang } from "@/lib/i18n";
 
-export const SEO_SITE_URL = (
- process.env.NEXT_PUBLIC_SITE_URL ||
- process.env.SITE_URL ||
- "https://revimed.site"
-).replace(/\/$/, "");
+export const SEO_SITE_URL = siteUrl;
 
 export const SEO_LANGS: Lang[] = ["ro", "en", "ru", "ua"];
 
@@ -24,7 +21,7 @@ export function seoUrl(path = "/", lang: Lang = "ro") {
  return full.replace(/([^:]\/)\/+/g, "$1");
 }
 
-export function seoImage(path = "/images/hero-bg.jpg") {
+export function seoImage(path = site.image) {
  if (path.startsWith("http")) return path;
  return `${SEO_SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
@@ -263,7 +260,7 @@ export function makeAdvancedMetadata({
  path,
  title,
  description,
- image = "/images/hero-bg.jpg",
+ image = site.image,
  keywords = []
 }: {
  lang: Lang;
@@ -350,42 +347,9 @@ export function faqJsonLd(faq: { q: string; a: string }[]) {
  };
 }
 
+// Compatibility export: all clinic references resolve to the same entity.
 export function localMedicalBusinessJsonLd() {
- return {
-  "@context": "https://schema.org",
-  "@type": ["MedicalClinic", "LocalBusiness"],
-  "@id": `${SEO_SITE_URL}/#revimed-plus`,
-  name: clinicSeo.name,
-  alternateName: clinicSeo.brand,
-  url: SEO_SITE_URL,
-  image: seoImage("/images/hero-bg.jpg"),
-  logo: seoImage("/images/logo.png"),
-  telephone: [clinicSeo.phone, clinicSeo.phone2],
-  priceRange: "$$",
-  address: {
-   "@type": "PostalAddress",
-   streetAddress: "Str. Mircea cel Bătrân 13/2",
-   addressLocality: "Chișinău",
-   addressRegion: "Chișinău",
-   postalCode: "",
-   addressCountry: "MD"
-  },
-  areaServed: [
-   "Chișinău",
-   "Ciocana",
-   "Moldova"
-  ],
-  openingHours: "Mo-Fr 09:00-19:00",
-  medicalSpecialty: [
-   "Neurology",
-   "Neurosurgery",
-   "Physical therapy",
-   "Rehabilitation",
-   "Functional diagnostics"
-  ],
-  availableLanguage: ["Romanian", "English", "Russian", "Ukrainian"],
-  hasMap: `${SEO_SITE_URL}/contact`
- };
+ return clinicJsonLd();
 }
 
 export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
@@ -420,19 +384,12 @@ export function medicalWebPageJsonLd({
   url: seoUrl(path, lang),
   inLanguage: lang === "ua" ? "uk" : lang,
   about: {
-   "@id": `${SEO_SITE_URL}/#revimed-plus`
+   "@id": `${SEO_SITE_URL}/#medical-clinic`
   },
   publisher: {
-   "@id": `${SEO_SITE_URL}/#revimed-plus`
+   "@id": `${SEO_SITE_URL}/#medical-clinic`
   }
  };
 }
 
-export function JsonLdBlock({ data }: { data: any }) {
- return createElement("script", {
-  type: "application/ld+json",
-  dangerouslySetInnerHTML: {
-   __html: JSON.stringify(data).replace(/</g, "\u003c")
-  }
- });
-}
+export const JsonLdBlock = JsonLd;

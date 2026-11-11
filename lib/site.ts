@@ -1,7 +1,7 @@
 export const site = {
  name: "Centrul Medical Revimed PLUS+",
  shortName: "Revimed PLUS+",
- url: process.env.NEXT_PUBLIC_SITE_URL || "https://revimed.site",
+ url: (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://revimed.site").replace(/\/+$/, ""),
  description:
   "Centru medical în Chișinău pentru neurologie, neurochirurgie, reabilitare medicală, fizioterapie, diagnostic funcțional și instrumente digitale pentru pacienți.",
  phone: "022 60 50 60",

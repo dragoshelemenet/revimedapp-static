@@ -280,7 +280,7 @@ export default function RecoveryPlannerPage() {
             <button className="softBtn" type="button" onClick={() => { setPain(4); setMobility(6); setGoal("mobilitate"); setArea("spate"); setDays(1); setShow(false); }}>{t.reset}</button>
           </aside>
 
-          <main className="recoveryResult">
+          <div className="recoveryResult">
             {!show ? (
               <div className="emptyResult">
                 <img src="https://img.icons8.com/ios-filled/80/0b8fd8/physiotherapy.png" alt="" />
@@ -323,7 +323,7 @@ export default function RecoveryPlannerPage() {
                 </div>
               </>
             )}
-          </main>
+          </div>
         </div>
       </section>
     </>

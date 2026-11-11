@@ -1,7 +1,8 @@
-export const metadata = {
+import { makeMetadata } from "@/lib/seo";
+export const metadata = makeMetadata({ lang: "ro", path: "/cookies", localized: false,
  title: "Cookies și Confidențialitate",
  description: "Politica de cookies și confidențialitate pentru site-ul Revimed PLUS+."
-};
+});
 
 export default function CookiesPage() {
  return (

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { isLang, t } from "@/lib/i18n";
 export const dynamicParams = false;
+export const metadata = { robots: { index: false, follow: true } };
 
 const staticLangs = ["en", "ru", "ua"];
 

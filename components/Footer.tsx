@@ -131,10 +131,10 @@ export default function Footer() {
             <Link href={withLang("/despre-noi", lang)}>{text.links.about}</Link>
             <Link href={withLang("/servicii", lang)}>{text.links.services}</Link>
             <Link href={withLang("/preturi", lang)}>{text.links.prices}</Link>
-            <Link href={withLang("/aplicatii/teste-si-instrumente", lang)}>{text.links.tools}</Link>
+            <Link href={withLang("/aplicatii", lang)}>{text.links.tools}</Link>
             <Link href={withLang("/contact", lang)}>{text.links.contact}</Link>
-            <Link href={withLang("/termeni-si-conditii", lang)}>{text.links.terms}</Link>
-            <Link href={withLang("/cookies", lang)}>{text.links.cookies}</Link>
+            <Link href={"/termeni-si-conditii"}>{text.links.terms}</Link>
+            <Link href={"/cookies"}>{text.links.cookies}</Link>
           </div>
         </div>
 

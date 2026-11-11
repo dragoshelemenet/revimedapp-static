@@ -9,8 +9,6 @@ import MobileCallBar from "../components/MobileCallBar";
 import { site } from "../lib/site";
 import "../lib/seedLanguages";
 
-import { JsonLdBlock, localMedicalBusinessJsonLd } from "@/lib/seoAdvanced";
-import BlogArticleEnhancer from "@/components/BlogArticleEnhancer";
 import HeroBottomScrollHint from "@/components/HeroBottomScrollHint";
 export const metadata: Metadata = {
  metadataBase: new URL(site.url),
@@ -61,40 +59,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
- const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  name: site.name,
-  url: site.url,
-  image: `${site.url}${site.image}`,
-  description: site.description,
-  telephone: site.phone,
-  email: site.email,
-  address: {
-   "@type": "PostalAddress",
-   streetAddress: "Str. Mircea cel Bătrân 13/2",
-   addressLocality: "Chișinău",
-   addressRegion: "Ciocana",
-   addressCountry: "MD"
-  },
-  openingHours: "Mo-Fr 09:00-19:00",
-  medicalSpecialty: ["Neurology", "Neurosurgery", "PhysicalTherapy", "Rehabilitation"]
- };
 
  return (
-  <html lang="ro">
+  <html lang="ro" suppressHydrationWarning>
    <body>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <RouteTransition />
     <Header />
     <LanguageFlagOverlay />
     <main><JsonLd data={clinicJsonLd("ro")} />
     <JsonLd data={websiteJsonLd()} />
-    <JsonLdBlock data={localMedicalBusinessJsonLd()} />
     {children}</main>
     <Footer />
     <MobileCallBar />
-           <BlogArticleEnhancer />
                           <HeroBottomScrollHint />
       </body>
   </html>

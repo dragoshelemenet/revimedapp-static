@@ -16,7 +16,7 @@ export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
   const items = getLocalizedEquipmentItems(safeLang);
 
   return (
-    <main>
+    <div>
       <section className="pageHero equipmentHero">
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav}</p>
@@ -39,7 +39,7 @@ export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
@@ -52,7 +52,7 @@ export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug
   if (!item) return null;
 
   return (
-    <main>
+    <div>
       <section className="pageHero equipmentHero">
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav} / {item.title}</p>
@@ -89,6 +89,6 @@ export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug
           </article>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

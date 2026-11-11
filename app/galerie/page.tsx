@@ -1,3 +1,4 @@
+import { sectionMetadata } from "@/lib/sectionMetadata";
 import { GalleryTemplate } from "@/lib/pageTemplates";
 
 
@@ -53,7 +54,7 @@ function forcedGalleryTitle(title: string, image?: string, lang: "ro" | "en" | "
 }
 
 export const dynamic = "force-static";
-export const metadata = { title: "Galerie" };
+export const metadata = sectionMetadata("ro", "/galerie");
 const lang: "ro" = "ro";
 
 export default function Page() {

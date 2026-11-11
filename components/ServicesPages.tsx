@@ -9,7 +9,7 @@ export function ServicesListPage({ lang = "ro" }: { lang?: string }) {
   const items = getLocalizedServices(safeLang);
 
   return (
-    <main>
+    <div>
       <section className="pageHero servicesNewHero">
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav}</p>
@@ -32,7 +32,7 @@ export function ServicesListPage({ lang = "ro" }: { lang?: string }) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
@@ -45,7 +45,7 @@ export function ServiceDetailPage({ lang = "ro", slug }: { lang?: string; slug: 
   if (!item) return null;
 
   return (
-    <main>
+    <div>
       <section className="pageHero servicesNewHero">
         <div className="rmShell">
           <p className="breadcrumbs">{t.home} / {t.nav} / {item.title}</p>
@@ -80,6 +80,6 @@ export function ServiceDetailPage({ lang = "ro", slug }: { lang?: string; slug: 
           </article>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

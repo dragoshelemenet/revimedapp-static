@@ -22,11 +22,8 @@ export function getLocalizedEquipmentItems(lang?: string) {
 }
 
 export function getLocalizedEquipmentItem(lang: string | undefined, slug: string) {
-  const safeLang = normalizeLang(lang);
-
-  if (safeLang === "en" && equipmentEn[slug]) return equipmentEn[slug];
-  if (safeLang === "ru" && equipmentRu[slug]) return equipmentRu[slug];
-  if (safeLang === "ua" && equipmentUa[slug]) return equipmentUa[slug];
-
-  return equipmentItems.find((item) => item.slug === slug);
+ return getLocalizedEquipmentItems(lang).find(item => item.slug === slug);
 }
+
+const equipmentSlugs = equipmentItems.map(item => item.slug);
+if (new Set(equipmentSlugs).size !== equipmentSlugs.length) throw new Error("Duplicate equipment slug");

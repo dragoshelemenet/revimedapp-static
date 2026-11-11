@@ -1,3 +1,4 @@
+import { staticBlogPosts, getStaticPublishedPosts, getStaticPostBySlug } from "@/lib/staticBlogPosts";
 import Database from "better-sqlite3";
 import path from "node:path";
 import fs from "node:fs";
@@ -176,16 +177,15 @@ if (priceCount.c === 0) {
 }
 
 export function getPublishedPosts(lang: Lang = "ro") {
- return db.prepare("SELECT * FROM posts WHERE published = 1 AND lang = ? ORDER BY datetime(created_at) DESC").all(lang) as Post[];
+ return getStaticPublishedPosts(lang);
 }
 
 export function getAllPosts(lang?: Lang) {
- if (lang) return db.prepare("SELECT * FROM posts WHERE lang = ? ORDER BY datetime(created_at) DESC").all(lang) as Post[];
- return db.prepare("SELECT * FROM posts ORDER BY lang ASC, datetime(created_at) DESC").all() as Post[];
+ return lang ? staticBlogPosts.filter(p => p.lang === lang) : staticBlogPosts;
 }
 
 export function getPostBySlug(slug: string, lang: Lang = "ro") {
- return db.prepare("SELECT * FROM posts WHERE slug = ? AND lang = ? AND published = 1").get(slug, lang) as Post | undefined;
+ return getStaticPostBySlug(slug, lang);
 }
 
 
@@ -722,21 +722,15 @@ export function getPublishedGalleryItems(lang: Lang = "ro") {
 }
 
 export function getPublishedPostsSmart(lang: Lang = "ro") {
-  return db
-    .prepare("SELECT * FROM posts WHERE published = 1 AND lang = ? ORDER BY id DESC")
-    .all(lang) as any[];
+ return getStaticPublishedPosts(lang);
 }
 
 export function getAllPostsSmart(lang: Lang = "ro") {
- const rows = getAllPosts(lang);
- if (rows.length || lang === "ro") return rows;
- return getAllPosts("ro");
+ return getAllPosts(lang);
 }
 
 export function getPostBySlugSmart(slug: string, lang: Lang = "ro") {
-  return db
-    .prepare("SELECT * FROM posts WHERE published = 1 AND slug = ? AND lang = ? LIMIT 1")
-    .get(slug, lang) as any | null;
+ return getStaticPostBySlug(slug, lang);
 }
 
 export function getPublishedPricesSmart(lang: Lang = "ro") {

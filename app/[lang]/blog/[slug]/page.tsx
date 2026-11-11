@@ -1,3 +1,5 @@
+import BlogArticleEnhancer from "@/components/BlogArticleEnhancer";
+import { blogMetadata } from "@/lib/blogMetadata";
 import { notFound } from "next/navigation";
 import { BlogPostTemplate } from "@/lib/pageTemplates";
 import { isLang, type Lang } from "@/lib/i18n";
@@ -20,5 +22,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string;
 
   const page = BlogPostTemplate({ lang: lang as Lang, slug });
   if (!page) notFound();
-  return page;
+  return <>{page}<BlogArticleEnhancer /></>;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
+ const { lang, slug } = await params;
+ if (!isLang(lang) || lang === "ro") notFound();
+ return blogMetadata(lang, slug);
 }

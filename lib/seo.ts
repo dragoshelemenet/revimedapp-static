@@ -1,19 +1,16 @@
 import { createElement } from "react";
 import type { Metadata } from "next";
 import { type Lang, withLang } from "@/lib/i18n";
+import { site } from "@/lib/site";
 
-export const siteUrl = (
- process.env.NEXT_PUBLIC_SITE_URL ||
- process.env.SITE_URL ||
- "https://revimed.site"
-).replace(/\/$/, "");
+export const siteUrl = site.url;
 
 export const seoBase = {
  name: "Centrul Medical Revimed PLUS+",
  shortName: "Revimed PLUS+",
  url: siteUrl,
  logo: `${siteUrl}/images/logo.png`,
- image: `${siteUrl}/images/hero-bg.jpg`,
+ image: `${siteUrl}${site.image}`,
  phone: "022 60 50 60",
  phone2: "+373 79 422 908",
  address: "Str. Mircea cel Bătrân 13/2",
@@ -43,21 +40,23 @@ export function makeMetadata({
  path,
  title,
  description,
- image
+ image,
+ localized = true
 }: {
  lang: Lang;
  path: string;
  title: string;
  description: string;
  image?: string;
+ localized?: boolean;
 }): Metadata {
- const canonicalPath = withLang(path, lang);
+ const canonicalPath = `${withLang(path, lang).replace(/\/+$/, "")}/`;
  const canonical = absoluteUrl(canonicalPath);
- const ogImage = image?.startsWith("http") ? image : absoluteUrl(image || "/images/hero-bg.jpg");
+ const ogImage = image?.startsWith("http") ? image : absoluteUrl(image || site.image);
 
  return {
   metadataBase: new URL(siteUrl),
-  title: seoTitle(title),
+  title: { absolute: seoTitle(title) },
   description,
   keywords: [
    "Revimed PLUS+",
@@ -72,12 +71,13 @@ export function makeMetadata({
   ],
   alternates: {
    canonical,
-   languages: {
-    ro: absoluteUrl(withLang(path, "ro")),
-    en: absoluteUrl(withLang(path, "en")),
-    ru: absoluteUrl(withLang(path, "ru")),
-    uk: absoluteUrl(withLang(path, "ua"))
-   }
+   languages: localized ? {
+    ro: absoluteUrl(`${withLang(path, "ro").replace(/\/+$/, "")}/`),
+    en: absoluteUrl(`${withLang(path, "en").replace(/\/+$/, "")}/`),
+    ru: absoluteUrl(`${withLang(path, "ru").replace(/\/+$/, "")}/`),
+    uk: absoluteUrl(`${withLang(path, "ua").replace(/\/+$/, "")}/`),
+    "x-default": absoluteUrl(`${withLang(path, "ro").replace(/\/+$/, "")}/`)
+   } : undefined
   },
   openGraph: {
    type: "website",
@@ -115,7 +115,7 @@ export function makeMetadata({
  };
 }
 
-export function clinicJsonLd(lang: Lang) {
+export function clinicJsonLd(_lang: Lang = "ro") {
  return {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
@@ -132,19 +132,6 @@ export function clinicJsonLd(lang: Lang) {
    addressRegion: "Chișinău",
    addressCountry: "MD"
   },
-  geo: {
-   "@type": "GeoCoordinates",
-   latitude: 47.044,
-   longitude: 28.883
-  },
-  openingHoursSpecification: [
-   {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "19:00"
-   }
-  ],
   medicalSpecialty: [
    "Neurology",
    "Neurosurgery",
@@ -164,12 +151,7 @@ export function websiteJsonLd() {
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
   name: seoBase.name,
-  url: siteUrl,
-  potentialAction: {
-   "@type": "SearchAction",
-   target: `${siteUrl}/?s={search_term_string}`,
-   "query-input": "required name=search_term_string"
-  }
+  url: siteUrl
  };
 }
 
@@ -210,11 +192,11 @@ export function serviceJsonLd({
  };
 }
 
-export function JsonLd({ data }: { data: any }) {
+export function JsonLd({ data }: { data: unknown }) {
  return createElement("script", {
   type: "application/ld+json",
   dangerouslySetInnerHTML: {
-   __html: JSON.stringify(data).replace(/</g, "\u003c")
+   __html: JSON.stringify(data).replace(/</g, "\\u003c")
   }
  });
 }

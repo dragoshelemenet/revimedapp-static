@@ -1,3 +1,4 @@
+import { sectionMetadata } from "@/lib/sectionMetadata";
 import { notFound } from "next/navigation";
 import { GalleryTemplate } from "@/lib/pageTemplates";
 import { isLang, type Lang } from "@/lib/i18n";
@@ -68,4 +69,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
  const { lang } = await params;
  if (!isLang(lang) || lang === "ro") notFound();
  return <GalleryTemplate lang={lang as Lang} />;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+ const { lang } = await params;
+ if (!isLang(lang) || lang === "ro") return {};
+ return sectionMetadata(lang, "/galerie");
 }

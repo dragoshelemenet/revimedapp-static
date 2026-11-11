@@ -1,10 +1,9 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { makeMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = makeMetadata({ lang: "ro", path: "/intrebari", localized: false,
   title: "Întrebări frecvente | Revimed PLUS+",
   description: "Întrebări frecvente despre consultații, tratament individual, fizioterapie, neurologie, neurochirurgie și Revimed PLUS+ Chișinău.",
-};
+});
 
 const faqs = [
   ["Trebuie să știu exact la ce medic să merg?", "Nu neapărat. Mulți pacienți vin cu simptome amestecate: dureri de cap, amețeli, amorțeli, dureri cervicale, lombare, oboseală sau tensiune nervoasă. Medicul discută cazul și stabilește ce direcție are sens."],
@@ -18,8 +17,7 @@ const faqs = [
 export default function QuestionsPage() {
   return (
     <>
-      <Header />
-      <main>
+      <div>
         <section className="pageHero servicesNewHero">
           <div className="rmShell">
             <p className="breadcrumbs">Acasă / Întrebări</p>
@@ -49,8 +47,7 @@ export default function QuestionsPage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 }

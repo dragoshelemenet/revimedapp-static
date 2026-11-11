@@ -1,3 +1,5 @@
+import { toolMetadata } from "@/lib/toolMetadata";
+import { isLang } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import RevimedSmartTool from "@/components/RevimedSmartTool";
 export const dynamicParams = false;
@@ -35,4 +37,11 @@ export default async function Page({ params }: Props) {
   if (!isToolSlug(slug)) notFound();
 
   return <RevimedSmartTool slug={slug as any} />;
+}
+
+export async function generateMetadata({ params }: Props) {
+ const { lang, slug } = await params;
+ if (!isToolSlug(slug)) notFound();
+ if (!isLang(lang) || lang === "ro") notFound();
+ return toolMetadata(lang, slug);
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { EquipmentListPage } from "@/components/EquipmentPages";
 import { equipmentText, normalizeLang } from "@/lib/equipment";
+import { makeMetadata } from "@/lib/seo";
 export const dynamicParams = false;
 
 const staticLangs = ["en", "ru", "ua"];
@@ -16,10 +17,8 @@ type Props = { params: Promise<{ lang: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const safeLang = normalizeLang(lang);
-  return {
-    title: equipmentText[safeLang].title,
-    description: equipmentText[safeLang].subtitle,
-  };
+  const page = equipmentText[safeLang];
+  return makeMetadata({ lang: safeLang, path: "/utilaj", title: page.title, description: page.subtitle });
 }
 
 export default async function Page({ params }: Props) {

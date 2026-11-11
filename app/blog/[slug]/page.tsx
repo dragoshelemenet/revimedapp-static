@@ -1,3 +1,5 @@
+import BlogArticleEnhancer from "@/components/BlogArticleEnhancer";
+import { blogMetadata } from "@/lib/blogMetadata";
 import { notFound } from "next/navigation";
 import { BlogPostTemplate } from "@/lib/pageTemplates";
 import { getStaticBlogSlugs } from "@/lib/staticBlogPosts";
@@ -13,5 +15,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const page = BlogPostTemplate({ lang: "ro", slug });
   if (!page) notFound();
-  return page;
+  return <>{page}<BlogArticleEnhancer /></>;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+ const { slug } = await params;
+ return blogMetadata("ro", slug);
 }

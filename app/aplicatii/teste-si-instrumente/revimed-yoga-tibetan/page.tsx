@@ -459,7 +459,7 @@ export default function RevimedYogaTibetanPage() {
               </div>
             </aside>
 
-            <main className="yogaV2Panel yogaV2Practice">
+            <div className="yogaV2Panel yogaV2Practice">
               <div className="yogaV2Top">
                 <div>
                   <span>{t.cycle}</span>
@@ -496,7 +496,7 @@ export default function RevimedYogaTibetanPage() {
               </div>
 
               {completed && <div className="yogaV2Done">{t.done}</div>}
-            </main>
+            </div>
 
             <aside className="yogaV2Panel yogaV2Recommendations">
               <div className="yogaV2Head">
