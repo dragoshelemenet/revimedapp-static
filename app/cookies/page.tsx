@@ -10,7 +10,7 @@ export default function CookiesPage() {
  return (
   <>
    <PageHeading>
-    <div className="rmShell">
+    <div>
      <p className="crumb">Acasă / Cookies</p>
      <h1>Cookies și Confidențialitate</h1>
      <p className="lead">Informații despre cookies, date personale și confidențialitate.</p>

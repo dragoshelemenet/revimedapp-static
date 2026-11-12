@@ -900,7 +900,7 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
  return (
   <>
    <PageHeading>
-    <div className="rmShell">
+    <div>
      <p className="crumb">REVIMED PLUS+ / {cfg.tag[lang]}</p>
      <h1>{cfg.title[lang]}</h1>
      <p className="lead">{cfg.lead[lang]}</p>

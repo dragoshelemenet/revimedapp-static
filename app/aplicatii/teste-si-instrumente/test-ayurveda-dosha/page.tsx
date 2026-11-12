@@ -235,7 +235,7 @@ export default function AyurvedaDoshaPage() {
   return (
     <>
       <PageHeading>
-        <div className="rmShell">
+        <div>
           <p className="crumb">{t.crumb}</p>
           <h1>{t.title}</h1>
           <p className="lead">{t.lead}</p>

@@ -1,4 +1,5 @@
 "use client";
+import { ContentSection, ReadingCard } from "./ContentLayout";
 import { usePathname } from "next/navigation";
 type Lang = "ro" | "en" | "ru" | "ua";
 
@@ -47,12 +48,12 @@ export default function BlogArticleEnhancer() {
  const copy = labels[lang];
  function download() {
   const title = document.querySelector("h1")?.textContent || copy.clinic;
-  const text = document.querySelector(".blogReadableContent")?.textContent || "";
+  const text = document.querySelector("[data-blog-content]")?.textContent || "";
   const escape = (s: string) => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]!));
   const blob = new Blob([`<html><meta charset="utf-8"><body><h1>${escape(title)}</h1><p>${escape(text)}</p></body></html>`], {type:"application/msword;charset=utf-8"});
   const url = URL.createObjectURL(blob); const a = document.createElement("a");
   a.href = url; a.download = "revimed-article.doc"; a.click();
   window.setTimeout(() => URL.revokeObjectURL(url), 1000);
  }
- return <section className="rmShell adminCard"><h2>{copy.saveTitle}</h2><p>{copy.saveDesc}</p><button type="button" onClick={download}>{copy.saveBtn}</button></section>;
+ return <ContentSection narrow><ReadingCard><h2>{copy.saveTitle}</h2><p>{copy.saveDesc}</p><button className="blueBtn" type="button" onClick={download}>{copy.saveBtn}</button></ReadingCard></ContentSection>;
 }

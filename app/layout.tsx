@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../styles/foundation.css";
 import "../styles/global.css";
 import { JsonLd, clinicJsonLd, websiteJsonLd } from "@/lib/seo";
 import Header from "../components/Header";
@@ -7,7 +8,6 @@ import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
 
 import MobileCallBar from "../components/MobileCallBar";
 import { site } from "../lib/site";
-import "../lib/seedLanguages";
 
 
 export const metadata: Metadata = {

@@ -28,7 +28,7 @@ export default async function SimpleLangPage({ params }: Props) {
  return (
   <>
    <PageHeading>
-    <div className="rmShell">
+    <div>
      <p className="crumb">{text.home}</p>
      <h1>{titleMap["contact"] || text.contact}</h1>
      <p className="lead">{text.languageVersion}: {lang.toUpperCase()}</p>

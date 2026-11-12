@@ -10,7 +10,7 @@ export default function TermsPage() {
  return (
   <>
    <PageHeading>
-    <div className="rmShell">
+    <div>
      <p className="crumb">Acasă / Termeni și Condiții</p>
      <h1>Termeni și Condiții</h1>
      <p className="lead">Reguli generale pentru utilizarea site-ului și a instrumentelor educaționale Revimed PLUS+.</p>

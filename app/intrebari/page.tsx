@@ -1,3 +1,4 @@
+import { ContentSection, ReadingCard, Question } from "@/components/ContentLayout";
 
 import PageHeading from "@/components/PageHeading";
 import { JsonLd, makeMetadata } from "@/lib/seo";
@@ -17,40 +18,12 @@ const faqs = [
 ];
 
 export default function QuestionsPage() {
-  return (
-    <>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }} />
-      <div>
-        <PageHeading>
-          <div className="rmShell">
-            <p className="breadcrumbs">Acasă / Întrebări</p>
-            <h1>Întrebări frecvente</h1>
-            <p>Răspunsuri simple despre consultații, tratament individual, fizioterapie, recuperare, neurologie, neurochirurgie și modul în care lucrăm la Revimed PLUS+.</p>
-          </div>
-        </PageHeading>
-
-        <section className="rmSection servicesNewSection">
-          <div className="rmShell">
-            <article className="servicesNewDetailCard">
-              <span className="servicesNewBadge">Revimed PLUS+</span>
-              <h2>Pe scurt</h2>
-              <p className="servicesNewLead">
-                Revimed PLUS+ activează de peste 20 de ani în Chișinău. Dr. Igor Revenco are peste 35 de ani de experiență. Tratamentul se alege individual, iar pacientul este informat și își dă acordul pentru planul propus.
-              </p>
-            </article>
-
-            <div className="servicesNewGrid" style={{ marginTop: 24 }}>
-              {faqs.map(([title, text]) => (
-                <article className="servicesNewCard" key={title}>
-                  <span className="servicesNewBadge">Întrebare</span>
-                  <h2>{title}</h2>
-                  <p>{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
-  );
+ return <>
+  <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }} />
+  <PageHeading><div><p>Acasă / Întrebări</p><h1>Întrebări frecvente</h1><p>Răspunsuri simple despre consultații, tratament individual, fizioterapie, recuperare, neurologie, neurochirurgie și modul în care lucrăm la Revimed PLUS+.</p></div></PageHeading>
+  <ContentSection narrow>
+   <ReadingCard><h2>Pe scurt</h2><p>Revimed PLUS+ activează de peste 20 de ani în Chișinău. Dr. Igor Revenco are peste 35 de ani de experiență. Tratamentul se alege individual, iar pacientul este informat și își dă acordul pentru planul propus.</p></ReadingCard>
+   {faqs.map(([question, answer]) => <Question key={question} title={question}><p>{answer}</p></Question>)}
+  </ContentSection>
+ </>;
 }

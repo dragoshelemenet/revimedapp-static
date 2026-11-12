@@ -1,5 +1,5 @@
 .header { position: sticky; top: 0; z-index: 100; background: white; box-shadow: 0 2px 16px #001b3810; }
-.shell, .nav { max-width: 1200px; margin: auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.shell, .nav { width: min(1160px, calc(100% - 40px)); margin: auto; padding: 0; display: flex; align-items: center; justify-content: space-between; }
 .top { background: #f4f8fb; border-bottom: 1px solid #e5edf3; }
 .languages { display: flex; gap: 16px; padding: 7px 0; }
 .languages a { color: #516575; text-decoration: none; font-size: 13px; }
