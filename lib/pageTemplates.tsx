@@ -6,8 +6,8 @@ import SmartCatalogGrid from "@/components/SmartCatalogGrid";
 import DoctorMotionCard from "@/components/DoctorMotionCard";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import VideoGalleryDropdown from "@/components/VideoGalleryDropdown";
-import ContactMapDropdown from "@/components/ContactMapDropdown";
 import ContactPhotoLightbox from "@/components/ContactPhotoLightbox";
+import ContactActionsBar from "@/components/ContactActionsBar";
 
 import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
@@ -473,10 +473,16 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
        )}
       </div>
 
-      <div className="contactActionRow">
-       <a className="blueBtn" href={`tel:${(contact.fixed_phone || contact.phone_alt).replaceAll(" ", "")}`}>{text.callNow}</a>
-       <a className="softBtn" href={contact.map_link} target="_blank" rel="noopener noreferrer">{text.openMap}</a>
-      </div>
+      <ContactActionsBar
+       lang={lang}
+       callLabel={text.callNow}
+       mapLabel={text.openMap}
+       fixedPhone={contact.fixed_phone}
+       mobilePhone={contact.phone}
+       altPhone={contact.phone_alt}
+       mapEmbed={contact.map_embed}
+       mapLink={contact.map_link}
+      />
      </div>
 
      <aside className="contactSidePanel">
@@ -510,8 +516,6 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       )}
      </aside>
     </div>
-
-    <ContactMapDropdown lang={lang} mapEmbed={contact.map_embed} mapLink={contact.map_link} />
    </section>
   </>
  );
