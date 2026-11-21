@@ -116,7 +116,7 @@ export default function Footer() {
         <div className="rm-footer-glass">
           <div className="rm-footer-top">
             <div className="rm-footer-brand">
-              <img src="/images/logo.webp" alt="REVIMED" className="footerLogo" width={132} height={32} loading="lazy" decoding="async" />
+              <img src="/images/logo.webp" alt="REVIMED Centrul Medical" className="footerLogo" width={136} height={36} loading="lazy" decoding="async" />
               <p className="rm-footer-tagline">{text.tagline}</p>
               <a className="rm-footer-social-pill" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed PLUS+">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

@@ -37,7 +37,7 @@ export default function Header() {
    <div className="rm-header-row">
     <nav className={styles.nav}>
      <Link href={link("/")} className={styles.logo} aria-label={site.name} onClick={close}>
-      <img src="/images/logo.webp" alt="REVIMED" width={136} height={33} decoding="async" />
+      <img src="/images/logo.webp" alt="REVIMED Centrul Medical" width={120} height={32} decoding="async" />
      </Link>
 
      <button

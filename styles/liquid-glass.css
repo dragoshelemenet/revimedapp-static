@@ -280,7 +280,7 @@ header[class*="header"] nav[class*="nav"] {
 }
 
 header[class*="header"] a[class*="logo"] img {
-  width: 108px !important;
+  width: 120px !important;
   height: auto !important;
 }
 
