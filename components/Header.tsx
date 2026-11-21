@@ -62,6 +62,23 @@ export default function Header() {
     if (target === "ru") return "/ru/osteohondroz-kishinev";
     return withLang("/servicii/fizioterapie-si-reabilitare", target);
   }
+  const pairedLocalRoutes: [string, string, string][] = [
+    ["/eeg-chisinau", "/eeg-kishinev", "/servicii/diagnostic-functional"],
+    ["/masaj-terapeutic-chisinau", "/lechebnyy-massazh-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/diagnostic-amp-chisinau", "/diagnostika-amp-kishinev", "/utilaj/aparat-amp"],
+    ["/reoencefalografie-chisinau", "/reoentsefalografiya-kishinev", "/utilaj/rheotest"],
+    ["/kinetoterapie-chisinau", "/kinezoterapiya-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/acupunctura-reflexoterapie-chisinau", "/igloukalyvanie-kishinev", "/servicii"],
+    ["/psihoterapeut-stres-anxietate-chisinau", "/psihoterapevt-kishinev", "/servicii/consultatii-neurologice"],
+    ["/electroforeza-amplipuls-chisinau", "/elektroforez-amplipuls-kishinev", "/servicii/fizioterapie-si-reabilitare"]
+  ];
+  for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
+    if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {
+      if (target === "ro") return roRoute;
+      if (target === "ru") return `/ru${ruRoute}`;
+      return withLang(fallback, target);
+    }
+  }
   if (currentCleanPath === "/electrosomn-chisinau" || currentCleanPath === "/insomnie-tratament-chisinau") return withLang("/utilaj/electrosomn-3", target);
   if (currentCleanPath === "/recuperare-dupa-avc-chisinau" || currentCleanPath === "/ameteli-vertij-chisinau") return withLang("/servicii/consultatii-neurologice", target);
   if (currentCleanPath === "/dureri-de-spate-sciatica-chisinau") return withLang("/servicii/fizioterapie-si-reabilitare", target);
