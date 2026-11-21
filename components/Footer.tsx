@@ -167,6 +167,14 @@ export default function Footer() {
 
           <div className="rm-footer-bottom">
             <span>© {new Date().getFullYear()} Centrul Medical Revimed PLUS+. {text.rights}</span>
+            <a
+              className="rm-footer-credit"
+              href="https://wsod.cloud"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              UI · Design · SEO made by <strong>wsod.cloud</strong>
+            </a>
             <div className="rm-footer-legal">
               <Link href="/termeni-si-conditii">{text.links.terms}</Link>
               <Link href="/cookies">{text.links.cookies}</Link>
