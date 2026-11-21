@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageHeading from "@/components/PageHeading";
 import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import { JsonLd, absoluteUrl, breadcrumbJsonLd, siteUrl } from "@/lib/seo";
+import { revimedReviews } from "@/lib/revimedReviews";
 
 export type LocalLandingProps = {
  lang: "ro" | "ru";
@@ -137,6 +138,29 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
         <h3>{eq.title}</h3>
         <p>{eq.desc}</p>
        </Link>
+      ))}
+     </div>
+
+     <h2>{isRu ? "Отзывы пациентов Revimed PLUS+ (Google Maps)" : "Recenzii reale ale pacienților (Google Maps)"}</h2>
+     <div className="rm-home-services-grid" style={{ marginBottom: 22 }}>
+      {(isRu
+       ? [
+          { name: "R. R.", text: "Место, где тебя действительно слышат. Д-р Игорь Ревенко — настоящий профессионал, внимательный и терпеливый, подробно объяснил каждый шаг лечения." },
+          { name: "I. B.", text: "Профессионализм, чуткость и заметный результат! Д-р Ревенко — отличный специалист по проблемам позвоночника, индивидуальный план помог даже при грыже диска." },
+          { name: "D. T.", text: "Очень опытный невролог. Для нашей семьи это врач, который реально помог детям нормально развиваться и чувствовать себя уверенно." }
+         ]
+       : revimedReviews.slice(0, 3)
+      ).map((rev) => (
+       <blockquote
+        key={rev.name}
+        className="rm-home-service-card"
+        data-glass-card
+        style={{ margin: 0 }}
+       >
+        <span className="rm-home-service-badge">★★★★★ · Google</span>
+        <p style={{ fontStyle: "italic" }}>„{rev.text}”</p>
+        <footer style={{ fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>— {rev.name}</footer>
+       </blockquote>
       ))}
      </div>
 

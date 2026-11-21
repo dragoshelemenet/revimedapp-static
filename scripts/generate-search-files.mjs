@@ -45,7 +45,7 @@ if (!urls.length) throw new Error('No exported index.html pages found. Run next 
 function urlPriority(url) {
   const p = new URL(url).pathname;
   if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
-  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|hernie-de-disc-chisinau|tratament-migrene-chisinau|recuperare-dupa-avc-chisinau|dureri-de-spate-sciatica-chisinau|neurolog-ciocana-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev|gryzha-diska-kishinev|detskiy-nevrolog-kishinev|nevrolog-chekany-kishinev)\//.test(p)) return '0.9';
+  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|hernie-de-disc-chisinau|tratament-migrene-chisinau|recuperare-dupa-avc-chisinau|dureri-de-spate-sciatica-chisinau|neurolog-ciocana-chisinau|ameteli-vertij-chisinau|insomnie-tratament-chisinau|osteocondroza-cervicala-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev|gryzha-diska-kishinev|detskiy-nevrolog-kishinev|nevrolog-chekany-kishinev|lechenie-migreni-kishinev|osteohondroz-kishinev)\//.test(p)) return '0.9';
   if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
   return '0.7';
 }

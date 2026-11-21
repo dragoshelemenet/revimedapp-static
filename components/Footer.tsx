@@ -177,6 +177,9 @@ export default function Footer() {
                     <Link href="/recuperare-dupa-avc-chisinau/">Recuperare AVC Chișinău</Link>
                     <Link href="/dureri-de-spate-sciatica-chisinau/">Sciatică Chișinău</Link>
                     <Link href="/electrosomn-chisinau/">Electrosomn Chișinău</Link>
+                    <Link href="/ameteli-vertij-chisinau/">Amețeli & Vertij</Link>
+                    <Link href="/insomnie-tratament-chisinau/">Insomnie Chișinău</Link>
+                    <Link href="/osteocondroza-cervicala-chisinau/">Osteocondroză Chișinău</Link>
                     <Link href="/neurolog-ciocana-chisinau/">Neurolog Ciocana</Link>
                   </>
                 )}
@@ -187,6 +190,8 @@ export default function Footer() {
                     <Link href="/ru/fizioterapiya-kishinev/">Физиотерапия Кишинёв</Link>
                     <Link href="/ru/gryzha-diska-kishinev/">Грыжа диска Кишинёв</Link>
                     <Link href="/ru/detskiy-nevrolog-kishinev/">Детский невролог</Link>
+                    <Link href="/ru/lechenie-migreni-kishinev/">Лечение мигрени</Link>
+                    <Link href="/ru/osteohondroz-kishinev/">Остеохондроз Кишинёв</Link>
                     <Link href="/ru/nevrolog-chekany-kishinev/">Невролог Чеканы</Link>
                   </>
                 )}
