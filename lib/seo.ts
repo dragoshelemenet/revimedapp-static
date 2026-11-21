@@ -194,7 +194,26 @@ export function clinicJsonLd(lang: Lang = "ro") {
   hasMap: "https://www.google.com/maps/place/Centrul+Medical+Revimed/@47.0477461,28.8887469,17z",
   areaServed: [
    { "@type": "City", name: "Chișinău" },
+   { "@type": "AdministrativeArea", name: "Sectorul Ciocana, Chișinău" },
+   { "@type": "AdministrativeArea", name: "Sectorul Rîșcani, Chișinău" },
+   { "@type": "AdministrativeArea", name: "Sectorul Botanica, Chișinău" },
+   { "@type": "AdministrativeArea", name: "Sectorul Buiucani, Chișinău" },
+   { "@type": "AdministrativeArea", name: "Sectorul Centru, Chișinău" },
    { "@type": "Country", name: "Republica Moldova" }
+  ],
+  knowsAbout: [
+   "Neurologie Chișinău",
+   "Neurochirurgie Chișinău",
+   "Neuropediatrie",
+   "Hernie de disc fără operație",
+   "Terapia Electrosomn",
+   "Electroencefalografie (EEG)",
+   "Reoencefalografie (REG)",
+   "Diagnostic neinvaziv AMP 117 indici",
+   "Fizioterapie Amplipuls și Electroforeză",
+   "Masaj terapeutic și Kinetoterapie",
+   "Recuperare după AVC",
+   "Tratament migrene și vertij"
   ],
   medicalSpecialty: [
    "Neurology",

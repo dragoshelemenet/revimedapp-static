@@ -379,7 +379,13 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
             { href: "/ru/lechenie-migreni-kishinev/", label: "Лечение мигрени" },
             { href: "/ru/igloukalyvanie-kishinev/", label: "Иглоукалывание (400 MDL)" },
             { href: "/ru/psihoterapevt-kishinev/", label: "Психотерапевт (300 MDL)" },
-            { href: "/ru/nevrolog-chekany-kishinev/", label: "Невролог Чеканы" }
+            { href: "/ru/nevralgiya-neyropatiya-kishinev/", label: "Невралгия и нейропатия" },
+            { href: "/ru/epilepsiya-kishinev/", label: "Эпилепсия и ЭЭГ" },
+            { href: "/ru/nevrolog-chekany-kishinev/", label: "Невролог Чеканы" },
+            { href: "/ru/nevrolog-ryshkanovka-kishinev/", label: "Невролог Рышкановка" },
+            { href: "/ru/nevrolog-botanika-kishinev/", label: "Невролог Ботаника" },
+            { href: "/ru/nevrolog-buyukany-kishinev/", label: "Невролог Буюканы" },
+            { href: "/ru/nevrolog-tsentr-kishinev/", label: "Невролог Центр" }
            ]
          : [
             { href: "/neurolog-chisinau/", label: "Neurolog Chișinău (500 MDL)" },
@@ -400,9 +406,15 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
             { href: "/ameteli-vertij-chisinau/", label: "Amețeli & Vertij" },
             { href: "/insomnie-tratament-chisinau/", label: "Tratament Insomnie" },
             { href: "/recuperare-dupa-avc-chisinau/", label: "Recuperare după AVC" },
+            { href: "/nevralgie-neuropatie-chisinau/", label: "Nevralgie & Neuropatie" },
+            { href: "/epilepsie-convulsii-chisinau/", label: "Epilepsie & EEG" },
             { href: "/acupunctura-reflexoterapie-chisinau/", label: "Acupunctură (400 MDL)" },
             { href: "/psihoterapeut-stres-anxietate-chisinau/", label: "Psihoterapeut (300 MDL)" },
-            { href: "/neurolog-ciocana-chisinau/", label: "Neurolog Ciocana" }
+            { href: "/neurolog-ciocana-chisinau/", label: "Neurolog Ciocana" },
+            { href: "/neurolog-riscani-chisinau/", label: "Neurolog Rîșcani" },
+            { href: "/neurolog-botanica-chisinau/", label: "Neurolog Botanica" },
+            { href: "/neurolog-buiucani-chisinau/", label: "Neurolog Buiucani" },
+            { href: "/neurolog-centru-chisinau/", label: "Neurolog Centru" }
            ]
         ).map((item) => (
          <Link key={item.href} href={item.href} className="btn btn-outline-primary btn-sm">
