@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/tratament-migrene-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/tratament-migrene-chisinau/", ru: "/ru/lechenie-migreni-kishinev/", "x-default": "/tratament-migrene-chisinau/" },
  title: "Tratament Migrene & Dureri de Cap Chișinău | Neurolog Ciocana",
  description:
   "Diagnostic și tratament individual pentru migrene, dureri de cap, amețeli și vertij în Chișinău (Ciocana) — Dr. Igor Revenco, neurolog 35+ ani, RHEOTEST, Electrosomn și Transair TES."

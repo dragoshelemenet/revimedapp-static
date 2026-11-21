@@ -9,6 +9,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/fizioterapiya-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/fizioterapie-chisinau/", ru: "/ru/fizioterapiya-kishinev/", "x-default": "/fizioterapie-chisinau/" },
  title: "Физиотерапия Кишинёв (Чеканы) — 25 аппаратов реабилитации",
  description:
   "Физиотерапия и восстановление в Кишинёве (Чеканы) в Revimed PLUS+: 25 аппаратов (Электросон, Трансаир ТЭС, Амплипульс СМТ, Электрофорез, МДМ, Соллюкс) при болях в спине и неврологии."
@@ -29,7 +30,10 @@ export default function FizioterapiyaKishinevPage() {
  return (
   <>
    <JsonLd data={breadcrumbJsonLd([{ name: "Главная", path: "/ru/" }, { name: "Физиотерапия Кишинёв", path: "/ru/fizioterapiya-kishinev/" }])} />
-   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage", name: "Физиотерапия Кишинёв — Revimed PLUS+", url: absoluteUrl("/ru/fizioterapiya-kishinev/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
+   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21", name: "Физиотерапия Кишинёв — Revimed PLUS+", url: absoluteUrl("/ru/fizioterapiya-kishinev/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
    <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
    <PageHeading>
     <div>
@@ -40,6 +44,25 @@ export default function FizioterapiyaKishinevPage() {
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <aside
+      aria-label="Кратко — ключевые факты и цены"
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>Кратко — ключевые факты и цены</span>
+       <span>Обновлено: Ноябрь 2026</span>
+      </div>
+      <p style={{ margin: 0 }}>В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) сеанс физиотерапии (30 мин), Электросон, Амплипульс или Электрофорез стоит 150 MDL, лечебный массаж (60 мин) — 200 MDL, комбинированная электротерапия + кинезотерапия — 250 MDL/час. В клинике работают 25 медицинских аппаратов. Запись: 022 60 50 60.</p>
+     </aside>
      <h2>Основные процедуры в клинике</h2>
      <ul>
       <li><strong>Амплипульс СМТ</strong> — боли в спине, шее, ишиас и мышечные спазмы;</li>

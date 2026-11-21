@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/nevrolog-chekany-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/neurolog-ciocana-chisinau/", ru: "/ru/nevrolog-chekany-kishinev/", "x-default": "/neurolog-ciocana-chisinau/" },
  title: "Невролог Чеканы Кишинёв — ул. Мирча чел Бэтрын 13/2",
  description:
   "Клиника неврологии, нейрохирургии, детской неврологии и физиотерапии на Чеканах в Кишинёве — ул. Мирча чел Бэтрын 13/2. Д-р Игорь Ревенко, 35+ лет опыта. Запись: 022 60 50 60."

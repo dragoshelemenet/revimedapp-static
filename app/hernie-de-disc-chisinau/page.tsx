@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/hernie-de-disc-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/hernie-de-disc-chisinau/", ru: "/ru/gryzha-diska-kishinev/", "x-default": "/hernie-de-disc-chisinau/" },
  title: "Tratament Hernie de Disc fără Operație Chișinău | Neurochirurg",
  description:
   "Evaluare RMN și tratament conservator pentru hernie de disc lombară și cervicală în Chișinău (Ciocana) — Dr. Igor Revenco, neurochirurg membru EANS, 35+ ani experiență, fizioterapie SMT."

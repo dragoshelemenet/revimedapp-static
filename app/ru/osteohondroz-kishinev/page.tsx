@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/osteohondroz-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/osteocondroza-cervicala-chisinau/", ru: "/ru/osteohondroz-kishinev/", "x-default": "/osteocondroza-cervicala-chisinau/" },
  title: "Лечение остеохондроза в Кишинёве — Невролог и Физиотерапия",
  description:
   "Диагностика и физиотерапия при шейном и поясничном остеохондрозе в Кишинёве (Чеканы) — д-р Игорь Ревенко, Амплипульс СМТ, лекарственный электрофорез и лампа Соллюкс."

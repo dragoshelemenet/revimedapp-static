@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/osteocondroza-cervicala-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/osteocondroza-cervicala-chisinau/", ru: "/ru/osteohondroz-kishinev/", "x-default": "/osteocondroza-cervicala-chisinau/" },
  title: "Tratament Osteocondroză Cervicală & Lombară Chișinău",
  description:
   "Diagnostic și fizioterapie pentru osteocondroză cervicală, toracală și lombară în Chișinău (Ciocana) — Dr. Igor Revenco, Amplipuls SMT, electroforeză, Solux și recuperare medicală."

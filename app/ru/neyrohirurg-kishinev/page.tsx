@@ -9,6 +9,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/neyrohirurg-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/neurochirurg-chisinau/", ru: "/ru/neyrohirurg-kishinev/", "x-default": "/neurochirurg-chisinau/" },
  title: "Нейрохирург Кишинёв (Чеканы) — Грыжа диска и разбор МРТ",
  description:
   "Консультация нейрохирурга в Кишинёве — д-р Игорь Ревенко (доктор нейрохирургии, член EANS, 35+ лет опыта). Разбор снимков МРТ/КТ, грыжа диска, ишиас и консервативное лечение."
@@ -29,7 +30,10 @@ export default function NeyrohirurgKishinevPage() {
  return (
   <>
    <JsonLd data={breadcrumbJsonLd([{ name: "Главная", path: "/ru/" }, { name: "Нейрохирург Кишинёв", path: "/ru/neyrohirurg-kishinev/" }])} />
-   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage", name: "Нейрохирург Кишинёв — Revimed PLUS+", url: absoluteUrl("/ru/neyrohirurg-kishinev/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
+   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21", name: "Нейрохирург Кишинёв — Revimed PLUS+", url: absoluteUrl("/ru/neyrohirurg-kishinev/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
    <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
    <PageHeading>
     <div>
@@ -40,6 +44,25 @@ export default function NeyrohirurgKishinevPage() {
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <aside
+      aria-label="Кратко — ключевые факты и цены"
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>Кратко — ключевые факты и цены</span>
+       <span>Обновлено: Ноябрь 2026</span>
+      </div>
+      <p style={{ margin: 0 }}>В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) консультация нейрохирурга (первичная и повторная) стоит 300 MDL. Д-р Игорь Ревенко (доктор нейрохирургии USMF, член EANS, 35+ лет опыта) проводит разбор МРТ/КТ при грыже диска и стенозе, даёт объективное второе мнение и составляет план реабилитации (физиотерапия от 150 MDL). Запись: 022 60 50 60.</p>
+     </aside>
      <h2>Основные направления консультации нейрохирурга</h2>
      <ul>
       <li>Грыжа и протрузия межпозвоночного диска (поясничный, шейный отдел);</li>

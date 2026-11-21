@@ -79,7 +79,8 @@ export function makeMetadata({
  title,
  description,
  image,
- localized = true
+ localized = true,
+ alternatesLanguages
 }: {
  lang: Lang;
  path: string;
@@ -87,6 +88,7 @@ export function makeMetadata({
  description: string;
  image?: string;
  localized?: boolean;
+ alternatesLanguages?: Record<string, string>;
 }): Metadata {
  const canonicalPath = `${withLang(path, lang).replace(/\/+$/, "")}/`;
  const canonical = absoluteUrl(canonicalPath);
@@ -111,13 +113,15 @@ export function makeMetadata({
   ],
   alternates: {
    canonical,
-   languages: localized ? {
-    ro: absoluteUrl(`${withLang(path, "ro").replace(/\/+$/, "")}/`),
-    en: absoluteUrl(`${withLang(path, "en").replace(/\/+$/, "")}/`),
-    ru: absoluteUrl(`${withLang(path, "ru").replace(/\/+$/, "")}/`),
-    uk: absoluteUrl(`${withLang(path, "ua").replace(/\/+$/, "")}/`),
-    "x-default": absoluteUrl(`${withLang(path, "ro").replace(/\/+$/, "")}/`)
-   } : undefined
+   languages: alternatesLanguages
+    ? Object.fromEntries(Object.entries(alternatesLanguages).map(([k, v]) => [k, v.startsWith("http") ? v : absoluteUrl(v)]))
+    : localized ? {
+     ro: absoluteUrl(`${withLang(path, "ro").replace(/\/+$/, "")}/`),
+     en: absoluteUrl(`${withLang(path, "en").replace(/\/+$/, "")}/`),
+     ru: absoluteUrl(`${withLang(path, "ru").replace(/\/+$/, "")}/`),
+     uk: absoluteUrl(`${withLang(path, "ua").replace(/\/+$/, "")}/`),
+     "x-default": absoluteUrl(`${withLang(path, "ro").replace(/\/+$/, "")}/`)
+    } : undefined
   },
   openGraph: {
    type: "website",
@@ -238,8 +242,11 @@ export function clinicJsonLd(lang: Lang = "ro") {
     closes: "15:00"
    }
   ],
-  priceRange: "$$",
-  sameAs: ["https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/"]
+  priceRange: "150–1400 MDL",
+  sameAs: [
+   "https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/",
+   "https://www.google.com/maps/place/Centrul+Medical+Revimed/@47.0477461,28.8887469,17z"
+  ]
  };
 }
 

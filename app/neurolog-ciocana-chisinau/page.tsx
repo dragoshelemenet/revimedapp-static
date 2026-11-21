@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/neurolog-ciocana-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/neurolog-ciocana-chisinau/", ru: "/ru/nevrolog-chekany-kishinev/", "x-default": "/neurolog-ciocana-chisinau/" },
  title: "Neurolog Ciocana Chișinău — Str. Mircea cel Bătrân 13/2",
  description:
   "Clinică de neurologie, neurochirurgie, neuropediatrie și fizioterapie în sectorul Ciocana, Chișinău — Str. Mircea cel Bătrân 13/2. Dr. Igor Revenco, 35+ ani experiență. Programări: 022 60 50 60."

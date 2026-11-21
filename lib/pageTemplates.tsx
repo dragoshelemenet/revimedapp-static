@@ -630,6 +630,8 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     headline: post.title, description: post.excerpt,
     mainEntityOfPage: absoluteUrl(postPath),
     inLanguage: lang === "ua" ? "uk" : lang,
+    datePublished: "2026-11-21",
+    dateModified: "2026-11-21",
     image: post.image.startsWith("http") ? post.image : absoluteUrl(post.image),
     author: {
      "@type": "Physician",
@@ -658,6 +660,10 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
       <Link href={withLang("/dr-igor-revenco/", lang)} style={{ fontWeight: 700, color: "#075f9e" }}>
        Dr. Igor Revenco
       </Link>
+      {" · "}
+      <time dateTime="2026-11-21">
+       {lang === "en" ? "Updated: November 2026" : lang === "ru" ? "Обновлено: Ноябрь 2026" : lang === "ua" ? "Оновлено: Листопад 2026" : "Actualizat: Noiembrie 2026"}
+      </time>
      </span>
      <Link href={withLang("/contact/", lang)} style={{ fontWeight: 600, color: "#0b8fd8" }}>
       {text.contact} →

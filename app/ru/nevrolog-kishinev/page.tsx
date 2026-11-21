@@ -9,6 +9,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/nevrolog-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/neurolog-chisinau/", ru: "/ru/nevrolog-kishinev/", "x-default": "/neurolog-chisinau/" },
  title: "Невролог Кишинёв (Чеканы) — Взрослый и детский приём",
  description:
   "Консультация невролога в Кишинёве (Чеканы) — д-р Игорь Ревенко, опыт 35+ лет, взрослые и дети. Мигрени, головокружение, боли в спине, онемение, бессонница. Запись: 022 60 50 60."
@@ -29,7 +30,10 @@ export default function NevrologKishinevPage() {
  return (
   <>
    <JsonLd data={breadcrumbJsonLd([{ name: "Главная", path: "/ru/" }, { name: "Невролог Кишинёв", path: "/ru/nevrolog-kishinev/" }])} />
-   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage", name: "Невролог Кишинёв — Revimed PLUS+", url: absoluteUrl("/ru/nevrolog-kishinev/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
+   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21", name: "Невролог Кишинёв — Revimed PLUS+", url: absoluteUrl("/ru/nevrolog-kishinev/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
    <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
    <PageHeading>
     <div>
@@ -40,6 +44,25 @@ export default function NevrologKishinevPage() {
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <aside
+      aria-label="Кратко — ключевые факты и цены"
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>Кратко — ключевые факты и цены</span>
+       <span>Обновлено: Ноябрь 2026</span>
+      </div>
+      <p style={{ margin: 0 }}>В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит 500 MDL, повторный — 400 MDL. Консультации для взрослых и детей ведёт д-р Игорь Ревенко (35+ лет опыта, высшая категория, член EANS). На месте доступны ЭЭГ (1400 MDL), РЭГ (500 MDL), АМП (1000 MDL) и 25 аппаратов физиотерапии (от 150 MDL). Запись: 022 60 50 60.</p>
+     </aside>
      <h2>С какими симптомами обращаются к неврологу</h2>
      <ul>
       <li>Головные боли, мигрени, головокружение, шум в ушах;</li>

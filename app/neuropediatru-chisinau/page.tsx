@@ -9,6 +9,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/neuropediatru-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/neuropediatru-chisinau/", ru: "/ru/detskiy-nevrolog-kishinev/", "x-default": "/neuropediatru-chisinau/" },
  title: "Neuropediatru Chișinău (Neurolog Copii) — Dr. Igor Revenco",
  description:
   "Consultație la neuropediatru (neurolog pentru copii) în Chișinău, Ciocana — Dr. Igor Revenco, 35+ ani experiență. Somn, vorbire, cefalee, ticuri, tonus și dezvoltare neurologică."
@@ -29,7 +30,10 @@ export default function NeuropediatruChisinauPage() {
  return (
   <>
    <JsonLd data={breadcrumbJsonLd([{ name: "Acasă", path: "/" }, { name: "Neuropediatru Chișinău", path: "/neuropediatru-chisinau/" }])} />
-   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage", name: "Neuropediatru Chișinău — Revimed PLUS+", url: absoluteUrl("/neuropediatru-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
+   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21", name: "Neuropediatru Chișinău — Revimed PLUS+", url: absoluteUrl("/neuropediatru-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
    <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
    <PageHeading>
     <div>
@@ -40,6 +44,25 @@ export default function NeuropediatruChisinauPage() {
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <aside
+      aria-label="Pe scurt — date cheie și prețuri"
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>Pe scurt — date cheie și prețuri</span>
+       <span>Actualizat medical: Noiembrie 2026</span>
+      </div>
+      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația de neurologie pediatrică (neuropediatru) costă 500 MDL (repetată 400 MDL) și este realizată de Dr. Igor Revenco (35+ ani experiență). Sunt disponibile și investigații neinvazive (EEG 1400 MDL, AMP 1000 MDL) și proceduri blânde de fizioterapie (150 MDL). Programări: 022 60 50 60.</p>
+     </aside>
      <h2>Când este util un consult la neuropediatru</h2>
      <ul>
       <li>Tulburări persistente de somn, treziri nocturne frecvente sau coșmaruri;</li>

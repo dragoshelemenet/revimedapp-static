@@ -29,7 +29,10 @@ export default function ElectrosomnChisinauPage() {
  return (
   <>
    <JsonLd data={breadcrumbJsonLd([{ name: "Acasă", path: "/" }, { name: "Utilaj", path: "/utilaj/" }, { name: "Electrosomn Chișinău", path: "/electrosomn-chisinau/" }])} />
-   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage", name: "Electrosomn și Transair TES Chișinău — Revimed PLUS+", url: absoluteUrl("/electrosomn-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
+   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21", name: "Electrosomn și Transair TES Chișinău — Revimed PLUS+", url: absoluteUrl("/electrosomn-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
    <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
    <PageHeading>
     <div>
@@ -40,6 +43,25 @@ export default function ElectrosomnChisinauPage() {
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <aside
+      aria-label="Pe scurt — date cheie și prețuri"
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>Pe scurt — date cheie și prețuri</span>
+       <span>Actualizat medical: Noiembrie 2026</span>
+      </div>
+      <p style={{ margin: 0 }}>Terapia Electrosomn la Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2) costă 150 MDL/oră și se efectuează pe aparate medicale dedicate (Electrosomn-4T, Electrosomn-5, Transair TES, Bi-LENAR) după evaluare neurologică (500 MDL) cu Dr. Igor Revenco. Procedura este neinvazivă și recomandată pentru insomnie, stres cronic, migrene și distonie neurovegetativă. Programări: 022 60 50 60.</p>
+     </aside>
      <h2>Indicații frecvente pentru Electrosomn și stimulare transcraniană</h2>
      <ul>
       <li>Insomnie funcțională, adormire dificilă și somn superficial;</li>

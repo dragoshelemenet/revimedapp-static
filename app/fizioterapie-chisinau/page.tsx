@@ -9,6 +9,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/fizioterapie-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/fizioterapie-chisinau/", ru: "/ru/fizioterapiya-kishinev/", "x-default": "/fizioterapie-chisinau/" },
  title: "Fizioterapie Chișinău (Ciocana) — 25 Aparate Recuperare Medicală",
  description:
   "Fizioterapie și recuperare medicală în Chișinău (Ciocana) la Revimed PLUS+: 25 aparate (Electrosomn, Transair, Amplipuls SMT, Electroforeză, MDM, Solux) pentru dureri de spate și neurologie."
@@ -39,6 +40,9 @@ export default function FizioterapieChisinauPage() {
     data={{
      "@context": "https://schema.org",
      "@type": "MedicalWebPage",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21",
      name: "Fizioterapie și Recuperare Medicală Chișinău — Revimed PLUS+",
      url: absoluteUrl("/fizioterapie-chisinau/"),
      about: { "@id": `${siteUrl}/#medical-clinic` },
@@ -68,6 +72,25 @@ export default function FizioterapieChisinauPage() {
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <aside
+      aria-label="Pe scurt — date cheie și prețuri"
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>Pe scurt — date cheie și prețuri</span>
+       <span>Actualizat medical: Noiembrie 2026</span>
+      </div>
+      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), o ședință de fizioterapie (30 min), Electrosomn, Amplipuls sau Electroforeză costă 150 MDL, fizioterapia manuală (45 min) 180 MDL, masajul terapeutic (60 min) 200 MDL, iar programul combinat electroterapie + kinetoterapie 250 MDL/oră. Clinica dispune de 25 de aparate medicale. Programări: 022 60 50 60.</p>
+     </aside>
      <h2>Principalele proceduri de fizioterapie și recuperare</h2>
      <ul>
       <li><strong>Amplipulsterapie (Amplipuls-4/5/6, SMT)</strong> — dureri lombare, cervicale, sciatică, contracturi musculare;</li>

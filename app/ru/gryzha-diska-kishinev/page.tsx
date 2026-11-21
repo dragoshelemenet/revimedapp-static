@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/gryzha-diska-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/hernie-de-disc-chisinau/", ru: "/ru/gryzha-diska-kishinev/", "x-default": "/hernie-de-disc-chisinau/" },
  title: "Лечение грыжи диска без операции Кишинёв — Нейрохирург",
  description:
   "Разбор МРТ и консервативное лечение грыжи позвоночника в Кишинёве (Чеканы) — нейрохирург д-р Игорь Ревенко (член EANS, 35+ лет опыта), Амплипульс СМТ, электрофорез и физиотерапия."

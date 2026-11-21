@@ -10,6 +10,7 @@ export type LocalLandingProps = {
  crumbLabel: string;
  h1: string;
  lead: string;
+ directAnswer?: string;
  introParagraph: string;
  symptomsHeading: string;
  symptoms: string[];
@@ -46,6 +47,9 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      description: p.lead,
      url: absoluteUrl(`${p.path}/`),
      inLanguage: isRu ? "ru" : "ro",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21",
      about: { "@id": `${siteUrl}/#medical-clinic` },
      reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
      author: { "@id": `${siteUrl}/dr-igor-revenco/#physician` }
@@ -110,6 +114,31 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
        </Link>
       </div>
      </div>
+
+     <aside
+      aria-label={isRu ? "Краткий ответ и цены" : "Pe scurt — date cheie și prețuri"}
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>{isRu ? "Кратко — ключевые факты" : "Pe scurt — date cheie Revimed PLUS+"}</span>
+       <span>{isRu ? "Обновлено: Ноябрь 2026" : "Actualizat medical: Noiembrie 2026"}</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {p.directAnswer ||
+        (isRu
+         ? `В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит 500 MDL (повторный — 400 MDL), нейрохирурга — 300 MDL, сеанс физиотерапии (Электросон, Амплипульс, Электрофорез) — 150 MDL. Приём ведёт д-р Игорь Ревенко (35+ лет опыта, член EANS). Запись: 022 60 50 60.`
+         : `La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la neurolog costă 500 MDL (repetată 400 MDL), la neurochirurg 300 MDL, iar o ședință de fizioterapie (Electrosomn, Amplipuls, Electroforeză) costă 150 MDL. Consultațiile sunt realizate de Dr. Igor Revenco (35+ ani experiență, membru EANS). Programări: 022 60 50 60.`)}
+      </p>
+     </aside>
 
      <p>{p.introParagraph}</p>
 

@@ -9,6 +9,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/neurochirurg-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/neurochirurg-chisinau/", ru: "/ru/neyrohirurg-kishinev/", "x-default": "/neurochirurg-chisinau/" },
  title: "Neurochirurg Chișinău (Ciocana) — Evaluare RMN & Hernie de Disc",
  description:
   "Consultație la medic neurochirurg în Chișinău — Dr. Igor Revenco (doctor în neurochirurgie, membru EANS, 35+ ani experiență). Evaluare RMN/CT hernie de disc, sciatică și tratament conservator."
@@ -39,6 +40,9 @@ export default function NeurochirurgChisinauPage() {
     data={{
      "@context": "https://schema.org",
      "@type": "MedicalWebPage",
+     datePublished: "2026-11-21",
+     dateModified: "2026-11-21",
+     lastReviewed: "2026-11-21",
      name: "Neurochirurg Chișinău — Dr. Igor Revenco | Revimed PLUS+",
      url: absoluteUrl("/neurochirurg-chisinau/"),
      about: { "@id": `${siteUrl}/#medical-clinic` },
@@ -69,6 +73,25 @@ export default function NeurochirurgChisinauPage() {
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <aside
+      aria-label="Pe scurt — date cheie și prețuri"
+      style={{
+       padding: "14px 18px",
+       marginBottom: 18,
+       borderRadius: 16,
+       background: "rgba(240, 248, 255, 0.85)",
+       borderLeft: "4px solid #0b8fd8",
+       fontSize: 14.5,
+       lineHeight: 1.58,
+       color: "#0b2545"
+      }}
+     >
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       <span>Pe scurt — date cheie și prețuri</span>
+       <span>Actualizat medical: Noiembrie 2026</span>
+      </div>
+      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară și repetată la medic neurochirurg costă 300 MDL. Dr. Igor Revenco (doctor în neurochirurgie USMF, membru EANS, 35+ ani practică) evaluează RMN/CT pentru hernie de disc, stenoză și compresii nervoase, oferind a doua opinie obiectivă și plan de recuperare conservatoare (fizioterapie de la 150 MDL). Programări: 022 60 50 60.</p>
+     </aside>
      <h2>Patologii evaluate la consultația de neurochirurgie</h2>
      <ul>
       <li>Hernie de disc lombară, cervicală și toracală, protruzii discale;</li>

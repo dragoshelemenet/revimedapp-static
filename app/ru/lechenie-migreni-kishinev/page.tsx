@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/lechenie-migreni-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/tratament-migrene-chisinau/", ru: "/ru/lechenie-migreni-kishinev/", "x-default": "/tratament-migrene-chisinau/" },
  title: "Лечение мигрени и головной боли Кишинёв — Невролог",
  description:
   "Диагностика и индивидуальное лечение мигрени, головных болей и головокружения в Кишинёве (Чеканы) — невролог д-р Игорь Ревенко, реография RHEOTEST, Электросон и Трансаир ТЭС."

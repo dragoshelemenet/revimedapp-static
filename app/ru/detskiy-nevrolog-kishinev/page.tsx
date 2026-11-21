@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/detskiy-nevrolog-kishinev",
  localized: false,
+ alternatesLanguages: { ro: "/neuropediatru-chisinau/", ru: "/ru/detskiy-nevrolog-kishinev/", "x-default": "/neuropediatru-chisinau/" },
  title: "Детский невролог Кишинёв (Чеканы) — Д-р Игорь Ревенко",
  description:
   "Приём детского невролога (нейропедиатра) в Кишинёве (Чеканы) — д-р Игорь Ревенко, опыт 35+ лет. Нарушения сна, головные боли, речь, тики, внимание и тонус. Запись: 022 60 50 60."
