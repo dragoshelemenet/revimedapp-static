@@ -91,14 +91,22 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      >
       <div style={{ fontSize: 13.5, color: "#08234a" }}>
        <strong>Dr. Igor Revenco</strong> ·{" "}
-       {isRu ? "35+ лет опыта · Чеканы, ул. Мирча чел Бэтрын 13/2" : "35+ ani experiență · Ciocana, Str. Mircea cel Bătrân 13/2"}
+       {isRu
+        ? "Высшая категория · Член EANS · 35+ лет опыта · Пн–Пт 09:00–15:00 · Чеканы"
+        : "Categorie superioară · Membru EANS · 35+ ani · Luni–Vineri 09:00–15:00 · Ciocana"}
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
        <a href="tel:022605060" className="btn btn-primary btn-sm">
-        {isRu ? "Позвонить: 022 60 50 60" : "Sună: 022 60 50 60"}
+        {isRu ? "Позвонить: 022 60 50 60" : "Sună acum: 022 60 50 60"}
        </a>
        <Link href={pricesHref} className="btn btn-outline-primary btn-sm">
-        {isRu ? "Цены (101 услуга)" : "Prețuri (101 servicii)"}
+        {isRu ? "Цены (101 услуга)" : "Vezi prețurile"}
+       </Link>
+       <Link
+        href={isRu ? "/ru/aplicatii/teste-si-instrumente/screening-neurologic/" : "/aplicatii/teste-si-instrumente/screening-neurologic/"}
+        className="btn btn-outline-primary btn-sm"
+       >
+        {isRu ? "Бесплатный тест 2 мин →" : "Test neurologic gratuit 2 min →"}
        </Link>
       </div>
      </div>
@@ -139,6 +147,36 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
         <p>{eq.desc}</p>
        </Link>
       ))}
+     </div>
+
+     <h2>{isRu ? "Как выбрать направление в Revimed PLUS+" : "Ghid rapid: ce consultație sau procedură ți se potrivește"}</h2>
+     <div style={{ overflowX: "auto", marginBottom: 22 }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
+       <thead>
+        <tr style={{ background: "rgba(11, 143, 216, 0.12)", color: "#08234a" }}>
+         <th style={{ textAlign: "left", padding: "10px 12px", borderRadius: "10px 0 0 0" }}>{isRu ? "Ситуация" : "Situația ta"}</th>
+         <th style={{ textAlign: "left", padding: "10px 12px" }}>{isRu ? "Рекомендуемый шаг" : "Pasul recomandat"}</th>
+         <th style={{ textAlign: "left", padding: "10px 12px", borderRadius: "0 10px 0 0" }}>{isRu ? "Что взять с собой" : "Ce să aduci"}</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
+         <td style={{ padding: "10px 12px" }}>{isRu ? "Мигрень, головокружение, бессонница, онемение" : "Migrene, amețeli, insomnie, amorțeli, stres"}</td>
+         <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация невролога + RHEOTEST" : "Consultație neurolog + RHEOTEST"}</strong></td>
+         <td style={{ padding: "10px 12px" }}>{isRu ? "Список лекарств и старые выписки" : "Lista medicamentelor și analizele anterioare"}</td>
+        </tr>
+        <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
+         <td style={{ padding: "10px 12px" }}>{isRu ? "Грыжа диска, ишиас, прострел в ногу или руку" : "Hernie de disc, sciatică, durere pe picior/braț"}</td>
+         <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация нейрохирурга (разбор МРТ)" : "Consultație neurochirurg (analiză RMN)"}</strong></td>
+         <td style={{ padding: "10px 12px" }}>{isRu ? "Диск / плёнка МРТ или КТ" : "Imaginile RMN sau CT pe CD / film"}</td>
+        </tr>
+        <tr>
+         <td style={{ padding: "10px 12px" }}>{isRu ? "Боль в спине, спазм, восстановление" : "Dureri de spate, contracturi, recuperare"}</td>
+         <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Курс физиотерапии (5–10 сеансов)" : "Curs fizioterapie (5–10 ședințe)"}</strong></td>
+         <td style={{ padding: "10px 12px" }}>{isRu ? "Назначение врача (или осмотр на месте)" : "Recomandarea medicului (sau consult pe loc)"}</td>
+        </tr>
+       </tbody>
+      </table>
      </div>
 
      <h2>{isRu ? "Отзывы пациентов Revimed PLUS+ (Google Maps)" : "Recenzii reale ale pacienților (Google Maps)"}</h2>
