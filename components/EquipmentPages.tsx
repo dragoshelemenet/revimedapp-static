@@ -1,20 +1,64 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { equipmentText, langPrefix, normalizeLang } from "@/lib/equipment";
 import { getLocalizedEquipmentItem, getLocalizedEquipmentItems } from "@/lib/equipmentLocalized";
 import { getEquipmentSeo } from "@/lib/equipmentSeo";
-import { CatalogList, CatalogDetail } from "./CatalogPages";
+import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/seo";
+import PageHeading from "./PageHeading";
+import { ContentSection } from "./ContentLayout";
+import { CatalogDetail } from "./CatalogPages";
+import EquipmentCatalogGrid from "./EquipmentCatalogGrid";
 
 export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
  const locale = normalizeLang(lang);
- const items = getLocalizedEquipmentItems(locale).map((item) => {
+ const base = `${langPrefix(locale)}/utilaj`;
+ const homePath = langPrefix(locale) || "/";
+ const labels = equipmentText[locale];
+ const rawItems = getLocalizedEquipmentItems(locale);
+ const items = rawItems.map((item) => {
   const seo = getEquipmentSeo(item.slug, locale);
   return {
-   ...item,
+   id: item.slug,
+   href: `${base}/${item.slug}/`,
+   title: item.title,
+   description: seo?.seoDescription || item.short,
+   badge: item.category,
    image: seo?.image,
-   imageAlt: seo?.alt
+   imageAlt: seo?.alt,
+   action: labels.open
   };
  });
- return <CatalogList base={`${langPrefix(locale)}/utilaj`} labels={equipmentText[locale]} items={items} />;
+
+ return (
+  <>
+   <JsonLd
+    data={breadcrumbJsonLd([
+     { name: labels.home, path: homePath },
+     { name: labels.nav, path: `${base}/` }
+    ])}
+   />
+   <JsonLd
+    data={collectionPageJsonLd({
+     name: labels.title,
+     description: labels.subtitle,
+     path: `${base}/`,
+     items: items.map((item) => ({ name: item.title, url: item.href }))
+    })}
+   />
+   <PageHeading>
+    <div>
+     <p>
+      <Link href={homePath}>{labels.home}</Link> / {labels.nav}
+     </p>
+     <h1>{labels.title}</h1>
+     <p>{labels.subtitle}</p>
+    </div>
+   </PageHeading>
+   <ContentSection>
+    <EquipmentCatalogGrid items={items} lang={locale} />
+   </ContentSection>
+  </>
+ );
 }
 
 export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug: string }) {

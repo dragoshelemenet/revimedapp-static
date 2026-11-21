@@ -3231,3 +3231,41 @@ h2 {
   color: #486581;
   text-align: center;
 }
+
+/* ── Full Equipment Visual Catalog Grid (/utilaj/) ── */
+.rm-equip-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rm-equip-full-grid {
+  margin-top: 4px;
+}
+
+.rm-equip-card-media {
+  display: block;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: #edf6ff;
+  aspect-ratio: 4 / 3;
+}
+
+.rm-equip-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.rm-equip-card:hover .rm-equip-card-media img {
+  transform: scale(1.04);
+}
+
+.rm-equip-card-desc {
+  font-size: 14px !important;
+  line-height: 1.52 !important;
+  color: #334e68 !important;
+  margin: 8px 0 12px !important;
+}
