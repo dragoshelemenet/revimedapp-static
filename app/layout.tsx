@@ -23,6 +23,7 @@ import Footer from "../components/Footer";
 import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
 import GlassSheenController from "../components/GlassSheenController";
 import ScrollToTopOnRoute from "../components/ScrollToTopOnRoute";
+import ScrollExperience from "../components/ScrollExperience";
 
 import MobileCallBar from "../components/MobileCallBar";
 import { site } from "../lib/site";
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <MobileCallBar />
     <GlassSheenController />
     <ScrollToTopOnRoute />
+    <ScrollExperience />
 
       </body>
   </html>

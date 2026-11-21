@@ -37,6 +37,8 @@ const copyByLang: Record<
     notice2025: string;
     minimize: string;
     expand: string;
+    searchPlaceholder: string;
+    noResults: string;
     converterOpen: string;
     converterClose: string;
   }
@@ -48,6 +50,8 @@ const copyByLang: Record<
       "Prețurile nu au fost actualizate din 2025, deci pot exista mici modificări. Pentru confirmare exactă:",
     minimize: "Minimizează bara de monede",
     expand: "Deschide bara de monede",
+    searchPlaceholder: "Caută serviciu sau procedură (ex: EEG, masaj, consultație)…",
+    noResults: "Nu s-au găsit servicii pentru căutarea introdusă.",
     converterOpen: "Convertor valutar orientativ",
     converterClose: "Ascunde convertorul valutar"
   },
@@ -58,6 +62,8 @@ const copyByLang: Record<
       "Prices have not been updated since 2025, so minor changes may apply. For exact confirmation:",
     minimize: "Minimize currency dock",
     expand: "Expand currency dock",
+    searchPlaceholder: "Search service or procedure (e.g. EEG, massage, consultation)…",
+    noResults: "No services found matching your search.",
     converterOpen: "Currency converter",
     converterClose: "Hide currency converter"
   },
@@ -68,6 +74,8 @@ const copyByLang: Record<
       "Цены не обновлялись с 2025 года, поэтому возможны небольшие изменения. Для точного подтверждения:",
     minimize: "Свернуть панель валют",
     expand: "Развернуть панель валют",
+    searchPlaceholder: "Поиск услуги или процедуры (напр. ЭЭГ, массаж, консультация)…",
+    noResults: "Услуги по вашему запросу не найдены.",
     converterOpen: "Ориентировочный конвертер валют",
     converterClose: "Скрыть конвертер валют"
   },
@@ -78,6 +86,8 @@ const copyByLang: Record<
       "Ціни не оновлювалися з 2025 року, тому можливі невеликі зміни. Для точного підтвердження:",
     minimize: "Згорнути панель валют",
     expand: "Розгорнути панель валют",
+    searchPlaceholder: "Пошук послуги або процедури (напр. ЕЕГ, масаж, консультація)…",
+    noResults: "Послуг за вашим запитом не знайдено.",
     converterOpen: "Орієнтовний конвертер валют",
     converterClose: "Сховати конвертер валют"
   }
@@ -99,7 +109,21 @@ export default function PricesInteractiveSection({
   const [currency, setCurrency] = useState<PriceCurrency>("MDL");
   const [minimized, setMinimized] = useState(false);
   const [converterOpen, setConverterOpen] = useState(false);
+  const [query, setQuery] = useState("");
   const copy = copyByLang[lang] || copyByLang.ro;
+
+  const trimmedQuery = query.trim().toLowerCase();
+  const filteredPrices = trimmedQuery
+    ? prices.filter(
+        (p) =>
+          p.service.toLowerCase().includes(trimmedQuery) ||
+          p.category.toLowerCase().includes(trimmedQuery) ||
+          (p.note || "").toLowerCase().includes(trimmedQuery)
+      )
+    : prices;
+  const filteredGroups = trimmedQuery
+    ? groups.filter((g) => filteredPrices.some((p) => p.category === g))
+    : groups;
 
   return (
     <div className="rm-prices-wrap">
@@ -154,13 +178,46 @@ export default function PricesInteractiveSection({
         )}
       </div>
 
+      {/* Instant Liquid Glass Service Search */}
+      <div className="rm-price-search-wrap">
+        <svg className="rm-price-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={copy.searchPlaceholder}
+          aria-label={copy.searchPlaceholder}
+          className="rm-price-search-input"
+          autoComplete="off"
+        />
+        {query && (
+          <button
+            type="button"
+            className="rm-price-search-clear"
+            aria-label="Clear search"
+            onClick={() => setQuery("")}
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
       {/* Main Prices Accordion */}
-      <PricesAccordion
-        groups={groups}
-        prices={prices}
-        servicesCountLabel={servicesCountLabel}
-        currency={currency}
-      />
+      {filteredGroups.length > 0 ? (
+        <PricesAccordion
+          groups={filteredGroups}
+          prices={filteredPrices}
+          servicesCountLabel={servicesCountLabel}
+          currency={currency}
+        />
+      ) : (
+        <p className="rm-price-empty" role="status" aria-live="polite">
+          {copy.noResults}
+        </p>
+      )}
 
       {/* Subtle 1-line 2025 disclaimer + Bottom Liquid Glass Currency Converter Dropdown */}
       <p className="rm-price-footnote">
