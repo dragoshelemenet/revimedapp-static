@@ -3,6 +3,7 @@
 import { useState } from "react";
 import PricesAccordion from "./PricesAccordion";
 import CurrencyConverter from "./CurrencyConverter";
+import InfoPopover from "./InfoPopover";
 import { site } from "@/lib/site";
 import type { Lang } from "@/lib/i18n";
 
@@ -34,39 +35,49 @@ const copyByLang: Record<
     currencyLabel: string;
     noticeTitle: string;
     notice2025: string;
+    minimize: string;
+    expand: string;
     converterOpen: string;
     converterClose: string;
   }
 > = {
   ro: {
-    currencyLabel: "Monedă afișare prețuri:",
-    noticeTitle: "Notă:",
+    currencyLabel: "Monedă",
+    noticeTitle: "Notă prețuri (2025)",
     notice2025:
       "Prețurile nu au fost actualizate din 2025, deci pot exista mici modificări. Pentru confirmare exactă:",
+    minimize: "Minimizează bara de monede",
+    expand: "Deschide bara de monede",
     converterOpen: "Convertor valutar orientativ",
     converterClose: "Ascunde convertorul valutar"
   },
   en: {
-    currencyLabel: "Display currency:",
-    noticeTitle: "Note:",
+    currencyLabel: "Currency",
+    noticeTitle: "Price note (2025)",
     notice2025:
       "Prices have not been updated since 2025, so minor changes may apply. For exact confirmation:",
+    minimize: "Minimize currency dock",
+    expand: "Expand currency dock",
     converterOpen: "Currency converter",
     converterClose: "Hide currency converter"
   },
   ru: {
-    currencyLabel: "Валюта отображения цен:",
-    noticeTitle: "Примечание:",
+    currencyLabel: "Валюта",
+    noticeTitle: "Примечание о ценах (2025)",
     notice2025:
       "Цены не обновлялись с 2025 года, поэтому возможны небольшие изменения. Для точного подтверждения:",
+    minimize: "Свернуть панель валют",
+    expand: "Развернуть панель валют",
     converterOpen: "Ориентировочный конвертер валют",
     converterClose: "Скрыть конвертер валют"
   },
   ua: {
-    currencyLabel: "Валюта відображення цін:",
-    noticeTitle: "Примітка:",
+    currencyLabel: "Валюта",
+    noticeTitle: "Примітка про ціни (2025)",
     notice2025:
       "Ціни не оновлювалися з 2025 року, тому можливі невеликі зміни. Для точного підтвердження:",
+    minimize: "Згорнути панель валют",
+    expand: "Розгорнути панель валют",
     converterOpen: "Орієнтовний конвертер валют",
     converterClose: "Сховати конвертер валют"
   }
@@ -86,35 +97,61 @@ export default function PricesInteractiveSection({
   converterLabels?: Record<string, string>;
 }) {
   const [currency, setCurrency] = useState<PriceCurrency>("MDL");
+  const [minimized, setMinimized] = useState(false);
   const [converterOpen, setConverterOpen] = useState(false);
   const copy = copyByLang[lang] || copyByLang.ro;
 
   return (
     <div className="rm-prices-wrap">
-      {/* Currency Switcher + 2025 Notice */}
-      <div className="rm-prices-toolbar" data-glass-card>
-        <div className="rm-currency-switcher">
-          <span className="rm-currency-label">{copy.currencyLabel}</span>
-          <div className="rm-currency-pills" role="group" aria-label={copy.currencyLabel}>
-            {(Object.keys(PRICE_RATES) as PriceCurrency[]).map((cur) => (
-              <button
-                key={cur}
-                type="button"
-                className={`rm-currency-pill ${currency === cur ? "is-active" : ""}`}
-                aria-pressed={currency === cur}
-                onClick={() => setCurrency(cur)}
-              >
-                {cur}
-              </button>
-            ))}
-          </div>
-        </div>
+      {/* Compact Floating Liquid Glass Currency Dock Bar with Minimize (−) */}
+      <div className="rm-currency-dock-slot">
+        {minimized ? (
+          <button
+            type="button"
+            className="rm-currency-dock rm-currency-dock-mini"
+            aria-label={copy.expand}
+            onClick={() => setMinimized(false)}
+          >
+            <span className="rm-currency-mini-val">{currency}</span>
+            <span className="rm-currency-dock-icon" aria-hidden="true">+</span>
+          </button>
+        ) : (
+          <div className="rm-currency-dock" role="toolbar" aria-label={copy.currencyLabel}>
+            <div className="rm-currency-pills" role="group" aria-label={copy.currencyLabel}>
+              {(Object.keys(PRICE_RATES) as PriceCurrency[]).map((cur) => (
+                <button
+                  key={cur}
+                  type="button"
+                  className={`rm-currency-pill ${currency === cur ? "is-active" : ""}`}
+                  aria-pressed={currency === cur}
+                  onClick={() => setCurrency(cur)}
+                >
+                  {cur}
+                </button>
+              ))}
+            </div>
 
-        <div className="rm-price-notice-2025">
-          <b>{copy.noticeTitle}</b> {copy.notice2025}{" "}
-          <a href={`tel:${site.phone.replaceAll(" ", "")}`}>{site.phone}</a> ·{" "}
-          <a href={`tel:${site.phone2.replaceAll(" ", "")}`}>{site.phone2}</a>
-        </div>
+            <span className="rm-dock-divider" aria-hidden="true" />
+
+            <InfoPopover title={copy.noticeTitle} ariaLabel={copy.noticeTitle}>
+              <p>
+                {copy.notice2025}{" "}
+                <a href={`tel:${site.phone.replaceAll(" ", "")}`}>{site.phone}</a> ·{" "}
+                <a href={`tel:${site.phone2.replaceAll(" ", "")}`}>{site.phone2}</a>
+              </p>
+            </InfoPopover>
+
+            <button
+              type="button"
+              className="rm-dock-min-btn"
+              aria-label={copy.minimize}
+              title={copy.minimize}
+              onClick={() => setMinimized(true)}
+            >
+              −
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Main Prices Accordion */}
@@ -125,7 +162,13 @@ export default function PricesInteractiveSection({
         currency={currency}
       />
 
-      {/* Currency Converter at the bottom inside a Liquid Glass Dropdown */}
+      {/* Subtle 1-line 2025 disclaimer + Bottom Liquid Glass Currency Converter Dropdown */}
+      <p className="rm-price-footnote">
+        {copy.notice2025}{" "}
+        <a href={`tel:${site.phone.replaceAll(" ", "")}`}>{site.phone}</a> ·{" "}
+        <a href={`tel:${site.phone2.replaceAll(" ", "")}`}>{site.phone2}</a>
+      </p>
+
       <div className="rm-converter-dropdown">
         <button
           type="button"

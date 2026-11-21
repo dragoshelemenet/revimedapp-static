@@ -1819,86 +1819,151 @@ header[class*="header"] div[class*="links"] a[class*="active"] {
   opacity: 0.55;
 }
 
-/* ---------- Prices Currency Switcher, 2025 Notice & Bottom Converter Dropdown ---------- */
+/* ---------- Compact Floating Liquid Glass Currency Dock Bar (Minimizable −) ---------- */
 .rm-prices-wrap {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 }
 
-.rm-prices-toolbar {
+.rm-currency-dock-slot {
+  position: sticky;
+  top: 46px;
+  z-index: 150;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px 20px;
-  border-radius: 22px;
-  background: var(--rm-glass-bg-strong);
-  backdrop-filter: blur(26px) saturate(195%);
-  border: 1px solid var(--rm-glass-border);
-  border-top: 1.5px solid var(--rm-glass-border-top);
-  box-shadow: var(--rm-glass-shadow);
+  justify-content: center;
+  pointer-events: none;
 }
 
-.rm-currency-switcher {
-  display: flex;
+.rm-currency-dock {
+  pointer-events: auto;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 6px;
+  width: fit-content;
+  max-width: calc(100vw - 24px);
+  padding: 5px 7px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.56) 0%,
+    rgba(232, 246, 255, 0.34) 55%,
+    rgba(255, 255, 255, 0.48) 100%
+  );
+  backdrop-filter: blur(28px) saturate(215%) brightness(1.06);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.96);
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.94),
+    inset 0 -1.5px 3px rgba(11, 143, 216, 0.20),
+    0 12px 30px rgba(7, 31, 63, 0.16);
 }
 
-.rm-currency-label {
+.rm-currency-dock-mini {
+  gap: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
   font-family: var(--font-display), "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #08234a;
 }
 
+.rm-currency-dock-mini:hover {
+  animation: rm-wiggle-btn 580ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.rm-currency-mini-val {
+  color: #075f9e;
+}
+
+.rm-currency-dock-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 143, 216, 0.14);
+  color: #075f9e;
+  font-size: 14px;
+  line-height: 1;
+}
+
 .rm-currency-pills {
   display: flex;
+  align-items: center;
+  gap: 3px;
   flex-wrap: wrap;
-  gap: 6px;
 }
 
 .rm-currency-pill {
-  padding: 7px 14px;
+  padding: 5px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(11, 143, 216, 0.24);
-  border-top-color: rgba(255, 255, 255, 0.92);
-  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid transparent;
+  background: transparent;
   color: #173552;
   font-family: var(--font-display), "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
+  line-height: 1.1;
   cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  transition: background 0.18s ease, color 0.18s ease;
 }
 
 .rm-currency-pill:hover {
-  border-color: rgba(11, 143, 216, 0.48);
-  animation: rm-wiggle-btn 580ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  background: rgba(255, 255, 255, 0.65);
+  color: #075f9e;
 }
 
 .rm-currency-pill.is-active {
   background: linear-gradient(135deg, #0ea5f5, #0878b8);
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.45);
-  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.5), 0 8px 18px rgba(8, 120, 184, 0.28);
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.5), 0 6px 14px rgba(8, 120, 184, 0.28);
 }
 
-.rm-price-notice-2025 {
-  padding: 10px 14px;
-  border-radius: 14px;
-  background: rgba(255, 248, 232, 0.82);
-  border: 1px solid rgba(221, 123, 0, 0.28);
-  color: #6b3d00;
-  font-size: 13.5px;
-  line-height: 1.5;
+.rm-dock-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(11, 143, 216, 0.22);
+  flex-shrink: 0;
 }
 
-.rm-price-notice-2025 a {
+.rm-dock-min-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 143, 216, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.72);
+  color: #173552;
+  font-size: 16px;
   font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rm-dock-min-btn:hover {
+  background: rgba(11, 143, 216, 0.14);
   color: #075f9e;
+}
+
+.rm-price-footnote {
+  margin: 2px auto 0 !important;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  max-width: 68ch;
+}
+
+.rm-price-footnote a {
+  color: #075f9e;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -1908,11 +1973,59 @@ header[class*="header"] div[class*="links"] a[class*="active"] {
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  margin-top: 6px;
+  margin-top: 2px;
 }
 
 .rm-converter-panel {
   width: 100%;
+}
+
+/* Distinct visual hierarchy inside open Price Category Dropdowns */
+.priceAccordionGroup.open {
+  border-color: rgba(11, 143, 216, 0.36) !important;
+  overflow: hidden;
+}
+
+.priceAccordionGroup.open .priceAccordionHead {
+  background: linear-gradient(135deg, #0a2554 0%, #075f9e 58%, #0b8fd8 100%) !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.priceAccordionGroup.open .priceAccordionHead b,
+.priceAccordionGroup.open .priceAccordionHead i {
+  color: #ffffff !important;
+}
+
+.priceAccordionGroup.open .priceAccordionHead small {
+  color: rgba(226, 243, 255, 0.90) !important;
+}
+
+.priceAccordionBody {
+  background: #e5f2fc !important;
+  padding: 14px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceItemClean {
+  background: #ffffff !important;
+  border: 1px solid #c9e1f6 !important;
+  border-left: 3.5px solid #0b8fd8 !important;
+  border-radius: 14px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 4px 12px rgba(7, 31, 63, 0.06) !important;
+}
+
+.priceItemClean h3 {
+  color: #08234a !important;
+  font-size: 15.5px !important;
+}
+
+.priceItemClean strong {
+  color: #075f9e !important;
+  font-size: 18px !important;
 }
 
 /* ---------- Motion Graphic About Us + Dr. Igor Revenco Glass Portrait ---------- */
