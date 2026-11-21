@@ -1213,6 +1213,233 @@ header[class*="header"] div[class*="links"] a[class*="active"] {
   }
 }
 
+/* ---------- Modern 3D Liquid Glass Gallery Grid & In-Site Lightbox ---------- */
+.rm-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 6px 4px 10px;
+}
+
+.rm-gallery-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.65) !important;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.96) !important;
+  background: #e9f4ff;
+  box-shadow: var(--rm-glass-shadow) !important;
+  cursor: pointer;
+  text-align: left;
+}
+
+.rm-gallery-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rm-gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.rm-gallery-caption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(7, 31, 63, 0.60) 0%, rgba(11, 143, 216, 0.42) 100%) !important;
+  backdrop-filter: blur(22px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-top-color: rgba(255, 255, 255, 0.72);
+  color: #ffffff !important;
+  font-family: var(--font-display), "Onest", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 8px 18px rgba(4, 22, 48, 0.28);
+}
+
+.galleryVideoGrid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.galleryVideoCard {
+  padding: 12px !important;
+  border-radius: 22px !important;
+}
+
+.galleryVideoCard h3 {
+  font-size: 16px !important;
+  margin: 10px 4px 2px !important;
+  color: #08234a !important;
+}
+
+.youtubeFrame {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+.rm-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(6, 22, 46, 0.54);
+  backdrop-filter: blur(24px) saturate(180%);
+  overscroll-behavior: contain;
+}
+
+.rm-lightbox-glass {
+  width: min(960px, calc(100vw - 24px));
+  max-height: calc(100dvh - 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(224, 243, 255, 0.24) 52%, rgba(255, 255, 255, 0.36) 100%);
+  backdrop-filter: blur(32px) saturate(220%) brightness(1.06);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.96);
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.90),
+    inset 0 -2px 5px rgba(11, 143, 216, 0.24),
+    0 28px 70px rgba(4, 22, 48, 0.48);
+}
+
+.rm-lightbox-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2px 4px;
+}
+
+.rm-lightbox-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.rm-lightbox-title strong {
+  font-family: var(--font-display), "Onest", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(4, 22, 48, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rm-lightbox-title span {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(7, 31, 63, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.rm-lightbox-stage {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  min-height: 0;
+}
+
+.rm-lightbox-stage img {
+  display: block;
+  width: 100%;
+  max-height: calc(100dvh - 130px);
+  object-fit: contain;
+  border-radius: 18px;
+  background: rgba(7, 31, 63, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.rm-lightbox-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-top-color: rgba(255, 255, 255, 0.94);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.48), rgba(224, 243, 255, 0.26));
+  backdrop-filter: blur(22px) saturate(200%);
+  color: #08234a;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.85), 0 8px 20px rgba(4, 22, 48, 0.25);
+}
+
+.rm-lightbox-close {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+}
+
+.rm-lightbox-btn:hover {
+  animation: rm-wiggle-btn 580ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@media (max-width: 900px) {
+  .rm-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .galleryVideoGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .rm-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rm-lightbox-stage {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .rm-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+
+  .rm-lightbox-nav:first-of-type {
+    left: 8px;
+  }
+
+  .rm-lightbox-nav:last-of-type {
+    right: 8px;
+  }
+}
+
 /* ---------- Motion Graphic About Us + Dr. Igor Revenco Glass Portrait ---------- */
 @keyframes rm-orb-float {
   0%, 100% { transform: translate(0, 0) scale(1); }

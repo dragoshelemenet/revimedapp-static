@@ -4,6 +4,7 @@ import { JsonLd, absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from "@/l
 import InfoPopover from "@/components/InfoPopover";
 import SmartCatalogGrid from "@/components/SmartCatalogGrid";
 import DoctorMotionCard from "@/components/DoctorMotionCard";
+import GalleryLightbox from "@/components/GalleryLightbox";
 
 import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
@@ -296,20 +297,17 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
    <section className="rmSection galleryPageSection">
     <div className="rmShell">
      <h2 className="centerTitle">{text.photoGallery}</h2>
-     <div className="galleryMasonry fixedGalleryGrid">
-      {galleryImages.map((image: any, index: number) => (
-       <a
-        href={image.image}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={index === 0 || index === 3 ? "galleryPhoto galleryLarge" : "galleryPhoto"}
-        key={image.id}
-       >
-        <img src={toWebpSrc(image.image)} alt={image.alt || image.title} loading="lazy" decoding="async" width={640} height={420} />
-        <span>{translateGalleryTitle(lang, image.title, image.image)}</span>
-       </a>
-      ))}
-     </div>
+     <GalleryLightbox
+      items={galleryImages.map((image: any) => {
+       const translated = translateGalleryTitle(lang, image.title, image.image);
+       return {
+        id: image.id,
+        src: toWebpSrc(image.image),
+        title: translated,
+        alt: image.alt || translated
+       };
+      })}
+     />
     </div>
    </section>
 
