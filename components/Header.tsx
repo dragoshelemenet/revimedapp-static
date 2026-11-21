@@ -37,8 +37,24 @@ export default function Header() {
     if (target === "ru") return "/ru/fizioterapiya-kishinev";
     return withLang("/servicii/fizioterapie-si-reabilitare", target);
   }
-  if (currentCleanPath === "/neuropediatru-chisinau") return withLang("/servicii/consultatii-neurologice", target);
+  if (currentCleanPath === "/neuropediatru-chisinau" || currentCleanPath === "/detskiy-nevrolog-kishinev") {
+    if (target === "ro") return "/neuropediatru-chisinau";
+    if (target === "ru") return "/ru/detskiy-nevrolog-kishinev";
+    return withLang("/servicii/consultatii-neurologice", target);
+  }
+  if (currentCleanPath === "/hernie-de-disc-chisinau" || currentCleanPath === "/gryzha-diska-kishinev") {
+    if (target === "ro") return "/hernie-de-disc-chisinau";
+    if (target === "ru") return "/ru/gryzha-diska-kishinev";
+    return withLang("/servicii/consultatii-neurochirurgie", target);
+  }
+  if (currentCleanPath === "/neurolog-ciocana-chisinau" || currentCleanPath === "/nevrolog-chekany-kishinev") {
+    if (target === "ro") return "/neurolog-ciocana-chisinau";
+    if (target === "ru") return "/ru/nevrolog-chekany-kishinev";
+    return withLang("/contact", target);
+  }
   if (currentCleanPath === "/electrosomn-chisinau") return withLang("/utilaj/electrosomn-3", target);
+  if (currentCleanPath === "/tratament-migrene-chisinau" || currentCleanPath === "/recuperare-dupa-avc-chisinau") return withLang("/servicii/consultatii-neurologice", target);
+  if (currentCleanPath === "/dureri-de-spate-sciatica-chisinau") return withLang("/servicii/fizioterapie-si-reabilitare", target);
   // Article slugs differ by language; use the translated listing until pairs are curated.
   if (currentCleanPath.startsWith("/blog/")) return withLang("/blog/" + getTranslatedBlogSlug(currentCleanPath.split("/")[2], target), target);
   return withLang(currentCleanPath, target);

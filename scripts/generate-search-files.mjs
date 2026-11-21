@@ -45,12 +45,29 @@ if (!urls.length) throw new Error('No exported index.html pages found. Run next 
 function urlPriority(url) {
   const p = new URL(url).pathname;
   if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
-  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev)\//.test(p)) return '0.9';
+  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|hernie-de-disc-chisinau|tratament-migrene-chisinau|recuperare-dupa-avc-chisinau|dureri-de-spate-sciatica-chisinau|neurolog-ciocana-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev|gryzha-diska-kishinev|detskiy-nevrolog-kishinev|nevrolog-chekany-kishinev)\//.test(p)) return '0.9';
   if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
   return '0.7';
 }
-const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-  + urls.map((url) => `  <url><loc>${escapeXml(url)}</loc><priority>${urlPriority(url)}</priority></url>`).join('\n') + '\n</urlset>\n';
+const pageImageMap = new Map();
+for (const url of urls) {
+  const p = new URL(url).pathname;
+  const htmlFile = path.join(output, p === '/' ? 'index.html' : path.join(p, 'index.html'));
+  try {
+    const h = await readFile(htmlFile, 'utf8');
+    const imgs = [...h.matchAll(/<img[^>]+src="(\/images\/(?:equipment|blog|gallery|3|medical-bg)[^"]+)"[^>]*alt="([^"]*)"/gi)]
+      .map((m) => ({ loc: new URL(m[1], origin).href, title: m[2] }))
+      .filter((x, i, a) => a.findIndex((y) => y.loc === x.loc) === i)
+      .slice(0, 6);
+    if (imgs.length) pageImageMap.set(url, imgs);
+  } catch {}
+}
+const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+  + urls.map((url) => {
+    const imgs = pageImageMap.get(url) || [];
+    const imgXml = imgs.map((img) => `<image:image><image:loc>${escapeXml(img.loc)}</image:loc>${img.title ? `<image:title>${escapeXml(img.title)}</image:title>` : ''}</image:image>`).join('');
+    return `  <url><loc>${escapeXml(url)}</loc><priority>${urlPriority(url)}</priority>${imgXml}</url>`;
+  }).join('\n') + '\n</urlset>\n';
 await writeFile(path.join(output, 'sitemap.xml'), xml);
 await writeFile(
   path.join(output, 'robots.txt'),

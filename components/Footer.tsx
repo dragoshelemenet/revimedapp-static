@@ -172,7 +172,12 @@ export default function Footer() {
                     <Link href="/neurochirurg-chisinau/">Neurochirurg Chișinău</Link>
                     <Link href="/fizioterapie-chisinau/">Fizioterapie Chișinău</Link>
                     <Link href="/neuropediatru-chisinau/">Neuropediatru Chișinău</Link>
+                    <Link href="/hernie-de-disc-chisinau/">Hernie de disc Chișinău</Link>
+                    <Link href="/tratament-migrene-chisinau/">Migrene Chișinău</Link>
+                    <Link href="/recuperare-dupa-avc-chisinau/">Recuperare AVC Chișinău</Link>
+                    <Link href="/dureri-de-spate-sciatica-chisinau/">Sciatică Chișinău</Link>
                     <Link href="/electrosomn-chisinau/">Electrosomn Chișinău</Link>
+                    <Link href="/neurolog-ciocana-chisinau/">Neurolog Ciocana</Link>
                   </>
                 )}
                 {lang === "ru" && (
@@ -180,6 +185,9 @@ export default function Footer() {
                     <Link href="/ru/nevrolog-kishinev/">Невролог Кишинёв</Link>
                     <Link href="/ru/neyrohirurg-kishinev/">Нейрохирург Кишинёв</Link>
                     <Link href="/ru/fizioterapiya-kishinev/">Физиотерапия Кишинёв</Link>
+                    <Link href="/ru/gryzha-diska-kishinev/">Грыжа диска Кишинёв</Link>
+                    <Link href="/ru/detskiy-nevrolog-kishinev/">Детский невролог</Link>
+                    <Link href="/ru/nevrolog-chekany-kishinev/">Невролог Чеканы</Link>
                   </>
                 )}
               </nav>
