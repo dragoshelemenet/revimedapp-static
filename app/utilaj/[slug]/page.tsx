@@ -3,6 +3,7 @@ import { makeMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { EquipmentDetailPage } from "@/components/EquipmentPages";
 import { getLocalizedEquipmentItems, getLocalizedEquipmentItem } from "@/lib/equipmentLocalized";
+import { getEquipmentSeo } from "@/lib/equipmentSeo";
 export const dynamicParams = false;
 
 
@@ -20,7 +21,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getLocalizedEquipmentItem("ro", slug);
   if (!item) return {};
-  return makeMetadata({ lang: "ro", path: "/utilaj/" + slug, title: item.title, description: item.short });
+  const seo = getEquipmentSeo(slug, "ro");
+  return makeMetadata({
+    lang: "ro",
+    path: "/utilaj/" + slug,
+    title: item.title,
+    description: seo?.seoDescription || item.short,
+    image: seo?.image
+  });
 }
 
 export default async function Page({ params }: Props) {

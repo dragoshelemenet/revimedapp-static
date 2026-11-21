@@ -1,13 +1,36 @@
 import { notFound } from "next/navigation";
 import { equipmentText, langPrefix, normalizeLang } from "@/lib/equipment";
 import { getLocalizedEquipmentItem, getLocalizedEquipmentItems } from "@/lib/equipmentLocalized";
+import { getEquipmentSeo } from "@/lib/equipmentSeo";
 import { CatalogList, CatalogDetail } from "./CatalogPages";
-export function EquipmentListPage({lang = "ro"}: {lang?: string}) {
+
+export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
  const locale = normalizeLang(lang);
- return <CatalogList base={`${langPrefix(locale)}/utilaj`} labels={equipmentText[locale]} items={getLocalizedEquipmentItems(locale)} />;
+ const items = getLocalizedEquipmentItems(locale).map((item) => {
+  const seo = getEquipmentSeo(item.slug, locale);
+  return {
+   ...item,
+   image: seo?.image,
+   imageAlt: seo?.alt
+  };
+ });
+ return <CatalogList base={`${langPrefix(locale)}/utilaj`} labels={equipmentText[locale]} items={items} />;
 }
-export function EquipmentDetailPage({lang = "ro", slug}: {lang?: string; slug: string}) {
- const locale = normalizeLang(lang), item = getLocalizedEquipmentItem(locale, slug);
+
+export function EquipmentDetailPage({ lang = "ro", slug }: { lang?: string; slug: string }) {
+ const locale = normalizeLang(lang);
+ const item = getLocalizedEquipmentItem(locale, slug);
  if (!item) notFound();
- return <CatalogDetail base={`${langPrefix(locale)}/utilaj`} labels={equipmentText[locale]} item={item} />;
+ const seo = getEquipmentSeo(item.slug, locale);
+ return (
+  <CatalogDetail
+   base={`${langPrefix(locale)}/utilaj`}
+   labels={equipmentText[locale]}
+   item={{
+    ...item,
+    image: seo?.image,
+    imageAlt: seo?.alt
+   }}
+  />
+ );
 }

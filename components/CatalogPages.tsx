@@ -4,7 +4,15 @@ import { ContentSection, ReadingCard, ContentNote } from "./ContentLayout";
 import SmartCatalogGrid from "./SmartCatalogGrid";
 import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd, serviceJsonLd } from "@/lib/seo";
 
-type Item = { slug: string; title: string; short: string; category: string; sections: {title: string; body: string[]}[] };
+type Item = {
+ slug: string;
+ title: string;
+ short: string;
+ category: string;
+ image?: string;
+ imageAlt?: string;
+ sections: { title: string; body: string[] }[];
+};
 type Labels = { home: string; nav: string; title: string; subtitle: string; open: string; note: string; back: string };
 type Props = { base: string; labels: Labels };
 
@@ -24,6 +32,7 @@ export function CatalogList({base, labels, items}: Props & {items: Item[]}) {
   title: item.title,
   description: item.short,
   badge: item.category,
+  image: item.image,
   action: labels.open
  }));
 
@@ -72,10 +81,17 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
   <JsonLd data={serviceJsonLd({
    name: item.title,
    description: item.short,
-   path: itemPath
+   path: itemPath,
+   image: item.image
   })} />
   <PageHeading><div><p><Link href={`${base}/`}>{labels.nav}</Link> / {item.title}</p><h1>{item.title}</h1><p>{item.short}</p></div></PageHeading>
   <ContentSection narrow><ReadingCard>
+   {item.image && (
+    <figure className="rm-equip-hero-figure" data-glass-card>
+     <img src={item.image} alt={item.imageAlt || item.title} width={960} height={720} loading="eager" decoding="async" />
+     <figcaption>{item.imageAlt || item.title}</figcaption>
+    </figure>
+   )}
    {item.sections.map(section=><section key={section.title}><h2>{section.title}</h2>{section.body.length>1 ? <ul>{section.body.map((line,index)=><li key={index}>{line}</li>)}</ul> : <p>{section.body[0]}</p>}</section>)}
    <ContentNote>{labels.note}</ContentNote>
    <nav aria-label="Related clinic pages" style={{ display: "flex", flexWrap: "wrap", gap: "10px", margin: "18px 0 10px" }}>

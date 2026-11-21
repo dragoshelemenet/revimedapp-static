@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EquipmentDetailPage } from "@/components/EquipmentPages";
 import { getLocalizedEquipmentItems, getLocalizedEquipmentItem } from "@/lib/equipmentLocalized";
-import { normalizeLang, equipmentText } from "@/lib/equipment";
+import { getEquipmentSeo } from "@/lib/equipmentSeo";
+import { normalizeLang } from "@/lib/equipment";
 import { makeMetadata } from "@/lib/seo";
 export const dynamicParams = false;
 
@@ -24,7 +25,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const safeLang = normalizeLang(lang);
   const item = getLocalizedEquipmentItem(safeLang, slug);
   if (!item) return {};
-  return makeMetadata({ lang: safeLang, path: "/utilaj/" + slug, title: item.title, description: item.short });
+  const seo = getEquipmentSeo(slug, safeLang);
+  return makeMetadata({
+    lang: safeLang,
+    path: "/utilaj/" + slug,
+    title: item.title,
+    description: seo?.seoDescription || item.short,
+    image: seo?.image
+  });
 }
 
 export default async function Page({ params }: Props) {
