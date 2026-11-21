@@ -173,9 +173,97 @@ function HomeTrustSection({ lang = "ro" }: { lang?: Lang }) {
  );
 }
 
+const homeFaqCopy: Record<Lang, { heading: string; items: { q: string; a: string }[] }> = {
+ ro: {
+  heading: "Întrebări frecvente despre consultații în Chișinău",
+  items: [
+   {
+    q: "Cum mă programez la neurolog sau neurochirurg la Revimed PLUS+?",
+    a: "Programările se fac telefonic la 022 60 50 60 sau +373 79 422 908, de luni până vineri între 09:00 și 15:00. Clinica se află în Chișinău, sectorul Ciocana, Str. Mircea cel Bătrân 13/2."
+   },
+   {
+    q: "Cine efectuează consultațiile neurologice și neurochirurgicale?",
+    a: "Consultațiile sunt conduse de Dr. Igor Revenco — medic neurolog, neurochirurg și neuropediatru de categorie superioară, doctor în neurochirurgie (USMF) și membru EANS, cu peste 35 de ani de experiență."
+   },
+   {
+    q: "Se fac proceduri de fizioterapie și recuperare medicală în aceeași clinică?",
+    a: "Da. Clinica dispune de 25 de aparate medicale de fizioterapie, neurostimulare și diagnostic funcțional (Electrosomn, Transair, Bi-LENAR, Amplipuls SMT, Electroforeză, MDM, Solux, RHEOTEST, AMP)."
+   },
+   {
+    q: "Oferiți consultații și pentru copii (neuropediatrie)?",
+    a: "Da, oferim consultații de neurologie pediatrică pentru copii și adolescenți, cu abordare blândă și individualizată."
+   }
+  ]
+ },
+ en: {
+  heading: "Frequently Asked Questions — Neurology & Rehab in Chișinău",
+  items: [
+   {
+    q: "How do I book a neurology or neurosurgery consultation at Revimed PLUS+?",
+    a: "Call 022 60 50 60 or +373 79 422 908 Monday–Friday, 09:00–15:00. The clinic is located at Str. Mircea cel Bătrân 13/2, Ciocana, Chișinău."
+   },
+   {
+    q: "Who leads the consultations?",
+    a: "Dr. Igor Revenco — Senior Neurologist, Neurosurgeon, and Pediatric Neurologist (PhD in Neurosurgery, EANS member) with 35+ years of clinical experience."
+   },
+   {
+    q: "Are physiotherapy and functional diagnostics available on-site?",
+    a: "Yes. Revimed PLUS+ is equipped with 25 medical devices including Electrosleep, Transair TES, Bi-LENAR, Amplipuls SMT, Electrophoresis, MDM, Sollux, RHEOTEST, and AMP."
+   },
+   {
+    q: "Do you see pediatric neurology patients?",
+    a: "Yes, we provide pediatric neurology consultations for children and adolescents with individualized care."
+   }
+  ]
+ },
+ ru: {
+  heading: "Частые вопросы о приёме невролога и физиотерапии в Кишинёве",
+  items: [
+   {
+    q: "Как записаться к неврологу или нейрохирургу в Revimed PLUS+?",
+    a: "Запись по телефонам 022 60 50 60 или +373 79 422 908 с понедельника по пятницу, 09:00–15:00. Адрес: Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2."
+   },
+   {
+    q: "Кто проводит консультации в клинике?",
+    a: "Приём ведёт д-р Игорь Ревенко — невролог, нейрохирург и детский невролог высшей категории, доктор нейрохирургии (USMF), член EANS, с опытом более 35 лет."
+   },
+   {
+    q: "Доступны ли физиотерапия и диагностика на месте?",
+    a: "Да. В клинике работают 25 медицинских аппаратов: Электросон, Трансаир ТЭС, Би-ЛЕНАР, Амплипульс СМТ, Электрофорез, МДМ, Соллюкс, RHEOTEST и АМП."
+   },
+   {
+    q: "Принимаете ли вы детей (детский невролог)?",
+    a: "Да, проводится приём по детской неврологии с бережным и индивидуальным подходом."
+   }
+  ]
+ },
+ ua: {
+  heading: "Часті запитання про прийом невролога та фізіотерапію у Кишиневі",
+  items: [
+   {
+    q: "Як записатися до невролога або нейрохірурга в Revimed PLUS+?",
+    a: "Запис за телефонами 022 60 50 60 або +373 79 422 908, Пн–Пт 09:00–15:00. Адреса: Кишинів, Чекани, вул. Мірча чел Бетрин 13/2."
+   },
+   {
+    q: "Хто проводить консультації?",
+    a: "Д-р Ігор Ревенко — невролог, нейрохірург і дитячий невролог вищої категорії, член EANS, досвід понад 35 років."
+   },
+   {
+    q: "Чи доступні фізіотерапія та діагностика в клініці?",
+    a: "Так, у клініці працюють 25 медичних апаратів: Електросон, Трансаір, Бі-ЛЕНАР, Ампліпульс СМТ, Електрофорез, МДМ, Соллюкс, RHEOTEST та АМП."
+   },
+   {
+    q: "Чи приймаєте дітей (дитячий невролог)?",
+    a: "Так, надаються консультації з дитячої неврології з індивідуальним підходом."
+   }
+  ]
+ }
+};
+
 export function HomeTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const coreServices = getLocalizedServices(lang);
+ const homeFaq = homeFaqCopy[lang] || homeFaqCopy.ro;
  const servicesHeading =
   lang === "en"
    ? "Core Medical Services in Chișinău"
@@ -258,6 +346,31 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
    <HomeCTA lang={lang} />
 
    <HomeTrustSection lang={lang} />
+
+   <JsonLd
+    data={{
+     "@context": "https://schema.org",
+     "@type": "FAQPage",
+     mainEntity: homeFaq.items.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a }
+     }))
+    }}
+   />
+   <section className="rmSection rm-home-faq-section">
+    <div className="rmShell">
+     <h2 className="centerTitle">{homeFaq.heading}</h2>
+     <div className="rm-home-faq-grid">
+      {homeFaq.items.map((f) => (
+       <details key={f.q} open className="rm-home-faq-card" data-glass-card>
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+       </details>
+      ))}
+     </div>
+    </div>
+   </section>
 
       <section className="testimonialBand">
     <div className="rmShell">
@@ -351,6 +464,43 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
       servicesCountLabel={text.servicesCount}
       converterLabels={text}
      />
+     <article className="adminCard prose" data-glass-card style={{ marginTop: 22 }}>
+      <h2>
+       {lang === "en"
+        ? "Transparent Pricing & Individual Treatment Plans in Chișinău"
+        : lang === "ru"
+          ? "Ориентировочные цены и индивидуальный план в Кишинёве"
+          : lang === "ua"
+            ? "Орієнтовні ціни та індивідуальний план у Кишиневі"
+            : "Tarife orientative și plan de tratament individual în Chișinău"}
+      </h2>
+      <p>
+       {lang === "en"
+        ? "Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana) lists 101 medical services across neurology, neurosurgery, pediatric neurology, physiotherapy, and functional diagnostics. Prices can be previewed in MDL, EUR, RON, USD, and UAH and are confirmed upon booking."
+        : lang === "ru"
+          ? "В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) представлено 101 направление: консультация невролога, нейрохирурга, детского невролога, физиотерапия и диагностика. Актуальную стоимость уточняйте при записи."
+          : lang === "ua"
+            ? "У медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) представлено 101 послугу: невролог, нейрохірург, дитячий невролог, фізіотерапія та діагностика."
+            : "Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) oferă 101 servicii medicale: consultații neurologice adulți și copii, neurochirurgie, fizioterapie, electroterapie și diagnostic funcțional. Tarifele orientative pot fi convertite instant în MDL, EUR, RON, USD și UAH și se confirmă la programare."}
+      </p>
+      <div className="rm-quick-links-bar">
+       <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">
+        {lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}
+       </Link>
+       <Link href={withLang("/servicii/consultatii-neurochirurgie/", lang)} className="btn btn-outline-primary btn-sm">
+        {lang === "ru" ? "Нейрохирург Кишинёв" : lang === "ua" ? "Нейрохірург Кишинів" : lang === "en" ? "Neurosurgery" : "Neurochirurgie"}
+       </Link>
+       <Link href={withLang("/servicii/fizioterapie-si-reabilitare/", lang)} className="btn btn-outline-primary btn-sm">
+        {lang === "ru" ? "Физиотерапия" : lang === "ua" ? "Фізіотерапія" : lang === "en" ? "Physiotherapy" : "Fizioterapie"}
+       </Link>
+       <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-outline-primary btn-sm">
+        Dr. Igor Revenco
+       </Link>
+       <Link href={withLang("/contact/", lang)} className="btn btn-primary btn-sm">
+        {text.contact}
+       </Link>
+      </div>
+     </article>
     </div>
    </section>
   </>
@@ -515,6 +665,46 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     </div>
     <img src={toWebpSrc(post.image)} alt={post.title} width={1200} height={675} loading="lazy" decoding="async" />
     <div data-blog-content>{renderBlogContent(post.content)}</div>
+    <div className="rm-blog-related-box" data-glass-card>
+     <h2>
+      {lang === "en"
+       ? "Related Services & Guides at Revimed PLUS+"
+       : lang === "ru"
+         ? "Связанные услуги и статьи Revimed PLUS+"
+         : lang === "ua"
+           ? "Пов’язані послуги та статті Revimed PLUS+"
+           : "Servicii și articole utile la Revimed PLUS+"}
+     </h2>
+     <div className="rm-quick-links-bar" style={{ marginTop: 10 }}>
+      <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">
+       {lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}
+      </Link>
+      <Link href={withLang("/servicii/consultatii-neurochirurgie/", lang)} className="btn btn-outline-primary btn-sm">
+       {lang === "ru" ? "Нейрохирург" : lang === "ua" ? "Нейрохірург" : lang === "en" ? "Neurosurgery" : "Neurochirurgie"}
+      </Link>
+      <Link href={withLang("/servicii/fizioterapie-si-reabilitare/", lang)} className="btn btn-outline-primary btn-sm">
+       {lang === "ru" ? "Физиотерапия" : lang === "ua" ? "Фізіотерапія" : lang === "en" ? "Physiotherapy" : "Fizioterapie"}
+      </Link>
+      <Link href={withLang("/preturi/", lang)} className="btn btn-outline-primary btn-sm">
+       {text.prices}
+      </Link>
+      <Link href={withLang("/contact/", lang)} className="btn btn-primary btn-sm">
+       {text.contact}
+      </Link>
+     </div>
+     <ul style={{ marginTop: 14, marginBottom: 0, paddingLeft: 18 }}>
+      {getStaticPublishedPosts(lang)
+       .filter((p) => p.slug !== post.slug)
+       .slice(0, 3)
+       .map((rel) => (
+        <li key={rel.slug} style={{ marginBottom: 6 }}>
+         <Link href={withLang(`/blog/${rel.slug}/`, lang)} style={{ color: "#075f9e", fontWeight: 600 }}>
+          {rel.title}
+         </Link>
+        </li>
+       ))}
+     </ul>
+    </div>
     <div style={{ marginTop: 24 }}>
      <Link href={blogPath} className="rm-back-link" aria-label={text.blog}>←</Link>
     </div>

@@ -31,6 +31,30 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "pediatric-neurologist-chisinau-when-your-child-needs-consultation",
     ru: "detskiy-nevrolog-kishinev-kogda-pokazat-rebenka-vrachu",
     ua: "dytyachyy-nevroloh-kyshyniv-koly-pokazaty-dytynu-likaryu"
+  },
+  postStrokeRehab: {
+    ro: "recuperare-dupa-avc-chisinau-neurolog-fizioterapie",
+    en: "post-stroke-rehabilitation-chisinau-neurology-physiotherapy",
+    ru: "reabilitaciya-posle-insulta-kishinev-nevrolog-fizioterapiya",
+    ua: "reabilitatsiya-pislya-insultu-kyshyniv-nevroloh-fizioterapiya"
+  },
+  sciaticaBackPain: {
+    ro: "dureri-lombare-sciatica-fizioterapie-chisinau",
+    en: "lower-back-pain-sciatica-physiotherapy-chisinau",
+    ru: "boli-v-poyasnice-ishias-fizioterapiya-kishinev",
+    ua: "boli-v-popereku-ishias-fizioterapiya-kyshyniv"
+  },
+  insomniaStress: {
+    ro: "insomnie-stres-distonie-electrosomn-tes-chisinau",
+    en: "insomnia-chronic-stress-electrosleep-tes-therapy-chisinau",
+    ru: "bessonnica-stress-vsd-elektroson-tes-terapiya-kishinev",
+    ua: "bezsonnya-stres-vsd-elektroson-tes-terapiya-kyshyniv"
+  },
+  mriPrep: {
+    ro: "rmn-ct-reografie-rheotest-pregatire-consultatie-neurologica",
+    en: "mri-ct-rheotest-how-to-prepare-neurology-consultation",
+    ru: "mrt-kt-reografiya-rheotest-podgotovka-k-nevrologu",
+    ua: "mrt-kt-reohrafiya-rheotest-pidhotovka-do-nevroloha"
   }
 };
 

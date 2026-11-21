@@ -42,9 +42,15 @@ async function indexPages(directory) {
 
 const urls = [...new Set(await indexPages(output))].sort();
 if (!urls.length) throw new Error('No exported index.html pages found. Run next build first.');
-// No lastmod: build time is not evidence that the page content changed.
+function urlPriority(url) {
+  const p = new URL(url).pathname;
+  if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
+  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact)\//.test(p)) return '0.9';
+  if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
+  return '0.7';
+}
 const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-  + urls.map((url) => `  <url><loc>${escapeXml(url)}</loc></url>`).join('\n') + '\n</urlset>\n';
+  + urls.map((url) => `  <url><loc>${escapeXml(url)}</loc><priority>${urlPriority(url)}</priority></url>`).join('\n') + '\n</urlset>\n';
 await writeFile(path.join(output, 'sitemap.xml'), xml);
 await writeFile(
   path.join(output, 'robots.txt'),

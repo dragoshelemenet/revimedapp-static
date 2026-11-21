@@ -63,8 +63,8 @@ export const pageSeoText: Record<Lang, Record<string, { title: string; descripti
  },
  en: {
   home: {
-   title: "Medical center for neurology, recovery and physiotherapy in Chisinau",
-   description: "Revimed PLUS+ Medical Center in Chisinau: neurology consultations, neurosurgery, medical recovery, physiotherapy, functional diagnostics, electrotherapy and balneotherapy."
+   title: "Neurologist, Neurosurgeon & Physiotherapy Chișinău (Ciocana)",
+   description: "Revimed PLUS+ Medical Center in Chișinău: adult & pediatric neurology, neurosurgery (Dr. Igor Revenco, 35+ years experience), physiotherapy, 25 rehab devices & functional diagnostics."
   },
   services: {
    title: "Medical services at Revimed PLUS+ Chisinau",
@@ -85,8 +85,8 @@ export const pageSeoText: Record<Lang, Record<string, { title: string; descripti
  },
  ru: {
   home: {
-   title: "Медицинский центр неврологии, восстановления и физиотерапии в Кишиневе",
-   description: "Медицинский центр Revimed PLUS+ в Кишиневе: неврология, нейрохирургия, восстановление, физиотерапия, функциональная диагностика, электротерапия и бальнеотерапия."
+   title: "Невролог, Нейрохирург и Физиотерапия Кишинёв (Чеканы)",
+   description: "Медицинский центр Revimed PLUS+ в Кишинёве (Чеканы): взрослый и детский невролог, нейрохирург д-р Игорь Ревенко (опыт 35+ лет), физиотерапия, 25 аппаратов реабилитации и диагностика."
   },
   services: {
    title: "Медицинские услуги Revimed PLUS+ в Кишиневе",
@@ -107,8 +107,8 @@ export const pageSeoText: Record<Lang, Record<string, { title: string; descripti
  },
  ua: {
   home: {
-   title: "Медичний центр неврології, відновлення та фізіотерапії в Кишиневі",
-   description: "Медичний центр Revimed PLUS+ у Кишиневі: неврологія, нейрохірургія, відновлення, фізіотерапія, функціональна діагностика, електротерапія та бальнеотерапія."
+   title: "Невролог, Нейрохірург та Фізіотерапія Кишинів (Чекани)",
+   description: "Медичний центр Revimed PLUS+ у Кишиневі (Чекани): дорослий і дитячий невролог, нейрохірург д-р Ігор Ревенко (досвід 35+ років), фізіотерапія, 25 апаратів реабілітації та діагностика."
   },
   services: {
    title: "Медичні послуги Revimed PLUS+ у Кишиневі",
