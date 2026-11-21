@@ -821,6 +821,34 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       )}
      </aside>
     </div>
+    <div className="rmShell" style={{ marginTop: 18 }}>
+     <article className="adminCard prose" data-glass-card>
+      <h2>
+       {lang === "en"
+        ? "Location, Directions & Consultation Preparation — Ciocana, Chișinău"
+        : lang === "ru"
+          ? "Как добраться и подготовиться к приёму — Кишинёв, Чеканы"
+          : lang === "ua"
+            ? "Як дістатися та підготуватися до прийому — Кишинів, Чекани"
+            : "Acces, localizare și pregătire pentru consultație — Chișinău, Ciocana"}
+      </h2>
+      <p>
+       {lang === "en"
+        ? "Revimed PLUS+ Medical Center is located on Str. Mircea cel Bătrân 13/2 (MD-2044, Ciocana sector, Chișinău), with convenient public transit access. Please bring any previous MRI, CT, X-ray images (CD/film) and medication lists for consultations with Dr. Igor Revenco."
+        : lang === "ru"
+          ? "Медицинский центр Revimed PLUS+ расположен в Кишинёве (сектор Чеканы, ул. Мирча чел Бэтрын 13/2, MD-2044) с удобным доступом на общественном транспорте. На приём к д-ру Игорю Ревенко желательно взять снимки/диски МРТ, КТ и список лекарств."
+          : lang === "ua"
+            ? "Медичний центр Revimed PLUS+ розташований у Кишиневі (сектор Чекани, вул. Мірча чел Бетрин 13/2, MD-2044). На прийом до д-ра Ігоря Ревенка бажано взяти знімки/диски МРТ, КТ та список ліків."
+            : "Centrul Medical Revimed PLUS+ se află pe Str. Mircea cel Bătrân 13/2 (MD-2044, sectorul Ciocana, Chișinău), cu acces direct la transport public. Pentru consultațiile cu Dr. Igor Revenco, aduceți imaginile RMN/CT (CD sau film) și lista tratamentelor anterioare, dacă le aveți."}
+      </p>
+      <div className="rm-quick-links-bar">
+       <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
+       <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">{lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}</Link>
+       <Link href={withLang("/preturi/", lang)} className="btn btn-outline-primary btn-sm">{text.prices}</Link>
+       <Link href="/intrebari/" className="btn btn-outline-primary btn-sm">FAQ</Link>
+      </div>
+     </article>
+    </div>
    </section>
   </>
  );

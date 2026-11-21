@@ -1,6 +1,7 @@
 "use client";
 
 import PageHeading from "@/components/PageHeading";
+import IconVisual from "@/components/IconVisual";
 
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -917,7 +918,7 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
 
      {!done ? (
       <article className="smartQuestion">
-       <img src={cfg.icon} alt="" />
+       <IconVisual src={cfg.icon} alt={cfg.title[lang]} className="smartToolIcon" />
        <span className="miniBadge">{step + 1} / {cfg.questions.length}</span>
        <h2>{cfg.questions[step][lang]}</h2>
        <p>{text.choose}</p>
@@ -945,7 +946,7 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
          <h2>{resultLabel}</h2>
          <p>{text.score}: {score}/{max} · {percent}%</p>
         </div>
-        <img src={cfg.icon} alt="" />
+        <IconVisual src={cfg.icon} alt={cfg.title[lang]} className="smartToolIcon" />
        </div>
 
        <div className="smartTips">

@@ -285,7 +285,13 @@ export default function RecoveryPlannerPage() {
           <div className="recoveryResult">
             {!show ? (
               <div className="emptyResult">
-                <img src="https://img.icons8.com/ios-filled/80/0b8fd8/physiotherapy.png" alt="" />
+                <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#0b8fd8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="5" r="2" />
+                  <path d="m4 17 5-5 3 2 5-6" />
+                  <path d="M15 8h2v2" />
+                  <path d="M10 14v6" />
+                  <path d="M14 14l3 6" />
+                </svg>
                 <h2>{t.result}</h2>
                 <p>{t.lead}</p>
               </div>

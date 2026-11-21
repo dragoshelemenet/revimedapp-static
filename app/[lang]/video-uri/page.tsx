@@ -80,6 +80,7 @@ export default async function VideoLangPage({ params }: Props) {
    </PageHeading>
    <section className="rmSection galleryVideoSection">
     <div className="rmShell">
+     <h2 className="centerTitle">{text.ourVideos}</h2>
      <VideoGalleryDropdown videos={youtubeVideos} lang={lang} />
      <div className="rm-quick-links-bar" style={{ justifyContent: "center", marginTop: 24 }}>
       <Link href={withLang("/galerie/", lang)} className="btn btn-outline-primary btn-sm">

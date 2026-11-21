@@ -33,15 +33,44 @@ export function absoluteUrl(path = "/") {
 
 const citySuffix: Record<Lang, string> = {
  ro: "Revimed PLUS+ Chișinău",
- en: "Revimed PLUS+ Chișinău",
+ en: "Revimed PLUS+ Moldova",
  ru: "Revimed PLUS+ Кишинёв",
  ua: "Revimed PLUS+ Кишинів"
 };
 
+const shortDescSuffix: Record<Lang, string> = {
+ ro: " — Centrul Medical Revimed PLUS+ Chișinău (Ciocana), neurologie, neurochirurgie și recuperare medicală.",
+ en: " — Revimed PLUS+ Medical Center Chișinău (Moldova), neurology, neurosurgery, and medical rehabilitation.",
+ ru: " — Медицинский центр Revimed PLUS+ Кишинёв (Чеканы), неврология, нейрохирургия и физиотерапия.",
+ ua: " — Медичний центр Revimed PLUS+ Кишинів (Чекани), неврологія, нейрохірургія та фізіотерапія."
+};
+
+function clampWords(text: string, maxLen: number) {
+ const clean = text.replace(/\s+/g, " ").trim();
+ if (clean.length <= maxLen) return clean;
+ const cut = clean.slice(0, maxLen - 1);
+ const lastSpace = cut.lastIndexOf(" ");
+ return (lastSpace > maxLen * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[,:;—–-]+$/, "").trim() + "…";
+}
+
 export function seoTitle(title: string, lang: Lang = "ro") {
- const clean = title.replace(/\s*\|\s*Revimed PLUS\+(?:\s+(?:Chișinău|Кишинёв|Кишинів))?\s*$/i, "").trim();
- const hasCity = /Chișinău|Chisinau|Кишинёв|Кишинев|Кишинів/i.test(clean);
- return hasCity ? `${clean} | Revimed PLUS+` : `${clean} | ${citySuffix[lang]}`;
+ const clean = title.replace(/\s*\|\s*Revimed PLUS\+(?:\s+(?:Chișinău|Chisinau|Moldova|Кишинёв|Кишинев|Кишинів))?\s*$/i, "").trim();
+ const hasCity = /Chișinău|Chisinau|Moldova|Кишинёв|Кишинев|Кишинів/i.test(clean);
+ const suffix = hasCity ? "Revimed PLUS+" : citySuffix[lang];
+ const maxBase = Math.max(24, 68 - suffix.length - 3);
+ const trimmedBase = clean.length > maxBase ? clampWords(clean, maxBase).replace(/…$/, "") : clean;
+ return `${trimmedBase} | ${suffix}`;
+}
+
+function normalizeDescription(description: string, lang: Lang) {
+ const clean = description.replace(/\s+/g, " ").trim();
+ if (clean.length < 90) {
+  return clampWords(`${clean.replace(/\.$/, "")}${shortDescSuffix[lang]}`, 160);
+ }
+ if (clean.length > 165) {
+  return clampWords(clean, 160);
+ }
+ return clean;
 }
 
 export function makeMetadata({
@@ -63,11 +92,12 @@ export function makeMetadata({
  const canonical = absoluteUrl(canonicalPath);
  const ogImage = image?.startsWith("http") ? image : absoluteUrl(image || site.image);
  const fullTitle = seoTitle(title, lang);
+ const cleanDesc = normalizeDescription(description, lang);
 
  return {
   metadataBase: new URL(siteUrl),
   title: { absolute: fullTitle },
-  description,
+  description: cleanDesc,
   keywords: [
    "Revimed PLUS+",
    "centru medical Chișinău",
