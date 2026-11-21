@@ -269,13 +269,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
       streetAddress: "Str. Mircea cel Bătrân 13/2",
       addressLocality: "Chișinău",
       addressCountry: "MD"
-    },
-    sameAs: [
-      "https://docdoc.md/",
-      "https://doctorneurolog.md/",
-      "https://doctorchat.md/",
-      "https://top.md/"
-    ]
+    }
   };
 
   return (
@@ -381,25 +375,6 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                   <a href={`tel:${site.phone2.replaceAll(" ", "")}`}>{site.phone2}</a>
                 </span>
               </div>
-            </div>
-          </section>
-
-          <section className="rm-doc-glass-block" data-glass-card>
-            <h2>{c.sourcesTitle}</h2>
-            <p className="rm-doc-sources-note">{c.sourcesNote}</p>
-            <div className="rm-doc-sources-list">
-              {c.sources.map((src) => (
-                <a
-                  key={src.name}
-                  href={src.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rm-doc-source-item"
-                >
-                  <strong>{src.name} ↗</strong>
-                  <span>{src.desc}</span>
-                </a>
-              ))}
             </div>
           </section>
 

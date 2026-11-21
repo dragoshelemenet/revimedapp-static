@@ -49,11 +49,11 @@
     0 20px 44px rgba(4, 22, 48, 0.38);
 }
 
-/* ---------- Impeccable Typeset System (Onest Display + Golos Text Body, native RO + Cyrillic) ---------- */
+/* ---------- Clinical Brand Typography (Montserrat Display matching logo + Source Sans 3 Body) ---------- */
 body {
-  font-family: var(--font-body), "Golos Text", system-ui, -apple-system, sans-serif !important;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: var(--font-body), "Source Sans 3", system-ui, -apple-system, sans-serif !important;
+  font-size: 16.5px;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -68,9 +68,9 @@ h4,
 .revimedTrustCards strong,
 .rm-doctor-plate strong,
 .rm-folder-head strong {
-  font-family: var(--font-display), "Onest", var(--font-body), sans-serif !important;
+  font-family: var(--font-display), "Montserrat", var(--font-body), sans-serif !important;
   text-wrap: balance;
-  letter-spacing: -0.025em !important;
+  letter-spacing: -0.02em !important;
 }
 
 h1 {
@@ -97,8 +97,8 @@ h3 {
 }
 
 .heroCenter p {
-  font-family: var(--font-body), "Golos Text", sans-serif !important;
-  font-size: clamp(17px, 2vw, 22px) !important;
+  font-family: var(--font-body), "Source Sans 3", sans-serif !important;
+  font-size: clamp(18px, 2vw, 23px) !important;
   font-weight: 500 !important;
   line-height: 1.45 !important;
   letter-spacing: 0.004em;
@@ -121,7 +121,7 @@ p {
 .softBtn,
 .rm-more-btn,
 header[class*="header"] div[class*="links"] a {
-  font-family: var(--font-display), "Onest", var(--font-body), sans-serif !important;
+  font-family: var(--font-display), "Montserrat", var(--font-body), sans-serif !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em;
 }

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Golos_Text, Onest } from "next/font/google";
+import { Montserrat, Source_Sans_3 } from "next/font/google";
 import "../styles/foundation.css";
 import "../styles/global.css";
 import "../styles/liquid-glass.css";
 
-const golos = Golos_Text({
+const sourceSans = Source_Sans_3({
  subsets: ["latin", "latin-ext", "cyrillic"],
  weight: ["400", "500", "600", "700"],
  variable: "--font-body",
  display: "swap"
 });
 
-const onest = Onest({
+const montserrat = Montserrat({
  subsets: ["latin", "latin-ext", "cyrillic"],
- weight: ["500", "600", "700", "800"],
+ weight: ["600", "700", "800"],
  variable: "--font-display",
  display: "swap"
 });
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
  return (
-  <html lang="ro" className={`${golos.variable} ${onest.variable}`} suppressHydrationWarning>
+  <html lang="ro" className={`${sourceSans.variable} ${montserrat.variable}`} suppressHydrationWarning>
    <body>
     <a href="#main-content" className="rm-skip-link">Skip to content</a>
     <div className="rm-top-scroll-veil" aria-hidden="true" />
