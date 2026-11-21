@@ -245,7 +245,9 @@ export function clinicJsonLd(lang: Lang = "ro") {
   priceRange: "150–1400 MDL",
   sameAs: [
    "https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/",
-   "https://www.google.com/maps/place/Centrul+Medical+Revimed/@47.0477461,28.8887469,17z"
+   "https://www.google.com/maps/place/Centrul+Medical+Revimed/@47.0477461,28.8887469,17z",
+   "https://www.youtube.com/@revimedpluschisinau",
+   "https://www.youtube.com/channel/UCdQz5Tf3106Cnosp0SGbPfA"
   ]
  };
 }

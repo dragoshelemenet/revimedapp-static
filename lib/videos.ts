@@ -1,5 +1,9 @@
 export const youtubeVideos = [
  {
+  title: "Terapia Electrosomn în Chișinău (150 MDL) — Revimed PLUS+",
+  embed: "https://www.youtube.com/embed/6GGtiONz4pE"
+ },
+ {
   title: "Reabilitare Revimed PLUS+",
   embed: "https://www.youtube.com/embed/yW9QT_5vY9g"
  },

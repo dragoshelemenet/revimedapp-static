@@ -34,6 +34,20 @@ export default function ElectrosomnChisinauPage() {
      dateModified: "2026-11-21",
      lastReviewed: "2026-11-21", name: "Electrosomn și Transair TES Chișinău — Revimed PLUS+", url: absoluteUrl("/electrosomn-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
    <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
+   <JsonLd
+    data={{
+     "@context": "https://schema.org",
+     "@type": "VideoObject",
+     name: "Terapia Electrosomn în Chișinău (150 MDL) — Tratament Insomnie, Stres & Migrene | Revimed PLUS+",
+     description: "Prezentarea aparatului fizioterapeutic Electrosomn-5 (ES-10-5) la Centrul Medical Revimed PLUS+ din Chișinău (Ciocana): indicații, cum decurge ședința, Dr. Igor Revenco și prețuri 2026.",
+     thumbnailUrl: absoluteUrl("/images/equipment/electrosomn-5-es-10-5.webp"),
+     uploadDate: "2026-11-21T20:43:00+02:00",
+     duration: "PT2M4S",
+     contentUrl: "https://www.youtube.com/watch?v=6GGtiONz4pE",
+     embedUrl: "https://www.youtube.com/embed/6GGtiONz4pE",
+     publisher: { "@id": `${siteUrl}/#medical-clinic` }
+    }}
+   />
    <PageHeading>
     <div>
      <p><Link href="/">Acasă</Link> / Electrosomn Chișinău</p>
@@ -62,6 +76,17 @@ export default function ElectrosomnChisinauPage() {
       </div>
       <p style={{ margin: 0 }}>Terapia Electrosomn la Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2) costă 150 MDL/oră și se efectuează pe aparate medicale dedicate (Electrosomn-4T, Electrosomn-5, Transair TES, Bi-LENAR) după evaluare neurologică (500 MDL) cu Dr. Igor Revenco. Procedura este neinvazivă și recomandată pentru insomnie, stres cronic, migrene și distonie neurovegetativă. Programări: 022 60 50 60.</p>
      </aside>
+     <h2>Prezentare video — Aparatul Electrosomn-5 la Revimed PLUS+ Chișinău</h2>
+     <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", borderRadius: 18, overflow: "hidden", marginBottom: 22, border: "1px solid rgba(11, 143, 216, 0.22)" }}>
+      <iframe
+       src="https://www.youtube.com/embed/6GGtiONz4pE"
+       title="Terapia Electrosomn în Chișinău (150 MDL) — Revimed PLUS+"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+       allowFullScreen
+       style={{ width: "100%", height: "100%", border: 0 }}
+      />
+     </div>
      <h2>Indicații frecvente pentru Electrosomn și stimulare transcraniană</h2>
      <ul>
       <li>Insomnie funcțională, adormire dificilă și somn superficial;</li>
