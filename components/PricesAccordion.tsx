@@ -77,17 +77,24 @@ export default function PricesAccordion({ groups, prices, servicesCountLabel, cu
  }
 
  return (
-  <div className="pricesAccordion">
+  <div className={openGroup ? "pricesAccordion has-open" : "pricesAccordion"}>
    {groups.map((group) => {
     const rows = prices.filter((p) => p.category === group);
     const isOpen = openGroup === group;
+    const isCompact = Boolean(openGroup) && !isOpen;
 
     return (
      <section
       ref={(el) => {
        groupRefs.current[group] = el;
       }}
-      className={isOpen ? "priceAccordionGroup open" : "priceAccordionGroup"}
+      className={
+       isOpen
+        ? "priceAccordionGroup open"
+        : isCompact
+         ? "priceAccordionGroup is-compact"
+         : "priceAccordionGroup"
+      }
       key={group}
      >
       <button

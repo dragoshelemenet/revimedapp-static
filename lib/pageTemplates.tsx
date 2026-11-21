@@ -6,6 +6,8 @@ import SmartCatalogGrid from "@/components/SmartCatalogGrid";
 import DoctorMotionCard from "@/components/DoctorMotionCard";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import VideoGalleryDropdown from "@/components/VideoGalleryDropdown";
+import ContactMapDropdown from "@/components/ContactMapDropdown";
+import ContactPhotoLightbox from "@/components/ContactPhotoLightbox";
 
 import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
@@ -494,32 +496,22 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       </div>
 
       {(contact.image_one || contact.image_two) && (
-       <div className="contactPhotoPair">
-        {contact.image_one && contact.image_one !== "/images/6.jpg" && (
-         <a href={contact.image_one} target="_blank" rel="noopener noreferrer">
-          <img src={contact.image_one} alt="Revimed PLUS+" />
-         </a>
-        )}
-        {contact.image_two && (
-         <a href={contact.image_two} target="_blank" rel="noopener noreferrer">
-          <img src={contact.image_two} alt="Revimed PLUS+ map" />
-         </a>
-        )}
-       </div>
+       <ContactPhotoLightbox
+        lang={lang}
+        photos={[
+         ...(contact.image_one && contact.image_one !== "/images/6.jpg"
+          ? [{ src: toWebpSrc(contact.image_one), alt: "Revimed PLUS+" }]
+          : []),
+         ...(contact.image_two
+          ? [{ src: toWebpSrc(contact.image_two), alt: "Revimed PLUS+ — Localizare" }]
+          : [])
+        ]}
+       />
       )}
      </aside>
     </div>
 
-    <div className="rmShell contactMapModern">
-     <div className="mapHeader">
-      <div>
-       <span className="contactBadge">Map</span>
-       <h2>{text.openMap}</h2>
-      </div>
-      <a className="softBtn" href={contact.map_link} target="_blank" rel="noopener noreferrer">Google Maps</a>
-     </div>
-     <iframe src={contact.map_embed} title="Revimed PLUS+ map" loading="lazy" allowFullScreen />
-    </div>
+    <ContactMapDropdown lang={lang} mapEmbed={contact.map_embed} mapLink={contact.map_link} />
    </section>
   </>
  );
