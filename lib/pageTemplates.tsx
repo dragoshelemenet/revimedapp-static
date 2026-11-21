@@ -1,6 +1,15 @@
 import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import { getPrices, getContact, getGallery, getContentBlock } from "@/lib/publicContent";
-import { JsonLd, absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/seo";
+import {
+ JsonLd,
+ aboutPageJsonLd,
+ absoluteUrl,
+ breadcrumbJsonLd,
+ collectionPageJsonLd,
+ contactPageJsonLd,
+ galleryPageJsonLd,
+ offerCatalogJsonLd
+} from "@/lib/seo";
 import InfoPopover from "@/components/InfoPopover";
 import SmartCatalogGrid from "@/components/SmartCatalogGrid";
 import DoctorMotionCard from "@/components/DoctorMotionCard";
@@ -173,7 +182,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
      <div className="rmShell heroCenter">
       <h1>{text.heroTitle}</h1>
       <p>{text.heroSubtitle}</p>
-      <Link href={withLang("/servicii", lang)} className="blueBtn">{text.servicesButton}</Link>
+      <div className="rm-hero-actions">
+       <Link href={withLang("/servicii", lang)} className="blueBtn">{text.servicesButton}</Link>
+       <Link href={withLang("/contact", lang)} className="rm-hero-secondary-btn">{text.contact}</Link>
+      </div>
      </div>
     </div>
    </section>
@@ -218,7 +230,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 
       <section className="testimonialBand">
     <div className="rmShell">
-     <h2>{lang === "ro" ? "Reviews" : lang === "en" ? "Reviews" : lang === "ru" ? "Отзывы" : "Відгуки"}</h2>
+     <h2>{lang === "ro" ? "Recenzii pacienți" : lang === "en" ? "Patient Reviews" : lang === "ru" ? "Отзывы пациентов" : "Відгуки пацієнтів"}</h2>
      <ReviewCarousel lang={lang} />
     </div>
    </section>
@@ -229,26 +241,44 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 export function AboutTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const hero = getContentBlock(lang, "despre-noi", "hero");
+ const aboutPath = `${withLang("/despre-noi", lang)}/`;
+ const aboutTitle = lang === "ro" ? (hero?.title || text.aboutTitle) : text.aboutTitle;
+ const aboutLead = lang === "ro" ? (hero?.text || text.aboutText1) : text.aboutText1;
 
  return (
   <>
+   <JsonLd data={breadcrumbJsonLd([
+    { name: text.home, path: withLang("/", lang) },
+    { name: text.about, path: aboutPath }
+   ])} />
+   <JsonLd data={aboutPageJsonLd({
+    name: aboutTitle,
+    description: aboutLead,
+    path: aboutPath
+   })} />
    <PageHeading>
     <div>
      <p className="crumb">{text.home} / {text.about}</p>
-     <h1>{lang === "ro" ? (hero?.title || text.aboutTitle) : text.aboutTitle}</h1>
-     <p className="lead">{lang === "ro" ? (hero?.text || text.aboutText1) : text.aboutText1}</p>
+     <h1>{aboutTitle}</h1>
+     <p className="lead">{aboutLead}</p>
     </div>
    </PageHeading>
    <section className="rmSection aboutPageSection">
     <div className="rmShell aboutGrid rm-about-motion-grid">
      <DoctorMotionCard lang={lang} />
-     <div className="adminCard prose">
+     <div className="adminCard prose" data-glass-card>
       <h2>{text.aboutTitle}</h2>
       <p>{text.aboutText1}</p>
       <p>{text.aboutText2}</p>
       <p>{site.description}</p>
       <p><b>{text.contact}:</b> {site.phone} · {site.phone2}</p>
       <p><b>{text.workHours}:</b> {site.hours}</p>
+      <div className="rm-quick-links-bar">
+       <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
+       <Link href={withLang("/servicii/", lang)} className="btn btn-outline-primary btn-sm">{text.services}</Link>
+       <Link href={withLang("/preturi/", lang)} className="btn btn-outline-primary btn-sm">{text.prices}</Link>
+       <Link href={withLang("/contact/", lang)} className="btn btn-primary btn-sm">{text.contact}</Link>
+      </div>
      </div>
     </div>
    </section>
@@ -260,9 +290,20 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const prices = getPrices(lang);
  const groups = Array.from(new Set(prices.map((p) => p.category)));
+ const pricesPath = `${withLang("/preturi", lang)}/`;
 
  return (
   <>
+   <JsonLd data={breadcrumbJsonLd([
+    { name: text.home, path: withLang("/", lang) },
+    { name: text.prices, path: pricesPath }
+   ])} />
+   <JsonLd data={offerCatalogJsonLd({
+    name: text.pricesTitle,
+    description: text.pricesSubtitle,
+    path: pricesPath,
+    items: prices.map((p: any) => ({ name: p.name, category: p.category, price: p.price }))
+   })} />
    <PageHeading>
     <div>
      <p className="crumb">{text.home} / {text.prices}</p>
@@ -288,9 +329,30 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
 export function GalleryTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const galleryImages = getGallery(lang);
+ const galleryPath = `${withLang("/galerie", lang)}/`;
+ const lightboxItems = galleryImages.map((image: any) => {
+  const translated = translateGalleryTitle(lang, image.title, image.image);
+  return {
+   id: image.id,
+   src: toWebpSrc(image.image),
+   title: translated,
+   alt: image.alt || translated
+  };
+ });
 
  return (
   <>
+   <JsonLd data={breadcrumbJsonLd([
+    { name: text.home, path: withLang("/", lang) },
+    { name: text.gallery, path: galleryPath }
+   ])} />
+   <JsonLd data={galleryPageJsonLd({
+    name: text.galleryTitle,
+    description: text.gallerySubtitle,
+    path: galleryPath,
+    images: lightboxItems.map((img) => ({ url: img.src, caption: img.title })),
+    videos: youtubeVideos.map((v) => ({ title: v.title, embedUrl: v.embed }))
+   })} />
    <PageHeading>
     <div>
      <p className="crumb">{text.home} / {text.gallery}</p>
@@ -302,17 +364,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
    <section className="rmSection galleryPageSection">
     <div className="rmShell">
      <h2 className="centerTitle">{text.photoGallery}</h2>
-     <GalleryLightbox
-      items={galleryImages.map((image: any) => {
-       const translated = translateGalleryTitle(lang, image.title, image.image);
-       return {
-        id: image.id,
-        src: toWebpSrc(image.image),
-        title: translated,
-        alt: image.alt || translated
-       };
-      })}
-     />
+     <GalleryLightbox items={lightboxItems} />
     </div>
    </section>
 
@@ -444,9 +496,19 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const contact = getContact(lang);
  const hero = getContentBlock(lang, "contact", "hero");
+ const contactPath = `${withLang("/contact", lang)}/`;
 
  return (
   <>
+   <JsonLd data={breadcrumbJsonLd([
+    { name: text.home, path: withLang("/", lang) },
+    { name: text.contact, path: contactPath }
+   ])} />
+   <JsonLd data={contactPageJsonLd({
+    name: hero?.title || text.contactTitle,
+    description: hero?.text || text.contactSubtitle,
+    path: contactPath
+   })} />
    <PageHeading>
     <div>
      <p className="crumb">{text.home} / {text.contact}</p>
@@ -465,32 +527,32 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       <div className="contactInfoList">
        {contact.fixed_phone && (
         <a href={`tel:${contact.fixed_phone.replaceAll(" ", "")}`}>
-         <IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" />
-         <div><b>Contact</b><strong>{contact.fixed_phone}</strong></div>
+         <IconVisual src="phone" alt="phone" className="contactSmallIcon" />
+         <div><b>Fix</b><strong>{contact.fixed_phone}</strong></div>
         </a>
        )}
        {contact.phone && contact.phone.replaceAll(" ", "") !== contact.fixed_phone.replaceAll(" ", "") && (
         <a href={`tel:${contact.phone.replaceAll(" ", "")}`}>
-         <IconVisual src="https://img.icons8.com/color/96/phone.png" alt="phone" className="contactSmallIcon" />
-         <div><b>{text.contact}</b><strong>{contact.phone}</strong></div>
+         <IconVisual src="iphone" alt="phone" className="contactSmallIcon" />
+         <div><b>Mobil</b><strong>{contact.phone}</strong></div>
         </a>
        )}
        {contact.phone_alt && (
         <a href={`tel:${contact.phone_alt.replaceAll(" ", "")}`}>
-         <IconVisual src="https://img.icons8.com/color/96/iphone.png" alt="phone" className="contactSmallIcon" />
+         <IconVisual src="iphone" alt="phone" className="contactSmallIcon" />
          <div><b>Alt</b><strong>{contact.phone_alt}</strong></div>
         </a>
        )}
        {contact.email && (
         <a href={`mailto:${contact.email}`}>
-         <IconVisual src="https://img.icons8.com/color/96/email.png" alt="email" className="contactSmallIcon" />
+         <IconVisual src="email" alt="email" className="contactSmallIcon" />
          <div><b>Email</b><strong>{contact.email}</strong></div>
         </a>
        )}
        {contact.address && (
         <div className="contactInfoStatic">
-         <IconVisual src="https://img.icons8.com/color/96/marker.png" alt="address" className="contactSmallIcon" />
-         <div><b>{text.contact}</b><strong>{contact.address}</strong></div>
+         <IconVisual src="marker" alt="address" className="contactSmallIcon" />
+         <div><b>{lang === "en" ? "Address" : lang === "ru" ? "Адрес" : lang === "ua" ? "Адреса" : "Adresă"}</b><strong>{contact.address}</strong></div>
         </div>
        )}
       </div>
@@ -517,9 +579,9 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       <div className="contactMiniCard">
        <h3>{text.transport}</h3>
        <div className="transportModern">
-        <span><IconVisual src="https://img.icons8.com/color/96/bus.png" alt="bus" className="transportIcon" /> {contact.bus}</span>
-        <span><IconVisual src="https://img.icons8.com/color/96/trolleybus.png" alt="trolleybus" className="transportIcon" /> {contact.trolleybus}</span>
-        <span><IconVisual src="https://img.icons8.com/color/96/taxi.png" alt="transport" className="transportIcon" /> {contact.tram}</span>
+        <span><IconVisual src="bus" alt="bus" className="transportIcon" /> {contact.bus}</span>
+        <span><IconVisual src="trolleybus" alt="trolleybus" className="transportIcon" /> {contact.trolleybus}</span>
+        <span><IconVisual src="taxi" alt="transport" className="transportIcon" /> {contact.tram}</span>
        </div>
       </div>
 

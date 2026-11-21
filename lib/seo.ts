@@ -275,11 +275,129 @@ export function serviceJsonLd({
   "@type": "MedicalProcedure",
   name,
   description,
-  image: absoluteUrl(image || "/images/medical-bg.jpg"),
+  image: absoluteUrl(image || "/images/medical-bg.webp"),
   url: absoluteUrl(path),
   provider: {
    "@id": `${siteUrl}/#medical-clinic`
   }
+ };
+}
+
+export function offerCatalogJsonLd({
+ name,
+ description,
+ path,
+ items
+}: {
+ name: string;
+ description: string;
+ path: string;
+ items: { name: string; category: string; price: string }[];
+}) {
+ const offers = items
+  .map((item) => {
+   const numeric = Number(String(item.price || "").replace(/[^\d.]/g, ""));
+   if (!numeric || !Number.isFinite(numeric)) return null;
+   return {
+    "@type": "Offer",
+    price: String(numeric),
+    priceCurrency: "MDL",
+    availability: "https://schema.org/InStock",
+    category: item.category,
+    itemOffered: {
+     "@type": "MedicalProcedure",
+     name: item.name
+    }
+   };
+  })
+  .filter(Boolean);
+
+ return {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name,
+  description,
+  url: absoluteUrl(path),
+  about: { "@id": `${siteUrl}/#medical-clinic` },
+  mainEntity: {
+   "@type": "OfferCatalog",
+   name,
+   numberOfItems: offers.length,
+   itemListElement: offers
+  }
+ };
+}
+
+export function aboutPageJsonLd({
+ name,
+ description,
+ path
+}: {
+ name: string;
+ description: string;
+ path: string;
+}) {
+ return {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name,
+  description,
+  url: absoluteUrl(path),
+  mainEntity: { "@id": `${siteUrl}/#medical-clinic` }
+ };
+}
+
+export function contactPageJsonLd({
+ name,
+ description,
+ path
+}: {
+ name: string;
+ description: string;
+ path: string;
+}) {
+ return {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name,
+  description,
+  url: absoluteUrl(path),
+  mainEntity: { "@id": `${siteUrl}/#medical-clinic` }
+ };
+}
+
+export function galleryPageJsonLd({
+ name,
+ description,
+ path,
+ images,
+ videos
+}: {
+ name: string;
+ description: string;
+ path: string;
+ images: { url: string; caption: string }[];
+ videos: { title: string; embedUrl: string }[];
+}) {
+ return {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  name,
+  description,
+  url: absoluteUrl(path),
+  publisher: { "@id": `${siteUrl}/#medical-clinic` },
+  associatedMedia: images.map((img) => ({
+   "@type": "ImageObject",
+   contentUrl: img.url.startsWith("http") ? img.url : absoluteUrl(img.url),
+   caption: img.caption
+  })),
+  video: videos.map((vid) => ({
+   "@type": "VideoObject",
+   name: vid.title,
+   description: `${vid.title} — ${seoBase.name}`,
+   embedUrl: vid.embedUrl,
+   publisher: { "@id": `${siteUrl}/#medical-clinic` }
+  }))
  };
 }
 
