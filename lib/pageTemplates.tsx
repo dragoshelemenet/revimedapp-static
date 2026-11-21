@@ -5,6 +5,7 @@ import InfoPopover from "@/components/InfoPopover";
 import SmartCatalogGrid from "@/components/SmartCatalogGrid";
 import DoctorMotionCard from "@/components/DoctorMotionCard";
 import GalleryLightbox from "@/components/GalleryLightbox";
+import VideoGalleryDropdown from "@/components/VideoGalleryDropdown";
 
 import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
@@ -314,22 +315,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
    <section className="rmSection galleryVideoSection">
     <div className="rmShell">
      <h2 className="centerTitle">{text.ourVideos}</h2>
-     <div className="galleryVideoGrid">
-      {youtubeVideos.map((video) => (
-       <article className="galleryVideoCard" key={video.embed}>
-        <div className="youtubeFrame">
-         <iframe
-          src={video.embed}
-          title={video.title}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-         />
-        </div>
-        <h3>{video.title}</h3>
-       </article>
-      ))}
-     </div>
+     <VideoGalleryDropdown videos={youtubeVideos} lang={lang} />
     </div>
    </section>
   </>

@@ -1,0 +1,17 @@
+import DoctorProfilePage from "@/components/DoctorProfilePage";
+import { makeMetadata } from "@/lib/seo";
+
+export const metadata = makeMetadata({
+  lang: "ro",
+  path: "/dr-igor-revenco",
+  title: "Dr. Igor Revenco — Neurolog, Neurochirurg, Neuropediatru Chișinău",
+  description:
+    "Profil complet Dr. Igor Revenco — medic categorie superioară, doctor în neurochirurgie (USMF), membru EANS, 35+ ani experiență, fondator Centrul Medical Revimed PLUS+ Chișinău.",
+  image: "/images/about-us.jpg"
+});
+
+export const dynamic = "force-static";
+
+export default function Page() {
+  return <DoctorProfilePage lang="ro" />;
+}

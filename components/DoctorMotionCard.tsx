@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { Lang } from "@/lib/i18n";
+import Link from "next/link";
+import { withLang, type Lang } from "@/lib/i18n";
 
 const doctorCopy: Record<
   Lang,
@@ -81,11 +82,15 @@ export default function DoctorMotionCard({ lang = "ro" }: { lang?: Lang }) {
     return () => observer.disconnect();
   }, []);
 
+  const profileHref = withLang("/dr-igor-revenco/", lang);
+
   return (
-    <div
-      ref={stageRef}
+    <Link
+      href={profileHref}
+      ref={stageRef as any}
       className={`rm-doctor-motion ${visible ? "rm-in-view" : ""}`}
       data-glass-card
+      aria-label={`${copy.name} — ${copy.role}`}
     >
       {/* Animated neural-pulse glow & orbit behind photo */}
       <span className="rm-doctor-orb rm-doctor-orb-a" aria-hidden="true" />
@@ -126,6 +131,6 @@ export default function DoctorMotionCard({ lang = "ro" }: { lang?: Lang }) {
           </span>
         ))}
       </div>
-    </div>
+    </Link>
   );
 }
