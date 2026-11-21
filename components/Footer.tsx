@@ -11,6 +11,7 @@ const facebookUrl = "https://www.facebook.com/p/Centrul-Medical-REVIMED-10004707
 const footerText: Record<Lang, {
   tagline: string;
   rights: string;
+  credit: string;
   schedule: string;
   useful: string;
   follow: string;
@@ -21,6 +22,7 @@ const footerText: Record<Lang, {
   ro: {
     tagline: "Neurologie, neurochirurgie, recuperare medicală și fizioterapie în Chișinău.",
     rights: "Toate drepturile rezervate.",
+    credit: "Creare site, UI/UX & SEO realizat de",
     schedule: "Program & Contact",
     useful: "Navigare rapidă",
     follow: "Facebook",
@@ -40,6 +42,7 @@ const footerText: Record<Lang, {
   en: {
     tagline: "Neurology, neurosurgery, medical rehabilitation, and physiotherapy in Chișinău.",
     rights: "All rights reserved.",
+    credit: "Website creation, UI/UX & SEO by",
     schedule: "Hours & Contact",
     useful: "Quick Links",
     follow: "Facebook",
@@ -59,6 +62,7 @@ const footerText: Record<Lang, {
   ru: {
     tagline: "Неврология, нейрохирургия, медицинская реабилитация и физиотерапия в Кишинёве.",
     rights: "Все права защищены.",
+    credit: "Создание сайта, UI/UX и SEO от",
     schedule: "График и контакты",
     useful: "Навигация",
     follow: "Facebook",
@@ -78,6 +82,7 @@ const footerText: Record<Lang, {
   ua: {
     tagline: "Неврологія, нейрохірургія, медична реабілітація та фізіотерапія в Кишиневі.",
     rights: "Усі права захищені.",
+    credit: "Створення сайту, UI/UX та SEO від",
     schedule: "Графік і контакти",
     useful: "Навігація",
     follow: "Facebook",
@@ -173,7 +178,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              UI · Design · SEO made by <strong>wsod.cloud</strong>
+              {text.credit} <strong>wsod.cloud</strong>
             </a>
             <div className="rm-footer-legal">
               <Link href="/termeni-si-conditii">{text.links.terms}</Link>
