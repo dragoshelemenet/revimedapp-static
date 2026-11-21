@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
 import { isLang, withLang, type Lang } from "@/lib/i18n";
 
-const barLabels: Record<Lang, { call: string; contact: string }> = {
-  ro: { call: "Sună", contact: "Contact" },
-  en: { call: "Call", contact: "Contact" },
-  ru: { call: "Позвонить", contact: "Контакты" },
-  ua: { call: "Подзвонити", contact: "Контакти" }
+const barLabels: Record<Lang, { call: string; prices: string; contact: string }> = {
+  ro: { call: "022 60 50 60", prices: "Prețuri", contact: "Hartă" },
+  en: { call: "022 60 50 60", prices: "Prices", contact: "Map" },
+  ru: { call: "022 60 50 60", prices: "Цены", contact: "Карта" },
+  ua: { call: "022 60 50 60", prices: "Ціни", contact: "Карта" }
 };
 
 export default function MobileCallBar() {
@@ -19,9 +19,13 @@ export default function MobileCallBar() {
   const labels = barLabels[lang] || barLabels.ro;
 
   return (
-    <div className="mobileCallBar">
-      <a href={`tel:${site.phone2.replaceAll(" ", "")}`}>{labels.call}</a>
-      <Link href={withLang("/contact", lang)}>{labels.contact}</Link>
+    <div className="mobileCallBar" role="navigation" aria-label="Quick actions">
+      <a href={`tel:${site.phone.replaceAll(" ", "")}`} className="rm-mbar-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        {labels.call}
+      </a>
+      <Link href={withLang("/preturi/", lang)}>{labels.prices}</Link>
+      <Link href={withLang("/contact/", lang)}>{labels.contact}</Link>
     </div>
   );
 }

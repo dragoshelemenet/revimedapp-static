@@ -351,75 +351,112 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
     <section className="rmSection">
      <div className="rmShell">
       <div className="adminCard prose" data-glass-card>
-       <h2>
+       <h2 style={{ marginBottom: 6 }}>
         {lang === "ru"
          ? "Все направления, диагностика и процедуры в Кишинёве (Чеканы)"
-         : "Specialități, Diagnostic Funcțional & Tratamente în Chișinău (Ciocana)"}
+         : "Specialități, Diagnostic Funcțional & Tratamente în Chișinău"}
        </h2>
-       <p style={{ marginBottom: 14 }}>
+       <p style={{ marginBottom: 18 }}>
         {lang === "ru"
          ? "Выберите нужную консультацию, обследование или процедуру физиотерапии с актуальными ценами 2026 года:"
          : "Accesează direct consultația, investigația sau procedura dorită, cu prețuri oficiale 2026 în MDL:"}
        </p>
-       <div className="rm-quick-links-bar">
+       <div className="rm-seo-bento-grid">
         {(lang === "ru"
          ? [
-            { href: "/ru/nevrolog-kishinev/", label: "Невролог Кишинёв (500 MDL)" },
-            { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (300 MDL)" },
-            { href: "/ru/detskiy-nevrolog-kishinev/", label: "Детский невролог" },
-            { href: "/ru/fizioterapiya-kishinev/", label: "Физиотерапия (150 MDL)" },
-            { href: "/ru/eeg-kishinev/", label: "ЭЭГ Кишинёв (1400 MDL)" },
-            { href: "/ru/diagnostika-amp-kishinev/", label: "Диагностика АМП 117 (1000 MDL)" },
-            { href: "/ru/reoentsefalografiya-kishinev/", label: "РЭГ сосудов мозга (500 MDL)" },
-            { href: "/ru/lechebnyy-massazh-kishinev/", label: "Лечебный массаж (200 MDL)" },
-            { href: "/ru/kinezoterapiya-kishinev/", label: "Кинезотерапия (250 MDL)" },
-            { href: "/ru/elektroforez-amplipuls-kishinev/", label: "Электрофорез & Амплипульс (150 MDL)" },
-            { href: "/ru/gryzha-diska-kishinev/", label: "Грыжа диска без операции" },
-            { href: "/ru/osteohondroz-kishinev/", label: "Остеохондроз" },
-            { href: "/ru/lechenie-migreni-kishinev/", label: "Лечение мигрени" },
-            { href: "/ru/igloukalyvanie-kishinev/", label: "Иглоукалывание (400 MDL)" },
-            { href: "/ru/psihoterapevt-kishinev/", label: "Психотерапевт (300 MDL)" },
-            { href: "/ru/nevralgiya-neyropatiya-kishinev/", label: "Невралгия и нейропатия" },
-            { href: "/ru/epilepsiya-kishinev/", label: "Эпилепсия и ЭЭГ" },
-            { href: "/ru/nevrolog-chekany-kishinev/", label: "Невролог Чеканы" },
-            { href: "/ru/nevrolog-ryshkanovka-kishinev/", label: "Невролог Рышкановка" },
-            { href: "/ru/nevrolog-botanika-kishinev/", label: "Невролог Ботаника" },
-            { href: "/ru/nevrolog-buyukany-kishinev/", label: "Невролог Буюканы" },
-            { href: "/ru/nevrolog-tsentr-kishinev/", label: "Невролог Центр" }
+            {
+             heading: "Консультации специалистов",
+             links: [
+              { href: "/ru/nevrolog-kishinev/", label: "Невролог Кишинёв (500 MDL)" },
+              { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (300 MDL)" },
+              { href: "/ru/detskiy-nevrolog-kishinev/", label: "Детский невролог" },
+              { href: "/ru/psihoterapevt-kishinev/", label: "Психотерапевт (300 MDL)" },
+              { href: "/ru/igloukalyvanie-kishinev/", label: "Иглоукалывание (400 MDL)" }
+             ]
+            },
+            {
+             heading: "Диагностика и физиотерапия",
+             links: [
+              { href: "/ru/eeg-kishinev/", label: "ЭЭГ Кишинёв (1400 MDL)" },
+              { href: "/ru/diagnostika-amp-kishinev/", label: "Диагностика АМП 117 (1000 MDL)" },
+              { href: "/ru/reoentsefalografiya-kishinev/", label: "РЭГ сосудов мозга (500 MDL)" },
+              { href: "/ru/fizioterapiya-kishinev/", label: "Физиотерапия (150 MDL)" },
+              { href: "/ru/elektroforez-amplipuls-kishinev/", label: "Электрофорез & Амплипульс (150 MDL)" },
+              { href: "/ru/lechebnyy-massazh-kishinev/", label: "Лечебный массаж (200 MDL)" },
+              { href: "/ru/kinezoterapiya-kishinev/", label: "Кинезотерапия (250 MDL)" }
+             ]
+            },
+            {
+             heading: "Заболевания и секторы Кишинёва",
+             links: [
+              { href: "/ru/gryzha-diska-kishinev/", label: "Грыжа диска без операции" },
+              { href: "/ru/osteohondroz-kishinev/", label: "Остеохондроз" },
+              { href: "/ru/lechenie-migreni-kishinev/", label: "Лечение мигрени" },
+              { href: "/ru/nevralgiya-neyropatiya-kishinev/", label: "Невралгия и нейропатия" },
+              { href: "/ru/epilepsiya-kishinev/", label: "Эпилепсия и ЭЭГ" },
+              { href: "/ru/nevrolog-chekany-kishinev/", label: "Чеканы" },
+              { href: "/ru/nevrolog-ryshkanovka-kishinev/", label: "Рышкановка" },
+              { href: "/ru/nevrolog-botanika-kishinev/", label: "Ботаника" },
+              { href: "/ru/nevrolog-buyukany-kishinev/", label: "Буюканы" },
+              { href: "/ru/nevrolog-tsentr-kishinev/", label: "Центр" }
+             ]
+            }
            ]
          : [
-            { href: "/neurolog-chisinau/", label: "Neurolog Chișinău (500 MDL)" },
-            { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (300 MDL)" },
-            { href: "/neuropediatru-chisinau/", label: "Neuropediatru Chișinău" },
-            { href: "/fizioterapie-chisinau/", label: "Fizioterapie (150 MDL)" },
-            { href: "/electrosomn-chisinau/", label: "Electrosomn (150 MDL)" },
-            { href: "/eeg-chisinau/", label: "EEG Chișinău (1400 MDL)" },
-            { href: "/diagnostic-amp-chisinau/", label: "Diagnostic AMP 117 (1000 MDL)" },
-            { href: "/reoencefalografie-chisinau/", label: "Reoencefalografie REG (500 MDL)" },
-            { href: "/masaj-terapeutic-chisinau/", label: "Masaj Terapeutic (200 MDL)" },
-            { href: "/kinetoterapie-chisinau/", label: "Kinetoterapie (250 MDL)" },
-            { href: "/electroforeza-amplipuls-chisinau/", label: "Electroforeză & Amplipuls (150 MDL)" },
-            { href: "/hernie-de-disc-chisinau/", label: "Hernie de disc fără operație" },
-            { href: "/dureri-de-spate-sciatica-chisinau/", label: "Dureri de spate & Sciatică" },
-            { href: "/osteocondroza-cervicala-chisinau/", label: "Osteocondroză cervicală" },
-            { href: "/tratament-migrene-chisinau/", label: "Tratament Migrene" },
-            { href: "/ameteli-vertij-chisinau/", label: "Amețeli & Vertij" },
-            { href: "/insomnie-tratament-chisinau/", label: "Tratament Insomnie" },
-            { href: "/recuperare-dupa-avc-chisinau/", label: "Recuperare după AVC" },
-            { href: "/nevralgie-neuropatie-chisinau/", label: "Nevralgie & Neuropatie" },
-            { href: "/epilepsie-convulsii-chisinau/", label: "Epilepsie & EEG" },
-            { href: "/acupunctura-reflexoterapie-chisinau/", label: "Acupunctură (400 MDL)" },
-            { href: "/psihoterapeut-stres-anxietate-chisinau/", label: "Psihoterapeut (300 MDL)" },
-            { href: "/neurolog-ciocana-chisinau/", label: "Neurolog Ciocana" },
-            { href: "/neurolog-riscani-chisinau/", label: "Neurolog Rîșcani" },
-            { href: "/neurolog-botanica-chisinau/", label: "Neurolog Botanica" },
-            { href: "/neurolog-buiucani-chisinau/", label: "Neurolog Buiucani" },
-            { href: "/neurolog-centru-chisinau/", label: "Neurolog Centru" }
+            {
+             heading: "Consultații & Specialități",
+             links: [
+              { href: "/neurolog-chisinau/", label: "Neurolog Chișinău (500 MDL)" },
+              { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (300 MDL)" },
+              { href: "/neuropediatru-chisinau/", label: "Neuropediatru Chișinău" },
+              { href: "/psihoterapeut-stres-anxietate-chisinau/", label: "Psihoterapeut (300 MDL)" },
+              { href: "/acupunctura-reflexoterapie-chisinau/", label: "Acupunctură (400 MDL)" }
+             ]
+            },
+            {
+             heading: "Diagnostic & Fizioterapie",
+             links: [
+              { href: "/eeg-chisinau/", label: "EEG Chișinău (1400 MDL)" },
+              { href: "/diagnostic-amp-chisinau/", label: "Diagnostic AMP 117 (1000 MDL)" },
+              { href: "/reoencefalografie-chisinau/", label: "Reoencefalografie REG (500 MDL)" },
+              { href: "/fizioterapie-chisinau/", label: "Fizioterapie (150 MDL)" },
+              { href: "/electrosomn-chisinau/", label: "Electrosomn (150 MDL)" },
+              { href: "/electroforeza-amplipuls-chisinau/", label: "Electroforeză & Amplipuls (150 MDL)" },
+              { href: "/masaj-terapeutic-chisinau/", label: "Masaj Terapeutic (200 MDL)" },
+              { href: "/kinetoterapie-chisinau/", label: "Kinetoterapie (250 MDL)" }
+             ]
+            },
+            {
+             heading: "Afecțiuni & Sectoare Chișinău",
+             links: [
+              { href: "/hernie-de-disc-chisinau/", label: "Hernie de disc fără operație" },
+              { href: "/dureri-de-spate-sciatica-chisinau/", label: "Dureri de spate & Sciatică" },
+              { href: "/osteocondroza-cervicala-chisinau/", label: "Osteocondroză cervicală" },
+              { href: "/tratament-migrene-chisinau/", label: "Tratament Migrene" },
+              { href: "/ameteli-vertij-chisinau/", label: "Amețeli & Vertij" },
+              { href: "/insomnie-tratament-chisinau/", label: "Tratament Insomnie" },
+              { href: "/recuperare-dupa-avc-chisinau/", label: "Recuperare după AVC" },
+              { href: "/nevralgie-neuropatie-chisinau/", label: "Nevralgie & Neuropatie" },
+              { href: "/epilepsie-convulsii-chisinau/", label: "Epilepsie & EEG" },
+              { href: "/neurolog-ciocana-chisinau/", label: "Ciocana" },
+              { href: "/neurolog-riscani-chisinau/", label: "Rîșcani" },
+              { href: "/neurolog-botanica-chisinau/", label: "Botanica" },
+              { href: "/neurolog-buiucani-chisinau/", label: "Buiucani" },
+              { href: "/neurolog-centru-chisinau/", label: "Centru" }
+             ]
+            }
            ]
-        ).map((item) => (
-         <Link key={item.href} href={item.href} className="btn btn-outline-primary btn-sm">
-          {item.label}
-         </Link>
+        ).map((col) => (
+         <div key={col.heading} className="rm-seo-bento-col">
+          <h3>{col.heading}</h3>
+          <div className="rm-seo-bento-links">
+           {col.links.map((item) => (
+            <Link key={item.href} href={item.href} className="btn btn-outline-primary btn-sm">
+             {item.label}
+            </Link>
+           ))}
+          </div>
+         </div>
         ))}
        </div>
       </div>

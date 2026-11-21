@@ -57,8 +57,12 @@ export function seoTitle(title: string, lang: Lang = "ro") {
  const clean = title.replace(/\s*\|\s*Revimed PLUS\+(?:\s+(?:Chișinău|Chisinau|Moldova|Кишинёв|Кишинев|Кишинів))?\s*$/i, "").trim();
  const hasCity = /Chișinău|Chisinau|Moldova|Кишинёв|Кишинев|Кишинів/i.test(clean);
  const suffix = hasCity ? "Revimed PLUS+" : citySuffix[lang];
- const maxBase = Math.max(24, 68 - suffix.length - 3);
- const trimmedBase = (clean.length > maxBase ? clampWords(clean, maxBase).replace(/…$/, "") : clean).replace(/[,:;—–|/-]+$/, "").trim();
+ const maxBase = Math.max(24, 62 - suffix.length - 3);
+ let trimmedBase = (clean.length > maxBase ? clampWords(clean, maxBase).replace(/…$/, "") : clean);
+ trimmedBase = trimmedBase
+  .replace(/\s*(?:[,:;—–|/&+-]+|\b(?:Dr\.?|în|in|for|and|de|și|cu|la|din|pe|pentru|и|в|для|на|с|та|для))\s*$/gi, "")
+  .replace(/\s*(?:[,:;—–|/&+-]+)\s*$/g, "")
+  .trim();
  return `${trimmedBase} | ${suffix}`;
 }
 

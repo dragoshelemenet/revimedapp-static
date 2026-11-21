@@ -3415,3 +3415,85 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* === SEO Bento Directory Hub & KPI Trust Strip & Mobile CRO Dock === */
+.rm-seo-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rm-seo-bento-col {
+  padding: 16px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(232, 245, 255, 0.62));
+  border: 1px solid rgba(11, 143, 216, 0.16);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 8px 20px rgba(7, 31, 63, 0.05);
+}
+
+.rm-seo-bento-col h3 {
+  font-size: 13.5px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #075f9e !important;
+  margin: 0 0 12px !important;
+}
+
+.rm-seo-bento-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.rm-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.rm-kpi-card {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(232, 245, 255, 0.72));
+  border: 1px solid rgba(11, 143, 216, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rm-kpi-card strong {
+  font-size: 16px;
+  font-weight: 800;
+  color: #075f9e;
+}
+
+.rm-kpi-card span {
+  font-size: 12.5px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.mobileCallBar a.rm-mbar-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #0b8fd8, #0663a8) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  border-radius: 999px;
+}
+
+@media (max-width: 960px) {
+  .rm-seo-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .rm-kpi-strip {
+    grid-template-columns: 1fr;
+  }
+}

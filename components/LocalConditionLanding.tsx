@@ -115,6 +115,21 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       </div>
      </div>
 
+     <div className="rm-kpi-strip" aria-label={isRu ? "Ключевые показатели клиники" : "Indicatori cheie Revimed PLUS+"}>
+      <div className="rm-kpi-card">
+       <strong>500 / 300 MDL</strong>
+       <span>{isRu ? "Невролог · Нейрохирург" : "Neurolog · Neurochirurg"}</span>
+      </div>
+      <div className="rm-kpi-card">
+       <strong>150 MDL · 25</strong>
+       <span>{isRu ? "Физиотерапия · аппаратов" : "Fizioterapie · aparate medicale"}</span>
+      </div>
+      <div className="rm-kpi-card">
+       <strong>35+ {isRu ? "лет · EANS" : "ani · EANS"}</strong>
+       <span>{isRu ? "Д-р Игорь Ревенко · Чеканы" : "Dr. Igor Revenco · Ciocana"}</span>
+      </div>
+     </div>
+
      <aside
       aria-label={isRu ? "Краткий ответ и цены" : "Pe scurt — date cheie și prețuri"}
       style={{
