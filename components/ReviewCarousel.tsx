@@ -50,20 +50,29 @@ export default function ReviewCarousel({ lang = "ro" }: { lang?: Lang }) {
 
   return (
     <div className="reviewCarousel">
-      <button className="reviewArrow" onClick={prev} aria-label={label.prev}>
+      <button type="button" className="reviewArrow reviewArrowDesktop" onClick={prev} aria-label={label.prev}>
         ‹
       </button>
 
-      <div className="reviewSlide">
+      <div className="reviewSlide" data-glass-card>
         <p>“{active.text[safeLang] || active.text.ro}”</p>
         <div className="stars">{"★".repeat(active.rating)}</div>
         <b>- {active.name || label.patient}</b>
         <small>{index + 1} / {reviews.length}</small>
       </div>
 
-      <button className="reviewArrow" onClick={next} aria-label={label.next}>
+      <button type="button" className="reviewArrow reviewArrowDesktop" onClick={next} aria-label={label.next}>
         ›
       </button>
+
+      <div className="reviewMobileNav">
+        <button type="button" className="reviewArrow" onClick={prev} aria-label={label.prev}>
+          ‹
+        </button>
+        <button type="button" className="reviewArrow" onClick={next} aria-label={label.next}>
+          ›
+        </button>
+      </div>
     </div>
   );
 }

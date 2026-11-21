@@ -1,6 +1,9 @@
-import { ContentSection, CardGrid, ListingCard, ReadingCard } from "@/components/ContentLayout";
+import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import { getPrices, getContact, getGallery, getContentBlock } from "@/lib/publicContent";
-import { JsonLd, absoluteUrl } from "@/lib/seo";
+import { JsonLd, absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/seo";
+import InfoPopover from "@/components/InfoPopover";
+import SmartCatalogGrid from "@/components/SmartCatalogGrid";
+import DoctorMotionCard from "@/components/DoctorMotionCard";
 
 import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
@@ -48,23 +51,107 @@ function renderBlogContent(content: string) {
   });
 }
 
-function HomeTrustSection() {
+function toWebpSrc(src: string | undefined): string {
+  if (!src) return "";
+  if (src.startsWith("/images/") && /\.(jpg|jpeg|png)$/i.test(src)) {
+    return src.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+  }
+  return src;
+}
+
+const trustCopy: Record<
+  Lang,
+  {
+    title: string;
+    popoverTitle: string;
+    lead: string;
+    p1: string;
+    p2: string;
+    cards: [string, string][];
+  }
+> = {
+  ro: {
+    title: "Experiență medicală, tratament individual și acordul pacientului",
+    popoverTitle: "Abordarea Revimed PLUS+",
+    lead: "Dr. Igor Revenco are peste 35 de ani de experiență, iar clinica Revimed PLUS+ activează de peste 20 de ani în Chișinău.",
+    p1: "La Revimed PLUS+, tratamentul se alege individual pentru fiecare pacient. Medicul discută simptomele, istoricul, preferințele, reacțiile anterioare la tratament și posibilitățile reale ale fiecărui caz.",
+    p2: "Dacă situația permite, pacientul poate opta pentru o abordare mai tradițională sau pentru metode mai blânde, cu direcție mai naturistă. Totul trebuie să fie sigur, explicat clar și făcut cu acordul pacientului.",
+    cards: [
+      ["35+ ani", "experiență medicală Dr. Igor Revenco"],
+      ["20+ ani", "experiență clinică Revimed PLUS+"],
+      ["Individual", "tratamentul se alege pentru fiecare pacient"],
+      ["Cu acord", "pacientul înțelege și acceptă planul"]
+    ]
+  },
+  en: {
+    title: "Medical experience, individualized care, and informed consent",
+    popoverTitle: "The Revimed PLUS+ Approach",
+    lead: "Dr. Igor Revenco brings over 35 years of clinical experience, and Revimed PLUS+ has served patients in Chișinău for over 20 years.",
+    p1: "At Revimed PLUS+, every treatment plan is tailored individually. The physician reviews symptoms, medical history, preferences, prior treatment responses, and realistic options for each case.",
+    p2: "When clinically safe and appropriate, patients may choose between conventional therapy or gentler, integrative methods. Every step is explained clearly and performed with the patient’s consent.",
+    cards: [
+      ["35+ yrs", "medical experience — Dr. Igor Revenco"],
+      ["20+ yrs", "clinical activity — Revimed PLUS+"],
+      ["Tailored", "individual plan for every patient"],
+      ["Consent", "clear explanation & patient agreement"]
+    ]
+  },
+  ru: {
+    title: "Медицинский опыт, индивидуальное лечение и согласие пациента",
+    popoverTitle: "Подход Revimed PLUS+",
+    lead: "Д-р Игорь Ревенко имеет более 35 лет медицинского опыта, а клиника Revimed PLUS+ работает в Кишинёве более 20 лет.",
+    p1: "В Revimed PLUS+ лечение подбирается индивидуально для каждого пациента с учётом симптомов, истории болезни, предпочтений и реакций на предыдущую терапию.",
+    p2: "Если позволяет состояние, пациент может выбрать традиционный подход или более мягкие, щадящие методы. Всё объясняется понятно и проводится с согласия пациента.",
+    cards: [
+      ["35+ лет", "медицинский опыт д-ра Игоря Ревенко"],
+      ["20+ лет", "клиническая практика Revimed PLUS+"],
+      ["Индивидуально", "план подбирается для каждого пациента"],
+      ["С согласия", "пациент понимает и принимает план"]
+    ]
+  },
+  ua: {
+    title: "Медичний досвід, індивідуальне лікування та згода пацієнта",
+    popoverTitle: "Підхід Revimed PLUS+",
+    lead: "Д-р Ігор Ревенко має понад 35 років медичного досвіду, а клініка Revimed PLUS+ працює в Кишиневі понад 20 років.",
+    p1: "У Revimed PLUS+ лікування підбирається індивідуально для кожного пацієнта з урахуванням симптомів, історії хвороби, уподобань та попередніх реакцій.",
+    p2: "Якщо стан дозволяє, пацієнт може обрати традиційний підхід або м’якші методи. Усе пояснюється зрозуміло й виконується за згодою пацієнта.",
+    cards: [
+      ["35+ років", "медичний досвід д-ра Ігоря Ревенка"],
+      ["20+ років", "клінічна практика Revimed PLUS+"],
+      ["Індивідуально", "план підбирається для кожного пацієнта"],
+      ["За згодою", "пацієнт розуміє та приймає план"]
+    ]
+  }
+};
+
+const homeEquipmentCopy: Record<Lang, { heading: string; e1: string; e2: string; e3: string }> = {
+  ro: { heading: "Utilaje Revimed PLUS+", e1: "Terapie prin electrosomn", e2: "Proceduri transcraniene", e3: "Neurostimulare funcțională" },
+  en: { heading: "Revimed PLUS+ Equipment", e1: "Electrosleep therapy", e2: "Transcranial procedures", e3: "Functional neurostimulation" },
+  ru: { heading: "Оборудование Revimed PLUS+", e1: "Терапия электросном", e2: "Транскраниальные процедуры", e3: "Функциональная нейростимуляция" },
+  ua: { heading: "Обладнання Revimed PLUS+", e1: "Терапія електросном", e2: "Транскраніальні процедури", e3: "Функціональна нейростимуляція" }
+};
+
+function HomeTrustSection({ lang = "ro" }: { lang?: Lang }) {
+ const copy = trustCopy[lang] || trustCopy.ro;
  return (
   <section className="rmSection revimedHomeTrust">
    <div className="rmShell">
     <div className="revimedTrustGrid">
      <div className="revimedTrustText">
       <span className="revimedTrustBadge">Revimed PLUS+</span>
-      <h2>Experiență medicală, tratament individual și acordul pacientului</h2>
-      <p><b>Dr. Igor Revenco</b> are peste <b>35 de ani de experiență</b>, iar clinica <b>Revimed PLUS+</b> activează de peste <b>20 de ani</b> în Chișinău.</p>
-      <p>La Revimed PLUS+, tratamentul se alege individual pentru fiecare pacient. Medicul discută simptomele, istoricul, preferințele, reacțiile anterioare la tratament și posibilitățile reale ale fiecărui caz.</p>
-      <p>Dacă situația permite, pacientul poate opta pentru o abordare mai tradițională sau pentru metode mai blânde, cu direcție mai naturistă. Totul trebuie să fie sigur, explicat clar și făcut cu acordul pacientului.</p>
+      <div className="rm-title-with-info">
+       <h2>{copy.title}</h2>
+       <InfoPopover title={copy.popoverTitle} ariaLabel={copy.popoverTitle}>
+        <p>{copy.p1}</p>
+        <p>{copy.p2}</p>
+       </InfoPopover>
+      </div>
+      <p>{copy.lead}</p>
      </div>
      <div className="revimedTrustCards">
-      <div><strong>35+ ani</strong><span>experiență medicală Dr. Igor Revenco</span></div>
-      <div><strong>20+ ani</strong><span>experiență clinică Revimed PLUS+</span></div>
-      <div><strong>Individual</strong><span>tratamentul se alege pentru fiecare pacient</span></div>
-      <div><strong>Cu acord</strong><span>pacientul înțelege și acceptă planul</span></div>
+      {copy.cards.map(([val, desc]) => (
+       <div key={val} data-glass-card><strong>{val}</strong><span>{desc}</span></div>
+      ))}
      </div>
     </div>
    </div>
@@ -90,11 +177,9 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
    <HomeStats lang={lang} />
 
    <section className="rmSection aboutBlock">
-    <div className="rmShell aboutGrid">
-     <div className="doctorVisual">
-      <img src="/images/about-us.jpg" alt="Revimed PLUS+" />
-     </div>
-     <div>
+    <div className="rmShell aboutGrid rm-about-motion-grid">
+     <DoctorMotionCard lang={lang} />
+     <div className="rm-about-copy-card" data-glass-card>
       <h2>{text.aboutTitle}</h2>
       <p>{text.aboutText1}</p>
       <p>{text.aboutText2}</p>
@@ -105,19 +190,19 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 
    <section className="rmSection homeEquipmentBlock">
     <div className="rmShell">
-     <h2 className="centerTitle">Utilaje Revimed PLUS+</h2>
+     <h2 className="centerTitle">{(homeEquipmentCopy[lang] || homeEquipmentCopy.ro).heading}</h2>
      <div className="homeEquipmentGrid">
-      <Link href={withLang("/utilaj/electrosomn-3", lang)} className="homeEquipmentCard">
-       <img src="https://1profimed.ru/wp-content/uploads/electroson-03.jpg" alt="Electrosomn" />
-       <div><span>Electrosomn</span><h3>Terapie prin electrosomn</h3></div>
+      <Link href={withLang("/utilaj/electrosomn-3", lang)} className="homeEquipmentCard" data-glass-card>
+       <img src="/images/equipment/electrosomn-3.webp" alt="Electrosomn" width={640} height={420} loading="lazy" decoding="async" />
+       <div><span>Electrosomn</span><h3>{(homeEquipmentCopy[lang] || homeEquipmentCopy.ro).e1}</h3></div>
       </Link>
-      <Link href={withLang("/utilaj/transair-01p-transair-05", lang)} className="homeEquipmentCard">
-       <img src="https://i.ytimg.com/vi/5CIIRU5jH68/maxresdefault.jpg" alt="Transair" />
-       <div><span>Transair</span><h3>Proceduri transcraniene</h3></div>
+      <Link href={withLang("/utilaj/transair-01p-transair-05", lang)} className="homeEquipmentCard" data-glass-card>
+       <img src="/images/equipment/transair.webp" alt="Transair" width={640} height={420} loading="lazy" decoding="async" />
+       <div><span>Transair</span><h3>{(homeEquipmentCopy[lang] || homeEquipmentCopy.ro).e2}</h3></div>
       </Link>
-      <Link href={withLang("/utilaj/bi-lenar", lang)} className="homeEquipmentCard">
-       <img src="https://images.prom.ua/125888856_w300_h300_apparat-dlya-elektrostimulyatsii.jpg" alt="Bi-LENAR" />
-       <div><span>Bi-LENAR</span><h3>Neurostimulare funcțională</h3></div>
+      <Link href={withLang("/utilaj/bi-lenar", lang)} className="homeEquipmentCard" data-glass-card>
+       <img src="/images/equipment/bi-lenar.webp" alt="Bi-LENAR" width={640} height={420} loading="lazy" decoding="async" />
+       <div><span>Bi-LENAR</span><h3>{(homeEquipmentCopy[lang] || homeEquipmentCopy.ro).e3}</h3></div>
       </Link>
      </div>
     </div>
@@ -125,7 +210,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 
    <HomeCTA lang={lang} />
 
-   <HomeTrustSection />
+   <HomeTrustSection lang={lang} />
 
       <section className="testimonialBand">
     <div className="rmShell">
@@ -151,10 +236,8 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
     </div>
    </PageHeading>
    <section className="rmSection aboutPageSection">
-    <div className="rmShell aboutGrid">
-     <div className="doctorVisual">
-      <img src="/images/about-us.jpg" alt="Revimed PLUS+" />
-     </div>
+    <div className="rmShell aboutGrid rm-about-motion-grid">
+     <DoctorMotionCard lang={lang} />
      <div className="adminCard prose">
       <h2>{text.aboutTitle}</h2>
       <p>{text.aboutText1}</p>
@@ -222,7 +305,7 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
         className={index === 0 || index === 3 ? "galleryPhoto galleryLarge" : "galleryPhoto"}
         key={image.id}
        >
-        <img src={image.image} alt={image.alt || image.title} loading="lazy" />
+        <img src={toWebpSrc(image.image)} alt={image.alt || image.title} loading="lazy" decoding="async" width={640} height={420} />
         <span>{translateGalleryTitle(lang, image.title, image.image)}</span>
        </a>
       ))}
@@ -258,9 +341,31 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 export function BlogTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
  const posts = getStaticPublishedPosts(lang);
+ const blogPath = `${withLang("/blog", lang)}/`;
+ const moreLabel = lang === "en" ? "More +" : lang === "ru" ? "Показать ещё +" : lang === "ua" ? "Показати ще +" : "Mai multe +";
+ const lessLabel = lang === "en" ? "Show less" : lang === "ru" ? "Свернуть" : lang === "ua" ? "Згорнути" : "Restrânge";
+
+ const smartItems = posts.map((post) => ({
+  id: String(post.id),
+  href: withLang(`/blog/${post.slug}/`, lang),
+  title: post.title,
+  description: post.excerpt,
+  image: toWebpSrc(post.image),
+  action: text.readMore.replace(/\s*→$/, "")
+ }));
 
  return (
   <>
+   <JsonLd data={breadcrumbJsonLd([
+    { name: text.home, path: withLang("/", lang) },
+    { name: text.blog, path: blogPath }
+   ])} />
+   <JsonLd data={collectionPageJsonLd({
+    name: text.blogTitle,
+    description: text.blogSubtitle,
+    path: blogPath,
+    items: smartItems.map((item) => ({ name: item.title, url: item.href }))
+   })} />
    <PageHeading>
     <div>
      <p className="crumb">{text.home} / {text.blog}</p>
@@ -268,10 +373,19 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
      <p className="lead">{text.blogSubtitle}</p>
     </div>
    </PageHeading>
-   <ContentSection><CardGrid>
-    {posts.map(post => <ListingCard key={post.id} href={withLang(`/blog/${post.slug}/`, lang)} title={post.title} description={post.excerpt} image={post.image} action={text.readMore.replace(/\s*→$/, "")} />)}
-    {posts.length === 0 && <p>{text.noPosts}</p>}
-   </CardGrid></ContentSection>
+   <ContentSection>
+    {posts.length > 0 ? (
+     <SmartCatalogGrid
+      items={smartItems}
+      initialCount={3}
+      moreLabel={moreLabel}
+      lessLabel={lessLabel}
+      useInfoPopover
+     />
+    ) : (
+     <p>{text.noPosts}</p>
+    )}
+   </ContentSection>
   </>
  );
 }
@@ -280,13 +394,20 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
  const text = t(lang);
  const post = getStaticPostBySlug(slug, lang as Lang);
  if (!post) return null;
+ const postPath = withLang(`/blog/${post.slug}/`, lang);
+ const blogPath = `${withLang("/blog", lang)}/`;
 
  return (
   <>
+   <JsonLd data={breadcrumbJsonLd([
+    { name: text.home, path: withLang("/", lang) },
+    { name: text.blog, path: blogPath },
+    { name: post.title, path: postPath }
+   ])} />
    <JsonLd data={{
     "@context": "https://schema.org", "@type": "BlogPosting",
     headline: post.title, description: post.excerpt,
-    mainEntityOfPage: absoluteUrl(withLang(`/blog/${post.slug}/`, lang)),
+    mainEntityOfPage: absoluteUrl(postPath),
     inLanguage: lang === "ua" ? "uk" : lang,
     image: post.image.startsWith("http") ? post.image : absoluteUrl(post.image),
     publisher: { "@type": "Organization", name: site.name, url: site.url }
@@ -299,8 +420,11 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     </div>
    </PageHeading>
    <ContentSection narrow><ReadingCard>
-    <img src={post.image} alt={post.title} width={1200} height={675} loading="lazy" />
+    <img src={toWebpSrc(post.image)} alt={post.title} width={1200} height={675} loading="lazy" decoding="async" />
     <div data-blog-content>{renderBlogContent(post.content)}</div>
+    <div style={{ marginTop: 24 }}>
+     <Link href={blogPath} className="rm-back-link" aria-label={text.blog}>←</Link>
+    </div>
    </ReadingCard></ContentSection>
   </>
  );

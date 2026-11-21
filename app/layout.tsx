@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
+import { Inter, Manrope } from "next/font/google";
 import "../styles/foundation.css";
 import "../styles/global.css";
+import "../styles/liquid-glass.css";
+
+const inter = Inter({
+ subsets: ["latin", "latin-ext", "cyrillic"],
+ weight: ["400", "500", "600", "700"],
+ variable: "--font-body",
+ display: "swap"
+});
+
+const manrope = Manrope({
+ subsets: ["latin", "latin-ext", "cyrillic"],
+ weight: ["600", "700", "800"],
+ variable: "--font-display",
+ display: "swap"
+});
 import { JsonLd, clinicJsonLd, websiteJsonLd } from "@/lib/seo";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
+import GlassSheenController from "../components/GlassSheenController";
 
 import MobileCallBar from "../components/MobileCallBar";
 import { site } from "../lib/site";
@@ -61,16 +78,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
  return (
-  <html lang="ro" suppressHydrationWarning>
+  <html lang="ro" className={`${inter.variable} ${manrope.variable}`} suppressHydrationWarning>
    <body>
-
+    <a href="#main-content" className="rm-skip-link">Skip to content</a>
+    <div className="rm-top-scroll-veil" aria-hidden="true" />
     <Header />
-    <LanguageFlagOverlay />
-    <main><JsonLd data={clinicJsonLd("ro")} />
+    <main id="main-content"><JsonLd data={clinicJsonLd("ro")} />
     <JsonLd data={websiteJsonLd()} />
     {children}</main>
     <Footer />
     <MobileCallBar />
+    <GlassSheenController />
 
       </body>
   </html>

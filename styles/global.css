@@ -2356,12 +2356,8 @@ select:focus-visible{
   }
 }
 @media(prefers-reduced-motion:reduce){
-  *,
-  *::before,
-  *::after{
-    animation:none!important;
-    transition:none!important;
-    scroll-behavior:auto!important;
+  html{
+    scroll-behavior:auto;
   }
 }
 .aboutBlock,
@@ -5566,7 +5562,7 @@ html body main [class*="Result"] em{
 .homeEquipmentCard{position:relative!important;min-height:310px!important;border-radius:26px!important;overflow:hidden!important;text-decoration:none!important;display:flex!important;align-items:flex-end!important;box-shadow:0 22px 55px rgba(9,31,63,.14)!important;background:#071f3f!important}
 .homeEquipmentCard img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;transition:.35s!important}
 .homeEquipmentCard:after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(180deg,rgba(4,22,48,.08),rgba(4,22,48,.84))!important}
-.homeEquipmentCard:hover img{transform:scale(1.06)!important}
+.homeEquipmentCard:hover img{transform:scale(1.06)}
 .homeEquipmentCard div{position:relative!important;z-index:2!important;padding:28px!important;color:white!important}
 .homeEquipmentCard span{display:inline-flex!important;background:white!important;color:#006bad!important;font-weight:900!important;border-radius:999px!important;padding:7px 12px!important;margin-bottom:12px!important}
 .homeEquipmentCard h3{color:white!important;margin:0!important;font-size:26px!important;line-height:1.12!important}

@@ -141,8 +141,46 @@ export function clinicJsonLd(_lang: Lang = "ro") {
    "Rehabilitation"
   ],
   availableLanguage: ["Romanian", "English", "Russian", "Ukrainian"],
+  openingHoursSpecification: [
+   {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "15:00"
+   }
+  ],
   priceRange: "$$",
-  sameAs: []
+  sameAs: ["https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/"]
+ };
+}
+
+export function collectionPageJsonLd({
+ name,
+ description,
+ path,
+ items
+}: {
+ name: string;
+ description: string;
+ path: string;
+ items: { name: string; url: string }[];
+}) {
+ return {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name,
+  description,
+  url: absoluteUrl(path),
+  mainEntity: {
+   "@type": "ItemList",
+   numberOfItems: items.length,
+   itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    url: item.url.startsWith("http") ? item.url : absoluteUrl(item.url)
+   }))
+  }
  };
 }
 

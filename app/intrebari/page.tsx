@@ -1,7 +1,7 @@
 import { ContentSection, ReadingCard, Question } from "@/components/ContentLayout";
 
 import PageHeading from "@/components/PageHeading";
-import { JsonLd, makeMetadata } from "@/lib/seo";
+import { JsonLd, breadcrumbJsonLd, makeMetadata } from "@/lib/seo";
 
 export const metadata = makeMetadata({ lang: "ro", path: "/intrebari", localized: false,
   title: "Întrebări frecvente | Revimed PLUS+",
@@ -19,6 +19,10 @@ const faqs = [
 
 export default function QuestionsPage() {
  return <>
+  <JsonLd data={breadcrumbJsonLd([
+   { name: "Acasă", path: "/" },
+   { name: "Întrebări", path: "/intrebari/" }
+  ])} />
   <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }} />
   <PageHeading><div><p>Acasă / Întrebări</p><h1>Întrebări frecvente</h1><p>Răspunsuri simple despre consultații, tratament individual, fizioterapie, recuperare, neurologie, neurochirurgie și modul în care lucrăm la Revimed PLUS+.</p></div></PageHeading>
   <ContentSection narrow>

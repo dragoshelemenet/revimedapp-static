@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
-import IconVisual from "@/components/IconVisual";
 
 type Lang = "ro" | "en" | "ru" | "ua";
 
 const facebookUrl = "https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/";
 
 const footerText: Record<Lang, {
+  tagline: string;
   rights: string;
   schedule: string;
   useful: string;
@@ -19,10 +19,11 @@ const footerText: Record<Lang, {
   links: Record<string, string>;
 }> = {
   ro: {
+    tagline: "Neurologie, neurochirurgie, recuperare medicală și fizioterapie în Chișinău.",
     rights: "Toate drepturile rezervate.",
-    schedule: "Program de lucru:",
-    useful: "Linkuri utile",
-    follow: "Urmăriți-ne",
+    schedule: "Program & Contact",
+    useful: "Navigare rapidă",
+    follow: "Facebook",
     hours: site.hours,
     address: site.address,
     links: {
@@ -37,10 +38,11 @@ const footerText: Record<Lang, {
     }
   },
   en: {
+    tagline: "Neurology, neurosurgery, medical rehabilitation, and physiotherapy in Chișinău.",
     rights: "All rights reserved.",
-    schedule: "Working hours:",
-    useful: "Useful links",
-    follow: "Follow us",
+    schedule: "Hours & Contact",
+    useful: "Quick Links",
+    follow: "Facebook",
     hours: "Monday–Friday: 09:00–15:00",
     address: "Mircea cel Bătrân St. 13/2",
     links: {
@@ -48,17 +50,18 @@ const footerText: Record<Lang, {
       about: "About",
       services: "Services",
       prices: "Prices",
-      tools: "Tests and Tools",
+      tools: "Tests & Tools",
       contact: "Contact",
-      terms: "Terms and Conditions",
+      terms: "Terms & Conditions",
       cookies: "Cookies"
     }
   },
   ru: {
+    tagline: "Неврология, нейрохирургия, медицинская реабилитация и физиотерапия в Кишинёве.",
     rights: "Все права защищены.",
-    schedule: "График работы:",
-    useful: "Полезные ссылки",
-    follow: "Мы в соцсетях",
+    schedule: "График и контакты",
+    useful: "Навигация",
+    follow: "Facebook",
     hours: "Понедельник–Пятница: 09:00–15:00",
     address: "ул. Мирча чел Бэтрын 13/2",
     links: {
@@ -73,10 +76,11 @@ const footerText: Record<Lang, {
     }
   },
   ua: {
+    tagline: "Неврологія, нейрохірургія, медична реабілітація та фізіотерапія в Кишиневі.",
     rights: "Усі права захищені.",
-    schedule: "Графік роботи:",
-    useful: "Корисні посилання",
-    follow: "Слідкуйте за нами",
+    schedule: "Графік і контакти",
+    useful: "Навігація",
+    follow: "Facebook",
     hours: "Понеділок–П’ятниця: 09:00–15:00",
     address: "вул. Мірча чел Бетрин 13/2",
     links: {
@@ -108,41 +112,66 @@ export default function Footer() {
 
   return (
     <footer className="rmFooter">
-      <div className="rmShell rmFooterGrid">
-        <div className="footerBrand">
-          <img src="/images/logo.png" alt="REVIMED" className="footerLogo" />
-          <p>© {new Date().getFullYear()} Centrul Medical Revimed PLUS+. {text.rights}</p>
-        </div>
+      <div className="rmShell">
+        <div className="rm-footer-glass">
+          <div className="rm-footer-top">
+            <div className="rm-footer-brand">
+              <img src="/images/logo.webp" alt="REVIMED" className="footerLogo" width={132} height={32} loading="lazy" decoding="async" />
+              <p className="rm-footer-tagline">{text.tagline}</p>
+              <a className="rm-footer-social-pill" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed PLUS+">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.5v3.2h2.7V22h3.3z" />
+                </svg>
+                <span>{text.follow}</span>
+              </a>
+            </div>
 
-        <div className="footerSchedule">
-          <h3>{text.schedule}</h3>
-          <p className="footerAddress">
-            <IconVisual src="https://img.icons8.com/color/96/marker.png" alt="address" className="footerMiniIcon" />{" "}
-            {text.address}
-          </p>
-          <p>{text.hours}</p>
-          <p>{site.phone}</p>
-        </div>
+            <div className="rm-footer-col">
+              <h3>{text.schedule}</h3>
+              <ul className="rm-footer-meta">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z" />
+                    <circle cx="12" cy="10" r="2.5" />
+                  </svg>
+                  <span>{text.address}</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                  <span>{text.hours}</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z" />
+                  </svg>
+                  <a href={`tel:${site.phone.replaceAll(" ", "")}`}>{site.phone}</a>
+                </li>
+              </ul>
+            </div>
 
-        <div className="footerLinks">
-          <h3>{text.useful}</h3>
-          <div>
-            <Link href={withLang("/", lang)}>{text.links.home}</Link>
-            <Link href={withLang("/despre-noi", lang)}>{text.links.about}</Link>
-            <Link href={withLang("/servicii", lang)}>{text.links.services}</Link>
-            <Link href={withLang("/preturi", lang)}>{text.links.prices}</Link>
-            <Link href={withLang("/aplicatii", lang)}>{text.links.tools}</Link>
-            <Link href={withLang("/contact", lang)}>{text.links.contact}</Link>
-            <Link href={"/termeni-si-conditii"}>{text.links.terms}</Link>
-            <Link href={"/cookies"}>{text.links.cookies}</Link>
+            <div className="rm-footer-col">
+              <h3>{text.useful}</h3>
+              <nav className="rm-footer-nav" aria-label={text.useful}>
+                <Link href={withLang("/", lang)}>{text.links.home}</Link>
+                <Link href={withLang("/despre-noi", lang)}>{text.links.about}</Link>
+                <Link href={withLang("/servicii", lang)}>{text.links.services}</Link>
+                <Link href={withLang("/preturi", lang)}>{text.links.prices}</Link>
+                <Link href={withLang("/aplicatii", lang)}>{text.links.tools}</Link>
+                <Link href={withLang("/contact", lang)}>{text.links.contact}</Link>
+              </nav>
+            </div>
           </div>
-        </div>
 
-        <div className="footerSocial">
-          <h3>{text.follow}</h3>
-          <a className="fbIcon8" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed">
-            <img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook" />
-          </a>
+          <div className="rm-footer-bottom">
+            <span>© {new Date().getFullYear()} Centrul Medical Revimed PLUS+. {text.rights}</span>
+            <div className="rm-footer-legal">
+              <Link href="/termeni-si-conditii">{text.links.terms}</Link>
+              <Link href="/cookies">{text.links.cookies}</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
