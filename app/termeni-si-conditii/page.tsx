@@ -1,14 +1,33 @@
-
+import Link from "next/link";
 import PageHeading from "@/components/PageHeading";
-import { makeMetadata } from "@/lib/seo";
-export const metadata = makeMetadata({ lang: "ro", path: "/termeni-si-conditii", localized: false,
+import { JsonLd, absoluteUrl, breadcrumbJsonLd, makeMetadata, siteUrl } from "@/lib/seo";
+
+export const metadata = makeMetadata({
+ lang: "ro",
+ path: "/termeni-si-conditii",
+ localized: false,
  title: "Termeni și Condiții",
- description: "Termeni și condiții pentru utilizarea site-ului Revimed PLUS+."
+ description: "Termeni și condiții pentru utilizarea site-ului și instrumentelor educaționale Revimed PLUS+ Chișinău."
 });
 
 export default function TermsPage() {
  return (
   <>
+   <JsonLd
+    data={breadcrumbJsonLd([
+     { name: "Acasă", path: "/" },
+     { name: "Termeni și Condiții", path: "/termeni-si-conditii/" }
+    ])}
+   />
+   <JsonLd
+    data={{
+     "@context": "https://schema.org",
+     "@type": "WebPage",
+     name: "Termeni și Condiții",
+     url: absoluteUrl("/termeni-si-conditii/"),
+     publisher: { "@id": `${siteUrl}/#medical-clinic` }
+    }}
+   />
    <PageHeading>
     <div>
      <p className="crumb">Acasă / Termeni și Condiții</p>
@@ -18,7 +37,7 @@ export default function TermsPage() {
    </PageHeading>
 
    <section className="rmSection legalSection">
-    <article className="rmShell legalCard">
+    <article className="rmShell legalCard" data-glass-card>
      <h2>1. Informații generale</h2>
      <p>
       Site-ul Revimed PLUS+ oferă informații generale despre servicii medicale, contact, prețuri,
@@ -62,8 +81,8 @@ export default function TermsPage() {
 
      <h2>5. Prețuri și informații</h2>
      <p>
-      Prețurile și informațiile afișate pot fi actualizate. Pentru confirmare, programare și detalii
-      exacte, contactați direct centrul medical.
+      Prețurile și informațiile afișate sunt orientative și pot fi actualizate. Pentru confirmare,
+      programare și detalii exacte, contactați direct centrul medical.
      </p>
 
      <h2>6. Drepturi de autor</h2>
@@ -76,6 +95,18 @@ export default function TermsPage() {
      <p>
       Pentru întrebări despre site sau servicii, utilizați pagina de contact.
      </p>
+
+     <div className="rm-quick-links-bar">
+      <Link href="/cookies/" className="btn btn-outline-primary btn-sm">
+       Cookies și Confidențialitate
+      </Link>
+      <Link href="/intrebari/" className="btn btn-outline-primary btn-sm">
+       Întrebări frecvente
+      </Link>
+      <Link href="/contact/" className="btn btn-primary btn-sm">
+       Contact
+      </Link>
+     </div>
     </article>
    </section>
   </>
