@@ -50,7 +50,7 @@ function clampWords(text: string, maxLen: number) {
  if (clean.length <= maxLen) return clean;
  const cut = clean.slice(0, maxLen - 1);
  const lastSpace = cut.lastIndexOf(" ");
- return (lastSpace > maxLen * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[,:;—–-]+$/, "").trim() + "…";
+ return (lastSpace > maxLen * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[,:;—–|/-]+$/, "").trim() + "…";
 }
 
 export function seoTitle(title: string, lang: Lang = "ro") {
@@ -58,7 +58,7 @@ export function seoTitle(title: string, lang: Lang = "ro") {
  const hasCity = /Chișinău|Chisinau|Moldova|Кишинёв|Кишинев|Кишинів/i.test(clean);
  const suffix = hasCity ? "Revimed PLUS+" : citySuffix[lang];
  const maxBase = Math.max(24, 68 - suffix.length - 3);
- const trimmedBase = clean.length > maxBase ? clampWords(clean, maxBase).replace(/…$/, "") : clean;
+ const trimmedBase = (clean.length > maxBase ? clampWords(clean, maxBase).replace(/…$/, "") : clean).replace(/[,:;—–|/-]+$/, "").trim();
  return `${trimmedBase} | ${suffix}`;
 }
 

@@ -171,6 +171,15 @@ export default function Footer() {
                     <Link href="/neurolog-chisinau/">Neurolog Chișinău</Link>
                     <Link href="/neurochirurg-chisinau/">Neurochirurg Chișinău</Link>
                     <Link href="/fizioterapie-chisinau/">Fizioterapie Chișinău</Link>
+                    <Link href="/neuropediatru-chisinau/">Neuropediatru Chișinău</Link>
+                    <Link href="/electrosomn-chisinau/">Electrosomn Chișinău</Link>
+                  </>
+                )}
+                {lang === "ru" && (
+                  <>
+                    <Link href="/ru/nevrolog-kishinev/">Невролог Кишинёв</Link>
+                    <Link href="/ru/neyrohirurg-kishinev/">Нейрохирург Кишинёв</Link>
+                    <Link href="/ru/fizioterapiya-kishinev/">Физиотерапия Кишинёв</Link>
                   </>
                 )}
               </nav>

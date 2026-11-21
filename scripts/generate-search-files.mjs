@@ -45,7 +45,7 @@ if (!urls.length) throw new Error('No exported index.html pages found. Run next 
 function urlPriority(url) {
   const p = new URL(url).pathname;
   if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
-  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau)\//.test(p)) return '0.9';
+  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev)\//.test(p)) return '0.9';
   if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
   return '0.7';
 }

@@ -9,7 +9,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/neurochirurg-chisinau",
  localized: false,
- title: "Neurochirurg Chișinău — Hernie de Disc & Coloană | Dr. Igor Revenco",
+ title: "Neurochirurg Chișinău (Ciocana) — Evaluare RMN & Hernie de Disc",
  description:
   "Consultație la medic neurochirurg în Chișinău — Dr. Igor Revenco (doctor în neurochirurgie, membru EANS, 35+ ani experiență). Evaluare RMN/CT hernie de disc, sciatică și tratament conservator."
 });

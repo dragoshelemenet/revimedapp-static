@@ -22,9 +22,23 @@ export default function Header() {
   if (currentCleanPath === "/video-uri" && target === "ro") return "/galerie";
   if (target === lang) return pathname;
   if (["/intrebari", "/cookies", "/termeni-si-conditii"].includes(currentCleanPath)) return withLang("/", target);
-  if (currentCleanPath === "/neurolog-chisinau") return withLang("/servicii/consultatii-neurologice", target);
-  if (currentCleanPath === "/neurochirurg-chisinau") return withLang("/servicii/consultatii-neurochirurgie", target);
-  if (currentCleanPath === "/fizioterapie-chisinau") return withLang("/servicii/fizioterapie-si-reabilitare", target);
+  if (currentCleanPath === "/neurolog-chisinau" || currentCleanPath === "/nevrolog-kishinev") {
+    if (target === "ro") return "/neurolog-chisinau";
+    if (target === "ru") return "/ru/nevrolog-kishinev";
+    return withLang("/servicii/consultatii-neurologice", target);
+  }
+  if (currentCleanPath === "/neurochirurg-chisinau" || currentCleanPath === "/neyrohirurg-kishinev") {
+    if (target === "ro") return "/neurochirurg-chisinau";
+    if (target === "ru") return "/ru/neyrohirurg-kishinev";
+    return withLang("/servicii/consultatii-neurochirurgie", target);
+  }
+  if (currentCleanPath === "/fizioterapie-chisinau" || currentCleanPath === "/fizioterapiya-kishinev") {
+    if (target === "ro") return "/fizioterapie-chisinau";
+    if (target === "ru") return "/ru/fizioterapiya-kishinev";
+    return withLang("/servicii/fizioterapie-si-reabilitare", target);
+  }
+  if (currentCleanPath === "/neuropediatru-chisinau") return withLang("/servicii/consultatii-neurologice", target);
+  if (currentCleanPath === "/electrosomn-chisinau") return withLang("/utilaj/electrosomn-3", target);
   // Article slugs differ by language; use the translated listing until pairs are curated.
   if (currentCleanPath.startsWith("/blog/")) return withLang("/blog/" + getTranslatedBlogSlug(currentCleanPath.split("/")[2], target), target);
   return withLang(currentCleanPath, target);

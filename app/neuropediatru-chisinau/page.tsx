@@ -1,0 +1,68 @@
+import Link from "next/link";
+import PageHeading from "@/components/PageHeading";
+import { ContentSection, ReadingCard } from "@/components/ContentLayout";
+import { JsonLd, absoluteUrl, breadcrumbJsonLd, makeMetadata, siteUrl } from "@/lib/seo";
+
+export const dynamic = "force-static";
+
+export const metadata = makeMetadata({
+ lang: "ro",
+ path: "/neuropediatru-chisinau",
+ localized: false,
+ title: "Neuropediatru Chișinău (Neurolog Copii) — Dr. Igor Revenco",
+ description:
+  "Consultație la neuropediatru (neurolog pentru copii) în Chișinău, Ciocana — Dr. Igor Revenco, 35+ ani experiență. Somn, vorbire, cefalee, ticuri, tonus și dezvoltare neurologică."
+});
+
+const faqs = [
+ {
+  q: "De la ce vârstă poate fi evaluat copilul la neuropediatru în Chișinău?",
+  a: "Evaluările neuropediatrice acoperă atât copiii mici, cât și preșcolarii și adolescenții — pentru somn, dureri de cap, ticuri, vorbire, atenție, coordonare sau monitorizare după traumatisme."
+ },
+ {
+  q: "Cum mă programez la neuropediatru la Revimed PLUS+ Ciocana?",
+  a: "Sunați la 022 60 50 60 sau +373 79 422 908, de luni până vineri între 09:00 și 15:00. Adresa: Str. Mircea cel Bătrân 13/2, Chișinău."
+ }
+];
+
+export default function NeuropediatruChisinauPage() {
+ return (
+  <>
+   <JsonLd data={breadcrumbJsonLd([{ name: "Acasă", path: "/" }, { name: "Neuropediatru Chișinău", path: "/neuropediatru-chisinau/" }])} />
+   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage", name: "Neuropediatru Chișinău — Revimed PLUS+", url: absoluteUrl("/neuropediatru-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
+   <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
+   <PageHeading>
+    <div>
+     <p><Link href="/">Acasă</Link> / Neuropediatru Chișinău</p>
+     <h1>Neuropediatru Chișinău — Consultații Neurologice pentru Copii</h1>
+     <p>Evaluare blândă și individualizată de neurologie pediatrică cu Dr. Igor Revenco (35+ ani experiență clinică) în Chișinău, sectorul Ciocana.</p>
+    </div>
+   </PageHeading>
+   <ContentSection narrow>
+    <ReadingCard>
+     <h2>Când este util un consult la neuropediatru</h2>
+     <ul>
+      <li>Tulburări persistente de somn, treziri nocturne frecvente sau coșmaruri;</li>
+      <li>Dureri de cap la copii și adolescenți, oboseală școlară accentuată;</li>
+      <li>Întârzieri în dezvoltarea vorbirii, coordonării sau echilibrului;</li>
+      <li>Ticuri motorii/vocale, clipit excesiv, anxietate sau dificultăți de concentrare;</li>
+      <li>Monitorizare neurologică după traumatisme sau recomandări din partea pediatrului.</li>
+     </ul>
+     <h2>Întrebări frecvente — Neuropediatrie Chișinău</h2>
+     {faqs.map((f) => (
+      <details key={f.q} open style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+       <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
+       <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
+      </details>
+     ))}
+     <div className="rm-quick-links-bar">
+      <Link href="/dr-igor-revenco/" className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
+      <Link href="/neurolog-chisinau/" className="btn btn-outline-primary btn-sm">Neurolog Chișinău</Link>
+      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri</Link>
+      <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>
+     </div>
+    </ReadingCard>
+   </ContentSection>
+  </>
+ );
+}
