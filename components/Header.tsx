@@ -4,7 +4,8 @@ import { getTranslatedBlogSlug } from "@/lib/blogSlugTranslations";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { site } from "@/lib/site";
 import { cleanPath, isLang, languages, langLabels, t, type Lang, withLang } from "@/lib/i18n";
 
@@ -32,6 +33,28 @@ export default function Header() {
   return clean === path || clean.startsWith(`${path}/`);
  };
 
+ useEffect(() => {
+  if (!open) return;
+  const onKeyDown = (e: KeyboardEvent) => {
+   if (e.key === "Escape") setOpen(false);
+  };
+  window.addEventListener("keydown", onKeyDown);
+  return () => window.removeEventListener("keydown", onKeyDown);
+ }, [open]);
+
+ const navItems = [
+  { href: link("/"), label: text.home, active: isActive("/") },
+  { href: link("/despre-noi"), label: text.about, active: isActive("/despre-noi") },
+  { href: link("/servicii"), label: text.services, active: isActive("/servicii") },
+  { href: link("/aplicatii"), label: text.apps, active: isActive("/aplicatii") },
+  { href: link("/utilaj"), label: text.equipment || "Equipment", active: isActive("/utilaj") },
+  { href: link("/preturi"), label: text.prices, active: isActive("/preturi") },
+  { href: link("/galerie"), label: text.gallery, active: isActive("/galerie") },
+  { href: link("/blog"), label: text.blog, active: isActive("/blog") },
+  { href: link("/intrebari"), label: text.questions || "Întrebări", active: isActive("/intrebari") },
+  { href: link("/contact"), label: text.contact, active: isActive("/contact") }
+ ];
+
  return (
   <header className={styles.header}>
    <div className="rm-header-row">
@@ -52,17 +75,12 @@ export default function Header() {
       <span></span>
      </button>
 
-     <div className={`${styles.links} ${open ? styles.open : ""}`}>
-      <Link className={isActive("/") ? styles.active : ""} href={link("/")} onClick={close}>{text.home}</Link>
-      <Link className={isActive("/despre-noi") ? styles.active : ""} href={link("/despre-noi")} onClick={close}>{text.about}</Link>
-      <Link className={isActive("/servicii") ? styles.active : ""} href={link("/servicii")} onClick={close}>{text.services}</Link>
-      <Link className={isActive("/aplicatii") ? styles.active : ""} href={link("/aplicatii")} onClick={close}>{text.apps}</Link>
-      <Link className={isActive("/utilaj") ? styles.active : ""} href={link("/utilaj")} onClick={close}>{text.equipment || "Equipment"}</Link>
-      <Link className={isActive("/preturi") ? styles.active : ""} href={link("/preturi")} onClick={close}>{text.prices}</Link>
-      <Link className={isActive("/galerie") ? styles.active : ""} href={link("/galerie")} onClick={close}>{text.gallery}</Link>
-      <Link className={isActive("/blog") ? styles.active : ""} href={link("/blog")} onClick={close}>{text.blog}</Link>
-      <Link className={isActive("/intrebari") ? styles.active : ""} href={link("/intrebari")} onClick={close}>{text.questions || "Întrebări"}</Link>
-      <Link className={isActive("/contact") ? styles.active : ""} href={link("/contact")} onClick={close}>{text.contact}</Link>
+     <div className={styles.links}>
+      {navItems.map((item) => (
+       <Link key={item.href} className={item.active ? styles.active : ""} href={item.href} onClick={close}>
+        {item.label}
+       </Link>
+      ))}
      </div>
     </nav>
 
@@ -80,7 +98,32 @@ export default function Header() {
     </div>
    </div>
 
-   {open && <button className={styles.backdrop} aria-label={lang === "en" ? "Close menu" : lang === "ru" ? "Закрыть меню" : lang === "ua" ? "Закрити меню" : "Închide meniul"} onClick={close}></button>}
+   {open &&
+    typeof document !== "undefined" &&
+    createPortal(
+     <>
+      <button
+       type="button"
+       className="rm-mobile-glass-backdrop"
+       aria-label={lang === "en" ? "Close menu" : lang === "ru" ? "Закрыть меню" : lang === "ua" ? "Закрити меню" : "Închide meniul"}
+       onClick={close}
+      />
+      <div className="rm-mobile-glass-drawer" role="dialog" aria-label="Menu">
+       {navItems.map((item) => (
+        <Link
+         key={item.href}
+         href={item.href}
+         className={`rm-mobile-glass-link ${item.active ? "is-active" : ""}`}
+         onClick={close}
+        >
+         <span>{item.label}</span>
+         <span aria-hidden="true">›</span>
+        </Link>
+       ))}
+      </div>
+     </>,
+     document.body
+    )}
   </header>
  );
 }
