@@ -13,6 +13,24 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "7-healthy-foods-for-energy-digestion-and-metabolism",
     ru: "7-poleznyh-produktov-dlya-energii-pishchevareniya-i-metabolizma",
     ua: "7-korysnyh-produktiv-dlya-energiyi-travlennya-i-metabolizmu"
+  },
+  herniaDisc: {
+    ro: "hernie-de-disc-fara-operatie-cand-ajuta-fizioterapia-chisinau",
+    en: "disc-herniation-without-surgery-physiotherapy-neurosurgeon-chisinau",
+    ru: "gryzha-diska-bez-operacii-fizioterapiya-neyrohirurg-kishinev",
+    ua: "hryzha-dyska-bez-operatsiyi-fizioterapiya-neyrohirurg-kyshyniv"
+  },
+  migraineVertigo: {
+    ro: "dureri-de-cap-migrene-ameteli-cand-mergi-la-neurolog-chisinau",
+    en: "headaches-migraines-dizziness-when-to-see-neurologist-chisinau",
+    ru: "golovnye-boli-migreni-golovokruzhenie-nevrolog-kishinev",
+    ua: "holovni-boli-mihreni-zapamorochennya-nevroloh-kyshyniv"
+  },
+  pediatricNeuro: {
+    ro: "neuropediatru-chisinau-cand-are-nevoie-copilul-de-consultatie",
+    en: "pediatric-neurologist-chisinau-when-your-child-needs-consultation",
+    ru: "detskiy-nevrolog-kishinev-kogda-pokazat-rebenka-vrachu",
+    ua: "dytyachyy-nevroloh-kyshyniv-koly-pokazaty-dytynu-likaryu"
   }
 };
 
