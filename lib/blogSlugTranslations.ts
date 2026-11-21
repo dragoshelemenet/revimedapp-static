@@ -55,6 +55,36 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "mri-ct-rheotest-how-to-prepare-neurology-consultation",
     ru: "mrt-kt-reografiya-rheotest-podgotovka-k-nevrologu",
     ua: "mrt-kt-reohrafiya-rheotest-pidhotovka-do-nevroloha"
+  },
+  neurologyPrices2026: {
+    ro: "cat-costa-neurolog-eeg-fizioterapie-chisinau-2026",
+    en: "neurologist-eeg-physiotherapy-prices-chisinau-2026",
+    ru: "skolko-stoit-nevrolog-eeg-fizioterapiya-kishinev-2026",
+    ua: "skilky-koshtuye-nevroloh-eeg-fizioterapiya-kyshyniv-2026"
+  },
+  eegGuideChisinau: {
+    ro: "electroencefalografie-eeg-chisinau-pregatire-interpretare",
+    en: "eeg-chisinau-preparation-indications-interpretation",
+    ru: "elektroentsefalografiya-eeg-kishinev-podgotovka-rasshifrovka",
+    ua: "elektroentsefalohrafiya-eeg-kyshyniv-pidhotovka"
+  },
+  ampNonInvasive: {
+    ro: "diagnostic-neinvaziv-amp-117-indici-fara-intepaturi-chisinau",
+    en: "non-invasive-amp-117-clinical-indices-chisinau",
+    ru: "neinvazivnaya-diagnostika-amp-117-pokazateley-kishinev",
+    ua: "neinvazyvna-diahnostyka-amp-117-pokaznykiv-kyshyniv"
+  },
+  amplipulsElectrophoresis: {
+    ro: "electroforeza-si-amplipuls-smt-dureri-spate-chisinau",
+    en: "electrophoresis-amplipuls-smt-back-pain-chisinau",
+    ru: "elektroforez-i-amplipuls-smt-pri-bolyah-v-spine-kishinev",
+    ua: "elektroforez-ta-amplipuls-smt-pry-bolyah-u-spyni-kyshyniv"
+  },
+  cervicalOsteochondrosis: {
+    ro: "osteocondroza-cervicala-ameteli-tinitus-reg-chisinau",
+    en: "cervical-osteochondrosis-dizziness-tinnitus-reg-chisinau",
+    ru: "sheynyy-osteohondroz-golovokruzhenie-shum-v-ushah-reg-kishinev",
+    ua: "shyynyy-osteohondroz-zapamorochennya-shum-u-vuhah-kyshyniv"
   }
 };
 
