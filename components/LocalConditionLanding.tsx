@@ -79,38 +79,33 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
 
    <ContentSection narrow>
     <ReadingCard>
-     <div
-      style={{
-       display: "flex",
-       flexWrap: "wrap",
-       alignItems: "center",
-       justifyContent: "space-between",
-       gap: 10,
-       padding: "12px 16px",
-       marginBottom: 20,
-       borderRadius: 16,
-       background: "linear-gradient(135deg, rgba(11, 143, 216, 0.1), rgba(56, 189, 248, 0.05))",
-       border: "1px solid rgba(11, 143, 216, 0.22)"
-      }}
-     >
-      <div style={{ fontSize: 13.5, color: "#08234a" }}>
+     <div className="rm-trust-banner">
+      <div className="rm-trust-banner-meta">
        <strong>Dr. Igor Revenco</strong> ·{" "}
        {isRu
         ? "Высшая категория · Член EANS · 35+ лет опыта · Пн–Пт 09:00–15:00 · Чеканы"
         : "Categorie superioară · Membru EANS · 35+ ani · Luni–Vineri 09:00–15:00 · Ciocana"}
       </div>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+      <div className="rm-trust-banner-actions">
        <a href="tel:022605060" className="btn btn-primary btn-sm">
-        {isRu ? "Позвонить: 022 60 50 60" : "Sună acum: 022 60 50 60"}
+        {isRu ? "Позвонить: 022 60 50 60" : "Sună: 022 60 50 60"}
+       </a>
+       <a
+        href="https://wa.me/37379422908"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-sm btn-whatsapp-soft"
+       >
+        WhatsApp
        </a>
        <Link href={pricesHref} className="btn btn-outline-primary btn-sm">
-        {isRu ? "Цены (101 услуга)" : "Vezi prețurile"}
+        {isRu ? "Цены (101 услуга)" : "Prețuri (101)"}
        </Link>
        <Link
         href={isRu ? "/ru/aplicatii/teste-si-instrumente/screening-neurologic/" : "/aplicatii/teste-si-instrumente/screening-neurologic/"}
         className="btn btn-outline-primary btn-sm"
        >
-        {isRu ? "Бесплатный тест 2 мин →" : "Test neurologic gratuit 2 min →"}
+        {isRu ? "Тест 2 мин →" : "Test 2 min →"}
        </Link>
       </div>
      </div>
@@ -130,22 +125,10 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       </div>
      </div>
 
-     <aside
-      aria-label={isRu ? "Краткий ответ и цены" : "Pe scurt — date cheie și prețuri"}
-      style={{
-       padding: "14px 18px",
-       marginBottom: 18,
-       borderRadius: 16,
-       background: "rgba(240, 248, 255, 0.85)",
-       borderLeft: "4px solid #0b8fd8",
-       fontSize: 14.5,
-       lineHeight: 1.58,
-       color: "#0b2545"
-      }}
-     >
-      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
-       <span>{isRu ? "Кратко — ключевые факты" : "Pe scurt — date cheie Revimed PLUS+"}</span>
-       <span>{isRu ? "Обновлено: Ноябрь 2026" : "Actualizat medical: Noiembrie 2026"}</span>
+     <aside className="rm-citable-summary" aria-label={isRu ? "Краткий ответ и цены" : "Pe scurt — date cheie și prețuri"}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{isRu ? "Кратко — ключевые факты" : "Pe scurt — date cheie Revimed PLUS+"}</span>
+       <span className="rm-citable-date">{isRu ? "Обновлено: Ноябрь 2026" : "Actualizat medical: Noiembrie 2026"}</span>
       </div>
       <p style={{ margin: 0 }}>
        {p.directAnswer ||
@@ -193,14 +176,33 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       ))}
      </div>
 
+     <h2>{isRu ? "Прозрачная стоимость курса (2026) — без скрытых доплат" : "Cost estimativ transparent (2026) — fără costuri ascunse"}</h2>
+     <div className="rm-price-advantage-grid">
+      <div className="rm-price-adv-card">
+       <span className="rm-adv-tag">{isRu ? "Консультация" : "Consultație"}</span>
+       <strong>500 / 300 MDL</strong>
+       <span>{isRu ? "Невролог 500 MDL · Нейрохирург 300 MDL (ниже среднего по Кишинёву 600–650 MDL)" : "Neurolog 500 MDL · Neurochirurg 300 MDL (sub media din Chișinău 600–650 MDL)"}</span>
+      </div>
+      <div className="rm-price-adv-card">
+       <span className="rm-adv-tag">{isRu ? "Курс 5 сеансов" : "Curs 5 ședințe"}</span>
+       <strong>750 MDL</strong>
+       <span>{isRu ? "5 процедур физиотерапии / Электросна / Амплипульса (по 150 MDL)" : "5 ședințe fizioterapie / Electrosomn / Amplipuls (150 MDL/ședință)"}</span>
+      </div>
+      <div className="rm-price-adv-card">
+       <span className="rm-adv-tag">{isRu ? "Курс 10 сеансов" : "Curs 10 ședințe"}</span>
+       <strong>1500 MDL</strong>
+       <span>{isRu ? "Полный курс восстановления из 10 процедур · Лечебный массаж — 200 MDL" : "Curs complet de 10 proceduri · Masaj terapeutic 60 min — 200 MDL"}</span>
+      </div>
+     </div>
+
      <h2>{isRu ? "Как выбрать направление в Revimed PLUS+" : "Ghid rapid: ce consultație sau procedură ți se potrivește"}</h2>
-     <div style={{ overflowX: "auto", marginBottom: 22 }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
+     <div className="rm-decision-table-wrap">
+      <table className="rm-decision-table">
        <thead>
-        <tr style={{ background: "rgba(11, 143, 216, 0.12)", color: "#08234a" }}>
-         <th style={{ textAlign: "left", padding: "10px 12px", borderRadius: "10px 0 0 0" }}>{isRu ? "Ситуация" : "Situația ta"}</th>
-         <th style={{ textAlign: "left", padding: "10px 12px" }}>{isRu ? "Рекомендуемый шаг" : "Pasul recomandat"}</th>
-         <th style={{ textAlign: "left", padding: "10px 12px", borderRadius: "0 10px 0 0" }}>{isRu ? "Что взять с собой" : "Ce să aduci"}</th>
+        <tr>
+         <th>{isRu ? "Ситуация" : "Situația ta"}</th>
+         <th>{isRu ? "Рекомендуемый шаг" : "Pasul recomandat"}</th>
+         <th>{isRu ? "Что взять с собой" : "Ce să aduci"}</th>
         </tr>
        </thead>
        <tbody>

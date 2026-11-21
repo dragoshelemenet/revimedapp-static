@@ -100,21 +100,10 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
   )}
   <PageHeading><div><p><Link href={`${base}/`}>{labels.nav}</Link> / {item.title}</p><h1>{item.title}</h1><p>{item.short}</p></div></PageHeading>
   <ContentSection narrow><ReadingCard>
-   <aside
-    style={{
-     padding: "12px 16px",
-     marginBottom: 18,
-     borderRadius: 14,
-     background: "rgba(240, 248, 255, 0.85)",
-     borderLeft: "4px solid #0b8fd8",
-     fontSize: 14,
-     lineHeight: 1.55,
-     color: "#0b2545"
-    }}
-   >
-    <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 4, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
-     <span>Revimed PLUS+ · Chișinău (Ciocana)</span>
-     <span>
+   <aside className="rm-citable-summary">
+    <div className="rm-citable-summary-head">
+     <span className="rm-citable-pill">Revimed PLUS+ · Chișinău (Ciocana)</span>
+     <span className="rm-citable-date">
       {base.startsWith("/en")
        ? "Updated: November 2026"
        : base.startsWith("/ru")
