@@ -116,12 +116,21 @@ export function makeMetadata({
  };
 }
 
-export function clinicJsonLd(_lang: Lang = "ro") {
+const clinicDescriptions: Record<Lang, string> = {
+ ro: "Centrul Medical Revimed PLUS+ din Chișinău — neurologie, neurochirurgie, neuropediatrie, recuperare medicală, fizioterapie, kinetoterapie și medicină integrativă cu experiență clinică din 1991, condus de Dr. Igor Revenco.",
+ en: "Revimed PLUS+ Medical Center in Chișinău, Moldova — neurology, neurosurgery, pediatric neurology, medical rehabilitation, physiotherapy, and integrative medicine since 1991, led by Dr. Igor Revenco.",
+ ru: "Медицинский центр Revimed PLUS+ в Кишинёве — неврология, нейрохирургия, детская неврология, медицинская реабилитация, физиотерапия и интегративная медицина с 1991 года под руководством д-ра Игоря Ревенко.",
+ ua: "Медичний центр Revimed PLUS+ у Кишиневі — неврологія, нейрохірургія, дитяча неврологія, медична реабілітація, фізіотерапія та інтегративна медицина з 1991 року під керівництвом д-ра Ігоря Ревенка."
+};
+
+export function clinicJsonLd(lang: Lang = "ro") {
  return {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   "@id": `${siteUrl}/#medical-clinic`,
   name: seoBase.name,
+  alternateName: ["Revimed", "Revimed PLUS+", "Centrul Medical Revimed Chișinău"],
+  description: clinicDescriptions[lang],
   url: siteUrl,
   logo: seoBase.logo,
   image: seoBase.image,
@@ -131,15 +140,56 @@ export function clinicJsonLd(_lang: Lang = "ro") {
    streetAddress: "Str. Mircea cel Bătrân 13/2",
    addressLocality: "Chișinău",
    addressRegion: "Chișinău",
+   postalCode: "MD-2044",
    addressCountry: "MD"
   },
+  geo: {
+   "@type": "GeoCoordinates",
+   latitude: 47.0477461,
+   longitude: 28.8887469
+  },
+  hasMap: "https://www.google.com/maps/place/Centrul+Medical+Revimed/@47.0477461,28.8887469,17z",
+  areaServed: [
+   { "@type": "City", name: "Chișinău" },
+   { "@type": "Country", name: "Republica Moldova" }
+  ],
   medicalSpecialty: [
    "Neurology",
    "Neurosurgery",
+   "Pediatric",
    "Physiotherapy",
    "PhysicalTherapy",
    "Rehabilitation"
   ],
+  founder: {
+   "@id": `${siteUrl}/dr-igor-revenco/#physician`,
+   "@type": "Physician",
+   name: "Dr. Igor Revenco",
+   url: `${siteUrl}/dr-igor-revenco/`
+  },
+  contactPoint: [
+   {
+    "@type": "ContactPoint",
+    telephone: "+373-22-60-50-60",
+    contactType: "appointments",
+    areaServed: "MD",
+    availableLanguage: ["Romanian", "English", "Russian", "Ukrainian"]
+   },
+   {
+    "@type": "ContactPoint",
+    telephone: "+373-79-422-908",
+    contactType: "customer service",
+    areaServed: "MD",
+    availableLanguage: ["Romanian", "English", "Russian", "Ukrainian"]
+   }
+  ],
+  aggregateRating: {
+   "@type": "AggregateRating",
+   ratingValue: "4.2",
+   reviewCount: "98",
+   bestRating: "5",
+   worstRating: "1"
+  },
   availableLanguage: ["Romanian", "English", "Russian", "Ukrainian"],
   openingHoursSpecification: [
    {
@@ -190,7 +240,9 @@ export function websiteJsonLd() {
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
   name: seoBase.name,
-  url: siteUrl
+  url: siteUrl,
+  inLanguage: ["ro", "en", "ru", "uk"],
+  publisher: { "@id": `${siteUrl}/#medical-clinic` }
  };
 }
 

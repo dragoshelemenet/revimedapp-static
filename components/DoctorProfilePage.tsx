@@ -246,6 +246,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
   const physicianJsonLd = {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": `${siteUrl}/dr-igor-revenco/#physician`,
     name: "Dr. Igor Revenco",
     jobTitle: c.subtitle,
     description: c.lead,

@@ -46,5 +46,59 @@ if (!urls.length) throw new Error('No exported index.html pages found. Run next 
 const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
   + urls.map((url) => `  <url><loc>${escapeXml(url)}</loc></url>`).join('\n') + '\n</urlset>\n';
 await writeFile(path.join(output, 'sitemap.xml'), xml);
-await writeFile(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${new URL('/sitemap.xml', origin).href}\n`);
-console.log(`Generated sitemap.xml (${urls.length} URLs) and robots.txt from the static export.`);
+await writeFile(
+  path.join(output, 'robots.txt'),
+  [
+    'User-agent: *',
+    'Allow: /',
+    '',
+    'User-agent: OAI-SearchBot',
+    'Allow: /',
+    '',
+    'User-agent: ChatGPT-User',
+    'Allow: /',
+    '',
+    'User-agent: Claude-SearchBot',
+    'Allow: /',
+    '',
+    'User-agent: Claude-User',
+    'Allow: /',
+    '',
+    'User-agent: PerplexityBot',
+    'Allow: /',
+    '',
+    `Sitemap: ${new URL('/sitemap.xml', origin).href}`,
+    ''
+  ].join('\n')
+);
+
+const llmsTxt = [
+  '# Centrul Medical Revimed PLUS+ (Chișinău, Moldova)',
+  '',
+  '> Centrul Medical Revimed PLUS+ din Chișinău (Str. Mircea cel Bătrân 13/2, sectorul Ciocana) oferă consultații neurologice, neurochirurgie, neurologie pediatrică, recuperare medicală, fizioterapie, diagnostic funcțional și terapii complementare.',
+  '',
+  '## Lead Physician',
+  '- **Dr. Igor Revenco**: Neurolog, neurochirurg și neuropediatru, medic de categorie superioară, doctor în neurochirurgie (USMF „Nicolae Testemițanu”), membru al Asociației Europene de Neurochirurgie (EANS), 35+ ani experiență clinică.',
+  `- Profile: ${new URL('/dr-igor-revenco/', origin).href}`,
+  '',
+  '## Contact & Hours',
+  '- Address: Str. Mircea cel Bătrân 13/2, MD-2044, Chișinău, Republica Moldova',
+  '- Hours: Monday–Friday, 09:00–15:00 (Europe/Chisinau)',
+  '- Phone: 022 60 50 60 | +373 79 422 908',
+  '- Languages: Romanian (/), English (/en/), Russian (/ru/), Ukrainian (/ua/)',
+  '',
+  '## Key Pages',
+  `- Home: ${new URL('/', origin).href}`,
+  `- Dr. Igor Revenco: ${new URL('/dr-igor-revenco/', origin).href}`,
+  `- Services: ${new URL('/servicii/', origin).href}`,
+  `- Medical Equipment (25 devices): ${new URL('/utilaj/', origin).href}`,
+  `- Prices (101 services, multi-currency): ${new URL('/preturi/', origin).href}`,
+  `- Patient Tools & Assessments: ${new URL('/aplicatii/', origin).href}`,
+  `- FAQ: ${new URL('/intrebari/', origin).href}`,
+  `- Blog: ${new URL('/blog/', origin).href}`,
+  `- Contact & Map: ${new URL('/contact/', origin).href}`,
+  `- Sitemap: ${new URL('/sitemap.xml', origin).href}`,
+  ''
+].join('\n');
+await writeFile(path.join(output, 'llms.txt'), llmsTxt);
+console.log(`Generated sitemap.xml (${urls.length} URLs), robots.txt, and llms.txt from the static export.`);

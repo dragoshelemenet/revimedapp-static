@@ -398,7 +398,18 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     mainEntityOfPage: absoluteUrl(postPath),
     inLanguage: lang === "ua" ? "uk" : lang,
     image: post.image.startsWith("http") ? post.image : absoluteUrl(post.image),
-    publisher: { "@type": "Organization", name: site.name, url: site.url }
+    author: {
+     "@type": "Physician",
+     "@id": `${site.url}/dr-igor-revenco/#physician`,
+     name: "Dr. Igor Revenco",
+     url: absoluteUrl(withLang("/dr-igor-revenco/", lang))
+    },
+    reviewedBy: {
+     "@type": "Physician",
+     "@id": `${site.url}/dr-igor-revenco/#physician`,
+     name: "Dr. Igor Revenco"
+    },
+    publisher: { "@id": `${site.url}/#medical-clinic`, "@type": "MedicalClinic", name: site.name, url: site.url }
    }} />
    <PageHeading>
     <div>
@@ -408,6 +419,17 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     </div>
    </PageHeading>
    <ContentSection narrow><ReadingCard>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8, marginBottom: 16, fontSize: 13.5, color: "#516575" }}>
+     <span>
+      {lang === "en" ? "Medical review:" : lang === "ru" ? "Медицинская редакция:" : lang === "ua" ? "Медична редакція:" : "Revizie medicală:"}{" "}
+      <Link href={withLang("/dr-igor-revenco/", lang)} style={{ fontWeight: 700, color: "#075f9e" }}>
+       Dr. Igor Revenco
+      </Link>
+     </span>
+     <Link href={withLang("/contact/", lang)} style={{ fontWeight: 600, color: "#0b8fd8" }}>
+      {text.contact} →
+     </Link>
+    </div>
     <img src={toWebpSrc(post.image)} alt={post.title} width={1200} height={675} loading="lazy" decoding="async" />
     <div data-blog-content>{renderBlogContent(post.content)}</div>
     <div style={{ marginTop: 24 }}>

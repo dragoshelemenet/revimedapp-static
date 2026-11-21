@@ -1,8 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, Source_Sans_3 } from "next/font/google";
 import "../styles/foundation.css";
 import "../styles/global.css";
 import "../styles/liquid-glass.css";
+
+export const viewport: Viewport = {
+ themeColor: "#0b8fd8"
+};
 
 const sourceSans = Source_Sans_3({
  subsets: ["latin", "latin-ext", "cyrillic"],

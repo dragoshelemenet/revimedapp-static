@@ -52,9 +52,17 @@ export function CatalogList({base, labels, items}: Props & {items: Item[]}) {
  </>;
 }
 
+function getDetailLinks(base: string) {
+ if (base.startsWith("/en")) return { prefix: "/en", doctor: "Dr. Igor Revenco", prices: "Prices", contact: "Book appointment" };
+ if (base.startsWith("/ru")) return { prefix: "/ru", doctor: "Д-р Игорь Ревенко", prices: "Цены", contact: "Записаться" };
+ if (base.startsWith("/ua")) return { prefix: "/ua", doctor: "Д-р Ігор Ревенко", prices: "Ціни", contact: "Записатися" };
+ return { prefix: "", doctor: "Dr. Igor Revenco", prices: "Prețuri", contact: "Programare & Contact" };
+}
+
 export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
  const homePath = base.split("/").slice(0, -1).join("/") || "/";
  const itemPath = `${base}/${item.slug}/`;
+ const links = getDetailLinks(base);
  return <>
   <JsonLd data={breadcrumbJsonLd([
    { name: labels.home, path: homePath },
@@ -70,6 +78,11 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
   <ContentSection narrow><ReadingCard>
    {item.sections.map(section=><section key={section.title}><h2>{section.title}</h2>{section.body.length>1 ? <ul>{section.body.map((line,index)=><li key={index}>{line}</li>)}</ul> : <p>{section.body[0]}</p>}</section>)}
    <ContentNote>{labels.note}</ContentNote>
+   <nav aria-label="Related clinic pages" style={{ display: "flex", flexWrap: "wrap", gap: "10px", margin: "18px 0 10px" }}>
+    <Link href={`${links.prefix}/dr-igor-revenco/`} className="btn btn-outline-primary btn-sm">{links.doctor}</Link>
+    <Link href={`${links.prefix}/preturi/`} className="btn btn-outline-primary btn-sm">{links.prices}</Link>
+    <Link href={`${links.prefix}/contact/`} className="btn btn-primary btn-sm">{links.contact}</Link>
+   </nav>
    <Link href={`${base}/`} className="rm-back-link" aria-label={labels.back}>←</Link>
   </ReadingCard></ContentSection>
  </>;
