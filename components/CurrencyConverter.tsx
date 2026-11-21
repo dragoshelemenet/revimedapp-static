@@ -5,8 +5,9 @@ import { useMemo, useState } from "react";
 const currencies = {
  MDL: { label: "MDL", rate: 1 },
  EUR: { label: "EUR", rate: 19.4 },
+ RON: { label: "RON", rate: 3.9 },
  USD: { label: "USD", rate: 17.9 },
- RON: { label: "RON", rate: 3.9 }
+ UAH: { label: "UAH", rate: 0.43 }
 };
 
 type Currency = keyof typeof currencies;

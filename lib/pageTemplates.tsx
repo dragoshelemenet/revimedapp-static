@@ -15,7 +15,7 @@ import { getStaticPublishedPosts, getStaticPostBySlug } from "@/lib/staticBlogPo
 import { translateGalleryTitle } from "@/lib/galleryTranslate";
 import { t, withLang, type Lang } from "@/lib/i18n";
 import CurrencyConverter from "@/components/CurrencyConverter";
-import PricesAccordion from "@/components/PricesAccordion";
+import PricesInteractiveSection from "@/components/PricesInteractiveSection";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import IconVisual from "@/components/IconVisual";
 import HomeCTA from "@/components/HomeCTA";
@@ -270,11 +270,13 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
    </PageHeading>
    <section className="rmSection pricesCleanSection">
     <div className="rmShell pricesModernLayout">
-     <CurrencyConverter labels={text} />
-     <div className="priceNotice">
-      <b>Info:</b> {text.priceNote}: {site.phone} · {site.phone2}
-     </div>
-     <PricesAccordion groups={groups} prices={prices} servicesCountLabel={text.servicesCount} />
+     <PricesInteractiveSection
+      lang={lang}
+      groups={groups}
+      prices={prices}
+      servicesCountLabel={text.servicesCount}
+      converterLabels={text}
+     />
     </div>
    </section>
   </>
