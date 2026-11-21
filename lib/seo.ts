@@ -31,9 +31,17 @@ export function absoluteUrl(path = "/") {
  return `${siteUrl}${clean}`;
 }
 
-export function seoTitle(title: string) {
- const clean = title.replace(/\s*\|\s*Revimed PLUS\+(?: Chișinău)?\s*$/i, "");
- return `${clean} | Revimed PLUS+ Chișinău`;
+const citySuffix: Record<Lang, string> = {
+ ro: "Revimed PLUS+ Chișinău",
+ en: "Revimed PLUS+ Chișinău",
+ ru: "Revimed PLUS+ Кишинёв",
+ ua: "Revimed PLUS+ Кишинів"
+};
+
+export function seoTitle(title: string, lang: Lang = "ro") {
+ const clean = title.replace(/\s*\|\s*Revimed PLUS\+(?:\s+(?:Chișinău|Кишинёв|Кишинів))?\s*$/i, "").trim();
+ const hasCity = /Chișinău|Chisinau|Кишинёв|Кишинев|Кишинів/i.test(clean);
+ return hasCity ? `${clean} | Revimed PLUS+` : `${clean} | ${citySuffix[lang]}`;
 }
 
 export function makeMetadata({
@@ -54,10 +62,11 @@ export function makeMetadata({
  const canonicalPath = `${withLang(path, lang).replace(/\/+$/, "")}/`;
  const canonical = absoluteUrl(canonicalPath);
  const ogImage = image?.startsWith("http") ? image : absoluteUrl(image || site.image);
+ const fullTitle = seoTitle(title, lang);
 
  return {
   metadataBase: new URL(siteUrl),
-  title: { absolute: seoTitle(title) },
+  title: { absolute: fullTitle },
   description,
   keywords: [
    "Revimed PLUS+",
@@ -85,7 +94,7 @@ export function makeMetadata({
    locale: langNames[lang],
    url: canonical,
    siteName: seoBase.name,
-   title: seoTitle(title),
+   title: fullTitle,
    description,
    images: [
     {
@@ -98,7 +107,7 @@ export function makeMetadata({
   },
   twitter: {
    card: "summary_large_image",
-   title: seoTitle(title),
+   title: fullTitle,
    description,
    images: [ogImage]
   },

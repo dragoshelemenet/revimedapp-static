@@ -12,6 +12,7 @@ type Item = {
  image?: string;
  imageAlt?: string;
  sections: { title: string; body: string[] }[];
+ faqs?: { q: string; a: string }[];
 };
 type Labels = { home: string; nav: string; title: string; subtitle: string; open: string; note: string; back: string };
 type Props = { base: string; labels: Labels };
@@ -84,6 +85,19 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
    path: itemPath,
    image: item.image
   })} />
+  {item.faqs && item.faqs.length > 0 && (
+   <JsonLd
+    data={{
+     "@context": "https://schema.org",
+     "@type": "FAQPage",
+     mainEntity: item.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a }
+     }))
+    }}
+   />
+  )}
   <PageHeading><div><p><Link href={`${base}/`}>{labels.nav}</Link> / {item.title}</p><h1>{item.title}</h1><p>{item.short}</p></div></PageHeading>
   <ContentSection narrow><ReadingCard>
    {item.image && (
@@ -93,6 +107,17 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
     </figure>
    )}
    {item.sections.map(section=><section key={section.title}><h2>{section.title}</h2>{section.body.length>1 ? <ul>{section.body.map((line,index)=><li key={index}>{line}</li>)}</ul> : <p>{section.body[0]}</p>}</section>)}
+   {item.faqs && item.faqs.length > 0 && (
+    <section style={{ marginTop: 22 }}>
+     <h2>{base.startsWith("/en") ? "Frequently asked questions" : base.startsWith("/ru") ? "Частые вопросы" : base.startsWith("/ua") ? "Часті запитання" : "Întrebări frecvente"}</h2>
+     {item.faqs.map((f) => (
+      <details key={f.q} open style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+       <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
+       <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
+      </details>
+     ))}
+    </section>
+   )}
    <ContentNote>{labels.note}</ContentNote>
    <nav aria-label="Related clinic pages" style={{ display: "flex", flexWrap: "wrap", gap: "10px", margin: "18px 0 10px" }}>
     <Link href={`${links.prefix}/dr-igor-revenco/`} className="btn btn-outline-primary btn-sm">{links.doctor}</Link>

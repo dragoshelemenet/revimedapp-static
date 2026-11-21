@@ -30,6 +30,7 @@ import PricesInteractiveSection from "@/components/PricesInteractiveSection";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import IconVisual from "@/components/IconVisual";
 import HomeCTA from "@/components/HomeCTA";
+import { getLocalizedServices } from "@/lib/servicesLocalized";
 import HomeStats from "@/components/HomeStats";
 
 function renderBlogContent(content: string) {
@@ -174,6 +175,15 @@ function HomeTrustSection({ lang = "ro" }: { lang?: Lang }) {
 
 export function HomeTemplate({ lang }: { lang: Lang }) {
  const text = t(lang);
+ const coreServices = getLocalizedServices(lang);
+ const servicesHeading =
+  lang === "en"
+   ? "Core Medical Services in Chișinău"
+   : lang === "ru"
+     ? "Основные медицинские услуги в Кишинёве"
+     : lang === "ua"
+       ? "Основні медичні послуги в Кишиневі"
+       : "Servicii medicale principale în Chișinău";
 
  return (
   <>
@@ -191,6 +201,27 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
    </section>
 
    <HomeStats lang={lang} />
+
+   <section className="rmSection rm-home-services-section">
+    <div className="rmShell">
+     <h2 className="centerTitle">{servicesHeading}</h2>
+     <div className="rm-home-services-grid">
+      {coreServices.map((srv) => (
+       <Link
+        key={srv.slug}
+        href={withLang(`/servicii/${srv.slug}/`, lang)}
+        className="rm-home-service-card"
+        data-glass-card
+       >
+        <span className="rm-home-service-badge">{srv.category}</span>
+        <h3>{srv.title}</h3>
+        <p>{srv.short}</p>
+        <span className="rm-home-service-cta">{text.readMore}</span>
+       </Link>
+      ))}
+     </div>
+    </div>
+   </section>
 
    <section className="rmSection aboutBlock">
     <div className="rmShell aboutGrid rm-about-motion-grid">

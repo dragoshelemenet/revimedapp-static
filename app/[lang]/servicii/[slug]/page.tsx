@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceDetailPage } from "@/components/ServicesPages";
 import { getLocalizedService } from "@/lib/servicesLocalized";
-import { normalizeLang, servicesText } from "@/lib/services";
+import { getServiceSeo } from "@/lib/servicesSeo";
+import { normalizeLang } from "@/lib/services";
 import { makeMetadata } from "@/lib/seo";
 export const dynamicParams = false;
 
@@ -29,7 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const safeLang = normalizeLang(lang);
   const item = getLocalizedService(safeLang, slug);
   if (!item) return {};
-  return makeMetadata({ lang: safeLang, path: "/servicii/" + slug, title: item.title, description: item.short });
+  const seo = getServiceSeo(slug, safeLang);
+  return makeMetadata({
+    lang: safeLang,
+    path: "/servicii/" + slug,
+    title: seo?.metaTitle || item.title,
+    description: seo?.metaDescription || item.short
+  });
 }
 
 export default async function Page({ params }: Props) {
