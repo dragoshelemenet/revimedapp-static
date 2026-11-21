@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import PageHeading from "@/components/PageHeading";
 import IconVisual from "@/components/IconVisual";
 
@@ -1025,6 +1026,39 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
        </div>
       </article>
      )}
+
+     <article className="adminCard prose" data-glass-card style={{ marginTop: 22 }}>
+      <h2>
+       {lang === "en"
+        ? "How to use this assessment before your clinic visit"
+        : lang === "ru"
+          ? "Как использовать этот тест перед визитом к врачу"
+          : lang === "ua"
+            ? "Як використати цей тест перед візитом до лікаря"
+            : "Cum folosești această evaluare înainte de consultație"}
+      </h2>
+      <p>{cfg.lead[lang]}</p>
+      <ul>
+       {cfg.tips[lang].map((tip) => (
+        <li key={tip}>{tip}</li>
+       ))}
+      </ul>
+      <p style={{ fontSize: 13.5, color: "#516575" }}>{text.disclaimer}</p>
+      <div className="rm-quick-links-bar">
+       <Link href={lang === "ro" ? "/servicii/consultatii-neurologice/" : `/${lang}/servicii/consultatii-neurologice/`} className="btn btn-outline-primary btn-sm">
+        {lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}
+       </Link>
+       <Link href={lang === "ro" ? "/dr-igor-revenco/" : `/${lang}/dr-igor-revenco/`} className="btn btn-outline-primary btn-sm">
+        Dr. Igor Revenco
+       </Link>
+       <Link href={lang === "ro" ? "/preturi/" : `/${lang}/preturi/`} className="btn btn-outline-primary btn-sm">
+        {lang === "ru" ? "Цены" : lang === "ua" ? "Ціни" : lang === "en" ? "Prices" : "Prețuri"}
+       </Link>
+       <Link href={lang === "ro" ? "/contact/" : `/${lang}/contact/`} className="btn btn-primary btn-sm">
+        {lang === "ru" ? "Записаться" : lang === "ua" ? "Записатися" : lang === "en" ? "Book Appointment" : "Programare & Contact"}
+       </Link>
+      </div>
+     </article>
     </div>
    </section>
   </>

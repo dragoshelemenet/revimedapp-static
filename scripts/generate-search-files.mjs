@@ -45,7 +45,7 @@ if (!urls.length) throw new Error('No exported index.html pages found. Run next 
 function urlPriority(url) {
   const p = new URL(url).pathname;
   if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
-  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact)\//.test(p)) return '0.9';
+  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau)\//.test(p)) return '0.9';
   if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
   return '0.7';
 }
@@ -96,6 +96,9 @@ const llmsTxt = [
   '## Key Pages',
   `- Home: ${new URL('/', origin).href}`,
   `- Dr. Igor Revenco: ${new URL('/dr-igor-revenco/', origin).href}`,
+  `- Neurolog Chișinău: ${new URL('/neurolog-chisinau/', origin).href}`,
+  `- Neurochirurg Chișinău: ${new URL('/neurochirurg-chisinau/', origin).href}`,
+  `- Fizioterapie Chișinău: ${new URL('/fizioterapie-chisinau/', origin).href}`,
   `- Services: ${new URL('/servicii/', origin).href}`,
   `- Medical Equipment (25 devices): ${new URL('/utilaj/', origin).href}`,
   `- Prices (101 services, multi-currency): ${new URL('/preturi/', origin).href}`,

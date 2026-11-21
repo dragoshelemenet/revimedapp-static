@@ -22,6 +22,9 @@ export default function Header() {
   if (currentCleanPath === "/video-uri" && target === "ro") return "/galerie";
   if (target === lang) return pathname;
   if (["/intrebari", "/cookies", "/termeni-si-conditii"].includes(currentCleanPath)) return withLang("/", target);
+  if (currentCleanPath === "/neurolog-chisinau") return withLang("/servicii/consultatii-neurologice", target);
+  if (currentCleanPath === "/neurochirurg-chisinau") return withLang("/servicii/consultatii-neurochirurgie", target);
+  if (currentCleanPath === "/fizioterapie-chisinau") return withLang("/servicii/fizioterapie-si-reabilitare", target);
   // Article slugs differ by language; use the translated listing until pairs are curated.
   if (currentCleanPath.startsWith("/blog/")) return withLang("/blog/" + getTranslatedBlogSlug(currentCleanPath.split("/")[2], target), target);
   return withLang(currentCleanPath, target);

@@ -166,6 +166,13 @@ export default function Footer() {
                 <Link href={withLang("/preturi", lang)}>{text.links.prices}</Link>
                 <Link href={withLang("/aplicatii", lang)}>{text.links.tools}</Link>
                 <Link href={withLang("/contact", lang)}>{text.links.contact}</Link>
+                {lang === "ro" && (
+                  <>
+                    <Link href="/neurolog-chisinau/">Neurolog Chișinău</Link>
+                    <Link href="/neurochirurg-chisinau/">Neurochirurg Chișinău</Link>
+                    <Link href="/fizioterapie-chisinau/">Fizioterapie Chișinău</Link>
+                  </>
+                )}
               </nav>
             </div>
           </div>
