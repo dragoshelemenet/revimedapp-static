@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Golos_Text, Onest } from "next/font/google";
 import "../styles/foundation.css";
 import "../styles/global.css";
 import "../styles/liquid-glass.css";
 
-const inter = Inter({
+const golos = Golos_Text({
  subsets: ["latin", "latin-ext", "cyrillic"],
  weight: ["400", "500", "600", "700"],
  variable: "--font-body",
  display: "swap"
 });
 
-const manrope = Manrope({
+const onest = Onest({
  subsets: ["latin", "latin-ext", "cyrillic"],
- weight: ["600", "700", "800"],
+ weight: ["500", "600", "700", "800"],
  variable: "--font-display",
  display: "swap"
 });
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
  return (
-  <html lang="ro" className={`${inter.variable} ${manrope.variable}`} suppressHydrationWarning>
+  <html lang="ro" className={`${golos.variable} ${onest.variable}`} suppressHydrationWarning>
    <body>
     <a href="#main-content" className="rm-skip-link">Skip to content</a>
     <div className="rm-top-scroll-veil" aria-hidden="true" />
