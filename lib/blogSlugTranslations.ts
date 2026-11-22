@@ -115,6 +115,18 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "frozen-shoulder-adhesive-capsulitis-brachial-plexitis-physiotherapy-chisinau",
     ru: "plechelopatochnyy-periartroz-zamorozhennoe-plecho-pleksit-fizioterapiya-kishinev",
     ua: "plecholopatkovyy-periartroz-zamorozhene-pleche-pleksyt-fizioterapiya-kyshyniv"
+  },
+  carpalTunnelNeuropathy: {
+    ro: "sindrom-tunel-carpian-neuropatii-compresive-amorteli-maini-chisinau",
+    en: "carpal-tunnel-syndrome-compression-neuropathies-treatment-chisinau",
+    ru: "tunnelnyy-sindrom-kompressionnye-neyropatii-onemenie-ruk-kishinev",
+    ua: "tunelnyy-syndrom-kompresiyni-neyropatiyi-oniminnya-ruk-kyshyniv"
+  },
+  vegetativeDystoniaChestPain: {
+    ro: "distonie-neurovegetativa-depresie-mascata-dureri-piept-chisinau",
+    en: "autonomic-dystonia-masked-depression-chest-pain-neurologist-chisinau",
+    ru: "vsd-skrytaya-depressiya-bol-v-grudi-nevrolog-kishinev",
+    ua: "vsd-prykhovana-depresiya-bil-u-hrudyakh-nevroloh-kyshyniv"
   }
 };
 

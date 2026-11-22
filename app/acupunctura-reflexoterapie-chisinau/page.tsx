@@ -21,18 +21,18 @@ export default function AcupuncturaReflexoterapieChisinauPage() {
    h1="Acupunctură & Reflexoterapie Medicală în Chișinău (Ciocana)"
    lead="Terapie integrativă cu bază neurologică în Chișinău pentru dureri cronice, nevralgii, migrene, stres și recuperare funcțională."
    directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la medic acupuncturist costă 400 MDL (repetată 350 MDL), iar consultația la medic reflexolog costă 500 MDL (repetată 400 MDL). Programări: 022 60 50 60."
-   introParagraph="Acupunctura și reflexoterapia medicală stimulează puncte neuro-reflexogene precise, declanșând mecanismele naturale ale organismului de reducere a durerii, relaxare musculară și reglare neurovegetativă."
+   introParagraph="Din perspectivă neurofiziologică modernă, acupunctura și reflexoterapia medicală acționează pe trei niveluri complementare: local (ameliorarea microcirculației și reducerea spasmului miofascial), segmentar-medular (mecanismul de control al porții durerii — „gate control”) și central (stimularea secreției proprii de endorfine, enkefaline și serotonină pentru echilibrarea sistemului nervos vegetativ)."
    symptomsHeading="Indicații frecvente pentru acupunctură și reflexoterapie"
    symptoms={[
-    "Dureri lombare, cervicale, sciatică și nevralgii faciale sau intercostale;",
-    "Migrene, cefalee cronică și tulburări de somn (insomnie);",
-    "Stres prelungit, anxietate, distonie neurovegetativă și oboseală;",
-    "Recuperare complementară după afecțiuni neurologice (pareze, neuropatii)."
+    "Dureri lombare, cervicale, sciatică, sindrom de tunel carpian și nevralgii faciale sau intercostale;",
+    "Migrene, cefalee de tensiune și tulburări de somn (insomnie);",
+    "Stres prelungit, anxietate, distonie neurovegetativă și epuizare cronică;",
+    "Recuperare complementară după pareze faciale (nevrită de nerv facial), neuropatii și AVC."
 ]}
-   approachHeading="Medicină integrativă în condiții clinice sigure"
+   approachHeading="Medicină integrativă și modulație mezodiencefalică (MDM) în condiții sigure"
    approachParagraphs={[
-    "La Revimed PLUS+, acupunctura și reflexoterapia nu sunt izolate de medicina clasică: ele completează diagnosticul neurologic și pot fi asociate cu fizioterapie (Electrosomn, Amplipuls — 150 MDL).",
-    "Se folosesc exclusiv materiale sterile de unică folosință și protocoale personalizate."
+    "La Revimed PLUS+, acupunctura și reflexoterapia completează diagnosticul neurologic și pot fi asociate cu fizioterapie (Electrosomn, Transair TES, Amplipuls — 150 MDL) sau Modulație Mezodiencefalică (aparatele MDM-101, MDM-2000-1 și MDM-K), care reglează centrii adaptativi ai hipotalamusului și sistemului neuro-endocrin.",
+    "Se folosesc exclusiv ace sterile de unică folosință și protocoale personalizate adaptate diagnosticului clinic."
 ]}
    equipmentHeading="Terapii complementare din clinică"
    equipmentCards={[
