@@ -49,10 +49,10 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     ],
     eduTitle: "Studii, Titluri și Afilieri Profesionale",
     eduItems: [
-      "Doctor în neurochirurgie — studii de doctorat efectuate la Universitatea de Stat de Medicină și Farmacie „Nicolae Testemițanu” (USMF), Chișinău.",
-      "Medic de categorie superioară în neurologie, neurochirurgie și neurologie pediatrică.",
-      "Membru al Asociației Europene de Neurochirurgie (EANS).",
-      "Peste 35 de ani de practică medicală neîntreruptă și peste 20 de ani la conducerea Centrului Medical Revimed PLUS+ din Chișinău."
+      "Absolvent al Universității de Stat de Medicină și Farmacie „Nicolae Testemițanu” (USMF, 1991), rezidențiat (1991–1994) și doctor în neurochirurgie (USMF, Chișinău).",
+      "Medic neurochirurg la Spitalul Clinic Municipal de Copii „V. Ignatenco” (1994–2007) și fondator / medic principal al Centrului Medical Revimed PLUS+ din 2007.",
+      "Medic de categorie superioară în neurologie, neurochirurgie și neurologie pediatrică, membru al Asociației Europene de Neurochirurgie (EANS).",
+      "Autor a zeci de lucrări științifice în neurologie, neurochirurgie și neuroreabilitare și deținător al brevetului de invenție pentru „Aparatul Revimed vertebro”."
     ],
     specTitle: "Specializări și Competențe Clinice",
     specItems: [
@@ -264,6 +264,9 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
     worksFor: {
       "@id": `${siteUrl}/#medical-clinic`
     },
+    sameAs: [
+      "https://www.youtube.com/@revimedpluschisinau"
+    ],
     telephone: [site.phone, site.phone2],
     address: {
       "@type": "PostalAddress",
@@ -376,6 +379,45 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                   <a href={`tel:${site.phone2.replaceAll(" ", "")}`}>{site.phone2}</a>
                 </span>
               </div>
+            </div>
+          </section>
+
+          <section className="rm-doc-glass-block" data-glass-card>
+            <h2>
+              {lang === "ru"
+                ? "Основные направления и консультации в Кишинёве"
+                : lang === "en"
+                  ? "Clinical Specialties & Dedicated Guides in Chișinău"
+                  : lang === "ua"
+                    ? "Основні клінічні напрямки у Кишиневі"
+                    : "Direcții clinice și pagini dedicate în Chișinău"}
+            </h2>
+            <div className="rm-quick-links-bar" style={{ marginTop: 10 }}>
+              {lang === "ru" ? (
+                <>
+                  <Link href="/ru/nevrolog-kishinev/" className="btn btn-outline-primary btn-sm">Невролог Кишинёв</Link>
+                  <Link href="/ru/neyrohirurg-kishinev/" className="btn btn-outline-primary btn-sm">Нейрохирург Кишинёв</Link>
+                  <Link href="/ru/detskiy-nevrolog-kishinev/" className="btn btn-outline-primary btn-sm">Детский невролог</Link>
+                  <Link href="/ru/epilepsiya-kishinev/" className="btn btn-outline-primary btn-sm">Эпилепсия и ЭЭГ</Link>
+                  <Link href="/ru/nevralgiya-neyropatiya-kishinev/" className="btn btn-outline-primary btn-sm">Невралгия и нейропатия</Link>
+                  <Link href="/ru/psihoterapevt-kishinev/" className="btn btn-outline-primary btn-sm">Психотерапевт</Link>
+                  <Link href="/ru/igloukalyvanie-kishinev/" className="btn btn-outline-primary btn-sm">Иглоукалывание</Link>
+                  <Link href="/ru/elektroforez-amplipuls-kishinev/" className="btn btn-outline-primary btn-sm">Электрофорез и Амплипульс</Link>
+                  <Link href="/ru/kinezoterapiya-kishinev/" className="btn btn-outline-primary btn-sm">Кинезиотерапия</Link>
+                </>
+              ) : (
+                <>
+                  <Link href="/neurolog-ciocana-chisinau/" className="btn btn-outline-primary btn-sm">Neurolog Ciocana</Link>
+                  <Link href="/ameteli-vertij-chisinau/" className="btn btn-outline-primary btn-sm">Amețeli &amp; Vertij</Link>
+                  <Link href="/epilepsie-convulsii-chisinau/" className="btn btn-outline-primary btn-sm">Epilepsie &amp; EEG</Link>
+                  <Link href="/nevralgie-neuropatie-chisinau/" className="btn btn-outline-primary btn-sm">Nevralgie &amp; Neuropatie</Link>
+                  <Link href="/insomnie-tratament-chisinau/" className="btn btn-outline-primary btn-sm">Tratament Insomnie</Link>
+                  <Link href="/osteocondroza-cervicala-chisinau/" className="btn btn-outline-primary btn-sm">Osteocondroză Cervicală</Link>
+                  <Link href="/recuperare-dupa-avc-chisinau/" className="btn btn-outline-primary btn-sm">Recuperare post-AVC</Link>
+                  <Link href="/psihoterapeut-stres-anxietate-chisinau/" className="btn btn-outline-primary btn-sm">Psihoterapeut &amp; Stres</Link>
+                  <Link href="/acupunctura-reflexoterapie-chisinau/" className="btn btn-outline-primary btn-sm">Acupunctură &amp; Reflexoterapie</Link>
+                </>
+              )}
             </div>
           </section>
 
