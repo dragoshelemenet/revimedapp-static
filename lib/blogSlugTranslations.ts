@@ -127,6 +127,18 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "autonomic-dystonia-masked-depression-chest-pain-neurologist-chisinau",
     ru: "vsd-skrytaya-depressiya-bol-v-grudi-nevrolog-kishinev",
     ua: "vsd-prykhovana-depresiya-bil-u-hrudyakh-nevroloh-kyshyniv"
+  },
+  parkinsonMemoryRehab: {
+    ro: "boala-parkinson-tulburari-memorie-neurolog-recuperare-chisinau",
+    en: "parkinson-disease-memory-disorders-neurologist-rehab-chisinau",
+    ru: "bolezn-parkinsona-narusheniya-pamyati-nevrolog-reabilitaciya-kishinev",
+    ua: "khvoroba-parkinsona-porushennya-pamyati-nevroloh-kyshyniv"
+  },
+  childStutteringAdhd: {
+    ro: "logonevroza-balbaiala-adhd-anxietate-copii-eeg-electrosomn-chisinau",
+    en: "childhood-stuttering-adhd-anxiety-eeg-electrosleep-chisinau",
+    ru: "logonevroz-zaikanie-sdvg-trevozhnost-u-detey-eeg-elektroson-kishinev",
+    ua: "lohonevroz-zayikannya-rduh-tryvozhnist-u-ditey-eeg-elektroson-kyshyniv"
   }
 };
 
