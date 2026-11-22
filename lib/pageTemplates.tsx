@@ -938,9 +938,9 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       )}
      </aside>
     </div>
-    <div className="rmShell" style={{ marginTop: 18 }}>
-     <article className="adminCard prose" data-glass-card>
-      <h2>
+    <div className="rmShell" style={{ marginTop: 22 }}>
+     <article className="rm-seo-bento-shell" data-glass-card>
+      <h2 style={{ marginTop: 0 }}>
        {lang === "en"
         ? "Location, Directions & Consultation Preparation — Ciocana, Chișinău"
         : lang === "ru"
@@ -949,7 +949,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
             ? "Як дістатися та підготуватися до прийому — Кишинів, Чекани"
             : "Acces, localizare și pregătire pentru consultație — Chișinău, Ciocana"}
       </h2>
-      <p>
+      <p style={{ maxWidth: "none", marginBottom: 16 }}>
        {lang === "en"
         ? "Revimed PLUS+ Medical Center is located on Str. Mircea cel Bătrân 13/2 (MD-2044, Ciocana sector, Chișinău), with convenient public transit access. Please bring any previous MRI, CT, X-ray images (CD/film) and medication lists for consultations with Dr. Igor Revenco."
         : lang === "ru"
