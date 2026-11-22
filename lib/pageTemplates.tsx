@@ -394,11 +394,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/lechenie-migreni-kishinev/", label: "Лечение мигрени" },
               { href: "/ru/nevralgiya-neyropatiya-kishinev/", label: "Невралгия и нейропатия" },
               { href: "/ru/epilepsiya-kishinev/", label: "Эпилепсия и ЭЭГ" },
-              { href: "/ru/nevrolog-chekany-kishinev/", label: "Чеканы" },
-              { href: "/ru/nevrolog-ryshkanovka-kishinev/", label: "Рышкановка" },
-              { href: "/ru/nevrolog-botanika-kishinev/", label: "Ботаника" },
-              { href: "/ru/nevrolog-buyukany-kishinev/", label: "Буюканы" },
-              { href: "/ru/nevrolog-tsentr-kishinev/", label: "Центр" }
+              { href: "/ru/nevrolog-chekany-kishinev/", label: "Невролог Чеканы (клиника)" }
              ]
             }
            ]
@@ -427,7 +423,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
              ]
             },
             {
-             heading: "Afecțiuni & Sectoare Chișinău",
+             heading: "Afecțiuni & Sediul Ciocana",
              links: [
               { href: "/hernie-de-disc-chisinau/", label: "Hernie de disc fără operație" },
               { href: "/dureri-de-spate-sciatica-chisinau/", label: "Dureri de spate & Sciatică" },
@@ -438,11 +434,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/recuperare-dupa-avc-chisinau/", label: "Recuperare după AVC" },
               { href: "/nevralgie-neuropatie-chisinau/", label: "Nevralgie & Neuropatie" },
               { href: "/epilepsie-convulsii-chisinau/", label: "Epilepsie & EEG" },
-              { href: "/neurolog-ciocana-chisinau/", label: "Ciocana" },
-              { href: "/neurolog-riscani-chisinau/", label: "Rîșcani" },
-              { href: "/neurolog-botanica-chisinau/", label: "Botanica" },
-              { href: "/neurolog-buiucani-chisinau/", label: "Buiucani" },
-              { href: "/neurolog-centru-chisinau/", label: "Centru" }
+              { href: "/neurolog-ciocana-chisinau/", label: "Neurolog Ciocana (sediu)" }
              ]
             }
            ]
