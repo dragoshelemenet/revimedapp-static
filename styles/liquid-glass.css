@@ -3853,3 +3853,137 @@ details summary::-webkit-details-marker {
   background: #0b8fd8;
   color: #ffffff;
 }
+
+
+/* === Mobile Review Carousel Fix & Edge-Docked Compact Mobile Action Dropdown === */
+@media (max-width: 700px) {
+  .reviewCarousel {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .reviewArrowDesktop {
+    display: none !important;
+  }
+
+  .reviewSlide {
+    order: 1 !important;
+    width: 100% !important;
+    padding: 18px 16px !important;
+    border-radius: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .reviewSlide p {
+    font-size: 14.5px !important;
+    line-height: 1.52 !important;
+    margin: 0 0 10px !important;
+    word-wrap: break-word !important;
+  }
+
+  .reviewMobileNav {
+    order: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+
+  .reviewMobileNav .reviewArrow {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px !important;
+  }
+
+  /* Edge-docked compact mobile dropdown (flush to bottom-right screen border, NOT floating) */
+  .mobileCallBar.rm-mbar-dock {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    position: fixed !important;
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    z-index: 160 !important;
+    pointer-events: auto !important;
+  }
+
+  .rm-mbar-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 38px;
+    padding: 8px 13px calc(8px + env(safe-area-inset-bottom, 0px));
+    border: 1px solid rgba(11, 143, 216, 0.34);
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 14px 0 0 0;
+    background: linear-gradient(135deg, #0b8fd8, #0663a8);
+    color: #ffffff;
+    font-family: var(--font-display), "Montserrat", sans-serif;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    box-shadow: -3px -4px 16px rgba(7, 31, 63, 0.18);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .rm-mbar-chevron {
+    transition: transform 0.2s ease;
+  }
+
+  .mobileCallBar.rm-mbar-dock.is-open .rm-mbar-chevron {
+    transform: rotate(180deg);
+  }
+
+  .rm-mbar-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 184px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(11, 143, 216, 0.24);
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 14px 0 0 0;
+    box-shadow: -4px -8px 24px rgba(7, 31, 63, 0.16);
+  }
+
+  .mobileCallBar.rm-mbar-dock .rm-mbar-item {
+    min-height: 36px !important;
+    padding: 7px 11px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    background: #eef7ff !important;
+    color: #08234a !important;
+    border: 1px solid rgba(11, 143, 216, 0.18) !important;
+  }
+
+  .mobileCallBar.rm-mbar-dock .rm-mbar-item.rm-mbar-primary {
+    background: linear-gradient(135deg, #0b8fd8, #0663a8) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+  }
+}
