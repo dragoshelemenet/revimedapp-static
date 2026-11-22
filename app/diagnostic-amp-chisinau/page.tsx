@@ -21,18 +21,19 @@ export default function DiagnosticAmpChisinauPage() {
    h1="Diagnostic Neinvaziv AMP în Chișinău — 117 Indici Clinici Fără Înțepături"
    lead="Screening funcțional rapid cu analizatorul Biopromin AMP-Tech în Chișinău (Ciocana): evaluează 117 parametri metabolici, cardiovasculari și neurologici fără recoltare de sânge."
    directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), examinarea neinvazivă cu aparatul Biopromin AMP-Tech (117 indici clinici, fără înțepături) costă 1000 MDL și oferă rezultatul pe loc, urmat de interpretare medicală. Programări: 022 60 50 60."
-   introParagraph="Analizatorul neinvaziv AMP (Biopromin AMP-Tech) utilizează 5 senzori termici aplicați extern pe puncte biologic active (gât, axilă, abdomen) pentru a estima rapid echilibrul hemodinamic, metabolic, enzimatic și al sistemului nervos."
-   symptomsHeading="Când este util screeningul neinvaziv AMP"
+   introParagraph="Dezvoltat pe baza metodei acad. dr. A.V. Malykhin (programul USPIH), analizatorul neinvaziv Biopromin AMP-Tech utilizează 5 senzori termici cu microprocesor aplicați extern pe puncte biologic active (bifurcația arterei carotide dreapta și stânga — 2 puncte, zona axilară dreapta și stânga — 2 puncte, zona ombilicală — 1 punct). În 180–720 secunde (3–12 minute), aparatul evaluează 117 parametri clinici (inclusiv 67 parametri metabolici, schimbul electrolitic K, Na, Ca, Mg, consumul de oxigen cerebral și miocardic, hemodinamica și funcția enzimatică) fără nicio înțepătură."
+   symptomsHeading="Când este util screeningul neinvaziv AMP (117 parametri)"
    symptoms={[
-    "Evaluare generală rapidă fără ace și fără disconfort (ideal și pentru copii sau pacienți cu teamă de ace);",
-    "Oboseală cronică, tulburări de circulație, fluctuații de tensiune și stres prelungit;",
-    "Monitorizarea evoluției organismului pe parcursul unui curs de recuperare sau fizioterapie;",
-    "Screening orientativ integrat cu consultația neurologică (Dr. Igor Revenco)."
+    "Evaluare generală rapidă fără ace și fără recoltare de sânge (ideal pentru copii, vârstnici sau pacienți cu teamă de ace);",
+    "Oboseală cronică, tulburări de circulație cerebrală, fluctuații de tensiune, amețeli și stres prelungit;",
+    "Verificarea orientativă a schimbului electrolitic (K, Na, Ca, Mg), a oxigenării țesutului cerebral și a densității osoase orientative după nivelul de calciu plasmatic;",
+    "Monitorizarea evoluției organismului înainte și după un curs de recuperare sau fizioterapie la Revimed PLUS+;",
+    "Screening funcțional integrat cu consultația neurologică (Dr. Igor Revenco — 500 MDL)."
 ]}
-   approachHeading="Cum decurge procedura AMP la Revimed PLUS+"
+   approachHeading="Cum decurge procedura AMP pe 5 puncte biologic active"
    approachParagraphs={[
-    "Procedura durează aproximativ 10–15 minute, este 100% nedureroasă și generează raportul complet al celor 117 indici pe loc.",
-    "Medicul explică valorile relevante și, dacă este necesar, recomandă investigații țintite (EEG, REG, analize de laborator clasice) sau plan de recuperare."
+    "Pacientul se află în repaus, iar cei 5 senzori externi sunt fixați pe bifurcațiile carotidiene, axile și regiunea ombilicală. Măsurarea durează între 180 și 720 secunde, este 100% nedureroasă și generează raportul complet al celor 117 indici pe loc.",
+    "Medicul interpretează corelațiile hemodinamice, metabolice și neurovegetative și, acolo unde apar abateri, recomandă investigații țintite (EEG 19 canale — 1400 MDL, REG — 500 MDL, analize de laborator clasice) sau un protocol personalizat de recuperare."
 ]}
    equipmentHeading="Tehnologia de diagnostic funcțional din clinică"
    equipmentCards={[

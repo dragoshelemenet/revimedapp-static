@@ -85,6 +85,24 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "cervical-osteochondrosis-dizziness-tinnitus-reg-chisinau",
     ru: "sheynyy-osteohondroz-golovokruzhenie-shum-v-ushah-reg-kishinev",
     ua: "shyynyy-osteohondroz-zapamorochennya-shum-u-vuhah-kyshyniv"
+  },
+  pediatricTicsSchool: {
+    ro: "ticuri-nervoase-hiperexcitabilitate-dezadaptare-scolara-copii-chisinau",
+    en: "nervous-tics-hyperexcitability-children-eeg-pediatric-neurologist-chisinau",
+    ru: "nervnye-tiki-gipervozbudimost-u-detey-eeg-detskiy-nevrolog-kishinev",
+    ua: "nervovi-tyky-pidvyshchena-zbudlyvist-u-ditey-eeg-nevroloh-kyshyniv"
+  },
+  endorphinsSerotoninTes: {
+    ro: "endorfine-serotonina-dopamina-stres-depresie-transair-tes-chisinau",
+    en: "boost-endorphins-serotonin-dopamine-transair-tes-electrosleep-chisinau",
+    ru: "kak-povysit-endorfin-serotonin-dofamin-transair-tes-elektroson-kishinev",
+    ua: "yak-pidvyshchyty-endorfin-serotonin-dofamin-transair-tes-elektroson-kyshyniv"
+  },
+  trigeminalJointPhysio: {
+    ro: "nevralgie-trigemen-artroza-pinten-calcanean-fizioterapie-chisinau",
+    en: "trigeminal-neuralgia-sacroiliac-arthrosis-heel-spur-physiotherapy-chisinau",
+    ru: "nevralgiya-troynichnogo-nerva-artroz-pyatochnaya-shpora-fizioterapiya-kishinev",
+    ua: "nevralhiya-triychastoho-nerva-artroz-pyatkova-shpora-fizioterapiya-kyshyniv"
   }
 };
 
