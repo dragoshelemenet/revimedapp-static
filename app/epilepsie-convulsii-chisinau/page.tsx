@@ -29,9 +29,10 @@ export default function EpilepsieConvulsiiChisinauPage() {
     "Monitorizarea periodică a tratamentului antiepileptic la adulți și copii;",
     "Evaluare după traumatisme craniene sau accidente vasculare."
 ]}
-   approachHeading="Abordare riguroasă și empatică"
+   approachHeading="Obiectivele tratamentului și primul ajutor în caz de criză"
    approachParagraphs={[
-    "Dr. Igor Revenco evaluează întregul dosar (EEG, RMN cerebral, tratamente anterioare) și ajustează schema terapeutică cu obiectivul controlului sigur al crizelor și păstrării calității vieții."
+    "Dr. Igor Revenco evaluează întregul dosar (EEG digital 19 canale cu analiză DSA și Brain Mapping 3D, RMN cerebral, tratamente anterioare) și ajustează schema terapeutică cu obiectivul controlului sigur al crizelor, reducerii riscului de traumatisme și păstrării unei vieți active.",
+    "Primul ajutor corect dacă ești martor la o criză convulsivă (ghid medical 2026): rămâi calm și cronometrează durata crizei; protejează capul persoanei cu o haină moale și îndepărtează obiectele dure din jur; așază persoana pe o parte (poziție laterală de siguranță) imediat ce contracțiile scad; NU imobiliza forțat brațele și NU introduce niciodată linguri, degete sau obiecte în gură (nu îți poți „înghiți limba”, dar poți provoca fracturi dentare sau sufocare). Sună de urgență la 112 dacă criza durează peste 5 minute, se repetă imediat, persoana s-a rănit sau este prima criză din viață."
 ]}
    equipmentHeading="Investigații funcționale în clinică"
    equipmentCards={[
@@ -57,7 +58,11 @@ export default function EpilepsieConvulsiiChisinauPage() {
    faqs={[
     {
         "q": "Pot face atât EEG-ul, cât și consultația neurologică în aceeași clinică?",
-        "a": "Da, la Revimed PLUS+ sunt disponibile atât electroencefalografia (1400 MDL), cât și consultația cu Dr. Igor Revenco (500 MDL)."
+        "a": "Da, la Revimed PLUS+ sunt disponibile atât electroencefalografia digitală pe 19 canale (1400 MDL), cât și consultația cu Dr. Igor Revenco (500 MDL)."
+    },
+    {
+        "q": "Ce trebuie să fac dacă cineva are o criză epileptică lângă mine?",
+        "a": "Cronometrează criza, protejează capul cu ceva moale, întoarce persoana pe o parte și NU îi pune nimic în gură. Dacă durează peste 5 minute sau este prima criză, apelează imediat 112."
     }
 ]}
    relatedLinks={[

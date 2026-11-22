@@ -103,6 +103,18 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "trigeminal-neuralgia-sacroiliac-arthrosis-heel-spur-physiotherapy-chisinau",
     ru: "nevralgiya-troynichnogo-nerva-artroz-pyatochnaya-shpora-fizioterapiya-kishinev",
     ua: "nevralhiya-triychastoho-nerva-artroz-pyatkova-shpora-fizioterapiya-kyshyniv"
+  },
+  postSpineSurgeryRehab: {
+    ro: "recuperare-kinetoterapie-dupa-operatie-coloana-hernie-disc-chisinau",
+    en: "post-spine-surgery-rehabilitation-kinesitherapy-chisinau",
+    ru: "reabilitaciya-lfk-posle-operacii-na-pozvonochnike-kishinev",
+    ua: "reabilitatsiya-lfk-pislya-operatsiyi-na-khrebti-kyshyniv"
+  },
+  frozenShoulderPlexitis: {
+    ro: "periartrita-umar-inghetat-plexita-brahiala-fizioterapie-chisinau",
+    en: "frozen-shoulder-adhesive-capsulitis-brachial-plexitis-physiotherapy-chisinau",
+    ru: "plechelopatochnyy-periartroz-zamorozhennoe-plecho-pleksit-fizioterapiya-kishinev",
+    ua: "plecholopatkovyy-periartroz-zamorozhene-pleche-pleksyt-fizioterapiya-kyshyniv"
   }
 };
 

@@ -198,6 +198,15 @@ export default function FizioterapieChisinauPage() {
       </table>
      </div>
 
+     <h2>Indicații și contraindicații generale ale fizioterapiei</h2>
+     <p>
+      Procedurile fizioterapeutice sunt sigure și foarte eficiente atunci când sunt alese corect de medic. Înainte de începerea oricărui curs, verificăm întotdeauna absența contraindicațiilor:
+     </p>
+     <ul>
+      <li><strong>Indicații principale:</strong> hernie și protruzie de disc, sciatică, osteocondroză cervicală și lombară, nevralgii (inclusiv trigemen) și plexite, periartrită scapulo-humerală („umăr înghețat”), artroze sacroiliace, pinten calcanean, insomnie, migrene, stres cronic, recuperare post-AVC și după operații de coloană.</li>
+      <li><strong>Contraindicații generale (când se amână sau se adaptează procedura):</strong> stimulator cardiac (pacemaker) sau implanturi electronice active (pentru curenți și magnetoterapie), stări febrile și infecții acute, tumori maligne active, hemoragii sau tromboflebită acută, insuficiență cardiacă/respiratorie decompensată, epilepsie necontrolată, leziuni cutanate deschise pe zona electrozilor și sarcină (pentru procedurile pe zona abdomino-pelvină).</li>
+     </ul>
+
      <h2>Întrebări frecvente — Fizioterapie Chișinău</h2>
      {faqs.map((f) => (
       <details className="rm-faq-glass-item">
