@@ -67,16 +67,20 @@ export default function PsihoterapeutStresAnxietateChisinauPage() {
 ]}
    relatedLinks={[
     {
+        "href": "/blog/endorfine-serotonina-dopamina-stres-depresie-transair-tes-chisinau/",
+        "label": "Ghid: Endorfine, Serotonină & Transair TES"
+    },
+    {
+        "href": "/blog/distonie-neurovegetativa-depresie-mascata-dureri-piept-chisinau/",
+        "label": "Ghid: Distonie (DNV) & Depresie mascată"
+    },
+    {
         "href": "/electrosomn-chisinau/",
-        "label": "Terapia Electrosomn"
+        "label": "Terapia Electrosomn (150 MDL)"
     },
     {
         "href": "/insomnie-tratament-chisinau/",
         "label": "Tratament Insomnie"
-    },
-    {
-        "href": "/neurolog-chisinau/",
-        "label": "Neurolog Chișinău"
     },
     {
         "href": "/preturi/",

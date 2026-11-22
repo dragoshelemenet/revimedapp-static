@@ -929,10 +929,34 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
 
       <div className="contactMiniCard">
        <h3>{text.transport}</h3>
-       <div className="transportModern">
-        <span><IconVisual src="bus" alt="bus" className="transportIcon" /> {contact.bus}</span>
-        <span><IconVisual src="trolleybus" alt="trolleybus" className="transportIcon" /> {contact.trolleybus}</span>
-        <span><IconVisual src="taxi" alt="transport" className="transportIcon" /> {contact.tram}</span>
+       <div className="transportModern rm-transport-list">
+        {contact.trolleybus && (
+         <div className="rm-transport-row">
+          <IconVisual src="trolleybus" alt="trolleybus" className="contactSmallIcon" />
+          <div>
+           <b>{lang === "en" ? "Trolleybus" : lang === "ru" ? "Троллейбус" : lang === "ua" ? "Тролейбус" : "Troleibuz"}</b>
+           <strong>{contact.trolleybus}</strong>
+          </div>
+         </div>
+        )}
+        {contact.bus && (
+         <div className="rm-transport-row">
+          <IconVisual src="bus" alt="bus" className="contactSmallIcon" />
+          <div>
+           <b>{lang === "en" ? "Bus" : lang === "ru" ? "Автобус" : lang === "ua" ? "Автобус" : "Autobuz"}</b>
+           <strong>{contact.bus}</strong>
+          </div>
+         </div>
+        )}
+        {contact.tram && (
+         <div className="rm-transport-row">
+          <IconVisual src="taxi" alt="minibus" className="contactSmallIcon" />
+          <div>
+           <b>{lang === "en" ? "Minibus" : lang === "ru" ? "Маршрутка" : lang === "ua" ? "Маршрутка" : "Microbuz"}</b>
+           <strong>{contact.tram}</strong>
+          </div>
+         </div>
+        )}
        </div>
       </div>
 

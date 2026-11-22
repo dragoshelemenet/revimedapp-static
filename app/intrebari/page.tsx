@@ -75,7 +75,7 @@ const faqs: FaqEntry[] = [
   category: "programari",
   question: "Unde se află Centrul Medical Revimed PLUS+ și cum ajung cu transportul public?",
   answer:
-   "Clinica se află în Chișinău, sectorul Ciocana, pe Str. Mircea cel Bătrân 13/2, MD-2044, cu acces facil prin transport public (autobuze, troleibuze și microbuze pe bd. Mircea cel Bătrân). Harta interactivă este disponibilă pe pagina Contact."
+   "Clinica se află în Chișinău, sectorul Ciocana, pe Str. Mircea cel Bătrân 13/2, MD-2044, cu acces direct pe bd. Mircea cel Bătrân: troleibuzele 12, 13, 23, 24, 26, autobuzele 5, 23 și microbuzele 113, 191. Harta interactivă este disponibilă pe pagina Contact."
  },
  {
   id: "specialitati-clinica",

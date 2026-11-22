@@ -79,8 +79,10 @@ export default function NeuropediatruChisinauPage() {
       </details>
      ))}
      <div className="rm-quick-links-bar">
+      <Link href="/blog/ticuri-nervoase-hiperexcitabilitate-dezadaptare-scolara-copii-chisinau/" className="btn btn-outline-primary btn-sm">Ghid: Ticuri &amp; Dezadaptare Școlară</Link>
+      <Link href="/blog/logonevroza-balbaiala-adhd-anxietate-copii-eeg-electrosomn-chisinau/" className="btn btn-outline-primary btn-sm">Ghid: Logonevroză &amp; ADHD</Link>
+      <Link href="/eeg-chisinau/" className="btn btn-outline-primary btn-sm">EEG Copii (1400 MDL)</Link>
       <Link href="/dr-igor-revenco/" className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
-      <Link href="/neurolog-chisinau/" className="btn btn-outline-primary btn-sm">Neurolog Chișinău</Link>
       <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri</Link>
       <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>
      </div>

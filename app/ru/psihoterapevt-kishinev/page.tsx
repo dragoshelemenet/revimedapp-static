@@ -63,6 +63,14 @@ export default function RuPsihoterapevtKishinevPage() {
 ]}
    relatedLinks={[
     {
+        "href": "/ru/blog/kak-povysit-endorfin-serotonin-dofamin-transair-tes-elektroson-kishinev/",
+        "label": "Статья: Эндорфины, серотонин и ТЭС"
+    },
+    {
+        "href": "/ru/blog/vsd-skrytaya-depressiya-bol-v-grudi-nevrolog-kishinev/",
+        "label": "Статья: ВСД и скрытая депрессия"
+    },
+    {
         "href": "/ru/nevrolog-kishinev/",
         "label": "Невролог Кишинёв"
     },

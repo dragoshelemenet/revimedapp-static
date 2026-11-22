@@ -63,16 +63,20 @@ export default function NevralgieNeuropatieChisinauPage() {
 ]}
    relatedLinks={[
     {
-        "href": "/neurolog-chisinau/",
-        "label": "Neurolog Chișinău"
+        "href": "/blog/nevralgie-trigemen-artroza-pinten-calcanean-fizioterapie-chisinau/",
+        "label": "Ghid: Nevralgie de trigemen & Fizioterapie"
+    },
+    {
+        "href": "/blog/sindrom-tunel-carpian-neuropatii-compresive-amorteli-maini-chisinau/",
+        "label": "Ghid: Sindrom de tunel carpian"
+    },
+    {
+        "href": "/blog/periartrita-umar-inghetat-plexita-brahiala-fizioterapie-chisinau/",
+        "label": "Ghid: Umăr înghețat & Plexită"
     },
     {
         "href": "/electroforeza-amplipuls-chisinau/",
         "label": "Electroforeză & Amplipuls"
-    },
-    {
-        "href": "/acupunctura-reflexoterapie-chisinau/",
-        "label": "Acupunctură"
     },
     {
         "href": "/preturi/",

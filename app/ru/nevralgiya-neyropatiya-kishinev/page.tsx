@@ -61,8 +61,16 @@ export default function RuNevralgiyaNeyropatiyaKishinevPage() {
 ]}
    relatedLinks={[
     {
-        "href": "/ru/nevrolog-kishinev/",
-        "label": "Невролог Кишинёв"
+        "href": "/ru/blog/nevralgiya-troynichnogo-nerva-artroz-pyatochnaya-shpora-fizioterapiya-kishinev/",
+        "label": "Статья: Невралгия тройничного нерва"
+    },
+    {
+        "href": "/ru/blog/tunnelnyy-sindrom-kompressionnye-neyropatii-onemenie-ruk-kishinev/",
+        "label": "Статья: Туннельный синдром"
+    },
+    {
+        "href": "/ru/blog/plechelopatochnyy-periartroz-zamorozhennoe-plecho-pleksit-fizioterapiya-kishinev/",
+        "label": "Статья: Плечевой плексит и периартроз"
     },
     {
         "href": "/ru/elektroforez-amplipuls-kishinev/",
