@@ -123,12 +123,20 @@ export default function Footer() {
             <div className="rm-footer-brand">
               <img src="/images/logo.webp" alt="REVIMED Centrul Medical" className="footerLogo" width={136} height={36} loading="lazy" decoding="async" />
               <p className="rm-footer-tagline">{text.tagline}</p>
-              <a className="rm-footer-social-pill" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed PLUS+">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.5v3.2h2.7V22h3.3z" />
-                </svg>
-                <span>{text.follow}</span>
-              </a>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                <a className="rm-footer-social-pill" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Revimed PLUS+">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.5v3.2h2.7V22h3.3z" />
+                  </svg>
+                  <span>{text.follow}</span>
+                </a>
+                <a className="rm-footer-social-pill" href="https://www.youtube.com/@revimedpluschisinau" target="_blank" rel="noopener noreferrer" aria-label="YouTube Revimed PLUS+">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+                  </svg>
+                  <span>YouTube</span>
+                </a>
+              </div>
             </div>
 
             <div className="rm-footer-col">
@@ -171,16 +179,7 @@ export default function Footer() {
                     <Link href="/neurolog-chisinau/">Neurolog Chișinău</Link>
                     <Link href="/neurochirurg-chisinau/">Neurochirurg Chișinău</Link>
                     <Link href="/fizioterapie-chisinau/">Fizioterapie Chișinău</Link>
-                    <Link href="/neuropediatru-chisinau/">Neuropediatru Chișinău</Link>
-                    <Link href="/hernie-de-disc-chisinau/">Hernie de disc Chișinău</Link>
-                    <Link href="/tratament-migrene-chisinau/">Migrene Chișinău</Link>
-                    <Link href="/recuperare-dupa-avc-chisinau/">Recuperare AVC Chișinău</Link>
-                    <Link href="/dureri-de-spate-sciatica-chisinau/">Sciatică Chișinău</Link>
-                    <Link href="/electrosomn-chisinau/">Electrosomn Chișinău</Link>
-                    <Link href="/ameteli-vertij-chisinau/">Amețeli & Vertij</Link>
-                    <Link href="/insomnie-tratament-chisinau/">Insomnie Chișinău</Link>
-                    <Link href="/osteocondroza-cervicala-chisinau/">Osteocondroză Chișinău</Link>
-                    <Link href="/neurolog-ciocana-chisinau/">Neurolog Ciocana</Link>
+                    <Link href="/eeg-chisinau/">EEG Chișinău</Link>
                   </>
                 )}
                 {lang === "ru" && (
@@ -188,11 +187,7 @@ export default function Footer() {
                     <Link href="/ru/nevrolog-kishinev/">Невролог Кишинёв</Link>
                     <Link href="/ru/neyrohirurg-kishinev/">Нейрохирург Кишинёв</Link>
                     <Link href="/ru/fizioterapiya-kishinev/">Физиотерапия Кишинёв</Link>
-                    <Link href="/ru/gryzha-diska-kishinev/">Грыжа диска Кишинёв</Link>
-                    <Link href="/ru/detskiy-nevrolog-kishinev/">Детский невролог</Link>
-                    <Link href="/ru/lechenie-migreni-kishinev/">Лечение мигрени</Link>
-                    <Link href="/ru/osteohondroz-kishinev/">Остеохондроз Кишинёв</Link>
-                    <Link href="/ru/nevrolog-chekany-kishinev/">Невролог Чеканы</Link>
+                    <Link href="/ru/eeg-kishinev/">ЭЭГ Кишинёв</Link>
                   </>
                 )}
               </nav>

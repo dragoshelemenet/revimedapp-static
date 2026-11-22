@@ -348,19 +348,21 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
    <HomeTrustSection lang={lang} />
 
    {(lang === "ro" || lang === "ru") && (
-    <section className="rmSection">
+    <section className="rmSection rm-seo-bento-section">
      <div className="rmShell">
-      <div className="adminCard prose" data-glass-card>
-       <h2 style={{ marginBottom: 6 }}>
-        {lang === "ru"
-         ? "Все направления, диагностика и процедуры в Кишинёве (Чеканы)"
-         : "Specialități, Diagnostic Funcțional & Tratamente în Chișinău"}
-       </h2>
-       <p style={{ marginBottom: 18 }}>
-        {lang === "ru"
-         ? "Выберите нужную консультацию, обследование или процедуру физиотерапии с актуальными ценами 2026 года:"
-         : "Accesează direct consultația, investigația sau procedura dorită, cu prețuri oficiale 2026 în MDL:"}
-       </p>
+      <div className="rm-seo-bento-shell" data-glass-card>
+       <div className="rm-seo-bento-head">
+        <h2>
+         {lang === "ru"
+          ? "Все направления, диагностика и процедуры в Кишинёве (Чеканы)"
+          : "Specialități, Diagnostic Funcțional & Tratamente în Chișinău"}
+        </h2>
+        <p>
+         {lang === "ru"
+          ? "Выберите нужную консультацию, обследование или процедуру физиотерапии с актуальными ценами 2026 года:"
+          : "Accesează direct consultația, investigația sau procedura dorită, cu prețuri oficiale 2026 în MDL:"}
+        </p>
+       </div>
        <div className="rm-seo-bento-grid">
         {(lang === "ru"
          ? [
