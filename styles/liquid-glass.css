@@ -3916,30 +3916,31 @@ details summary::-webkit-details-marker {
     backdrop-filter: none !important;
     border: 0 !important;
     box-shadow: none !important;
-    z-index: 160 !important;
+    z-index: 210 !important;
     pointer-events: auto !important;
+  }
+
+  body:has(.rm-mbar-dock.is-open) .rm-back-to-top {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.85) !important;
   }
 
   .rm-mbar-trigger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    min-height: 38px;
-    padding: 8px 13px calc(8px + env(safe-area-inset-bottom, 0px));
+    width: 46px;
+    height: calc(44px + env(safe-area-inset-bottom, 0px));
+    padding: 0 0 env(safe-area-inset-bottom, 0px) 0;
     border: 1px solid rgba(11, 143, 216, 0.34);
     border-right: 0;
     border-bottom: 0;
     border-radius: 14px 0 0 0;
     background: linear-gradient(135deg, #0b8fd8, #0663a8);
     color: #ffffff;
-    font-family: var(--font-display), "Montserrat", sans-serif;
-    font-size: 12.5px;
-    font-weight: 800;
-    letter-spacing: 0.01em;
     box-shadow: -3px -4px 16px rgba(7, 31, 63, 0.18);
     cursor: pointer;
-    white-space: nowrap;
   }
 
   .rm-mbar-chevron {
