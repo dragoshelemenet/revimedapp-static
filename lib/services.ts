@@ -100,7 +100,7 @@ export const servicesRo: ServiceItem[] = [
   },
   {
     slug: "consultatii-neurochirurgie",
-    title: "Consultații neurochirurgie",
+    title: "Consultații neurochirurgicale",
     category: "Neurochirurgie",
     short: "Evaluare pentru patologia coloanei vertebrale, dureri radiculare, hernii de disc și situații care pot necesita opinie neurochirurgicală.",
     sections: [
