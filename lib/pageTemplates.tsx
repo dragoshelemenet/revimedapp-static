@@ -294,20 +294,33 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
     <div className="rmShell">
      <h2 className="centerTitle">{servicesHeading}</h2>
      <div className="rm-home-services-grid">
-      {coreServices.map((srv) => (
-       <Link
-        key={srv.slug}
-        href={withLang(`/servicii/${srv.slug}/`, lang)}
-        className="rm-home-service-card"
-        data-glass-card
-       >
-        <span className="rm-home-service-badge">{srv.category}</span>
-        <h3>{srv.title}</h3>
-        <p>{srv.short}</p>
-        <span className="rm-home-service-cta">{text.readMore}</span>
-       </Link>
-      ))}
-     </div>
+       {coreServices.map((srv) => (
+        <Link
+         key={srv.slug}
+         href={withLang(`/servicii/${srv.slug}/`, lang)}
+         className="rm-home-service-card rm-home-service-visual-card"
+         data-glass-card
+        >
+         {srv.image && (
+          <div className="rm-home-service-thumb">
+           <img src={srv.image} alt={`${srv.title} — Revimed PLUS+`} width={640} height={420} loading="lazy" decoding="async" />
+           {srv.priceBadge && <span className="rm-home-service-price-pill">{srv.priceBadge}</span>}
+          </div>
+         )}
+         <span className="rm-home-service-badge">{srv.category}</span>
+         <h3>{srv.title}</h3>
+         <p>{srv.short}</p>
+         {srv.highlights && srv.highlights.length > 0 && (
+          <div className="rm-service-highlights-row">
+           {srv.highlights.map((h) => (
+            <span key={h} className="rm-service-highlight-chip">{h}</span>
+           ))}
+          </div>
+         )}
+         <span className="rm-home-service-cta">{text.readMore} →</span>
+        </Link>
+       ))}
+      </div>
     </div>
    </section>
 

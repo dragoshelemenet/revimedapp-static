@@ -11,6 +11,7 @@ export type SmartCatalogItem = {
   title: string;
   description: string;
   badge?: string;
+  highlights?: string[];
   image?: string;
   action: string;
 };
@@ -59,6 +60,13 @@ function CardItem({ item, useInfoPopover }: { item: SmartCatalogItem; useInfoPop
           )}
         </div>
         <p>{shortDesc}</p>
+        {item.highlights && item.highlights.length > 0 && (
+          <div className="rm-service-highlights-row">
+            {item.highlights.map((h) => (
+              <span key={h} className="rm-service-highlight-chip">{h}</span>
+            ))}
+          </div>
+        )}
         <Link href={item.href} className={styles.action}>
           {item.action} <span aria-hidden="true">→</span>
         </Link>

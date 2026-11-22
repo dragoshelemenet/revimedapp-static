@@ -10,6 +10,9 @@ export type ServiceItem = {
   title: string;
   category: string;
   short: string;
+  image?: string;
+  priceBadge?: string;
+  highlights?: string[];
   sections: ServiceSection[];
 };
 

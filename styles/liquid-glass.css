@@ -3703,3 +3703,68 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
+/* === Visual Services Cards on Homepage & /servicii/ === */
+.rm-home-service-visual-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rm-home-service-thumb {
+  position: relative;
+  width: 100%;
+  height: 176px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, #cde9ff, #e6f4ff);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.rm-home-service-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rm-home-service-visual-card:hover .rm-home-service-thumb img {
+  transform: scale(1.045);
+}
+
+.rm-home-service-price-pill {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(8, 35, 74, 0.82);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(4, 24, 54, 0.2);
+}
+
+.rm-service-highlights-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 6px;
+}
+
+.rm-service-highlight-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(11, 143, 216, 0.1);
+  border: 1px solid rgba(11, 143, 216, 0.18);
+  color: #075f9e;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.35;
+}

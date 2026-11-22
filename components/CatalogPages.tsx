@@ -11,6 +11,8 @@ type Item = {
  category: string;
  image?: string;
  imageAlt?: string;
+ priceBadge?: string;
+ highlights?: string[];
  sections: { title: string; body: string[] }[];
  faqs?: { q: string; a: string }[];
 };
@@ -32,7 +34,8 @@ export function CatalogList({base, labels, items}: Props & {items: Item[]}) {
   href: `${base}/${item.slug}/`,
   title: item.title,
   description: item.short,
-  badge: item.category,
+  badge: item.priceBadge ? `${item.category} · ${item.priceBadge}` : item.category,
+  highlights: item.highlights,
   image: item.image,
   action: labels.open
  }));
@@ -52,7 +55,7 @@ export function CatalogList({base, labels, items}: Props & {items: Item[]}) {
   <ContentSection>
    <SmartCatalogGrid
     items={smartItems}
-    initialCount={3}
+    initialCount={items.length <= 6 ? 6 : 3}
     groupByCategory={items.length > 8}
     moreLabel={ui.more}
     lessLabel={ui.less}
