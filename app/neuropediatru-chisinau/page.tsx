@@ -73,7 +73,7 @@ export default function NeuropediatruChisinauPage() {
      </ul>
      <h2>Întrebări frecvente — Neuropediatrie Chișinău</h2>
      {faqs.map((f) => (
-      <details key={f.q} open style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+      <details style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
        <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
        <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
       </details>

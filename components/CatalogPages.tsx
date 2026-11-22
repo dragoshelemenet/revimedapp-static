@@ -137,7 +137,7 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
     <section style={{ marginTop: 22 }}>
      <h2>{base.startsWith("/en") ? "Frequently asked questions" : base.startsWith("/ru") ? "Частые вопросы" : base.startsWith("/ua") ? "Часті запитання" : "Întrebări frecvente"}</h2>
      {item.faqs.map((f) => (
-      <details key={f.q} open style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+      <details style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
        <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
        <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
       </details>

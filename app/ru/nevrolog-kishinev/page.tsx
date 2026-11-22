@@ -207,7 +207,7 @@ export default function NevrologKishinevPage() {
 
      <h2>Частые вопросы — Невролог Кишинёв</h2>
      {faqs.map((f) => (
-      <details key={f.q} open className="rm-faq-glass-item">
+      <details className="rm-faq-glass-item">
        <summary>{f.q}</summary>
        <p>{f.a}</p>
       </details>

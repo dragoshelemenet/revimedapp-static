@@ -251,8 +251,6 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      <h2>{isRu ? "Частые вопросы пациентов" : "Întrebări frecvente ale pacienților"}</h2>
      {p.faqs.map((f) => (
       <details
-       key={f.q}
-       open
        style={{
         marginBottom: 10,
         padding: "12px 14px",

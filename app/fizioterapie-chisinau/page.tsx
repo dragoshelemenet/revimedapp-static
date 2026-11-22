@@ -200,7 +200,7 @@ export default function FizioterapieChisinauPage() {
 
      <h2>Întrebări frecvente — Fizioterapie Chișinău</h2>
      {faqs.map((f) => (
-      <details key={f.q} open className="rm-faq-glass-item">
+      <details className="rm-faq-glass-item">
        <summary>{f.q}</summary>
        <p>{f.a}</p>
       </details>

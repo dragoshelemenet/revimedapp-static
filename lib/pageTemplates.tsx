@@ -487,7 +487,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
      <h2 className="centerTitle">{homeFaq.heading}</h2>
      <div className="rm-home-faq-grid">
       {homeFaq.items.map((f) => (
-       <details key={f.q} open className="rm-home-faq-card" data-glass-card>
+       <details className="rm-home-faq-card" data-glass-card>
         <summary>{f.q}</summary>
         <p>{f.a}</p>
        </details>

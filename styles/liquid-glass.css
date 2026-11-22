@@ -3768,3 +3768,48 @@ h2 {
   font-weight: 700;
   line-height: 1.35;
 }
+
+/* === Closed-by-default Interactive FAQ Accordion Indicator === */
+.rm-home-faq-card summary,
+.rm-faq-glass-item summary,
+details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.rm-home-faq-card summary::-webkit-details-marker,
+.rm-faq-glass-item summary::-webkit-details-marker,
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.rm-home-faq-card summary::after,
+.rm-faq-glass-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(11, 143, 216, 0.12);
+  border: 1px solid rgba(11, 143, 216, 0.24);
+  color: #075f9e;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s ease, background-color 0.22s ease, color 0.22s ease;
+}
+
+.rm-home-faq-card[open] summary::after,
+.rm-faq-glass-item[open] summary::after {
+  content: "−";
+  background: #0b8fd8;
+  color: #ffffff;
+}
