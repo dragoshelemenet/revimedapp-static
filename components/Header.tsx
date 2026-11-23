@@ -93,7 +93,12 @@ export default function Header() {
     ["/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau", "/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev", "/servicii/consultatii-neurochirurgie"],
     ["/tinitus-zgomote-urechi-spondiloza-cervicala-chisinau", "/shum-v-ushah-tinnitus-spondilez-kishinev", "/servicii/consultatii-neurologice"],
     ["/cefalee-tensiune-vs-migrena-chisinau", "/golovnaya-bol-napryazheniya-vs-migren-kishinev", "/servicii/consultatii-neurologice"],
-    ["/ghid-diagnostic-functional-eeg-reg-amp-chisinau", "/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev", "/servicii/diagnostic-functional"]
+    ["/ghid-diagnostic-functional-eeg-reg-amp-chisinau", "/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev", "/servicii/diagnostic-functional"],
+    ["/nevralgie-intercostala-durere-omoplati-chisinau", "/mezhrebernaya-nevralgiya-bol-mezhdu-lopatkami-kishinev", "/servicii/consultatii-neurologice"],
+    ["/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau", "/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev", "/servicii/consultatii-neurochirurgie"],
+    ["/amorteli-picioare-polineuropatie-chisinau", "/onemenie-nog-polineyropatiya-kishinev", "/servicii/consultatii-neurologice"],
+    ["/contraindicatii-fizioterapie-siguranta-chisinau", "/protivopokazaniya-k-fizioterapii-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/enurezis-nocturn-copii-neuropediatru-chisinau", "/enurez-u-detey-nevrolog-kishinev", "/servicii/consultatii-neurologice"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {

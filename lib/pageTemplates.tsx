@@ -444,7 +444,12 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev/", label: "Протрузия L4–L5 / L5–S1 и стеноз (Гид МРТ)" },
               { href: "/ru/shum-v-ushah-tinnitus-spondilez-kishinev/", label: "Шум в ушах (тиннитус) и спондилёз" },
               { href: "/ru/golovnaya-bol-napryazheniya-vs-migren-kishinev/", label: "Головная боль vs. Мигрень (Гид)" },
-              { href: "/ru/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev/", label: "Гид диагностики: ЭЭГ vs. РЭГ vs. АМП" }
+              { href: "/ru/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev/", label: "Гид диагностики: ЭЭГ vs. РЭГ vs. АМП" },
+              { href: "/ru/mezhrebernaya-nevralgiya-bol-mezhdu-lopatkami-kishinev/", label: "Межрёберная невралгия vs. Сердце" },
+              { href: "/ru/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev/", label: "Грыжа шеи C5–C6 и головокружение" },
+              { href: "/ru/onemenie-nog-polineyropatiya-kishinev/", label: "Онемение ног и полинейропатия" },
+              { href: "/ru/protivopokazaniya-k-fizioterapii-kishinev/", label: "Противопоказания к физиотерапии" },
+              { href: "/ru/enurez-u-detey-nevrolog-kishinev/", label: "Ночной энурез у детей (невролог)" }
              ]
             }
            ]
@@ -505,7 +510,12 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/", label: "Protruzie L4–L5 / L5–S1 & Stenoză (Ghid RMN)" },
               { href: "/tinitus-zgomote-urechi-spondiloza-cervicala-chisinau/", label: "Tinitus (Zgomote urechi) & Spondiloză" },
               { href: "/cefalee-tensiune-vs-migrena-chisinau/", label: "Cefalee vs. Migrenă (Ghid Diferențial)" },
-              { href: "/ghid-diagnostic-functional-eeg-reg-amp-chisinau/", label: "Ghid Diagnostic: EEG vs. REG vs. AMP" }
+              { href: "/ghid-diagnostic-functional-eeg-reg-amp-chisinau/", label: "Ghid Diagnostic: EEG vs. REG vs. AMP" },
+              { href: "/nevralgie-intercostala-durere-omoplati-chisinau/", label: "Nevralgie Intercostală vs. Inimă" },
+              { href: "/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau/", label: "Hernie Cervicală C5–C6 & Amețeli" },
+              { href: "/amorteli-picioare-polineuropatie-chisinau/", label: "Amorțeli Picioare & Polineuropatie" },
+              { href: "/contraindicatii-fizioterapie-siguranta-chisinau/", label: "Contraindicații Fizioterapie (Ghid)" },
+              { href: "/enurezis-nocturn-copii-neuropediatru-chisinau/", label: "Enurezis Nocturn la Copii" }
              ]
             }
            ]
