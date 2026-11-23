@@ -74,11 +74,13 @@ export default function CookiesPage() {
       cookies. Revimed PLUS+ nu controlează și nu își asumă răspunderea pentru prelucrările efectuate de terți.
      </p>
 
-     <h2>5. Drepturile utilizatorului și contact</h2>
+     <h2>5. Operatorul de date, drepturile utilizatorului și contact</h2>
      <p>
-      Conform Legii nr. 133/2011, beneficiați de dreptul la informare, acces, intervenție, opoziție și ștergere în
-      legătură cu datele prelucrate de clinică. Pentru solicitări privind confidențialitatea, ne puteți contacta la
-      <strong> 022 60 50 60</strong> sau la sediul din <strong>mun. Chișinău, str. Mircea cel Bătrân 13/2</strong>.
+      Operatorul datelor prelucrate în cadrul activității medicale la sediul clinicii este <strong>S.R.L. „REVIMED PLUS”</strong>
+      (IDNO <strong>1011600011964</strong>, mun. Chișinău, sect. Ciocana, bd. Mircea cel Bătrân nr. 13/2, administrator:
+      Dr. Igor Revenco). Conform Legii nr. 133/2011, beneficiați de dreptul la informare, acces, intervenție, opoziție
+      și ștergere în legătură cu datele prelucrate de clinică. Pentru solicitări privind confidențialitatea, ne puteți
+      contacta la <strong>022 60 50 60</strong> sau direct la sediul clinicii.
      </p>
 
      <h2>6. Limitarea răspunderii medicale și actualizări</h2>

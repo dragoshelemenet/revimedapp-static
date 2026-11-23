@@ -40,13 +40,22 @@ export default function TermsPage() {
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard" data-glass-card>
-     <h2>1. Natura exclusiv informativă a site-ului</h2>
+     <h2>1. Date de identificare ale prestatorului și natura informativă a site-ului</h2>
      <p>
-      Site-ul <strong>revimed.site</strong> este o platformă de prezentare și informare generală a
-      Centrului Medical <strong>Revimed PLUS+</strong> (mun. Chișinău, sect. Ciocana, str. Mircea cel Bătrân 13/2, MD-2044,
-      Republica Moldova). Prin accesarea și utilizarea acestui site acceptați integral prezentii Termeni și Condiții.
+      Site-ul <strong>revimed.site</strong> este platforma oficială de prezentare și informare generală operată pentru
+      <strong> S.R.L. „REVIMED PLUS”</strong> (Centrul Medical <strong>Revimed PLUS+</strong>), înregistrată în
+      Republica Moldova:
      </p>
+     <ul>
+      <li><strong>Denumire juridică:</strong> Societatea cu Răspundere Limitată „REVIMED PLUS” (S.R.L.)</li>
+      <li><strong>IDNO (Cod fiscal):</strong> 1011600011964 (data înregistrării: 31.03.2011)</li>
+      <li><strong>Administrator / Fondator:</strong> Dr. Igor Revenco</li>
+      <li><strong>Sediu / Adresă clinică:</strong> mun. Chișinău, sect. Ciocana, bd. Mircea cel Bătrân nr. 13/2, MD-2044, Republica Moldova</li>
+      <li><strong>Telefon recepție:</strong> 022 60 50 60 / +373 79 422 908</li>
+      <li><strong>Autorizare:</strong> Activitate medicală desfășurată în conformitate cu autorizațiile și actele permisive emise de autoritățile competente ale Republicii Moldova (disponibile spre consultare la recepția clinicii).</li>
+     </ul>
      <p>
+      Prin accesarea și utilizarea acestui site acceptați integral prezentii Termeni și Condiții.
       Navigarea pe site, parcurgerea articolelor, utilizarea instrumentelor educaționale sau contactarea telefonică
       preliminară <strong>nu constituie un act medical, nu creează o relație medic–pacient și nu reprezintă un contract
       de prestare a serviciilor medicale la distanță (telemedicină)</strong>.
