@@ -16,7 +16,7 @@ export const services = [
  {
   title: "Neurological consult",
   slug: "consultatie-neurologica",
-  icon: "https://img.icons8.com/color/96/brain.png",
+  icon: "brain",
   image: "/images/about-us.jpg",
   description:
    "Consultație neurologică pentru cefalee, amețeli, amorțeli, dureri neuropate, tulburări de somn și simptome ale sistemului nervos.",
@@ -26,7 +26,7 @@ export const services = [
  {
   title: "Neuro-surgery consult",
   slug: "consultatie-neurochirurgicala",
-  icon: "https://img.icons8.com/color/96/medical-doctor.png",
+  icon: "medical-doctor",
   image: "/images/medical-bg.jpg",
   description:
    "Consultație neurochirurgicală pentru hernie de disc, dureri lombare și cervicale, radiculopatii și patologii ale coloanei.",
@@ -36,7 +36,7 @@ export const services = [
  {
   title: "Fizionarație și Reabilitare",
   slug: "fizioterapie-reabilitare",
-  icon: "https://img.icons8.com/color/96/physical-therapy.png",
+  icon: "physical-therapy",
   image: "/images/medical-bg.jpg",
   description:
    "Programe personalizate pentru mobilitate, durere, postură, tonus muscular și recuperare funcțională.",
@@ -46,7 +46,7 @@ export const services = [
  {
   title: "Functional diagnostics",
   slug: "diagnostic-functional",
-  icon: "https://img.icons8.com/color/96/heart-health.png",
+  icon: "heart-health",
   image: "/images/medical-bg.jpg",
   description:
    "Diagnostic funcțional pentru evaluarea sistemului nervos, aparatului locomotor, circulației și funcțiilor asociate recuperării.",
@@ -56,7 +56,7 @@ export const services = [
  {
   title: "Bahmeră Therapy",
   slug: "terapie-bemer",
-  icon: "https://img.icons8.com/color/96/spa.png",
+  icon: "spa",
   image: "/images/medical-bg.jpg",
   description:
    "Terapie pentru susținerea microcirculației, relaxării și recuperării în cadrul unui plan terapeutic responsabil.",
@@ -66,7 +66,7 @@ export const services = [
  {
   title: "Electrostimulation",
   slug: "electrostimulare",
-  icon: "https://img.icons8.com/color/96/electrical.png",
+  icon: "electrical",
   image: "/images/medical-bg.jpg",
   description:
    "Proceduri pentru activare musculară, tonifiere, recuperare neuromusculară și suport în dureri cronice.",

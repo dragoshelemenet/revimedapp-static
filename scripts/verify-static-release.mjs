@@ -24,7 +24,7 @@ for(const file of walk('out').filter(f=>f.endsWith('.html'))){
  }
 
  // Permanent Zero-Legal-Risk Guardrails
- if (html.includes('www.youtube.com/embed/')) errors.push('Legal risk (use youtube-nocookie.com/embed/): ' + file);
+ if (html.includes('www.youtube.com/embed/') || html.includes('img.icons8.com')) errors.push('Legal/privacy risk (use youtube-nocookie.com/embed/ and local SVG icons): ' + file);
  if (/1pic\.jpg|mediskrin|медискрин|медіскрін|medic internist|psihoterapeut/i.test(html)) errors.push('Legal/scope risk (deleted service or photo found): ' + file);
  if (/\b\d+\s*[–-]\s*\d+\s*(?:mg\/zi|mg\/day|мг\/день|g\/zi|g\/day|г\/день)\b/i.test(html)) errors.push('Legal risk (explicit online dosage prescription found): ' + file);
  if (/cel mai bun neurolog|самый лучший невролог|the best neurologist in the city/i.test(html)) errors.push('Legal risk (unsubstantiated comparative superlative): ' + file);

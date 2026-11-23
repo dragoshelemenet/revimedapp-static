@@ -132,7 +132,7 @@ const common = {
 const configs: Record<ToolSlug, ToolConfig> = {
  "test-postura-coloana": {
   slug: "test-postura-coloana",
-  icon: "https://img.icons8.com/ios-filled/80/0b8fd8/spine.png",
+  icon: "spine",
   tag: { ro: "Coloană", en: "Spine", ru: "Позвоночник", ua: "Хребет" },
   title: {
    ro: "Test Postură și Coloană",
@@ -167,7 +167,7 @@ const configs: Record<ToolSlug, ToolConfig> = {
 
  "monitor-dureri-spate": {
   slug: "monitor-dureri-spate",
-  icon: "https://img.icons8.com/ios-filled/80/0b8fd8/back-pain.png",
+  icon: "back-pain",
   tag: { ro: "Durere", en: "Pain", ru: "Боль", ua: "Біль" },
   title: {
    ro: "Monitor Dureri de Spate",
@@ -202,7 +202,7 @@ const configs: Record<ToolSlug, ToolConfig> = {
 
  "test-risc-cadere-echilibru": {
   slug: "test-risc-cadere-echilibru",
-  icon: "https://img.icons8.com/ios-filled/80/0b8fd8/walking.png",
+  icon: "walking",
   tag: { ro: "Echilibru", en: "Balance", ru: "Равновесие", ua: "Рівновага" },
   title: {
    ro: "Test Risc Cădere / Echilibru",
@@ -237,7 +237,7 @@ const configs: Record<ToolSlug, ToolConfig> = {
 
  "planner-exercitii-zilnice": {
   slug: "planner-exercitii-zilnice",
-  icon: "https://img.icons8.com/ios-filled/80/0b8fd8/exercise.png",
+  icon: "exercise",
   tag: { ro: "Exerciții", en: "Exercises", ru: "Упражнения", ua: "Вправи" },
   title: {
    ro: "Planner Exerciții Zilnice",
@@ -271,7 +271,7 @@ const configs: Record<ToolSlug, ToolConfig> = {
 
  "test-stres-somn-respiratie": {
   slug: "test-stres-somn-respiratie",
-  icon: "https://img.icons8.com/ios-filled/80/0b8fd8/lungs.png",
+  icon: "lungs",
   tag: { ro: "Somn", en: "Sleep", ru: "Сон", ua: "Сон" },
   title: {
    ro: "Test Stres, Somn și Respirație",
@@ -306,7 +306,7 @@ const configs: Record<ToolSlug, ToolConfig> = {
 
  "pregatire-consultatie": {
   slug: "pregatire-consultatie",
-  icon: "https://img.icons8.com/ios-filled/80/0b8fd8/clipboard.png",
+  icon: "clipboard",
   tag: { ro: "Consultație", en: "Consultation", ru: "Консультация", ua: "Консультація" },
   title: {
    ro: "Pregătire pentru Consultație",

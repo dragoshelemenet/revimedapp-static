@@ -132,8 +132,7 @@ export default function TermsPage() {
 
      <h2>8. Drepturi de autor, resurse vizuale și legea aplicabilă</h2>
      <p>
-      Conținutul site-ului este protejat de legislația Republicii Moldova. Anumite pictograme ilustrativ-educaționale
-      din interfață sunt furnizate de <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a>.
+      Conținutul site-ului este protejat de legislația Republicii Moldova.
       Orice sesizare sau solicitare (inclusiv actualizarea unei informații ori ștergerea unei fotografii sau resurse
       vizuale) se soluționează prioritar și imediat pe cale amiabilă, prin apel la <strong>022 60 50 60</strong>.
      </p>
