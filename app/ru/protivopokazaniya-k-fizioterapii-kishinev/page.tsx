@@ -133,6 +133,7 @@ export default function RuProtivopokazaniyaKFizioterapiiKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/", label: "Ультразвук и Электростимуляция" },
     {
         "href": "/ru/fizioterapiya-kishinev/",
         "label": "Физиотерапия Кишинёв"

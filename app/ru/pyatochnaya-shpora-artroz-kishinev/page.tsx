@@ -66,6 +66,7 @@ export default function RuPyatochnayaShporaArtrozKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/", label: "Ультразвук — Локоть и Плечо (100 MDL)" },
     {
         "href": "/ru/magnitoterapiya-lazer-kishinev/",
         "label": "Магнитотерапия и Лазер"

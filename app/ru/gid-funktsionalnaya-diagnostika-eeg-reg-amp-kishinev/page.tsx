@@ -139,6 +139,7 @@ export default function RuGidFunktsionalnayaDiagnostikaEegRegAmpKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/ehoentsefalografiya-eho-eg-kishinev/", label: "Эхо-ЭГ мозга (250 MDL)" },
     {
         "href": "/ru/eeg-kishinev/",
         "label": "ЭЭГ Кишинёв (1600 MDL)"

@@ -66,6 +66,7 @@ export default function RuKartirovanieMozgaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/", label: "Когнитивное тестирование и MMPI" },
     {
         "href": "/ru/eeg-kishinev/",
         "label": "ЭЭГ Кишинёв (1600 MDL)"

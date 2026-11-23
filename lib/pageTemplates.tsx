@@ -453,7 +453,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/spazmofiliya-sudorogi-nevrolog-kishinev/", label: "Спазмофилия и мышечные судороги" },
               { href: "/ru/sotryasenie-mozga-vosstanovlenie-kishinev/", label: "Восстановление после сотрясения мозга" },
               { href: "/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/", label: "Задержка речи у ребёнка (ЗРР)" },
-              { href: "/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/", label: "Фебрильные судороги у детей и ЭЭГ" }
+              { href: "/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/", label: "Фебрильные судороги у детей и ЭЭГ" },
+              { href: "/ru/ehoentsefalografiya-eho-eg-kishinev/", label: "Эхоэнцефалография Эхо-ЭГ (250 MDL)" },
+              { href: "/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/", label: "Нейропсихология, память и MMPI" },
+              { href: "/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/", label: "Ультразвук и электростимуляция (100 MDL)" },
+              { href: "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/", label: "Хроническая усталость и Биофидбек" }
              ]
             }
            ]
@@ -523,7 +527,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/spasmofilie-crize-hiperexcitabilitate-chisinau/", label: "Spasmofilie & Hiperexcitabilitate" },
               { href: "/recuperare-comotie-cerebrala-traumatism-chisinau/", label: "Recuperare Comoție Cerebrală" },
               { href: "/intarziere-vorbire-copii-neuropediatru-chisinau/", label: "Întârziere de Vorbire la Copii" },
-              { href: "/convulsii-febrile-copii-eeg-neuropediatru-chisinau/", label: "Convulsii Febrile la Copii & EEG" }
+              { href: "/convulsii-febrile-copii-eeg-neuropediatru-chisinau/", label: "Convulsii Febrile la Copii & EEG" },
+              { href: "/eho-encefalografie-chisinau/", label: "EHO-Encefalografie (250 MDL)" },
+              { href: "/evaluare-neuropsihologica-testare-cognitiva-chisinau/", label: "Evaluare Neuropsihologică & MMPI" },
+              { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete — Cot & Umăr (100 MDL)" },
+              { href: "/oboseala-cronica-burnout-biofeedback-chisinau/", label: "Oboseală Cronică & Biofeedback" }
              ]
             }
            ]

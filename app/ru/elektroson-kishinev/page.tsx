@@ -66,6 +66,7 @@ export default function RuElektrosonKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/", label: "Выгорание, Биофидбек и АВС" },
     {
         "href": "/ru/lechenie-bessonnitsy-kishinev/",
         "label": "Лечение бессонницы"

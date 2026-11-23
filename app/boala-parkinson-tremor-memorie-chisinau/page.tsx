@@ -66,6 +66,7 @@ export default function BoalaParkinsonTremorMemorieChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/evaluare-neuropsihologica-testare-cognitiva-chisinau/", label: "Evaluare Neuropsihologică & Memorie" },
     {
         "href": "/neurolog-chisinau/",
         "label": "Neurolog Chișinău"

@@ -133,6 +133,7 @@ export default function ContraindicatiiFizioterapieSigurantaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete & Electrostimulare" },
     {
         "href": "/fizioterapie-chisinau/",
         "label": "Fizioterapie Chișinău"

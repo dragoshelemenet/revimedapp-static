@@ -66,6 +66,7 @@ export default function CartografiereaCreieruluiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/evaluare-neuropsihologica-testare-cognitiva-chisinau/", label: "Testare Cognitivă & MMPI" },
     {
         "href": "/eeg-chisinau/",
         "label": "EEG Chișinău (1600 MDL)"

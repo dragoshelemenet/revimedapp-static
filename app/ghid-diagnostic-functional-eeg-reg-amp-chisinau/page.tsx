@@ -139,6 +139,7 @@ export default function GhidDiagnosticFunctionalEegRegAmpChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/eho-encefalografie-chisinau/", label: "EHO-Encefalografie (250 MDL)" },
     {
         "href": "/eeg-chisinau/",
         "label": "EEG Chișinău (1600 MDL)"

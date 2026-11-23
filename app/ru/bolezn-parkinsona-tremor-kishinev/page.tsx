@@ -66,6 +66,7 @@ export default function RuBoleznParkinsonaTremorKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/", label: "Нейропсихология и тест памяти" },
     {
         "href": "/ru/nevrolog-kishinev/",
         "label": "Невролог Кишинёв"

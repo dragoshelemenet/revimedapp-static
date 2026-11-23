@@ -66,6 +66,7 @@ export default function RuLechenieBessonnitsyKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/", label: "Хроническая усталость и Биофидбек" },
     {
         "href": "/ru/elektroson-kishinev/",
         "label": "Электросон Кишинёв"

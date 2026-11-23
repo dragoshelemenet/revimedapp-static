@@ -66,6 +66,7 @@ export default function EcografieEcgChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/eho-encefalografie-chisinau/", label: "EHO-Encefalografie (250 MDL)" },
     {
         "href": "/diagnostic-amp-chisinau/",
         "label": "Diagnostic AMP (1000 MDL)"

@@ -66,6 +66,7 @@ export default function RuUziEkgKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/ehoentsefalografiya-eho-eg-kishinev/", label: "Эхоэнцефалография Эхо-ЭГ (250 MDL)" },
     {
         "href": "/ru/diagnostika-amp-kishinev/",
         "label": "Диагностика АМП (1000 MDL)"

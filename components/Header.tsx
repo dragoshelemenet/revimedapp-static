@@ -102,7 +102,11 @@ export default function Header() {
     ["/spasmofilie-crize-hiperexcitabilitate-chisinau", "/spazmofiliya-sudorogi-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
     ["/recuperare-comotie-cerebrala-traumatism-chisinau", "/sotryasenie-mozga-vosstanovlenie-kishinev", "/servicii/consultatii-neurochirurgie"],
     ["/intarziere-vorbire-copii-neuropediatru-chisinau", "/zaderzhka-rechi-u-rebenka-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
-    ["/convulsii-febrile-copii-eeg-neuropediatru-chisinau", "/febrilnye-sudorogi-u-detey-eeg-kishinev", "/servicii/consultatii-neurologice"]
+    ["/convulsii-febrile-copii-eeg-neuropediatru-chisinau", "/febrilnye-sudorogi-u-detey-eeg-kishinev", "/servicii/consultatii-neurologice"],
+    ["/eho-encefalografie-chisinau", "/ehoentsefalografiya-eho-eg-kishinev", "/servicii/diagnostic-functional"],
+    ["/evaluare-neuropsihologica-testare-cognitiva-chisinau", "/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev", "/servicii/diagnostic-functional"],
+    ["/terapie-ultrasunete-epicondilita-tendinita-chisinau", "/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/oboseala-cronica-burnout-biofeedback-chisinau", "/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev", "/servicii/consultatii-neurologice"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {

@@ -66,6 +66,7 @@ export default function PintenCalcaneanArtrozaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete — Cot & Umăr (100 MDL)" },
     {
         "href": "/magnetoterapie-laser-chisinau/",
         "label": "Magnetoterapie & Laser"

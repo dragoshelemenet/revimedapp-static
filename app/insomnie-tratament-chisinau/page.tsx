@@ -44,6 +44,7 @@ export default function Page() {
     { q: "Câte ședințe sunt recomandate?", a: "De obicei 5–10 ședințe, ajustate individual de medicul neurolog." }
    ]}
    relatedLinks={[
+    { href: "/oboseala-cronica-burnout-biofeedback-chisinau/", label: "Oboseală Cronică & Biofeedback" },
     { href: "/electrosomn-chisinau/", label: "Electrosomn Chișinău" },
     { href: "/neurolog-chisinau/", label: "Neurolog Chișinău" },
     { href: "/preturi/", label: "Prețuri" }
