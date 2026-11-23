@@ -129,6 +129,7 @@ export default function RuZaderzhkaRechiURebenkaNevrologKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/", label: "СДВГ у детей и ЭЭГ" },
     {
         "href": "/ru/detskiy-nevrolog-kishinev/",
         "label": "Детский невролог Кишинёв (500 MDL)"

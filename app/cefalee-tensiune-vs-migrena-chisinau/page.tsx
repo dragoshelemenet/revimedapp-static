@@ -122,6 +122,7 @@ export default function CefaleeTensiuneVsMigrenaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/tensiune-intracraniana-simptome-neurolog-chisinau/", label: "Tensiune Intracraniană vs. Migrenă" },
     {
         "href": "/tratament-migrene-chisinau/",
         "label": "Tratament Migrene Chișinău"

@@ -127,6 +127,7 @@ export default function EhoEncefalografieChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/tensiune-intracraniana-simptome-neurolog-chisinau/", label: "Tensiune Intracraniană (Simptome)" },
     {
         "href": "/ghid-diagnostic-functional-eeg-reg-amp-chisinau/",
         "label": "Ghid Diagnostic: EEG vs. REG vs. AMP"

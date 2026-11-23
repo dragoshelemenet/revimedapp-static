@@ -123,6 +123,7 @@ export default function ProtruzieDiscalaL4L5L5S1StenozaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/sindrom-piriform-durere-fesa-picior-chisinau/", label: "Sindrom Piriform (Durere Fesă)" },
     {
         "href": "/hernie-de-disc-chisinau/",
         "label": "Hernie de Disc Chișinău"

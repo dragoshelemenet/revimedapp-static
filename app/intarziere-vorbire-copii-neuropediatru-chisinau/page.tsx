@@ -129,6 +129,7 @@ export default function IntarziereVorbireCopiiNeuropediatruChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/adhd-hiperactivitate-copii-neuropediatru-chisinau/", label: "ADHD & Hiperactivitate Copii" },
     {
         "href": "/neuropediatru-chisinau/",
         "label": "Neuropediatru Chișinău (500 MDL)"

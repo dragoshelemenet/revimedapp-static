@@ -122,6 +122,7 @@ export default function AmorteliPicioarePolineuropatieChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/sindromul-picioarelor-nelinistite-neurolog-chisinau/", label: "Sindromul Picioarelor Neliniștite" },
     {
         "href": "/nevralgie-neuropatie-chisinau/",
         "label": "Nevralgie & Neuropatie"

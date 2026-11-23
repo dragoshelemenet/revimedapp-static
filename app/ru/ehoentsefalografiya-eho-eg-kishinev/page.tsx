@@ -127,6 +127,7 @@ export default function RuEhoentsefalografiyaEhoEgKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/", label: "Внутричерепное давление (Симптомы)" },
     {
         "href": "/ru/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev/",
         "label": "Гид диагностики: ЭЭГ vs. РЭГ vs. АМП"

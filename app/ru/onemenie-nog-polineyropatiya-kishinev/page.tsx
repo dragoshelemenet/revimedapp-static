@@ -122,6 +122,7 @@ export default function RuOnemenieNogPolineyropatiyaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/", label: "Синдром беспокойных ног (СБН)" },
     {
         "href": "/ru/nevralgiya-neyropatiya-kishinev/",
         "label": "Невралгия и нейропатия"

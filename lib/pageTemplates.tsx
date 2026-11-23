@@ -457,7 +457,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/ehoentsefalografiya-eho-eg-kishinev/", label: "Эхоэнцефалография Эхо-ЭГ (250 MDL)" },
               { href: "/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/", label: "Нейропсихология, память и MMPI" },
               { href: "/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/", label: "Ультразвук и электростимуляция (100 MDL)" },
-              { href: "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/", label: "Хроническая усталость и Биофидбек" }
+              { href: "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/", label: "Хроническая усталость и Биофидбек" },
+              { href: "/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/", label: "Внутричерепное давление (симптомы)" },
+              { href: "/ru/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev/", label: "Синдром грушевидной мышцы" },
+              { href: "/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/", label: "Синдром беспокойных ног (СБН)" },
+              { href: "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/", label: "СДВГ и гиперактивность у детей" }
              ]
             }
            ]
@@ -531,7 +535,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/eho-encefalografie-chisinau/", label: "EHO-Encefalografie (250 MDL)" },
               { href: "/evaluare-neuropsihologica-testare-cognitiva-chisinau/", label: "Evaluare Neuropsihologică & MMPI" },
               { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete — Cot & Umăr (100 MDL)" },
-              { href: "/oboseala-cronica-burnout-biofeedback-chisinau/", label: "Oboseală Cronică & Biofeedback" }
+              { href: "/oboseala-cronica-burnout-biofeedback-chisinau/", label: "Oboseală Cronică & Biofeedback" },
+              { href: "/tensiune-intracraniana-simptome-neurolog-chisinau/", label: "Tensiune Intracraniană (Simptome)" },
+              { href: "/sindrom-piriform-durere-fesa-picior-chisinau/", label: "Sindrom Piriform (Durere Fesă)" },
+              { href: "/sindromul-picioarelor-nelinistite-neurolog-chisinau/", label: "Sindromul Picioarelor Neliniștite" },
+              { href: "/adhd-hiperactivitate-copii-neuropediatru-chisinau/", label: "ADHD & Hiperactivitate Copii" }
              ]
             }
            ]

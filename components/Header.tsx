@@ -106,7 +106,11 @@ export default function Header() {
     ["/eho-encefalografie-chisinau", "/ehoentsefalografiya-eho-eg-kishinev", "/servicii/diagnostic-functional"],
     ["/evaluare-neuropsihologica-testare-cognitiva-chisinau", "/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev", "/servicii/diagnostic-functional"],
     ["/terapie-ultrasunete-epicondilita-tendinita-chisinau", "/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev", "/servicii/fizioterapie-si-reabilitare"],
-    ["/oboseala-cronica-burnout-biofeedback-chisinau", "/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev", "/servicii/consultatii-neurologice"]
+    ["/oboseala-cronica-burnout-biofeedback-chisinau", "/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev", "/servicii/consultatii-neurologice"],
+    ["/tensiune-intracraniana-simptome-neurolog-chisinau", "/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev", "/servicii/consultatii-neurochirurgie"],
+    ["/sindrom-piriform-durere-fesa-picior-chisinau", "/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/sindromul-picioarelor-nelinistite-neurolog-chisinau", "/sindrom-bespokoynyh-nog-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
+    ["/adhd-hiperactivitate-copii-neuropediatru-chisinau", "/sdvg-giperaktivnost-u-detey-nevrolog-kishinev", "/servicii/consultatii-neurologice"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {

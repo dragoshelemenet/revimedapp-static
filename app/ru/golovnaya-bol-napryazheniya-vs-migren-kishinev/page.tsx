@@ -122,6 +122,7 @@ export default function RuGolovnayaBolNapryazheniyaVsMigrenKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/", label: "Внутричерепное давление vs. Мигрень" },
     {
         "href": "/ru/lechenie-migreni-kishinev/",
         "label": "Лечение мигрени Кишинёв"

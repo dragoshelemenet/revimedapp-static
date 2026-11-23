@@ -66,6 +66,7 @@ export default function RuBoliVSpineIshiasKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev/", label: "Синдром грушевидной мышцы" },
     {
         "href": "/ru/gryzha-diska-kishinev/",
         "label": "Грыжа диска Кишинёв"

@@ -66,6 +66,7 @@ export default function TicuriNervoaseBalbaialaCopiiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/adhd-hiperactivitate-copii-neuropediatru-chisinau/", label: "ADHD & Deficit de Atenție Copii" },
     { href: "/intarziere-vorbire-copii-neuropediatru-chisinau/", label: "Întârziere de Vorbire Copii" },
     {
         "href": "/neuropediatru-chisinau/",

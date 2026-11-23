@@ -45,6 +45,7 @@ export default function Page() {
     { q: "Unde văd prețurile pentru ședințele de fizioterapie?", a: "Toate cele 96 servicii cu tarife orientative sunt disponibile pe pagina Prețuri, cu convertor în MDL, EUR și RON." }
    ]}
    relatedLinks={[
+    { href: "/sindrom-piriform-durere-fesa-picior-chisinau/", label: "Sindrom Piriform vs. Sciatică" },
     { href: "/hernie-de-disc-chisinau/", label: "Hernie de disc Chișinău" },
     { href: "/fizioterapie-chisinau/", label: "Fizioterapie Chișinău" },
     { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău" }

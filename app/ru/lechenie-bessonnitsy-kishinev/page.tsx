@@ -66,6 +66,7 @@ export default function RuLechenieBessonnitsyKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/", label: "Синдром беспокойных ног" },
     { href: "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/", label: "Хроническая усталость и Биофидбек" },
     {
         "href": "/ru/elektroson-kishinev/",
