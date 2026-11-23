@@ -3460,6 +3460,7 @@ h2 {
 /* === SEO Bento Directory Hub & KPI Trust Strip & Mobile CRO Dock === */
 .rm-seo-bento-shell {
   width: 100%;
+  box-sizing: border-box;
   max-width: none !important;
   padding: 28px 30px;
   border-radius: 26px;
