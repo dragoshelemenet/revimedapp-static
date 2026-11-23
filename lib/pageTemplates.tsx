@@ -598,7 +598,7 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
       converterLabels={text}
      />
     </div>
-    <div className="rmShell" style={{ marginTop: 24 }}>
+    <div className="rmShell pricesModernLayout" style={{ marginTop: 24 }}>
      <article className="rm-seo-bento-shell" data-glass-card style={{ textAlign: "center" }}>
       <h2 style={{ marginTop: 0 }}>
        {lang === "en"
