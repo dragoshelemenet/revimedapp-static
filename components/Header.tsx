@@ -89,7 +89,11 @@ export default function Header() {
     ["/scolioza-postura-copii-adulti-chisinau", "/lechenie-skolioza-kishinev", "/servicii/fizioterapie-si-reabilitare"],
     ["/pinten-calcanean-artroza-chisinau", "/pyatochnaya-shpora-artroz-kishinev", "/servicii/fizioterapie-si-reabilitare"],
     ["/boala-parkinson-tremor-memorie-chisinau", "/bolezn-parkinsona-tremor-kishinev", "/servicii/consultatii-neurologice"],
-    ["/recuperare-postoperatorie-coloana-chisinau", "/reabilitatsiya-posle-operatsii-pozvonochnika-kishinev", "/servicii/consultatii-neurochirurgie"]
+    ["/recuperare-postoperatorie-coloana-chisinau", "/reabilitatsiya-posle-operatsii-pozvonochnika-kishinev", "/servicii/consultatii-neurochirurgie"],
+    ["/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau", "/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev", "/servicii/consultatii-neurochirurgie"],
+    ["/tinitus-zgomote-urechi-spondiloza-cervicala-chisinau", "/shum-v-ushah-tinnitus-spondilez-kishinev", "/servicii/consultatii-neurologice"],
+    ["/cefalee-tensiune-vs-migrena-chisinau", "/golovnaya-bol-napryazheniya-vs-migren-kishinev", "/servicii/consultatii-neurologice"],
+    ["/ghid-diagnostic-functional-eeg-reg-amp-chisinau", "/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev", "/servicii/diagnostic-functional"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {

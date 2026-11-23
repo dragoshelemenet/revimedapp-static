@@ -4,7 +4,7 @@ import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import { JsonLd, absoluteUrl, breadcrumbJsonLd, siteUrl } from "@/lib/seo";
 import { revimedReviews } from "@/lib/revimedReviews";
 
-export type LocalLandingProps = {
+ export type LocalLandingProps = {
  lang: "ro" | "ru";
  path: string;
  crumbLabel: string;
@@ -18,6 +18,24 @@ export type LocalLandingProps = {
  approachParagraphs: string[];
  equipmentHeading: string;
  equipmentCards: { slug: string; title: string; image: string; desc: string }[];
+ customDecisionTable?: {
+  heading: string;
+  columns: string[];
+  rows: string[][];
+ };
+ preparationChecklist?: {
+  heading: string;
+  steps: string[];
+ };
+ redFlagsNotice?: {
+  heading: string;
+  items: string[];
+ };
+ interactiveTool?: {
+  href: string;
+  label: string;
+  desc: string;
+ };
  faqs: { q: string; a: string }[];
  relatedLinks: { href: string; label: string }[];
 };
@@ -116,8 +134,8 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
        <span>{isRu ? "Невролог · Нейрохирург" : "Neurolog · Neurochirurg"}</span>
       </div>
       <div className="rm-kpi-card">
-       <strong>150 MDL · 25</strong>
-       <span>{isRu ? "Физиотерапия · аппаратов" : "Fizioterapie · aparate medicale"}</span>
+       <strong>100 MDL · 25</strong>
+       <span>{isRu ? "Процедуры 30 мин · аппаратов" : "Proceduri 30 min · aparate medicale"}</span>
       </div>
       <div className="rm-kpi-card">
        <strong>35+ {isRu ? "лет · EANS" : "ani · EANS"}</strong>
@@ -133,8 +151,8 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       <p style={{ margin: 0 }}>
        {p.directAnswer ||
         (isRu
-         ? `В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит 500 MDL (повторный — 400 MDL), нейрохирурга — 500 MDL (повторный — 400 MDL), сеанс физиотерапии (Электросон, Амплипульс, Электрофорез) — 150 MDL. Приём ведёт д-р Игорь Ревенко (35+ лет опыта, член EANS). Запись: 022 60 50 60.`
-         : `La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la neurolog costă 500 MDL (repetată 400 MDL), la neurochirurg 500 MDL, iar o ședință de fizioterapie (Electrosomn, Amplipuls, Electroforeză) costă 150 MDL. Consultațiile sunt realizate de Dr. Igor Revenco (35+ ani experiență, membru EANS). Programări: 022 60 50 60.`)}
+         ? `В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит 500 MDL (повторный — 400 MDL), нейрохирурга — 500 MDL (повторный — 400 MDL), процедуры из раздела лечебных методов (Электросон, Амплипульс, Электрофорез) — 100 MDL / 30 мин. Приём ведёт д-р Игорь Ревенко (35+ лет опыта, член EANS). Запись: 022 60 50 60.`
+         : `La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la neurolog costă 500 MDL (repetată 400 MDL), la neurochirurg 500 MDL (repetată 400 MDL), iar procedurile din lista de metode curative (Electrosomn, Amplipuls, Electroforeză) costă 100 MDL / 30 min. Consultațiile sunt realizate de Dr. Igor Revenco (35+ ani experiență, membru EANS). Programări: 022 60 50 60.`)}
       </p>
      </aside>
 
@@ -185,45 +203,110 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       </div>
       <div className="rm-price-adv-card">
        <span className="rm-adv-tag">{isRu ? "Курс 5 сеансов" : "Curs 5 ședințe"}</span>
-       <strong>750 MDL</strong>
-       <span>{isRu ? "5 процедур физиотерапии / Электросна / Амплипульса (по 150 MDL)" : "5 ședințe fizioterapie / Electrosomn / Amplipuls (150 MDL/ședință)"}</span>
+       <strong>500 MDL</strong>
+       <span>{isRu ? "5 процедур Электросна / Амплипульса / лазера (по 100 MDL / 30 мин)" : "5 proceduri Electrosomn / Amplipuls / laser (100 MDL / 30 min)"}</span>
       </div>
       <div className="rm-price-adv-card">
        <span className="rm-adv-tag">{isRu ? "Курс 10 сеансов" : "Curs 10 ședințe"}</span>
-       <strong>1500 MDL</strong>
-       <span>{isRu ? "Полный курс восстановления из 10 процедур · Лечебный массаж — 200 MDL" : "Curs complet de 10 proceduri · Masaj terapeutic 60 min — 200 MDL"}</span>
+       <strong>1000 MDL</strong>
+       <span>{isRu ? "Курс из 10 аппаратных процедур (100 MDL / 30 мин) · Лечебный массаж — 200 MDL" : "Curs de 10 proceduri aparat (100 MDL / 30 min) · Masaj terapeutic 60 min — 200 MDL"}</span>
       </div>
      </div>
 
-     <h2>{isRu ? "Как выбрать направление в Revimed PLUS+" : "Ghid rapid: ce consultație sau procedură ți se potrivește"}</h2>
-     <div className="rm-decision-table-wrap">
-      <table className="rm-decision-table">
-       <thead>
-        <tr>
-         <th>{isRu ? "Ситуация" : "Situația ta"}</th>
-         <th>{isRu ? "Рекомендуемый шаг" : "Pasul recomandat"}</th>
-         <th>{isRu ? "Что взять с собой" : "Ce să aduci"}</th>
-        </tr>
-       </thead>
-       <tbody>
-        <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
-         <td style={{ padding: "10px 12px" }}>{isRu ? "Мигрень, головокружение, бессонница, онемение" : "Migrene, amețeli, insomnie, amorțeli, stres"}</td>
-         <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация невролога + RHEOTEST" : "Consultație neurolog + RHEOTEST"}</strong></td>
-         <td style={{ padding: "10px 12px" }}>{isRu ? "Список лекарств и старые выписки" : "Lista medicamentelor și analizele anterioare"}</td>
-        </tr>
-        <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
-         <td style={{ padding: "10px 12px" }}>{isRu ? "Грыжа диска, ишиас, прострел в ногу или руку" : "Hernie de disc, sciatică, durere pe picior/braț"}</td>
-         <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация нейрохирурга (разбор МРТ)" : "Consultație neurochirurg (analiză RMN)"}</strong></td>
-         <td style={{ padding: "10px 12px" }}>{isRu ? "Диск / плёнка МРТ или КТ" : "Imaginile RMN sau CT pe CD / film"}</td>
-        </tr>
-        <tr>
-         <td style={{ padding: "10px 12px" }}>{isRu ? "Боль в спине, спазм, восстановление" : "Dureri de spate, contracturi, recuperare"}</td>
-         <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Курс физиотерапии (5–10 сеансов)" : "Curs fizioterapie (5–10 ședințe)"}</strong></td>
-         <td style={{ padding: "10px 12px" }}>{isRu ? "Назначение врача (или осмотр на месте)" : "Recomandarea medicului (sau consult pe loc)"}</td>
-        </tr>
-       </tbody>
-      </table>
-     </div>
+     {p.customDecisionTable ? (
+      <>
+       <h2>{p.customDecisionTable.heading}</h2>
+       <div className="rm-decision-table-wrap">
+        <table className="rm-decision-table">
+         <thead>
+          <tr>
+           {p.customDecisionTable.columns.map((col) => (
+            <th key={col}>{col}</th>
+           ))}
+          </tr>
+         </thead>
+         <tbody>
+          {p.customDecisionTable.rows.map((row, rIdx) => (
+           <tr key={rIdx} style={rIdx < p.customDecisionTable!.rows.length - 1 ? { borderBottom: "1px solid rgba(11, 143, 216, 0.14)" } : undefined}>
+            {row.map((cell, cIdx) => (
+             <td key={cIdx} style={{ padding: "10px 12px" }}>
+              {cIdx === 0 ? <strong>{cell}</strong> : cell}
+             </td>
+            ))}
+           </tr>
+          ))}
+         </tbody>
+        </table>
+       </div>
+      </>
+     ) : (
+      <>
+       <h2>{isRu ? "Как выбрать направление в Revimed PLUS+" : "Ghid rapid: ce consultație sau procedură ți se potrivește"}</h2>
+       <div className="rm-decision-table-wrap">
+        <table className="rm-decision-table">
+         <thead>
+          <tr>
+           <th>{isRu ? "Ситуация" : "Situația ta"}</th>
+           <th>{isRu ? "Рекомендуемый шаг" : "Pasul recomandat"}</th>
+           <th>{isRu ? "Что взять с собой" : "Ce să aduci"}</th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
+           <td style={{ padding: "10px 12px" }}>{isRu ? "Мигрень, головокружение, бессонница, онемение" : "Migrene, amețeli, insomnie, amorțeli, stres"}</td>
+           <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация невролога + RHEOTEST" : "Consultație neurolog + RHEOTEST"}</strong></td>
+           <td style={{ padding: "10px 12px" }}>{isRu ? "Список лекарств и старые выписки" : "Lista medicamentelor și analizele anterioare"}</td>
+          </tr>
+          <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
+           <td style={{ padding: "10px 12px" }}>{isRu ? "Грыжа диска, ишиас, прострел в ногу или руку" : "Hernie de disc, sciatică, durere pe picior/braț"}</td>
+           <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация нейрохирурга (разбор МРТ)" : "Consultație neurochirurg (analiză RMN)"}</strong></td>
+           <td style={{ padding: "10px 12px" }}>{isRu ? "Диск / плёнка МРТ или КТ" : "Imaginile RMN sau CT pe CD / film"}</td>
+          </tr>
+          <tr>
+           <td style={{ padding: "10px 12px" }}>{isRu ? "Боль в спине, спазм, восстановление" : "Dureri de spate, contracturi, recuperare"}</td>
+           <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Курс физиотерапии (5–10 сеансов)" : "Curs fizioterapie (5–10 ședințe)"}</strong></td>
+           <td style={{ padding: "10px 12px" }}>{isRu ? "Назначение врача (или осмотр на месте)" : "Recomandarea medicului (sau consult pe loc)"}</td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </>
+     )}
+
+     {p.preparationChecklist && (
+      <>
+       <h2>{p.preparationChecklist.heading}</h2>
+       <ol style={{ paddingLeft: 20, marginBottom: 20 }}>
+        {p.preparationChecklist.steps.map((step) => (
+         <li key={step} style={{ marginBottom: 6 }}>{step}</li>
+        ))}
+       </ol>
+      </>
+     )}
+
+     {p.redFlagsNotice && (
+      <aside
+       className="rm-citable-summary"
+       style={{ borderLeft: "4px solid #d97706", marginBottom: 20 }}
+       aria-label={p.redFlagsNotice.heading}
+      >
+       <strong style={{ display: "block", marginBottom: 6, color: "#92400e" }}>{p.redFlagsNotice.heading}</strong>
+       <ul style={{ margin: 0, paddingLeft: 18 }}>
+        {p.redFlagsNotice.items.map((item) => (
+         <li key={item} style={{ marginBottom: 4 }}>{item}</li>
+        ))}
+       </ul>
+      </aside>
+     )}
+
+     {p.interactiveTool && (
+      <div className="rm-citable-summary" style={{ marginBottom: 22 }}>
+       <p style={{ margin: "0 0 10px" }}>{p.interactiveTool.desc}</p>
+       <Link href={p.interactiveTool.href} className="btn btn-outline-primary btn-sm">
+        {p.interactiveTool.label}
+       </Link>
+      </div>
+     )}
 
      <h2>{isRu ? "Отзывы пациентов Revimed PLUS+ (Google Maps)" : "Recenzii reale ale pacienților (Google Maps)"}</h2>
      <div className="rm-home-services-grid" style={{ marginBottom: 22 }}>

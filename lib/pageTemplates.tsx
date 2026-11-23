@@ -440,7 +440,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/tunnelnyy-sindrom-onemenie-ruk-kishinev/", label: "Туннельный синдром рук" },
               { href: "/ru/epilepsiya-kishinev/", label: "Эпилепсия и ЭЭГ" },
               { href: "/ru/nervnye-tiki-zaikanie-detyam-kishinev/", label: "Тики и заикание у детей" },
-              { href: "/ru/bolezn-parkinsona-tremor-kishinev/", label: "Болезнь Паркинсона и тремор" }
+              { href: "/ru/bolezn-parkinsona-tremor-kishinev/", label: "Болезнь Паркинсона и тремор" },
+              { href: "/ru/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev/", label: "Протрузия L4–L5 / L5–S1 и стеноз (Гид МРТ)" },
+              { href: "/ru/shum-v-ushah-tinnitus-spondilez-kishinev/", label: "Шум в ушах (тиннитус) и спондилёз" },
+              { href: "/ru/golovnaya-bol-napryazheniya-vs-migren-kishinev/", label: "Головная боль vs. Мигрень (Гид)" },
+              { href: "/ru/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev/", label: "Гид диагностики: ЭЭГ vs. РЭГ vs. АМП" }
              ]
             }
            ]
@@ -497,7 +501,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/tunel-carpian-amorteli-maini-chisinau/", label: "Tunel Carpian & Amorțeli Mâini" },
               { href: "/epilepsie-convulsii-chisinau/", label: "Epilepsie & EEG" },
               { href: "/ticuri-nervoase-balbaiala-copii-chisinau/", label: "Ticuri & Logonevroză Copii" },
-              { href: "/boala-parkinson-tremor-memorie-chisinau/", label: "Parkinson, Tremor & Memorie" }
+              { href: "/boala-parkinson-tremor-memorie-chisinau/", label: "Parkinson, Tremor & Memorie" },
+              { href: "/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/", label: "Protruzie L4–L5 / L5–S1 & Stenoză (Ghid RMN)" },
+              { href: "/tinitus-zgomote-urechi-spondiloza-cervicala-chisinau/", label: "Tinitus (Zgomote urechi) & Spondiloză" },
+              { href: "/cefalee-tensiune-vs-migrena-chisinau/", label: "Cefalee vs. Migrenă (Ghid Diferențial)" },
+              { href: "/ghid-diagnostic-functional-eeg-reg-amp-chisinau/", label: "Ghid Diagnostic: EEG vs. REG vs. AMP" }
              ]
             }
            ]
