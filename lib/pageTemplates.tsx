@@ -388,180 +388,624 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
        <div className="rm-seo-bento-grid">
         {(lang === "ru"
          ? [
-            {
-             heading: "Консультации специалистов",
-             links: [
-              { href: "/ru/nevrolog-kishinev/", label: "Невролог Кишинёв (500 MDL)" },
-              { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (500 MDL)" },
-              { href: "/ru/detskiy-nevrolog-kishinev/", label: "Детский невролог (500 MDL)" },
-              { href: "/ru/igloukalyvanie-kishinev/", label: "Иглоукалывание и рефлексолог (500 MDL)" },
-              { href: "/ru/fitoterapevt-kishinev/", label: "Врач-фитотерапевт (500 MDL)" },
-              { href: "/ru/nevrolog-chekany-kishinev/", label: "Невролог Чеканы (клиника)" },
-              { href: "/ru/fizioterapiya-chekany-kishinev/", label: "Физиотерапия Чеканы" }
+           {
+             "heading": "Консультации и диагностика",
+             "links": [
+               {
+                 "href": "/ru/nevrolog-kishinev/",
+                 "label": "Невролог Кишинёв (500 MDL)"
+               },
+               {
+                 "href": "/ru/neyrohirurg-kishinev/",
+                 "label": "Нейрохирург Кишинёв (500 MDL)"
+               },
+               {
+                 "href": "/ru/detskiy-nevrolog-kishinev/",
+                 "label": "Детский невролог (500 MDL)"
+               },
+               {
+                 "href": "/ru/igloukalyvanie-kishinev/",
+                 "label": "Иглоукалывание и рефлексолог (500 MDL)"
+               },
+               {
+                 "href": "/ru/fitoterapevt-kishinev/",
+                 "label": "Врач-фитотерапевт (500 MDL)"
+               },
+               {
+                 "href": "/ru/nevrolog-chekany-kishinev/",
+                 "label": "Невролог Чеканы (клиника)"
+               },
+               {
+                 "href": "/ru/eeg-kishinev/",
+                 "label": "ЭЭГ Кишинёв (1600 MDL)"
+               },
+               {
+                 "href": "/ru/kartirovanie-mozga-kishinev/",
+                 "label": "Картирование мозга 3D (600 MDL)"
+               },
+               {
+                 "href": "/ru/diagnostika-amp-kishinev/",
+                 "label": "Диагностика АМП 117 (1000 MDL)"
+               },
+               {
+                 "href": "/ru/reoentsefalografiya-kishinev/",
+                 "label": "РЭГ сосудов мозга (500 MDL)"
+               },
+               {
+                 "href": "/ru/elektrospondilografiya-kishinev/",
+                 "label": "Электроспондилография (500 MDL)"
+               },
+               {
+                 "href": "/ru/ehoentsefalografiya-eho-eg-kishinev/",
+                 "label": "Эхоэнцефалография Эхо-ЭГ (250 MDL)"
+               }
              ]
-            },
-            {
-             heading: "Диагностика и физиотерапия",
-             links: [
-              { href: "/ru/eeg-kishinev/", label: "ЭЭГ Кишинёв (1600 MDL)" },
-              { href: "/ru/eeg-detyam-kishinev/", label: "ЭЭГ детям (1600 MDL)" },
-              { href: "/ru/kartirovanie-mozga-kishinev/", label: "Картирование мозга 3D (600 MDL)" },
-              { href: "/ru/diagnostika-amp-kishinev/", label: "Диагностика АМП 117 (1000 MDL)" },
-              { href: "/ru/reoentsefalografiya-kishinev/", label: "РЭГ сосудов мозга (500 MDL)" },
-              { href: "/ru/elektrospondilografiya-kishinev/", label: "Электроспондилография (500 MDL)" },
-              { href: "/ru/uzi-ekg-kishinev/", label: "УЗИ и ЭКГ (200–250 MDL)" },
-              { href: "/ru/fizioterapiya-kishinev/", label: "Физиотерапия (от 100 MDL / 30 мин)" },
-              { href: "/ru/elektroson-kishinev/", label: "Электросон и ТЭС (100 MDL / 30 мин)" },
-              { href: "/ru/elektroforez-amplipuls-kishinev/", label: "Электрофорез & Амплипульс (100 MDL)" },
-              { href: "/ru/magnitoterapiya-lazer-kishinev/", label: "Магнитотерапия & Лазер (100 MDL)" },
-              { href: "/ru/ozonoterapiya-darsonval-kishinev/", label: "Озонотерапия & Дарсонваль (100 MDL)" },
-              { href: "/ru/solyanaya-peshchera-gryazevye-vanny-kishinev/", label: "Соляная пещера & Грязи (100–150 MDL)" },
-              { href: "/ru/lechebnyy-massazh-kishinev/", label: "Лечебный массаж (200 MDL)" },
-              { href: "/ru/kinezoterapiya-kishinev/", label: "Кинезотерапия (250 MDL)" }
+           },
+           {
+             "heading": "Физиотерапия и процедуры",
+             "links": [
+               {
+                 "href": "/ru/fizioterapiya-kishinev/",
+                 "label": "Физиотерапия (от 100 MDL / 30 мин)"
+               },
+               {
+                 "href": "/ru/fizioterapiya-chekany-kishinev/",
+                 "label": "Физиотерапия Чеканы"
+               },
+               {
+                 "href": "/ru/elektroson-kishinev/",
+                 "label": "Электросон и ТЭС (100 MDL)"
+               },
+               {
+                 "href": "/ru/elektroforez-amplipuls-kishinev/",
+                 "label": "Электрофорез и Амплипульс (100 MDL)"
+               },
+               {
+                 "href": "/ru/magnitoterapiya-lazer-kishinev/",
+                 "label": "Магнитотерапия и Лазер (100 MDL)"
+               },
+               {
+                 "href": "/ru/ozonoterapiya-darsonval-kishinev/",
+                 "label": "Озонотерапия и Дарсонваль (100 MDL)"
+               },
+               {
+                 "href": "/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/",
+                 "label": "Ультразвук и электростимуляция (100 MDL)"
+               },
+               {
+                 "href": "/ru/solyanaya-peshchera-gryazevye-vanny-kishinev/",
+                 "label": "Соляная пещера и Грязи (100–150 MDL)"
+               },
+               {
+                 "href": "/ru/lechebnyy-massazh-kishinev/",
+                 "label": "Лечебный массаж (200 MDL)"
+               },
+               {
+                 "href": "/ru/kinezoterapiya-kishinev/",
+                 "label": "Кинезотерапия (250 MDL)"
+               },
+               {
+                 "href": "/ru/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev/",
+                 "label": "Биомеханика и Эргономика (550–600 MDL)"
+               },
+               {
+                 "href": "/ru/protivopokazaniya-k-fizioterapii-kishinev/",
+                 "label": "Противопоказания к физиотерапии"
+               }
              ]
-            },
-            {
-             heading: "Заболевания и реабилитация",
-             links: [
-              { href: "/ru/gryzha-diska-kishinev/", label: "Грыжа диска без операции" },
-              { href: "/ru/boli-v-spine-ishias-kishinev/", label: "Боль в спине и ишиас" },
-              { href: "/ru/osteohondroz-kishinev/", label: "Остеохондроз" },
-              { href: "/ru/lechenie-skolioza-kishinev/", label: "Сколиоз и осанка" },
-              { href: "/ru/reabilitatsiya-posle-operatsii-pozvonochnika-kishinev/", label: "После операции на позвоночнике" },
-              { href: "/ru/pyatochnaya-shpora-artroz-kishinev/", label: "Пяточная шпора и артроз" },
-              { href: "/ru/lechenie-migreni-kishinev/", label: "Лечение мигрени" },
-              { href: "/ru/golovokruzhenie-kishinev/", label: "Головокружение и шум в ушах" },
-              { href: "/ru/lechenie-bessonnitsy-kishinev/", label: "Лечение бессонницы" },
-              { href: "/ru/vsd-distoniya-kishinev/", label: "ВСД и тест ВНС РУНО" },
-              { href: "/ru/reabilitatsiya-posle-insulta-kishinev/", label: "Реабилитация после инсульта" },
-              { href: "/ru/meditsinskaya-reabilitatsiya-kishinev/", label: "Центр реабилитации" },
-              { href: "/ru/nevralgiya-neyropatiya-kishinev/", label: "Невралгия и нейропатия" },
-              { href: "/ru/nevralgiya-troynichnogo-nerva-kishinev/", label: "Невралгия тройничного нерва" },
-              { href: "/ru/tunnelnyy-sindrom-onemenie-ruk-kishinev/", label: "Туннельный синдром рук" },
-              { href: "/ru/epilepsiya-kishinev/", label: "Эпилепсия и ЭЭГ" },
-              { href: "/ru/nervnye-tiki-zaikanie-detyam-kishinev/", label: "Тики и заикание у детей" },
-              { href: "/ru/bolezn-parkinsona-tremor-kishinev/", label: "Болезнь Паркинсона и тремор" },
-              { href: "/ru/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev/", label: "Протрузия L4–L5 / L5–S1 и стеноз (Гид МРТ)" },
-              { href: "/ru/shum-v-ushah-tinnitus-spondilez-kishinev/", label: "Шум в ушах (тиннитус) и спондилёз" },
-              { href: "/ru/golovnaya-bol-napryazheniya-vs-migren-kishinev/", label: "Головная боль vs. Мигрень (Гид)" },
-              { href: "/ru/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev/", label: "Гид диагностики: ЭЭГ vs. РЭГ vs. АМП" },
-              { href: "/ru/mezhrebernaya-nevralgiya-bol-mezhdu-lopatkami-kishinev/", label: "Межрёберная невралгия vs. Сердце" },
-              { href: "/ru/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev/", label: "Грыжа шеи C5–C6 и головокружение" },
-              { href: "/ru/onemenie-nog-polineyropatiya-kishinev/", label: "Онемение ног и полинейропатия" },
-              { href: "/ru/protivopokazaniya-k-fizioterapii-kishinev/", label: "Противопоказания к физиотерапии" },
-              { href: "/ru/enurez-u-detey-nevrolog-kishinev/", label: "Ночной энурез у детей (невролог)" },
-              { href: "/ru/spazmofiliya-sudorogi-nevrolog-kishinev/", label: "Спазмофилия и мышечные судороги" },
-              { href: "/ru/sotryasenie-mozga-vosstanovlenie-kishinev/", label: "Восстановление после сотрясения мозга" },
-              { href: "/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/", label: "Задержка речи у ребёнка (ЗРР)" },
-              { href: "/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/", label: "Фебрильные судороги у детей и ЭЭГ" },
-              { href: "/ru/ehoentsefalografiya-eho-eg-kishinev/", label: "Эхоэнцефалография Эхо-ЭГ (250 MDL)" },
-              { href: "/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/", label: "Нейропсихология, память и MMPI" },
-              { href: "/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/", label: "Ультразвук и электростимуляция (100 MDL)" },
-              { href: "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/", label: "Хроническая усталость и Биофидбек" },
-              { href: "/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/", label: "Внутричерепное давление (симптомы)" },
-              { href: "/ru/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev/", label: "Синдром грушевидной мышцы" },
-              { href: "/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/", label: "Синдром беспокойных ног (СБН)" },
-              { href: "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/", label: "СДВГ и гиперактивность у детей" },
-              { href: "/ru/nevralgiya-zatylochnogo-nerva-arnolda-kishinev/", label: "Невралгия затылочного нерва (Арнольда)" },
-              { href: "/ru/postgerpeticheskaya-nevralgiya-lishay-kishinev/", label: "Постгерпетическая невралгия (лишай)" },
-              { href: "/ru/bol-v-spine-ishias-pri-beremennosti-kishinev/", label: "Боль в спине при беременности" },
-              { href: "/ru/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev/", label: "Биомеханика (600 MDL) и Эргономика" },
-              { href: "/ru/spondilolistez-pozvonochnika-neyrohirurg-kishinev/", label: "Спондилолистез (смещение позвонка)" },
-              { href: "/ru/sindrom-kubitalnogo-kanala-loktevoy-nerv-kishinev/", label: "Кубитальный канал (онемение мизинца)" },
-              { href: "/ru/gonartroz-koksartroz-fizioterapiya-kishinev/", label: "Гонартроз и коксартроз (100 MDL)" },
-              { href: "/ru/abuzusnaya-golovnaya-bol-klasternaya-nevrolog-kishinev/", label: "Абузусная и кластерная головная боль" }
+           },
+           {
+             "heading": "Позвоночник, спина и суставы",
+             "links": [
+               {
+                 "href": "/ru/gryzha-diska-kishinev/",
+                 "label": "Грыжа диска без операции"
+               },
+               {
+                 "href": "/ru/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev/",
+                 "label": "Протрузия L4–L5 / L5–S1 и стеноз"
+               },
+               {
+                 "href": "/ru/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev/",
+                 "label": "Грыжа шеи C5–C6 и головокружение"
+               },
+               {
+                 "href": "/ru/spondilolistez-pozvonochnika-neyrohirurg-kishinev/",
+                 "label": "Спондилолистез (смещение позвонка)"
+               },
+               {
+                 "href": "/ru/boli-v-spine-ishias-kishinev/",
+                 "label": "Боль в спине и ишиас"
+               },
+               {
+                 "href": "/ru/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev/",
+                 "label": "Синдром грушевидной мышцы"
+               },
+               {
+                 "href": "/ru/osteohondroz-kishinev/",
+                 "label": "Остеохондроз позвоночника"
+               },
+               {
+                 "href": "/ru/lechenie-skolioza-kishinev/",
+                 "label": "Сколиоз и осанка"
+               },
+               {
+                 "href": "/ru/reabilitatsiya-posle-operatsii-pozvonochnika-kishinev/",
+                 "label": "После операции на позвоночнике"
+               },
+               {
+                 "href": "/ru/bol-v-spine-ishias-pri-beremennosti-kishinev/",
+                 "label": "Боль в спине при беременности"
+               },
+               {
+                 "href": "/ru/pyatochnaya-shpora-artroz-kishinev/",
+                 "label": "Пяточная шпора и артроз"
+               },
+               {
+                 "href": "/ru/gonartroz-koksartroz-fizioterapiya-kishinev/",
+                 "label": "Гонартроз и коксартроз (100 MDL)"
+               }
              ]
-            }
-           ]
+           },
+           {
+             "heading": "Головные боли, сон и вегетатика",
+             "links": [
+               {
+                 "href": "/ru/lechenie-migreni-kishinev/",
+                 "label": "Лечение мигрени"
+               },
+               {
+                 "href": "/ru/golovnaya-bol-napryazheniya-vs-migren-kishinev/",
+                 "label": "Головная боль vs. Мигрень"
+               },
+               {
+                 "href": "/ru/abuzusnaya-golovnaya-bol-klasternaya-nevrolog-kishinev/",
+                 "label": "Абузусная и кластерная боль"
+               },
+               {
+                 "href": "/ru/nevralgiya-zatylochnogo-nerva-arnolda-kishinev/",
+                 "label": "Невралгия затылочного нерва"
+               },
+               {
+                 "href": "/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/",
+                 "label": "Внутричерепное давление"
+               },
+               {
+                 "href": "/ru/golovokruzhenie-kishinev/",
+                 "label": "Головокружение и вертиго"
+               },
+               {
+                 "href": "/ru/shum-v-ushah-tinnitus-spondilez-kishinev/",
+                 "label": "Шум в ушах (тиннитус)"
+               },
+               {
+                 "href": "/ru/lechenie-bessonnitsy-kishinev/",
+                 "label": "Лечение бессонницы"
+               },
+               {
+                 "href": "/ru/vsd-distoniya-kishinev/",
+                 "label": "ВСД и тест ВНС РУНО"
+               },
+               {
+                 "href": "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/",
+                 "label": "Хроническая усталость и Биофидбек"
+               },
+               {
+                 "href": "/ru/spazmofiliya-sudorogi-nevrolog-kishinev/",
+                 "label": "Спазмофилия и судороги"
+               }
+             ]
+           },
+           {
+             "heading": "Нервы, невралгии и реабилитация",
+             "links": [
+               {
+                 "href": "/ru/reabilitatsiya-posle-insulta-kishinev/",
+                 "label": "Реабилитация после инсульта"
+               },
+               {
+                 "href": "/ru/meditsinskaya-reabilitatsiya-kishinev/",
+                 "label": "Центр реабилитации"
+               },
+               {
+                 "href": "/ru/sotryasenie-mozga-vosstanovlenie-kishinev/",
+                 "label": "После сотрясения мозга"
+               },
+               {
+                 "href": "/ru/nevralgiya-neyropatiya-kishinev/",
+                 "label": "Невралгия и нейропатия"
+               },
+               {
+                 "href": "/ru/nevralgiya-troynichnogo-nerva-kishinev/",
+                 "label": "Невралгия тройничного нерва"
+               },
+               {
+                 "href": "/ru/mezhrebernaya-nevralgiya-bol-mezhdu-lopatkami-kishinev/",
+                 "label": "Межрёберная невралгия vs. Сердце"
+               },
+               {
+                 "href": "/ru/postgerpeticheskaya-nevralgiya-lishay-kishinev/",
+                 "label": "Постгерпетическая невралгия"
+               },
+               {
+                 "href": "/ru/tunnelnyy-sindrom-onemenie-ruk-kishinev/",
+                 "label": "Туннельный синдром рук"
+               },
+               {
+                 "href": "/ru/sindrom-kubitalnogo-kanala-loktevoy-nerv-kishinev/",
+                 "label": "Кубитальный канал (мизинец)"
+               },
+               {
+                 "href": "/ru/onemenie-nog-polineyropatiya-kishinev/",
+                 "label": "Онемение ног и полинейропатия"
+               },
+               {
+                 "href": "/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/",
+                 "label": "Синдром беспокойных ног (СБН)"
+               }
+             ]
+           },
+           {
+             "heading": "Детская неврология, ЭЭГ и память",
+             "links": [
+               {
+                 "href": "/ru/eeg-detyam-kishinev/",
+                 "label": "ЭЭГ детям (1600 MDL)"
+               },
+               {
+                 "href": "/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/",
+                 "label": "Задержка речи у ребёнка (ЗРР)"
+               },
+               {
+                 "href": "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/",
+                 "label": "СДВГ и гиперактивность у детей"
+               },
+               {
+                 "href": "/ru/nervnye-tiki-zaikanie-detyam-kishinev/",
+                 "label": "Тики и заикание у детей"
+               },
+               {
+                 "href": "/ru/enurez-u-detey-nevrolog-kishinev/",
+                 "label": "Ночной энурез у детей"
+               },
+               {
+                 "href": "/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/",
+                 "label": "Фебрильные судороги и ЭЭГ"
+               },
+               {
+                 "href": "/ru/epilepsiya-kishinev/",
+                 "label": "Эпилепсия и ЭЭГ"
+               },
+               {
+                 "href": "/ru/bolezn-parkinsona-tremor-kishinev/",
+                 "label": "Болезнь Паркинсона и тремор"
+               },
+               {
+                 "href": "/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/",
+                 "label": "Нейропсихология, память и MMPI"
+               },
+               {
+                 "href": "/ru/uzi-ekg-kishinev/",
+                 "label": "УЗИ и ЭКГ (200–250 MDL)"
+               },
+               {
+                 "href": "/ru/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev/",
+                 "label": "Гид диагностики: ЭЭГ vs. РЭГ vs. АМП"
+               }
+             ]
+           }
+         ]
          : [
-            {
-             heading: "Consultații & Specialități",
-             links: [
-              { href: "/neurolog-chisinau/", label: "Neurolog Chișinău (500 MDL)" },
-              { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (500 MDL)" },
-              { href: "/neuropediatru-chisinau/", label: "Neuropediatru Chișinău (500 MDL)" },
-              { href: "/acupunctura-reflexoterapie-chisinau/", label: "Acupunctură & Reflexolog (500 MDL)" },
-              { href: "/fitoterapeut-chisinau/", label: "Medic Fitoterapeut (500 MDL)" },
-              { href: "/neurolog-ciocana-chisinau/", label: "Neurolog Ciocana (sediu)" },
-              { href: "/fizioterapie-ciocana-chisinau/", label: "Fizioterapie Ciocana" }
+           {
+             "heading": "Consultații & Diagnostic Funcțional",
+             "links": [
+               {
+                 "href": "/neurolog-chisinau/",
+                 "label": "Neurolog Chișinău (500 MDL)"
+               },
+               {
+                 "href": "/neurochirurg-chisinau/",
+                 "label": "Neurochirurg Chișinău (500 MDL)"
+               },
+               {
+                 "href": "/neuropediatru-chisinau/",
+                 "label": "Neuropediatru Chișinău (500 MDL)"
+               },
+               {
+                 "href": "/acupunctura-reflexoterapie-chisinau/",
+                 "label": "Acupunctură & Reflexolog (500 MDL)"
+               },
+               {
+                 "href": "/fitoterapeut-chisinau/",
+                 "label": "Medic Fitoterapeut (500 MDL)"
+               },
+               {
+                 "href": "/neurolog-ciocana-chisinau/",
+                 "label": "Neurolog Ciocana (sediu)"
+               },
+               {
+                 "href": "/eeg-chisinau/",
+                 "label": "EEG Chișinău (1600 MDL)"
+               },
+               {
+                 "href": "/cartografierea-creierului-chisinau/",
+                 "label": "Cartografiere Creier 3D (600 MDL)"
+               },
+               {
+                 "href": "/diagnostic-amp-chisinau/",
+                 "label": "Diagnostic AMP 117 (1000 MDL)"
+               },
+               {
+                 "href": "/reoencefalografie-chisinau/",
+                 "label": "Reoencefalografie REG (500 MDL)"
+               },
+               {
+                 "href": "/electrospondilografie-chisinau/",
+                 "label": "Electrospondilografie (500 MDL)"
+               },
+               {
+                 "href": "/eho-encefalografie-chisinau/",
+                 "label": "EHO-Encefalografie (250 MDL)"
+               }
              ]
-            },
-            {
-             heading: "Diagnostic & Fizioterapie",
-             links: [
-              { href: "/eeg-chisinau/", label: "EEG Chișinău (1600 MDL)" },
-              { href: "/eeg-copii-chisinau/", label: "EEG Copii (1600 MDL)" },
-              { href: "/cartografierea-creierului-chisinau/", label: "Cartografiere Creier 3D (600 MDL)" },
-              { href: "/diagnostic-amp-chisinau/", label: "Diagnostic AMP 117 (1000 MDL)" },
-              { href: "/reoencefalografie-chisinau/", label: "Reoencefalografie REG (500 MDL)" },
-              { href: "/electrospondilografie-chisinau/", label: "Electrospondilografie (500 MDL)" },
-              { href: "/ecografie-ecg-chisinau/", label: "Ecografie & ECG (200–250 MDL)" },
-              { href: "/fizioterapie-chisinau/", label: "Fizioterapie (de la 100 MDL / 30 min)" },
-              { href: "/electrosomn-chisinau/", label: "Electrosomn & TES (100 MDL / 30 min)" },
-              { href: "/electroforeza-amplipuls-chisinau/", label: "Electroforeză & Amplipuls (100 MDL)" },
-              { href: "/magnetoterapie-laser-chisinau/", label: "Magnetoterapie & Laser (100 MDL)" },
-              { href: "/ozonoterapie-darsonval-chisinau/", label: "Ozonoterapie & Darsonval (100 MDL)" },
-              { href: "/camera-salina-bai-namol-chisinau/", label: "Cameră Salină & Nămol Saki (100–150 MDL)" },
-              { href: "/masaj-terapeutic-chisinau/", label: "Masaj Terapeutic (200 MDL)" },
-              { href: "/kinetoterapie-chisinau/", label: "Kinetoterapie (250 MDL)" }
+           },
+           {
+             "heading": "Fizioterapie, Recuperare & Evaluări",
+             "links": [
+               {
+                 "href": "/fizioterapie-chisinau/",
+                 "label": "Fizioterapie (de la 100 MDL / 30 min)"
+               },
+               {
+                 "href": "/fizioterapie-ciocana-chisinau/",
+                 "label": "Fizioterapie Ciocana"
+               },
+               {
+                 "href": "/electrosomn-chisinau/",
+                 "label": "Electrosomn & TES (100 MDL)"
+               },
+               {
+                 "href": "/electroforeza-amplipuls-chisinau/",
+                 "label": "Electroforeză & Amplipuls (100 MDL)"
+               },
+               {
+                 "href": "/magnetoterapie-laser-chisinau/",
+                 "label": "Magnetoterapie & Laser (100 MDL)"
+               },
+               {
+                 "href": "/ozonoterapie-darsonval-chisinau/",
+                 "label": "Ozonoterapie & Darsonval (100 MDL)"
+               },
+               {
+                 "href": "/terapie-ultrasunete-epicondilita-tendinita-chisinau/",
+                 "label": "Ultrasunete — Cot & Umăr (100 MDL)"
+               },
+               {
+                 "href": "/camera-salina-bai-namol-chisinau/",
+                 "label": "Cameră Salină & Nămol Saki (100–150 MDL)"
+               },
+               {
+                 "href": "/masaj-terapeutic-chisinau/",
+                 "label": "Masaj Terapeutic (200 MDL)"
+               },
+               {
+                 "href": "/kinetoterapie-chisinau/",
+                 "label": "Kinetoterapie (250 MDL)"
+               },
+               {
+                 "href": "/evaluare-biomecanica-ergonomie-birou-chisinau/",
+                 "label": "Biomecanică & Ergonomie (550–600 MDL)"
+               },
+               {
+                 "href": "/contraindicatii-fizioterapie-siguranta-chisinau/",
+                 "label": "Contraindicații Fizioterapie (Ghid)"
+               }
              ]
-            },
-            {
-             heading: "Afecțiuni & Recuperare",
-             links: [
-              { href: "/hernie-de-disc-chisinau/", label: "Hernie de disc fără operație" },
-              { href: "/dureri-de-spate-sciatica-chisinau/", label: "Dureri de spate & Sciatică" },
-              { href: "/osteocondroza-cervicala-chisinau/", label: "Osteocondroză cervicală" },
-              { href: "/scolioza-postura-copii-adulti-chisinau/", label: "Scolioză & Postură" },
-              { href: "/recuperare-postoperatorie-coloana-chisinau/", label: "Recuperare Post-Operatorie Coloană" },
-              { href: "/pinten-calcanean-artroza-chisinau/", label: "Pinten Calcanean & Artroză" },
-              { href: "/tratament-migrene-chisinau/", label: "Tratament Migrene" },
-              { href: "/ameteli-vertij-chisinau/", label: "Amețeli & Vertij" },
-              { href: "/insomnie-tratament-chisinau/", label: "Tratament Insomnie" },
-              { href: "/distonie-neurovegetativa-chisinau/", label: "Distonie Neurovegetativă & RUNO" },
-              { href: "/recuperare-dupa-avc-chisinau/", label: "Recuperare după AVC" },
-              { href: "/reabilitare-medicala-neurologica-chisinau/", label: "Centru de Reabilitare" },
-              { href: "/nevralgie-neuropatie-chisinau/", label: "Nevralgie & Neuropatie" },
-              { href: "/nevralgie-trigemen-pareza-faciala-chisinau/", label: "Nevralgie Trigemen & Pareză Facială" },
-              { href: "/tunel-carpian-amorteli-maini-chisinau/", label: "Tunel Carpian & Amorțeli Mâini" },
-              { href: "/epilepsie-convulsii-chisinau/", label: "Epilepsie & EEG" },
-              { href: "/ticuri-nervoase-balbaiala-copii-chisinau/", label: "Ticuri & Logonevroză Copii" },
-              { href: "/boala-parkinson-tremor-memorie-chisinau/", label: "Parkinson, Tremor & Memorie" },
-              { href: "/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/", label: "Protruzie L4–L5 / L5–S1 & Stenoză (Ghid RMN)" },
-              { href: "/tinitus-zgomote-urechi-spondiloza-cervicala-chisinau/", label: "Tinitus (Zgomote urechi) & Spondiloză" },
-              { href: "/cefalee-tensiune-vs-migrena-chisinau/", label: "Cefalee vs. Migrenă (Ghid Diferențial)" },
-              { href: "/ghid-diagnostic-functional-eeg-reg-amp-chisinau/", label: "Ghid Diagnostic: EEG vs. REG vs. AMP" },
-              { href: "/nevralgie-intercostala-durere-omoplati-chisinau/", label: "Nevralgie Intercostală vs. Inimă" },
-              { href: "/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau/", label: "Hernie Cervicală C5–C6 & Amețeli" },
-              { href: "/amorteli-picioare-polineuropatie-chisinau/", label: "Amorțeli Picioare & Polineuropatie" },
-              { href: "/contraindicatii-fizioterapie-siguranta-chisinau/", label: "Contraindicații Fizioterapie (Ghid)" },
-              { href: "/enurezis-nocturn-copii-neuropediatru-chisinau/", label: "Enurezis Nocturn la Copii" },
-              { href: "/spasmofilie-crize-hiperexcitabilitate-chisinau/", label: "Spasmofilie & Hiperexcitabilitate" },
-              { href: "/recuperare-comotie-cerebrala-traumatism-chisinau/", label: "Recuperare Comoție Cerebrală" },
-              { href: "/intarziere-vorbire-copii-neuropediatru-chisinau/", label: "Întârziere de Vorbire la Copii" },
-              { href: "/convulsii-febrile-copii-eeg-neuropediatru-chisinau/", label: "Convulsii Febrile la Copii & EEG" },
-              { href: "/eho-encefalografie-chisinau/", label: "EHO-Encefalografie (250 MDL)" },
-              { href: "/evaluare-neuropsihologica-testare-cognitiva-chisinau/", label: "Evaluare Neuropsihologică & MMPI" },
-              { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete — Cot & Umăr (100 MDL)" },
-              { href: "/oboseala-cronica-burnout-biofeedback-chisinau/", label: "Oboseală Cronică & Biofeedback" },
-              { href: "/tensiune-intracraniana-simptome-neurolog-chisinau/", label: "Tensiune Intracraniană (Simptome)" },
-              { href: "/sindrom-piriform-durere-fesa-picior-chisinau/", label: "Sindrom Piriform (Durere Fesă)" },
-              { href: "/sindromul-picioarelor-nelinistite-neurolog-chisinau/", label: "Sindromul Picioarelor Neliniștite" },
-              { href: "/adhd-hiperactivitate-copii-neuropediatru-chisinau/", label: "ADHD & Hiperactivitate Copii" },
-              { href: "/nevralgie-occipitala-arnold-durere-ceafa-chisinau/", label: "Nevralgie Occipitală (Arnold)" },
-              { href: "/zona-zoster-nevralgie-postherpetica-chisinau/", label: "Zonă Zoster & Nevralgie Postherpetică" },
-              { href: "/dureri-spate-sciatica-sarcina-chisinau/", label: "Dureri de Spate & Sciatică în Sarcină" },
-              { href: "/evaluare-biomecanica-ergonomie-birou-chisinau/", label: "Evaluare Biomecanică & Ergonomie" },
-              { href: "/spondilolistezis-alunecare-vertebra-neurochirurg-chisinau/", label: "Spondilolistezis (Alunecare Vertebră)" },
-              { href: "/sindrom-canal-cubital-nerv-ulnar-chisinau/", label: "Canal Cubital (Deget Mic & Inelar)" },
-              { href: "/gonartroza-coxartroza-fizioterapie-recuperare-chisinau/", label: "Gonartroză & Coxartroză (100 MDL)" },
-              { href: "/cefalee-abuz-medicamentos-cluster-neurolog-chisinau/", label: "Cefalee de Abuz & Cluster" }
+           },
+           {
+             "heading": "Coloană, Spate & Articulații",
+             "links": [
+               {
+                 "href": "/hernie-de-disc-chisinau/",
+                 "label": "Hernie de disc fără operație"
+               },
+               {
+                 "href": "/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/",
+                 "label": "Protruzie L4–L5 / L5–S1 & Stenoză"
+               },
+               {
+                 "href": "/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau/",
+                 "label": "Hernie Cervicală C5–C6 & Amețeli"
+               },
+               {
+                 "href": "/spondilolistezis-alunecare-vertebra-neurochirurg-chisinau/",
+                 "label": "Spondilolistezis (Alunecare Vertebră)"
+               },
+               {
+                 "href": "/dureri-de-spate-sciatica-chisinau/",
+                 "label": "Dureri de spate & Sciatică"
+               },
+               {
+                 "href": "/sindrom-piriform-durere-fesa-picior-chisinau/",
+                 "label": "Sindrom Piriform (Durere Fesă)"
+               },
+               {
+                 "href": "/osteocondroza-cervicala-chisinau/",
+                 "label": "Osteocondroză cervicală"
+               },
+               {
+                 "href": "/scolioza-postura-copii-adulti-chisinau/",
+                 "label": "Scolioză & Postură"
+               },
+               {
+                 "href": "/recuperare-postoperatorie-coloana-chisinau/",
+                 "label": "Recuperare Post-Operatorie Coloană"
+               },
+               {
+                 "href": "/dureri-spate-sciatica-sarcina-chisinau/",
+                 "label": "Spate & Sciatică în Sarcină"
+               },
+               {
+                 "href": "/pinten-calcanean-artroza-chisinau/",
+                 "label": "Pinten Calcanean & Artroză"
+               },
+               {
+                 "href": "/gonartroza-coxartroza-fizioterapie-recuperare-chisinau/",
+                 "label": "Gonartroză & Coxartroză (100 MDL)"
+               }
              ]
-            }
-           ]
+           },
+           {
+             "heading": "Dureri de Cap, Somn & Vegetativ",
+             "links": [
+               {
+                 "href": "/tratament-migrene-chisinau/",
+                 "label": "Tratament Migrene"
+               },
+               {
+                 "href": "/cefalee-tensiune-vs-migrena-chisinau/",
+                 "label": "Cefalee vs. Migrenă (Ghid)"
+               },
+               {
+                 "href": "/cefalee-abuz-medicamentos-cluster-neurolog-chisinau/",
+                 "label": "Cefalee de Abuz & Cluster"
+               },
+               {
+                 "href": "/nevralgie-occipitala-arnold-durere-ceafa-chisinau/",
+                 "label": "Nevralgie Occipitală (Arnold)"
+               },
+               {
+                 "href": "/tensiune-intracraniana-simptome-neurolog-chisinau/",
+                 "label": "Tensiune Intracraniană"
+               },
+               {
+                 "href": "/ameteli-vertij-chisinau/",
+                 "label": "Amețeli & Vertij"
+               },
+               {
+                 "href": "/tinitus-zgomote-urechi-spondiloza-cervicala-chisinau/",
+                 "label": "Tinitus (Zgomote urechi)"
+               },
+               {
+                 "href": "/insomnie-tratament-chisinau/",
+                 "label": "Tratament Insomnie"
+               },
+               {
+                 "href": "/distonie-neurovegetativa-chisinau/",
+                 "label": "Distonie Neurovegetativă & RUNO"
+               },
+               {
+                 "href": "/oboseala-cronica-burnout-biofeedback-chisinau/",
+                 "label": "Oboseală Cronică & Biofeedback"
+               },
+               {
+                 "href": "/spasmofilie-crize-hiperexcitabilitate-chisinau/",
+                 "label": "Spasmofilie & Hiperexcitabilitate"
+               }
+             ]
+           },
+           {
+             "heading": "Nervi Periferici, AVC & Recuperare",
+             "links": [
+               {
+                 "href": "/recuperare-dupa-avc-chisinau/",
+                 "label": "Recuperare după AVC"
+               },
+               {
+                 "href": "/reabilitare-medicala-neurologica-chisinau/",
+                 "label": "Centru de Reabilitare"
+               },
+               {
+                 "href": "/recuperare-comotie-cerebrala-traumatism-chisinau/",
+                 "label": "Recuperare Comoție Cerebrală"
+               },
+               {
+                 "href": "/nevralgie-neuropatie-chisinau/",
+                 "label": "Nevralgie & Neuropatie"
+               },
+               {
+                 "href": "/nevralgie-trigemen-pareza-faciala-chisinau/",
+                 "label": "Nevralgie Trigemen & Facial"
+               },
+               {
+                 "href": "/nevralgie-intercostala-durere-omoplati-chisinau/",
+                 "label": "Nevralgie Intercostală vs. Inimă"
+               },
+               {
+                 "href": "/zona-zoster-nevralgie-postherpetica-chisinau/",
+                 "label": "Zonă Zoster & Postherpetică"
+               },
+               {
+                 "href": "/tunel-carpian-amorteli-maini-chisinau/",
+                 "label": "Tunel Carpian & Amorțeli Mâini"
+               },
+               {
+                 "href": "/sindrom-canal-cubital-nerv-ulnar-chisinau/",
+                 "label": "Canal Cubital (Deget Mic & Inelar)"
+               },
+               {
+                 "href": "/amorteli-picioare-polineuropatie-chisinau/",
+                 "label": "Amorțeli Picioare & Polineuropatie"
+               },
+               {
+                 "href": "/sindromul-picioarelor-nelinistite-neurolog-chisinau/",
+                 "label": "Sindromul Picioarelor Neliniștite"
+               }
+             ]
+           },
+           {
+             "heading": "Neuropediatrie, EEG & Memorie",
+             "links": [
+               {
+                 "href": "/eeg-copii-chisinau/",
+                 "label": "EEG Copii (1600 MDL)"
+               },
+               {
+                 "href": "/intarziere-vorbire-copii-neuropediatru-chisinau/",
+                 "label": "Întârziere de Vorbire la Copii"
+               },
+               {
+                 "href": "/adhd-hiperactivitate-copii-neuropediatru-chisinau/",
+                 "label": "ADHD & Hiperactivitate Copii"
+               },
+               {
+                 "href": "/ticuri-nervoase-balbaiala-copii-chisinau/",
+                 "label": "Ticuri & Logonevroză Copii"
+               },
+               {
+                 "href": "/enurezis-nocturn-copii-neuropediatru-chisinau/",
+                 "label": "Enurezis Nocturn la Copii"
+               },
+               {
+                 "href": "/convulsii-febrile-copii-eeg-neuropediatru-chisinau/",
+                 "label": "Convulsii Febrile la Copii & EEG"
+               },
+               {
+                 "href": "/epilepsie-convulsii-chisinau/",
+                 "label": "Epilepsie & EEG"
+               },
+               {
+                 "href": "/boala-parkinson-tremor-memorie-chisinau/",
+                 "label": "Parkinson, Tremor & Memorie"
+               },
+               {
+                 "href": "/evaluare-neuropsihologica-testare-cognitiva-chisinau/",
+                 "label": "Evaluare Neuropsihologică & MMPI"
+               },
+               {
+                 "href": "/ecografie-ecg-chisinau/",
+                 "label": "Ecografie & ECG (200–250 MDL)"
+               },
+               {
+                 "href": "/ghid-diagnostic-functional-eeg-reg-amp-chisinau/",
+                 "label": "Ghid Diagnostic: EEG vs. REG vs. AMP"
+               }
+             ]
+           }
+         ]
         ).map((col) => (
          <div key={col.heading} className="rm-seo-bento-col">
-          <h3>{col.heading}</h3>
+          <div className="rm-seo-bento-col-head"><h3>{col.heading}</h3><span className="rm-seo-bento-count">{col.links.length}</span></div>
           <div className="rm-seo-bento-links">
            {col.links.map((item) => (
             <Link key={item.href} href={item.href} className="btn btn-outline-primary btn-sm">

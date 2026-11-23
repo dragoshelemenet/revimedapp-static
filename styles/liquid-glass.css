@@ -3492,30 +3492,71 @@ h2 {
 .rm-seo-bento-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
   width: 100%;
+  align-items: stretch;
 }
 
 .rm-seo-bento-col {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px 18px;
   border-radius: 18px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(232, 245, 255, 0.62));
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(232, 245, 255, 0.64));
   border: 1px solid rgba(11, 143, 216, 0.16);
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 8px 20px rgba(7, 31, 63, 0.05);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.92), 0 8px 20px rgba(7, 31, 63, 0.05);
+}
+
+.rm-seo-bento-col-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(11, 143, 216, 0.12);
 }
 
 .rm-seo-bento-col h3 {
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.045em;
   color: #075f9e !important;
-  margin: 0 0 12px !important;
+  margin: 0 !important;
+  line-height: 1.3;
+}
+
+.rm-seo-bento-count {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #075f9e;
+  background: rgba(11, 143, 216, 0.12);
+  border: 1px solid rgba(11, 143, 216, 0.22);
 }
 
 .rm-seo-bento-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
+  align-content: flex-start;
+}
+
+.rm-seo-bento-links .btn.btn-sm {
+  font-size: 12.2px !important;
+  padding: 5.5px 10px !important;
+  line-height: 1.25 !important;
+  border-radius: 10px !important;
+  text-align: left;
+  white-space: normal;
 }
 
 .rm-kpi-strip {
@@ -3558,13 +3599,16 @@ h2 {
   border-radius: 999px;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1040px) {
   .rm-seo-bento-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
+  .rm-seo-bento-grid {
+    grid-template-columns: 1fr;
+  }
   .rm-kpi-strip {
     grid-template-columns: 1fr;
   }
