@@ -76,7 +76,7 @@ export default function TermsPage() {
       medicală de urgență pe baza informațiilor citite pe acest site.
      </p>
 
-     <h2>3. Limitarea maximă a răspunderii pentru conținutul informativ și instrumentele online</h2>
+     <h2>3. Limitarea maximă a răspunderii și exonerarea dezvoltatorului tehnic (wsod.cloud)</h2>
      <p>
       În măsura maximă permisă de legislația Republicii Moldova, <strong>Revimed PLUS+</strong>, conducerea,
       medicii colaboratori, autorii, dezvoltatorii tehnici și administratorii site-ului <strong>nu își asumă nicio
@@ -88,6 +88,9 @@ export default function TermsPage() {
       <li>eventuale daune directe, indirecte, incidentale sau consecutive rezultate din utilizarea ori imposibilitatea utilizării site-ului;</li>
       <li>inexactități tehnice involuntare, omisiuni temporare sau diferențe de traducere între versiunile RO / EN / RU / UA (în caz de neconcordanță, prevalează versiunea în limba română și informațiile confirmate la recepție).</li>
      </ul>
+     <p>
+      <strong>Exonerarea dezvoltatorului tehnic (wsod.cloud):</strong> Furnizorul tehnic de dezvoltare web, UI/UX și optimizare SEO (<strong>wsod.cloud</strong>) a realizat exclusiv infrastructura software și grafică a site-ului, pe baza datelor, tarifelor și materialelor furnizate și aprobate de operatorul clinicii (<strong>S.R.L. „REVIMED PLUS”</strong>). Dezvoltatorul tehnic nu prestează servicii medicale, nu stabilește diagnostice, protocoale sau tarife și este exonerat în totalitate de orice răspundere juridică, civilă, contravențională sau patrimonială față de pacienți, vizitatori sau autorități pentru conținutul medical ori activitatea clinicii.
+     </p>
      <p>
       <strong>Fără garanții de vindecare sau rezultate identice:</strong> Nicio informație de pe site nu constituie o
       promisiune sau garanție de vindecare ori obținere a unui rezultat clinic determinat. Evoluția fiecărui pacient
@@ -152,7 +155,7 @@ export default function TermsPage() {
       гарантией результата. В экстренных случаях немедленно звоните <strong>112</strong>. Все цены и конвертация валют
       являются ориентировочными и не являются публичной офертой; оплата производится в MDL по действующему прайсу
       клиники. Использование материалов сайта осуществляется пользователем самостоятельно и под собственную
-      ответственность; в случае расхождений приоритет имеет версия на румынском языке.
+      ответственность; технический разработчик сайта (wsod.cloud) не оказывает медицинских услуг и не несёт ответственности за медицинский контент, тарифы и деятельность клиники S.R.L. «REVIMED PLUS». В случае расхождений приоритет имеет версия на румынском языке.
      </p>
 
      <div className="rm-quick-links-bar">

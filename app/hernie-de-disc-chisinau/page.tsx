@@ -21,7 +21,7 @@ export default function Page() {
    crumbLabel="Hernie de disc Chișinău"
    h1="Tratament Hernie de Disc fără Operație în Chișinău"
    lead="Evaluare neurochirurgicală directă pe imaginile RMN/CT și recuperare fizioterapeutică individualizată cu Dr. Igor Revenco (membru EANS, 35+ ani experiență)."
-   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), evaluarea RMN pentru hernie de disc cu neurochirurgul Dr. Igor Revenco (membru EANS, 35+ ani experiență) costă 300 MDL (neurolog 500 MDL), fizioterapia țintită (Amplipuls, Electroforeză) costă 150 MDL/ședință, masajul terapeutic 200 MDL, iar kinetoterapia combinată 250 MDL/oră. Programări: 022 60 50 60."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), evaluarea RMN pentru hernie de disc cu neurochirurgul Dr. Igor Revenco (membru EANS, 35+ ani experiență) costă 500 MDL (consultație repetată 400 MDL), fizioterapia țintită (Amplipuls, Electroforeză) de la 100 MDL / 30 min, masajul terapeutic 200 MDL, iar kinetoterapia combinată 250 MDL/oră. Programări: 022 60 50 60."
    introParagraph="Diagnosticul de hernie de disc lombară, cervicală sau toracală nu înseamnă automat operație. La Centrul Medical Revimed PLUS+ din Chișinău (sectorul Ciocana), analizăm direct secțiunile RMN și examenul clinic pentru a alege cea mai sigură direcție: tratament conservator și fizioterapie țintită sau, doar când este strict necesar, recomandare chirurgicală."
    symptomsHeading="Simptome care indică necesitatea evaluării herniei de disc"
    symptoms={[

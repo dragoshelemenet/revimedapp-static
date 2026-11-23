@@ -14,22 +14,22 @@ const seoOverrides: Partial<Record<SectionPath, Record<Lang, { title: string; de
   ro: {
    title: "Prețuri Neurolog, Neurochirurg & Fizioterapie Chișinău",
    description:
-    "Lista orientativă de prețuri pentru 101 servicii medicale la Revimed PLUS+ Chișinău (Ciocana): consultație neurolog, neurochirurg, neuropediatru, fizioterapie și recuperare, cu convertor MDL/EUR/RON."
+    "Lista orientativă de prețuri pentru 96 servicii medicale la Revimed PLUS+ Chișinău (Ciocana): consultație neurolog, neurochirurg, neuropediatru, fizioterapie și recuperare, cu convertor MDL/EUR/RON."
   },
   en: {
    title: "Prices — Neurology, Neurosurgery & Physiotherapy Chișinău",
    description:
-    "Indicative price list for 101 medical services at Revimed PLUS+ Chișinău: neurology, neurosurgery, pediatric neurology, physiotherapy, and rehabilitation with MDL/EUR/USD converter."
+    "Indicative price list for 96 medical services at Revimed PLUS+ Chișinău: neurology, neurosurgery, pediatric neurology, physiotherapy, and rehabilitation with MDL/EUR/USD converter."
   },
   ru: {
    title: "Цены: Невролог, Нейрохирург и Физиотерапия Кишинёв",
    description:
-    "Ориентировочные цены на 101 медицинскую услугу в Revimed PLUS+ Кишинёв (Чеканы): консультация невролога, нейрохирурга, детского невролога, физиотерапия и реабилитация с конвертером валют."
+    "Ориентировочные цены на 96 медицинских услуг в Revimed PLUS+ Кишинёв (Чеканы): консультация невролога, нейрохирурга, детского невролога, физиотерапия и реабилитация с конвертером валют."
   },
   ua: {
    title: "Ціни: Невролог, Нейрохірург і Фізіотерапія Кишинів",
    description:
-    "Орієнтовні ціни на 101 медичну послугу в Revimed PLUS+ Кишинів (Чекани): консультація невролога, нейрохірурга, дитячого невролога, фізіотерапія та реабілітація з конвертером валют."
+    "Орієнтовні ціни на 96 медичних послуг в Revimed PLUS+ Кишинів (Чекани): консультація невролога, нейрохірурга, дитячого невролога, фізіотерапія та реабілітація з конвертером валют."
   }
  },
  "/contact": {

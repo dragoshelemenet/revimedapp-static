@@ -66,7 +66,7 @@ const reviews: Review[] = [
     text: {
       ro: "Un neurolog excepțional în Chișinău. Am fost la mulți medici, dar nimeni nu a pus diagnosticul corect ca domnul Igor. Clinica dispune și de echipamentul necesar pentru investigații pe loc.",
       en: "An exceptional neurologist in Chișinău. After visiting many doctors with no clear diagnosis, Dr. Igor identified the exact cause. Conveniently, the clinic also has the needed diagnostic equipment on site.",
-      ru: "Самый лучший невролог в городе. До этого были у многих врачей, но только доктор Игорь поставил верный диагноз. Клиника оснащена необходимым оборудованием — всё удобно на месте.",
+      ru: "Исключительный невролог в Кишинёве. До этого были у многих врачей, но только доктор Игорь поставил верный диагноз. Клиника оснащена необходимым оборудованием — всё удобно на месте.",
       ua: "Винятковий невролог у Кишиневі. До цього зверталися до багатьох лікарів, але лише доктор Ігор поставив точний діагноз. Клініка оснащена необхідним обладнанням — усе зручно на місці."
     }
   },
@@ -74,10 +74,10 @@ const reviews: Review[] = [
     name: "V. G.",
     rating: 5,
     text: {
-      ro: "Fiind lucrător medical, am fost profund impresionată de atitudinea atentă a medicului Igor Revenco și de combinația între medicina clasică, metode complementare și psihoterapie. Rezultate din primele zile.",
-      en: "As a healthcare worker myself, I was deeply impressed by Dr. Igor Revenco’s care and his blend of conventional medicine, complementary therapies, and psychotherapy. Visible improvement from the first days.",
-      ru: "Как медработник, я была глубоко впечатлена внимательностью доктора Игоря Ревенко и сочетанием классической медицины, мягких методов и психотерапии. Результат заметен с первых дней.",
-      ua: "Як медпрацівник, я була глибоко вражена уважністю лікаря Ігоря Ревенка та поєднанням класичної медицини, м’яких методів і психотерапії. Результат помітний із перших днів."
+      ro: "Fiind lucrător medical, am fost profund impresionată de atitudinea atentă a medicului Igor Revenco și de combinația între medicina clasică, metode complementare și recuperare neuro-funcțională. Rezultate din primele zile.",
+      en: "As a healthcare worker myself, I was deeply impressed by Dr. Igor Revenco’s care and his blend of conventional medicine, complementary therapies, and neuro-functional rehabilitation. Visible improvement from the first days.",
+      ru: "Как медработник, я была глубоко впечатлена внимательностью доктора Игоря Ревенко и сочетанием классической медицины, мягких методов и нейрофункциональной реабилитации. Результат заметен с первых дней.",
+      ua: "Як медпрацівник, я була глибоко вражена уважністю лікаря Ігоря Ревенка та поєднанням класичної медицини, м’яких методів і нейрофункціональної реабілітації. Результат помітний із перших днів."
     }
   },
   {

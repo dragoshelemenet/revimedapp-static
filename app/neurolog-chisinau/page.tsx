@@ -30,7 +30,7 @@ const faqs = [
  },
  {
   q: "Ce investigații neurologice pot face pe loc în aceeași zi?",
-  a: "În clinică sunt disponibile electroencefalografia (EEG — 1600 MDL), cartografierea cerebrală (600 MDL), reoencefalografia vasculară (REG — 500 MDL), electrospondilografia (800 MDL), analizatorul neinvaziv Biopromin AMP-Tech (117 indici — 1000 MDL) și 25 de aparate de fizioterapie (150 MDL/ședință)."
+  a: "În clinică sunt disponibile electroencefalografia (EEG — 1600 MDL), cartografierea cerebrală (600 MDL), reoencefalografia vasculară (REG — 500 MDL), electrospondilografia (500 MDL), analizatorul neinvaziv Biopromin AMP-Tech (117 indici — 1000 MDL) și 25 de aparate de fizioterapie (150 MDL/ședință)."
  },
  {
   q: "Ce trebuie să aduc la prima consultație neurologică?",
@@ -106,7 +106,7 @@ export default function NeurologChisinauPage() {
        <span>Neurolog primară / repetată</span>
       </div>
       <div className="rm-kpi-card">
-       <strong>300 MDL</strong>
+       <strong>500 MDL</strong>
        <span>Neurochirurg (RMN/CT)</span>
       </div>
       <div className="rm-kpi-card">
@@ -179,7 +179,7 @@ export default function NeurologChisinauPage() {
         </tr>
         <tr>
          <td><strong>Consultație neurochirurg</strong></td>
-         <td><strong>300 MDL</strong></td>
+         <td><strong>500 MDL</strong></td>
          <td>Evaluare RMN/CT, hernie de disc, a doua opinie</td>
         </tr>
         <tr>

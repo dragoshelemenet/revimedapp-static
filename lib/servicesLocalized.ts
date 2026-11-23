@@ -57,7 +57,7 @@ const serviceVisuals: Record<string, VisualMeta> = {
       ro: ["Masaj cu nămol: 300 MDL", "Acupunctură: 400 MDL", "Hidroterapie + masaj"],
       en: ["Mud Massage: 300 MDL", "Acupuncture: 400 MDL", "Hydrotherapy + Massage"],
       ru: ["Массаж с грязью: 300 MDL", "Иглоукалывание: 400 MDL", "Гидротерапия + массаж"],
-      ua: ["Масаж з гряззю: 300 MDL", "Голкорефлексотерапія: 400 MDL", "Гідротерапія + масаж"]
+      ua: ["Масаж з гряззю: 300 MDL", "Голкорефлексотерапія: 500 MDL", "Гідротерапія + масаж"]
     }
   },
   "electroterapie": {

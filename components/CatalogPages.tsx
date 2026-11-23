@@ -118,12 +118,12 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
     </div>
     <p style={{ margin: 0 }}>
      {base.startsWith("/en")
-      ? "Available at Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Chișinău) under Dr. Igor Revenco (35+ years experience, EANS member). Neurology consultation: 500 MDL; Neurosurgery: 300 MDL; Physiotherapy session: 150 MDL. Appointments: 022 60 50 60."
+      ? "Available at Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Chișinău) under Dr. Igor Revenco (35+ years experience, EANS member). Neurology & neurosurgery consultation: 500 MDL (follow-up: 400 MDL); Physiotherapy procedures: from 100 MDL / 30 min. Appointments: 022 60 50 60."
       : base.startsWith("/ru")
-        ? "Доступно в медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) под руководством д-ра Игоря Ревенко (35+ лет опыта, член EANS). Приём невролога — 500 MDL, нейрохирурга — 300 MDL, физиотерапия — 150 MDL. Запись: 022 60 50 60."
+        ? "Доступно в медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) под руководством д-ра Игоря Ревенко (35+ лет опыта, член EANS). Приём невролога и нейрохирурга — 500 MDL (повторный — 400 MDL), физиопроцедуры — от 100 MDL / 30 мин. Запись: 022 60 50 60."
         : base.startsWith("/ua")
-          ? "Доступно у медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) під керівництвом д-ра Ігоря Ревенка (35+ років досвіду, член EANS). Консультація невролога — 500 MDL, нейрохірурга — 300 MDL, фізіотерапія — 150 MDL. Запис: 022 60 50 60."
-          : "Disponibil la Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), sub coordonarea Dr. Igor Revenco (35+ ani experiență, membru EANS). Consultație neurolog: 500 MDL; neurochirurg: 300 MDL; ședință fizioterapie: 150 MDL. Programări: 022 60 50 60."}
+          ? "Доступно у медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) під керівництвом д-ра Ігоря Ревенка (35+ років досвіду, член EANS). Консультація невролога та нейрохірурга — 500 MDL (повторна — 400 MDL), фізіопроцедури — від 100 MDL / 30 хв. Запис: 022 60 50 60."
+          : "Disponibil la Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), sub coordonarea Dr. Igor Revenco (35+ ani experiență, membru EANS). Consultație neurolog / neurochirurg: 500 MDL (repetată: 400 MDL); proceduri fizioterapie: de la 100 MDL / 30 min. Programări: 022 60 50 60."}
     </p>
    </aside>
    {item.image && (

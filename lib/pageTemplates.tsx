@@ -607,12 +607,12 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
       </h2>
       <p style={{ maxWidth: "78ch", margin: "0 auto 18px" }}>
        {lang === "en"
-        ? "Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana) lists 97 medical services across neurology, neurosurgery, pediatric neurology, physiotherapy, and functional diagnostics. Prices can be previewed in MDL, EUR, RON, USD, and UAH and are confirmed upon booking."
+        ? "Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana) lists 96 medical services across neurology, neurosurgery, pediatric neurology, physiotherapy, and functional diagnostics. Prices can be previewed in MDL, EUR, RON, USD, and UAH and are confirmed upon booking."
         : lang === "ru"
-          ? "В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) представлено 97 направлений: консультация невролога, нейрохирурга, детского невролога, физиотерапия и диагностика. Актуальную стоимость уточняйте при записи."
+          ? "В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) представлено 96 направлений: консультация невролога, нейрохирурга, детского невролога, физиотерапия и диагностика. Актуальную стоимость уточняйте при записи."
           : lang === "ua"
-            ? "У медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) представлено 97 послуг: невролог, нейрохірург, дитячий невролог, фізіотерапія та діагностика."
-            : "Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) oferă 97 servicii medicale: consultații neurologice adulți și copii, neurochirurgie, fizioterapie, electroterapie și diagnostic funcțional. Tarifele orientative pot fi convertite instant în MDL, EUR, RON, USD și UAH și se confirmă la programare."}
+            ? "У медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) представлено 96 послуг: невролог, нейрохірург, дитячий невролог, фізіотерапія та діагностика."
+            : "Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) oferă 96 servicii medicale: consultații neurologice adulți și copii, neurochirurgie, fizioterapie, electroterapie și diagnostic funcțional. Tarifele orientative pot fi convertite instant în MDL, EUR, RON, USD și UAH și se confirmă la programare."}
       </p>
       <div className="rm-quick-links-bar" style={{ justifyContent: "center" }}>
        <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">

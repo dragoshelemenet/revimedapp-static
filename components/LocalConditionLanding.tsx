@@ -99,7 +99,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
         WhatsApp
        </a>
        <Link href={pricesHref} className="btn btn-outline-primary btn-sm">
-        {isRu ? "Цены (101 услуга)" : "Prețuri (101)"}
+        {isRu ? "Цены (96 услуг)" : "Prețuri (96)"}
        </Link>
        <Link
         href={isRu ? "/ru/aplicatii/teste-si-instrumente/screening-neurologic/" : "/aplicatii/teste-si-instrumente/screening-neurologic/"}
@@ -112,7 +112,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
 
      <div className="rm-kpi-strip" aria-label={isRu ? "Ключевые показатели клиники" : "Indicatori cheie Revimed PLUS+"}>
       <div className="rm-kpi-card">
-       <strong>500 / 300 MDL</strong>
+       <strong>500 / 400 MDL</strong>
        <span>{isRu ? "Невролог · Нейрохирург" : "Neurolog · Neurochirurg"}</span>
       </div>
       <div className="rm-kpi-card">
@@ -133,7 +133,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       <p style={{ margin: 0 }}>
        {p.directAnswer ||
         (isRu
-         ? `В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит 500 MDL (повторный — 400 MDL), нейрохирурга — 300 MDL, сеанс физиотерапии (Электросон, Амплипульс, Электрофорез) — 150 MDL. Приём ведёт д-р Игорь Ревенко (35+ лет опыта, член EANS). Запись: 022 60 50 60.`
+         ? `В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит 500 MDL (повторный — 400 MDL), нейрохирурга — 500 MDL (повторный — 400 MDL), сеанс физиотерапии (Электросон, Амплипульс, Электрофорез) — 150 MDL. Приём ведёт д-р Игорь Ревенко (35+ лет опыта, член EANS). Запись: 022 60 50 60.`
          : `La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la neurolog costă 500 MDL (repetată 400 MDL), la neurochirurg 300 MDL, iar o ședință de fizioterapie (Electrosomn, Amplipuls, Electroforeză) costă 150 MDL. Consultațiile sunt realizate de Dr. Igor Revenco (35+ ani experiență, membru EANS). Programări: 022 60 50 60.`)}
       </p>
      </aside>
@@ -180,8 +180,8 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      <div className="rm-price-advantage-grid">
       <div className="rm-price-adv-card">
        <span className="rm-adv-tag">{isRu ? "Консультация" : "Consultație"}</span>
-       <strong>500 / 300 MDL</strong>
-       <span>{isRu ? "Невролог 500 MDL · Нейрохирург 300 MDL (ниже среднего по Кишинёву 600–650 MDL)" : "Neurolog 500 MDL · Neurochirurg 300 MDL (sub media din Chișinău 600–650 MDL)"}</span>
+       <strong>500 / 400 MDL</strong>
+       <span>{isRu ? "Первичный приём 500 MDL · Повторный 400 MDL (ниже среднего по Кишинёву 600–650 MDL)" : "Consultație primară 500 MDL · Repetată 400 MDL (sub media din Chișinău 600–650 MDL)"}</span>
       </div>
       <div className="rm-price-adv-card">
        <span className="rm-adv-tag">{isRu ? "Курс 5 сеансов" : "Curs 5 ședințe"}</span>
