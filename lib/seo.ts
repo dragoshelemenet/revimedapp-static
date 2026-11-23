@@ -117,6 +117,7 @@ export function makeMetadata({
   ],
   alternates: {
    canonical,
+   types: { "application/rss+xml": absoluteUrl("/feed.xml") },
    languages: alternatesLanguages
     ? Object.fromEntries(Object.entries(alternatesLanguages).map(([k, v]) => [k, v.startsWith("http") ? v : absoluteUrl(v)]))
     : localized ? {
@@ -217,7 +218,18 @@ export function clinicJsonLd(lang: Lang = "ro") {
    "Fizioterapie Amplipuls și Electroforeză",
    "Masaj terapeutic și Kinetoterapie",
    "Recuperare după AVC",
-   "Tratament migrene și vertij"
+   "Tratament migrene și vertij",
+   "EHO-Encefalografie (ECHO-EG)",
+   "Electrospondilografie computerizată (ESG)",
+   "Cartografierea creierului 3D",
+   "Termalgometrie RUNO (sistem nervos vegetativ)",
+   "Evaluare funcțională neuropsihologică și testare cognitivă MMPI",
+   "Biofeedback și stimulare cerebrală audio-video AVS",
+   "Terapie cu ultrasunete și electrostimulare musculară",
+   "Sindrom piriform, sciatică și protruzii discale L4-L5 / L5-S1 / C5-C6",
+   "Tensiune intracraniană și recuperare după comoție cerebrală",
+   "Spasmofilie și sindromul picioarelor neliniștite",
+   "ADHD, întârziere de vorbire, enurezis nocturn și convulsii febrile la copii"
   ],
   medicalSpecialty: [
    "Neurology",

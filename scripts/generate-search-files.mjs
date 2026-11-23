@@ -9,7 +9,21 @@ if (!['http:', 'https:'].includes(origin.protocol) || origin.pathname !== '/' ||
   throw new Error('The site URL must be an http(s) origin without a path, query or fragment.');
 }
 const output = path.resolve('out');
-const escapeXml = (value) => value.replace(/[<>&"']/g, (char) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[char]);
+const escapeXml = (value) => String(value || '').replace(/[<>&"']/g, (char) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[char]);
+const stripTags = (html) => String(html || '')
+  .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+  .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&nbsp;/g, ' ')
+  .replace(/&amp;/g, '&')
+  .replace(/&quot;/g, '"')
+  .replace(/&#39;|&apos;/g, "'")
+  .replace(/&lt;/g, '<')
+  .replace(/&gt;/g, '>')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+const pageMetaMap = new Map();
 
 async function indexPages(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -20,7 +34,6 @@ async function indexPages(directory) {
       if (!['_next', '_not-found'].includes(entry.name)) pages.push(...await indexPages(file));
     } else if (entry.name === 'index.html') {
       const route = '/' + path.relative(output, directory).split(path.sep).filter(Boolean).join('/');
-      // Existing localized video pages are placeholders, not published video content.
       let html = await readFile(file, 'utf8');
       const locale = route.split('/')[1];
       const htmlLang = locale === 'ua' ? 'uk' : ['en', 'ru'].includes(locale) ? locale : 'ro';
@@ -32,8 +45,23 @@ async function indexPages(directory) {
       const pageUrl = new URL(route === '/' ? '/' : `${route}/`, origin).href;
       const canonicalTag = (html.match(/<link\b[^>]*>/gi) || []).find(tag => /rel="canonical"/.test(tag));
       const canonical = canonicalTag?.match(/href="([^"]+)"/)?.[1];
-      // Export legacy aliases for visitors; index only their canonical articles.
       if (canonical && canonical !== pageUrl) continue;
+
+      const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+      const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+      const descTag = tags.find((t) => /name=["']description["']/i.test(t));
+      const descMatch = descTag?.match(/content="([^"]*)"/i) || descTag?.match(/content='([^']*)'/i);
+      const citableMatch = html.match(/<aside[^>]*class="[^"]*rm-citable-summary[^"]*"[^>]*>[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i);
+
+      pageMetaMap.set(pageUrl, {
+        route: route === '/' ? '/' : `${route}/`,
+        lang: htmlLang,
+        title: stripTags(titleMatch?.[1] || ''),
+        h1: stripTags(h1Match?.[1] || ''),
+        description: stripTags(descMatch?.[1] || ''),
+        citable: stripTags(citableMatch?.[1] || '')
+      });
+
       pages.push(pageUrl);
     }
   }
@@ -42,14 +70,16 @@ async function indexPages(directory) {
 
 const urls = [...new Set(await indexPages(output))].sort();
 if (!urls.length) throw new Error('No exported index.html pages found. Run next build first.');
+
 function urlPriority(url) {
   const p = new URL(url).pathname;
   if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
   if (/^\/(?:ru\/)?[a-z0-9-]+-(?:chisinau|kishinev)\/$/.test(p)) return '0.9';
-  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|hernie-de-disc-chisinau|tratament-migrene-chisinau|recuperare-dupa-avc-chisinau|dureri-de-spate-sciatica-chisinau|neurolog-ciocana-chisinau|neurolog-riscani-chisinau|neurolog-botanica-chisinau|neurolog-buiucani-chisinau|neurolog-centru-chisinau|nevralgie-neuropatie-chisinau|epilepsie-convulsii-chisinau|ameteli-vertij-chisinau|insomnie-tratament-chisinau|osteocondroza-cervicala-chisinau|eeg-chisinau|masaj-terapeutic-chisinau|diagnostic-amp-chisinau|reoencefalografie-chisinau|kinetoterapie-chisinau|acupunctura-reflexoterapie-chisinau|electroforeza-amplipuls-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev|gryzha-diska-kishinev|detskiy-nevrolog-kishinev|nevrolog-chekany-kishinev|nevrolog-ryshkanovka-kishinev|nevrolog-botanika-kishinev|nevrolog-buyukany-kishinev|nevrolog-tsentr-kishinev|nevralgiya-neyropatiya-kishinev|epilepsiya-kishinev|lechenie-migreni-kishinev|osteohondroz-kishinev|eeg-kishinev|lechebnyy-massazh-kishinev|diagnostika-amp-kishinev|reoentsefalografiya-kishinev|kinezoterapiya-kishinev|igloukalyvanie-kishinev|elektroforez-amplipuls-kishinev)\//.test(p)) return '0.9';
-  if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
+  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact)\//.test(p)) return '0.9';
+  if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari|aplicatii)\//.test(p)) return '0.8';
   return '0.7';
 }
+
 const pageImageMap = new Map();
 for (const url of urls) {
   const p = new URL(url).pathname;
@@ -63,6 +93,7 @@ for (const url of urls) {
     if (imgs.length) pageImageMap.set(url, imgs);
   } catch {}
 }
+
 const lastmod = new Date().toISOString().slice(0, 10);
 const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
   + urls.map((url) => {
@@ -71,196 +102,201 @@ const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.s
     return `  <url><loc>${escapeXml(url)}</loc><lastmod>${lastmod}</lastmod><priority>${urlPriority(url)}</priority>${imgXml}</url>`;
   }).join('\n') + '\n</urlset>\n';
 await writeFile(path.join(output, 'sitemap.xml'), xml);
+
+// Comprehensive AI Search & Crawler Access in robots.txt
+const aiCrawlers = [
+  '*',
+  'Googlebot',
+  'Google-Extended',
+  'Google-CloudVertexBot',
+  'Bingbot',
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'GPTBot',
+  'Claude-SearchBot',
+  'Claude-User',
+  'ClaudeBot',
+  'PerplexityBot',
+  'Perplexity-User',
+  'Applebot',
+  'Applebot-Extended',
+  'Yandex',
+  'Meta-ExternalAgent',
+  'Meta-ExternalFetcher',
+  'DuckAssistBot',
+  'cohere-ai',
+  'MistralAI-User'
+];
+
 await writeFile(
   path.join(output, 'robots.txt'),
   [
-    'User-agent: *',
-    'Allow: /',
-    '',
-    'User-agent: OAI-SearchBot',
-    'Allow: /',
-    '',
-    'User-agent: ChatGPT-User',
-    'Allow: /',
-    '',
-    'User-agent: GPTBot',
-    'Allow: /',
-    '',
-    'User-agent: Claude-SearchBot',
-    'Allow: /',
-    '',
-    'User-agent: Claude-User',
-    'Allow: /',
-    '',
-    'User-agent: ClaudeBot',
-    'Allow: /',
-    '',
-    'User-agent: PerplexityBot',
-    'Allow: /',
-    '',
-    'User-agent: Google-Extended',
-    'Allow: /',
-    '',
-    'User-agent: Applebot-Extended',
-    'Allow: /',
-    '',
+    ...aiCrawlers.flatMap((ua) => [`User-agent: ${ua}`, 'Allow: /', '']),
     `Sitemap: ${new URL('/sitemap.xml', origin).href}`,
     ''
   ].join('\n')
 );
 
+// Categorize all exported URLs dynamically so llms.txt, llms-full.txt, and feed.xml never miss a single new page
+const roLocalUrls = urls.filter((u) => /^\/[a-z0-9-]+-chisinau\/$/.test(new URL(u).pathname));
+const ruLocalUrls = urls.filter((u) => /^\/ru\/[a-z0-9-]+-kishinev\/$/.test(new URL(u).pathname));
+const roEquipUrls = urls.filter((u) => /^\/utilaj\/[^/]+\/$/.test(new URL(u).pathname));
+const roBlogUrls = urls.filter((u) => /^\/blog\/[^/]+\/$/.test(new URL(u).pathname));
+const ruBlogUrls = urls.filter((u) => /^\/ru\/blog\/[^/]+\/$/.test(new URL(u).pathname));
+const roAppUrls = urls.filter((u) => /^\/aplicatii\/teste-si-instrumente\/[^/]+\/$/.test(new URL(u).pathname));
+
+const formatEntry = (url) => {
+  const m = pageMetaMap.get(url);
+  const label = (m?.h1 || m?.title || url).replace(/\s*\|\s*Revimed PLUS\+.*$/i, '').trim();
+  const summary = m?.citable || m?.description || '';
+  return `- [${label}](${url})${summary ? `: ${summary}` : ''}`;
+};
+
 const llmsTxt = [
-  '# Centrul Medical Revimed PLUS+ (Chișinău, Moldova)',
+  '# Centrul Medical Revimed PLUS+ (Chișinău, Republica Moldova)',
   '',
-  '> Centrul Medical Revimed PLUS+ din Chișinău (Str. Mircea cel Bătrân 13/2, MD-2044, sectorul Ciocana) oferă consultații neurologice, neurochirurgie, neurologie pediatrică, recuperare medicală, fizioterapie (25 aparate medicale), diagnostic funcțional (EEG, REG, AMP 117 indici, electrospondilografie) și terapii complementare din 1991.',
+  '> Centrul Medical Revimed PLUS+ (`S.R.L. „REVIMED PLUS”`, IDNO `1011600011964`, mun. Chișinău, sectorul Ciocana, bd. Mircea cel Bătrân nr. 13/2, MD-2044) oferă consultații de neurologie, neurochirurgie, neurologie pediatrică, recuperare medicală, fizioterapie (25 aparate medicale), diagnostic funcțional (EEG 19 canale, REG, EHO-Encefalografie, AMP 117 indici, Electrospondilografie, Cartografierea creierului 3D, Termalgometrie RUNO), testări cognitive/MMPI, Biofeedback, stimulare AVS și terapii complementare. Experiență clinică din 1991.',
   '',
-  '## Lead Physician',
-  '- **Dr. Igor Revenco**: Neurolog, neurochirurg și neuropediatru, medic de categorie superioară, doctor în neurochirurgie (USMF „Nicolae Testemițanu”), membru al Asociației Europene de Neurochirurgie (EANS), 35+ ani experiență clinică.',
-  `- Profile: ${new URL('/dr-igor-revenco/', origin).href}`,
+  '## Machine-Readable Discovery Endpoints',
+  `- Full AI Knowledge Compendium (llms-full.txt): ${new URL('/llms-full.txt', origin).href}`,
+  `- XML Sitemap (${urls.length} canonical URLs): ${new URL('/sitemap.xml', origin).href}`,
+  `- RSS 2.0 Medical Guides & Articles Feed: ${new URL('/feed.xml', origin).href}`,
   '',
-  '## Official Reference Prices (MDL — Updated November 2026)',
-  '- Primary Neurology Consultation (Consultație primară neurolog): 500 MDL (follow-up: 400 MDL)',
-  '- Primary Neurosurgery Consultation (Consultație primară neurochirurg): 500 MDL (follow-up: 400 MDL)',
-  '- Therapeutic equipment & procedures 30 min (Electrosomn, Amplipuls, Electrophoresis, Magnet, Laser): 100 MDL | Physiotherapy & Rehabilitation procedures: 150–300 MDL',
-  '- Therapeutic massage 60 min: 200 MDL | Electrotherapy + Kinesiotherapy: 250 MDL/hour',
-  '- Electroencephalography (EEG): 1600 MDL | Non-invasive AMP 117 indices: 1000 MDL | Electrospondylography: 500 MDL | Brain mapping: 600 MDL | Rheoencephalography: 500 MDL',
-  `- Full 96-service price list: ${new URL('/preturi/', origin).href}`,
+  '## Lead Physician & Legal Entity',
+  '- **Legal Entity**: S.R.L. „REVIMED PLUS”, IDNO 1011600011964 (registered 31.03.2011, Republic of Moldova)',
+  '- **Dr. Igor Revenco**: Medic neurolog, neurochirurg și neuropediatru de categorie superioară, doctor în neurochirurgie (USMF „Nicolae Testemițanu”), membru al Asociației Europene de Neurochirurgie (EANS), 35+ ani experiență clinică.',
+  `- Physician Profile (RO): ${new URL('/dr-igor-revenco/', origin).href}`,
+  `- Physician Profile (RU): ${new URL('/ru/dr-igor-revenco/', origin).href}`,
+  `- Physician Profile (EN): ${new URL('/en/dr-igor-revenco/', origin).href}`,
+  `- Physician Profile (UA): ${new URL('/ua/dr-igor-revenco/', origin).href}`,
   '',
-  '## Contact & Hours',
-  '- Address: Str. Mircea cel Bătrân 13/2, MD-2044, Ciocana, Chișinău, Republica Moldova',
-  '- Coordinates: 47.0477461, 28.8887469',
-  '- Hours: Monday–Friday, 09:00–15:00 (Europe/Chisinau)',
-  '- Phone: 022 60 50 60 | +373 79 422 908',
-  '- Languages: Romanian (/), English (/en/), Russian (/ru/), Ukrainian (/ua/)',
+  '## Indicative Reference Tariffs (MDL — Updated November 2026, Non-Binding Information)',
+  '- Consultație primară neurolog / neurochirurg / neuropediatru / fitoterapeut / reflexolog / acupuncturist: 500 MDL (consultație repetată: 400 MDL)',
+  '- Electroencefalografie (EEG 19 canale adulți & copii): 1600 MDL',
+  '- Examinare neinvazivă 117 indici clinici Biopromin AMP-Tech (screening funcțional complementar): 1000 MDL',
+  '- Cartografierea creierului computerizată 3D: 600 MDL',
+  '- Reoencefalografie (REG): 500 MDL | Electrospondilografie computerizată (ESG): 500 MDL | Termalgometrie RUNO (sistem nervos vegetativ): 500 MDL',
+  '- EHO-Encefalografie (ECHO-EG): 250 MDL | Ecografie organe interne: 250 MDL | ECG computerizată: 200 MDL | Uro-test: 200 MDL',
+  '- Evaluare funcțională neuropsihologică: 700 MDL | Testare cognitivă avansată (memorie/atenție): 800 MDL | Evaluare biomecanică: 600 MDL | Evaluare ergonomică: 550 MDL',
+  '- Testări psihodiagnostice computerizate: MMPI (200 MDL), Luscher (200 MDL), Sondy (200 MDL), Personalitate (250 MDL), Funcții executive (300 MDL), Inteligență emoțională (300 MDL), Evaluare psihosocială (350 MDL), Stres post-traumatic (400 MDL)',
+  '- Proceduri din categoria Echipamente și metode curative (Electrosomn, Amplipuls, Electroforeză, Magnetoterapie, Laser, Ultrasunete, Bioptron, Ozonoterapie, Darsonval, Biofeedback, Stimulare AVS alfa-beta-theta, LANAFORM, JAD-masaj, ION-DETOX): 100 MDL / 30 min',
+  '- Băi curative cu nămol din Saki / aeroionoterapie în peștera de sare: 100–150 MDL | Masaj terapeutic 60 min: 200 MDL | Kinetoterapie / reabilitare: 220–300 MDL',
+  '- Notă legală: Toate tarifele și informațiile de pe site sunt orientative („ca atare” / „as is”), nu constituie ofertă publică fermă și nu înlocuiesc serviciul de urgență 112.',
   '',
-  '## Key Pages (RO & RU Chișinău Hubs)',
-  `- Home: ${new URL('/', origin).href}`,
-  `- Dr. Igor Revenco: ${new URL('/dr-igor-revenco/', origin).href}`,
-  `- Neurolog Chișinău: ${new URL('/neurolog-chisinau/', origin).href}`,
-  `- Neurochirurg Chișinău: ${new URL('/neurochirurg-chisinau/', origin).href}`,
-  `- Fizioterapie Chișinău: ${new URL('/fizioterapie-chisinau/', origin).href}`,
-  `- Neuropediatru Chișinău: ${new URL('/neuropediatru-chisinau/', origin).href}`,
-  `- Electrosomn Chișinău: ${new URL('/electrosomn-chisinau/', origin).href}`,
-  `- Hernie de disc Chișinău: ${new URL('/hernie-de-disc-chisinau/', origin).href}`,
-  `- Tratament migrene Chișinău: ${new URL('/tratament-migrene-chisinau/', origin).href}`,
-  `- Recuperare după AVC Chișinău: ${new URL('/recuperare-dupa-avc-chisinau/', origin).href}`,
-  `- Dureri de spate & sciatică: ${new URL('/dureri-de-spate-sciatica-chisinau/', origin).href}`,
-  `- Neurolog Ciocana: ${new URL('/neurolog-ciocana-chisinau/', origin).href}`,
-  `- Amețeli & vertij: ${new URL('/ameteli-vertij-chisinau/', origin).href}`,
-  `- Insomnie tratament: ${new URL('/insomnie-tratament-chisinau/', origin).href}`,
-  `- Osteocondroză cervicală: ${new URL('/osteocondroza-cervicala-chisinau/', origin).href}`,
-  `- EEG Chișinău (1600 MDL): ${new URL('/eeg-chisinau/', origin).href}`,
-  `- Masaj Terapeutic Chișinău (200 MDL): ${new URL('/masaj-terapeutic-chisinau/', origin).href}`,
-  `- Diagnostic AMP 117 indici (1000 MDL): ${new URL('/diagnostic-amp-chisinau/', origin).href}`,
-  `- Reoencefalografie REG (500 MDL): ${new URL('/reoencefalografie-chisinau/', origin).href}`,
-  `- Kinetoterapie Chișinău (250 MDL): ${new URL('/kinetoterapie-chisinau/', origin).href}`,
-  `- Acupunctură & Reflexoterapie (500 MDL): ${new URL('/acupunctura-reflexoterapie-chisinau/', origin).href}`,  `- Electroforeză & Amplipuls (100 MDL / 30 min): ${new URL('/electroforeza-amplipuls-chisinau/', origin).href}`,
-  `- Electrospondilografie Chișinău (500 MDL): ${new URL('/electrospondilografie-chisinau/', origin).href}`,
-  `- EEG Copii Chișinău (1600 MDL): ${new URL('/eeg-copii-chisinau/', origin).href}`,
-  `- Fizioterapie Ciocana (100 MDL / 30 min): ${new URL('/fizioterapie-ciocana-chisinau/', origin).href}`,
-  `- Cameră Salină & Băi cu Nămol Saki: ${new URL('/camera-salina-bai-namol-chisinau/', origin).href}`,
-  `- Medic Fitoterapeut Chișinău (500 MDL): ${new URL('/fitoterapeut-chisinau/', origin).href}`,
-  `- Ecografie & ECG Chișinău (200–250 MDL): ${new URL('/ecografie-ecg-chisinau/', origin).href}`,
-  `- Magnetoterapie, Laser & Bioptron (100 MDL / 30 min): ${new URL('/magnetoterapie-laser-chisinau/', origin).href}`,
-  `- Ozonoterapie & Darsonval (100 MDL / 30 min): ${new URL('/ozonoterapie-darsonval-chisinau/', origin).href}`,
-  `- Distonie Neurovegetativă & Termalgometrie RUNO (500 MDL): ${new URL('/distonie-neurovegetativa-chisinau/', origin).href}`,
-  `- Cartografierea Creierului 3D (600 MDL): ${new URL('/cartografierea-creierului-chisinau/', origin).href}`,
-  `- Nevralgie de Trigemen & Pareză Facială: ${new URL('/nevralgie-trigemen-pareza-faciala-chisinau/', origin).href}`,
-  `- Sindrom de Tunel Carpian & Amorțeli Mâini: ${new URL('/tunel-carpian-amorteli-maini-chisinau/', origin).href}`,
-  `- Ticuri Nervoase & Logonevroză Copii: ${new URL('/ticuri-nervoase-balbaiala-copii-chisinau/', origin).href}`,
-  `- Centru de Reabilitare Medicală & Neurologică: ${new URL('/reabilitare-medicala-neurologica-chisinau/', origin).href}`,
-  `- Scolioză & Postură Copii și Adulți: ${new URL('/scolioza-postura-copii-adulti-chisinau/', origin).href}`,
-  `- Pinten Calcanean, Artroză & Umăr Înghețat: ${new URL('/pinten-calcanean-artroza-chisinau/', origin).href}`,
-  `- Boala Parkinson, Tremor & Memorie: ${new URL('/boala-parkinson-tremor-memorie-chisinau/', origin).href}`,
-  `- Recuperare Post-Operatorie Coloană: ${new URL('/recuperare-postoperatorie-coloana-chisinau/', origin).href}`,
-  `- Ghid RMN Protruzie L4–L5 / L5–S1, Hernie Schmorl & Stenoză: ${new URL('/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/', origin).href}`,
-  `- Tinitus (Zgomote în Urechi) & Spondiloză Cervicală: ${new URL('/tinitus-zgomote-urechi-spondiloza-cervicala-chisinau/', origin).href}`,
-  `- Cefalee de Tensiune vs. Migrenă vs. Cervicogenă: ${new URL('/cefalee-tensiune-vs-migrena-chisinau/', origin).href}`,
-  `- Ghid Diagnostic Funcțional (EEG vs. REG vs. AMP vs. ESG): ${new URL('/ghid-diagnostic-functional-eeg-reg-amp-chisinau/', origin).href}`,
-  `- Nevralgie Intercostală & Durere între Omoplați (Inimă vs. Coloană): ${new URL('/nevralgie-intercostala-durere-omoplati-chisinau/', origin).href}`,
-  `- Hernie Cervicală C5–C6 / C6–C7 & Amețeli: ${new URL('/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau/', origin).href}`,
-  `- Amorțeli Picioare & Polineuropatie: ${new URL('/amorteli-picioare-polineuropatie-chisinau/', origin).href}`,
-  `- Ghid Contraindicații & Siguranță Fizioterapie: ${new URL('/contraindicatii-fizioterapie-siguranta-chisinau/', origin).href}`,
-  `- Enurezis Nocturn la Copii (Neuropediatru & Electrosomn): ${new URL('/enurezis-nocturn-copii-neuropediatru-chisinau/', origin).href}`,
-  `- Spasmofilie & Crize de Hiperexcitabilitate (Neurolog & RUNO): ${new URL('/spasmofilie-crize-hiperexcitabilitate-chisinau/', origin).href}`,
-  `- Recuperare după Comoție Cerebrală & Traumatism Cranian (Neurochirurg, EEG & REG): ${new URL('/recuperare-comotie-cerebrala-traumatism-chisinau/', origin).href}`,
-  `- Întârziere de Vorbire la Copii (Neuropediatru, EEG & Cartografiere): ${new URL('/intarziere-vorbire-copii-neuropediatru-chisinau/', origin).href}`,
-  `- Convulsii Febrile la Copii — Prim Ajutor & Când e Indicat EEG: ${new URL('/convulsii-febrile-copii-eeg-neuropediatru-chisinau/', origin).href}`,
-  `- EHO-Encefalografie ECHO-EG (250 MDL) vs. EEG: ${new URL('/eho-encefalografie-chisinau/', origin).href}`,
-  `- Evaluare Neuropsihologică, Testare Cognitivă & MMPI (200–800 MDL): ${new URL('/evaluare-neuropsihologica-testare-cognitiva-chisinau/', origin).href}`,
-  `- Terapie cu Ultrasunete & Electrostimulare — Epicondilită & Umăr (100 MDL): ${new URL('/terapie-ultrasunete-epicondilita-tendinita-chisinau/', origin).href}`,
-  `- Oboseală Cronică, Burnout, Biofeedback & AVS (100 MDL): ${new URL('/oboseala-cronica-burnout-biofeedback-chisinau/', origin).href}`,
-  `- Tensiune Intracraniană Adulți & Copii (Neurolog-Neurochirurg & EHO-EG 250 MDL): ${new URL('/tensiune-intracraniana-simptome-neurolog-chisinau/', origin).href}`,
-  `- Sindrom Piriform vs. Hernie de Disc (Durere Fesă → Picior): ${new URL('/sindrom-piriform-durere-fesa-picior-chisinau/', origin).href}`,
-  `- Sindromul Picioarelor Neliniștite Willis-Ekbom (Neurolog & Electrosomn): ${new URL('/sindromul-picioarelor-nelinistite-neurolog-chisinau/', origin).href}`,
-  `- ADHD & Hiperactivitate la Copii (Neuropediatru, EEG & Biofeedback): ${new URL('/adhd-hiperactivitate-copii-neuropediatru-chisinau/', origin).href}`,
-  `- Невролог Кишинёв: ${new URL('/ru/nevrolog-kishinev/', origin).href}`,
-  `- Нейрохирург Кишинёв: ${new URL('/ru/neyrohirurg-kishinev/', origin).href}`,
-  `- Физиотерапия Кишинёв: ${new URL('/ru/fizioterapiya-kishinev/', origin).href}`,
-  `- Детский невролог Кишинёв: ${new URL('/ru/detskiy-nevrolog-kishinev/', origin).href}`,
-  `- Грыжа диска Кишинёв: ${new URL('/ru/gryzha-diska-kishinev/', origin).href}`,
-  `- Невролог Чеканы: ${new URL('/ru/nevrolog-chekany-kishinev/', origin).href}`,
-  `- Лечение мигрени Кишинёв: ${new URL('/ru/lechenie-migreni-kishinev/', origin).href}`,
-  `- Остеохондроз Кишинёв: ${new URL('/ru/osteohondroz-kishinev/', origin).href}`,
-  `- ЭЭГ Кишинёв (1600 MDL): ${new URL('/ru/eeg-kishinev/', origin).href}`,
-  `- Лечебный массаж Кишинёв (200 MDL): ${new URL('/ru/lechebnyy-massazh-kishinev/', origin).href}`,
-  `- Диагностика АМП 117 (1000 MDL): ${new URL('/ru/diagnostika-amp-kishinev/', origin).href}`,
-  `- РЭГ сосудов мозга (500 MDL): ${new URL('/ru/reoentsefalografiya-kishinev/', origin).href}`,
-  `- Кинезотерапия Кишинёв (250 MDL): ${new URL('/ru/kinezoterapiya-kishinev/', origin).href}`,
-  `- Иглоукалывание Кишинёв (500 MDL): ${new URL('/ru/igloukalyvanie-kishinev/', origin).href}`,  `- Электрофорез и Амплипульс (100 MDL / 30 мин): ${new URL('/ru/elektroforez-amplipuls-kishinev/', origin).href}`,
-  `- Электросон и ТЭС-терапия (100 MDL / 30 мин): ${new URL('/ru/elektroson-kishinev/', origin).href}`,
-  `- Реабилитация после инсульта: ${new URL('/ru/reabilitatsiya-posle-insulta-kishinev/', origin).href}`,
-  `- Боль в спине и ишиас: ${new URL('/ru/boli-v-spine-ishias-kishinev/', origin).href}`,
-  `- Лечение головокружения: ${new URL('/ru/golovokruzhenie-kishinev/', origin).href}`,
-  `- Лечение бессонницы: ${new URL('/ru/lechenie-bessonnitsy-kishinev/', origin).href}`,
-  `- Электроспондилография (500 MDL): ${new URL('/ru/elektrospondilografiya-kishinev/', origin).href}`,
-  `- ЭЭГ детям (1600 MDL): ${new URL('/ru/eeg-detyam-kishinev/', origin).href}`,
-  `- Физиотерапия Чеканы: ${new URL('/ru/fizioterapiya-chekany-kishinev/', origin).href}`,
-  `- Соляная пещера и Грязевые ванны: ${new URL('/ru/solyanaya-peshchera-gryazevye-vanny-kishinev/', origin).href}`,
-  `- Врач-фитотерапевт (500 MDL): ${new URL('/ru/fitoterapevt-kishinev/', origin).href}`,
-  `- УЗИ и ЭКГ (200–250 MDL): ${new URL('/ru/uzi-ekg-kishinev/', origin).href}`,
-  `- Магнитотерапия, Лазер и Биоптрон (100 MDL): ${new URL('/ru/magnitoterapiya-lazer-kishinev/', origin).href}`,
-  `- Озонотерапия и Дарсонваль (100 MDL): ${new URL('/ru/ozonoterapiya-darsonval-kishinev/', origin).href}`,
-  `- Лечение ВСД и тест РУНО (500 MDL): ${new URL('/ru/vsd-distoniya-kishinev/', origin).href}`,
-  `- Картирование мозга (600 MDL): ${new URL('/ru/kartirovanie-mozga-kishinev/', origin).href}`,
-  `- Невралгия тройничного нерва и лицевого нерва: ${new URL('/ru/nevralgiya-troynichnogo-nerva-kishinev/', origin).href}`,
-  `- Туннельный синдром и онемение рук: ${new URL('/ru/tunnelnyy-sindrom-onemenie-ruk-kishinev/', origin).href}`,
-  `- Нервные тики и заикание у детей: ${new URL('/ru/nervnye-tiki-zaikanie-detyam-kishinev/', origin).href}`,
-  `- Центр медицинской реабилитации: ${new URL('/ru/meditsinskaya-reabilitatsiya-kishinev/', origin).href}`,
-  `- Лечение сколиоза: ${new URL('/ru/lechenie-skolioza-kishinev/', origin).href}`,
-  `- Пяточная шпора и артроз: ${new URL('/ru/pyatochnaya-shpora-artroz-kishinev/', origin).href}`,
-  `- Болезнь Паркинсона и тремор: ${new URL('/ru/bolezn-parkinsona-tremor-kishinev/', origin).href}`,
-  `- Реабилитация после операции на позвоночнике: ${new URL('/ru/reabilitatsiya-posle-operatsii-pozvonochnika-kishinev/', origin).href}`,
-  `- Гид МРТ Протрузия L4–L5 / L5–S1, грыжа Шморля и стеноз: ${new URL('/ru/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev/', origin).href}`,
-  `- Шум в ушах (тиннитус) и шейный спондилёз: ${new URL('/ru/shum-v-ushah-tinnitus-spondilez-kishinev/', origin).href}`,
-  `- Головная боль напряжения vs. Мигрень vs. Шейная: ${new URL('/ru/golovnaya-bol-napryazheniya-vs-migren-kishinev/', origin).href}`,
-  `- Гид функциональной диагностики (ЭЭГ vs. РЭГ vs. АМП vs. ЭСГ): ${new URL('/ru/gid-funktsionalnaya-diagnostika-eeg-reg-amp-kishinev/', origin).href}`,
-  `- Межрёберная невралгия и боль между лопатками (Сердце vs. Спина): ${new URL('/ru/mezhrebernaya-nevralgiya-bol-mezhdu-lopatkami-kishinev/', origin).href}`,
-  `- Грыжа шейного отдела C5–C6 / C6–C7 и головокружение: ${new URL('/ru/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev/', origin).href}`,
-  `- Онемение ног и полинейропатия: ${new URL('/ru/onemenie-nog-polineyropatiya-kishinev/', origin).href}`,
-  `- Гид противопоказаний к физиотерапии: ${new URL('/ru/protivopokazaniya-k-fizioterapii-kishinev/', origin).href}`,
-  `- Ночной энурез у детей (Детский невролог и Электросон): ${new URL('/ru/enurez-u-detey-nevrolog-kishinev/', origin).href}`,
-  `- Спазмофилия и мышечные судороги (Невролог и РУНО): ${new URL('/ru/spazmofiliya-sudorogi-nevrolog-kishinev/', origin).href}`,
-  `- Восстановление после сотрясения мозга (Нейрохирург, ЭЭГ и РЭГ): ${new URL('/ru/sotryasenie-mozga-vosstanovlenie-kishinev/', origin).href}`,
-  `- Задержка речи у ребёнка ЗРР (Детский невролог и ЭЭГ): ${new URL('/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/', origin).href}`,
-  `- Фебрильные судороги у детей — Первая помощь и ЭЭГ: ${new URL('/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/', origin).href}`,
-  `- Эхоэнцефалография Эхо-ЭГ (250 MDL) vs. ЭЭГ: ${new URL('/ru/ehoentsefalografiya-eho-eg-kishinev/', origin).href}`,
-  `- Нейропсихологическое обследование, память и MMPI (200–800 MDL): ${new URL('/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/', origin).href}`,
-  `- Ультразвуковая терапия и электростимуляция — Эпикондилит и плечо (100 MDL): ${new URL('/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/', origin).href}`,
-  `- Хроническая усталость, выгорание, Биофидбек и АВС (100 MDL): ${new URL('/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/', origin).href}`,
-  `- Внутричерепное давление у взрослых и детей (Нейрохирург и Эхо-ЭГ 250 MDL): ${new URL('/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/', origin).href}`,
-  `- Синдром грушевидной мышцы vs. Грыжа диска (Боль в ягодице и ноге): ${new URL('/ru/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev/', origin).href}`,
-  `- Синдром беспокойных ног СБН (Невролог и Электросон): ${new URL('/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/', origin).href}`,
-  `- СДВГ и гиперактивность у детей (Детский невролог, ЭЭГ и Биофидбек): ${new URL('/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/', origin).href}`,
-  `- Services: ${new URL('/servicii/', origin).href}`,
-  `- Medical Equipment (25 devices): ${new URL('/utilaj/', origin).href}`,
+  '## Contact & Clinic Hours',
+  '- Address: bd. Mircea cel Bătrân 13/2, MD-2044, sectorul Ciocana, mun. Chișinău, Republica Moldova',
+  '- Geo Coordinates: 47.0477461, 28.8887469',
+  '- Hours: Luni–Vineri (Monday–Friday), 09:00–15:00 (Europe/Chisinau)',
+  '- Phone: 022 60 50 60 | +373 79 422 908 (WhatsApp)',
+  '',
+  '## Core Clinic Pages (RO / EN / RU / UA)',
+  `- Home (RO): ${new URL('/', origin).href}`,
+  `- Home (RU): ${new URL('/ru/', origin).href}`,
+  `- Home (EN): ${new URL('/en/', origin).href}`,
+  `- Home (UA): ${new URL('/ua/', origin).href}`,
+  `- Services (96 services): ${new URL('/servicii/', origin).href}`,
   `- Prices (96 services, MDL/EUR/USD/RON/UAH): ${new URL('/preturi/', origin).href}`,
-  `- Patient Tools & Assessments: ${new URL('/aplicatii/', origin).href}`,
-  `- FAQ: ${new URL('/intrebari/', origin).href}`,
-  `- Blog (96 medical guides): ${new URL('/blog/', origin).href}`,
+  `- Medical Equipment Catalog (25 devices): ${new URL('/utilaj/', origin).href}`,
+  `- Interactive Patient Tools & Assessments: ${new URL('/aplicatii/', origin).href}`,
+  `- Frequently Asked Questions (FAQ): ${new URL('/intrebari/', origin).href}`,
+  `- Video Library: ${new URL('/video-uri/', origin).href}`,
   `- Contact & Map: ${new URL('/contact/', origin).href}`,
-  `- Sitemap: ${new URL('/sitemap.xml', origin).href}`,
+  `- Terms & Conditions / Legal Notice: ${new URL('/termeni-si-conditii/', origin).href}`,
+  '',
+  `## Clinical Authority Guides — Romanian (${roLocalUrls.length} Chișinău Medical Guides)`,
+  ...roLocalUrls.map((u) => {
+    const m = pageMetaMap.get(u);
+    const label = (m?.h1 || m?.title || u).replace(/\s*\|\s*Revimed PLUS\+.*$/i, '').trim();
+    return `- [${label}](${u})`;
+  }),
+  '',
+  `## Clinical Authority Guides — Russian (${ruLocalUrls.length} Кишинёвских клинических гидов)`,
+  ...ruLocalUrls.map((u) => {
+    const m = pageMetaMap.get(u);
+    const label = (m?.h1 || m?.title || u).replace(/\s*\|\s*Revimed PLUS\+.*$/i, '').trim();
+    return `- [${label}](${u})`;
+  }),
+  '',
+  `## Medical Equipment Pages (${roEquipUrls.length} Therapeutic & Diagnostic Devices)`,
+  ...roEquipUrls.map((u) => {
+    const m = pageMetaMap.get(u);
+    const label = (m?.h1 || m?.title || u).replace(/\s*\|\s*Revimed PLUS\+.*$/i, '').trim();
+    return `- [${label}](${u})`;
+  }),
+  '',
+  `## Interactive Patient Self-Assessment Tools (${roAppUrls.length} Tools)`,
+  ...roAppUrls.map((u) => {
+    const m = pageMetaMap.get(u);
+    const label = (m?.h1 || m?.title || u).replace(/\s*\|\s*Revimed PLUS\+.*$/i, '').trim();
+    return `- [${label}](${u})`;
+  }),
+  '',
+  `## Medical Blog Articles — Romanian (${roBlogUrls.length} Articles)`,
+  ...roBlogUrls.map((u) => {
+    const m = pageMetaMap.get(u);
+    const label = (m?.h1 || m?.title || u).replace(/\s*\|\s*Revimed PLUS\+.*$/i, '').trim();
+    return `- [${label}](${u})`;
+  }),
   ''
 ].join('\n');
+
 await writeFile(path.join(output, 'llms.txt'), llmsTxt);
-console.log(`Generated sitemap.xml (${urls.length} URLs), robots.txt, and llms.txt from the static export.`);
+
+// Generate llms-full.txt with self-contained citable summaries for every clinical guide, device, and article
+const llmsFullTxt = [
+  '# Centrul Medical Revimed PLUS+ — Complete Clinical Knowledge Base (llms-full.txt)',
+  '',
+  '> Exhaustive machine-readable index of all clinical guides, diagnostic protocols, physiotherapy devices, and medical articles published by Centrul Medical Revimed PLUS+ (S.R.L. „REVIMED PLUS”, IDNO 1011600011964, Chișinău, bd. Mircea cel Bătrân 13/2, tel. 022 60 50 60), reviewed by Dr. Igor Revenco (Neurologist, PhD Neurosurgeon, Neuropediatrician, EANS Member, 35+ years experience). All information and prices are indicative ("as is") and do not replace emergency medical care (112).',
+  '',
+  `## 1. Romanian Clinical Authority Guides (${roLocalUrls.length} Guides — Direct Citable Summaries)`,
+  ...roLocalUrls.map(formatEntry),
+  '',
+  `## 2. Russian Clinical Authority Guides (${ruLocalUrls.length} Guides — Direct Citable Summaries)`,
+  ...ruLocalUrls.map(formatEntry),
+  '',
+  `## 3. Medical Equipment & Physiotherapy Devices (${roEquipUrls.length} Devices)`,
+  ...roEquipUrls.map(formatEntry),
+  '',
+  `## 4. Medical Blog Articles (${roBlogUrls.length} RO + ${ruBlogUrls.length} RU Articles)`,
+  ...roBlogUrls.map(formatEntry),
+  ...ruBlogUrls.map(formatEntry),
+  ''
+].join('\n');
+
+await writeFile(path.join(output, 'llms-full.txt'), llmsFullTxt);
+
+// Generate RSS 2.0 Feed (out/feed.xml) for AI aggregators, Perplexity, Bing/Copilot, and Google Discover
+const pubDateRfc = new Date().toUTCString();
+const feedUrls = [...roLocalUrls, ...ruLocalUrls, ...roBlogUrls, ...ruBlogUrls];
+const rssXml = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+  '  <channel>',
+  '    <title>Centrul Medical Revimed PLUS+ Chișinău — Ghiduri Clinice &amp; Articole Medicale</title>',
+  `    <link>${escapeXml(origin.href)}</link>`,
+  `    <atom:link href="${escapeXml(new URL('/feed.xml', origin).href)}" rel="self" type="application/rss+xml" />`,
+  '    <description>Ghiduri clinice de neurologie, neurochirurgie, neuropediatrie, diagnostic funcțional (EEG, REG, EHO-EG, AMP, ESG, RUNO) și fizioterapie în Chișinău — revizuite de Dr. Igor Revenco.</description>',
+  '    <language>ro-MD</language>',
+  `    <lastBuildDate>${pubDateRfc}</lastBuildDate>`,
+  ...feedUrls.map((u) => {
+    const m = pageMetaMap.get(u) || {};
+    const title = (m.h1 || m.title || u).replace(/\s*\|\s*Revimed PLUS\+.*$/i, '').trim();
+    const summary = m.citable || m.description || title;
+    return [
+      '    <item>',
+      `      <title>${escapeXml(title)}</title>`,
+      `      <link>${escapeXml(u)}</link>`,
+      `      <guid isPermaLink="true">${escapeXml(u)}</guid>`,
+      `      <pubDate>${pubDateRfc}</pubDate>`,
+      `      <description>${escapeXml(summary)}</description>`,
+      '    </item>'
+    ].join('\n');
+  }),
+  '  </channel>',
+  '</rss>',
+  ''
+].join('\n');
+
+await writeFile(path.join(output, 'feed.xml'), rssXml);
+
+console.log(`Generated sitemap.xml (${urls.length} URLs), robots.txt (${aiCrawlers.length} AI/search crawlers), llms.txt, llms-full.txt, and feed.xml (${feedUrls.length} items) from the static export.`);

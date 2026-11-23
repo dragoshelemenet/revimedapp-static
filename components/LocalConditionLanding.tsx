@@ -66,8 +66,12 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      url: absoluteUrl(`${p.path}/`),
      inLanguage: isRu ? "ru" : "ro",
      datePublished: "2026-11-21",
-     dateModified: "2026-11-21",
-     lastReviewed: "2026-11-21",
+     dateModified: "2026-11-23",
+     lastReviewed: "2026-11-23",
+     speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".rm-citable-summary"]
+     },
      about: { "@id": `${siteUrl}/#medical-clinic` },
      reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
      author: { "@id": `${siteUrl}/dr-igor-revenco/#physician` }

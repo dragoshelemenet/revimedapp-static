@@ -69,6 +69,11 @@ export const metadata: Metadata = {
   shortcut: "/favicon.svg",
   apple: "/favicon.svg"
  },
+ alternates: {
+  types: {
+   "application/rss+xml": `${site.url}/feed.xml`
+  }
+ },
  robots: {
   index: true,
   follow: true,

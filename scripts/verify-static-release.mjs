@@ -30,7 +30,7 @@ for(const file of walk('out').filter(f=>f.endsWith('.html'))){
  if (/cel mai bun neurolog|самый лучший невролог|the best neurologist in the city/i.test(html)) errors.push('Legal risk (unsubstantiated comparative superlative): ' + file);
 }
 for(const route of ['/blog/','/ru/blog/','/utilaj/','/ru/utilaj/','/termeni-si-conditii/','/en/termeni-si-conditii/','/ru/termeni-si-conditii/','/ua/termeni-si-conditii/','/cookies/','/en/cookies/','/ru/cookies/','/ua/cookies/','/intrebari/','/en/intrebari/','/ru/intrebari/','/ua/intrebari/','/video-uri/','/en/video-uri/','/ru/video-uri/','/ua/video-uri/'])if(!existsSync(path.join('out',route,'index.html')))errors.push('Missing route: '+route);
-if(!existsSync('out/sitemap.xml')||!existsSync('out/robots.txt'))errors.push('Missing search files');
+if(!existsSync('out/sitemap.xml')||!existsSync('out/robots.txt')||!existsSync('out/llms.txt')||!existsSync('out/llms-full.txt')||!existsSync('out/feed.xml'))errors.push('Missing search/AI discovery files');
 for (const tRoute of ['out/termeni-si-conditii/index.html', 'out/en/termeni-si-conditii/index.html', 'out/ru/termeni-si-conditii/index.html', 'out/ua/termeni-si-conditii/index.html']) {
  const tHtml = existsSync(tRoute) ? readFileSync(tRoute, 'utf8') : '';
  if (!tHtml.includes('1011600011964') || !tHtml.includes('wsod.cloud') || !tHtml.includes('022 60 50 60') || !tHtml.includes('112')) {
