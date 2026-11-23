@@ -3990,15 +3990,28 @@ details summary::-webkit-details-marker {
 }
 
 
-/* === PageSpeed Mobile 90+ Optimization (Same Visual Design, Faster Initial Render & GPU Paint) === */
-.aboutBlock,
-.homeEquipmentBlock,
-.revimedHomeTrust,
-.rm-seo-bento-section,
-.homeFaqSection,
-.testimonialBand {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 520px;
+/* === Smooth GPU Scroll-Reveal Popup (Scale + Opacity, Zero CLS/LCP Impact) === */
+.rm-scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0) scale(0.92);
+  will-change: opacity, transform;
+  transition:
+    opacity 540ms cubic-bezier(0.22, 1, 0.36, 1) var(--rm-reveal-delay, 0ms),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1) var(--rm-reveal-delay, 0ms);
+}
+
+.rm-scroll-reveal.rm-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rm-scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 @media (max-width: 760px) {
