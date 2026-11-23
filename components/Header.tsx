@@ -84,7 +84,12 @@ export default function Header() {
     ["/cartografierea-creierului-chisinau", "/kartirovanie-mozga-kishinev", "/servicii/diagnostic-functional"],
     ["/nevralgie-trigemen-pareza-faciala-chisinau", "/nevralgiya-troynichnogo-nerva-kishinev", "/servicii/consultatii-neurologice"],
     ["/tunel-carpian-amorteli-maini-chisinau", "/tunnelnyy-sindrom-onemenie-ruk-kishinev", "/servicii/consultatii-neurologice"],
-    ["/ticuri-nervoase-balbaiala-copii-chisinau", "/nervnye-tiki-zaikanie-detyam-kishinev", "/servicii/consultatii-neurologice"]
+    ["/ticuri-nervoase-balbaiala-copii-chisinau", "/nervnye-tiki-zaikanie-detyam-kishinev", "/servicii/consultatii-neurologice"],
+    ["/reabilitare-medicala-neurologica-chisinau", "/meditsinskaya-reabilitatsiya-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/scolioza-postura-copii-adulti-chisinau", "/lechenie-skolioza-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/pinten-calcanean-artroza-chisinau", "/pyatochnaya-shpora-artroz-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/boala-parkinson-tremor-memorie-chisinau", "/bolezn-parkinsona-tremor-kishinev", "/servicii/consultatii-neurologice"],
+    ["/recuperare-postoperatorie-coloana-chisinau", "/reabilitatsiya-posle-operatsii-pozvonochnika-kishinev", "/servicii/consultatii-neurochirurgie"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {
