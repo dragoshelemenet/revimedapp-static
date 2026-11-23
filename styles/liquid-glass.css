@@ -4049,3 +4049,11 @@ details summary::-webkit-details-marker {
     backdrop-filter: blur(12px) saturate(160%) !important;
   }
 }
+
+
+/* Exact 860px width match with .rmFooter .rmShell on /preturi/ (overrides global.css 1120px !important) */
+.pricesCleanSection .rmShell.rm-prices-bottom-shell {
+  max-width: 860px !important;
+  width: min(860px, calc(100% - 28px)) !important;
+  margin-inline: auto !important;
+}
