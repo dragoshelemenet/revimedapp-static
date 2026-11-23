@@ -66,7 +66,20 @@ export default function Header() {
     ["/kinetoterapie-chisinau", "/kinezoterapiya-kishinev", "/servicii/fizioterapie-si-reabilitare"],
     ["/acupunctura-reflexoterapie-chisinau", "/igloukalyvanie-kishinev", "/servicii"],    ["/electroforeza-amplipuls-chisinau", "/elektroforez-amplipuls-kishinev", "/servicii/fizioterapie-si-reabilitare"],
     ["/nevralgie-neuropatie-chisinau", "/nevralgiya-neyropatiya-kishinev", "/servicii/consultatii-neurologice"],
-    ["/epilepsie-convulsii-chisinau", "/epilepsiya-kishinev", "/servicii/consultatii-neurologice"]
+    ["/epilepsie-convulsii-chisinau", "/epilepsiya-kishinev", "/servicii/consultatii-neurologice"],
+    ["/electrosomn-chisinau", "/elektroson-kishinev", "/utilaj/electrosomn-3"],
+    ["/recuperare-dupa-avc-chisinau", "/reabilitatsiya-posle-insulta-kishinev", "/servicii/consultatii-neurologice"],
+    ["/dureri-de-spate-sciatica-chisinau", "/boli-v-spine-ishias-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/ameteli-vertij-chisinau", "/golovokruzhenie-kishinev", "/servicii/consultatii-neurologice"],
+    ["/insomnie-tratament-chisinau", "/lechenie-bessonnitsy-kishinev", "/utilaj/electrosomn-3"],
+    ["/electrospondilografie-chisinau", "/elektrospondilografiya-kishinev", "/servicii/diagnostic-functional"],
+    ["/magnetoterapie-laser-chisinau", "/magnitoterapiya-lazer-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/ozonoterapie-darsonval-chisinau", "/ozonoterapiya-darsonval-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/eeg-copii-chisinau", "/eeg-detyam-kishinev", "/servicii/diagnostic-functional"],
+    ["/fizioterapie-ciocana-chisinau", "/fizioterapiya-chekany-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/camera-salina-bai-namol-chisinau", "/solyanaya-peshchera-gryazevye-vanny-kishinev", "/servicii/terapie-balneara"],
+    ["/fitoterapeut-chisinau", "/fitoterapevt-kishinev", "/servicii"],
+    ["/ecografie-ecg-chisinau", "/uzi-ekg-kishinev", "/servicii/diagnostic-functional"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {
@@ -74,11 +87,7 @@ export default function Header() {
       if (target === "ru") return `/ru${ruRoute}`;
       return withLang(fallback, target);
     }
-  }
-  if (currentCleanPath === "/electrosomn-chisinau" || currentCleanPath === "/insomnie-tratament-chisinau") return withLang("/utilaj/electrosomn-3", target);
-  if (currentCleanPath === "/recuperare-dupa-avc-chisinau" || currentCleanPath === "/ameteli-vertij-chisinau") return withLang("/servicii/consultatii-neurologice", target);
-  if (currentCleanPath === "/dureri-de-spate-sciatica-chisinau") return withLang("/servicii/fizioterapie-si-reabilitare", target);
-  // Article slugs differ by language; use the translated listing until pairs are curated.
+  }  // Article slugs differ by language; use the translated listing until pairs are curated.
   if (currentCleanPath.startsWith("/blog/")) return withLang("/blog/" + getTranslatedBlogSlug(currentCleanPath.split("/")[2], target), target);
   return withLang(currentCleanPath, target);
  };

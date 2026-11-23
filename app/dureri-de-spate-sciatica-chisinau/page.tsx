@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/dureri-de-spate-sciatica-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/dureri-de-spate-sciatica-chisinau/", ru: "/ru/boli-v-spine-ishias-kishinev/", "x-default": "/dureri-de-spate-sciatica-chisinau/" },
  title: "Dureri de Spate & Sciatică Chișinău — Neurolog & Fizioterapie",
  description:
   "Tratament pentru dureri lombare, cervicale și sciatică în Chișinău (Ciocana) — evaluare neurolog/neurochirurg Dr. Igor Revenco, Amplipuls SMT, electroforeză și terapie Solux."

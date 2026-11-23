@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/insomnie-tratament-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/insomnie-tratament-chisinau/", ru: "/ru/lechenie-bessonnitsy-kishinev/", "x-default": "/insomnie-tratament-chisinau/" },
  title: "Tratament Insomnie & Stres Cronic Chișinău — Neurolog & Electrosomn",
  description:
   "Tratament blând și individualizat pentru insomnie, tulburări de somn, stres cronic și distonie neurovegetativă în Chișinău — neurolog Dr. Igor Revenco, Electrosomn și Transair TES."

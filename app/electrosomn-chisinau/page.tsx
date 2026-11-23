@@ -9,6 +9,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/electrosomn-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/electrosomn-chisinau/", ru: "/ru/elektroson-kishinev/", "x-default": "/electrosomn-chisinau/" },
  title: "Electrosomn & Transair TES Chișinău — Insomnie, Stres & Migrene",
  description:
   "Terapie prin Electrosomn (Electrosomn-3, 4T, 5) și stimulare transcraniană Transair TES în Chișinău la Revimed PLUS+. Proceduri blânde pentru insomnie, stres, migrene și distonie."

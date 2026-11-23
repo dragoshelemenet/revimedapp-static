@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/ameteli-vertij-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/ameteli-vertij-chisinau/", ru: "/ru/golovokruzhenie-kishinev/", "x-default": "/ameteli-vertij-chisinau/" },
  title: "Tratament Amețeli & Vertij Chișinău — Neurolog & RHEOTEST",
  description:
   "Evaluare neurologică pentru amețeli, vertij și tulburări de echilibru în Chișinău (Ciocana) — Dr. Igor Revenco, 35+ ani experiență, reografie vasculară RHEOTEST și tratament individual."

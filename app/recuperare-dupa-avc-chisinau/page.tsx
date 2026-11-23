@@ -7,6 +7,7 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/recuperare-dupa-avc-chisinau",
  localized: false,
+ alternatesLanguages: { ro: "/recuperare-dupa-avc-chisinau/", ru: "/ru/reabilitatsiya-posle-insulta-kishinev/", "x-default": "/recuperare-dupa-avc-chisinau/" },
  title: "Recuperare după AVC Chișinău — Neurolog & Fizioterapie Ciocana",
  description:
   "Program individual de recuperare medicală după accident vascular cerebral (AVC) în Chișinău (Ciocana) — monitorizare neurologică Dr. Igor Revenco, neurostimulare și fizioterapie."
