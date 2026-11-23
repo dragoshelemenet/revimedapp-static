@@ -66,6 +66,7 @@ export default function CameraSalinaBaiNamolChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/gonartroza-coxartroza-fizioterapie-recuperare-chisinau/", label: "Gonartroză & Recuperare Genunchi" },
     {
         "href": "/servicii/terapie-balneara/",
         "label": "Terapie Balneară"

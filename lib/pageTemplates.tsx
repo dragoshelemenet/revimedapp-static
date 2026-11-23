@@ -465,7 +465,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/nevralgiya-zatylochnogo-nerva-arnolda-kishinev/", label: "Невралгия затылочного нерва (Арнольда)" },
               { href: "/ru/postgerpeticheskaya-nevralgiya-lishay-kishinev/", label: "Постгерпетическая невралгия (лишай)" },
               { href: "/ru/bol-v-spine-ishias-pri-beremennosti-kishinev/", label: "Боль в спине при беременности" },
-              { href: "/ru/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev/", label: "Биомеханика (600 MDL) и Эргономика" }
+              { href: "/ru/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev/", label: "Биомеханика (600 MDL) и Эргономика" },
+              { href: "/ru/spondilolistez-pozvonochnika-neyrohirurg-kishinev/", label: "Спондилолистез (смещение позвонка)" },
+              { href: "/ru/sindrom-kubitalnogo-kanala-loktevoy-nerv-kishinev/", label: "Кубитальный канал (онемение мизинца)" },
+              { href: "/ru/gonartroz-koksartroz-fizioterapiya-kishinev/", label: "Гонартроз и коксартроз (100 MDL)" },
+              { href: "/ru/abuzusnaya-golovnaya-bol-klasternaya-nevrolog-kishinev/", label: "Абузусная и кластерная головная боль" }
              ]
             }
            ]
@@ -547,7 +551,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/nevralgie-occipitala-arnold-durere-ceafa-chisinau/", label: "Nevralgie Occipitală (Arnold)" },
               { href: "/zona-zoster-nevralgie-postherpetica-chisinau/", label: "Zonă Zoster & Nevralgie Postherpetică" },
               { href: "/dureri-spate-sciatica-sarcina-chisinau/", label: "Dureri de Spate & Sciatică în Sarcină" },
-              { href: "/evaluare-biomecanica-ergonomie-birou-chisinau/", label: "Evaluare Biomecanică & Ergonomie" }
+              { href: "/evaluare-biomecanica-ergonomie-birou-chisinau/", label: "Evaluare Biomecanică & Ergonomie" },
+              { href: "/spondilolistezis-alunecare-vertebra-neurochirurg-chisinau/", label: "Spondilolistezis (Alunecare Vertebră)" },
+              { href: "/sindrom-canal-cubital-nerv-ulnar-chisinau/", label: "Canal Cubital (Deget Mic & Inelar)" },
+              { href: "/gonartroza-coxartroza-fizioterapie-recuperare-chisinau/", label: "Gonartroză & Coxartroză (100 MDL)" },
+              { href: "/cefalee-abuz-medicamentos-cluster-neurolog-chisinau/", label: "Cefalee de Abuz & Cluster" }
              ]
             }
            ]

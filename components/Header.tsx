@@ -114,7 +114,11 @@ export default function Header() {
     ["/nevralgie-occipitala-arnold-durere-ceafa-chisinau", "/nevralgiya-zatylochnogo-nerva-arnolda-kishinev", "/servicii/consultatii-neurologice"],
     ["/zona-zoster-nevralgie-postherpetica-chisinau", "/postgerpeticheskaya-nevralgiya-lishay-kishinev", "/servicii/consultatii-neurologice"],
     ["/dureri-spate-sciatica-sarcina-chisinau", "/bol-v-spine-ishias-pri-beremennosti-kishinev", "/servicii/consultatii-neurologice"],
-    ["/evaluare-biomecanica-ergonomie-birou-chisinau", "/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev", "/servicii/fizioterapie-si-reabilitare"]
+    ["/evaluare-biomecanica-ergonomie-birou-chisinau", "/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/spondilolistezis-alunecare-vertebra-neurochirurg-chisinau", "/spondilolistez-pozvonochnika-neyrohirurg-kishinev", "/servicii/consultatii-neurochirurgie"],
+    ["/sindrom-canal-cubital-nerv-ulnar-chisinau", "/sindrom-kubitalnogo-kanala-loktevoy-nerv-kishinev", "/servicii/consultatii-neurologice"],
+    ["/gonartroza-coxartroza-fizioterapie-recuperare-chisinau", "/gonartroz-koksartroz-fizioterapiya-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/cefalee-abuz-medicamentos-cluster-neurolog-chisinau", "/abuzusnaya-golovnaya-bol-klasternaya-nevrolog-kishinev", "/servicii/consultatii-neurologice"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {

@@ -66,6 +66,7 @@ export default function RuReabilitatsiyaPosleOperatsiiPozvonochnikaKishinevPage(
     }
 ]}
    relatedLinks={[
+    { href: "/ru/spondilolistez-pozvonochnika-neyrohirurg-kishinev/", label: "Спондилолистез и стабилизация" },
     {
         "href": "/ru/neyrohirurg-kishinev/",
         "label": "Нейрохирург Кишинёв"

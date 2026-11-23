@@ -66,6 +66,7 @@ export default function RuSolyanayaPeshcheraGryazevyeVannyKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/gonartroz-koksartroz-fizioterapiya-kishinev/", label: "Гонартроз и реабилитация колена" },
     {
         "href": "/ru/servicii/terapie-balneara/",
         "label": "Бальнеотерапия"

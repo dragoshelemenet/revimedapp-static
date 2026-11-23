@@ -66,6 +66,7 @@ export default function TunelCarpianAmorteliMainiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/sindrom-canal-cubital-nerv-ulnar-chisinau/", label: "Canal Cubital (Deget Mic & Inelar)" },
     {
         "href": "/nevralgie-neuropatie-chisinau/",
         "label": "Nevralgie & Neuropatie"

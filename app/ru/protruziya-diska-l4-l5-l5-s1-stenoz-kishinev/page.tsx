@@ -123,6 +123,7 @@ export default function RuProtruziyaDiskaL4L5L5S1StenozKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/spondilolistez-pozvonochnika-neyrohirurg-kishinev/", label: "Спондилолистез (смещение позвонка)" },
     { href: "/ru/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev/", label: "Синдром грушевидной мышцы vs. Грыжа" },
     {
         "href": "/ru/gryzha-diska-kishinev/",

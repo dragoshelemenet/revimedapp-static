@@ -128,6 +128,7 @@ export default function RuUltrazvukovayaTerapiyaFonoforezEpikondilitKishinevPage
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sindrom-kubitalnogo-kanala-loktevoy-nerv-kishinev/", label: "Синдром кубитального канала" },
     {
         "href": "/ru/protivopokazaniya-k-fizioterapii-kishinev/",
         "label": "Противопоказания к физиотерапии"

@@ -66,6 +66,7 @@ export default function RecuperarePostoperatorieColoanaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/spondilolistezis-alunecare-vertebra-neurochirurg-chisinau/", label: "Spondilolistezis & Stabilizare" },
     {
         "href": "/neurochirurg-chisinau/",
         "label": "Neurochirurg Chișinău"

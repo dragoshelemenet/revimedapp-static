@@ -43,6 +43,7 @@ export default function Page() {
     { q: "Можно ли уменьшить приступы мигрени без избытка таблеток?", a: "Да, сочетание индивидуального плана и мягкой нейростимуляции (Трансаир, Электросон) помогает многим пациентам снизить частоту приступов." }
    ]}
    relatedLinks={[
+    { href: "/ru/abuzusnaya-golovnaya-bol-klasternaya-nevrolog-kishinev/", label: "Абузусная и кластерная боль" },
     { href: "/ru/nevrolog-kishinev/", label: "Невролог Кишинёв" },
     { href: "/ru/osteohondroz-kishinev/", label: "Остеохондроз Кишинёв" },
     { href: "/ru/preturi/", label: "Цены" }

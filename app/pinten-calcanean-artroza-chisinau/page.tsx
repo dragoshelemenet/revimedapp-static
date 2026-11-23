@@ -66,6 +66,7 @@ export default function PintenCalcaneanArtrozaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/gonartroza-coxartroza-fizioterapie-recuperare-chisinau/", label: "Gonartroză & Coxartroză (100 MDL)" },
     { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete — Cot & Umăr (100 MDL)" },
     {
         "href": "/magnetoterapie-laser-chisinau/",

@@ -66,6 +66,7 @@ export default function RuTunnelnyySindromOnemenieRukKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sindrom-kubitalnogo-kanala-loktevoy-nerv-kishinev/", label: "Кубитальный канал (мизинец)" },
     {
         "href": "/ru/nevralgiya-neyropatiya-kishinev/",
         "label": "Невралгия и нейропатия"

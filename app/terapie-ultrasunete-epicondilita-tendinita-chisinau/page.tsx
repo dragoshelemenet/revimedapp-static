@@ -128,6 +128,7 @@ export default function TerapieUltrasuneteEpicondilitaTendinitaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/sindrom-canal-cubital-nerv-ulnar-chisinau/", label: "Sindrom Canal Cubital (Nerv Ulnar)" },
     {
         "href": "/contraindicatii-fizioterapie-siguranta-chisinau/",
         "label": "Contraindicații Fizioterapie (Ghid)"

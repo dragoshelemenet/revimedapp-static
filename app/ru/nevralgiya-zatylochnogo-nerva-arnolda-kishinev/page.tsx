@@ -124,6 +124,7 @@ export default function RuNevralgiyaZatylochnogoNervaArnoldaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/abuzusnaya-golovnaya-bol-klasternaya-nevrolog-kishinev/", label: "Абузусная и кластерная боль" },
     {
         "href": "/ru/golovnaya-bol-napryazheniya-vs-migren-kishinev/",
         "label": "Головная боль vs. Мигрень"

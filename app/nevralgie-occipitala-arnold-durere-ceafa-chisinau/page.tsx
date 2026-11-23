@@ -124,6 +124,7 @@ export default function NevralgieOccipitalaArnoldDurereCeafaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/cefalee-abuz-medicamentos-cluster-neurolog-chisinau/", label: "Cefalee de Abuz & Cluster" },
     {
         "href": "/cefalee-tensiune-vs-migrena-chisinau/",
         "label": "Cefalee vs. Migrenă (Ghid)"

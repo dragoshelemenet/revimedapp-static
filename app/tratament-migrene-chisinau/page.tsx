@@ -46,6 +46,7 @@ export default function Page() {
     { q: "Este dureroasă reografia RHEOTEST?", a: "Nu, este complet neinvazivă și nedureroasă." }
    ]}
    relatedLinks={[
+    { href: "/cefalee-abuz-medicamentos-cluster-neurolog-chisinau/", label: "Cefalee de Abuz & Cluster" },
     { href: "/neurolog-chisinau/", label: "Neurolog Chișinău" },
     { href: "/electrosomn-chisinau/", label: "Electrosomn Chișinău" },
     { href: "/preturi/", label: "Prețuri consultații" }
