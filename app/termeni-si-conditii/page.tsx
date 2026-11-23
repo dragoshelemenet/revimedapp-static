@@ -130,11 +130,12 @@ export default function TermsPage() {
       interacțiuni cu medicamente). Consultarea medicului este obligatorie.
      </p>
 
-     <h2>8. Drepturi de autor și legea aplicabilă</h2>
+     <h2>8. Drepturi de autor, resurse vizuale și legea aplicabilă</h2>
      <p>
-      Conținutul site-ului este protejat de legislația Republicii Moldova. Orice sesizare sau solicitare (inclusiv
-      actualizarea unei informații ori ștergerea unei fotografii) se soluționează prioritar și imediat pe cale
-      amiabilă, prin apel la <strong>022 60 50 60</strong>.
+      Conținutul site-ului este protejat de legislația Republicii Moldova. Anumite pictograme ilustrativ-educaționale
+      din interfață sunt furnizate de <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a>.
+      Orice sesizare sau solicitare (inclusiv actualizarea unei informații ori ștergerea unei fotografii sau resurse
+      vizuale) se soluționează prioritar și imediat pe cale amiabilă, prin apel la <strong>022 60 50 60</strong>.
      </p>
 
      <hr style={{ margin: "24px 0", opacity: 0.2 }} />

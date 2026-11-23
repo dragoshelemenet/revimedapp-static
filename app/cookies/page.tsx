@@ -66,12 +66,13 @@ export default function CookiesPage() {
       dumneavoastră și pot fi șterse oricând din setările browserului.
      </p>
 
-     <h2>4. Conținut extern (YouTube Privacy-Enhanced &amp; Google Maps)</h2>
+     <h2>4. Conținut extern (YouTube Privacy-Enhanced, Google Maps &amp; pictograme)</h2>
      <p>
       Anumite pagini pot integra materiale video YouTube în modul de confidențialitate sporită
-      (<code>youtube-nocookie.com</code>) sau linkuri către Google Maps și Facebook. La redarea unui video sau la
-      accesarea linkurilor externe, aceste platforme terțe pot aplica propriile politici de confidențialitate și
-      cookies. Revimed PLUS+ nu controlează și nu își asumă răspunderea pentru prelucrările efectuate de terți.
+      (<code>youtube-nocookie.com</code>), pictograme statice (<code>icons8.com</code>) sau linkuri către Google Maps
+      și Facebook. La redarea unui video sau la accesarea resurselor externe, aceste platforme terțe pot aplica
+      propriile politici de confidențialitate. Revimed PLUS+ nu controlează și nu își asumă răspunderea pentru
+      prelucrările efectuate de terți.
      </p>
 
      <h2>5. Operatorul de date, drepturile utilizatorului și contact</h2>
