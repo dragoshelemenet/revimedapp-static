@@ -49,7 +49,7 @@ export default function Page() {
    ]}
    relatedLinks={[
     { href: "/blog/recuperare-kinetoterapie-dupa-operatie-coloana-hernie-disc-chisinau/", label: "Ghid: Recuperare după operație de coloană" },
-    { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (300 MDL)" },
+    { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (500 MDL)" },
     { href: "/dureri-de-spate-sciatica-chisinau/", label: "Dureri de spate & Sciatică" },
     { href: "/fizioterapie-chisinau/", label: "Fizioterapie Chișinău (150 MDL)" }
    ]}

@@ -9,7 +9,7 @@ export const metadata = makeMetadata({
  localized: false,
  alternatesLanguages: { ro: "/epilepsie-convulsii-chisinau/", ru: "/ru/epilepsiya-kishinev/", "x-default": "/epilepsie-convulsii-chisinau/" },
  title: "Эпилепсия, обмороки и ЭЭГ в Кишинёве — Д-р Игорь Ревенко",
- description: "Консультация невролога (500 MDL) и ЭЭГ (1400 MDL) при эпилепсии, судорогах и обмороках у взрослых и детей в Кишинёве, Revimed PLUS+. Запись: 022 60 50 60."
+ description: "Консультация невролога (500 MDL) и ЭЭГ (1600 MDL) при эпилепсии, судорогах и обмороках у взрослых и детей в Кишинёве, Revimed PLUS+. Запись: 022 60 50 60."
 });
 
 export default function RuEpilepsiyaKishinevPage() {
@@ -20,7 +20,7 @@ export default function RuEpilepsiyaKishinevPage() {
    crumbLabel="Эпилепсия и ЭЭГ"
    h1="Диагностика эпилепсии, судорог и обмороков в Кишинёве (ЭЭГ + Невролог)"
    lead="Приём взрослого и детского невролога д-ра Игоря Ревенко (35+ лет опыта) и электроэнцефалография (ЭЭГ) на месте в клинике Revimed PLUS+."
-   directAnswer="В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) консультация невролога при эпилепсии, судорогах и обмороках (д-р Игорь Ревенко, 35+ лет) стоит 500 MDL, ЭЭГ на месте — 1400 MDL. Запись: 022 60 50 60."
+   directAnswer="В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) консультация невролога при эпилепсии, судорогах и обмороках (д-р Игорь Ревенко, 35+ лет) стоит 500 MDL, ЭЭГ на месте — 1600 MDL. Запись: 022 60 50 60."
    introParagraph="Точное разграничение обмороков, сосудистых состояний и эпилептических приступов требует опытного невролога и качественной ЭЭГ."
    symptomsHeading="Когда необходимы ЭЭГ и осмотр невролога"
    symptoms={[
@@ -57,7 +57,7 @@ export default function RuEpilepsiyaKishinevPage() {
    faqs={[
     {
         "q": "Можно ли пройти ЭЭГ и консультацию невролога в одной клинике?",
-        "a": "Да, 19-канальная ЭЭГ (1400 MDL) и приём д-ра Игоря Ревенко (500 MDL) доступны в Revimed PLUS+."
+        "a": "Да, 19-канальная ЭЭГ (1600 MDL) и приём д-ра Игоря Ревенко (500 MDL) доступны в Revimed PLUS+."
     },
     {
         "q": "Что делать, если рядом случился эпилептический приступ?",
@@ -67,7 +67,7 @@ export default function RuEpilepsiyaKishinevPage() {
    relatedLinks={[
     {
         "href": "/ru/eeg-kishinev/",
-        "label": "ЭЭГ Кишинёв (1400 MDL)"
+        "label": "ЭЭГ Кишинёв (1600 MDL)"
     },
     {
         "href": "/ru/nevrolog-kishinev/",
@@ -79,7 +79,7 @@ export default function RuEpilepsiyaKishinevPage() {
     },
     {
         "href": "/ru/preturi/",
-        "label": "Цены (101 услуга)"
+        "label": "Цены (97 услуг)"
     }
 ]}
   />

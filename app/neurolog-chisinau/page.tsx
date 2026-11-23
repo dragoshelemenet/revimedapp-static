@@ -30,7 +30,7 @@ const faqs = [
  },
  {
   q: "Ce investigații neurologice pot face pe loc în aceeași zi?",
-  a: "În clinică sunt disponibile electroencefalografia (EEG — 1400 MDL), cartografierea cerebrală (600 MDL), reoencefalografia vasculară (REG — 500 MDL), electrospondilografia (800 MDL), analizatorul neinvaziv Biopromin AMP-Tech (117 indici — 1000 MDL) și 25 de aparate de fizioterapie (150 MDL/ședință)."
+  a: "În clinică sunt disponibile electroencefalografia (EEG — 1600 MDL), cartografierea cerebrală (600 MDL), reoencefalografia vasculară (REG — 500 MDL), electrospondilografia (800 MDL), analizatorul neinvaziv Biopromin AMP-Tech (117 indici — 1000 MDL) și 25 de aparate de fizioterapie (150 MDL/ședință)."
  },
  {
   q: "Ce trebuie să aduc la prima consultație neurologică?",
@@ -124,7 +124,7 @@ export default function NeurologChisinauPage() {
        La Centrul Medical Revimed PLUS+ din Chișinău (sectorul Ciocana, Str. Mircea cel Bătrân 13/2),
        consultația primară la medic neurolog costă <strong>500 MDL</strong>, iar consultația repetată{" "}
        <strong>400 MDL</strong>. Evaluarea este realizată de <strong>Dr. Igor Revenco</strong> (35+ ani experiență,
-       categorie superioară, membru EANS), cu diagnostic funcțional pe loc (EEG 1400 MDL, REG 500 MDL, AMP 1000 MDL)
+       categorie superioară, membru EANS), cu diagnostic funcțional pe loc (EEG 1600 MDL, REG 500 MDL, AMP 1000 MDL)
        și fizioterapie (150 MDL/ședință) în aceeași clinică. Programări fără trimitere: <strong>022 60 50 60</strong>.
       </p>
      </aside>
@@ -184,7 +184,7 @@ export default function NeurologChisinauPage() {
         </tr>
         <tr>
          <td><Link href="/eeg-chisinau/">Electroencefalografie (EEG)</Link></td>
-         <td>1400 MDL</td>
+         <td>1600 MDL</td>
          <td>Activitate electrică cerebrală (adulți &amp; copii)</td>
         </tr>
         <tr>
@@ -233,10 +233,10 @@ export default function NeurologChisinauPage() {
 
      <div className="rm-quick-links-bar" style={{ marginTop: 20 }}>
       <Link href="/dr-igor-revenco/" className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
-      <Link href="/neurochirurg-chisinau/" className="btn btn-outline-primary btn-sm">Neurochirurg (300 MDL)</Link>
+      <Link href="/neurochirurg-chisinau/" className="btn btn-outline-primary btn-sm">Neurochirurg (500 MDL)</Link>
       <Link href="/fizioterapie-chisinau/" className="btn btn-outline-primary btn-sm">Fizioterapie (150 MDL)</Link>
-      <Link href="/eeg-chisinau/" className="btn btn-outline-primary btn-sm">EEG Chișinău (1400 MDL)</Link>
-      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (101 servicii)</Link>
+      <Link href="/eeg-chisinau/" className="btn btn-outline-primary btn-sm">EEG Chișinău (1600 MDL)</Link>
+      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (97 servicii)</Link>
       <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>
      </div>
     </ReadingCard>

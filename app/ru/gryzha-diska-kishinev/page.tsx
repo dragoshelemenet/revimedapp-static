@@ -46,7 +46,7 @@ export default function Page() {
    ]}
    relatedLinks={[
     { href: "/ru/blog/reabilitaciya-lfk-posle-operacii-na-pozvonochnike-kishinev/", label: "Статья: ЛФК после операции на позвоночнике" },
-    { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (300 MDL)" },
+    { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (500 MDL)" },
     { href: "/ru/fizioterapiya-kishinev/", label: "Физиотерапия Кишинёв (150 MDL)" },
     { href: "/ru/nevrolog-kishinev/", label: "Невролог Кишинёв" }
    ]}

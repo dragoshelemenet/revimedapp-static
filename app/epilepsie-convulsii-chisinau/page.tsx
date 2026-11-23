@@ -9,7 +9,7 @@ export const metadata = makeMetadata({
  localized: false,
  alternatesLanguages: { ro: "/epilepsie-convulsii-chisinau/", ru: "/ru/epilepsiya-kishinev/", "x-default": "/epilepsie-convulsii-chisinau/" },
  title: "Epilepsie, Convulsii & EEG Chișinău — Neurolog Dr. Igor Revenco",
- description: "Evaluare neurologică (500 MDL) și EEG (1400 MDL) pentru epilepsie, crize convulsive, pierderi de cunoștință și sincope la adulți și copii în Chișinău, Revimed PLUS+. 022 60 50 60."
+ description: "Evaluare neurologică (500 MDL) și EEG (1600 MDL) pentru epilepsie, crize convulsive, pierderi de cunoștință și sincope la adulți și copii în Chișinău, Revimed PLUS+. 022 60 50 60."
 });
 
 export default function EpilepsieConvulsiiChisinauPage() {
@@ -20,7 +20,7 @@ export default function EpilepsieConvulsiiChisinauPage() {
    crumbLabel="Epilepsie & EEG Chișinău"
    h1="Evaluare Epilepsie, Convulsii & Pierderi de Cunoștință în Chișinău"
    lead="Consultație neurologică și neuropediatrică de înaltă specialitate (Dr. Igor Revenco, 35+ ani) integrată cu electroencefalografie (EEG) pe loc."
-   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), evaluarea neurologică pentru epilepsie, convulsii și sincope costă 500 MDL (Dr. Igor Revenco, 35+ ani experiență, adulți și copii), iar electroencefalografia (EEG) pe loc costă 1400 MDL. Programări: 022 60 50 60."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), evaluarea neurologică pentru epilepsie, convulsii și sincope costă 500 MDL (Dr. Igor Revenco, 35+ ani experiență, adulți și copii), iar electroencefalografia (EEG) pe loc costă 1600 MDL. Programări: 022 60 50 60."
    introParagraph="Nu orice episod de leșin sau contracție este epilepsie — diferențierea exactă între sincope vasculare, crize epileptice și episoade non-epileptice se face prin corelarea atentă a istoricului clinic cu traseul EEG și imagistica cerebrală."
    symptomsHeading="Când este necesară evaluarea neurologică + EEG"
    symptoms={[
@@ -58,7 +58,7 @@ export default function EpilepsieConvulsiiChisinauPage() {
    faqs={[
     {
         "q": "Pot face atât EEG-ul, cât și consultația neurologică în aceeași clinică?",
-        "a": "Da, la Revimed PLUS+ sunt disponibile atât electroencefalografia digitală pe 19 canale (1400 MDL), cât și consultația cu Dr. Igor Revenco (500 MDL)."
+        "a": "Da, la Revimed PLUS+ sunt disponibile atât electroencefalografia digitală pe 19 canale (1600 MDL), cât și consultația cu Dr. Igor Revenco (500 MDL)."
     },
     {
         "q": "Ce trebuie să fac dacă cineva are o criză epileptică lângă mine?",
@@ -68,7 +68,7 @@ export default function EpilepsieConvulsiiChisinauPage() {
    relatedLinks={[
     {
         "href": "/eeg-chisinau/",
-        "label": "EEG Chișinău (1400 MDL)"
+        "label": "EEG Chișinău (1600 MDL)"
     },
     {
         "href": "/neurolog-chisinau/",
@@ -80,7 +80,7 @@ export default function EpilepsieConvulsiiChisinauPage() {
     },
     {
         "href": "/preturi/",
-        "label": "Prețuri (101 servicii)"
+        "label": "Prețuri (97 servicii)"
     }
 ]}
   />

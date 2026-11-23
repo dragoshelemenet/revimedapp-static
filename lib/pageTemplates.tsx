@@ -392,7 +392,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
              heading: "Консультации специалистов",
              links: [
               { href: "/ru/nevrolog-kishinev/", label: "Невролог Кишинёв (500 MDL)" },
-              { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (300 MDL)" },
+              { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (500 MDL)" },
               { href: "/ru/detskiy-nevrolog-kishinev/", label: "Детский невролог" },
               { href: "/ru/psihoterapevt-kishinev/", label: "Психотерапевт (300 MDL)" },
               { href: "/ru/igloukalyvanie-kishinev/", label: "Иглоукалывание (400 MDL)" }
@@ -401,7 +401,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
             {
              heading: "Диагностика и физиотерапия",
              links: [
-              { href: "/ru/eeg-kishinev/", label: "ЭЭГ Кишинёв (1400 MDL)" },
+              { href: "/ru/eeg-kishinev/", label: "ЭЭГ Кишинёв (1600 MDL)" },
               { href: "/ru/diagnostika-amp-kishinev/", label: "Диагностика АМП 117 (1000 MDL)" },
               { href: "/ru/reoentsefalografiya-kishinev/", label: "РЭГ сосудов мозга (500 MDL)" },
               { href: "/ru/fizioterapiya-kishinev/", label: "Физиотерапия (150 MDL)" },
@@ -427,7 +427,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
              heading: "Consultații & Specialități",
              links: [
               { href: "/neurolog-chisinau/", label: "Neurolog Chișinău (500 MDL)" },
-              { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (300 MDL)" },
+              { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (500 MDL)" },
               { href: "/neuropediatru-chisinau/", label: "Neuropediatru Chișinău" },
               { href: "/psihoterapeut-stres-anxietate-chisinau/", label: "Psihoterapeut (300 MDL)" },
               { href: "/acupunctura-reflexoterapie-chisinau/", label: "Acupunctură (400 MDL)" }
@@ -436,7 +436,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
             {
              heading: "Diagnostic & Fizioterapie",
              links: [
-              { href: "/eeg-chisinau/", label: "EEG Chișinău (1400 MDL)" },
+              { href: "/eeg-chisinau/", label: "EEG Chișinău (1600 MDL)" },
               { href: "/diagnostic-amp-chisinau/", label: "Diagnostic AMP 117 (1000 MDL)" },
               { href: "/reoencefalografie-chisinau/", label: "Reoencefalografie REG (500 MDL)" },
               { href: "/fizioterapie-chisinau/", label: "Fizioterapie (150 MDL)" },
@@ -611,12 +611,12 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
       </h2>
       <p style={{ maxWidth: "78ch", margin: "0 auto 18px" }}>
        {lang === "en"
-        ? "Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana) lists 101 medical services across neurology, neurosurgery, pediatric neurology, physiotherapy, and functional diagnostics. Prices can be previewed in MDL, EUR, RON, USD, and UAH and are confirmed upon booking."
+        ? "Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana) lists 97 medical services across neurology, neurosurgery, pediatric neurology, physiotherapy, and functional diagnostics. Prices can be previewed in MDL, EUR, RON, USD, and UAH and are confirmed upon booking."
         : lang === "ru"
-          ? "В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) представлено 101 направление: консультация невролога, нейрохирурга, детского невролога, физиотерапия и диагностика. Актуальную стоимость уточняйте при записи."
+          ? "В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) представлено 97 направлений: консультация невролога, нейрохирурга, детского невролога, физиотерапия и диагностика. Актуальную стоимость уточняйте при записи."
           : lang === "ua"
-            ? "У медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) представлено 101 послугу: невролог, нейрохірург, дитячий невролог, фізіотерапія та діагностика."
-            : "Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) oferă 101 servicii medicale: consultații neurologice adulți și copii, neurochirurgie, fizioterapie, electroterapie și diagnostic funcțional. Tarifele orientative pot fi convertite instant în MDL, EUR, RON, USD și UAH și se confirmă la programare."}
+            ? "У медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) представлено 97 послуг: невролог, нейрохірург, дитячий невролог, фізіотерапія та діагностика."
+            : "Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) oferă 97 servicii medicale: consultații neurologice adulți și copii, neurochirurgie, fizioterapie, electroterapie și diagnostic funcțional. Tarifele orientative pot fi convertite instant în MDL, EUR, RON, USD și UAH și se confirmă la programare."}
       </p>
       <div className="rm-quick-links-bar" style={{ justifyContent: "center" }}>
        <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">

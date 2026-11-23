@@ -61,7 +61,7 @@ export default function NeuropediatruChisinauPage() {
        <span>Pe scurt — date cheie și prețuri</span>
        <span>Actualizat medical: Noiembrie 2026</span>
       </div>
-      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația de neurologie pediatrică (neuropediatru) costă 500 MDL (repetată 400 MDL) și este realizată de Dr. Igor Revenco (35+ ani experiență). Sunt disponibile și investigații neinvazive (EEG 1400 MDL, AMP 1000 MDL) și proceduri blânde de fizioterapie (150 MDL). Programări: 022 60 50 60.</p>
+      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația de neurologie pediatrică (neuropediatru) costă 500 MDL (repetată 400 MDL) și este realizată de Dr. Igor Revenco (35+ ani experiență). Sunt disponibile și investigații neinvazive (EEG 1600 MDL, AMP 1000 MDL) și proceduri blânde de fizioterapie (150 MDL). Programări: 022 60 50 60.</p>
      </aside>
      <h2>Când este util un consult la neuropediatru</h2>
      <ul>
@@ -81,7 +81,7 @@ export default function NeuropediatruChisinauPage() {
      <div className="rm-quick-links-bar">
       <Link href="/blog/ticuri-nervoase-hiperexcitabilitate-dezadaptare-scolara-copii-chisinau/" className="btn btn-outline-primary btn-sm">Ghid: Ticuri &amp; Dezadaptare Școlară</Link>
       <Link href="/blog/logonevroza-balbaiala-adhd-anxietate-copii-eeg-electrosomn-chisinau/" className="btn btn-outline-primary btn-sm">Ghid: Logonevroză &amp; ADHD</Link>
-      <Link href="/eeg-chisinau/" className="btn btn-outline-primary btn-sm">EEG Copii (1400 MDL)</Link>
+      <Link href="/eeg-chisinau/" className="btn btn-outline-primary btn-sm">EEG Copii (1600 MDL)</Link>
       <Link href="/dr-igor-revenco/" className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
       <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri</Link>
       <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>

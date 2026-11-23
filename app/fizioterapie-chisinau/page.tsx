@@ -26,7 +26,7 @@ const faqs = [
  },
  {
   q: "Pot veni la fizioterapie cu recomandare de la alt medic?",
-  a: "Da. Puteți efectua procedurile prescrise de medicul dumneavoastră curant sau puteți programa o evaluare inițială cu Dr. Igor Revenco (500 MDL neurolog / 300 MDL neurochirurg) pentru stabilirea protocolului optim."
+  a: "Da. Puteți efectua procedurile prescrise de medicul dumneavoastră curant sau puteți programa o evaluare inițială cu Dr. Igor Revenco (500 MDL neurolog / 500 MDL neurochirurg) pentru stabilirea protocolului optim."
  },
  {
   q: "Este eficientă fizioterapia în hernia de disc și sciatică?",
@@ -220,7 +220,7 @@ export default function FizioterapieChisinauPage() {
       <Link href="/electrosomn-chisinau/" className="btn btn-outline-primary btn-sm">Electrosomn (150 MDL)</Link>
       <Link href="/electroforeza-amplipuls-chisinau/" className="btn btn-outline-primary btn-sm">Electroforeză &amp; Amplipuls</Link>
       <Link href="/masaj-terapeutic-chisinau/" className="btn btn-outline-primary btn-sm">Masaj (200 MDL)</Link>
-      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (101 servicii)</Link>
+      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (97 servicii)</Link>
       <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>
      </div>
     </ReadingCard>

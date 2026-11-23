@@ -27,7 +27,7 @@ export default function Page() {
     "Monitorizarea neurologică periodică, ajustarea tratamentului și prevenția secundară a unui nou AVC;",
     "Masaj terapeutic diferențiat post-AVC (200 MDL): relaxarea blândă a mușchilor spastici și tonifierea selectivă a grupelor musculare slăbite (antagoniști);",
     "Neuromiostimulare selectivă cu Amplipuls-6 (SMT) și electroforeză (150 MDL) pentru recuperarea forței și combaterea sindroamelor dureroase post-AVC (inclusiv durerea de umăr hemiplegic);",
-    "Evaluarea circulației cerebrale prin reoencefalografie neinvazivă RHEOTEST (500 MDL) și EEG 19 canale (1400 MDL) la nevoie;",
+    "Evaluarea circulației cerebrale prin reoencefalografie neinvazivă RHEOTEST (500 MDL) și EEG 19 canale (1600 MDL) la nevoie;",
     "Sprijin pentru somn, memorie și echilibru emoțional prin Bi-LENAR, Electrosomn sau Transair TES (150 MDL/oră)."
    ]}
    approachHeading="Recuperare etapizată, sigură și explicată familiei"

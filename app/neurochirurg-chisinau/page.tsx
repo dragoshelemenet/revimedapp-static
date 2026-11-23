@@ -90,7 +90,7 @@ export default function NeurochirurgChisinauPage() {
        <span>Pe scurt — date cheie și prețuri</span>
        <span>Actualizat medical: Noiembrie 2026</span>
       </div>
-      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară și repetată la medic neurochirurg costă 300 MDL. Dr. Igor Revenco (doctor în neurochirurgie USMF, membru EANS, 35+ ani practică) evaluează RMN/CT pentru hernie de disc, stenoză și compresii nervoase, oferind a doua opinie obiectivă și plan de recuperare conservatoare (fizioterapie de la 150 MDL). Programări: 022 60 50 60.</p>
+      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la medic neurochirurg costă 500 MDL, iar consultația repetată 400 MDL. Dr. Igor Revenco (doctor în neurochirurgie USMF, membru EANS, 35+ ani practică) evaluează RMN/CT pentru hernie de disc, stenoză și compresii nervoase, oferind a doua opinie obiectivă și plan de recuperare conservatoare (proceduri de fizioterapie de la 100 MDL / 30 min). Programări: 022 60 50 60.</p>
      </aside>
      <h2>Patologii evaluate la consultația de neurochirurgie</h2>
      <ul>

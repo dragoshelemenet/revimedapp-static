@@ -33,7 +33,7 @@ export default function DiagnosticAmpChisinauPage() {
    approachHeading="Cum decurge procedura AMP pe 5 puncte biologic active"
    approachParagraphs={[
     "Pacientul se află în repaus, iar cei 5 senzori externi sunt fixați pe bifurcațiile carotidiene, axile și regiunea ombilicală. Măsurarea durează între 180 și 720 secunde, este 100% nedureroasă și generează raportul complet al celor 117 indici pe loc.",
-    "Medicul interpretează corelațiile hemodinamice, metabolice și neurovegetative și, acolo unde apar abateri, recomandă investigații țintite (EEG 19 canale — 1400 MDL, REG — 500 MDL, analize de laborator clasice) sau un protocol personalizat de recuperare."
+    "Medicul interpretează corelațiile hemodinamice, metabolice și neurovegetative și, acolo unde apar abateri, recomandă investigații țintite (EEG 19 canale — 1600 MDL, REG — 500 MDL, analize de laborator clasice) sau un protocol personalizat de recuperare."
 ]}
    equipmentHeading="Tehnologia de diagnostic funcțional din clinică"
    equipmentCards={[
@@ -85,7 +85,7 @@ export default function DiagnosticAmpChisinauPage() {
     },
     {
         "href": "/preturi/",
-        "label": "Prețuri (101 servicii)"
+        "label": "Prețuri (97 servicii)"
     }
 ]}
   />

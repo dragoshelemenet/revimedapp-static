@@ -8,8 +8,8 @@ export const metadata = makeMetadata({
  path: "/eeg-chisinau",
  localized: false,
  alternatesLanguages: { ro: "/eeg-chisinau/", ru: "/ru/eeg-kishinev/", "x-default": "/eeg-chisinau/" },
- title: "EEG Chișinău (1400 MDL) — Electroencefalografie Adulți & Copii",
- description: "Electroencefalografie (EEG) în Chișinău (Ciocana) la Revimed PLUS+ — 1400 MDL, cu interpretare neurologică de Dr. Igor Revenco (35+ ani). Migrene, epilepsie, insomnie, amețeli. 022 60 50 60."
+ title: "EEG Chișinău (1600 MDL) — Electroencefalografie Adulți & Copii",
+ description: "Electroencefalografie (EEG) în Chișinău (Ciocana) la Revimed PLUS+ — 1600 MDL, cu interpretare neurologică de Dr. Igor Revenco (35+ ani). Migrene, epilepsie, insomnie, amețeli. 022 60 50 60."
 });
 
 export default function EegChisinauPage() {
@@ -20,7 +20,7 @@ export default function EegChisinauPage() {
    crumbLabel="EEG Chișinău"
    h1="Electroencefalografie (EEG) în Chișinău — Adulți și Copii"
    lead="Investigație EEG neinvazivă în Chișinău (Ciocana) cu interpretare clinică integrată de Dr. Igor Revenco (35+ ani experiență în neurologie și neuropediatrie)."
-   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), electroencefalografia (EEG) costă 1400 MDL, cartografierea cerebrală computerizată 600 MDL, iar consultația primară la medic neurolog (Dr. Igor Revenco, 35+ ani) costă 500 MDL. Procedura este neinvazivă și nedureroasă. Programări: 022 60 50 60."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), electroencefalografia (EEG) costă 1600 MDL, cartografierea cerebrală computerizată 600 MDL, iar consultația primară la medic neurolog (Dr. Igor Revenco, 35+ ani) costă 500 MDL. Procedura este neinvazivă și nedureroasă. Programări: 022 60 50 60."
    introParagraph="Electroencefalografia (EEG) la Revimed PLUS+ utilizează un sistem digital pe 19 canale (sistemul internațional 10–20 cu electrozi Fastclip, rată de eșantionare 1000 Hz, filtru 300 Hz), cu probe funcționale (hiperventilație și foto-fonostimulare), analiză spectrală DSA pentru studiul epilepsiei și Brain Mapping 3D (cartografiere cerebrală tridimensională pentru localizarea focarelor). Rezultatul este corelat direct cu examinarea neurologică a Dr. Igor Revenco."
    symptomsHeading="Când este recomandată o investigație EEG (19 canale + Brain Mapping 3D)"
    symptoms={[
@@ -59,7 +59,7 @@ export default function EegChisinauPage() {
    faqs={[
     {
         "q": "Cât costă un EEG în Chișinău la Revimed PLUS+?",
-        "a": "Electroencefalografia (EEG) costă 1400 MDL, iar cartografierea cerebrală computerizată 600 MDL. Consultația primară la neurolog costă 500 MDL."
+        "a": "Electroencefalografia (EEG) costă 1600 MDL, iar cartografierea cerebrală computerizată 600 MDL. Consultația primară la neurolog costă 500 MDL."
     },
     {
         "q": "Cum mă pregătesc pentru EEG?",
@@ -89,7 +89,7 @@ export default function EegChisinauPage() {
     },
     {
         "href": "/preturi/",
-        "label": "Prețuri (101 servicii)"
+        "label": "Prețuri (97 servicii)"
     }
 ]}
   />

@@ -80,7 +80,7 @@ export default function RuElektroforezAmplipulsKishinevPage() {
     },
     {
         "href": "/ru/preturi/",
-        "label": "Цены (101 услуга)"
+        "label": "Цены (97 услуг)"
     }
 ]}
   />

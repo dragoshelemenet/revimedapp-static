@@ -84,7 +84,7 @@ export default function ReoencefalografieChisinauPage() {
     },
     {
         "href": "/preturi/",
-        "label": "Prețuri (101 servicii)"
+        "label": "Prețuri (97 servicii)"
     }
 ]}
   />

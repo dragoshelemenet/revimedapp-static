@@ -22,7 +22,7 @@ const serviceVisuals: Record<string, VisualMeta> = {
   },
   "consultatii-neurochirurgie": {
     image: "/images/services/consultatii-neurochirurgie.webp",
-    price: { ro: "300 MDL", en: "300 MDL", ru: "300 MDL", ua: "300 MDL" },
+    price: { ro: "500 MDL", en: "500 MDL", ru: "500 MDL", ua: "500 MDL" },
     highlights: {
       ro: ["Evaluare RMN / CT", "Hernie de disc & stenoză", "A doua opinie EANS"],
       en: ["MRI / CT Review", "Disc Herniation & Stenosis", "EANS Second Opinion"],
@@ -32,7 +32,7 @@ const serviceVisuals: Record<string, VisualMeta> = {
   },
   "fizioterapie-si-reabilitare": {
     image: "/images/services/fizioterapie-si-reabilitare.webp",
-    price: { ro: "de la 150 MDL", en: "from 150 MDL", ru: "от 150 MDL", ua: "від 150 MDL" },
+    price: { ro: "100 MDL / 30 min", en: "100 MDL / 30 min", ru: "100 MDL / 30 мин", ua: "100 MDL / 30 хв" },
     highlights: {
       ro: ["25 aparate medicale", "Masaj 60 min: 200 MDL", "Kinetoterapie: 250 MDL"],
       en: ["25 Medical Devices", "Massage 60 min: 200 MDL", "Kinesiotherapy: 250 MDL"],
@@ -42,12 +42,12 @@ const serviceVisuals: Record<string, VisualMeta> = {
   },
   "diagnostic-functional": {
     image: "/images/services/diagnostic-functional.webp",
-    price: { ro: "200–1400 MDL", en: "200–1400 MDL", ru: "200–1400 MDL", ua: "200–1400 MDL" },
+    price: { ro: "200–1600 MDL", en: "200–1600 MDL", ru: "200–1600 MDL", ua: "200–1600 MDL" },
     highlights: {
-      ro: ["EEG: 1400 MDL", "AMP 117 indici: 1000 MDL", "REG RHEOTEST: 500 MDL"],
-      en: ["EEG: 1400 MDL", "AMP 117 indices: 1000 MDL", "REG RHEOTEST: 500 MDL"],
-      ru: ["ЭЭГ: 1400 MDL", "АМП 117 пок.: 1000 MDL", "РЭГ RHEOTEST: 500 MDL"],
-      ua: ["ЕЕГ: 1400 MDL", "АМП 117 пок.: 1000 MDL", "РЕГ RHEOTEST: 500 MDL"]
+      ro: ["EEG: 1600 MDL", "AMP 117 indici: 1000 MDL", "REG RHEOTEST: 500 MDL"],
+      en: ["EEG: 1600 MDL", "AMP 117 indices: 1000 MDL", "REG RHEOTEST: 500 MDL"],
+      ru: ["ЭЭГ: 1600 MDL", "АМП 117 пок.: 1000 MDL", "РЭГ RHEOTEST: 500 MDL"],
+      ua: ["ЕЕГ: 1600 MDL", "АМП 117 пок.: 1000 MDL", "РЕГ RHEOTEST: 500 MDL"]
     }
   },
   "terapie-balneara": {

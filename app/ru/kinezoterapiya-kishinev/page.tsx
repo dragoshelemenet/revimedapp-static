@@ -76,7 +76,7 @@ export default function RuKinezoterapiyaKishinevPage() {
     },
     {
         "href": "/ru/preturi/",
-        "label": "Цены (101 услуга)"
+        "label": "Цены (97 услуг)"
     }
 ]}
   />

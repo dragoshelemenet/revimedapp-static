@@ -18,7 +18,7 @@ export const metadata = makeMetadata({
 const faqs = [
  {
   q: "Сколько стоит консультация невролога в Кишинёве в Revimed PLUS+?",
-  a: "Первичный приём невролога (взрослые и дети) стоит 500 MDL, повторный — 400 MDL. Консультация нейрохирурга (разбор МРТ/КТ при грыже диска) стоит 300 MDL."
+  a: "Первичный приём невролога (взрослые и дети) стоит 500 MDL, повторный — 400 MDL. Консультация нейрохирурга (разбор МРТ/КТ при грыже диска) стоит 500 MDL."
  },
  {
   q: "Как записаться к неврологу без долгих очередей?",
@@ -30,7 +30,7 @@ const faqs = [
  },
  {
   q: "Какие обследования можно пройти прямо на месте в клинике?",
-  a: "Доступны электроэнцефалография (ЭЭГ — 1400 MDL), картирование мозга (600 MDL), реоэнцефалография (РЭГ — 500 MDL), электроспондилография (800 MDL), неинвазивный анализатор АМП (117 показателей — 1000 MDL) и 25 аппаратов физиотерапии (от 150 MDL)."
+  a: "Доступны электроэнцефалография (ЭЭГ — 1600 MDL), картирование мозга (600 MDL), реоэнцефалография (РЭГ — 500 MDL), электроспондилография (800 MDL), неинвазивный анализатор АМП (117 показателей — 1000 MDL) и 25 аппаратов физиотерапии (от 150 MDL)."
  },
  {
   q: "Что взять с собой на первый приём?",
@@ -117,7 +117,7 @@ export default function NevrologKishinevPage() {
        В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит{" "}
        <strong>500 MDL</strong>, повторный — <strong>400 MDL</strong>, нейрохирурга — <strong>300 MDL</strong>.
        Консультации для взрослых и детей ведёт <strong>д-р Игорь Ревенко</strong> (35+ лет опыта, высшая категория, член EANS).
-       На месте доступны ЭЭГ (1400 MDL), РЭГ (500 MDL), АМП (1000 MDL) и 25 аппаратов физиотерапии (от 150 MDL).
+       На месте доступны ЭЭГ (1600 MDL), РЭГ (500 MDL), АМП (1000 MDL) и 25 аппаратов физиотерапии (от 150 MDL).
        Запись без направления: <strong>022 60 50 60</strong>.
       </p>
      </aside>
@@ -172,7 +172,7 @@ export default function NevrologKishinevPage() {
         </tr>
         <tr>
          <td><Link href="/ru/eeg-kishinev/">Электроэнцефалография (ЭЭГ)</Link></td>
-         <td>1400 MDL</td>
+         <td>1600 MDL</td>
          <td>Биоэлектрическая активность мозга</td>
         </tr>
         <tr>
@@ -215,10 +215,10 @@ export default function NevrologKishinevPage() {
 
      <div className="rm-quick-links-bar" style={{ marginTop: 20 }}>
       <Link href="/ru/dr-igor-revenco/" className="btn btn-outline-primary btn-sm">Д-р Игорь Ревенко</Link>
-      <Link href="/ru/neyrohirurg-kishinev/" className="btn btn-outline-primary btn-sm">Нейрохирург (300 MDL)</Link>
+      <Link href="/ru/neyrohirurg-kishinev/" className="btn btn-outline-primary btn-sm">Нейрохирург (500 MDL)</Link>
       <Link href="/ru/fizioterapiya-kishinev/" className="btn btn-outline-primary btn-sm">Физиотерапия (150 MDL)</Link>
-      <Link href="/ru/eeg-kishinev/" className="btn btn-outline-primary btn-sm">ЭЭГ Кишинёв (1400 MDL)</Link>
-      <Link href="/ru/preturi/" className="btn btn-outline-primary btn-sm">Цены (101 услуга)</Link>
+      <Link href="/ru/eeg-kishinev/" className="btn btn-outline-primary btn-sm">ЭЭГ Кишинёв (1600 MDL)</Link>
+      <Link href="/ru/preturi/" className="btn btn-outline-primary btn-sm">Цены (97 услуг)</Link>
       <Link href="/ru/contact/" className="btn btn-primary btn-sm">Запись: 022 60 50 60</Link>
      </div>
     </ReadingCard>
