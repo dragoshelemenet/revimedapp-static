@@ -597,8 +597,10 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
       servicesCountLabel={text.servicesCount}
       converterLabels={text}
      />
-     <article className="adminCard prose" data-glass-card style={{ marginTop: 22 }}>
-      <h2>
+    </div>
+    <div className="rmShell" style={{ marginTop: 24 }}>
+     <article className="rm-seo-bento-shell" data-glass-card style={{ textAlign: "center" }}>
+      <h2 style={{ marginTop: 0 }}>
        {lang === "en"
         ? "Transparent Pricing & Individual Treatment Plans in Chișinău"
         : lang === "ru"
@@ -607,7 +609,7 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
             ? "Орієнтовні ціни та індивідуальний план у Кишиневі"
             : "Tarife orientative și plan de tratament individual în Chișinău"}
       </h2>
-      <p>
+      <p style={{ maxWidth: "78ch", margin: "0 auto 18px" }}>
        {lang === "en"
         ? "Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana) lists 101 medical services across neurology, neurosurgery, pediatric neurology, physiotherapy, and functional diagnostics. Prices can be previewed in MDL, EUR, RON, USD, and UAH and are confirmed upon booking."
         : lang === "ru"
@@ -616,7 +618,7 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
             ? "У медичному центрі Revimed PLUS+ (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) представлено 101 послугу: невролог, нейрохірург, дитячий невролог, фізіотерапія та діагностика."
             : "Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) oferă 101 servicii medicale: consultații neurologice adulți și copii, neurochirurgie, fizioterapie, electroterapie și diagnostic funcțional. Tarifele orientative pot fi convertite instant în MDL, EUR, RON, USD și UAH și se confirmă la programare."}
       </p>
-      <div className="rm-quick-links-bar">
+      <div className="rm-quick-links-bar" style={{ justifyContent: "center" }}>
        <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">
         {lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}
        </Link>

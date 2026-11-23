@@ -60,8 +60,10 @@ export default function ScrollExperience() {
 
     const viewportLimit = window.innerHeight * 0.94;
     const toObserve: HTMLElement[] = [];
+    const cleanupTimers: number[] = [];
 
     elements.forEach((el, idx) => {
+      if (el.dataset.rmRevealed === "1") return;
       el.classList.remove("rm-scroll-reveal", "rm-revealed");
       const rect = el.getBoundingClientRect();
       // Keep above-the-fold elements instantly visible (zero LCP/CLS impact)
@@ -69,6 +71,8 @@ export default function ScrollExperience() {
         el.style.setProperty("--rm-reveal-delay", `${(idx % 3) * 55}ms`);
         el.classList.add("rm-scroll-reveal");
         toObserve.push(el);
+      } else {
+        el.dataset.rmRevealed = "1";
       }
     });
 
@@ -79,18 +83,26 @@ export default function ScrollExperience() {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const target = entry.target as HTMLElement;
-            target.classList.add("rm-revealed");
             io.unobserve(target);
+            if (target.dataset.rmRevealed === "1") continue;
+            target.dataset.rmRevealed = "1";
+            target.classList.add("rm-revealed");
+            const t = window.setTimeout(() => {
+              target.classList.remove("rm-scroll-reveal", "rm-revealed");
+              target.style.removeProperty("--rm-reveal-delay");
+            }, 820);
+            cleanupTimers.push(t);
           }
         }
       },
-      { threshold: 0.06, rootMargin: "0px 0px -32px 0px" }
+      { threshold: 0.01, rootMargin: "0px 0px 40px 0px" }
     );
 
     toObserve.forEach((el) => io.observe(el));
 
     return () => {
       io.disconnect();
+      cleanupTimers.forEach((t) => window.clearTimeout(t));
     };
   }, [pathname]);
 

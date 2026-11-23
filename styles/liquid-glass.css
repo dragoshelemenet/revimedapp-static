@@ -4000,10 +4000,28 @@ details summary::-webkit-details-marker {
     transform 600ms cubic-bezier(0.22, 1, 0.36, 1) var(--rm-reveal-delay, 0ms);
 }
 
+.rm-scroll-reveal:hover {
+  animation: none !important;
+}
+
 .rm-scroll-reveal.rm-revealed {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
   will-change: auto;
+}
+
+/* Prevent hover-edge flicker/loop on touch devices */
+@media (hover: none) {
+  .rm-listing-card:hover,
+  .galleryPhoto:hover,
+  .galleryVideoCard:hover,
+  .contactMiniCard:hover,
+  .priceItemClean:hover,
+  .rm-back-to-top:hover,
+  .rm-mbar-trigger:hover,
+  .reviewArrow:hover {
+    animation: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
