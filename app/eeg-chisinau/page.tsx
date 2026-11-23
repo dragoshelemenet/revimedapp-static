@@ -67,7 +67,7 @@ export default function EegChisinauPage() {
     },
     {
         "q": "Este sigur EEG-ul pentru copii?",
-        "a": "Da, EEG este 100% neinvaziv, fără radiații și complet nedureros, fiind potrivit atât pentru copii, cât și pentru adulți."
+        "a": "Da, EEG este complet neinvaziv, fără radiații și nedureros, fiind potrivit atât pentru copii, cât și pentru adulți."
     }
 ]}
    relatedLinks={[

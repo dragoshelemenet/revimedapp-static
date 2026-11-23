@@ -48,7 +48,7 @@ export default function ElectrosomnChisinauPage() {
      uploadDate: "2026-11-21T20:43:00+02:00",
      duration: "PT2M4S",
      contentUrl: "https://www.youtube.com/watch?v=6GGtiONz4pE",
-     embedUrl: "https://www.youtube.com/embed/6GGtiONz4pE",
+     embedUrl: "https://www.youtube-nocookie.com/embed/6GGtiONz4pE",
      publisher: { "@id": `${siteUrl}/#medical-clinic` }
     }}
    />
@@ -83,10 +83,11 @@ export default function ElectrosomnChisinauPage() {
      <h2>Prezentare video — Aparatul Electrosomn-5 la Revimed PLUS+ Chișinău</h2>
      <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", borderRadius: 18, overflow: "hidden", marginBottom: 22, border: "1px solid rgba(11, 143, 216, 0.22)" }}>
       <iframe
-       src="https://www.youtube.com/embed/6GGtiONz4pE"
+       src="https://www.youtube-nocookie.com/embed/6GGtiONz4pE"
        title="Terapia Electrosomn în Chișinău (150 MDL) — Revimed PLUS+"
        loading="lazy"
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+       referrerPolicy="strict-origin-when-cross-origin"
        allowFullScreen
        style={{ width: "100%", height: "100%", border: 0 }}
       />

@@ -17,6 +17,7 @@ const footerText: Record<Lang, {
   follow: string;
   hours: string;
   address: string;
+  legalNotice: string;
   links: Record<string, string>;
 }> = {
   ro: {
@@ -28,6 +29,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: site.hours,
     address: site.address,
+    legalNotice: "Conținut exclusiv informativ — nu înlocuiește consultația medicală și nu garantează rezultate clinice. Prețurile sunt orientative (nu constituie ofertă publică). În urgențe medicale apelați 112.",
     links: {
       home: "Acasă",
       about: "Despre Noi",
@@ -48,6 +50,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: "Monday–Friday: 09:00–15:00",
     address: "Mircea cel Bătrân St. 13/2",
+    legalNotice: "Informational content only — does not replace medical consultation or guarantee clinical outcomes. Prices are indicative (not a binding public offer). For medical emergencies call 112.",
     links: {
       home: "Home",
       about: "About",
@@ -68,6 +71,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: "Понедельник–Пятница: 09:00–15:00",
     address: "ул. Мирча чел Бэтрын 13/2",
+    legalNotice: "Информация носит исключительно ознакомительный характер — не заменяет консультацию врача и не является гарантией результата. Цены ориентировочные (не публичная оферта). В экстренных случаях звоните 112.",
     links: {
       home: "Главная",
       about: "О нас",
@@ -88,6 +92,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: "Понеділок–П’ятниця: 09:00–15:00",
     address: "вул. Мірча чел Бетрин 13/2",
+    legalNotice: "Інформація має виключно ознайомчий характер — не замінює консультацію лікаря та не гарантує клінічного результату. Ціни орієнтовні (не є публічною офертою). У невідкладних випадках телефонуйте 112.",
     links: {
       home: "Головна",
       about: "Про нас",
@@ -194,6 +199,7 @@ export default function Footer() {
             </div>
           </div>
 
+          <p className="rm-footer-disclaimer" style={{ margin: "14px 0 0", paddingTop: 12, borderTop: "1px solid rgba(15, 23, 42, 0.08)", fontSize: "0.78rem", lineHeight: 1.5, color: "#475569", textAlign: "center" }}>{text.legalNotice}</p>
           <div className="rm-footer-bottom">
             <span>© {new Date().getFullYear()} Centrul Medical Revimed PLUS+. {text.rights}</span>
             <a

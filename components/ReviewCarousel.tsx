@@ -64,10 +64,10 @@ const reviews: Review[] = [
     name: "С. Д.",
     rating: 5,
     text: {
-      ro: "Cel mai bun neurolog din oraș. Am fost la mulți medici, dar nimeni nu a pus diagnosticul corect ca domnul Igor. Clinica dispune și de echipamentul necesar pentru investigații pe loc.",
-      en: "The best neurologist in the city. After visiting many doctors with no clear diagnosis, Dr. Igor identified the exact cause. Conveniently, the clinic also has the needed diagnostic equipment on site.",
+      ro: "Un neurolog excepțional în Chișinău. Am fost la mulți medici, dar nimeni nu a pus diagnosticul corect ca domnul Igor. Clinica dispune și de echipamentul necesar pentru investigații pe loc.",
+      en: "An exceptional neurologist in Chișinău. After visiting many doctors with no clear diagnosis, Dr. Igor identified the exact cause. Conveniently, the clinic also has the needed diagnostic equipment on site.",
       ru: "Самый лучший невролог в городе. До этого были у многих врачей, но только доктор Игорь поставил верный диагноз. Клиника оснащена необходимым оборудованием — всё удобно на месте.",
-      ua: "Найкращий невролог у місті. До цього зверталися до багатьох лікарів, але лише доктор Ігор поставив точний діагноз. Клініка оснащена необхідним обладнанням — усе зручно на місці."
+      ua: "Винятковий невролог у Кишиневі. До цього зверталися до багатьох лікарів, але лише доктор Ігор поставив точний діагноз. Клініка оснащена необхідним обладнанням — усе зручно на місці."
     }
   },
   {
@@ -144,8 +144,8 @@ const reviews: Review[] = [
     name: "E. S.",
     rating: 5,
     text: {
-      ro: "Domnul doctor Revenco ne-a ajutat pe mine și familia mea să găsim soluții pentru probleme vechi. Un adevărat profesionist care se implică 100%.",
-      en: "Dr. Revenco helped both me and my family solve long-standing health issues. A true professional who gives 100% to every patient.",
+      ro: "Domnul doctor Revenco ne-a ajutat pe mine și familia mea să găsim soluții pentru probleme vechi. Un adevărat profesionist care se implică cu maximă atenție.",
+      en: "Dr. Revenco helped both me and my family solve long-standing health issues. A true professional who is deeply dedicated to every patient.",
       ru: "Доктор Ревенко помог мне и моей семье решить давние проблемы со здоровьем. Настоящий профессионал, полностью отдающийся работе.",
       ua: "Лікар Ревенко допоміг мені та моїй родині вирішити давні проблеми зі здоров’ям. Справжній професіонал, який повністю віддається справі."
     }
@@ -194,10 +194,10 @@ const reviews: Review[] = [
     name: "M. K.",
     rating: 5,
     text: {
-      ro: "Clinica este super, de la intrare ești întâmpinat cu zâmbet, iar medicul este un profesionist cum rar vezi. Recomand 100%.",
-      en: "Great clinic — welcomed with a smile from the moment you walk in, and the doctor is a rare true professional. 100% recommend.",
-      ru: "Отличная клиника — встречают с улыбкой, а врач — редкий профессионал. Рекомендую на 100%.",
-      ua: "Чудова клініка — зустрічають із посмішкою, а лікар — рідкісний професіонал. Рекомендую на 100%."
+      ro: "Clinica este super, de la intrare ești întâmpinat cu zâmbet, iar medicul este un profesionist cum rar vezi. Recomand cu încredere.",
+      en: "Great clinic — welcomed with a smile from the moment you walk in, and the doctor is a rare true professional. Warmly recommend.",
+      ru: "Отличная клиника — встречают с улыбкой, а врач — редкий профессионал. Искренне рекомендую.",
+      ua: "Чудова клініка — зустрічають із посмішкою, а лікар — рідкісний професіонал. Искренне рекомендую."
     }
   },
   {
