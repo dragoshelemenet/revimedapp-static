@@ -220,7 +220,7 @@ export default function FizioterapieChisinauPage() {
       <Link href="/electrosomn-chisinau/" className="btn btn-outline-primary btn-sm">Electrosomn (150 MDL)</Link>
       <Link href="/electroforeza-amplipuls-chisinau/" className="btn btn-outline-primary btn-sm">Electroforeză &amp; Amplipuls</Link>
       <Link href="/masaj-terapeutic-chisinau/" className="btn btn-outline-primary btn-sm">Masaj (200 MDL)</Link>
-      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (97 servicii)</Link>
+      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (96 servicii)</Link>
       <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>
      </div>
     </ReadingCard>

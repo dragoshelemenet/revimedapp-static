@@ -85,7 +85,7 @@ export default function DiagnosticAmpChisinauPage() {
     },
     {
         "href": "/preturi/",
-        "label": "Prețuri (97 servicii)"
+        "label": "Prețuri (96 servicii)"
     }
 ]}
   />

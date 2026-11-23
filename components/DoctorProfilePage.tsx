@@ -59,7 +59,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "Diagnosticarea și tratamentul afecțiunilor sistemului nervos central și periferic (radiculite, dureri cervicale și lombare, migrene, cefalee, amețeli, stări depresive, anxietate, tulburări de somn).",
       "Consultații de neurochirurgie — evaluarea indicațiilor chirurgicale versus strategii conservatoare și de recuperare.",
       "Neurologie pediatrică (neuropediatrie) — evaluare și urmărire neurologică pentru copii și adolescenți.",
-      "Diagnostic funcțional, psihodiagnostic, psihoterapie și programe de neurorecuperare neuro-psiho-somatică.",
+      "Diagnostic funcțional, psihodiagnostic și programe de neurorecuperare neuro-psiho-somatică.",
       "Integrarea metodelor complementare și de fizioterapie: electroterapie (Electrosomn, Transair, Bi-LENAR), acupunctură, fitoterapie și reabilitare medicală."
     ],
     approachTitle: "Abordarea Terapeutică și Acordul Pacientului",
@@ -110,7 +110,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "Diagnosis and treatment of central and peripheral nervous system disorders (radiculitis, cervical & lumbar pain, migraines, headaches, dizziness, depression, anxiety, sleep disorders).",
       "Neurosurgical consultations — evaluating surgical indications versus conservative and rehabilitation pathways.",
       "Pediatric neurology — neurological evaluation and follow-up for children and adolescents.",
-      "Functional diagnostics, psychodiagnostics, psychotherapy, and neuro-psycho-somatic rehabilitation.",
+      "Functional diagnostics, psychodiagnostics, and neuro-psycho-somatic rehabilitation.",
       "Integrative physiotherapy and complementary methods: electrotherapy (Electrosomn, Transair, Bi-LENAR), acupuncture, phytotherapy, and medical recovery."
     ],
     approachTitle: "Therapeutic Approach & Informed Consent",
@@ -161,7 +161,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "Диагностика и лечение заболеваний центральной и периферической нервной системы (радикулиты, боли в шее и пояснице, мигрени, головокружение, депрессивные состояния, тревога, нарушения сна).",
       "Консультации нейрохирурга — оценка показаний к операции или консервативному восстановлению.",
       "Детская неврология (нейропедиатрия) — приём и наблюдение детей.",
-      "Функциональная диагностика, психодиагностика, психотерапия и нейро-психо-соматическая реабилитация.",
+      "Функциональная диагностика, психодиагностика и нейро-психо-соматическая реабилитация.",
       "Физиотерапия и интегративные методы: электротерапия (Электросон, Трансаир, Би-ЛЕНАР), акупунктура, фитотерапия."
     ],
     approachTitle: "Индивидуальный подход и согласие пациента",
@@ -212,7 +212,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "Діагностика та лікування захворювань центральної та периферичної нервової системи (радикуліти, болі в шиї та попереку, мігрені, запаморочення, депресивні стани, тривога, порушення сну).",
       "Консультації нейрохірурга — оцінка показань до операції або консервативного відновлення.",
       "Дитяча неврологія (нейропедіатрія) — прийом і спостереження дітей.",
-      "Функціональна діагностика, психодіагностика, психотерапія та нейро-психо-соматична реабілітація.",
+      "Функціональна діагностика, психодіагностика та нейро-психо-соматична реабілітація.",
       "Фізіотерапія та інтегративні методи: електротерапія (Електросон, Трансаїр, Бі-ЛЕНАР), акупунктура, фітотерапія."
     ],
     approachTitle: "Індивідуальний підхід і згода пацієнта",
@@ -400,7 +400,6 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                   <Link href="/ru/detskiy-nevrolog-kishinev/" className="btn btn-outline-primary btn-sm">Детский невролог</Link>
                   <Link href="/ru/epilepsiya-kishinev/" className="btn btn-outline-primary btn-sm">Эпилепсия и ЭЭГ</Link>
                   <Link href="/ru/nevralgiya-neyropatiya-kishinev/" className="btn btn-outline-primary btn-sm">Невралгия и нейропатия</Link>
-                  <Link href="/ru/psihoterapevt-kishinev/" className="btn btn-outline-primary btn-sm">Психотерапевт</Link>
                   <Link href="/ru/igloukalyvanie-kishinev/" className="btn btn-outline-primary btn-sm">Иглоукалывание</Link>
                   <Link href="/ru/elektroforez-amplipuls-kishinev/" className="btn btn-outline-primary btn-sm">Электрофорез и Амплипульс</Link>
                   <Link href="/ru/kinezoterapiya-kishinev/" className="btn btn-outline-primary btn-sm">Кинезиотерапия</Link>
@@ -414,7 +413,6 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                   <Link href="/insomnie-tratament-chisinau/" className="btn btn-outline-primary btn-sm">Tratament Insomnie</Link>
                   <Link href="/osteocondroza-cervicala-chisinau/" className="btn btn-outline-primary btn-sm">Osteocondroză Cervicală</Link>
                   <Link href="/recuperare-dupa-avc-chisinau/" className="btn btn-outline-primary btn-sm">Recuperare post-AVC</Link>
-                  <Link href="/psihoterapeut-stres-anxietate-chisinau/" className="btn btn-outline-primary btn-sm">Psihoterapeut &amp; Stres</Link>
                   <Link href="/acupunctura-reflexoterapie-chisinau/" className="btn btn-outline-primary btn-sm">Acupunctură &amp; Reflexoterapie</Link>
                 </>
               )}

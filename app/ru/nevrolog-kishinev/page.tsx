@@ -218,7 +218,7 @@ export default function NevrologKishinevPage() {
       <Link href="/ru/neyrohirurg-kishinev/" className="btn btn-outline-primary btn-sm">Нейрохирург (500 MDL)</Link>
       <Link href="/ru/fizioterapiya-kishinev/" className="btn btn-outline-primary btn-sm">Физиотерапия (150 MDL)</Link>
       <Link href="/ru/eeg-kishinev/" className="btn btn-outline-primary btn-sm">ЭЭГ Кишинёв (1600 MDL)</Link>
-      <Link href="/ru/preturi/" className="btn btn-outline-primary btn-sm">Цены (97 услуг)</Link>
+      <Link href="/ru/preturi/" className="btn btn-outline-primary btn-sm">Цены (96 услуг)</Link>
       <Link href="/ru/contact/" className="btn btn-primary btn-sm">Запись: 022 60 50 60</Link>
      </div>
     </ReadingCard>

@@ -393,9 +393,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
              links: [
               { href: "/ru/nevrolog-kishinev/", label: "Невролог Кишинёв (500 MDL)" },
               { href: "/ru/neyrohirurg-kishinev/", label: "Нейрохирург Кишинёв (500 MDL)" },
-              { href: "/ru/detskiy-nevrolog-kishinev/", label: "Детский невролог" },
-              { href: "/ru/psihoterapevt-kishinev/", label: "Психотерапевт (300 MDL)" },
-              { href: "/ru/igloukalyvanie-kishinev/", label: "Иглоукалывание (400 MDL)" }
+              { href: "/ru/detskiy-nevrolog-kishinev/", label: "Детский невролог" },              { href: "/ru/igloukalyvanie-kishinev/", label: "Иглоукалывание (400 MDL)" }
              ]
             },
             {
@@ -428,9 +426,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
              links: [
               { href: "/neurolog-chisinau/", label: "Neurolog Chișinău (500 MDL)" },
               { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (500 MDL)" },
-              { href: "/neuropediatru-chisinau/", label: "Neuropediatru Chișinău" },
-              { href: "/psihoterapeut-stres-anxietate-chisinau/", label: "Psihoterapeut (300 MDL)" },
-              { href: "/acupunctura-reflexoterapie-chisinau/", label: "Acupunctură (400 MDL)" }
+              { href: "/neuropediatru-chisinau/", label: "Neuropediatru Chișinău" },              { href: "/acupunctura-reflexoterapie-chisinau/", label: "Acupunctură (400 MDL)" }
              ]
             },
             {

@@ -41,7 +41,7 @@ export default function Page() {
    ]}
    faqs={[
     { q: "Pot face fizioterapie în faza dureroasă a sciaticii?", a: "Da, anumite regimuri blânde (Amplipuls analgezic, electroforeză) sunt concepute exact pentru reducerea durerii și inflamației, stabilite de medic." },
-    { q: "Unde văd prețurile pentru ședințele de fizioterapie?", a: "Toate cele 97 servicii cu tarife orientative sunt disponibile pe pagina Prețuri, cu convertor în MDL, EUR și RON." }
+    { q: "Unde văd prețurile pentru ședințele de fizioterapie?", a: "Toate cele 96 servicii cu tarife orientative sunt disponibile pe pagina Prețuri, cu convertor în MDL, EUR și RON." }
    ]}
    relatedLinks={[
     { href: "/hernie-de-disc-chisinau/", label: "Hernie de disc Chișinău" },

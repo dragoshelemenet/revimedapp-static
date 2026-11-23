@@ -84,7 +84,7 @@ export default function ElectroforezaAmplipulsChisinauPage() {
     },
     {
         "href": "/preturi/",
-        "label": "Prețuri (97 servicii)"
+        "label": "Prețuri (96 servicii)"
     }
 ]}
   />

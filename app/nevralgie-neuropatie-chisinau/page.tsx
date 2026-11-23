@@ -80,7 +80,7 @@ export default function NevralgieNeuropatieChisinauPage() {
     },
     {
         "href": "/preturi/",
-        "label": "Prețuri (97 servicii)"
+        "label": "Prețuri (96 servicii)"
     }
 ]}
   />

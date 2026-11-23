@@ -68,7 +68,7 @@ const faqs: FaqEntry[] = [
   category: "programari",
   question: "Unde pot vedea lista de prețuri și se poate calcula în altă valută?",
   answer:
-   "Lista orientativă cu toate cele 97 servicii medicale este disponibilă pe pagina Prețuri, unde există căutare instant și convertor rapid în MDL, EUR, RON, USD și UAH. Prețurile pot fi actualizate la recepție."
+   "Lista orientativă cu toate cele 96 servicii medicale este disponibilă pe pagina Prețuri, unde există căutare instant și convertor rapid în MDL, EUR, RON, USD și UAH. Prețurile pot fi actualizate la recepție."
  },
  {
   id: "adresa-transport",

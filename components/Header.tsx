@@ -68,9 +68,7 @@ export default function Header() {
     ["/diagnostic-amp-chisinau", "/diagnostika-amp-kishinev", "/utilaj/aparat-amp"],
     ["/reoencefalografie-chisinau", "/reoentsefalografiya-kishinev", "/utilaj/rheotest"],
     ["/kinetoterapie-chisinau", "/kinezoterapiya-kishinev", "/servicii/fizioterapie-si-reabilitare"],
-    ["/acupunctura-reflexoterapie-chisinau", "/igloukalyvanie-kishinev", "/servicii"],
-    ["/psihoterapeut-stres-anxietate-chisinau", "/psihoterapevt-kishinev", "/servicii/consultatii-neurologice"],
-    ["/electroforeza-amplipuls-chisinau", "/elektroforez-amplipuls-kishinev", "/servicii/fizioterapie-si-reabilitare"],
+    ["/acupunctura-reflexoterapie-chisinau", "/igloukalyvanie-kishinev", "/servicii"],    ["/electroforeza-amplipuls-chisinau", "/elektroforez-amplipuls-kishinev", "/servicii/fizioterapie-si-reabilitare"],
     ["/nevralgie-neuropatie-chisinau", "/nevralgiya-neyropatiya-kishinev", "/servicii/consultatii-neurologice"],
     ["/epilepsie-convulsii-chisinau", "/epilepsiya-kishinev", "/servicii/consultatii-neurologice"]
   ];

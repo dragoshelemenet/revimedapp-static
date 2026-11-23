@@ -78,7 +78,7 @@ export default function RuNevralgiyaNeyropatiyaKishinevPage() {
     },
     {
         "href": "/ru/preturi/",
-        "label": "Цены (97 услуг)"
+        "label": "Цены (96 услуг)"
     }
 ]}
   />

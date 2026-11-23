@@ -45,7 +45,7 @@ if (!urls.length) throw new Error('No exported index.html pages found. Run next 
 function urlPriority(url) {
   const p = new URL(url).pathname;
   if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
-  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|hernie-de-disc-chisinau|tratament-migrene-chisinau|recuperare-dupa-avc-chisinau|dureri-de-spate-sciatica-chisinau|neurolog-ciocana-chisinau|neurolog-riscani-chisinau|neurolog-botanica-chisinau|neurolog-buiucani-chisinau|neurolog-centru-chisinau|nevralgie-neuropatie-chisinau|epilepsie-convulsii-chisinau|ameteli-vertij-chisinau|insomnie-tratament-chisinau|osteocondroza-cervicala-chisinau|eeg-chisinau|masaj-terapeutic-chisinau|diagnostic-amp-chisinau|reoencefalografie-chisinau|kinetoterapie-chisinau|acupunctura-reflexoterapie-chisinau|psihoterapeut-stres-anxietate-chisinau|electroforeza-amplipuls-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev|gryzha-diska-kishinev|detskiy-nevrolog-kishinev|nevrolog-chekany-kishinev|nevrolog-ryshkanovka-kishinev|nevrolog-botanika-kishinev|nevrolog-buyukany-kishinev|nevrolog-tsentr-kishinev|nevralgiya-neyropatiya-kishinev|epilepsiya-kishinev|lechenie-migreni-kishinev|osteohondroz-kishinev|eeg-kishinev|lechebnyy-massazh-kishinev|diagnostika-amp-kishinev|reoentsefalografiya-kishinev|kinezoterapiya-kishinev|igloukalyvanie-kishinev|psihoterapevt-kishinev|elektroforez-amplipuls-kishinev)\//.test(p)) return '0.9';
+  if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|hernie-de-disc-chisinau|tratament-migrene-chisinau|recuperare-dupa-avc-chisinau|dureri-de-spate-sciatica-chisinau|neurolog-ciocana-chisinau|neurolog-riscani-chisinau|neurolog-botanica-chisinau|neurolog-buiucani-chisinau|neurolog-centru-chisinau|nevralgie-neuropatie-chisinau|epilepsie-convulsii-chisinau|ameteli-vertij-chisinau|insomnie-tratament-chisinau|osteocondroza-cervicala-chisinau|eeg-chisinau|masaj-terapeutic-chisinau|diagnostic-amp-chisinau|reoencefalografie-chisinau|kinetoterapie-chisinau|acupunctura-reflexoterapie-chisinau|electroforeza-amplipuls-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev|gryzha-diska-kishinev|detskiy-nevrolog-kishinev|nevrolog-chekany-kishinev|nevrolog-ryshkanovka-kishinev|nevrolog-botanika-kishinev|nevrolog-buyukany-kishinev|nevrolog-tsentr-kishinev|nevralgiya-neyropatiya-kishinev|epilepsiya-kishinev|lechenie-migreni-kishinev|osteohondroz-kishinev|eeg-kishinev|lechebnyy-massazh-kishinev|diagnostika-amp-kishinev|reoentsefalografiya-kishinev|kinezoterapiya-kishinev|igloukalyvanie-kishinev|elektroforez-amplipuls-kishinev)\//.test(p)) return '0.9';
   if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
   return '0.7';
 }
@@ -148,14 +148,12 @@ const llmsTxt = [
   `- Amețeli & vertij: ${new URL('/ameteli-vertij-chisinau/', origin).href}`,
   `- Insomnie tratament: ${new URL('/insomnie-tratament-chisinau/', origin).href}`,
   `- Osteocondroză cervicală: ${new URL('/osteocondroza-cervicala-chisinau/', origin).href}`,
-  `- EEG Chișinău (1400 MDL): ${new URL('/eeg-chisinau/', origin).href}`,
+  `- EEG Chișinău (1600 MDL): ${new URL('/eeg-chisinau/', origin).href}`,
   `- Masaj Terapeutic Chișinău (200 MDL): ${new URL('/masaj-terapeutic-chisinau/', origin).href}`,
   `- Diagnostic AMP 117 indici (1000 MDL): ${new URL('/diagnostic-amp-chisinau/', origin).href}`,
   `- Reoencefalografie REG (500 MDL): ${new URL('/reoencefalografie-chisinau/', origin).href}`,
   `- Kinetoterapie Chișinău (250 MDL): ${new URL('/kinetoterapie-chisinau/', origin).href}`,
-  `- Acupunctură & Reflexoterapie (400 MDL): ${new URL('/acupunctura-reflexoterapie-chisinau/', origin).href}`,
-  `- Psihoterapeut Chișinău (300 MDL): ${new URL('/psihoterapeut-stres-anxietate-chisinau/', origin).href}`,
-  `- Electroforeză & Amplipuls (150 MDL): ${new URL('/electroforeza-amplipuls-chisinau/', origin).href}`,
+  `- Acupunctură & Reflexoterapie (500 MDL): ${new URL('/acupunctura-reflexoterapie-chisinau/', origin).href}`,  `- Electroforeză & Amplipuls (100 MDL / 30 min): ${new URL('/electroforeza-amplipuls-chisinau/', origin).href}`,
   `- Невролог Кишинёв: ${new URL('/ru/nevrolog-kishinev/', origin).href}`,
   `- Нейрохирург Кишинёв: ${new URL('/ru/neyrohirurg-kishinev/', origin).href}`,
   `- Физиотерапия Кишинёв: ${new URL('/ru/fizioterapiya-kishinev/', origin).href}`,
@@ -164,20 +162,18 @@ const llmsTxt = [
   `- Невролог Чеканы: ${new URL('/ru/nevrolog-chekany-kishinev/', origin).href}`,
   `- Лечение мигрени Кишинёв: ${new URL('/ru/lechenie-migreni-kishinev/', origin).href}`,
   `- Остеохондроз Кишинёв: ${new URL('/ru/osteohondroz-kishinev/', origin).href}`,
-  `- ЭЭГ Кишинёв (1400 MDL): ${new URL('/ru/eeg-kishinev/', origin).href}`,
+  `- ЭЭГ Кишинёв (1600 MDL): ${new URL('/ru/eeg-kishinev/', origin).href}`,
   `- Лечебный массаж Кишинёв (200 MDL): ${new URL('/ru/lechebnyy-massazh-kishinev/', origin).href}`,
   `- Диагностика АМП 117 (1000 MDL): ${new URL('/ru/diagnostika-amp-kishinev/', origin).href}`,
   `- РЭГ сосудов мозга (500 MDL): ${new URL('/ru/reoentsefalografiya-kishinev/', origin).href}`,
   `- Кинезотерапия Кишинёв (250 MDL): ${new URL('/ru/kinezoterapiya-kishinev/', origin).href}`,
-  `- Иглоукалывание Кишинёв (400 MDL): ${new URL('/ru/igloukalyvanie-kishinev/', origin).href}`,
-  `- Психотерапевт Кишинёв (300 MDL): ${new URL('/ru/psihoterapevt-kishinev/', origin).href}`,
-  `- Электрофорез и Амплипульс (150 MDL): ${new URL('/ru/elektroforez-amplipuls-kishinev/', origin).href}`,
+  `- Иглоукалывание Кишинёв (500 MDL): ${new URL('/ru/igloukalyvanie-kishinev/', origin).href}`,  `- Электрофорез и Амплипульс (100 MDL / 30 мин): ${new URL('/ru/elektroforez-amplipuls-kishinev/', origin).href}`,
   `- Services: ${new URL('/servicii/', origin).href}`,
   `- Medical Equipment (25 devices): ${new URL('/utilaj/', origin).href}`,
-  `- Prices (101 services, MDL/EUR/USD/RON/UAH): ${new URL('/preturi/', origin).href}`,
+  `- Prices (96 services, MDL/EUR/USD/RON/UAH): ${new URL('/preturi/', origin).href}`,
   `- Patient Tools & Assessments: ${new URL('/aplicatii/', origin).href}`,
   `- FAQ: ${new URL('/intrebari/', origin).href}`,
-  `- Blog (40 medical guides): ${new URL('/blog/', origin).href}`,
+  `- Blog (96 medical guides): ${new URL('/blog/', origin).href}`,
   `- Contact & Map: ${new URL('/contact/', origin).href}`,
   `- Sitemap: ${new URL('/sitemap.xml', origin).href}`,
   ''

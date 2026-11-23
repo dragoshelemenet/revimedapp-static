@@ -236,7 +236,7 @@ export default function NeurologChisinauPage() {
       <Link href="/neurochirurg-chisinau/" className="btn btn-outline-primary btn-sm">Neurochirurg (500 MDL)</Link>
       <Link href="/fizioterapie-chisinau/" className="btn btn-outline-primary btn-sm">Fizioterapie (150 MDL)</Link>
       <Link href="/eeg-chisinau/" className="btn btn-outline-primary btn-sm">EEG Chișinău (1600 MDL)</Link>
-      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (97 servicii)</Link>
+      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (96 servicii)</Link>
       <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>
      </div>
     </ReadingCard>
