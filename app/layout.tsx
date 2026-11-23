@@ -26,7 +26,6 @@ const montserrat = Montserrat({
 import { JsonLd, clinicJsonLd, websiteJsonLd } from "@/lib/seo";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import LanguageFlagOverlay from "../components/LanguageFlagOverlay";
 import GlassSheenController from "../components/GlassSheenController";
 import ScrollToTopOnRoute from "../components/ScrollToTopOnRoute";
 import ScrollExperience from "../components/ScrollExperience";

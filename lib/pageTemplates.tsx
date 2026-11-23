@@ -275,6 +275,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
+   <link rel="preload" as="image" href="/images/medical-bg.webp" fetchPriority="high" />
    <section className="homeHero">
     <div className="heroOverlay">
      <div className="rmShell heroCenter">
