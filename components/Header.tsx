@@ -79,7 +79,12 @@ export default function Header() {
     ["/fizioterapie-ciocana-chisinau", "/fizioterapiya-chekany-kishinev", "/servicii/fizioterapie-si-reabilitare"],
     ["/camera-salina-bai-namol-chisinau", "/solyanaya-peshchera-gryazevye-vanny-kishinev", "/servicii/terapie-balneara"],
     ["/fitoterapeut-chisinau", "/fitoterapevt-kishinev", "/servicii"],
-    ["/ecografie-ecg-chisinau", "/uzi-ekg-kishinev", "/servicii/diagnostic-functional"]
+    ["/ecografie-ecg-chisinau", "/uzi-ekg-kishinev", "/servicii/diagnostic-functional"],
+    ["/distonie-neurovegetativa-chisinau", "/vsd-distoniya-kishinev", "/servicii/consultatii-neurologice"],
+    ["/cartografierea-creierului-chisinau", "/kartirovanie-mozga-kishinev", "/servicii/diagnostic-functional"],
+    ["/nevralgie-trigemen-pareza-faciala-chisinau", "/nevralgiya-troynichnogo-nerva-kishinev", "/servicii/consultatii-neurologice"],
+    ["/tunel-carpian-amorteli-maini-chisinau", "/tunnelnyy-sindrom-onemenie-ruk-kishinev", "/servicii/consultatii-neurologice"],
+    ["/ticuri-nervoase-balbaiala-copii-chisinau", "/nervnye-tiki-zaikanie-detyam-kishinev", "/servicii/consultatii-neurologice"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {
