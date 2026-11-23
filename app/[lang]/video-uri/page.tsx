@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props) {
  return makeMetadata({
   lang,
   path: "/video-uri",
-  localized: false,
+  localized: true,
   title: copy.title,
   description: copy.subtitle
  });

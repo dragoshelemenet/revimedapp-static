@@ -5,7 +5,7 @@ import { JsonLd, absoluteUrl, breadcrumbJsonLd, makeMetadata, siteUrl } from "@/
 export const metadata = makeMetadata({
  lang: "ro",
  path: "/cookies",
- localized: false,
+ localized: true,
  title: "Cookies și Confidențialitate",
  description: "Politica de cookies și protecția datelor cu caracter personal conform Legii nr. 133/2011 pentru site-ul Centrului Medical Revimed PLUS+ Chișinău."
 });

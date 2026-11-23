@@ -18,11 +18,7 @@ export default function Header() {
  const currentCleanPath = cleanPath(pathname);
  const close = () => setOpen(false);
  const languageHref = (target: Lang) => {
-  if (currentCleanPath === "/_not-found" || currentCleanPath === "/404") return withLang("/", target);
-  if (currentCleanPath === "/video-uri" && target === "ro") return "/galerie";
-  if (target === lang) return pathname;
-  if (["/intrebari", "/cookies", "/termeni-si-conditii"].includes(currentCleanPath)) return withLang("/", target);
-  if (currentCleanPath === "/neurolog-chisinau" || currentCleanPath === "/nevrolog-kishinev") {
+  if (currentCleanPath === "/_not-found" || currentCleanPath === "/404") return withLang("/", target);  if (target === lang) return pathname;  if (currentCleanPath === "/neurolog-chisinau" || currentCleanPath === "/nevrolog-kishinev") {
     if (target === "ro") return "/neurolog-chisinau";
     if (target === "ru") return "/ru/nevrolog-kishinev";
     return withLang("/servicii/consultatii-neurologice", target);
@@ -86,7 +82,7 @@ export default function Header() {
   if (currentCleanPath.startsWith("/blog/")) return withLang("/blog/" + getTranslatedBlogSlug(currentCleanPath.split("/")[2], target), target);
   return withLang(currentCleanPath, target);
  };
- const link = (path: string) => path === "/intrebari" ? path : withLang(path, lang);
+ const link = (path: string) => withLang(path, lang);
  const isActive = (path: string) => {
   const clean = cleanPath(pathname);
   if (path === "/") return clean === "/";

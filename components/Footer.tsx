@@ -211,8 +211,8 @@ export default function Footer() {
               {text.credit} <strong>wsod.cloud</strong>
             </a>
             <div className="rm-footer-legal">
-              <Link href="/termeni-si-conditii">{text.links.terms}</Link>
-              <Link href="/cookies">{text.links.cookies}</Link>
+              <Link href={withLang("/termeni-si-conditii", lang)}>{text.links.terms}</Link>
+              <Link href={withLang("/cookies", lang)}>{text.links.cookies}</Link>
             </div>
           </div>
         </div>

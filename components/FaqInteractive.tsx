@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { Lang } from "@/lib/i18n";
 
 export type FaqEntry = {
  id: string;
@@ -9,12 +10,67 @@ export type FaqEntry = {
  answer: string;
 };
 
-const CATEGORIES: { id: "all" | FaqEntry["category"]; label: string }[] = [
- { id: "all", label: "Toate" },
- { id: "consultatii", label: "Consultații & Tratament" },
- { id: "programari", label: "Programări & Prețuri" },
- { id: "clinica", label: "Clinică & Specialități" }
-];
+const CATEGORY_LABELS: Record<Lang, {
+ all: string;
+ consultatii: string;
+ programari: string;
+ clinica: string;
+ placeholder: string;
+ ariaSearch: string;
+ ariaClear: string;
+ ariaCats: string;
+ emptyPrefix: string;
+ emptySuffix: string;
+}> = {
+ ro: {
+  all: "Toate",
+  consultatii: "Consultații & Tratament",
+  programari: "Programări & Prețuri",
+  clinica: "Clinică & Specialități",
+  placeholder: "Caută o întrebare (ex. programare, copii, prețuri, neurologie)...",
+  ariaSearch: "Caută în întrebări frecvente",
+  ariaClear: "Șterge căutarea",
+  ariaCats: "Categorii întrebări",
+  emptyPrefix: "Nu am găsit întrebări pentru „",
+  emptySuffix: "”. Încearcă alt cuvânt sau sună la "
+ },
+ en: {
+  all: "All",
+  consultatii: "Consultations & Care",
+  programari: "Appointments & Prices",
+  clinica: "Clinic & Specialties",
+  placeholder: "Search a question (e.g. booking, children, prices, neurology)...",
+  ariaSearch: "Search FAQ",
+  ariaClear: "Clear search",
+  ariaCats: "Question categories",
+  emptyPrefix: "No questions found for “",
+  emptySuffix: "”. Try another keyword or call "
+ },
+ ru: {
+  all: "Все",
+  consultatii: "Консультации и лечение",
+  programari: "Запись и цены",
+  clinica: "Клиника и профиль",
+  placeholder: "Поиск вопроса (напр. запись, дети, цены, неврология)...",
+  ariaSearch: "Поиск по частым вопросам",
+  ariaClear: "Очистить поиск",
+  ariaCats: "Категории вопросов",
+  emptyPrefix: "Вопросы по запросу «",
+  emptySuffix: "» не найдены. Попробуйте другое слово или позвоните "
+ },
+ ua: {
+  all: "Усі",
+  consultatii: "Консультації та лікування",
+  programari: "Запис та ціни",
+  clinica: "Клініка та профіль",
+  placeholder: "Пошук питання (напр. запис, діти, ціни, неврологія)...",
+  ariaSearch: "Пошук у частих питаннях",
+  ariaClear: "Очистити пошук",
+  ariaCats: "Категорії питань",
+  emptyPrefix: "Питань за запитом «",
+  emptySuffix: "» не знайдено. Спробуйте інше слово або зателефонуйте "
+ }
+};
 
 function normalizeText(str: string) {
  return str
@@ -23,10 +79,17 @@ function normalizeText(str: string) {
   .replace(/[\u0300-\u036f]/g, "");
 }
 
-export default function FaqInteractive({ items }: { items: FaqEntry[] }) {
+export default function FaqInteractive({ items, lang = "ro" }: { items: FaqEntry[]; lang?: Lang }) {
  const [query, setQuery] = useState("");
  const [category, setCategory] = useState<"all" | FaqEntry["category"]>("all");
  const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
+ const ui = CATEGORY_LABELS[lang];
+ const categories: { id: "all" | FaqEntry["category"]; label: string }[] = [
+  { id: "all", label: ui.all },
+  { id: "consultatii", label: ui.consultatii },
+  { id: "programari", label: ui.programari },
+  { id: "clinica", label: ui.clinica }
+ ];
 
  const filtered = useMemo(() => {
   const q = normalizeText(query.trim());
@@ -63,8 +126,8 @@ export default function FaqInteractive({ items }: { items: FaqEntry[] }) {
       type="search"
       value={query}
       onChange={(e) => setQuery(e.target.value)}
-      placeholder="Caută o întrebare (ex. programare, copii, prețuri, neurologie)..."
-      aria-label="Caută în întrebări frecvente"
+      placeholder={ui.placeholder}
+      aria-label={ui.ariaSearch}
       className="rm-faq-search-input"
      />
      {query && (
@@ -72,15 +135,15 @@ export default function FaqInteractive({ items }: { items: FaqEntry[] }) {
        type="button"
        onClick={() => setQuery("")}
        className="rm-faq-clear-btn"
-       aria-label="Șterge căutarea"
+       aria-label={ui.ariaClear}
       >
        ×
       </button>
      )}
     </div>
 
-    <div className="rm-faq-cats" role="tablist" aria-label="Categorii întrebări">
-     {CATEGORIES.map((cat) => {
+    <div className="rm-faq-cats" role="tablist" aria-label={ui.ariaCats}>
+     {categories.map((cat) => {
       const active = category === cat.id;
       const count =
        cat.id === "all"
@@ -105,7 +168,7 @@ export default function FaqInteractive({ items }: { items: FaqEntry[] }) {
 
    {filtered.length === 0 ? (
     <div className="rm-faq-empty" data-glass-card>
-     Nu am găsit întrebări pentru „{query}”. Încearcă alt cuvânt sau sună la{" "}
+     {ui.emptyPrefix}{query}{ui.emptySuffix}
      <a href="tel:022605060">022 60 50 60</a>.
     </div>
    ) : (

@@ -5,7 +5,7 @@ import { JsonLd, absoluteUrl, breadcrumbJsonLd, makeMetadata, siteUrl } from "@/
 export const metadata = makeMetadata({
  lang: "ro",
  path: "/termeni-si-conditii",
- localized: false,
+ localized: true,
  title: "Termeni și Condiții · Limitarea Răspunderii",
  description: "Termeni și condiții, lipsa garanțiilor și limitarea răspunderii pentru site-ul, conținutul și fotografiile Centrului Medical Revimed PLUS+ Chișinău."
 });

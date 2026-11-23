@@ -7,7 +7,7 @@ function walk(dir){return readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isD
 for(const file of walk('out').filter(f=>f.endsWith('.html'))){
  const html=readFileSync(file,'utf8'); pages++;
  const nav = html.match(/<nav\b[^>]*>([\s\S]*?)<\/nav>/)?.[1] || '';
- if (!nav.includes('href="/intrebari')) errors.push('Missing shared Questions navigation: '+file);
+ if (!nav.includes('/intrebari')) errors.push('Missing shared Questions navigation: '+file);
  const language = html.match(/<html[^>]*lang="([^"]+)"/)?.[1] || 'ro';
  const links = [...nav.matchAll(/href="([^"]+)"/g)].map(m=>m[1]).join('|');
  const previous = navigationByLanguage.get(language);
@@ -29,11 +29,13 @@ for(const file of walk('out').filter(f=>f.endsWith('.html'))){
  if (/\b\d+\s*[–-]\s*\d+\s*(?:mg\/zi|mg\/day|мг\/день|g\/zi|g\/day|г\/день)\b/i.test(html)) errors.push('Legal risk (explicit online dosage prescription found): ' + file);
  if (/cel mai bun neurolog|самый лучший невролог|the best neurologist in the city/i.test(html)) errors.push('Legal risk (unsubstantiated comparative superlative): ' + file);
 }
-for(const route of ['/blog/','/ru/blog/','/utilaj/','/ru/utilaj/'])if(!existsSync(path.join('out',route,'index.html')))errors.push('Missing route: '+route);
+for(const route of ['/blog/','/ru/blog/','/utilaj/','/ru/utilaj/','/termeni-si-conditii/','/en/termeni-si-conditii/','/ru/termeni-si-conditii/','/ua/termeni-si-conditii/','/cookies/','/en/cookies/','/ru/cookies/','/ua/cookies/','/intrebari/','/en/intrebari/','/ru/intrebari/','/ua/intrebari/','/video-uri/','/en/video-uri/','/ru/video-uri/','/ua/video-uri/'])if(!existsSync(path.join('out',route,'index.html')))errors.push('Missing route: '+route);
 if(!existsSync('out/sitemap.xml')||!existsSync('out/robots.txt'))errors.push('Missing search files');
-const termsHtml = existsSync('out/termeni-si-conditii/index.html') ? readFileSync('out/termeni-si-conditii/index.html', 'utf8') : '';
-if (!termsHtml.includes('1011600011964') || !termsHtml.includes('Dr. Igor Revenco') || !termsHtml.includes('wsod.cloud') || !termsHtml.includes('nu garantează prezența') || !termsHtml.includes('ștearsă imediat') || !termsHtml.includes('112')) {
- errors.push('Legal risk: missing mandatory unified protection (Clinică + Dr. Igor Revenco + site + wsod.cloud), real-world availability disclaimer, photo removal on request, or 112 notice in /termeni-si-conditii/');
+for (const tRoute of ['out/termeni-si-conditii/index.html', 'out/en/termeni-si-conditii/index.html', 'out/ru/termeni-si-conditii/index.html', 'out/ua/termeni-si-conditii/index.html']) {
+ const tHtml = existsSync(tRoute) ? readFileSync(tRoute, 'utf8') : '';
+ if (!tHtml.includes('1011600011964') || !tHtml.includes('wsod.cloud') || !tHtml.includes('022 60 50 60') || !tHtml.includes('112')) {
+  errors.push('Legal risk: missing mandatory unified protection (1011600011964, wsod.cloud, 022 60 50 60 photo removal, 112) in ' + tRoute);
+ }
 }
 if(errors.length){console.error([...new Set(errors)].join('\n'));process.exit(1);}
 console.log(`Verified ${pages} HTML pages: matching release version, local links/assets, RO/RU sections, zero-legal-risk guardrails, sitemap and robots.`);

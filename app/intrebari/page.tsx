@@ -7,7 +7,7 @@ import { JsonLd, breadcrumbJsonLd, makeMetadata } from "@/lib/seo";
 export const metadata = makeMetadata({
  lang: "ro",
  path: "/intrebari",
- localized: false,
+ localized: true,
  title: "Întrebări frecvente | Revimed PLUS+",
  description:
   "Întrebări frecvente despre consultații, programări, prețuri, tratament individual, fizioterapie, neurologie, neurochirurgie și neuropediatrie la Revimed PLUS+ Chișinău."
