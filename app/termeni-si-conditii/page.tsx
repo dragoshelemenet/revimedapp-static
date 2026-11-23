@@ -7,7 +7,7 @@ export const metadata = makeMetadata({
  path: "/termeni-si-conditii",
  localized: false,
  title: "Termeni și Condiții · Limitarea Răspunderii",
- description: "Termeni și condiții, limitarea maximă a răspunderii și reguli de utilizare pentru site-ul și instrumentele educaționale Revimed PLUS+ Chișinău."
+ description: "Termeni și condiții, lipsa garanțiilor și limitarea răspunderii pentru site-ul, conținutul și fotografiile Centrului Medical Revimed PLUS+ Chișinău."
 });
 
 export default function TermsPage() {
@@ -33,129 +33,123 @@ export default function TermsPage() {
      <p className="crumb">Acasă / Termeni și Condiții</p>
      <h1>Termeni și Condiții · Limitarea Răspunderii</h1>
      <p className="lead">
-      Reguli de utilizare, declinarea răspunderii pentru conținutul informativ și cadrul legal aplicabil site-ului Revimed PLUS+.
+      Reguli de utilizare, lipsa garanțiilor și exonerarea de răspundere pentru site-ul, medicii și echipa Revimed PLUS+.
      </p>
     </div>
    </PageHeading>
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard" data-glass-card>
-     <h2>1. Date de identificare ale prestatorului și natura informativă a site-ului</h2>
+     <h2>1. Date generale și natura strict orientativă a site-ului</h2>
      <p>
-      Site-ul <strong>revimed.site</strong> este platforma oficială de prezentare și informare generală operată pentru
-      <strong> S.R.L. „REVIMED PLUS”</strong> (Centrul Medical <strong>Revimed PLUS+</strong>), înregistrată în
-      Republica Moldova:
+      Site-ul <strong>revimed.site</strong> este o platformă cu caracter exclusiv informativ și orientativ a
+      Centrului Medical <strong>Revimed PLUS+</strong> (<strong>S.R.L. „REVIMED PLUS”</strong>, IDNO <strong>1011600011964</strong>,
+      mun. Chișinău, sect. Ciocana, bd. Mircea cel Bătrân nr. 13/2, MD-2044, Republica Moldova, fondator și medic
+      coordonator: <strong>Dr. Igor Revenco</strong>, tel. <strong>022 60 50 60</strong> / <strong>+373 79 422 908</strong>).
+     </p>
+     <p>
+      Prin accesarea și utilizarea acestui site acceptați integral prezentii Termeni și Condiții. Navigarea pe site,
+      citirea articolelor, utilizarea aplicațiilor sau apelul telefonic informativ <strong>nu constituie un act medical,
+      nu creează o relație medic–pacient și nu reprezintă un contract sau o ofertă publică fermă</strong>.
+     </p>
+
+     <h2>2. Lipsa garanțiilor și neasumarea corespondenței în timp real cu realitatea</h2>
+     <p>
+      Întregul site și toate informațiile publicate pe el (inclusiv descrieri de servicii, proceduri, aparate,
+      echipamente, prețuri, orar, fotografii, materiale video, articole de blog și instrumente interactive) sunt
+      furnizate <strong>„ca atare” („as is”), fără nicio garanție expresă sau implicită</strong>.
+     </p>
+     <p>
+      <strong>Informațiile de pe site nu garantează prezența sau disponibilitatea în realitate:</strong> Afișarea pe
+      site a unui serviciu, aparat, tarif, program, membru al personalului sau element din fotografii <strong>nu
+      garantează că acesta este disponibil, activ sau prezent fizic în clinică la un anumit moment</strong>. Dotările,
+      serviciile, personalul, programul și tarifele reale din clinică pot fi modificate, suspendate sau înlocuite în
+      orice moment, fără obligația actualizării prealabile a site-ului. Singurele informații valabile sunt cele
+      confirmate verbal sau în scris la recepția clinicii în ziua prezentării.
+     </p>
+
+     <h2>3. Exonerarea de răspundere pentru clinică, Dr. Igor Revenco, site și dezvoltator</h2>
+     <p>
+      În măsura maximă permisă de lege, <strong>Centrul Medical Revimed PLUS+ (S.R.L. „REVIMED PLUS”), Dr. Igor Revenco,
+      medicii și personalul clinicii, proprietarii site-ului, autorii conținutului și echipa tehnică de dezvoltare web
+      (wsod.cloud) sunt exonerați de orice răspundere juridică, civilă, contravențională, medicală sau patrimonială</strong> față
+      de orice vizitator, pacient sau terț pentru:
      </p>
      <ul>
-      <li><strong>Denumire juridică:</strong> Societatea cu Răspundere Limitată „REVIMED PLUS” (S.R.L.)</li>
-      <li><strong>IDNO (Cod fiscal):</strong> 1011600011964 (data înregistrării: 31.03.2011)</li>
-      <li><strong>Administrator / Fondator:</strong> Dr. Igor Revenco</li>
-      <li><strong>Sediu / Adresă clinică:</strong> mun. Chișinău, sect. Ciocana, bd. Mircea cel Bătrân nr. 13/2, MD-2044, Republica Moldova</li>
-      <li><strong>Telefon recepție:</strong> 022 60 50 60 / +373 79 422 908</li>
-      <li><strong>Autorizare:</strong> Activitate medicală desfășurată în conformitate cu autorizațiile și actele permisive emise de autoritățile competente ale Republicii Moldova (disponibile spre consultare la recepția clinicii).</li>
+      <li>orice diferență sau neconcordanță între informațiile, prețurile, aparatele ori fotografiile de pe site și situația faptică din realitate la sediul clinicii;</li>
+      <li>orice decizie luată pe baza textelor, articolelor, testelor, calculatoarelor sau exercițiilor de pe site, inclusiv automedicația, modificarea unui tratament sau amânarea prezentării la medic;</li>
+      <li>orice așteptare privind obținerea unui anumit rezultat medical sau de vindecare (rezultatele variază individual și nu sunt niciodată garantate);</li>
+      <li>eventuale erori de redactare, omisiuni, întârzieri de actualizare, diferențe de traducere între RO / EN / RU / UA (versiunea în limba română și confirmarea de la recepție prevalează) sau întreruperi tehnice ale site-ului.</li>
      </ul>
+
+     <h2>4. Nu înlocuiește consultația medicală · Urgențe medicale (112)</h2>
      <p>
-      Prin accesarea și utilizarea acestui site acceptați integral prezentii Termeni și Condiții.
-      Navigarea pe site, parcurgerea articolelor, utilizarea instrumentelor educaționale sau contactarea telefonică
-      preliminară <strong>nu constituie un act medical, nu creează o relație medic–pacient și nu reprezintă un contract
-      de prestare a serviciilor medicale la distanță (telemedicină)</strong>.
+      Niciun material de pe site (inclusiv articolele despre neurologie, coloană, fitoterapie, nutriție, prevenție
+      generală sau aplicațiile de autoevaluare) nu reprezintă diagnostic, prescripție sau tratament. Centrul Medical
+      Revimed PLUS+ <strong>nu oferă tratament oncologic și nu asigură serviciu de urgență</strong>.
+     </p>
+     <p>
+      <strong>În caz de urgență medicală</strong> (durere acută în piept, paralizie bruscă, tulburări de vorbire,
+      convulsii active, pierderea cunoștinței sau suspiciune de AVC), <strong>apelați imediat 112</strong>.
      </p>
 
-     <h2>2. Nu înlocuiește consultația medicală · Urgențe medicale (112)</h2>
+     <h2>5. Fotografii, materiale video, acordul persoanelor și ștergerea imediată la cerere</h2>
      <p>
-      Toate textele, articolele de blog, descrierile de servicii, aparate, teste interactive, scoruri orientative,
-      exerciții de respirație/postură, materiale despre fitoterapie, nutriție sau prevenție au <strong>caracter
-      strict informativ și educațional</strong>. Acestea nu reprezintă și nu înlocuiesc consultația medicală directă,
-      examinarea clinică, investigațiile paraclinice, diagnosticul medical sau planul terapeutic prescris de un medic.
+      Fotografiile și materialele video publicate pe site au rol strict ilustrativ și istoric de prezentare a
+      activității centrului. Acestea <strong>nu garantează că persoanele, echipamentele sau spațiile care apar în
+      imagini se regăsesc identic în prezent în clinică</strong>.
      </p>
      <p>
-      <strong>ATENȚIE — URGENȚE MEDICALE:</strong> În cazul oricărei urgențe medicale (durere acută în piept,
-      paralizie sau amorțeală bruscă, tulburări bruște de vorbire/vedere, convulsii active, pierderea cunoștinței,
-      traumatisme craniene/vertebrale sau dificultăți severe de respirație), <strong>apelați imediat Serviciul Unic de
-      Urgență 112</strong> sau prezentați-vă la cea mai apropiată unitate de primiri urgențe. Nu amânați asistența
-      medicală de urgență pe baza informațiilor citite pe acest site.
-     </p>
-
-     <h2>3. Limitarea maximă a răspunderii și exonerarea dezvoltatorului tehnic (wsod.cloud)</h2>
-     <p>
-      În măsura maximă permisă de legislația Republicii Moldova, <strong>Revimed PLUS+</strong>, conducerea,
-      medicii colaboratori, autorii, dezvoltatorii tehnici și administratorii site-ului <strong>nu își asumă nicio
-      răspundere juridică, civilă sau patrimonială</strong> pentru:
-     </p>
-     <ul>
-      <li>decizii medicale, automedicație, întreruperea sau modificarea unui tratament prescris ori amânarea consultației medicale;</li>
-      <li>interpretarea sau aplicarea pe cont propriu a articolelor, ghidurilor, exercițiilor fizice/respiratorii sau scorurilor din secțiunea Teste și Instrumente;</li>
-      <li>eventuale daune directe, indirecte, incidentale sau consecutive rezultate din utilizarea ori imposibilitatea utilizării site-ului;</li>
-      <li>inexactități tehnice involuntare, omisiuni temporare sau diferențe de traducere între versiunile RO / EN / RU / UA (în caz de neconcordanță, prevalează versiunea în limba română și informațiile confirmate la recepție).</li>
-     </ul>
-     <p>
-      <strong>Exonerarea dezvoltatorului tehnic (wsod.cloud):</strong> Furnizorul tehnic de dezvoltare web, UI/UX și optimizare SEO (<strong>wsod.cloud</strong>) a realizat exclusiv infrastructura software și grafică a site-ului, pe baza datelor, tarifelor și materialelor furnizate și aprobate de operatorul clinicii (<strong>S.R.L. „REVIMED PLUS”</strong>). Dezvoltatorul tehnic nu prestează servicii medicale, nu stabilește diagnostice, protocoale sau tarife și este exonerat în totalitate de orice răspundere juridică, civilă, contravențională sau patrimonială față de pacienți, vizitatori sau autorități pentru conținutul medical ori activitatea clinicii.
+      Imaginile din galerie și materialele video au fost realizate în mod deschis în cadrul centrului, cu acordul
+      persoanelor prezente, fără ca vreo persoană să își fi exprimat opoziția sau refuzul de a fi fotografiată ori
+      filmată la momentul realizării lor.
      </p>
      <p>
-      <strong>Fără garanții de vindecare sau rezultate identice:</strong> Nicio informație de pe site nu constituie o
-      promisiune sau garanție de vindecare ori obținere a unui rezultat clinic determinat. Evoluția fiecărui pacient
-      depinde de diagnostic, comorbidități și particularități biologice individuale.
-     </p>
-     <p>
-      <strong>Clarificare privind afecțiunile oncologice și patologiile severe:</strong> Articolele educaționale generale
-      (inclusiv cele privind reducerea factorilor de risc) au scop pur informativ. Centrul Medical Revimed PLUS+
-      <strong> nu oferă tratament oncologic</strong> și nu înlocuiește medicul oncolog, cardiolog de urgență sau alte
-      specialități de profil.
+      <strong>Ștergerea fotografiilor la simpla cerere:</strong> Respectăm pe deplin dreptul la imagine și viața
+      privată. Dacă orice persoană care apare într-o fotografie sau într-un material video de pe site dorește
+      eliminarea sau anonimizarea imaginii sale, este suficient să ne anunțe telefonic la <strong>022 60 50 60</strong> /
+      <strong> +373 79 422 908</strong> sau direct la recepție, iar imaginea respectivă va fi <strong>ștearsă imediat,
+      pe cale amiabilă și fără nicio formalitate suplimentară</strong>.
      </p>
 
-     <h2>4. Fitoterapie, suplimente, exerciții și proceduri</h2>
+     <h2>6. Prețuri orientative, convertor valutar și recenzii</h2>
      <p>
-      Orice mențiune privind plante medicinale, suplimente, nutriție, exerciții fizice/respiratorii sau proceduri
-      fizioterapeutice are caracter general. Acestea pot avea contraindicații sau interacțiuni medicamentoase (în special
-      în sarcină, alăptare, epilepsie, afecțiuni cardiovasculare, oncologice, hepatice, renale, tiroidiene, implanturi
-      metalice/pacemaker sau tratamente anticoagulante/antidiabetice). Consultarea medicului înainte de orice procedură
-      sau administrare este obligatorie.
+      Toate prețurile afișate pe site și conversiile valutare (EUR, RON, USD, UAH) sunt strict orientative, nu
+      reprezintă o ofertă publică obligatorie și nu garantează tariful final. Plățile se fac exclusiv în <strong>MDL</strong>
+      la recepție, conform tarifelor reale din clinica fizică la momentul efectuării serviciului.
+     </p>
+     <p>
+      Recenziile afișate pe site sunt anonimizate (inițiale), reflectă opinii personale subiective și nu constituie o
+      garanție de rezultat pentru alți pacienți.
      </p>
 
-     <h2>5. Prețuri orientative și convertor valutar</h2>
+     <h2>7. Fitoterapie, suplimente și proceduri</h2>
      <p>
-      Toate tarifele afișate pe site au <strong>caracter strict orientativ și informativ</strong> și <strong>nu
-      constituie o ofertă publică fermă</strong>. Prețurile pot fi actualizate fără notificare prealabilă. Convertorul
-      valutar (EUR, RON, USD, UAH) oferă exclusiv estimări aproximative; toate plățile se efectuează în <strong>MDL
-      (lei moldovenești)</strong> la recepția centrului, conform listei oficiale de prețuri în vigoare la data
-      prestării serviciului și planului medical stabilit individual.
+      Orice mențiune despre plante, suplimente, exerciții sau proceduri fizioterapeutice este pur informativă; pot
+      exista contraindicații (sarcină, alăptare, epilepsie, pacemaker, boli cardiace, hepatice, renale, oncologice sau
+      interacțiuni cu medicamente). Consultarea medicului este obligatorie.
      </p>
 
-     <h2>6. Recenzii și mărturii</h2>
+     <h2>8. Drepturi de autor și legea aplicabilă</h2>
      <p>
-      Recenziile publicate pe site reflectă experiențe subiective individuale ale pacienților, sunt afișate în formă
-      anonimizată (inițiale) pentru protejarea vieții private și nu reprezintă o garanție a unor rezultate identice
-      pentru alți pacienți.
-     </p>
-
-     <h2>7. Linkuri externe, servicii terțe și disponibilitate tehnică</h2>
-     <p>
-      Site-ul poate conține linkuri sau integrări către servicii terțe (Google Maps, YouTube, Facebook). Revimed PLUS+
-      nu controlează și nu răspunde pentru conținutul, disponibilitatea, securitatea sau politicile acestor platforme
-      externe. Site-ul este furnizat „ca atare” („as is”), fără garanții privind disponibilitatea neîntreruptă.
-     </p>
-
-     <h2>8. Proprietate intelectuală și legea aplicabilă</h2>
-     <p>
-      Textele, imaginile, structura și elementele grafice aparțin Revimed PLUS+ sau sunt utilizate legal în scop de
-      prezentare. Reproducerea sau utilizarea comercială fără acord scris este interzisă.
-     </p>
-     <p>
-      Prezentii Termeni și Condiții sunt guvernați de <strong>legislația Republicii Moldova</strong>. Orice eventual
-      diferend va fi soluționat prioritar pe cale amiabilă, iar în lipsa unui acord, de instanțele judecătorești
-      competente din mun. Chișinău.
+      Conținutul site-ului este protejat de legislația Republicii Moldova. Orice sesizare sau solicitare (inclusiv
+      actualizarea unei informații ori ștergerea unei fotografii) se soluționează prioritar și imediat pe cale
+      amiabilă, prin apel la <strong>022 60 50 60</strong>.
      </p>
 
      <hr style={{ margin: "24px 0", opacity: 0.2 }} />
 
-     <h2>Правовое уведомление и ограничение ответственности (RU)</h2>
+     <h2>Правовое уведомление, отсутствие гарантий и удаление фото по запросу (RU)</h2>
      <p>
-      Сайт <strong>revimed.site</strong> носит исключительно информационный и ознакомительный характер. Материалы
-      сайта, статьи, тесты и калькуляторы не являются медицинской консультацией, диагнозом, назначением лечения или
-      гарантией результата. В экстренных случаях немедленно звоните <strong>112</strong>. Все цены и конвертация валют
-      являются ориентировочными и не являются публичной офертой; оплата производится в MDL по действующему прайсу
-      клиники. Использование материалов сайта осуществляется пользователем самостоятельно и под собственную
-      ответственность; технический разработчик сайта (wsod.cloud) не оказывает медицинских услуг и не несёт ответственности за медицинский контент, тарифы и деятельность клиники S.R.L. «REVIMED PLUS». В случае расхождений приоритет имеет версия на румынском языке.
+      Сайт <strong>revimed.site</strong> носит исключительно справочно-ознакомительный характер и предоставляется «как
+      есть» («as is») без каких-либо гарантий. Размещение любой информации на сайте (услуги, аппараты, цены, график,
+      фото и видео) <strong>не гарантирует их фактического наличия или доступности в клинике в реальном времени</strong>.
+      Клиника <strong>S.R.L. «REVIMED PLUS»</strong>, д-р Игорь Ревенко, персонал, администрация сайта и технический
+      разработчик (wsod.cloud) не несут никакой ответственности за возможные расхождения между информацией на сайте и
+      фактической ситуацией в клинике, а также за самостоятельное использование материалов сайта. В экстренных случаях
+      звоните <strong>112</strong>. Все фотографии сделаны открыто и с согласия присутствующих; любое лицо может в
+      любой момент запросить удаление фотографии со своим изображением по тел. <strong>022 60 50 60</strong>, и она
+      будет незамедлительно удалена.
      </p>
 
      <div className="rm-quick-links-bar">

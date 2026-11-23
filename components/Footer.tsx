@@ -29,7 +29,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: site.hours,
     address: site.address,
-    legalNotice: "Conținut exclusiv informativ — nu înlocuiește consultația medicală și nu garantează rezultate clinice. Prețurile sunt orientative (nu constituie ofertă publică). În urgențe medicale apelați 112.",
+    legalNotice: "Informațiile, prețurile și fotografiile de pe site au caracter exclusiv orientativ („ca atare”), nu garantează prezența sau disponibilitatea în realitate în clinică, nu constituie ofertă publică și nu înlocuiesc consultația medicală. Orice fotografie poate fi ștearsă imediat la cerere (022 60 50 60). În urgențe apelați 112.",
     links: {
       home: "Acasă",
       about: "Despre Noi",
@@ -50,7 +50,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: "Monday–Friday: 09:00–15:00",
     address: "Mircea cel Bătrân St. 13/2",
-    legalNotice: "Informational content only — does not replace medical consultation or guarantee clinical outcomes. Prices are indicative (not a binding public offer). For medical emergencies call 112.",
+    legalNotice: "All information, prices, and photos on this website are strictly indicative ('as is'), do not guarantee real-time physical availability at the clinic, do not constitute a public offer, and do not replace medical consultation. Any photo can be removed upon request (022 60 50 60). In emergencies call 112.",
     links: {
       home: "Home",
       about: "About",
@@ -71,7 +71,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: "Понедельник–Пятница: 09:00–15:00",
     address: "ул. Мирча чел Бэтрын 13/2",
-    legalNotice: "Информация носит исключительно ознакомительный характер — не заменяет консультацию врача и не является гарантией результата. Цены ориентировочные (не публичная оферта). В экстренных случаях звоните 112.",
+    legalNotice: "Информация, цены и фотографии на сайте носят исключительно ознакомительный характер («как есть»), не гарантируют фактического наличия в клинике, не являются публичной офертой и не заменяют консультацию врача. Любое фото может быть удалено по запросу (022 60 50 60). В экстренных случаях звоните 112.",
     links: {
       home: "Главная",
       about: "О нас",
@@ -92,7 +92,7 @@ const footerText: Record<Lang, {
     follow: "Facebook",
     hours: "Понеділок–П’ятниця: 09:00–15:00",
     address: "вул. Мірча чел Бетрин 13/2",
-    legalNotice: "Інформація має виключно ознайомчий характер — не замінює консультацію лікаря та не гарантує клінічного результату. Ціни орієнтовні (не є публічною офертою). У невідкладних випадках телефонуйте 112.",
+    legalNotice: "Інформація, ціни та фотографії на сайті мають виключно ознайомчий характер («як є»), не гарантують фактичної наявності в клініці, не є публічною офертою та не замінюють консультацію лікаря. Будь-яке фото може бути видалене за запитом (022 60 50 60). У невідкладних випадках телефонуйте 112.",
     links: {
       home: "Головна",
       about: "Про нас",

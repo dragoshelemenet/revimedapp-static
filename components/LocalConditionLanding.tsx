@@ -134,7 +134,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
        {p.directAnswer ||
         (isRu
          ? `В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичный приём невролога стоит 500 MDL (повторный — 400 MDL), нейрохирурга — 500 MDL (повторный — 400 MDL), сеанс физиотерапии (Электросон, Амплипульс, Электрофорез) — 150 MDL. Приём ведёт д-р Игорь Ревенко (35+ лет опыта, член EANS). Запись: 022 60 50 60.`
-         : `La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la neurolog costă 500 MDL (repetată 400 MDL), la neurochirurg 300 MDL, iar o ședință de fizioterapie (Electrosomn, Amplipuls, Electroforeză) costă 150 MDL. Consultațiile sunt realizate de Dr. Igor Revenco (35+ ani experiență, membru EANS). Programări: 022 60 50 60.`)}
+         : `La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la neurolog costă 500 MDL (repetată 400 MDL), la neurochirurg 500 MDL, iar o ședință de fizioterapie (Electrosomn, Amplipuls, Electroforeză) costă 150 MDL. Consultațiile sunt realizate de Dr. Igor Revenco (35+ ani experiență, membru EANS). Programări: 022 60 50 60.`)}
       </p>
      </aside>
 

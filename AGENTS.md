@@ -21,7 +21,10 @@ Acest fișier stabilește regulile permanente și obligatorii pentru orice sesiu
    - Nu adăuga formulare publice care colectează date personale de sănătate, Google Analytics sau Meta Pixel fără consimțământ explicit și actualizarea politicii.
    - Toate embed-urile YouTube trebuie să folosească exclusiv `https://www.youtube-nocookie.com/embed/...`.
    - Recenziile pacienților rămân strict anonimizate cu inițiale (`R. R.`, `I. B.`).
-6. **Clauzele obligatorii din `/termeni-si-conditii/` și Footer:**
-   - Nu șterge niciodată datele operatorului `S.R.L. „REVIMED PLUS”` (`IDNO 1011600011964`), clauza de **exonerare totală a dezvoltatorului tehnic `wsod.cloud`**, avertismentul de urgență **`112`** și disclaimerul permanent din `components/Footer.tsx`.
+6. **Clauzele obligatorii din `/termeni-si-conditii/` și Footer (protecție unificată pentru Clinică, Dr. Igor Revenco, Site și Dezvoltator):**
+   - Protejează simultan și în egală măsură **Centrul Medical Revimed PLUS+ (`S.R.L. „REVIMED PLUS”`, IDNO `1011600011964`), pe Dr. Igor Revenco, personalul clinicii, site-ul și dezvoltatorul tehnic (`wsod.cloud`)** — fără a plasa răspunderea de la unul la celălalt.
+   - Păstrează obligatoriu clauza că **nicio informație de pe site (servicii, aparate, prețuri, orar, poze, video) nu garantează prezența sau disponibilitatea efectivă în realitate** la sediul clinicii („ca atare” / „as is”).
+   - Păstrează obligatoriu clauza că **fotografiile și materialele video au fost realizate deschis, cu acordul celor prezenți (fără ca cineva să fi refuzat fotografierea) și că orice fotografie poate fi ștearsă imediat la simpla cerere** (`022 60 50 60`).
+   - Păstrează avertismentul de urgență **`112`** și disclaimerul permanent din `components/Footer.tsx` în toate cele 4 limbi.
 
 > Notă tehnică: `scripts/verify-static-release.mjs` verifică automat aceste reguli la fiecare `npm run build` și blochează build-ul dacă apare vreo încălcare.
