@@ -39,9 +39,12 @@ export default function GlassSheenController() {
       }, delay);
     };
 
-    scheduleNext();
+    const initTimer = window.setTimeout(() => {
+      scheduleNext();
+    }, 4500);
 
     return () => {
+      window.clearTimeout(initTimer);
       if (timer) window.clearTimeout(timer);
       if (clearTimer) window.clearTimeout(clearTimer);
       if (activeEl) activeEl.classList.remove("rm-glass-sheen-active");

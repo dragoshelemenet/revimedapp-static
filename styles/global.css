@@ -59,7 +59,7 @@ button,input,textarea,select{font:inherit}
   color:white;
   text-shadow:0 2px 16px rgba(0,0,0,.25);
 }
-.homeHero{min-height:520px;background:url('/images/medical-bg.jpg') center/cover no-repeat}
+.homeHero{min-height:520px;background:url('/images/medical-bg.webp') center/cover no-repeat}
 .heroOverlay{min-height:520px;background:linear-gradient(90deg,rgba(0,63,120,.53),rgba(0,96,180,.42));display:grid;place-items:center;text-align:center;color:white}
 .heroCenter h1{font-size:54px;letter-spacing:-2px;margin:0 0 14px;text-shadow:0 2px 15px rgba(0,0,0,.22)}
 .heroCenter p{font-size:28px;font-weight:700;margin-bottom:28px}
@@ -1783,7 +1783,7 @@ select:focus-visible{
   position:relative;
   background:
     linear-gradient(90deg,rgba(7,31,63,.62),rgba(7,31,63,.15)),
-    url('/images/medical-bg.jpg') center/cover no-repeat!important;
+    url('/images/medical-bg.webp') center/cover no-repeat!important;
 }
 
 .heroOverlay{
@@ -2797,7 +2797,7 @@ select:focus-visible{
 .homeHero{
   background:
     linear-gradient(90deg,rgba(7,31,63,.72),rgba(7,31,63,.22) 48%,rgba(0,143,216,.2)),
-    url('/images/medical-bg.jpg') center center/cover no-repeat!important;
+    url('/images/medical-bg.webp') center center/cover no-repeat!important;
 }
 
 .heroOverlay{
@@ -2952,7 +2952,7 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   inset:-18px!important;
   z-index:0!important;
   pointer-events:none!important;
-  background:url('/images/medical-bg.jpg') center center/cover no-repeat!important;
+  background:url('/images/medical-bg.webp') center center/cover no-repeat!important;
   transform:none!important;
   opacity:1!important;
 }
@@ -3089,11 +3089,11 @@ body:has(.adminLoginPage) .languageFlagOverlay{
 }
 
 .reviewArrow:first-child::before{
-  background-image:url("https://img.icons8.com/ios-filled/50/0b8fd8/chevron-left.png");
+  background-image:none;
 }
 
 .reviewArrow:last-child::before{
-  background-image:url("https://img.icons8.com/ios-filled/50/0b8fd8/chevron-right.png");
+  background-image:none;
 }
 
 .reviewArrow:has(img)::before{
@@ -3482,12 +3482,12 @@ body:has(.adminLoginPage) .languageFlagOverlay{
   width:24px;
   height:24px;
   display:block;
-  background:url("https://img.icons8.com/ios-filled/50/0b8fd8/plus-math.png") center/contain no-repeat;
+  background:none center/contain no-repeat;
 }
 
 .priceAccordionGroup.open .priceAccordionHead i::before,
 .priceAccordionGroup.open .priceAccordionHead button::before{
-  background-image:url("https://img.icons8.com/ios-filled/50/0b8fd8/minus-math.png");
+  background-image:none;
 }
 .priceAccordionBody{
   background:#fbfdff!important;
@@ -3667,7 +3667,7 @@ body:has(.adminLoginPage) .languageFlagOverlay{
 }
 .homeHero::before{
   inset:-28px!important;
-  background:url('/images/medical-bg.jpg') center center/cover no-repeat!important;
+  background:url('/images/medical-bg.webp') center center/cover no-repeat!important;
   transform:none!important;
 }
 .heroCenter h1{
@@ -5253,7 +5253,7 @@ body main section.homeHero{
   min-height: 520px !important;
   background-image:
     linear-gradient(90deg, rgba(8,28,55,.78) 0%, rgba(8,48,82,.56) 48%, rgba(11,143,216,.42) 100%),
-    url("/images/medical-bg.jpg") !important;
+    url("/images/medical-bg.webp") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -5331,7 +5331,7 @@ body main section.homeHero::after{
   gap: 28px !important;
   background-image:
     linear-gradient(90deg, rgba(8,28,55,.86) 0%, rgba(8,48,82,.68) 48%, rgba(11,143,216,.48) 100%),
-    url("/images/medical-bg.jpg") !important;
+    url("/images/medical-bg.webp") !important;
   background-size: cover !important;
   background-position: center !important;
   box-shadow: 0 24px 60px rgba(8,35,74,.14) !important;
@@ -5444,7 +5444,7 @@ body main section.homeHero::after{
 body main section.homeHero{
   background-image:
     linear-gradient(90deg, rgba(8,28,55,.78) 0%, rgba(8,48,82,.56) 48%, rgba(11,143,216,.42) 100%),
-    url("/images/medical-bg.jpg") !important;
+    url("/images/medical-bg.webp") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;

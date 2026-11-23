@@ -3988,3 +3988,32 @@ details summary::-webkit-details-marker {
     border-color: rgba(11, 143, 216, 0.32) !important;
   }
 }
+
+
+/* === PageSpeed Mobile 90+ Optimization (Same Visual Design, Faster Initial Render & GPU Paint) === */
+.aboutBlock,
+.homeEquipmentBlock,
+.revimedHomeTrust,
+.rm-seo-bento-section,
+.homeFaqSection,
+.testimonialBand {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 520px;
+}
+
+@media (max-width: 760px) {
+  [data-glass-card],
+  .statCard,
+  .homeEquipmentCard,
+  .revimedTrustCards > div,
+  .reviewSlide,
+  .rm-listing-card,
+  .adminCard,
+  .contactPrimaryCard,
+  .contactMiniCard,
+  .priceAccordionGroup,
+  .rm-seo-bento-shell,
+  .rm-about-copy-card {
+    backdrop-filter: blur(12px) saturate(160%) !important;
+  }
+}

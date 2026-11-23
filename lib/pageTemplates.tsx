@@ -294,7 +294,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
     <div className="rmShell">
      <h2 className="centerTitle">{servicesHeading}</h2>
      <div className="rm-home-services-grid">
-       {coreServices.map((srv) => (
+       {coreServices.map((srv, idx) => (
         <Link
          key={srv.slug}
          href={withLang(`/servicii/${srv.slug}/`, lang)}
@@ -303,7 +303,15 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
         >
          {srv.image && (
           <div className="rm-home-service-thumb">
-           <img src={srv.image} alt={`${srv.title} — Revimed PLUS+`} width={640} height={420} loading="lazy" decoding="async" />
+           <img
+            src={srv.image}
+            alt={`${srv.title} — Revimed PLUS+`}
+            width={640}
+            height={420}
+            loading={idx === 0 ? "eager" : "lazy"}
+            fetchPriority={idx === 0 ? "high" : "auto"}
+            decoding="async"
+           />
            {srv.priceBadge && <span className="rm-home-service-price-pill">{srv.priceBadge}</span>}
           </div>
          )}

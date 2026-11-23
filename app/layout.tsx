@@ -10,16 +10,18 @@ export const viewport: Viewport = {
 
 const sourceSans = Source_Sans_3({
  subsets: ["latin", "latin-ext", "cyrillic"],
- weight: ["400", "500", "600", "700"],
+ weight: ["400", "600", "700"],
  variable: "--font-body",
- display: "swap"
+ display: "swap",
+ preload: false
 });
 
 const montserrat = Montserrat({
  subsets: ["latin", "latin-ext", "cyrillic"],
  weight: ["600", "700", "800"],
  variable: "--font-display",
- display: "swap"
+ display: "swap",
+ preload: false
 });
 import { JsonLd, clinicJsonLd, websiteJsonLd } from "@/lib/seo";
 import Header from "../components/Header";
