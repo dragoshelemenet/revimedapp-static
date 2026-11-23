@@ -128,6 +128,7 @@ export default function SindromPiriformDurereFesaPiciorChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/dureri-spate-sciatica-sarcina-chisinau/", label: "Dureri de Spate în Sarcină" },
     {
         "href": "/dureri-de-spate-sciatica-chisinau/",
         "label": "Dureri de Spate & Sciatică"

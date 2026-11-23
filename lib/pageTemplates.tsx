@@ -461,7 +461,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/", label: "Внутричерепное давление (симптомы)" },
               { href: "/ru/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev/", label: "Синдром грушевидной мышцы" },
               { href: "/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/", label: "Синдром беспокойных ног (СБН)" },
-              { href: "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/", label: "СДВГ и гиперактивность у детей" }
+              { href: "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/", label: "СДВГ и гиперактивность у детей" },
+              { href: "/ru/nevralgiya-zatylochnogo-nerva-arnolda-kishinev/", label: "Невралгия затылочного нерва (Арнольда)" },
+              { href: "/ru/postgerpeticheskaya-nevralgiya-lishay-kishinev/", label: "Постгерпетическая невралгия (лишай)" },
+              { href: "/ru/bol-v-spine-ishias-pri-beremennosti-kishinev/", label: "Боль в спине при беременности" },
+              { href: "/ru/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev/", label: "Биомеханика (600 MDL) и Эргономика" }
              ]
             }
            ]
@@ -539,7 +543,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/tensiune-intracraniana-simptome-neurolog-chisinau/", label: "Tensiune Intracraniană (Simptome)" },
               { href: "/sindrom-piriform-durere-fesa-picior-chisinau/", label: "Sindrom Piriform (Durere Fesă)" },
               { href: "/sindromul-picioarelor-nelinistite-neurolog-chisinau/", label: "Sindromul Picioarelor Neliniștite" },
-              { href: "/adhd-hiperactivitate-copii-neuropediatru-chisinau/", label: "ADHD & Hiperactivitate Copii" }
+              { href: "/adhd-hiperactivitate-copii-neuropediatru-chisinau/", label: "ADHD & Hiperactivitate Copii" },
+              { href: "/nevralgie-occipitala-arnold-durere-ceafa-chisinau/", label: "Nevralgie Occipitală (Arnold)" },
+              { href: "/zona-zoster-nevralgie-postherpetica-chisinau/", label: "Zonă Zoster & Nevralgie Postherpetică" },
+              { href: "/dureri-spate-sciatica-sarcina-chisinau/", label: "Dureri de Spate & Sciatică în Sarcină" },
+              { href: "/evaluare-biomecanica-ergonomie-birou-chisinau/", label: "Evaluare Biomecanică & Ergonomie" }
              ]
             }
            ]

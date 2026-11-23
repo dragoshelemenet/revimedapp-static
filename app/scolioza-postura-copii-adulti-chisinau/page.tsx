@@ -66,6 +66,7 @@ export default function ScoliozaPosturaCopiiAdultiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/evaluare-biomecanica-ergonomie-birou-chisinau/", label: "Evaluare Biomecanică & Ergonomie" },
     {
         "href": "/electrospondilografie-chisinau/",
         "label": "Electrospondilografie (500 MDL)"

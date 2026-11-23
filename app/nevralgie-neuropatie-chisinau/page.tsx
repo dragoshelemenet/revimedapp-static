@@ -62,6 +62,7 @@ export default function NevralgieNeuropatieChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/zona-zoster-nevralgie-postherpetica-chisinau/", label: "Nevralgie Postherpetică" },
     {
         "href": "/blog/nevralgie-trigemen-artroza-pinten-calcanean-fizioterapie-chisinau/",
         "label": "Ghid: Nevralgie de trigemen & Fizioterapie"

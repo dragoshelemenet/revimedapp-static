@@ -110,7 +110,11 @@ export default function Header() {
     ["/tensiune-intracraniana-simptome-neurolog-chisinau", "/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev", "/servicii/consultatii-neurochirurgie"],
     ["/sindrom-piriform-durere-fesa-picior-chisinau", "/sindrom-grushevidnoy-myshtsy-bol-yagoditsa-kishinev", "/servicii/fizioterapie-si-reabilitare"],
     ["/sindromul-picioarelor-nelinistite-neurolog-chisinau", "/sindrom-bespokoynyh-nog-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
-    ["/adhd-hiperactivitate-copii-neuropediatru-chisinau", "/sdvg-giperaktivnost-u-detey-nevrolog-kishinev", "/servicii/consultatii-neurologice"]
+    ["/adhd-hiperactivitate-copii-neuropediatru-chisinau", "/sdvg-giperaktivnost-u-detey-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
+    ["/nevralgie-occipitala-arnold-durere-ceafa-chisinau", "/nevralgiya-zatylochnogo-nerva-arnolda-kishinev", "/servicii/consultatii-neurologice"],
+    ["/zona-zoster-nevralgie-postherpetica-chisinau", "/postgerpeticheskaya-nevralgiya-lishay-kishinev", "/servicii/consultatii-neurologice"],
+    ["/dureri-spate-sciatica-sarcina-chisinau", "/bol-v-spine-ishias-pri-beremennosti-kishinev", "/servicii/consultatii-neurologice"],
+    ["/evaluare-biomecanica-ergonomie-birou-chisinau", "/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev", "/servicii/fizioterapie-si-reabilitare"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {

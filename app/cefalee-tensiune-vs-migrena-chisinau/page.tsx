@@ -122,6 +122,7 @@ export default function CefaleeTensiuneVsMigrenaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/nevralgie-occipitala-arnold-durere-ceafa-chisinau/", label: "Nevralgie Occipitală Arnold" },
     { href: "/tensiune-intracraniana-simptome-neurolog-chisinau/", label: "Tensiune Intracraniană vs. Migrenă" },
     {
         "href": "/tratament-migrene-chisinau/",

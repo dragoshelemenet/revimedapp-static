@@ -122,6 +122,7 @@ export default function RuGolovnayaBolNapryazheniyaVsMigrenKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/nevralgiya-zatylochnogo-nerva-arnolda-kishinev/", label: "Невралгия затылочного нерва" },
     { href: "/ru/vnutricherepnoe-davlenie-simptomy-nevrolog-kishinev/", label: "Внутричерепное давление vs. Мигрень" },
     {
         "href": "/ru/lechenie-migreni-kishinev/",

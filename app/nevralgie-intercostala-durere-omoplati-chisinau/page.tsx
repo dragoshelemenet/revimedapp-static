@@ -122,6 +122,7 @@ export default function NevralgieIntercostalaDurereOmoplatiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/zona-zoster-nevralgie-postherpetica-chisinau/", label: "Zonă Zoster & Postherpetică" },
     {
         "href": "/ecografie-ecg-chisinau/",
         "label": "ECG & Ecografie (200–250 MDL)"

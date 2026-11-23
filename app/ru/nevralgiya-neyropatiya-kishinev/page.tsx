@@ -60,6 +60,7 @@ export default function RuNevralgiyaNeyropatiyaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/postgerpeticheskaya-nevralgiya-lishay-kishinev/", label: "Опоясывающий лишай и боль" },
     {
         "href": "/ru/blog/nevralgiya-troynichnogo-nerva-artroz-pyatochnaya-shpora-fizioterapiya-kishinev/",
         "label": "Статья: Невралгия тройничного нерва"

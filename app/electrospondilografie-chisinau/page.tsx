@@ -66,6 +66,7 @@ export default function ElectrospondilografieChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/evaluare-biomecanica-ergonomie-birou-chisinau/", label: "Biomecanică (600 MDL) & Ergonomie" },
     {
         "href": "/hernie-de-disc-chisinau/",
         "label": "Hernie de Disc Chișinău"

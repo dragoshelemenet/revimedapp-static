@@ -128,6 +128,7 @@ export default function RuSindromGrushevidnoyMyshtsyBolYagoditsaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/bol-v-spine-ishias-pri-beremennosti-kishinev/", label: "Ишиас при беременности" },
     {
         "href": "/ru/boli-v-spine-ishias-kishinev/",
         "label": "Боль в спине и ишиас"

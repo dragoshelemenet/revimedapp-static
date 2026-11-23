@@ -122,6 +122,7 @@ export default function RuGryzhaSheynogoOtdelaC5C6GolovokruzhenieKishinevPage() 
     }
 ]}
    relatedLinks={[
+    { href: "/ru/nevralgiya-zatylochnogo-nerva-arnolda-kishinev/", label: "Невралгия Арнольда (затылок)" },
     {
         "href": "/ru/osteohondroz-kishinev/",
         "label": "Шейный остеохондроз"

@@ -66,6 +66,7 @@ export default function RuElektrospondilografiyaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev/", label: "Биомеханика (600 MDL) и Эргономика" },
     {
         "href": "/ru/gryzha-diska-kishinev/",
         "label": "Грыжа диска Кишинёв"

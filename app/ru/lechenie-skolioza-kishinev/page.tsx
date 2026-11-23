@@ -66,6 +66,7 @@ export default function RuLechenieSkoliozaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/biomehanicheskaya-otsenka-ergonomika-ofis-kishinev/", label: "Биомеханика и Эргономика офиса" },
     {
         "href": "/ru/elektrospondilografiya-kishinev/",
         "label": "Электроспондилография (500 MDL)"

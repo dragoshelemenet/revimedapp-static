@@ -122,6 +122,7 @@ export default function RuMezhrebernayaNevralgiyaBolMezhduLopatkamiKishinevPage(
     }
 ]}
    relatedLinks={[
+    { href: "/ru/postgerpeticheskaya-nevralgiya-lishay-kishinev/", label: "Постгерпетическая невралгия" },
     {
         "href": "/ru/uzi-ekg-kishinev/",
         "label": "ЭКГ и УЗИ (200–250 MDL)"

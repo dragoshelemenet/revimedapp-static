@@ -133,6 +133,7 @@ export default function RuProtivopokazaniyaKFizioterapiiKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/bol-v-spine-ishias-pri-beremennosti-kishinev/", label: "Боль в спине при беременности" },
     { href: "/ru/ultrazvukovaya-terapiya-fonoforez-epikondilit-kishinev/", label: "Ультразвук и Электростимуляция" },
     {
         "href": "/ru/fizioterapiya-kishinev/",

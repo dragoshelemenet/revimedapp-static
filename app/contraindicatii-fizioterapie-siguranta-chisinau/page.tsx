@@ -133,6 +133,7 @@ export default function ContraindicatiiFizioterapieSigurantaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/dureri-spate-sciatica-sarcina-chisinau/", label: "Spate & Sciatică în Sarcină" },
     { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete & Electrostimulare" },
     {
         "href": "/fizioterapie-chisinau/",

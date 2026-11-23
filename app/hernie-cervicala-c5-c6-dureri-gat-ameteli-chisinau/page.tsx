@@ -122,6 +122,7 @@ export default function HernieCervicalaC5C6DureriGatAmeteliChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/nevralgie-occipitala-arnold-durere-ceafa-chisinau/", label: "Nevralgie Occipitală (Ceafă)" },
     {
         "href": "/osteocondroza-cervicala-chisinau/",
         "label": "Osteocondroză Cervicală"
