@@ -66,6 +66,7 @@ export default function RuReabilitatsiyaPosleInsultaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sotryasenie-mozga-vosstanovlenie-kishinev/", label: "Восстановление после сотрясения мозга" },
     {
         "href": "/ru/nevrolog-kishinev/",
         "label": "Невролог Кишинёв"

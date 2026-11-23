@@ -66,6 +66,7 @@ export default function RuEegDetyamKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/", label: "Задержка речи и ЭЭГ детям" },
     {
         "href": "/ru/detskiy-nevrolog-kishinev/",
         "label": "Детский невролог Кишинёв"

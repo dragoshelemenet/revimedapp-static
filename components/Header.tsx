@@ -98,7 +98,11 @@ export default function Header() {
     ["/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau", "/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev", "/servicii/consultatii-neurochirurgie"],
     ["/amorteli-picioare-polineuropatie-chisinau", "/onemenie-nog-polineyropatiya-kishinev", "/servicii/consultatii-neurologice"],
     ["/contraindicatii-fizioterapie-siguranta-chisinau", "/protivopokazaniya-k-fizioterapii-kishinev", "/servicii/fizioterapie-si-reabilitare"],
-    ["/enurezis-nocturn-copii-neuropediatru-chisinau", "/enurez-u-detey-nevrolog-kishinev", "/servicii/consultatii-neurologice"]
+    ["/enurezis-nocturn-copii-neuropediatru-chisinau", "/enurez-u-detey-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
+    ["/spasmofilie-crize-hiperexcitabilitate-chisinau", "/spazmofiliya-sudorogi-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
+    ["/recuperare-comotie-cerebrala-traumatism-chisinau", "/sotryasenie-mozga-vosstanovlenie-kishinev", "/servicii/consultatii-neurochirurgie"],
+    ["/intarziere-vorbire-copii-neuropediatru-chisinau", "/zaderzhka-rechi-u-rebenka-nevrolog-kishinev", "/servicii/consultatii-neurologice"],
+    ["/convulsii-febrile-copii-eeg-neuropediatru-chisinau", "/febrilnye-sudorogi-u-detey-eeg-kishinev", "/servicii/consultatii-neurologice"]
   ];
   for (const [roRoute, ruRoute, fallback] of pairedLocalRoutes) {
     if (currentCleanPath === roRoute || currentCleanPath === ruRoute) {

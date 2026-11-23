@@ -66,6 +66,7 @@ export default function ReoencefalografieChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/recuperare-comotie-cerebrala-traumatism-chisinau/", label: "Recuperare Comoție Cerebrală" },
     {
         "href": "/ameteli-vertij-chisinau/",
         "label": "Amețeli & Vertij Chișinău"

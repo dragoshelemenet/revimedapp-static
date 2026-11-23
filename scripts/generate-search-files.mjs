@@ -45,6 +45,7 @@ if (!urls.length) throw new Error('No exported index.html pages found. Run next 
 function urlPriority(url) {
   const p = new URL(url).pathname;
   if (p === '/' || p === '/en/' || p === '/ru/' || p === '/ua/') return '1.0';
+  if (/^\/(?:ru\/)?[a-z0-9-]+-(?:chisinau|kishinev)\/$/.test(p)) return '0.9';
   if (/^(\/(?:en|ru|ua))?\/(dr-igor-revenco|servicii|preturi|contact|neurolog-chisinau|neurochirurg-chisinau|fizioterapie-chisinau|neuropediatru-chisinau|electrosomn-chisinau|hernie-de-disc-chisinau|tratament-migrene-chisinau|recuperare-dupa-avc-chisinau|dureri-de-spate-sciatica-chisinau|neurolog-ciocana-chisinau|neurolog-riscani-chisinau|neurolog-botanica-chisinau|neurolog-buiucani-chisinau|neurolog-centru-chisinau|nevralgie-neuropatie-chisinau|epilepsie-convulsii-chisinau|ameteli-vertij-chisinau|insomnie-tratament-chisinau|osteocondroza-cervicala-chisinau|eeg-chisinau|masaj-terapeutic-chisinau|diagnostic-amp-chisinau|reoencefalografie-chisinau|kinetoterapie-chisinau|acupunctura-reflexoterapie-chisinau|electroforeza-amplipuls-chisinau|nevrolog-kishinev|neyrohirurg-kishinev|fizioterapiya-kishinev|gryzha-diska-kishinev|detskiy-nevrolog-kishinev|nevrolog-chekany-kishinev|nevrolog-ryshkanovka-kishinev|nevrolog-botanika-kishinev|nevrolog-buyukany-kishinev|nevrolog-tsentr-kishinev|nevralgiya-neyropatiya-kishinev|epilepsiya-kishinev|lechenie-migreni-kishinev|osteohondroz-kishinev|eeg-kishinev|lechebnyy-massazh-kishinev|diagnostika-amp-kishinev|reoentsefalografiya-kishinev|kinezoterapiya-kishinev|igloukalyvanie-kishinev|elektroforez-amplipuls-kishinev)\//.test(p)) return '0.9';
   if (/^(\/(?:en|ru|ua))?\/(utilaj|blog|intrebari)\//.test(p)) return '0.8';
   return '0.7';
@@ -120,10 +121,10 @@ const llmsTxt = [
   '## Official Reference Prices (MDL — Updated November 2026)',
   '- Primary Neurology Consultation (Consultație primară neurolog): 500 MDL (follow-up: 400 MDL)',
   '- Primary Neurosurgery Consultation (Consultație primară neurochirurg): 500 MDL (follow-up: 400 MDL)',
-  '- Physiotherapy session 30 min / Electrosomn / Amplipuls / Electrophoresis: 150 MDL',
+  '- Therapeutic equipment & procedures 30 min (Electrosomn, Amplipuls, Electrophoresis, Magnet, Laser): 100 MDL | Physiotherapy & Rehabilitation procedures: 150–300 MDL',
   '- Therapeutic massage 60 min: 200 MDL | Electrotherapy + Kinesiotherapy: 250 MDL/hour',
   '- Electroencephalography (EEG): 1600 MDL | Non-invasive AMP 117 indices: 1000 MDL | Electrospondylography: 500 MDL | Brain mapping: 600 MDL | Rheoencephalography: 500 MDL',
-  `- Full 101-service price list: ${new URL('/preturi/', origin).href}`,
+  `- Full 96-service price list: ${new URL('/preturi/', origin).href}`,
   '',
   '## Contact & Hours',
   '- Address: Str. Mircea cel Bătrân 13/2, MD-2044, Ciocana, Chișinău, Republica Moldova',
@@ -181,6 +182,10 @@ const llmsTxt = [
   `- Amorțeli Picioare & Polineuropatie: ${new URL('/amorteli-picioare-polineuropatie-chisinau/', origin).href}`,
   `- Ghid Contraindicații & Siguranță Fizioterapie: ${new URL('/contraindicatii-fizioterapie-siguranta-chisinau/', origin).href}`,
   `- Enurezis Nocturn la Copii (Neuropediatru & Electrosomn): ${new URL('/enurezis-nocturn-copii-neuropediatru-chisinau/', origin).href}`,
+  `- Spasmofilie & Crize de Hiperexcitabilitate (Neurolog & RUNO): ${new URL('/spasmofilie-crize-hiperexcitabilitate-chisinau/', origin).href}`,
+  `- Recuperare după Comoție Cerebrală & Traumatism Cranian (Neurochirurg, EEG & REG): ${new URL('/recuperare-comotie-cerebrala-traumatism-chisinau/', origin).href}`,
+  `- Întârziere de Vorbire la Copii (Neuropediatru, EEG & Cartografiere): ${new URL('/intarziere-vorbire-copii-neuropediatru-chisinau/', origin).href}`,
+  `- Convulsii Febrile la Copii — Prim Ajutor & Când e Indicat EEG: ${new URL('/convulsii-febrile-copii-eeg-neuropediatru-chisinau/', origin).href}`,
   `- Невролог Кишинёв: ${new URL('/ru/nevrolog-kishinev/', origin).href}`,
   `- Нейрохирург Кишинёв: ${new URL('/ru/neyrohirurg-kishinev/', origin).href}`,
   `- Физиотерапия Кишинёв: ${new URL('/ru/fizioterapiya-kishinev/', origin).href}`,
@@ -227,6 +232,10 @@ const llmsTxt = [
   `- Онемение ног и полинейропатия: ${new URL('/ru/onemenie-nog-polineyropatiya-kishinev/', origin).href}`,
   `- Гид противопоказаний к физиотерапии: ${new URL('/ru/protivopokazaniya-k-fizioterapii-kishinev/', origin).href}`,
   `- Ночной энурез у детей (Детский невролог и Электросон): ${new URL('/ru/enurez-u-detey-nevrolog-kishinev/', origin).href}`,
+  `- Спазмофилия и мышечные судороги (Невролог и РУНО): ${new URL('/ru/spazmofiliya-sudorogi-nevrolog-kishinev/', origin).href}`,
+  `- Восстановление после сотрясения мозга (Нейрохирург, ЭЭГ и РЭГ): ${new URL('/ru/sotryasenie-mozga-vosstanovlenie-kishinev/', origin).href}`,
+  `- Задержка речи у ребёнка ЗРР (Детский невролог и ЭЭГ): ${new URL('/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/', origin).href}`,
+  `- Фебрильные судороги у детей — Первая помощь и ЭЭГ: ${new URL('/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/', origin).href}`,
   `- Services: ${new URL('/servicii/', origin).href}`,
   `- Medical Equipment (25 devices): ${new URL('/utilaj/', origin).href}`,
   `- Prices (96 services, MDL/EUR/USD/RON/UAH): ${new URL('/preturi/', origin).href}`,

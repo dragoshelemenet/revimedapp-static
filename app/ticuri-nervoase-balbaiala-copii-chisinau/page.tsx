@@ -66,6 +66,7 @@ export default function TicuriNervoaseBalbaialaCopiiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/intarziere-vorbire-copii-neuropediatru-chisinau/", label: "Întârziere de Vorbire Copii" },
     {
         "href": "/neuropediatru-chisinau/",
         "label": "Neuropediatru Chișinău"

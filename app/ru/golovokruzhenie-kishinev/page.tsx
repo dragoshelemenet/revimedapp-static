@@ -66,6 +66,7 @@ export default function RuGolovokruzhenieKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/spazmofiliya-sudorogi-nevrolog-kishinev/", label: "Спазмофилия и гипервентиляция" },
     {
         "href": "/ru/reoentsefalografiya-kishinev/",
         "label": "РЭГ Кишинёв (500 MDL)"

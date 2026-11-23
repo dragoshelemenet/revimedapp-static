@@ -449,7 +449,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/ru/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev/", label: "Грыжа шеи C5–C6 и головокружение" },
               { href: "/ru/onemenie-nog-polineyropatiya-kishinev/", label: "Онемение ног и полинейропатия" },
               { href: "/ru/protivopokazaniya-k-fizioterapii-kishinev/", label: "Противопоказания к физиотерапии" },
-              { href: "/ru/enurez-u-detey-nevrolog-kishinev/", label: "Ночной энурез у детей (невролог)" }
+              { href: "/ru/enurez-u-detey-nevrolog-kishinev/", label: "Ночной энурез у детей (невролог)" },
+              { href: "/ru/spazmofiliya-sudorogi-nevrolog-kishinev/", label: "Спазмофилия и мышечные судороги" },
+              { href: "/ru/sotryasenie-mozga-vosstanovlenie-kishinev/", label: "Восстановление после сотрясения мозга" },
+              { href: "/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/", label: "Задержка речи у ребёнка (ЗРР)" },
+              { href: "/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/", label: "Фебрильные судороги у детей и ЭЭГ" }
              ]
             }
            ]
@@ -515,7 +519,11 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
               { href: "/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau/", label: "Hernie Cervicală C5–C6 & Amețeli" },
               { href: "/amorteli-picioare-polineuropatie-chisinau/", label: "Amorțeli Picioare & Polineuropatie" },
               { href: "/contraindicatii-fizioterapie-siguranta-chisinau/", label: "Contraindicații Fizioterapie (Ghid)" },
-              { href: "/enurezis-nocturn-copii-neuropediatru-chisinau/", label: "Enurezis Nocturn la Copii" }
+              { href: "/enurezis-nocturn-copii-neuropediatru-chisinau/", label: "Enurezis Nocturn la Copii" },
+              { href: "/spasmofilie-crize-hiperexcitabilitate-chisinau/", label: "Spasmofilie & Hiperexcitabilitate" },
+              { href: "/recuperare-comotie-cerebrala-traumatism-chisinau/", label: "Recuperare Comoție Cerebrală" },
+              { href: "/intarziere-vorbire-copii-neuropediatru-chisinau/", label: "Întârziere de Vorbire la Copii" },
+              { href: "/convulsii-febrile-copii-eeg-neuropediatru-chisinau/", label: "Convulsii Febrile la Copii & EEG" }
              ]
             }
            ]

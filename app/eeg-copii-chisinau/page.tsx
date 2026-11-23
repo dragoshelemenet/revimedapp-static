@@ -66,6 +66,7 @@ export default function EegCopiiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/intarziere-vorbire-copii-neuropediatru-chisinau/", label: "Întârziere de Vorbire & EEG" },
     {
         "href": "/neuropediatru-chisinau/",
         "label": "Neuropediatru Chișinău"

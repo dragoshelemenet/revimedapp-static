@@ -66,6 +66,7 @@ export default function RuNervnyeTikiZaikanieDetyamKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/zaderzhka-rechi-u-rebenka-nevrolog-kishinev/", label: "Задержка речи у ребёнка (ЗРР)" },
     {
         "href": "/ru/detskiy-nevrolog-kishinev/",
         "label": "Детский невролог Кишинёв"

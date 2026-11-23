@@ -66,6 +66,7 @@ export default function RuVsdDistoniyaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/spazmofiliya-sudorogi-nevrolog-kishinev/", label: "Спазмофилия и судороги" },
     {
         "href": "/ru/elektroson-kishinev/",
         "label": "Электросон Кишинёв"

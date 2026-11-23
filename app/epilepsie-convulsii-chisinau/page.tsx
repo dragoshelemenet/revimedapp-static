@@ -66,6 +66,7 @@ export default function EpilepsieConvulsiiChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/convulsii-febrile-copii-eeg-neuropediatru-chisinau/", label: "Convulsii Febrile la Copii & EEG" },
     {
         "href": "/eeg-chisinau/",
         "label": "EEG Chișinău (1600 MDL)"

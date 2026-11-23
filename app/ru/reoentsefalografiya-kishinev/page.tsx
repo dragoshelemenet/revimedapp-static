@@ -66,6 +66,7 @@ export default function RuReoentsefalografiyaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/sotryasenie-mozga-vosstanovlenie-kishinev/", label: "После сотрясения мозга (РЭГ и ЭЭГ)" },
     {
         "href": "/ru/eeg-kishinev/",
         "label": "ЭЭГ Кишинёв"

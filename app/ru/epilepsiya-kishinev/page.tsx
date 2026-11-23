@@ -65,6 +65,7 @@ export default function RuEpilepsiyaKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/febrilnye-sudorogi-u-detey-eeg-kishinev/", label: "Фебрильные судороги у детей" },
     {
         "href": "/ru/eeg-kishinev/",
         "label": "ЭЭГ Кишинёв (1600 MDL)"

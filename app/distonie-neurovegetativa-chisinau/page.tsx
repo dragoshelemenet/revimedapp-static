@@ -66,6 +66,7 @@ export default function DistonieNeurovegetativaChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/spasmofilie-crize-hiperexcitabilitate-chisinau/", label: "Spasmofilie & Hiperexcitabilitate" },
     {
         "href": "/electrosomn-chisinau/",
         "label": "Electrosomn Chișinău"

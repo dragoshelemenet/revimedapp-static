@@ -47,6 +47,7 @@ export default function Page() {
     { q: "Pot veni membrii familiei la consultație?", a: "Da, implicarea familiei este încurajată pentru continuitatea recuperării acasă." }
    ]}
    relatedLinks={[
+    { href: "/recuperare-comotie-cerebrala-traumatism-chisinau/", label: "Recuperare Comoție Cerebrală" },
     { href: "/neurolog-chisinau/", label: "Neurolog Chișinău" },
     { href: "/fizioterapie-chisinau/", label: "Fizioterapie Chișinău" },
     { href: "/utilaj/", label: "Toate cele 25 utilaje" }

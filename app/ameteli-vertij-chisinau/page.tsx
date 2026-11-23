@@ -44,6 +44,7 @@ export default function Page() {
     { q: "Cum mă programez pentru consultație și RHEOTEST?", a: "Sunați la 022 60 50 60 sau +373 79 422 908, Luni–Vineri 09:00–15:00." }
    ]}
    relatedLinks={[
+    { href: "/spasmofilie-crize-hiperexcitabilitate-chisinau/", label: "Spasmofilie & Crize Vegetative" },
     { href: "/neurolog-chisinau/", label: "Neurolog Chișinău" },
     { href: "/tratament-migrene-chisinau/", label: "Migrene Chișinău" },
     { href: "/osteocondroza-cervicala-chisinau/", label: "Osteocondroză cervicală" }
