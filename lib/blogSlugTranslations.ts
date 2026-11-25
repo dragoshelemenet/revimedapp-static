@@ -139,6 +139,12 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "childhood-stuttering-adhd-anxiety-eeg-electrosleep-chisinau",
     ru: "logonevroz-zaikanie-sdvg-trevozhnost-u-detey-eeg-elektroson-kishinev",
     ua: "lohonevroz-zayikannya-rduh-tryvozhnist-u-ditey-eeg-elektroson-kyshyniv"
+  },
+  pediatricHeadTraumaNeuroendocrine: {
+    ro: "lovitura-la-cap-copil-modificari-hormonale-tsh-cortizol-comotie-chisinau",
+    en: "child-head-injury-concussion-tsh-cortisol-neuroendocrine-recovery-chisinau",
+    ru: "travma-golovy-u-rebenka-sotryasenie-ttg-kortizol-nevrolog-kishinev",
+    ua: "travma-holovy-u-dytyny-strus-tth-kortyzol-nevroloh-kyshyniv"
   }
 };
 
