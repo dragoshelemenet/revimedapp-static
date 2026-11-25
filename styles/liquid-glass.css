@@ -2068,59 +2068,109 @@ header[class*="header"] div[class*="links"] a[class*="active"] {
 
 /* ---------- Tight, Compact Contact Section Paddings ---------- */
 .contactModernSection {
-  padding: 18px 0 24px !important;
+  padding: 20px 0 32px !important;
 }
 
 .contactModernGrid {
-  gap: 16px !important;
+  max-width: min(1120px, 100%) !important;
+  margin-inline: auto !important;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr) !important;
+  gap: 20px !important;
+  align-items: stretch !important;
 }
 
-.contactPrimaryCard,
+@media (max-width: 900px) {
+  .contactModernGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.contactPrimaryCard {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 24px 26px !important;
+  border-radius: 24px !important;
+}
+
 .contactSidePanel {
-  padding: 18px 20px !important;
-  border-radius: 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .contactPrimaryCard h2 {
-  font-size: 24px !important;
+  font-size: 26px !important;
   margin-bottom: 6px !important;
 }
 
 .contactIntro {
-  margin-bottom: 10px !important;
-  font-size: 14.5px !important;
+  margin-bottom: 14px !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
 }
 
 .contactInfoList {
-  gap: 10px !important;
+  gap: 12px !important;
   margin-top: 12px !important;
 }
 
 .contactInfoList a,
 .contactInfoStatic {
-  padding: 10px 12px !important;
-  gap: 10px !important;
-  border-radius: 14px !important;
+  padding: 12px 14px !important;
+  gap: 12px !important;
+  border-radius: 16px !important;
+  align-items: center !important;
+  min-width: 0 !important;
+}
+
+.contactInfoList a > div,
+.contactInfoStatic > div {
+  min-width: 0 !important;
+}
+
+.contactInfoList strong,
+.contactInfoStatic strong {
+  overflow-wrap: anywhere !important;
+  font-size: 14.5px !important;
+  line-height: 1.35 !important;
 }
 
 .contactActionRow {
-  margin-top: 14px !important;
+  margin-top: 18px !important;
   gap: 10px !important;
 }
 
 .contactMiniCard {
-  padding: 14px 16px !important;
-  border-radius: 18px !important;
+  padding: 16px 18px !important;
+  border-radius: 20px !important;
 }
 
 .contactMiniCard h3 {
-  font-size: 18px !important;
-  margin-bottom: 6px !important;
+  font-size: 17px !important;
+  margin-bottom: 8px !important;
 }
 
 .contactMiniCard p {
   margin-bottom: 4px !important;
   font-size: 14.5px !important;
+}
+
+.rm-transport-list {
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.rm-transport-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
 }
 
 .contactMapModern {

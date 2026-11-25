@@ -1562,7 +1562,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
       )}
      </aside>
     </div>
-    <div className="rmShell" style={{ marginTop: 22 }}>
+    <div className="rmShell" style={{ marginTop: 20, maxWidth: "min(1120px, 100%)", marginInline: "auto" }}>
      <article className="rm-seo-bento-shell" data-glass-card>
       <h2 style={{ marginTop: 0 }}>
        {lang === "en"
