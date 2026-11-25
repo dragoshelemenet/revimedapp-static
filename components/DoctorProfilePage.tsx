@@ -467,6 +467,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
     },
     sameAs: [
       "https://orcid.org/0009-0005-9098-8175",
+      "https://scholar.google.com/citations?user=UDE8BpcAAAAJ",
       "https://www.youtube.com/@revimedpluschisinau"
     ],
     telephone: [site.phone, site.phone2],
@@ -623,15 +624,26 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
           <section className="rm-doc-glass-block" data-glass-card>
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
               <h2 style={{ margin: 0 }}>{c.publicationsTitle}</h2>
-              <a
-                href="https://orcid.org/0009-0005-9098-8175"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline-primary btn-sm"
-                style={{ fontWeight: 600 }}
-              >
-                ORCID: 0009-0005-9098-8175 ↗
-              </a>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                <a
+                  href="https://orcid.org/0009-0005-9098-8175"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-primary btn-sm"
+                  style={{ fontWeight: 600 }}
+                >
+                  ORCID: 0009-0005-9098-8175 ↗
+                </a>
+                <a
+                  href="https://scholar.google.com/citations?user=UDE8BpcAAAAJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-primary btn-sm"
+                  style={{ fontWeight: 600 }}
+                >
+                  Google Scholar ↗
+                </a>
+              </div>
             </div>
             <p style={{ marginTop: 10, marginBottom: 16 }}>{c.publicationsIntro}</p>
             <div style={{ display: "grid", gap: 14 }}>

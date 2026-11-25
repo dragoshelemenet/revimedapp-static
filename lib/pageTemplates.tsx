@@ -1215,6 +1215,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
          {lang === "ru" ? "Все публикации д-ра Игоря Ревенко →" : lang === "ua" ? "Усі публікації д-ра Ігоря Ревенка →" : lang === "en" ? "All Publications & Profile →" : "Toate publicațiile Dr. Igor Revenco →"}
         </Link>
         <a href="https://orcid.org/0009-0005-9098-8175" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">ORCID: 0009-0005-9098-8175 ↗</a>
+        <a href="https://scholar.google.com/citations?user=UDE8BpcAAAAJ" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">Google Scholar ↗</a>
         <a href="https://doi.org/10.5281/zenodo.24532588" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">{lang === "ru" ? "Читать книгу (DOI) ↗" : lang === "ua" ? "Читати книгу (DOI) ↗" : lang === "en" ? "Read Book (DOI) ↗" : "Citește cartea (DOI) ↗"}</a>
         <a href="https://zenodo.org/records/24532588/files/Igor_Revenco_Monografie_Modificari_Neuroendocrine_TCC_Copii_2022.pdf?download=1" download="Igor_Revenco_Monografie_Modificari_Neuroendocrine_TCC_Copii_2022.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">{lang === "ru" ? "Скачать PDF ↓" : lang === "ua" ? "Завантажити PDF ↓" : lang === "en" ? "Download PDF ↓" : "Descarcă PDF ↓"}</a>
         <a href="https://repository.usmf.md/handle/20.500.12710/27457" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">Repository USMF ↗</a>
