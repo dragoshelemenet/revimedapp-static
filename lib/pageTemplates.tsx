@@ -506,6 +506,14 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Люмбаго и прострел в спине"
                },
                {
+                 "href": "/ru/stenoz-pozvonochnogo-kanala-neyrohirurg-kishinev/",
+                 "label": "Стеноз позвоночного канала"
+               },
+               {
+                 "href": "/ru/krivosheya-zaklinilo-sheyu-nevrolog-kishinev/",
+                 "label": "Заклинило шею (кривошея)"
+               },
+               {
                  "href": "/ru/bol-v-pleche-periartroz-pleksit-kishinev/",
                  "label": "Боль в плече (периартроз, плексит)"
                },
@@ -658,6 +666,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/ru/onemenie-nog-polineyropatiya-kishinev/",
                  "label": "Онемение ног и полинейропатия"
+               },
+               {
+                 "href": "/ru/diabeticheskaya-neyropatiya-zhzhenie-stop-kishinev/",
+                 "label": "Диабетическая нейропатия (жжение стоп)"
                },
                {
                  "href": "/ru/sindrom-bespokoynyh-nog-nevrolog-kishinev/",
@@ -854,6 +866,14 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Lumbago & Blocaj Acut de Spate"
                },
                {
+                 "href": "/stenoza-canal-spinal-lombar-neurochirurg-chisinau/",
+                 "label": "Stenoză Canal Spinal Lombar"
+               },
+               {
+                 "href": "/torticolis-gat-intepenit-fizioterapie-chisinau/",
+                 "label": "Torticolis & Gât Înțepenit"
+               },
+               {
                  "href": "/durere-umar-periartrita-plexita-chisinau/",
                  "label": "Durere de Umăr & Periartrită"
                },
@@ -1006,6 +1026,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/amorteli-picioare-polineuropatie-chisinau/",
                  "label": "Amorțeli Picioare & Polineuropatie"
+               },
+               {
+                 "href": "/neuropatie-diabetica-arsuri-talpi-chisinau/",
+                 "label": "Neuropatie Diabetică (Arsuri Tălpi)"
                },
                {
                  "href": "/sindromul-picioarelor-nelinistite-neurolog-chisinau/",
