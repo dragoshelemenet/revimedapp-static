@@ -718,22 +718,53 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                       </p>
                     )}
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                      <a
-                        href={pub.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-outline-primary btn-sm"
-                      >
-                        {c.publicationsLinkLabel} ↗
-                      </a>
-                      {pub.coverImage && (
+                      {pub.coverImage ? (
+                        <>
+                          <a
+                            href="https://doi.org/10.5281/zenodo.24531283"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary btn-sm"
+                          >
+                            {lang === "ru"
+                              ? "Читать книгу (DOI · Zenodo) ↗"
+                              : lang === "ua"
+                                ? "Читати книгу (DOI · Zenodo) ↗"
+                                : lang === "en"
+                                  ? "Read Monograph (DOI · Zenodo) ↗"
+                                  : "Citește cartea (DOI · Zenodo) ↗"}
+                          </a>
+                          <a
+                            href="https://zenodo.org/records/24531283/files/Revenco%20Igor__Carte_CleanCover.pdf?download=1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-outline-primary btn-sm"
+                          >
+                            {lang === "ru"
+                              ? "Скачать PDF (158 с.) ↓"
+                              : lang === "ua"
+                                ? "Завантажити PDF (158 с.) ↓"
+                                : lang === "en"
+                                  ? "Download PDF (158 pp.) ↓"
+                                  : "Descarcă PDF (158 pag.) ↓"}
+                          </a>
+                          <a
+                            href={pub.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-outline-primary btn-sm"
+                          >
+                            Repository USMF ↗
+                          </a>
+                        </>
+                      ) : (
                         <a
-                          href="https://doi.org/10.5281/zenodo.24531283"
+                          href={pub.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn btn-primary btn-sm"
+                          className="btn btn-outline-primary btn-sm"
                         >
-                          DOI: 10.5281/zenodo.24531283 (Zenodo PDF) ↗
+                          {c.publicationsLinkLabel} ↗
                         </a>
                       )}
                     </div>
