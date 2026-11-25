@@ -101,7 +101,7 @@ export default function Page() {
         }
       ]}
       relatedLinks={[
-        { href: "/boala-parkinson-tremor-chisinau/", label: "Boala Parkinson & Tremor" },
+        { href: "/boala-parkinson-tremor-memorie-chisinau/", label: "Boala Parkinson & Tremor" },
         { href: "/distonie-neurovegetativa-chisinau/", label: "Distonie Neurovegetativă" },
         { href: "/neurolog-ciocana-chisinau/", label: "Neurolog Ciocana (500 MDL)" },
         { href: "/reoencefalografie-chisinau/", label: "Reoencefalografie REG (500 MDL)" }

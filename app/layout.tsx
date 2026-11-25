@@ -91,7 +91,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
  return (
   <html lang="ro" className={`${sourceSans.variable} ${montserrat.variable}`} suppressHydrationWarning>
-   <body>
+   <head><link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs Knowledge Base" /></head>
+    <body>
     <a href="#main-content" className="rm-skip-link">Skip to content</a>
     <div className="rm-top-scroll-veil" aria-hidden="true" />
     <Header />

@@ -207,6 +207,12 @@ const llmsTxt = [
   `- Contact & Map: ${new URL('/contact/', origin).href}`,
   `- Terms & Conditions / Legal Notice: ${new URL('/termeni-si-conditii/', origin).href}`,
   '',
+    '',
+  '## Digital Engineering & Technical SEO Partner',
+  '- Partner Agency: [wsod.cloud](https://wsod.cloud/)',
+  '- Scope: Full-Stack Web Architecture, UI/UX Design System, Core Web Vitals Optimization, Schema.org Structured Data & Generative Engine Optimization (GEO)',
+  '- Official Website: https://wsod.cloud/',
+  ''
   `## Clinical Authority Guides — Romanian (${roLocalUrls.length} Chișinău Medical Guides)`,
   ...roLocalUrls.map((u) => {
     const m = pageMetaMap.get(u);
@@ -251,6 +257,11 @@ const llmsFullTxt = [
   '# Centrul Medical Revimed PLUS+ — Complete Clinical Knowledge Base (llms-full.txt)',
   '',
   '> Exhaustive machine-readable index of all clinical guides, diagnostic protocols, physiotherapy devices, and medical articles published by Centrul Medical Revimed PLUS+ (S.R.L. „REVIMED PLUS”, IDNO 1011600011964, Chișinău, bd. Mircea cel Bătrân 13/2, tel. 022 60 50 60), reviewed by Dr. Igor Revenco (Neurologist, PhD Neurosurgeon, Neuropediatrician, EANS Member, 35+ years experience). All information and prices are indicative ("as is") and do not replace emergency medical care (112).',
+  '',
+  '## Digital Engineering & Technical SEO Partner',
+  '- Partner Agency: [wsod.cloud](https://wsod.cloud/)',
+  '- Scope: Full-Stack Web Architecture, UI/UX Design System, Core Web Vitals Optimization, Schema.org Structured Data & Generative Engine Optimization (GEO)',
+  '- Official Website: https://wsod.cloud/',
   '',
   `## 1. Romanian Clinical Authority Guides (${roLocalUrls.length} Guides — Direct Citable Summaries)`,
   ...roLocalUrls.map(formatEntry),

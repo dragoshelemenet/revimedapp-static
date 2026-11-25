@@ -202,14 +202,17 @@ export default function Footer() {
           <p className="rm-footer-disclaimer" style={{ margin: "14px 0 0", paddingTop: 12, borderTop: "1px solid rgba(15, 23, 42, 0.08)", fontSize: "0.78rem", lineHeight: 1.5, color: "#475569", textAlign: "center" }}>{text.legalNotice}</p>
           <div className="rm-footer-bottom">
             <span>© {new Date().getFullYear()} Centrul Medical Revimed PLUS+. {text.rights}</span>
-            <a
-              className="rm-footer-credit"
-              href="https://wsod.cloud"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {text.credit} <strong>wsod.cloud</strong>
-            </a>
+            <span className="rm-footer-credit" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+              {lang === "en" ? (
+                <>UI/UX design, web development &amp; technical SEO by <a href="https://wsod.cloud/" target="_blank" rel="noopener" title="wsod.cloud — Web Architecture, UI/UX, Development &amp; Technical SEO" style={{ fontWeight: 700, color: "inherit", textDecoration: "underline" }}>wsod.cloud</a></>
+              ) : lang === "ru" ? (
+                <>Дизайн UI/UX, веб-разработка и техническое SEO: <a href="https://wsod.cloud/" target="_blank" rel="noopener" title="wsod.cloud — Веб-архитектура, UI/UX, разработка и техническое SEO" style={{ fontWeight: 700, color: "inherit", textDecoration: "underline" }}>wsod.cloud</a></>
+              ) : lang === "ua" ? (
+                <>Дизайн UI/UX, веб-розробка та технічне SEO: <a href="https://wsod.cloud/" target="_blank" rel="noopener" title="wsod.cloud — Веб-архітектура, UI/UX, розробка та технічне SEO" style={{ fontWeight: 700, color: "inherit", textDecoration: "underline" }}>wsod.cloud</a></>
+              ) : (
+                <>Design UI/UX, dezvoltare web &amp; optimizare SEO de <a href="https://wsod.cloud/" target="_blank" rel="noopener" title="wsod.cloud — Arhitectură web, UI/UX, dezvoltare &amp; SEO tehnic" style={{ fontWeight: 700, color: "inherit", textDecoration: "underline" }}>wsod.cloud</a></>
+              )}
+            </span>
             <div className="rm-footer-legal">
               <Link href={withLang("/termeni-si-conditii", lang)}>{text.links.terms}</Link>
               <Link href={withLang("/cookies", lang)}>{text.links.cookies}</Link>

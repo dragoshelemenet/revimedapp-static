@@ -98,7 +98,7 @@ export default function Page() {
       ]}
       relatedLinks={[
         { href: "/neurochirurg-chisinau/", label: "Neurochirurg Chișinău (500 MDL)" },
-        { href: "/protruzie-disc-l4-l5-l5-s1-stenoza-chisinau/", label: "Protruzie L4–L5 / L5–S1" },
+        { href: "/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/", label: "Protruzie L4–L5 / L5–S1" },
         { href: "/spondilolistezis-alunecare-vertebra-neurochirurg-chisinau/", label: "Spondilolistezis Vertebral" },
         { href: "/hernie-de-disc-chisinau/", label: "Hernie de Disc fără Operație" }
       ]}

@@ -99,7 +99,7 @@ export default function Page() {
       relatedLinks={[
         { href: "/amorteli-picioare-polineuropatie-chisinau/", label: "Amorțeli Picioare & Polineuropatie" },
         { href: "/nevralgie-neuropatie-chisinau/", label: "Nevralgie & Neuropatie" },
-        { href: "/magnitoterapie-laserterapie-chisinau/", label: "Magnetoterapie & Laser (100 MDL)" },
+        { href: "/magnetoterapie-laser-chisinau/", label: "Magnetoterapie & Laser (100 MDL)" },
         { href: "/neurolog-ciocana-chisinau/", label: "Neurolog Ciocana (500 MDL)" }
       ]}
     />

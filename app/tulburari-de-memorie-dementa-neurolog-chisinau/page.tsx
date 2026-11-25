@@ -98,7 +98,7 @@ export default function Page() {
       ]}
       relatedLinks={[
         { href: "/evaluare-neuropsihologica-testare-cognitiva-chisinau/", label: "Evaluare Neuropsihologică (400 MDL)" },
-        { href: "/boala-parkinson-tremor-chisinau/", label: "Boala Parkinson & Tremor" },
+        { href: "/boala-parkinson-tremor-memorie-chisinau/", label: "Boala Parkinson & Tremor" },
         { href: "/recuperare-dupa-avc-chisinau/", label: "Recuperare post-AVC" },
         { href: "/reoencefalografie-chisinau/", label: "Reoencefalografie REG (500 MDL)" }
       ]}

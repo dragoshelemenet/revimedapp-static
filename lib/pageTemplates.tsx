@@ -1009,7 +1009,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Nevralgie & Neuropatie"
                },
                {
-                 "href": "/pareza-nerv-facial-paralizie-bell-chisinau/",
+                 "href": "/paralizie-nerv-facial-bell-chisinau/",
                  "label": "Pareză Nerv Facial (Paralizie Bell)"
                },
                {
@@ -1090,7 +1090,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Epilepsie & EEG"
                },
                {
-                 "href": "/tremor-esential-tremuratul-mainilor-chisinau/",
+                 "href": "/tremor-esential-tremur-maini-neurolog-chisinau/",
                  "label": "Tremor Esențial (Tremuratul Mâinilor)"
                },
                {

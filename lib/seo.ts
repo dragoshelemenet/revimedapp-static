@@ -341,7 +341,17 @@ export function websiteJsonLd() {
   name: seoBase.name,
   url: siteUrl,
   inLanguage: ["ro", "en", "ru", "uk"],
-  publisher: { "@id": `${siteUrl}/#medical-clinic` }
+  publisher: { "@id": `${siteUrl}/#medical-clinic` },
+  creator: {
+   "@type": "Organization",
+   "@id": "https://wsod.cloud/#organization",
+   name: "wsod.cloud",
+   url: "https://wsod.cloud/",
+   description: "Web Architecture, UI/UX Design, Full-Stack Development, Technical SEO & Generative Engine Optimization (GEO)"
+  },
+  sdPublisher: {
+   "@id": "https://wsod.cloud/#organization"
+  }
  };
 }
 

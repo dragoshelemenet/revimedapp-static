@@ -102,7 +102,7 @@ export default function Page() {
       ]}
       relatedLinks={[
         { href: "/terapie-ultrasunete-epicondilita-tendinita-chisinau/", label: "Ultrasunete & Tendinită" },
-        { href: "/hernie-cervicala-c5-c6-ameteli-chisinau/", label: "Hernie Cervicală C5–C6" },
+        { href: "/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau/", label: "Hernie Cervicală C5–C6" },
         { href: "/electroforeza-amplipuls-chisinau/", label: "Electroforeză & Amplipuls (100 MDL)" },
         { href: "/masaj-terapeutic-chisinau/", label: "Masaj Terapeutic (200 MDL)" }
       ]}
