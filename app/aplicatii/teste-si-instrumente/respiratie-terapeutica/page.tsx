@@ -1,6 +1,7 @@
 "use client";
 
 import PageHeading from "@/components/PageHeading";
+import ToolClusterFooter from "@/components/ToolClusterFooter";
 
 import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -253,6 +254,7 @@ export default function BreathingPage() {
           </div>
         </div>
       </section>
+          <ToolClusterFooter slug="respiratie-terapeutica" lang={lang} title={t.title} description={t.lead} />
     </>
   );
 }

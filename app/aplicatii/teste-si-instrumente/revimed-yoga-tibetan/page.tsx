@@ -1,6 +1,7 @@
 "use client";
 
 import PageHeading from "@/components/PageHeading";
+import ToolClusterFooter from "@/components/ToolClusterFooter";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -527,6 +528,7 @@ export default function RevimedYogaTibetanPage() {
           </div>
         </div>
       </section>
+          <ToolClusterFooter slug="revimed-yoga-tibetan" lang={lang} title={t.title} description={t.lead} />
     </>
   );
 }

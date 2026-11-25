@@ -1,6 +1,7 @@
 "use client";
 
 import PageHeading from "@/components/PageHeading";
+import ToolClusterFooter from "@/components/ToolClusterFooter";
 
 import { useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -323,6 +324,7 @@ export default function AyurvedaDoshaPage() {
           )}
         </div>
       </section>
+          <ToolClusterFooter slug="test-ayurveda-dosha" lang={lang} title={t.title} description={t.lead} />
     </>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import PageHeading from "@/components/PageHeading";
+import ToolClusterFooter from "@/components/ToolClusterFooter";
 
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -334,6 +335,7 @@ export default function RecoveryPlannerPage() {
           </div>
         </div>
       </section>
+          <ToolClusterFooter slug="calculator-recuperare-personalizata" lang={lang} title={t.title} description={t.lead} />
     </>
   );
 }
