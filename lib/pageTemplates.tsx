@@ -1107,7 +1107,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
       </div>
      </div>
     </div>
-    <div className="rmShell" style={{ marginTop: 24 }}>
+    <div className="rmShell" style={{ marginTop: 24, maxWidth: "min(760px, 100%)", marginInline: "auto" }}>
      <article data-glass-card style={{ display: "flex", flexWrap: "wrap", gap: 22, alignItems: "center", padding: "22px 24px", borderRadius: 22 }}>
       <Link href={withLang("/dr-igor-revenco/", lang)} style={{ flex: "0 0 132px", maxWidth: 132, display: "block" }}>
        <img src="/images/monografie-igor-revenco-2022.webp" alt="Monografie Dr. Igor Revenco — ISBN 978-5-88554-160-2" width={480} height={640} loading="lazy" decoding="async" style={{ width: "100%", height: "auto", borderRadius: 10, boxShadow: "0 10px 24px rgba(11, 35, 66, 0.2)" }} />
