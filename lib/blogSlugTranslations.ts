@@ -175,6 +175,24 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "numbness-hands-feet-neuropathy-b12-carpal-tunnel-spine-chisinau",
     ru: "onemenie-ruk-i-nog-neyropatiya-b12-tunnelnyy-sindrom-pozvonochnik-kishinev",
     ua: "oniminnya-ruk-i-nih-neyropatiya-b12-tunelnyy-syndrom-khrebet-kyshyniv"
+  },
+  febrileSeizuresParentsEeg: {
+    ro: "convulsii-febrile-copii-prim-ajutor-cand-se-face-eeg-chisinau",
+    en: "febrile-seizures-children-first-aid-when-eeg-needed-chisinau",
+    ru: "febrilnye-sudorogi-u-detey-pervaya-pomoshch-kogda-nuzhna-eeg-kishinev",
+    ua: "febrylni-sudomy-u-ditey-persha-dopomoha-koly-potribna-eeg-kyshyniv"
+  },
+  migraineAuraVsOveruseHeadache: {
+    ro: "migrena-cu-aura-vs-cefalee-abuz-medicamentos-neurolog-chisinau",
+    en: "migraine-with-aura-vs-medication-overuse-headache-neurologist-chisinau",
+    ru: "migren-s-auroy-i-abuzusnaya-golovnaya-bol-nevrolog-kishinev",
+    ua: "mihren-z-auroyu-ta-abuzusnyy-holovnyy-bil-nevroloh-kyshyniv"
+  },
+  strokeRecoveryFirst90Days: {
+    ro: "recuperare-dupa-avc-primele-90-zile-neuroplasticitate-chisinau",
+    en: "stroke-recovery-first-90-days-neuroplasticity-rehab-chisinau",
+    ru: "vosstanovlenie-posle-insulta-pervye-90-dney-reabilitatsiya-kishinev",
+    ua: "vidnovlennya-pislya-insultu-pershi-90-dniv-reabilitatsiya-kyshyniv"
   }
 };
 
