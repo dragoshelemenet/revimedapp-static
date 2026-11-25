@@ -51,7 +51,7 @@ const UI_TEXT: Record<Lang, {
     showing: (s, e, total) => `Se afișează ${s}–${e} din ${total} articole`,
     prevPage: "« Anterior",
     nextPage: "Următor »",
-    loadMore: "Încarcă încă 12 articole",
+    loadMore: "Încarcă încă 9 articole",
     showAll: "Toate pe o pagină",
     collapseView: "Pagini numerotate",
     emptyPrefix: "Nu am găsit articole pentru „",
@@ -72,7 +72,7 @@ const UI_TEXT: Record<Lang, {
     showing: (s, e, total) => `Показано ${s}–${e} из ${total} статей`,
     prevPage: "« Назад",
     nextPage: "Вперёд »",
-    loadMore: "Показать ещё 12 статей",
+    loadMore: "Показать ещё 9 статей",
     showAll: "Все на одной странице",
     collapseView: "Постранично",
     emptyPrefix: "По запросу «",
@@ -93,7 +93,7 @@ const UI_TEXT: Record<Lang, {
     showing: (s, e, total) => `Showing ${s}–${e} of ${total} articles`,
     prevPage: "« Previous",
     nextPage: "Next »",
-    loadMore: "Load 12 more articles",
+    loadMore: "Load 9 more articles",
     showAll: "All on one page",
     collapseView: "Paginated view",
     emptyPrefix: "No articles found for “",
@@ -114,7 +114,7 @@ const UI_TEXT: Record<Lang, {
     showing: (s, e, total) => `Показано ${s}–${e} з ${total} статей`,
     prevPage: "« Назад",
     nextPage: "Вперед »",
-    loadMore: "Показати ще 12 статей",
+    loadMore: "Показати ще 9 статей",
     showAll: "Усі на одній сторінці",
     collapseView: "Посторінково",
     emptyPrefix: "За запитом «",
@@ -131,7 +131,7 @@ function normalizeText(str: string) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 9;
 
 export default function BlogInteractiveCatalog({
   items,
