@@ -1107,6 +1107,31 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
       </div>
      </div>
     </div>
+    <div className="rmShell" style={{ marginTop: 24 }}>
+     <article data-glass-card style={{ display: "flex", flexWrap: "wrap", gap: 22, alignItems: "center", padding: "22px 24px", borderRadius: 22 }}>
+      <Link href={withLang("/dr-igor-revenco/", lang)} style={{ flex: "0 0 132px", maxWidth: 132, display: "block" }}>
+       <img src="/images/monografie-igor-revenco-2022.webp" alt="Monografie Dr. Igor Revenco — ISBN 978-5-88554-160-2" width={480} height={640} loading="lazy" decoding="async" style={{ width: "100%", height: "auto", borderRadius: 10, boxShadow: "0 10px 24px rgba(11, 35, 66, 0.2)" }} />
+      </Link>
+      <div style={{ flex: "1 1 280px", minWidth: 0 }}>
+       <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1565c0", letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 6 }}>
+        {lang === "ru" ? "Научная монография · USMF · ISBN 978-5-88554-160-2" : lang === "ua" ? "Наукова монографія · USMF · ISBN 978-5-88554-160-2" : lang === "en" ? "Academic Monograph · USMF · ISBN 978-5-88554-160-2" : "Monografie științifică · USMF · ISBN 978-5-88554-160-2"}
+       </div>
+       <h2 style={{ margin: "0 0 8px", fontSize: "1.22rem", lineHeight: 1.35 }}>
+        {lang === "ru" ? "Нейроэндокринные изменения (ТТГ, Т3, Т4, кортизол) при черепно-мозговой травме у детей школьного возраста" : lang === "ua" ? "Нейроендокринні зміни (ТТГ, Т3, Т4, кортизол) при черепно-мозковій травмі у дітей шкільного віку" : lang === "en" ? "Neuroendocrine Changes (TSH, T3, T4, Cortisol) in Craniocerebral Trauma in School-Age Children" : "Semnificația modificărilor neuroendocrine (TSH, T3, T4, cortizol) în traumatismul craniocerebral la copiii de vârstă școlară"}
+       </h2>
+       <p style={{ margin: "0 0 12px", fontSize: "0.94rem", color: "#334e68" }}>
+        {lang === "ru" ? "Автор: д-р Игорь Ревенко (Кишинёв, 2022, 158 с., 390 источников). Рецензенты USMF: Г. Запухлых, И. Иличюк, Г. Караджа; консультант — акад. Д. Герман." : lang === "ua" ? "Автор: д-р Ігор Ревенко (Кишинів, 2022, 158 с., 390 джерел). Рецензенти USMF: Г. Запухлих, І. Ілічук, Г. Караджа; консультант — акад. Д. Герман." : lang === "en" ? "Author: Dr. Igor Revenco (Chișinău, 2022, 158 pp., 390 references). USMF reviewers: Prof. G. Zapuhlîh, Prof. I. Iliciuc, Assoc. Prof. G. Caradja; advisor: Acad. D. German." : "Autor: Dr. Igor Revenco (Chișinău, 2022, 158 pag., 390 referințe). Recenzenți USMF: G. Zapuhlîh (dr. hab.), I. Iliciuc (prof. univ.), G. Caradja (conf. univ.); consultant: Acad. D. German."}
+       </p>
+       <div className="rm-quick-links-bar" style={{ marginTop: 0 }}>
+        <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-primary btn-sm">
+         {lang === "ru" ? "Все публикации д-ра Игоря Ревенко →" : lang === "ua" ? "Усі публікації д-ра Ігоря Ревенка →" : lang === "en" ? "All Publications & Profile →" : "Toate publicațiile Dr. Igor Revenco →"}
+        </Link>
+        <a href="https://orcid.org/0009-0005-9098-8175" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">ORCID: 0009-0005-9098-8175 ↗</a>
+        <a href="https://repository.usmf.md/handle/20.500.12710/27457" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">Repository USMF ↗</a>
+       </div>
+      </div>
+     </article>
+    </div>
    </section>
   </>
  );
