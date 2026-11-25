@@ -452,6 +452,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
       "@id": `${siteUrl}/#medical-clinic`
     },
     sameAs: [
+      "https://orcid.org/0009-0005-9098-8175",
       "https://www.youtube.com/@revimedpluschisinau"
     ],
     telephone: [site.phone, site.phone2],
@@ -600,8 +601,19 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
           </section>
 
           <section className="rm-doc-glass-block" data-glass-card>
-            <h2>{c.publicationsTitle}</h2>
-            <p style={{ marginBottom: 16 }}>{c.publicationsIntro}</p>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+              <h2 style={{ margin: 0 }}>{c.publicationsTitle}</h2>
+              <a
+                href="https://orcid.org/0009-0005-9098-8175"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-primary btn-sm"
+                style={{ fontWeight: 600 }}
+              >
+                ORCID: 0009-0005-9098-8175 ↗
+              </a>
+            </div>
+            <p style={{ marginTop: 10, marginBottom: 16 }}>{c.publicationsIntro}</p>
             <div style={{ display: "grid", gap: 14 }}>
               {c.publications.map((pub) => (
                 <article
