@@ -243,7 +243,21 @@ export function clinicJsonLd(lang: Lang = "ro") {
    "@id": `${siteUrl}/dr-igor-revenco/#physician`,
    "@type": "Physician",
    name: "Dr. Igor Revenco",
-   url: `${siteUrl}/dr-igor-revenco/`
+   jobTitle: "Medic Neuropediatru, Neurochirurg consultant",
+   url: `${siteUrl}/dr-igor-revenco/`,
+   alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "Universitatea de Stat de Medicină și Farmacie „Nicolae Testemițanu” (USMF)"
+   },
+   memberOf: {
+    "@type": "Organization",
+    name: "European Association of Neurosurgical Societies (EANS)"
+   },
+   sameAs: [
+    "https://orcid.org/0009-0005-9098-8175",
+    "https://scholar.google.com/citations?user=UDE8BpcAAAAJ",
+    "https://doi.org/10.5281/zenodo.24532588"
+   ]
   },
   contactPoint: [
    {

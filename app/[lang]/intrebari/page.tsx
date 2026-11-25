@@ -5,6 +5,7 @@ import FaqInteractive, { type FaqEntry } from "@/components/FaqInteractive";
 import PageHeading from "@/components/PageHeading";
 import { isLang, t, withLang, type Lang } from "@/lib/i18n";
 import { JsonLd, breadcrumbJsonLd, makeMetadata } from "@/lib/seo";
+import { RO_CLINICAL_PAGES, RU_CLINICAL_PAGES } from "@/lib/topicClusterLinks";
 
 export const dynamicParams = false;
 
@@ -304,6 +305,26 @@ export default async function LocalizedQuestionsPage({ params }: Props) {
     </ReadingCard>
 
     <FaqInteractive items={copy.faqs} lang={lang} />
+
+    <ReadingCard>
+     <h2>
+      {lang === "ru"
+       ? "Основные клинические направления и консультации в Кишинёве"
+       : lang === "ua"
+         ? "Основні клінічні напрямки та консультації в Кишиневі"
+         : "Key Clinical Guides & Consultations in Chișinău"}
+     </h2>
+     <div className="rm-quick-links-bar" style={{ marginTop: 10 }}>
+      {(lang === "ru" || lang === "ua" ? RU_CLINICAL_PAGES : RO_CLINICAL_PAGES).slice(0, 24).map((cp) => (
+       <Link key={cp.href} href={cp.href} className="btn btn-outline-primary btn-sm">
+        {cp.label}
+       </Link>
+      ))}
+      <Link href={withLang("/utilaj/", lang)} className="btn btn-outline-primary btn-sm">{text.equipment}</Link>
+      <Link href={withLang("/blog/", lang)} className="btn btn-outline-primary btn-sm">{text.blog}</Link>
+      <Link href={withLang("/aplicatii/", lang)} className="btn btn-outline-primary btn-sm">{text.apps}</Link>
+     </div>
+    </ReadingCard>
 
     <div className="sr-only" aria-hidden="true">
      {copy.faqs.map((f) => (

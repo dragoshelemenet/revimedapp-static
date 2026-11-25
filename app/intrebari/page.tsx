@@ -3,6 +3,7 @@ import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import FaqInteractive, { type FaqEntry } from "@/components/FaqInteractive";
 import PageHeading from "@/components/PageHeading";
 import { JsonLd, breadcrumbJsonLd, makeMetadata } from "@/lib/seo";
+import { RO_CLINICAL_PAGES } from "@/lib/topicClusterLinks";
 
 export const metadata = makeMetadata({
  lang: "ro",
@@ -155,6 +156,20 @@ export default function QuestionsPage() {
     </ReadingCard>
 
     <FaqInteractive items={faqs} />
+
+    <ReadingCard>
+     <h2>Ghiduri clinice și consultații frecvente în Chișinău</h2>
+     <div className="rm-quick-links-bar" style={{ marginTop: 10 }}>
+      {RO_CLINICAL_PAGES.slice(0, 24).map((cp) => (
+       <Link key={cp.href} href={cp.href} className="btn btn-outline-primary btn-sm">
+        {cp.label}
+       </Link>
+      ))}
+      <Link href="/utilaj/" className="btn btn-outline-primary btn-sm">Aparate Medicale (25)</Link>
+      <Link href="/blog/" className="btn btn-outline-primary btn-sm">Articole Medicale (132)</Link>
+      <Link href="/aplicatii/" className="btn btn-outline-primary btn-sm">Teste Interactive (11)</Link>
+     </div>
+    </ReadingCard>
 
     <div className="sr-only" aria-hidden="true">
      {faqs.map((f) => (

@@ -7,6 +7,7 @@ import IconVisual from "@/components/IconVisual";
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { isLang, type Lang } from "@/lib/i18n";
+import { getRelatedBlogPostsForPost, getRelatedClinicalPagesForPost } from "@/lib/topicClusterLinks";
 
 type ToolSlug =
  | "test-postura-coloana"
@@ -1044,20 +1045,44 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
        ))}
       </ul>
       <p style={{ fontSize: 13.5, color: "#516575" }}>{text.disclaimer}</p>
-      <div className="rm-quick-links-bar">
-       <Link href={lang === "ro" ? "/servicii/consultatii-neurologice/" : `/${lang}/servicii/consultatii-neurologice/`} className="btn btn-outline-primary btn-sm">
-        {lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}
-       </Link>
-       <Link href={lang === "ro" ? "/dr-igor-revenco/" : `/${lang}/dr-igor-revenco/`} className="btn btn-outline-primary btn-sm">
-        Dr. Igor Revenco
-       </Link>
-       <Link href={lang === "ro" ? "/preturi/" : `/${lang}/preturi/`} className="btn btn-outline-primary btn-sm">
-        {lang === "ru" ? "Цены" : lang === "ua" ? "Ціни" : lang === "en" ? "Prices" : "Prețuri"}
-       </Link>
-       <Link href={lang === "ro" ? "/contact/" : `/${lang}/contact/`} className="btn btn-primary btn-sm">
-        {lang === "ru" ? "Записаться" : lang === "ua" ? "Записатися" : lang === "en" ? "Book Appointment" : "Programare & Contact"}
-       </Link>
-      </div>
+      {(() => {
+       const matchedClinical = getRelatedClinicalPagesForPost(slug, cfg.title[lang], cfg.lead[lang], lang, 6);
+       const matchedBlogs = getRelatedBlogPostsForPost(slug, lang, 4, `${cfg.title[lang]} ${cfg.lead[lang]}`);
+       return (
+        <>
+         {matchedBlogs.length > 0 && (
+          <ul style={{ marginTop: 12, marginBottom: 14, paddingLeft: 18 }}>
+           {matchedBlogs.map((bg) => (
+            <li key={bg.slug} style={{ marginBottom: 5 }}>
+             <Link href={bg.href} style={{ fontWeight: 600, color: "#075f9e" }}>
+              {bg.title}
+             </Link>
+            </li>
+           ))}
+          </ul>
+         )}
+         <div className="rm-quick-links-bar">
+          <Link href={lang === "ro" ? "/dr-igor-revenco/" : `/${lang}/dr-igor-revenco/`} className="btn btn-outline-primary btn-sm">
+           Dr. Igor Revenco
+          </Link>
+          {matchedClinical.map((cp) => (
+           <Link key={cp.href} href={cp.href} className="btn btn-outline-primary btn-sm">
+            {cp.label}
+           </Link>
+          ))}
+          <Link href={lang === "ro" ? "/servicii/consultatii-neurologice/" : `/${lang}/servicii/consultatii-neurologice/`} className="btn btn-outline-primary btn-sm">
+           {lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}
+          </Link>
+          <Link href={lang === "ro" ? "/preturi/" : `/${lang}/preturi/`} className="btn btn-outline-primary btn-sm">
+           {lang === "ru" ? "Цены" : lang === "ua" ? "Ціни" : lang === "en" ? "Prices" : "Prețuri"}
+          </Link>
+          <Link href={lang === "ro" ? "/contact/" : `/${lang}/contact/`} className="btn btn-primary btn-sm">
+           {lang === "ru" ? "Записаться" : lang === "ua" ? "Записатися" : lang === "en" ? "Book Appointment" : "Programare & Contact"}
+          </Link>
+         </div>
+        </>
+       );
+      })()}
      </article>
     </div>
    </section>
