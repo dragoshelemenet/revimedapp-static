@@ -16,7 +16,7 @@ const doctorCopy: Record<
 > = {
   ro: {
     name: "Dr. Igor Revenco",
-    role: "Neurolog · Neurochirurg · Neuropediatru",
+    role: "Neurochirurg consultant · Medic neuropediatru · Neurolog",
     expBadge: "35+ ani",
     credits: [
       "Categorie superioară",
@@ -28,7 +28,7 @@ const doctorCopy: Record<
   },
   en: {
     name: "Dr. Igor Revenco",
-    role: "Neurologist · Neurosurgeon · Pediatric Neurologist",
+    role: "Consultant Neurosurgeon · Pediatric Neurologist · Neurologist",
     expBadge: "35+ yrs",
     credits: [
       "Superior Category",
@@ -40,7 +40,7 @@ const doctorCopy: Record<
   },
   ru: {
     name: "Д-р Игорь Ревенко",
-    role: "Невролог · Нейрохирург · Детский невролог",
+    role: "Нейрохирург-консультант · Детский невролог · Невролог",
     expBadge: "35+ лет",
     credits: [
       "Высшая категория",
@@ -52,7 +52,7 @@ const doctorCopy: Record<
   },
   ua: {
     name: "Д-р Ігор Ревенко",
-    role: "Невролог · Нейрохірург · Дитячий невролог",
+    role: "Нейрохірург-консультант · Дитячий невролог · Невролог",
     expBadge: "35+ років",
     credits: [
       "Вища категорія",

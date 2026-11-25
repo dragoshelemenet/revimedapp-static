@@ -4,9 +4,9 @@ import { makeMetadata } from "@/lib/seo";
 export const metadata = makeMetadata({
   lang: "ro",
   path: "/dr-igor-revenco",
-  title: "Dr. Igor Revenco — Neurolog, Neurochirurg, Neuropediatru Chișinău",
+  title: "Dr. Igor Revenco — Medic Specialist Neurochirurg Consultant & Neuropediatru",
   description:
-    "Profil complet Dr. Igor Revenco — medic categorie superioară, doctor în neurochirurgie (USMF), membru EANS, 35+ ani experiență, fondator Centrul Medical Revimed PLUS+ Chișinău.",
+    "Profil oficial Dr. Igor Revenco — medic specialist neurochirurg consultant, medic neuropediatru, categorie superioară, membru EANS, 35+ ani experiență, fondator Revimed PLUS+ Chișinău.",
   image: "/images/about-us.jpg"
 });
 
