@@ -1127,6 +1127,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
          {lang === "ru" ? "Все публикации д-ра Игоря Ревенко →" : lang === "ua" ? "Усі публікації д-ра Ігоря Ревенка →" : lang === "en" ? "All Publications & Profile →" : "Toate publicațiile Dr. Igor Revenco →"}
         </Link>
         <a href="https://orcid.org/0009-0005-9098-8175" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">ORCID: 0009-0005-9098-8175 ↗</a>
+        <a href="https://doi.org/10.5281/zenodo.24531283" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">DOI: 10.5281/zenodo.24531283 ↗</a>
         <a href="https://repository.usmf.md/handle/20.500.12710/27457" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">Repository USMF ↗</a>
        </div>
       </div>
