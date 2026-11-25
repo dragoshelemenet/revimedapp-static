@@ -3,6 +3,8 @@ import PageHeading from "./PageHeading";
 import { ContentSection, ReadingCard, ContentNote } from "./ContentLayout";
 import SmartCatalogGrid from "./SmartCatalogGrid";
 import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd, serviceJsonLd } from "@/lib/seo";
+import { getRelatedBlogPostsForPost, getRelatedClinicalPagesForPost } from "@/lib/topicClusterLinks";
+import type { Lang } from "@/lib/i18n";
 
 type Item = {
  slug: string;
@@ -145,11 +147,49 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
     </section>
    )}
    <ContentNote>{labels.note}</ContentNote>
-   <nav aria-label="Related clinic pages" style={{ display: "flex", flexWrap: "wrap", gap: "10px", margin: "18px 0 10px" }}>
-    <Link href={`${links.prefix}/dr-igor-revenco/`} className="btn btn-outline-primary btn-sm">{links.doctor}</Link>
-    <Link href={`${links.prefix}/preturi/`} className="btn btn-outline-primary btn-sm">{links.prices}</Link>
-    <Link href={`${links.prefix}/contact/`} className="btn btn-primary btn-sm">{links.contact}</Link>
-   </nav>
+   {(() => {
+    const lang: Lang = base.startsWith("/en") ? "en" : base.startsWith("/ru") ? "ru" : base.startsWith("/ua") ? "ua" : "ro";
+    const matchedClinical = getRelatedClinicalPagesForPost(item.slug, item.title, item.short, lang, 6);
+    const matchedBlogs = getRelatedBlogPostsForPost(item.slug, lang, 4, `${item.title} ${item.short}`);
+    return (
+     <>
+      {matchedBlogs.length > 0 && (
+       <aside className="rm-citable-summary" style={{ marginTop: 18, marginBottom: 14 }}>
+        <div className="rm-citable-summary-head">
+         <span className="rm-citable-pill">
+          {lang === "ru"
+           ? "Клинические статьи и руководства по теме"
+           : lang === "ua"
+             ? "Клінічні статті та посібники за темою"
+             : lang === "en"
+               ? "Related Clinical Guides & Medical Articles"
+               : "Ghiduri clinice și articole medicale pe această temă"}
+         </span>
+        </div>
+        <ul style={{ margin: "8px 0 0", paddingLeft: 18 }}>
+         {matchedBlogs.map((bg) => (
+          <li key={bg.slug} style={{ marginBottom: 6, fontSize: "0.93rem", lineHeight: 1.5 }}>
+           <Link href={bg.href} style={{ fontWeight: 600, color: "#075f9e" }}>
+            {bg.title}
+           </Link>
+          </li>
+         ))}
+        </ul>
+       </aside>
+      )}
+      <nav aria-label="Related clinic pages" style={{ display: "flex", flexWrap: "wrap", gap: "10px", margin: "18px 0 10px" }}>
+       <Link href={`${links.prefix}/dr-igor-revenco/`} className="btn btn-outline-primary btn-sm">{links.doctor}</Link>
+       {matchedClinical.map((cp) => (
+        <Link key={cp.href} href={cp.href} className="btn btn-outline-primary btn-sm">
+         {cp.label}
+        </Link>
+       ))}
+       <Link href={`${links.prefix}/preturi/`} className="btn btn-outline-primary btn-sm">{links.prices}</Link>
+       <Link href={`${links.prefix}/contact/`} className="btn btn-primary btn-sm">{links.contact}</Link>
+      </nav>
+     </>
+    );
+   })()}
    <Link href={`${base}/`} className="rm-back-link" aria-label={labels.back}>←</Link>
   </ReadingCard></ContentSection>
  </>;

@@ -829,14 +829,18 @@ function scoreOverlap(tokensA: string[], textB: string): number {
 export function getRelatedBlogPostsForPost(
   currentSlug: string,
   lang: Lang,
-  count = 6
+  count = 6,
+  fallbackText?: string
 ): { slug: string; title: string; href: string }[] {
   const allPosts = getStaticPublishedPosts(lang);
   if (allPosts.length <= 1) return [];
 
   const currentIdx = allPosts.findIndex((p) => p.slug === currentSlug);
-  const current = currentIdx >= 0 ? allPosts[currentIdx] : allPosts[0];
-  const tokens = tokenize(`${current.title} ${current.excerpt}`);
+  const textToTokenize =
+    currentIdx >= 0
+      ? `${allPosts[currentIdx].title} ${allPosts[currentIdx].excerpt}`
+      : `${currentSlug.replace(/-/g, " ")} ${fallbackText || ""}`;
+  const tokens = tokenize(textToTokenize);
 
   const n = allPosts.length;
   const ringIndices = new Set<number>();
@@ -844,6 +848,13 @@ export function getRelatedBlogPostsForPost(
     ringIndices.add((currentIdx + 1) % n);
     ringIndices.add((currentIdx + 2) % n);
     ringIndices.add((currentIdx + 13) % n);
+  } else {
+    let hash = 0;
+    for (let i = 0; i < currentSlug.length; i++) {
+      hash = (hash * 31 + currentSlug.charCodeAt(i)) >>> 0;
+    }
+    ringIndices.add(hash % n);
+    ringIndices.add((hash + 17) % n);
   }
 
   const scored = allPosts

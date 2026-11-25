@@ -108,7 +108,7 @@ export default function ApplicationsPage({ lang }: { lang: Lang }) {
    <ContentSection>
     <SmartCatalogGrid
      items={items}
-     initialCount={3}
+     initialCount={12}
      moreLabel={more}
      lessLabel={less}
      useInfoPopover
