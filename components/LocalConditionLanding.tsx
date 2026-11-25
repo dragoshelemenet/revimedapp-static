@@ -3,6 +3,7 @@ import PageHeading from "@/components/PageHeading";
 import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import { JsonLd, absoluteUrl, breadcrumbJsonLd, siteUrl } from "@/lib/seo";
 import { revimedReviews } from "@/lib/revimedReviews";
+import { getClusterMeshForClinicalPage } from "@/lib/topicClusterLinks";
 
  export type LocalLandingProps = {
  lang: "ro" | "ru";
@@ -54,6 +55,13 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
  const doctorHref = isRu ? "/ru/dr-igor-revenco/" : "/dr-igor-revenco/";
  const pricesHref = isRu ? "/ru/preturi/" : "/preturi/";
  const contactHref = isRu ? "/ru/contact/" : "/contact/";
+ const clusterMesh = getClusterMeshForClinicalPage(
+  p.path,
+  p.h1,
+  p.lead,
+  p.lang,
+  p.relatedLinks.map((rl) => rl.href)
+ );
 
  return (
   <>
@@ -384,6 +392,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      <h2>{isRu ? "Частые вопросы пациентов" : "Întrebări frecvente ale pacienților"}</h2>
      {p.faqs.map((f) => (
       <details
+       key={f.q}
        style={{
         marginBottom: 10,
         padding: "12px 14px",
@@ -397,6 +406,32 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       </details>
      ))}
 
+     {clusterMesh.blogGuides.length > 0 && (
+      <aside
+       className="rm-citable-summary"
+       style={{ marginTop: 20, marginBottom: 18 }}
+       aria-label={isRu ? "Клинические статьи и руководства по теме" : "Ghiduri clinice și articole medicale pe această temă"}
+      >
+       <div className="rm-citable-summary-head">
+        <span className="rm-citable-pill">
+         {isRu ? "Клинические статьи и руководства по теме" : "Ghiduri clinice și articole pe această temă"}
+        </span>
+        <Link href={isRu ? "/ru/blog/" : "/blog/"} style={{ fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+         {isRu ? "Все статьи →" : "Toate articolele →"}
+        </Link>
+       </div>
+       <ul style={{ margin: "8px 0 0", paddingLeft: 18 }}>
+        {clusterMesh.blogGuides.map((bg) => (
+         <li key={bg.href} style={{ marginBottom: 6, fontSize: "0.93rem", lineHeight: 1.5 }}>
+          <Link href={bg.href} style={{ fontWeight: 600, color: "#075f9e" }}>
+           {bg.title}
+          </Link>
+         </li>
+        ))}
+       </ul>
+      </aside>
+     )}
+
      <div className="rm-quick-links-bar" style={{ marginTop: 22 }}>
       <Link href={doctorHref} className="btn btn-outline-primary btn-sm">
        {isRu ? "Д-р Игорь Ревенко" : "Dr. Igor Revenco"}
@@ -404,6 +439,11 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       {p.relatedLinks.map((rl) => (
        <Link key={rl.href} href={rl.href} className="btn btn-outline-primary btn-sm">
         {rl.label}
+       </Link>
+      ))}
+      {clusterMesh.siblingPages.map((sp) => (
+       <Link key={sp.href} href={sp.href} className="btn btn-outline-primary btn-sm">
+        {sp.label}
        </Link>
       ))}
       <Link href={contactHref} className="btn btn-primary btn-sm">

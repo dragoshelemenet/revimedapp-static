@@ -4,6 +4,7 @@ import { ContentSection } from "./ContentLayout";
 import { JsonLd, absoluteUrl, breadcrumbJsonLd, siteUrl } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { withLang, type Lang } from "@/lib/i18n";
+import { RO_CLINICAL_PAGES, RU_CLINICAL_PAGES } from "@/lib/topicClusterLinks";
 
 type PublicationItem = {
   year: string;
@@ -819,29 +820,11 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                     : "Direcții clinice și pagini dedicate în Chișinău"}
             </h2>
             <div className="rm-quick-links-bar" style={{ marginTop: 10 }}>
-              {lang === "ru" ? (
-                <>
-                  <Link href="/ru/nevrolog-kishinev/" className="btn btn-outline-primary btn-sm">Невролог Кишинёв</Link>
-                  <Link href="/ru/neyrohirurg-kishinev/" className="btn btn-outline-primary btn-sm">Нейрохирург Кишинёв</Link>
-                  <Link href="/ru/detskiy-nevrolog-kishinev/" className="btn btn-outline-primary btn-sm">Детский невролог</Link>
-                  <Link href="/ru/epilepsiya-kishinev/" className="btn btn-outline-primary btn-sm">Эпилепсия и ЭЭГ</Link>
-                  <Link href="/ru/nevralgiya-neyropatiya-kishinev/" className="btn btn-outline-primary btn-sm">Невралгия и нейропатия</Link>
-                  <Link href="/ru/igloukalyvanie-kishinev/" className="btn btn-outline-primary btn-sm">Иглоукалывание</Link>
-                  <Link href="/ru/elektroforez-amplipuls-kishinev/" className="btn btn-outline-primary btn-sm">Электрофорез и Амплипульс</Link>
-                  <Link href="/ru/kinezoterapiya-kishinev/" className="btn btn-outline-primary btn-sm">Кинезиотерапия</Link>
-                </>
-              ) : (
-                <>
-                  <Link href="/neurolog-ciocana-chisinau/" className="btn btn-outline-primary btn-sm">Neurolog Ciocana</Link>
-                  <Link href="/ameteli-vertij-chisinau/" className="btn btn-outline-primary btn-sm">Amețeli &amp; Vertij</Link>
-                  <Link href="/epilepsie-convulsii-chisinau/" className="btn btn-outline-primary btn-sm">Epilepsie &amp; EEG</Link>
-                  <Link href="/nevralgie-neuropatie-chisinau/" className="btn btn-outline-primary btn-sm">Nevralgie &amp; Neuropatie</Link>
-                  <Link href="/insomnie-tratament-chisinau/" className="btn btn-outline-primary btn-sm">Tratament Insomnie</Link>
-                  <Link href="/osteocondroza-cervicala-chisinau/" className="btn btn-outline-primary btn-sm">Osteocondroză Cervicală</Link>
-                  <Link href="/recuperare-dupa-avc-chisinau/" className="btn btn-outline-primary btn-sm">Recuperare post-AVC</Link>
-                  <Link href="/acupunctura-reflexoterapie-chisinau/" className="btn btn-outline-primary btn-sm">Acupunctură &amp; Reflexoterapie</Link>
-                </>
-              )}
+              {(lang === "ru" || lang === "ua" ? RU_CLINICAL_PAGES : RO_CLINICAL_PAGES).map((item) => (
+                <Link key={item.href} href={item.href} className="btn btn-outline-primary btn-sm">
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </section>
 

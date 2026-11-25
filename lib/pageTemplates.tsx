@@ -32,6 +32,7 @@ import IconVisual from "@/components/IconVisual";
 import HomeCTA from "@/components/HomeCTA";
 import { getLocalizedServices } from "@/lib/servicesLocalized";
 import HomeStats from "@/components/HomeStats";
+import { getRelatedBlogPostsForPost, getRelatedClinicalPagesForPost } from "@/lib/topicClusterLinks";
 
 function renderBlogContent(content: string) {
   const lines = String(content || "")
@@ -1004,6 +1005,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Nevralgie & Neuropatie"
                },
                {
+                 "href": "/pareza-nerv-facial-paralizie-bell-chisinau/",
+                 "label": "Pareză Nerv Facial (Paralizie Bell)"
+               },
+               {
                  "href": "/nevralgie-trigemen-pareza-faciala-chisinau/",
                  "label": "Nevralgie Trigemen & Facial"
                },
@@ -1079,6 +1084,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/epilepsie-convulsii-chisinau/",
                  "label": "Epilepsie & EEG"
+               },
+               {
+                 "href": "/tremor-esential-tremuratul-mainilor-chisinau/",
+                 "label": "Tremor Esențial (Tremuratul Mâinilor)"
                },
                {
                  "href": "/boala-parkinson-tremor-memorie-chisinau/",
@@ -1396,13 +1405,33 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
    </PageHeading>
    <ContentSection>
     {posts.length > 0 ? (
-     <SmartCatalogGrid
-      items={smartItems}
-      initialCount={3}
-      moreLabel={moreLabel}
-      lessLabel={lessLabel}
-      useInfoPopover
-     />
+     <>
+      <SmartCatalogGrid
+       items={smartItems}
+       initialCount={6}
+       moreLabel={moreLabel}
+       lessLabel={lessLabel}
+       useInfoPopover
+      />
+      <article className="rm-seo-bento-shell" data-glass-card style={{ marginTop: 28 }}>
+       <h2 style={{ marginTop: 0, marginBottom: 12 }}>
+        {lang === "ru"
+         ? `Полный каталог медицинских статей и клинических руководств (${smartItems.length})`
+         : lang === "ua"
+           ? `Повний каталог медичних статей та клінічних посібників (${smartItems.length})`
+           : lang === "en"
+             ? `Complete Index of Clinical Guides & Medical Articles (${smartItems.length})`
+             : `Index complet al ghidurilor și articolelor medicale (${smartItems.length})`}
+       </h2>
+       <div className="rm-quick-links-bar" style={{ gap: 8 }}>
+        {smartItems.map((item) => (
+         <Link key={item.id} href={item.href} className="btn btn-outline-primary btn-sm">
+          {item.title}
+         </Link>
+        ))}
+       </div>
+      </article>
+     </>
     ) : (
      <p>{text.noPosts}</p>
     )}
@@ -1482,6 +1511,14 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
            : "Servicii și articole utile la Revimed PLUS+"}
      </h2>
      <div className="rm-quick-links-bar" style={{ marginTop: 10 }}>
+      <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-outline-primary btn-sm">
+       Dr. Igor Revenco
+      </Link>
+      {getRelatedClinicalPagesForPost(post.slug, post.title, post.excerpt, lang, 6).map((cp) => (
+       <Link key={cp.href} href={cp.href} className="btn btn-outline-primary btn-sm">
+        {cp.label}
+       </Link>
+      ))}
       <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">
        {lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}
       </Link>
@@ -1499,16 +1536,13 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
       </Link>
      </div>
      <ul style={{ marginTop: 14, marginBottom: 0, paddingLeft: 18 }}>
-      {getStaticPublishedPosts(lang)
-       .filter((p) => p.slug !== post.slug)
-       .slice(0, 3)
-       .map((rel) => (
-        <li key={rel.slug} style={{ marginBottom: 6 }}>
-         <Link href={withLang(`/blog/${rel.slug}/`, lang)} style={{ color: "#075f9e", fontWeight: 600 }}>
-          {rel.title}
-         </Link>
-        </li>
-       ))}
+      {getRelatedBlogPostsForPost(post.slug, lang, 6).map((rel) => (
+       <li key={rel.slug} style={{ marginBottom: 6 }}>
+        <Link href={rel.href} style={{ color: "#075f9e", fontWeight: 600 }}>
+         {rel.title}
+        </Link>
+       </li>
+      ))}
      </ul>
     </div>
     <div style={{ marginTop: 24 }}>
