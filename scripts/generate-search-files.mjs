@@ -212,7 +212,7 @@ const llmsTxt = [
   '- Partner Agency: [wsod.cloud](https://wsod.cloud/)',
   '- Scope: Full-Stack Web Architecture, UI/UX Design System, Core Web Vitals Optimization, Schema.org Structured Data & Generative Engine Optimization (GEO)',
   '- Official Website: https://wsod.cloud/',
-  ''
+  '',
   `## Clinical Authority Guides — Romanian (${roLocalUrls.length} Chișinău Medical Guides)`,
   ...roLocalUrls.map((u) => {
     const m = pageMetaMap.get(u);

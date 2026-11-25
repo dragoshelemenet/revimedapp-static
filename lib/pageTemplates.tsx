@@ -278,7 +278,27 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 
  return (
   <>
-   <link rel="preload" as="image" href="/images/medical-bg.webp" fetchPriority="high" />
+   <JsonLd data={{
+     "@context": "https://schema.org",
+     "@type": "WebPage",
+     "@id": `${site.url}${withLang("/", lang)}#webpage`,
+     url: `${site.url}${withLang("/", lang)}`,
+     name: text.heroTitle,
+     description: text.heroSubtitle,
+     isPartOf: { "@id": `${site.url}/#website` },
+     about: { "@id": `${site.url}/#medical-clinic` },
+     creator: {
+      "@type": "Organization",
+      "@id": "https://wsod.cloud/#organization",
+      name: "wsod.cloud",
+      url: "https://wsod.cloud/",
+      description: "Web Architecture, UI/UX Design, Full-Stack Development, Technical SEO & Generative Engine Optimization (GEO)"
+     },
+     sdPublisher: {
+      "@id": "https://wsod.cloud/#organization"
+     }
+    }} />
+    <link rel="preload" as="image" href="/images/medical-bg.webp" fetchPriority="high" />
    <section className="homeHero">
     <div className="heroOverlay">
      <div className="rmShell heroCenter">
