@@ -12,6 +12,7 @@ import {
 } from "@/lib/seo";
 import InfoPopover from "@/components/InfoPopover";
 import SmartCatalogGrid from "@/components/SmartCatalogGrid";
+import BlogInteractiveCatalog, { type BlogCatalogItem } from "@/components/BlogInteractiveCatalog";
 import DoctorMotionCard from "@/components/DoctorMotionCard";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import VideoGalleryDropdown from "@/components/VideoGalleryDropdown";
@@ -1371,76 +1372,145 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
  );
 }
 
+function getArticleCategory(slug: string, title: string): "coloana" | "pediatrie" | "cap" | "somn" | "recuperare" {
+  const s = `${slug} ${title}`.toLowerCase();
+  if (
+    s.includes("copil") ||
+    s.includes("pediatr") ||
+    s.includes("vorbire") ||
+    s.includes("autism") ||
+    s.includes("ticuri") ||
+    s.includes("balbaiala") ||
+    s.includes("logonevroz") ||
+    s.includes("febrile") ||
+    s.includes("speech") ||
+    s.includes("toddler") ||
+    s.includes("detey") ||
+    s.includes("ditey") ||
+    s.includes("rechi") ||
+    s.includes("movlen")
+  ) {
+    return "pediatrie";
+  }
+  if (
+    s.includes("hernie") ||
+    s.includes("sciatica") ||
+    s.includes("lombar") ||
+    s.includes("coloan") ||
+    s.includes("piriform") ||
+    s.includes("osteocondroz") ||
+    s.includes("tunel") ||
+    s.includes("umar") ||
+    s.includes("artroz") ||
+    s.includes("amorteli") ||
+    s.includes("spine") ||
+    s.includes("back") ||
+    s.includes("onemenie") ||
+    s.includes("oniminnya") ||
+    s.includes("gryzha") ||
+    s.includes("hryzha") ||
+    s.includes("ishias") ||
+    s.includes("plexi")
+  ) {
+    return "coloana";
+  }
+  if (
+    s.includes("migren") ||
+    s.includes("cefalee") ||
+    s.includes("ameteli") ||
+    s.includes("vertij") ||
+    s.includes("cap") ||
+    s.includes("trigemen") ||
+    s.includes("headache") ||
+    s.includes("dizziness") ||
+    s.includes("golov") ||
+    s.includes("zapamorochen")
+  ) {
+    return "cap";
+  }
+  if (
+    s.includes("somn") ||
+    s.includes("insomni") ||
+    s.includes("glinfatic") ||
+    s.includes("stres") ||
+    s.includes("distonie") ||
+    s.includes("endorfine") ||
+    s.includes("sleep") ||
+    s.includes("stress") ||
+    s.includes("glymphatic") ||
+    s.includes("bessonnits") ||
+    s.includes("bezsonn")
+  ) {
+    return "somn";
+  }
+  return "recuperare";
+}
+
 export function BlogTemplate({ lang }: { lang: Lang }) {
- const text = t(lang);
- const posts = getStaticPublishedPosts(lang);
- const blogPath = `${withLang("/blog", lang)}/`;
- const moreLabel = lang === "en" ? "More +" : lang === "ru" ? "Показать ещё +" : lang === "ua" ? "Показати ще +" : "Mai multe +";
- const lessLabel = lang === "en" ? "Show less" : lang === "ru" ? "Свернуть" : lang === "ua" ? "Згорнути" : "Restrânge";
+  const text = t(lang);
+  const posts = getStaticPublishedPosts(lang);
+  const blogPath = `${withLang("/blog", lang)}/`;
 
- const smartItems = posts.map((post) => ({
-  id: String(post.id),
-  href: withLang(`/blog/${post.slug}/`, lang),
-  title: post.title,
-  description: post.excerpt,
-  image: toWebpSrc(post.image),
-  action: text.readMore.replace(/\s*→$/, "")
- }));
+  const blogCatalogItems: BlogCatalogItem[] = posts.map((post) => ({
+    id: String(post.id),
+    slug: post.slug,
+    href: withLang(`/blog/${post.slug}/`, lang),
+    title: post.title,
+    description: post.excerpt,
+    image: toWebpSrc(post.image),
+    category: getArticleCategory(post.slug, post.title),
+    keywords: post.keywords || `${post.title} ${post.slug}`,
+    action: text.readMore.replace(/\s*→$/, "")
+  }));
 
- return (
-  <>
-   <JsonLd data={breadcrumbJsonLd([
-    { name: text.home, path: withLang("/", lang) },
-    { name: text.blog, path: blogPath }
-   ])} />
-   <JsonLd data={collectionPageJsonLd({
-    name: text.blogTitle,
-    description: text.blogSubtitle,
-    path: blogPath,
-    items: smartItems.map((item) => ({ name: item.title, url: item.href }))
-   })} />
-   <PageHeading>
-    <div>
-     <p className="crumb">{text.home} / {text.blog}</p>
-     <h1>{text.blogTitle}</h1>
-     <p className="lead">{text.blogSubtitle}</p>
-    </div>
-   </PageHeading>
-   <ContentSection>
-    {posts.length > 0 ? (
-     <>
-      <SmartCatalogGrid
-       items={smartItems}
-       initialCount={6}
-       moreLabel={moreLabel}
-       lessLabel={lessLabel}
-       useInfoPopover
-      />
-      <article className="rm-seo-bento-shell" data-glass-card style={{ marginTop: 28 }}>
-       <h2 style={{ marginTop: 0, marginBottom: 12 }}>
-        {lang === "ru"
-         ? `Полный каталог медицинских статей и клинических руководств (${smartItems.length})`
-         : lang === "ua"
-           ? `Повний каталог медичних статей та клінічних посібників (${smartItems.length})`
-           : lang === "en"
-             ? `Complete Index of Clinical Guides & Medical Articles (${smartItems.length})`
-             : `Index complet al ghidurilor și articolelor medicale (${smartItems.length})`}
-       </h2>
-       <div className="rm-quick-links-bar" style={{ gap: 8 }}>
-        {smartItems.map((item) => (
-         <Link key={item.id} href={item.href} className="btn btn-outline-primary btn-sm">
-          {item.title}
-         </Link>
-        ))}
-       </div>
-      </article>
-     </>
-    ) : (
-     <p>{text.noPosts}</p>
-    )}
-   </ContentSection>
-  </>
- );
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd([
+        { name: text.home, path: withLang("/", lang) },
+        { name: text.blog, path: blogPath }
+      ])} />
+      <JsonLd data={collectionPageJsonLd({
+        name: text.blogTitle,
+        description: text.blogSubtitle,
+        path: blogPath,
+        items: blogCatalogItems.map((item) => ({ name: item.title, url: item.href }))
+      })} />
+      <PageHeading>
+        <div>
+          <p className="crumb">{text.home} / {text.blog}</p>
+          <h1>{text.blogTitle}</h1>
+          <p className="lead">{text.blogSubtitle}</p>
+        </div>
+      </PageHeading>
+      <ContentSection>
+        {posts.length > 0 ? (
+          <>
+            <BlogInteractiveCatalog items={blogCatalogItems} lang={lang} />
+            <article className="rm-seo-bento-shell" data-glass-card style={{ marginTop: 28 }}>
+              <h2 style={{ marginTop: 0, marginBottom: 12 }}>
+                {lang === "ru"
+                  ? `Полный каталог медицинских статей и клинических руководств (${blogCatalogItems.length})`
+                  : lang === "ua"
+                    ? `Повний каталог медичних статей та клінічних посібників (${blogCatalogItems.length})`
+                    : lang === "en"
+                      ? `Complete Index of Clinical Guides & Medical Articles (${blogCatalogItems.length})`
+                      : `Index complet al ghidurilor și articolelor medicale (${blogCatalogItems.length})`}
+              </h2>
+              <div className="rm-quick-links-bar" style={{ gap: 8 }}>
+                {blogCatalogItems.map((item) => (
+                  <Link key={item.id} href={item.href} className="btn btn-outline-primary btn-sm">
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            </article>
+          </>
+        ) : (
+          <p>{text.noPosts}</p>
+        )}
+      </ContentSection>
+    </>
+  );
 }
 
 export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
