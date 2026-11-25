@@ -818,6 +818,46 @@ header[class*="header"] div[class*="links"] a[class*="active"] {
   animation: rm-wiggle-btn 580ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
+.rm-more-btn-sm {
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  gap: 6px;
+}
+
+.rm-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 143, 216, 0.26);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.88);
+  background: var(--rm-glass-bg-strong);
+  backdrop-filter: blur(24px) saturate(190%);
+  color: #0878b8;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: var(--rm-glass-shadow);
+  transition: all 0.22s ease;
+}
+
+.rm-page-btn:hover:not(:disabled) {
+  border-color: rgba(11, 143, 216, 0.52);
+  box-shadow: var(--rm-glass-shadow-hover);
+  animation: rm-wiggle-btn 580ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.rm-page-btn[aria-current="page"] {
+  background: linear-gradient(135deg, #0b8fd8 0%, #075f9e 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(11, 143, 216, 0.35);
+}
+
 /* Liquid Glass Category Folders */
 .rm-folders-grid {
   display: grid;

@@ -321,15 +321,11 @@ export default function BlogInteractiveCatalog({
                   setCumulativeLimit(PAGE_SIZE);
                 }
               }}
-              className="btn btn-outline-primary btn-sm"
-              style={{
-                borderRadius: 20,
-                padding: "4px 12px",
-                fontSize: "13px",
-                cursor: "pointer"
-              }}
+              className="rm-more-btn rm-more-btn-sm"
+              aria-expanded={isViewAll}
             >
-              {isViewAll ? text.collapseView : text.showAll}
+              <span>{isViewAll ? text.collapseView : text.showAll}</span>
+              <span aria-hidden="true">{isViewAll ? "▴" : "▾"}</span>
             </button>
           </div>
         )}
@@ -381,11 +377,7 @@ export default function BlogInteractiveCatalog({
                 <p style={{ fontSize: "14px", lineHeight: "1.55", color: "#475569", marginBottom: 12 }}>
                   {item.description}
                 </p>
-                <Link
-                  href={item.href}
-                  className="btn btn-outline-primary btn-sm"
-                  style={{ marginTop: "auto", alignSelf: "flex-start", borderRadius: 20, padding: "5px 14px" }}
-                >
+                <Link href={item.href} className={styles.action}>
                   {item.action} <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -402,7 +394,7 @@ export default function BlogInteractiveCatalog({
             flexDirection: "column",
             alignItems: "center",
             gap: 16,
-            marginTop: 24,
+            marginTop: 28,
             marginBottom: 20
           }}
         >
@@ -421,15 +413,13 @@ export default function BlogInteractiveCatalog({
               type="button"
               disabled={safePage <= 1}
               onClick={() => handlePageChange(safePage - 1)}
-              className="btn btn-outline-primary btn-sm"
+              className="rm-more-btn rm-more-btn-sm"
               style={{
-                borderRadius: 20,
-                padding: "6px 14px",
                 opacity: safePage <= 1 ? 0.45 : 1,
                 cursor: safePage <= 1 ? "not-allowed" : "pointer"
               }}
             >
-              {text.prevPage}
+              <span>{text.prevPage}</span>
             </button>
 
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((pNum) => {
@@ -440,21 +430,7 @@ export default function BlogInteractiveCatalog({
                   type="button"
                   aria-current={isCurrent ? "page" : undefined}
                   onClick={() => handlePageChange(pNum)}
-                  style={{
-                    minWidth: 38,
-                    height: 38,
-                    borderRadius: "50%",
-                    border: isCurrent ? "none" : "1px solid rgba(11, 143, 216, 0.3)",
-                    background: isCurrent
-                      ? "linear-gradient(135deg, #0b8fd8, #075f9e)"
-                      : "rgba(255, 255, 255, 0.8)",
-                    color: isCurrent ? "#ffffff" : "#1e293b",
-                    fontWeight: isCurrent ? 700 : 500,
-                    fontSize: "14px",
-                    cursor: "pointer",
-                    boxShadow: isCurrent ? "0 4px 12px rgba(11, 143, 216, 0.3)" : "none",
-                    transition: "all 0.2s ease"
-                  }}
+                  className="rm-page-btn"
                 >
                   {pNum}
                 </button>
@@ -465,34 +441,28 @@ export default function BlogInteractiveCatalog({
               type="button"
               disabled={safePage >= totalPages}
               onClick={() => handlePageChange(safePage + 1)}
-              className="btn btn-outline-primary btn-sm"
+              className="rm-more-btn rm-more-btn-sm"
               style={{
-                borderRadius: 20,
-                padding: "6px 14px",
                 opacity: safePage >= totalPages ? 0.45 : 1,
                 cursor: safePage >= totalPages ? "not-allowed" : "pointer"
               }}
             >
-              {text.nextPage}
+              <span>{text.nextPage}</span>
             </button>
           </nav>
 
           {/* Quick Load More Button */}
           {endIdx < filtered.length && (
-            <button
-              type="button"
-              onClick={handleLoadMore}
-              className="btn btn-outline-primary"
-              style={{
-                borderRadius: 30,
-                padding: "10px 24px",
-                fontWeight: 600,
-                fontSize: "14.5px",
-                cursor: "pointer"
-              }}
-            >
-              {text.loadMore} (+{Math.min(PAGE_SIZE, filtered.length - endIdx)})
-            </button>
+            <div className="rm-more-wrap" style={{ marginTop: 4 }}>
+              <button
+                type="button"
+                onClick={handleLoadMore}
+                className="rm-more-btn"
+              >
+                <span>{text.loadMore} (+{Math.min(PAGE_SIZE, filtered.length - endIdx)})</span>
+                <span aria-hidden="true">▾</span>
+              </button>
+            </div>
           )}
 
           <div style={{ fontSize: "13px", color: "#64748b" }}>
