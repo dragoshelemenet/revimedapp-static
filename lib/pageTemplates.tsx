@@ -534,6 +534,14 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Остеохондроз позвоночника"
                },
                {
+                 "href": "/ru/sindrom-pozvonochnoy-arterii-spondilez-kishinev/",
+                 "label": "Синдром позвоночной артерии"
+               },
+               {
+                 "href": "/ru/narusheniya-pamyati-dementsiya-nevrolog-kishinev/",
+                 "label": "Нарушения памяти и деменция"
+               },
+               {
                  "href": "/ru/lechenie-skolioza-kishinev/",
                  "label": "Сколиоз и осанка"
                },
@@ -675,6 +683,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/ru/golovnye-boli-u-detey-nevrolog-kishinev/",
                  "label": "Головные боли у детей"
+               },
+               {
+                 "href": "/ru/narusheniya-sna-u-detey-nevrolog-kishinev/",
+                 "label": "Нарушения сна и ночные страхи у детей"
                },
                {
                  "href": "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/",
@@ -870,6 +882,14 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Osteocondroză cervicală"
                },
                {
+                 "href": "/spondiloza-cervicala-sindrom-artera-vertebrala-chisinau/",
+                 "label": "Spondiloză & Sindrom Arteră Vertebrală"
+               },
+               {
+                 "href": "/tulburari-de-memorie-dementa-neurolog-chisinau/",
+                 "label": "Tulburări de Memorie & Demență"
+               },
+               {
                  "href": "/scolioza-postura-copii-adulti-chisinau/",
                  "label": "Scolioză & Postură"
                },
@@ -1011,6 +1031,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/dureri-de-cap-copii-neuropediatru-chisinau/",
                  "label": "Dureri de Cap la Copii"
+               },
+               {
+                 "href": "/tulburari-de-somn-copii-neuropediatru-chisinau/",
+                 "label": "Tulburări de Somn & Pavor Nocturn Copii"
                },
                {
                  "href": "/adhd-hiperactivitate-copii-neuropediatru-chisinau/",
