@@ -114,6 +114,20 @@ export default function RecuperareComotieCerebralaTraumatismChisinauPage() {
     "label": "Completează Screening-ul Neurologic Orientativ (2 min) →",
     "desc": "Notează-ți rapid simptomele persistente înainte de consultația la Dr. Igor Revenco:"
 }}
+   researchCitations={[
+    {
+     year: "2023",
+     title: "Trauma craniocerebrală la copii: teste radioimunologice",
+     source: "IBN · Conferința USMF, ISSN 2345-1476",
+     url: "https://ibn.idsi.md/vizualizare_articol/194511"
+    },
+    {
+     year: "2022",
+     title: "Semnificația modificărilor neuroendocrine (TSH, T3, T4, cortizol) în traumatismul craniocerebral la copiii de vârstă școlară: Monografie",
+     source: "Repository USMF, ISBN 978-5-88554-160-2",
+     url: "https://repository.usmf.md/handle/20.500.12710/27457"
+    }
+   ]}
    faqs={[
     {
         "q": "Pot veni direct la Revimed PLUS+ imediat după ce m-am lovit la cap?",

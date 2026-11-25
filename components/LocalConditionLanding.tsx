@@ -36,6 +36,12 @@ import { revimedReviews } from "@/lib/revimedReviews";
   label: string;
   desc: string;
  };
+ researchCitations?: {
+  year: string;
+  title: string;
+  source: string;
+  url: string;
+ }[];
  faqs: { q: string; a: string }[];
  relatedLinks: { href: string; label: string }[];
 };
@@ -74,7 +80,18 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      },
      about: { "@id": `${siteUrl}/#medical-clinic` },
      reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
-     author: { "@id": `${siteUrl}/dr-igor-revenco/#physician` }
+     author: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
+     ...(p.researchCitations?.length
+      ? {
+         citation: p.researchCitations.map((c) => ({
+          "@type": "ScholarlyArticle",
+          name: c.title,
+          datePublished: c.year,
+          url: c.url,
+          author: { "@id": `${siteUrl}/dr-igor-revenco/#physician`, "@type": "Person", name: "Dr. Igor Revenco" }
+         }))
+        }
+      : {})
     }}
    />
    <JsonLd
@@ -334,6 +351,35 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
        </blockquote>
       ))}
      </div>
+
+     {p.researchCitations && p.researchCitations.length > 0 && (
+      <aside
+       className="rm-citable-summary"
+       style={{ marginBottom: 22 }}
+       aria-label={isRu ? "Публикации д-ра Игоря Ревенко по теме" : "Publicații ale Dr. Igor Revenco pe această temă"}
+      >
+       <div className="rm-citable-summary-head">
+        <span className="rm-citable-pill">
+         {isRu ? "Публикации д-ра Игоря Ревенко (USMF / IBN)" : "Publicații Dr. Igor Revenco (USMF / IBN)"}
+        </span>
+        <Link href={doctorHref} style={{ fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+         {isRu ? "Профиль врача →" : "Profil medic →"}
+        </Link>
+       </div>
+       <ul style={{ margin: "6px 0 0", paddingLeft: 18 }}>
+        {p.researchCitations.map((cit) => (
+         <li key={cit.url} style={{ marginBottom: 6, fontSize: "0.92rem", lineHeight: 1.5 }}>
+          <a href={cit.url} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: "#08234a" }}>
+           {cit.title}
+          </a>{" "}
+          <span style={{ color: "#486581" }}>
+           ({cit.year}, {cit.source})
+          </span>
+         </li>
+        ))}
+       </ul>
+      </aside>
+     )}
 
      <h2>{isRu ? "Частые вопросы пациентов" : "Întrebări frecvente ale pacienților"}</h2>
      {p.faqs.map((f) => (

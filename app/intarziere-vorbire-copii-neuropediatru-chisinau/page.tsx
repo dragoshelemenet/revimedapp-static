@@ -114,6 +114,14 @@ export default function IntarziereVorbireCopiiNeuropediatruChisinauPage() {
     "label": "Estimează orientativ pașii de evaluare și recuperare →",
     "desc": "Pregătește întrebările principale pentru discuția cu neuropediatrul Dr. Igor Revenco:"
 }}
+   researchCitations={[
+    {
+     year: "2024",
+     title: "Blocantul selectiv al receptorilor de glutamat (NMDA) – în terapia adjuvantă la copiii cu tulburarea spectrului autist",
+     source: "IBN · Conferința USMF, ISSN 2345-1467",
+     url: "https://ibn.idsi.md/vizualizare_articol/224130"
+    }
+   ]}
    faqs={[
     {
         "q": "Dacă copilul de 2,5 ani nu vorbește încă, este obligatoriu să fie autism?",

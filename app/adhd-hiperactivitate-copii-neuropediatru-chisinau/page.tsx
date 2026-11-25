@@ -113,6 +113,14 @@ export default function AdhdHiperactivitateCopiiNeuropediatruChisinauPage() {
     "label": "Încearcă jocul de Respirație Calmă de 3 minute împreună cu copilul →",
     "desc": "Un exercițiu simplu de seară care ajută copilul să facă tranziția spre liniște și somn:"
 }}
+   researchCitations={[
+    {
+     year: "2024",
+     title: "Blocantul selectiv al receptorilor de glutamat (NMDA) – în terapia adjuvantă la copiii cu tulburarea spectrului autist",
+     source: "IBN · Conferința USMF, ISSN 2345-1467",
+     url: "https://ibn.idsi.md/vizualizare_articol/224130"
+    }
+   ]}
    faqs={[
     {
         "q": "Dacă facem EEG, putem afla sigur dacă copilul are ADHD?",

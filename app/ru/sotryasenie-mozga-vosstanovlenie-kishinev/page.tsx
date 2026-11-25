@@ -114,6 +114,20 @@ export default function RuSotryasenieMozgaVosstanovlenieKishinevPage() {
     "label": "Пройти ориентировочный Неврологический Скрининг (2 мин) →",
     "desc": "Структурируйте сохраняющиеся жалобы перед визитом к д-ру Игорю Ревенко:"
 }}
+   researchCitations={[
+    {
+     year: "2023",
+     title: "Черепно-мозговая травма у детей: радиоиммунологические тесты (Trauma craniocerebrală la copii)",
+     source: "IBN · Конференция USMF, ISSN 2345-1476",
+     url: "https://ibn.idsi.md/vizualizare_articol/194511"
+    },
+    {
+     year: "2022",
+     title: "Значение нейроэндокринных изменений (ТТГ, Т3, Т4, кортизол) при черепно-мозговой травме у детей школьного возраста: Монография",
+     source: "Репозиторий USMF, ISBN 978-5-88554-160-2",
+     url: "https://repository.usmf.md/handle/20.500.12710/27457"
+    }
+   ]}
    faqs={[
     {
         "q": "Можно ли приехать сразу в Revimed PLUS+ в момент травмы головы?",

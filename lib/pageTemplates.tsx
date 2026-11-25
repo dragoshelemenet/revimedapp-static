@@ -1092,7 +1092,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
       <p><b>{text.contact}:</b> {site.phone} · {site.phone2}</p>
       <p><b>{text.workHours}:</b> {site.hours}</p>
       <div className="rm-quick-links-bar">
-       <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
+       <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-primary btn-sm">{lang === "ru" ? "Д-р Игорь Ревенко — профиль и публикации →" : lang === "ua" ? "Д-р Ігор Ревенко — профіль і публікації →" : lang === "en" ? "Dr. Igor Revenco — Profile & Publications →" : "Dr. Igor Revenco — Profil & Publicații →"}</Link>
        <Link href={withLang("/servicii/", lang)} className="btn btn-outline-primary btn-sm">{text.services}</Link>
        <Link href={withLang("/preturi/", lang)} className="btn btn-outline-primary btn-sm">{text.prices}</Link>
        <Link href={withLang("/contact/", lang)} className="btn btn-primary btn-sm">{text.contact}</Link>
@@ -1548,7 +1548,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
             : "Centrul Medical Revimed PLUS+ se află pe Str. Mircea cel Bătrân 13/2 (MD-2044, sectorul Ciocana, Chișinău), cu acces direct la transport public. Pentru consultațiile cu Dr. Igor Revenco, aduceți imaginile RMN/CT (CD sau film) și lista tratamentelor anterioare, dacă le aveți."}
       </p>
       <div className="rm-quick-links-bar">
-       <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-outline-primary btn-sm">Dr. Igor Revenco</Link>
+       <Link href={withLang("/dr-igor-revenco/", lang)} className="btn btn-primary btn-sm">{lang === "ru" ? "Д-р Игорь Ревенко — профиль и публикации →" : lang === "ua" ? "Д-р Ігор Ревенко — профіль і публікації →" : lang === "en" ? "Dr. Igor Revenco — Profile & Publications →" : "Dr. Igor Revenco — Profil & Publicații →"}</Link>
        <Link href={withLang("/servicii/consultatii-neurologice/", lang)} className="btn btn-outline-primary btn-sm">{lang === "ru" ? "Невролог Кишинёв" : lang === "ua" ? "Невролог Кишинів" : lang === "en" ? "Neurology" : "Consultații neurologice"}</Link>
        <Link href={withLang("/preturi/", lang)} className="btn btn-outline-primary btn-sm">{text.prices}</Link>
        <Link href="/intrebari/" className="btn btn-outline-primary btn-sm">FAQ</Link>

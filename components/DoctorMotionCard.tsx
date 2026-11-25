@@ -11,6 +11,7 @@ const doctorCopy: Record<
     role: string;
     expBadge: string;
     credits: string[];
+    cta: string;
   }
 > = {
   ro: {
@@ -22,7 +23,8 @@ const doctorCopy: Record<
       "Dr. neurochirurgie (USMF)",
       "Membru EANS (Europa)",
       "Fondator Revimed PLUS+"
-    ]
+    ],
+    cta: "Vezi profilul Dr. Igor Revenco & publicații →"
   },
   en: {
     name: "Dr. Igor Revenco",
@@ -33,7 +35,8 @@ const doctorCopy: Record<
       "PhD Neurosurgery (USMF)",
       "EANS Member (Europe)",
       "Founder, Revimed PLUS+"
-    ]
+    ],
+    cta: "View Dr. Igor Revenco’s profile & publications →"
   },
   ru: {
     name: "Д-р Игорь Ревенко",
@@ -44,7 +47,8 @@ const doctorCopy: Record<
       "Д-р нейрохирургии (USMF)",
       "Член EANS (Европа)",
       "Основатель Revimed PLUS+"
-    ]
+    ],
+    cta: "Профиль д-ра Игоря Ревенко и публикации →"
   },
   ua: {
     name: "Д-р Ігор Ревенко",
@@ -55,7 +59,8 @@ const doctorCopy: Record<
       "Д-р нейрохірургії (USMF)",
       "Член EANS (Європа)",
       "Засновник Revimed PLUS+"
-    ]
+    ],
+    cta: "Профіль д-ра Ігоря Ревенка та публікації →"
   }
 };
 
@@ -131,6 +136,19 @@ export default function DoctorMotionCard({ lang = "ro" }: { lang?: Lang }) {
           </span>
         ))}
       </div>
+
+      <span
+        className="btn btn-primary btn-sm"
+        style={{
+          marginTop: 12,
+          width: "100%",
+          justifyContent: "center",
+          textAlign: "center",
+          fontWeight: 700
+        }}
+      >
+        {copy.cta}
+      </span>
     </Link>
   );
 }
