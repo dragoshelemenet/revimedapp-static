@@ -157,6 +157,24 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "disc-herniation-l4-l5-l5-s1-non-surgical-vs-neurosurgeon-chisinau",
     ru: "gryzha-diska-l4-l5-l5-s1-bez-operacii-ili-neyrohirurg-kishinev",
     ua: "hryzha-dyska-l4-l5-l5-s1-bez-operatsiyi-chy-neyrokhirurh-kyshyniv"
+  },
+  vertigoDizzinessDifferential: {
+    ro: "ameteli-vertij-ureche-interna-vs-coloana-cervicala-neurolog-chisinau",
+    en: "dizziness-vertigo-inner-ear-vs-cervical-spine-neurologist-chisinau",
+    ru: "golovokruzhenie-vertigo-vnutrennee-uho-ili-sheya-nevrolog-kishinev",
+    ua: "zapamorochennya-vertyho-vnutrishnye-vukho-chy-shyya-nevroloh-kyshyniv"
+  },
+  chronicInsomnia3amWaking: {
+    ro: "insomnie-cronica-treziri-nocturne-fara-dependenta-electrosomn-chisinau",
+    en: "chronic-insomnia-3am-waking-non-addictive-sleep-recovery-chisinau",
+    ru: "hronicheskaya-bessonnitsa-probuzhdeniya-nochu-bez-tabletok-kishinev",
+    ua: "khronichne-bezsonnya-nichni-probudzhennya-bez-tabletok-kyshyniv"
+  },
+  handsFeetNumbnessCauses: {
+    ro: "amorteli-maini-picioare-neuropatie-b12-tunel-carpian-coloana-chisinau",
+    en: "numbness-hands-feet-neuropathy-b12-carpal-tunnel-spine-chisinau",
+    ru: "onemenie-ruk-i-nog-neyropatiya-b12-tunnelnyy-sindrom-pozvonochnik-kishinev",
+    ua: "oniminnya-ruk-i-nih-neyropatiya-b12-tunelnyy-syndrom-khrebet-kyshyniv"
   }
 };
 
