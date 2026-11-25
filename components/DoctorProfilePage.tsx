@@ -736,6 +736,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                           </a>
                           <a
                             href="https://zenodo.org/records/24531283/files/Revenco%20Igor__Carte_CleanCover.pdf?download=1"
+                            download="Igor_Revenco_Monografie_Modificari_Neuroendocrine_TCC_Copii_2022.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-outline-primary btn-sm"

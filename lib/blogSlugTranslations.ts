@@ -145,6 +145,18 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "child-head-injury-concussion-tsh-cortisol-neuroendocrine-recovery-chisinau",
     ru: "travma-golovy-u-rebenka-sotryasenie-ttg-kortizol-nevrolog-kishinev",
     ua: "travma-holovy-u-dytyny-strus-tth-kortyzol-nevroloh-kyshyniv"
+  },
+  pediatricAsdEegUsfm2024: {
+    ro: "autism-tsa-intarziere-vorbire-copii-eeg-neuropediatru-usmf-chisinau",
+    en: "autism-asd-speech-delay-children-eeg-pediatric-neurologist-chisinau",
+    ru: "autizm-ras-zaderzhka-rechi-deti-eeg-detskiy-nevrolog-kishinev",
+    ua: "autyzm-ras-zatrymka-movlennya-dity-eeg-dytyachyy-nevroloh-kyshyniv"
+  },
+  discHerniaConservativeVsSurgery: {
+    ro: "hernie-de-disc-l4-l5-l5-s1-fara-operatie-vs-neurochirurg-chisinau",
+    en: "disc-herniation-l4-l5-l5-s1-non-surgical-vs-neurosurgeon-chisinau",
+    ru: "gryzha-diska-l4-l5-l5-s1-bez-operacii-ili-neyrohirurg-kishinev",
+    ua: "hryzha-dyska-l4-l5-l5-s1-bez-operatsiyi-chy-neyrokhirurh-kyshyniv"
   }
 };
 
