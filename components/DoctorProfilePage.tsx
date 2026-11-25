@@ -82,47 +82,47 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "La Centrul Medical Revimed PLUS+, fiecare plan de tratament este stabilit strict individual. Dr. Igor Revenco analizează simptomele, istoricul medical, investigațiile anterioare, reacțiile la tratamente și obiectivele reale ale pacientului.",
       "Atunci când situația clinică permite în condiții de siguranță, pacientul poate opta între o abordare medicamentoasă clasică sau metode mai blânde, de recuperare, fizioterapie și terapie integrativă. Fiecare pas este explicat clar și se aplică exclusiv cu acordul informat al pacientului."
     ],
-    publicationsTitle: "Publicații Științifice Verificate (USMF / IBN)",
+    publicationsTitle: "Publicații științifice",
     publicationsIntro:
-      "Selecție de lucrări științifice și monografii semnate de Dr. Igor Revenco, indexate în Instrumentul Bibliometric Național (IBN IDSI) și în Repository-ul Instituțional al USMF „Nicolae Testemițanu”:",
-    publicationsLinkLabel: "Vezi publicația oficială",
+      "Lucrări publicate în cadrul USMF „Nicolae Testemițanu”, indexate în IBN și în Repository-ul USMF:",
+    publicationsLinkLabel: "Deschide publicația",
     publications: [
       {
         year: "2024",
-        type: "Articol științific · IBN IDSI",
+        type: "Articol · IBN",
         title:
           "Blocantul selectiv al receptorilor de glutamat (N-metil-D-aspartat) – în terapia adjuvantă la copiii cu tulburarea spectrului autist",
         authors: "Igor Revenco (coord. șt. Svetlana Hadjiu, USMF „Nicolae Testemițanu”)",
         venue:
-          "Conferința „Cercetarea în biomedicină și sănătate: calitate, excelență și performanță”, Ed. 4, 16–18 octombrie 2024, Chișinău, p. 457",
+          "Conferința „Cercetarea în biomedicină și sănătate”, Ed. 4, 16–18 octombrie 2024, Chișinău, p. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Studiu observațional pe 80 de copii (4–14 ani) cu tulburare de spectru autist (TSA), evaluând eficiența terapiei adjuvante cu blocant selectiv al receptorilor NMDA asupra funcțiilor cognitive, atenției, limbajului și comportamentului."
+          "Studiu clinic pe 80 de copii (4–14 ani) cu tulburări din spectrul autist privind utilizarea blocantului receptorilor NMDA ca terapie adjuvantă."
       },
       {
         year: "2023",
-        type: "Articol științific · IBN IDSI",
+        type: "Articol · IBN",
         title: "Trauma craniocerebrală la copii: teste radioimunologice",
         authors: "Igor Revenco, Svetlana Hadjiu (USMF „Nicolae Testemițanu”; IMSP Institutul Mamei și Copilului)",
         venue:
-          "Conferința „Cercetarea în biomedicină și sănătate: calitate, excelență și performanță”, Ed. 1, 18–20 octombrie 2023, Chișinău, p. 392",
+          "Conferința „Cercetarea în biomedicină și sănătate”, Ed. 1, 18–20 octombrie 2023, Chișinău, p. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
-          "Analiza dinamicii nivelului seric al TSH prin teste radioimunologice la copii cu traumatism craniocerebral (TCC), evidențiind corelația dintre modificările neuroendocrine și severitatea leziunii cerebrale."
+          "Analiza dinamicii hormonului TSH prin teste radioimunologice la copii cu traumatism craniocerebral."
       },
       {
         year: "2022",
-        type: "Monografie · Repository USMF",
+        type: "Monografie · USMF",
         title:
           "Semnificația modificărilor neuroendocrine ale complexelor hipofizartiroid-suprarenale ale TSH, T3, T4, cortizolului în traumatismul craniocerebral la copiii de vârstă școlară: Monografie",
         authors: "Igor Revenco (USMF „Nicolae Testemițanu”)",
-        venue: "Repository-ul Instituțional în Științe Medicale (IRMS), Chișinău, 2022",
+        venue: "Repository-ul Instituțional USMF, Chișinău, 2022",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Monografie dedicată diagnosticului și semnificației clinice a dereglărilor axei hipofizo-tiroido-suprarenale (TSH, T3, T4, cortizol) în traumatismele craniocerebrale la copiii de vârstă școlară."
+          "Monografie despre modificările hormonilor TSH, T3, T4 și cortizol în traumatismele craniocerebrale la copiii de vârstă școlară."
       }
     ],
     clinicTitle: "Activitate Clinică și Programări",
@@ -176,47 +176,47 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "At Revimed PLUS+ Medical Center, every care plan is tailored individually. Dr. Igor Revenco reviews symptoms, medical history, prior imaging/tests, previous treatment responses, and realistic goals for each patient.",
       "Whenever clinically safe, patients may choose between conventional medical therapy or gentler rehabilitation, physiotherapy, and integrative methods. Every step is explained clearly and carried out with the patient’s informed consent."
     ],
-    publicationsTitle: "Verified Scientific Publications (USMF / IBN)",
+    publicationsTitle: "Scientific Publications",
     publicationsIntro:
-      "Selected peer-indexed scientific papers and monographs authored by Dr. Igor Revenco in Moldova’s National Bibliometric Instrument (IBN IDSI) and the USMF Institutional Repository:",
-    publicationsLinkLabel: "View official publication",
+      "Published papers and monograph affiliated with USMF “Nicolae Testemițanu” (IBN and USMF Repository):",
+    publicationsLinkLabel: "Open publication",
     publications: [
       {
         year: "2024",
-        type: "Scientific Paper · IBN IDSI",
+        type: "Paper · IBN",
         title:
           "The selective blocker of glutamate receptors (N-methyl-D-aspartate) – in adjunctive therapy in children with autism spectrum disorder",
-        authors: "Igor Revenco (scientific advisor: Svetlana Hadjiu, USMF “Nicolae Testemițanu”)",
+        authors: "Igor Revenco (advisor: Svetlana Hadjiu, USMF “Nicolae Testemițanu”)",
         venue:
-          "Conference “Research in Biomedicine and Health: Quality, Excellence and Performance”, 4th Ed., Oct 16–18, 2024, Chișinău, p. 457",
+          "Conference “Research in Biomedicine and Health”, 4th Ed., Oct 16–18, 2024, Chișinău, p. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Observational study of 80 children aged 4–14 with autism spectrum disorder (ASD) evaluating adjunctive NMDA-receptor blocker therapy on cognition, attention, speech, and behavior."
+          "Clinical study of 80 children (aged 4–14) with autism spectrum disorder on adjunctive NMDA-receptor blocker therapy."
       },
       {
         year: "2023",
-        type: "Scientific Paper · IBN IDSI",
+        type: "Paper · IBN",
         title: "Cranio-cerebral trauma in children: radioimmunological tests",
         authors: "Igor Revenco, Svetlana Hadjiu (USMF “Nicolae Testemițanu”; Mother and Child Institute)",
         venue:
-          "Conference “Research in Biomedicine and Health: Quality, Excellence and Performance”, 1st Ed., Oct 18–20, 2023, Chișinău, p. 392",
+          "Conference “Research in Biomedicine and Health”, 1st Ed., Oct 18–20, 2023, Chișinău, p. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
-          "Radioimmunological analysis of serum TSH dynamics in pediatric traumatic brain injury (TBI), demonstrating the correlation between neuroendocrine alterations and trauma severity."
+          "Radioimmunological analysis of serum TSH dynamics in children with craniocerebral trauma."
       },
       {
         year: "2022",
-        type: "Monograph · USMF Repository",
+        type: "Monograph · USMF",
         title:
           "The significance of neuroendocrine changes in pituitary-thyroid-adrenal complexes (TSH, T3, T4, cortisol) in craniocerebral trauma in school-age children: Monograph",
         authors: "Igor Revenco (USMF “Nicolae Testemițanu”)",
-        venue: "Institutional Repository in Medical Sciences (IRMS), Chișinău, 2022",
+        venue: "USMF Institutional Repository, Chișinău, 2022",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Clinical monograph examining diagnostic and prognostic neuroendocrine alterations of the pituitary-thyroid-adrenal axis (TSH, T3, T4, cortisol) in pediatric craniocerebral trauma."
+          "Monograph on TSH, T3, T4, and cortisol changes in school-age children with craniocerebral trauma."
       }
     ],
     clinicTitle: "Clinical Practice & Appointments",
@@ -270,47 +270,47 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "В Revimed PLUS+ план лечения подбирается индивидуально с учётом симптомов, анамнеза, обследований, реакций на предыдущую терапию и целей пациента.",
       "Когда состояние позволяет, пациент может выбрать классический подход или более щадящие методы физиотерапии и восстановления. Каждый этап подробно объясняется и выполняется только с согласия пациента."
     ],
-    publicationsTitle: "Подтверждённые научные публикации (USMF / IBN)",
+    publicationsTitle: "Научные публикации",
     publicationsIntro:
-      "Избранные научные работы и монография д-ра Игоря Ревенко, индексированные в Национальном библиометрическом инструменте Молдовы (IBN IDSI) и институциональном репозитории USMF им. Н. Тестемицану:",
-    publicationsLinkLabel: "Открыть официальную публикацию",
+      "Работы, опубликованные в рамках USMF им. Н. Тестемицану (архивы IBN и репозиторий USMF):",
+    publicationsLinkLabel: "Открыть публикацию",
     publications: [
       {
         year: "2024",
-        type: "Научная статья · IBN IDSI",
+        type: "Статья · IBN",
         title:
           "Селективный блокатор глутаматных (NMDA) рецепторов в адъювантной терапии у детей с расстройством аутистического спектра",
         authors: "Игорь Ревенко (науч. рук. Светлана Хаджиу, USMF им. Н. Тестемицану)",
         venue:
-          "Конференция «Cercetarea în biomedicină și sănătate: calitate, excelență și performanță», 4-е изд., 16–18 октября 2024, Кишинёв, с. 457",
+          "Конференция «Cercetarea în biomedicină și sănătate», 4-е изд., 16–18 октября 2024, Кишинёв, с. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Наблюдательное исследование с участием 80 детей (4–14 лет) с РАС: оценка эффективности адъювантной терапии селективным блокатором NMDA-рецепторов в отношении когнитивных функций, внимания, речи и поведения."
+          "Клиническое исследование с участием 80 детей (4–14 лет) с расстройством аутистического спектра о применении блокатора NMDA-рецепторов в адъювантной терапии."
       },
       {
         year: "2023",
-        type: "Научная статья · IBN IDSI",
+        type: "Статья · IBN",
         title: "Черепно-мозговая травма у детей: радиоиммунологические тесты",
         authors: "Игорь Ревенко, Светлана Хаджиу (USMF им. Н. Тестемицану; Институт матери и ребёнка)",
         venue:
-          "Конференция «Cercetarea în biomedicină și sănătate: calitate, excelență și performanță», 1-е изд., 18–20 октября 2023, Кишинёв, с. 392",
+          "Конференция «Cercetarea în biomedicină și sănătate», 1-е изд., 18–20 октября 2023, Кишинёв, с. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
-          "Радиоиммунологический анализ динамики сывороточного ТТГ у детей с черепно-мозговой травмой (ЧМТ), показавший корреляцию нейроэндокринных изменений с тяжестью травмы."
+          "Анализ динамики уровня ТТГ с помощью радиоиммунологических тестов у детей с черепно-мозговой травмой."
       },
       {
         year: "2022",
-        type: "Монография · Репозиторий USMF",
+        type: "Монография · USMF",
         title:
           "Значение нейроэндокринных изменений гипофизарно-тиреоидно-надпочечниковых комплексов (ТТГ, Т3, Т4, кортизол) при черепно-мозговой травме у детей школьного возраста: Монография",
         authors: "Игорь Ревенко (USMF им. Н. Тестемицану)",
-        venue: "Институциональный репозиторий медицинских наук (IRMS), Кишинёв, 2022",
+        venue: "Репозиторий USMF, Кишинёв, 2022",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Научная монография, посвящённая диагностической и клинической значимости нарушений гипофизарно-тиреоидно-надпочечниковой оси (ТТГ, Т3, Т4, кортизол) при детских черепно-мозговых травмах."
+          "Монография об изменениях гормонов ТТГ, Т3, Т4 и кортизола при черепно-мозговых травмах у детей школьного возраста."
       }
     ],
     clinicTitle: "Клиническая практика и запись",
@@ -364,47 +364,47 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       "У Revimed PLUS+ план лікування підбирається індивідуально з урахуванням симптомів, анамнезу, обстежень, реакцій на попередню терапію та цілей пацієнта.",
       "Коли стан дозволяє, пацієнт може обрати класичний підхід або м’якші методи фізіотерапії та відновлення. Кожен етап детально пояснюється і проводиться лише за згодою пацієнта."
     ],
-    publicationsTitle: "Підтверджені наукові публікації (USMF / IBN)",
+    publicationsTitle: "Наукові публікації",
     publicationsIntro:
-      "Вибрані наукові праці та монографія д-ра Ігоря Ревенка, індексовані в Національному бібліометричному інструменті Молдови (IBN IDSI) та інституційному репозиторії USMF ім. М. Тестеміцану:",
-    publicationsLinkLabel: "Відкрити офіційну публікацію",
+      "Праці, опубліковані в межах USMF ім. М. Тестеміцану (архіви IBN та репозиторій USMF):",
+    publicationsLinkLabel: "Відкрити публікацію",
     publications: [
       {
         year: "2024",
-        type: "Наукова стаття · IBN IDSI",
+        type: "Стаття · IBN",
         title:
           "Селективний блокатор глутаматних (NMDA) рецепторів в ад’ювантній терапії у дітей із розладом аутистичного спектра",
         authors: "Ігор Ревенко (наук. кер. Світлана Хаджіу, USMF ім. М. Тестеміцану)",
         venue:
-          "Конференція «Cercetarea în biomedicină și sănătate: calitate, excelență și performanță», 4-те вид., 16–18 жовтня 2024, Кишинів, с. 457",
+          "Конференція «Cercetarea în biomedicină și sănătate», 4-те вид., 16–18 жовтня 2024, Кишинів, с. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Спостережне дослідження 80 дітей (4–14 років) із РАС щодо оцінки ефективності ад’ювантної терапії селективним блокатором NMDA-рецепторів для когнітивних функцій, уваги, мовлення та поведінки."
+          "Клінічне дослідження 80 дітей (4–14 років) із розладом аутистичного спектра щодо застосування блокатора NMDA-рецепторів в ад’ювантній терапії."
       },
       {
         year: "2023",
-        type: "Наукова стаття · IBN IDSI",
+        type: "Стаття · IBN",
         title: "Черепно-мозкова травма у дітей: радіоімунологічні тести",
         authors: "Ігор Ревенко, Світлана Хаджіу (USMF ім. М. Тестеміцану; Інститут матері та дитини)",
         venue:
-          "Конференція «Cercetarea în biomedicină și sănătate: calitate, excelență și performanță», 1-ше вид., 18–20 жовтня 2023, Кишинів, с. 392",
+          "Конференція «Cercetarea în biomedicină și sănătate», 1-ше вид., 18–20 жовтня 2023, Кишинів, с. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
-          "Радіоімунологічний аналіз динаміки сироваткового ТТГ у дітей із черепно-мозковою травмою (ЧМТ), що підтвердив кореляцію нейроендокринних змін із тяжкістю травми."
+          "Аналіз динаміки рівня ТТГ за допомогою радіоімунологічних тестів у дітей із черепно-мозковою травмою."
       },
       {
         year: "2022",
-        type: "Монографія · Репозиторій USMF",
+        type: "Монографія · USMF",
         title:
           "Значення нейроендокринних змін гіпофізарно-тиреоїдно-наднирникових комплексів (ТТГ, Т3, Т4, кортизол) при черепно-мозковій травмі у дітей шкільного віку: Монографія",
         authors: "Ігор Ревенко (USMF ім. М. Тестеміцану)",
-        venue: "Інституційний репозиторій медичних наук (IRMS), Кишинів, 2022",
+        venue: "Репозиторій USMF, Кишинів, 2022",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Наукова монографія про діагностичне й клінічне значення порушень гіпофізарно-тиреоїдно-наднирникової осі (ТТГ, Т3, Т4, кортизол) при дитячих черепно-мозкових травмах."
+          "Монографія про зміни гормонів ТТГ, Т3, Т4 і кортизолу при черепно-мозкових травмах у дітей шкільного віку."
       }
     ],
     clinicTitle: "Клінічна практика та запис",
