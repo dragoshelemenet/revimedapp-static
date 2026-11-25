@@ -6,12 +6,20 @@ import type { Lang } from "@/lib/i18n";
 import { makeMetadata } from "@/lib/seo";
 import { getStaticPostBySlug } from "@/lib/staticBlogPosts";
 
-export function blogMetadata(lang: Lang, slug: string) {
+ export function blogMetadata(lang: Lang, slug: string) {
  const post = getStaticPostBySlug(slug, lang);
  if (!post) notFound();
+ const isCanonicalAlias = slug !== post.slug;
  // Posts have independent translated slugs; do not invent translation pairs.
  const metadata = makeMetadata({ lang, path: `/blog/${post.slug}`, title: post.title,
   description: post.excerpt, image: post.image, localized: false });
+ if (isCanonicalAlias) {
+  return {
+   ...metadata,
+   robots: { index: false, follow: true },
+   openGraph: { ...metadata.openGraph, type: "article" as const }
+  };
+ }
  const languages: Record<string, string> = {};
  for (const target of ["ro", "en", "ru", "ua"] as const) {
   const translated = getStaticPostBySlug(getTranslatedBlogSlug(post.slug, target), target);

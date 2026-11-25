@@ -76,7 +76,7 @@ export default function VideoGalleryDropdown({
             {videos.map((video) => {
               const id = getYouTubeId(video.embed);
               const isPlaying = playingId === video.embed;
-              const thumb = id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : "";
+              const thumb = id ? `https://i.ytimg.com/vi_webp/${id}/hqdefault.webp` : "";
 
               return (
                 <article className="rm-video-card" key={video.embed} data-glass-card>

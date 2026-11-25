@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHeading from "@/components/PageHeading";
+import LiteYouTubeEmbed from "@/components/LiteYouTubeEmbed";
 import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import { JsonLd, absoluteUrl, breadcrumbJsonLd, makeMetadata, siteUrl } from "@/lib/seo";
 
@@ -22,7 +23,7 @@ const faqs = [
  },
  {
   q: "Câte ședințe de Electrosomn sunt recomandate și cât durează o ședință?",
-  a: "Primele 2–3 ședințe de adaptare durează 20–30 de minute, crescând treptat până la 45–60 de minute. Un curs complet cuprinde de regulă 5–12 ședințe stabilite individual de medic. Preț: 150 MDL/oră."
+  a: "Primele 2–3 ședințe de adaptare durează 20–30 de minute, crescând treptat în funcție de recomandarea medicului. Un curs complet cuprinde de regulă 5–12 ședințe stabilite individual. Tarif orientativ: 100 MDL / 30 min."
  },
  {
   q: "Care sunt contraindicațiile terapiei prin Electrosomn?",
@@ -43,7 +44,7 @@ export default function ElectrosomnChisinauPage() {
     data={{
      "@context": "https://schema.org",
      "@type": "VideoObject",
-     name: "Terapia Electrosomn în Chișinău (150 MDL) — Tratament Insomnie, Stres & Migrene | Revimed PLUS+",
+     name: "Terapia Electrosomn în Chișinău (100 MDL / 30 min) — Tratament Insomnie, Stres & Migrene | Revimed PLUS+",
      description: "Prezentarea aparatului fizioterapeutic Electrosomn-5 (ES-10-5) la Centrul Medical Revimed PLUS+ din Chișinău (Ciocana): indicații, cum decurge ședința, Dr. Igor Revenco și prețuri 2026.",
      thumbnailUrl: absoluteUrl("/images/equipment/electrosomn-5-es-10-5.webp"),
      uploadDate: "2026-11-21T20:43:00+02:00",
@@ -79,20 +80,13 @@ export default function ElectrosomnChisinauPage() {
        <span>Pe scurt — date cheie și prețuri</span>
        <span>Actualizat medical: Noiembrie 2026</span>
       </div>
-      <p style={{ margin: 0 }}>Terapia Electrosomn la Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2) costă 150 MDL/oră și se efectuează pe aparate medicale dedicate (Electrosomn-4T, Electrosomn-5, Transair TES, Bi-LENAR) după evaluare neurologică (500 MDL) cu Dr. Igor Revenco. Procedura este neinvazivă și recomandată pentru insomnie, stres cronic, migrene și distonie neurovegetativă. Programări: 022 60 50 60.</p>
+      <p style={{ margin: 0 }}>Terapia Electrosomn la Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2) are tariful orientativ de 100 MDL / 30 min și se efectuează pe aparate medicale dedicate (Electrosomn-4T, Electrosomn-5, Transair TES, Bi-LENAR) după evaluare neurologică (500 MDL) cu Dr. Igor Revenco. Procedura este neinvazivă și recomandată pentru insomnie, stres cronic, migrene și distonie neurovegetativă. Programări: 022 60 50 60.</p>
      </aside>
      <h2>Prezentare video — Aparatul Electrosomn-5 la Revimed PLUS+ Chișinău</h2>
-     <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", borderRadius: 18, overflow: "hidden", marginBottom: 22, border: "1px solid rgba(11, 143, 216, 0.22)" }}>
-      <iframe
-       src="https://www.youtube-nocookie.com/embed/6GGtiONz4pE"
-       title="Terapia Electrosomn în Chișinău (150 MDL) — Revimed PLUS+"
-       loading="lazy"
-       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-       referrerPolicy="strict-origin-when-cross-origin"
-       allowFullScreen
-       style={{ width: "100%", height: "100%", border: 0 }}
-      />
-     </div>
+     <LiteYouTubeEmbed
+      videoId="6GGtiONz4pE"
+      title="Terapia Electrosomn în Chișinău (100 MDL / 30 min) — Revimed PLUS+"
+     />
      <h2>Indicații frecvente pentru Electrosomn și stimulare transcraniană</h2>
      <ul>
       <li>Insomnie funcțională, adormire dificilă, treziri nocturne și somn superficial;</li>
@@ -109,7 +103,7 @@ export default function ElectrosomnChisinauPage() {
      </ul>
      <h2>Diferența dintre Electrosomn și Transair TES (stimularea endorfinelor)</h2>
      <p>La Revimed PLUS+ dispunem atât de linia clasică <strong>Electrosomn (3, 4T, 5)</strong>, cât și de aparatele de electroanalgezie și stimulare transcraniană <strong>Transair-01P / 01S / 04 / 05, Etrans-1/2/3, Bi-LENAR și MDM-K</strong>. În timp ce Electrosomnul folosește frecvențe joase adaptate fazei de relaxare și somn (prin electrozi aplicați fronto-mastoidian sau oculo-mastoidian pe tampoane umezite), terapia <strong>Transair TES</strong> utilizează un regim selectiv de <strong>60–100 Hz</strong> care stimulează sinteza naturală de <strong>β-endorfine și serotonină</strong> în trunchiul cerebral — cu efect analgezic, anti-stres și vasocorector demonstrat clinic.</p>
-     <h2>Protocolul ședinței și siguranța medicală (150 MDL/oră)</h2>
+     <h2>Protocolul ședinței și siguranța medicală (100 MDL / 30 min)</h2>
      <p>Primele 2–3 ședințe au rol de adaptare și durează <strong>20–30 de minute</strong>, după care durata crește la <strong>45–60 de minute</strong> în funcție de răspunsul pacientului. Înainte de începerea cursului, Dr. Igor Revenco verifică absența contraindicațiilor locale (afecțiuni inflamatorii oculare, glaucom, miopie severă sau dermatită facială — situații în care se evită montajul ocular sau se alege o altă procedură fizioterapeutică).</p>
      <h2>Întrebări frecvente — Electrosomn Chișinău</h2>
      {faqs.map((f) => (
