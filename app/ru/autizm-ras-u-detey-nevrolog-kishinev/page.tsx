@@ -44,10 +44,10 @@ export default function Page() {
       equipmentHeading="Щадящая диагностика и процедуры поддержки в клинике"
       equipmentCards={[
         {
-          slug: "eeg-19-canale",
-          title: "Детская ЭЭГ 19 каналов",
-          image: "/images/equipment/eeg.webp",
-          desc: "Безболезненная оценка электрической активности мозга и исключение скрытых разрядов (1600 MDL)."
+          slug: "rheotest",
+          title: "Детская ЭЭГ 19 каналов и RHEOTEST",
+          image: "/images/equipment/rheotest.webp",
+          desc: "Безболезненная оценка электрической активности мозга (ЭЭГ 1600 MDL) и сосудов без облучения (500 MDL)."
         },
         {
           slug: "electrosomn-4t",
@@ -56,10 +56,10 @@ export default function Page() {
           desc: "Мягкие нелекарственные методы для сна и снижения возбудимости по назначению врача (100 MDL / 30 мин)."
         },
         {
-          slug: "rheotest",
-          title: "RHEOTEST сосудов мозга",
-          image: "/images/equipment/rheotest.webp",
-          desc: "Неинвазивная оценка мозгового кровообращения без боли и облучения (500 MDL)."
+          slug: "bi-lenar",
+          title: "Би-ЛЕНАР",
+          image: "/images/equipment/bi-lenar.webp",
+          desc: "Снижение эмоционального напряжения и дневной гипервозбудимости по назначению невролога (100 MDL / 30 мин)."
         }
       ]}
       customDecisionTable={{

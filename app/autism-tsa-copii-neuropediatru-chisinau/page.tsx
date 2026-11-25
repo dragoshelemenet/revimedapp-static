@@ -44,10 +44,10 @@ export default function Page() {
       equipmentHeading="Investigații neinvazive și suport blând disponibile în clinică"
       equipmentCards={[
         {
-          slug: "eeg-19-canale",
-          title: "EEG Pediatric 19 Canale",
-          image: "/images/equipment/eeg.webp",
-          desc: "Înregistrare neinvazivă a activității cerebrale pentru excluderea descărcărilor subclinice (1600 MDL)."
+          slug: "rheotest",
+          title: "EEG Pediatric 19 Canale & RHEOTEST",
+          image: "/images/equipment/rheotest.webp",
+          desc: "Înregistrare neinvazivă a activității cerebrale (EEG 1600 MDL) și evaluare vasculară fără durere (500 MDL)."
         },
         {
           slug: "electrosomn-4t",
@@ -56,10 +56,10 @@ export default function Page() {
           desc: "Proceduri blânde pentru somn, hiperexcitabilitate și autoreglare nervoasă, la indicația medicului (100 MDL / 30 min)."
         },
         {
-          slug: "rheotest",
-          title: "RHEOTEST Vascular",
-          image: "/images/equipment/rheotest.webp",
-          desc: "Evaluare neinvazivă a circulației cerebrale fără durere sau radiații (500 MDL)."
+          slug: "bi-lenar",
+          title: "Bi-LENAR",
+          image: "/images/equipment/bi-lenar.webp",
+          desc: "Reducerea tensiunii emoționale și a hiperexcitabilității diurne, la recomandarea neuropediatru (100 MDL / 30 min)."
         }
       ]}
       customDecisionTable={{
