@@ -137,6 +137,7 @@ export default function RuZaderzhkaRechiURebenkaNevrologKishinevPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/ru/autizm-ras-u-detey-nevrolog-kishinev/", label: "Аутизм (РАС) и ЗПРР — Невролог" },
     { href: "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/", label: "СДВГ у детей и ЭЭГ" },
     {
         "href": "/ru/detskiy-nevrolog-kishinev/",

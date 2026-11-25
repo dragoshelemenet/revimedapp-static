@@ -66,6 +66,7 @@ export default function Page() {
     { q: "Где находится клиника?", a: "Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2." }
    ]}
    relatedLinks={[
+    { href: "/ru/autizm-ras-u-detey-nevrolog-kishinev/", label: "Аутизм (РАС) и ЗПРР — Невролог" },
     { href: "/ru/blog/nervnye-tiki-gipervozbudimost-u-detey-eeg-detskiy-nevrolog-kishinev/", label: "Статья: Тики и возбудимость у детей" },
     { href: "/ru/blog/logonevroz-zaikanie-sdvg-trevozhnost-u-detey-eeg-elektroson-kishinev/", label: "Статья: Логоневроз и СДВГ" },
     { href: "/ru/eeg-kishinev/", label: "ЭЭГ детям (1600 MDL)" },

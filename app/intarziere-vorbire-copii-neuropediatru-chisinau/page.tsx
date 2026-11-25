@@ -137,6 +137,7 @@ export default function IntarziereVorbireCopiiNeuropediatruChisinauPage() {
     }
 ]}
    relatedLinks={[
+    { href: "/autism-tsa-copii-neuropediatru-chisinau/", label: "Autism (TSA) — Evaluare Neuropediatrică" },
     { href: "/adhd-hiperactivitate-copii-neuropediatru-chisinau/", label: "ADHD & Hiperactivitate Copii" },
     {
         "href": "/neuropediatru-chisinau/",

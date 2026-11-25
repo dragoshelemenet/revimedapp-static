@@ -657,6 +657,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Задержка речи у ребёнка (ЗРР)"
                },
                {
+                 "href": "/ru/autizm-ras-u-detey-nevrolog-kishinev/",
+                 "label": "Аутизм (РАС) и ЗПРР — Невролог"
+               },
+               {
                  "href": "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/",
                  "label": "СДВГ и гиперактивность у детей"
                },
@@ -963,6 +967,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/intarziere-vorbire-copii-neuropediatru-chisinau/",
                  "label": "Întârziere de Vorbire la Copii"
+               },
+               {
+                 "href": "/autism-tsa-copii-neuropediatru-chisinau/",
+                 "label": "Autism (TSA) — Evaluare Neuropediatrică"
                },
                {
                  "href": "/adhd-hiperactivitate-copii-neuropediatru-chisinau/",
