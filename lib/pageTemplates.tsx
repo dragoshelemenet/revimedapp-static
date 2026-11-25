@@ -32,6 +32,7 @@ import IconVisual from "@/components/IconVisual";
 import HomeCTA from "@/components/HomeCTA";
 import { getLocalizedServices } from "@/lib/servicesLocalized";
 import HomeStats from "@/components/HomeStats";
+import SymptomDiagnosticFinder from "@/components/SymptomDiagnosticFinder";
 import { getRelatedBlogPostsForPost, getRelatedClinicalPagesForPost } from "@/lib/topicClusterLinks";
 
 function renderBlogContent(content: string) {
@@ -291,6 +292,8 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
    </section>
 
    <HomeStats lang={lang} />
+
+   <SymptomDiagnosticFinder lang={lang} />
 
    <section className="rmSection rm-home-services-section">
     <div className="rmShell">
