@@ -587,6 +587,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "ВСД и тест ВНС РУНО"
                },
                {
+                 "href": "/ru/panicheskie-ataki-trevoga-nevrolog-kishinev/",
+                 "label": "Панические атаки и тревога"
+               },
+               {
                  "href": "/ru/hronicheskaya-ustalost-vygoranie-biofidbek-kishinev/",
                  "label": "Хроническая усталость и Биофидбек"
                },
@@ -683,6 +687,14 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/ru/bolezn-parkinsona-tremor-kishinev/",
                  "label": "Болезнь Паркинсона и тремор"
+               },
+               {
+                 "href": "/ru/essentsialnyy-tremor-drozh-v-rukah-nevrolog-kishinev/",
+                 "label": "Эссенциальный тремор (дрожь в руках)"
+               },
+               {
+                 "href": "/ru/nevrit-litsevogo-nerva-paralich-bella-kishinev/",
+                 "label": "Неврит лицевого нерва (паралич Белла)"
                },
                {
                  "href": "/ru/neyropsihologicheskoe-obsledovanie-pamyat-mmpi-kishinev/",
@@ -897,6 +909,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/distonie-neurovegetativa-chisinau/",
                  "label": "Distonie Neurovegetativă & RUNO"
+               },
+               {
+                 "href": "/atacuri-de-panica-anxietate-neurolog-chisinau/",
+                 "label": "Atacuri de Panică & Anxietate"
                },
                {
                  "href": "/oboseala-cronica-burnout-biofeedback-chisinau/",
