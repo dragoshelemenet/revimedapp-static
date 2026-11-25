@@ -124,8 +124,8 @@ export default function RecuperareComotieCerebralaTraumatismChisinauPage() {
     {
      year: "2022",
      title: "Semnificația modificărilor neuroendocrine (TSH, T3, T4, cortizol) în traumatismul craniocerebral la copiii de vârstă școlară: Monografie (Acces liber PDF)",
-     source: "DOI 10.5281/zenodo.24531283 · ISBN 978-5-88554-160-2",
-     url: "https://doi.org/10.5281/zenodo.24531283"
+     source: "DOI 10.5281/zenodo.24532588 · ISBN 978-5-88554-160-2",
+     url: "https://doi.org/10.5281/zenodo.24532588"
     }
    ]}
    faqs={[

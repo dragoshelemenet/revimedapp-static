@@ -121,7 +121,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
           "Semnificația modificărilor neuroendocrine ale complexelor hipofizartiroid-suprarenale ale TSH, T3, T4, cortizolului în traumatismul craniocerebral la copiii de vârstă școlară: Monografie",
         authors: "Igor Revenco (USMF „Nicolae Testemițanu”)",
         venue: "Chișinău, 2022 · 158 p., 390 referințe bibliografice · Repository USMF",
-        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24531283",
+        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24532588",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
           "Monografie despre modificările hormonilor TSH, T3, T4 și cortizol în traumatismele craniocerebrale la copiii de vârstă școlară.",
@@ -218,7 +218,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
           "The significance of neuroendocrine changes in pituitary-thyroid-adrenal complexes (TSH, T3, T4, cortisol) in craniocerebral trauma in school-age children: Monograph",
         authors: "Igor Revenco (USMF “Nicolae Testemițanu”)",
         venue: "Chișinău, 2022 · 158 pp., 390 references · USMF Institutional Repository",
-        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24531283",
+        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24532588",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
           "Monograph on TSH, T3, T4, and cortisol changes in school-age children with craniocerebral trauma.",
@@ -315,7 +315,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
           "Значение нейроэндокринных изменений гипофизарно-тиреоидно-надпочечниковых комплексов (ТТГ, Т3, Т4, кортизол) при черепно-мозговой травме у детей школьного возраста: Монография",
         authors: "Игорь Ревенко (USMF им. Н. Тестемицану)",
         venue: "Кишинёв, 2022 · 158 с., 390 источников · Репозиторий USMF",
-        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24531283",
+        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24532588",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
           "Монография об изменениях гормонов ТТГ, Т3, Т4 и кортизола при черепно-мозговых травмах у детей школьного возраста.",
@@ -412,7 +412,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
           "Значення нейроендокринних змін гіпофізарно-тиреоїдно-наднирникових комплексів (ТТГ, Т3, Т4, кортизол) при черепно-мозковій травмі у дітей шкільного віку: Монографія",
         authors: "Ігор Ревенко (USMF ім. М. Тестеміцану)",
         venue: "Кишинів, 2022 · 158 с., 390 джерел · Репозиторій USMF",
-        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24531283",
+        identifier: "ISBN 978-5-88554-160-2 · DOI 10.5281/zenodo.24532588",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
           "Монографія про зміни гормонів ТТГ, Т3, Т4 і кортизолу при черепно-мозкових травмах у дітей шкільного віку.",
@@ -522,8 +522,8 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
         image: absoluteUrl("/images/monografie-igor-revenco-2022.webp"),
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         sameAs: [
-          "https://doi.org/10.5281/zenodo.24531283",
-          "https://zenodo.org/records/24531283"
+          "https://doi.org/10.5281/zenodo.24532588",
+          "https://zenodo.org/records/24532588"
         ],
         publisher: {
           "@type": "EducationalOrganization",
@@ -721,7 +721,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                       {pub.coverImage ? (
                         <>
                           <a
-                            href="https://doi.org/10.5281/zenodo.24531283"
+                            href="https://doi.org/10.5281/zenodo.24532588"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary btn-sm"
@@ -735,7 +735,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                                   : "Citește cartea (DOI · Zenodo) ↗"}
                           </a>
                           <a
-                            href="https://zenodo.org/records/24531283/files/Revenco%20Igor__Carte_CleanCover.pdf?download=1"
+                            href="https://zenodo.org/records/24532588/files/Igor_Revenco_Monografie_Modificari_Neuroendocrine_TCC_Copii_2022.pdf?download=1"
                             download="Igor_Revenco_Monografie_Modificari_Neuroendocrine_TCC_Copii_2022.pdf"
                             target="_blank"
                             rel="noopener noreferrer"

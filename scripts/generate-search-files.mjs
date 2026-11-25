@@ -166,7 +166,7 @@ const llmsTxt = [
   '- **Legal Entity**: S.R.L. „REVIMED PLUS”, IDNO 1011600011964 (registered 31.03.2011, Republic of Moldova)',
   '- **Dr. Igor Revenco**: Medic neurolog, neurochirurg și neuropediatru de categorie superioară, doctor în neurochirurgie (USMF „Nicolae Testemițanu”), membru al Asociației Europene de Neurochirurgie (EANS), 35+ ani experiență clinică.',
   '- **ORCID iD**: https://orcid.org/0009-0005-9098-8175',
-  '- **Monografie USMF (2022, ISBN 978-5-88554-160-2, DOI 10.5281/zenodo.24531283, 158 p.)**: Semnificația modificărilor neuroendocrine ale complexelor hipofizar-tiroid-suprarenale (TSH, T3, T4, cortizol) în traumatismul craniocerebral la copiii de vârstă școlară — https://doi.org/10.5281/zenodo.24531283 · https://repository.usmf.md/handle/20.500.12710/27457',
+  '- **Monografie USMF (2022, ISBN 978-5-88554-160-2, DOI 10.5281/zenodo.24532588, 158 p.)**: Semnificația modificărilor neuroendocrine ale complexelor hipofizar-tiroid-suprarenale (TSH, T3, T4, cortizol) în traumatismul craniocerebral la copiii de vârstă școlară — https://doi.org/10.5281/zenodo.24532588 · https://repository.usmf.md/handle/20.500.12710/27457',
   '- **Publicații IBN IDSI**: Terapia adjuvantă cu blocant NMDA în TSA la copii (2024, ISSN 2345-1467, https://ibn.idsi.md/vizualizare_articol/224130) · Trauma craniocerebrală la copii: teste radioimunologice TSH (2023, ISSN 2345-1476, https://ibn.idsi.md/vizualizare_articol/194511)',
   `- Physician Profile (RO): ${new URL('/dr-igor-revenco/', origin).href}`,
   `- Physician Profile (RU): ${new URL('/ru/dr-igor-revenco/', origin).href}`,

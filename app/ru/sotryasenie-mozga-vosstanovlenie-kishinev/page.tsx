@@ -124,8 +124,8 @@ export default function RuSotryasenieMozgaVosstanovlenieKishinevPage() {
     {
      year: "2022",
      title: "Значение нейроэндокринных изменений (ТТГ, Т3, Т4, кортизол) при черепно-мозговой травме у детей школьного возраста: Монография (PDF, открытый доступ)",
-     source: "DOI 10.5281/zenodo.24531283 · ISBN 978-5-88554-160-2",
-     url: "https://doi.org/10.5281/zenodo.24531283"
+     source: "DOI 10.5281/zenodo.24532588 · ISBN 978-5-88554-160-2",
+     url: "https://doi.org/10.5281/zenodo.24532588"
     }
    ]}
    faqs={[
