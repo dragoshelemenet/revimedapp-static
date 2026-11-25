@@ -502,6 +502,14 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Грыжа диска без операции"
                },
                {
+                 "href": "/ru/lyumbago-prostrel-v-poyasnitse-kishinev/",
+                 "label": "Люмбаго и прострел в спине"
+               },
+               {
+                 "href": "/ru/bol-v-pleche-periartroz-pleksit-kishinev/",
+                 "label": "Боль в плече (периартроз, плексит)"
+               },
+               {
                  "href": "/ru/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev/",
                  "label": "Протрузия L4–L5 / L5–S1 и стеноз"
                },
@@ -665,6 +673,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                  "label": "Аутизм (РАС) и ЗПРР — Невролог"
                },
                {
+                 "href": "/ru/golovnye-boli-u-detey-nevrolog-kishinev/",
+                 "label": "Головные боли у детей"
+               },
+               {
                  "href": "/ru/sdvg-giperaktivnost-u-detey-nevrolog-kishinev/",
                  "label": "СДВГ и гиперактивность у детей"
                },
@@ -824,6 +836,14 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/hernie-de-disc-chisinau/",
                  "label": "Hernie de disc fără operație"
+               },
+               {
+                 "href": "/lumbago-blocaj-spate-acut-chisinau/",
+                 "label": "Lumbago & Blocaj Acut de Spate"
+               },
+               {
+                 "href": "/durere-umar-periartrita-plexita-chisinau/",
+                 "label": "Durere de Umăr & Periartrită"
                },
                {
                  "href": "/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/",
@@ -987,6 +1007,10 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
                {
                  "href": "/autism-tsa-copii-neuropediatru-chisinau/",
                  "label": "Autism (TSA) — Evaluare Neuropediatrică"
+               },
+               {
+                 "href": "/dureri-de-cap-copii-neuropediatru-chisinau/",
+                 "label": "Dureri de Cap la Copii"
                },
                {
                  "href": "/adhd-hiperactivitate-copii-neuropediatru-chisinau/",
