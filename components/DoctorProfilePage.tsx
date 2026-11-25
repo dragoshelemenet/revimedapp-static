@@ -14,6 +14,8 @@ type PublicationItem = {
   identifier: string;
   url: string;
   summary: string;
+  coverImage?: string;
+  reviewers?: string;
 };
 
 type ProfileCopy = {
@@ -114,15 +116,18 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       },
       {
         year: "2022",
-        type: "Monografie · USMF",
+        type: "Monografie · USMF · 158 pag.",
         title:
           "Semnificația modificărilor neuroendocrine ale complexelor hipofizartiroid-suprarenale ale TSH, T3, T4, cortizolului în traumatismul craniocerebral la copiii de vârstă școlară: Monografie",
         authors: "Igor Revenco (USMF „Nicolae Testemițanu”)",
-        venue: "Repository-ul Instituțional USMF, Chișinău, 2022",
+        venue: "Chișinău, 2022 · 158 p., 390 referințe bibliografice · Repository USMF",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Monografie despre modificările hormonilor TSH, T3, T4 și cortizol în traumatismele craniocerebrale la copiii de vârstă școlară."
+          "Monografie despre modificările hormonilor TSH, T3, T4 și cortizol în traumatismele craniocerebrale la copiii de vârstă școlară.",
+        coverImage: "/images/monografie-igor-revenco-2022.webp",
+        reviewers:
+          "Conducător șt.: E. Tofanica (dr. hab.) · Consultant șt.: Acad. D. German · Recenzenți USMF: G. Zapuhlîh (dr. hab., Director IMSP INN), I. Iliciuc (prof. univ.), G. Caradja (conf. univ.)."
       }
     ],
     clinicTitle: "Activitate Clinică și Programări",
@@ -208,15 +213,18 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       },
       {
         year: "2022",
-        type: "Monograph · USMF",
+        type: "Monograph · USMF · 158 pp.",
         title:
           "The significance of neuroendocrine changes in pituitary-thyroid-adrenal complexes (TSH, T3, T4, cortisol) in craniocerebral trauma in school-age children: Monograph",
         authors: "Igor Revenco (USMF “Nicolae Testemițanu”)",
-        venue: "USMF Institutional Repository, Chișinău, 2022",
+        venue: "Chișinău, 2022 · 158 pp., 390 references · USMF Institutional Repository",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Monograph on TSH, T3, T4, and cortisol changes in school-age children with craniocerebral trauma."
+          "Monograph on TSH, T3, T4, and cortisol changes in school-age children with craniocerebral trauma.",
+        coverImage: "/images/monografie-igor-revenco-2022.webp",
+        reviewers:
+          "Scientific supervisor: E. Tofanica (MD, DSc) · Advisor: Acad. D. German · USMF Reviewers: G. Zapuhlîh (MD, DSc), I. Iliciuc (Prof.), G. Caradja (Assoc. Prof.)."
       }
     ],
     clinicTitle: "Clinical Practice & Appointments",
@@ -302,15 +310,18 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       },
       {
         year: "2022",
-        type: "Монография · USMF",
+        type: "Монография · USMF · 158 с.",
         title:
           "Значение нейроэндокринных изменений гипофизарно-тиреоидно-надпочечниковых комплексов (ТТГ, Т3, Т4, кортизол) при черепно-мозговой травме у детей школьного возраста: Монография",
         authors: "Игорь Ревенко (USMF им. Н. Тестемицану)",
-        venue: "Репозиторий USMF, Кишинёв, 2022",
+        venue: "Кишинёв, 2022 · 158 с., 390 источников · Репозиторий USMF",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Монография об изменениях гормонов ТТГ, Т3, Т4 и кортизола при черепно-мозговых травмах у детей школьного возраста."
+          "Монография об изменениях гормонов ТТГ, Т3, Т4 и кортизола при черепно-мозговых травмах у детей школьного возраста.",
+        coverImage: "/images/monografie-igor-revenco-2022.webp",
+        reviewers:
+          "Науч. рук.: Е. Тофаника (д.х.м.н.) · Консультант: акад. Д. Герман · Рецензенты USMF: Г. Запухлых (д.х.м.н.), И. Иличюк (проф.), Г. Караджа (доц.)."
       }
     ],
     clinicTitle: "Клиническая практика и запись",
@@ -396,15 +407,18 @@ const copyByLang: Record<Lang, ProfileCopy> = {
       },
       {
         year: "2022",
-        type: "Монографія · USMF",
+        type: "Монографія · USMF · 158 с.",
         title:
           "Значення нейроендокринних змін гіпофізарно-тиреоїдно-наднирникових комплексів (ТТГ, Т3, Т4, кортизол) при черепно-мозковій травмі у дітей шкільного віку: Монографія",
         authors: "Ігор Ревенко (USMF ім. М. Тестеміцану)",
-        venue: "Репозиторій USMF, Кишинів, 2022",
+        venue: "Кишинів, 2022 · 158 с., 390 джерел · Репозиторій USMF",
         identifier: "ISBN 978-5-88554-160-2",
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         summary:
-          "Монографія про зміни гормонів ТТГ, Т3, Т4 і кортизолу при черепно-мозкових травмах у дітей шкільного віку."
+          "Монографія про зміни гормонів ТТГ, Т3, Т4 і кортизолу при черепно-мозкових травмах у дітей шкільного віку.",
+        coverImage: "/images/monografie-igor-revenco-2022.webp",
+        reviewers:
+          "Наук. кер.: Є. Тофаніка (д.х.м.н.) · Консультант: акад. Д. Герман · Рецензенти USMF: Г. Запухлих (д.х.м.н.), І. Ілічук (проф.), Г. Караджа (доц.)."
       }
     ],
     clinicTitle: "Клінічна практика та запис",
@@ -504,6 +518,8 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
         name: "Semnificația modificărilor neuroendocrine ale complexelor hipofizartiroid-suprarenale ale TSH, T3, T4, cortizolului în traumatismul craniocerebral la copiii de vârstă școlară: Monografie",
         datePublished: "2022",
         isbn: "978-5-88554-160-2",
+        numberOfPages: 158,
+        image: absoluteUrl("/images/monografie-igor-revenco-2022.webp"),
         url: "https://repository.usmf.md/handle/20.500.12710/27457",
         publisher: {
           "@type": "EducationalOrganization",
@@ -623,55 +639,89 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
                     padding: "16px 18px",
                     borderRadius: 16,
                     background: "rgba(255, 255, 255, 0.56)",
-                    border: "1px solid rgba(25, 118, 210, 0.14)"
+                    border: "1px solid rgba(25, 118, 210, 0.14)",
+                    display: pub.coverImage ? "flex" : "block",
+                    flexWrap: "wrap",
+                    gap: 18,
+                    alignItems: "flex-start"
                   }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: 8,
-                      alignItems: "center",
-                      marginBottom: 8,
-                      fontSize: "0.82rem",
-                      fontWeight: 600,
-                      color: "#1565c0"
-                    }}
-                  >
-                    <span
-                      style={{
-                        padding: "3px 10px",
-                        borderRadius: 999,
-                        background: "rgba(25, 118, 210, 0.12)"
-                      }}
-                    >
-                      {pub.year}
-                    </span>
-                    <span>{pub.type}</span>
-                    <span style={{ opacity: 0.72 }}>· {pub.identifier}</span>
-                  </div>
-                  <h3 style={{ fontSize: "1.04rem", lineHeight: 1.4, margin: "0 0 6px" }}>
+                  {pub.coverImage && (
                     <a
                       href={pub.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: "#0f2744", textDecoration: "none" }}
+                      style={{ flex: "0 0 132px", maxWidth: 132, display: "block" }}
                     >
-                      {pub.title}
+                      <img
+                        src={pub.coverImage}
+                        alt={`${pub.title} — ${c.name}`}
+                        width={480}
+                        height={643}
+                        loading="lazy"
+                        decoding="async"
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          borderRadius: 10,
+                          boxShadow: "0 10px 24px rgba(11, 35, 66, 0.18)"
+                        }}
+                      />
                     </a>
-                  </h3>
-                  <p style={{ margin: "0 0 6px", fontSize: "0.9rem", color: "#2d4865" }}>
-                    <strong>{pub.authors}</strong> — {pub.venue}
-                  </p>
-                  <p style={{ margin: "0 0 10px", fontSize: "0.92rem", lineHeight: 1.55 }}>{pub.summary}</p>
-                  <a
-                    href={pub.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline-primary btn-sm"
-                  >
-                    {c.publicationsLinkLabel} ↗
-                  </a>
+                  )}
+                  <div style={{ flex: "1 1 260px", minWidth: 0 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 8,
+                        alignItems: "center",
+                        marginBottom: 8,
+                        fontSize: "0.82rem",
+                        fontWeight: 600,
+                        color: "#1565c0"
+                      }}
+                    >
+                      <span
+                        style={{
+                          padding: "3px 10px",
+                          borderRadius: 999,
+                          background: "rgba(25, 118, 210, 0.12)"
+                        }}
+                      >
+                        {pub.year}
+                      </span>
+                      <span>{pub.type}</span>
+                      <span style={{ opacity: 0.72 }}>· {pub.identifier}</span>
+                    </div>
+                    <h3 style={{ fontSize: "1.04rem", lineHeight: 1.4, margin: "0 0 6px" }}>
+                      <a
+                        href={pub.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#0f2744", textDecoration: "none" }}
+                      >
+                        {pub.title}
+                      </a>
+                    </h3>
+                    <p style={{ margin: "0 0 6px", fontSize: "0.9rem", color: "#2d4865" }}>
+                      <strong>{pub.authors}</strong> — {pub.venue}
+                    </p>
+                    <p style={{ margin: "0 0 8px", fontSize: "0.92rem", lineHeight: 1.55 }}>{pub.summary}</p>
+                    {pub.reviewers && (
+                      <p style={{ margin: "0 0 10px", fontSize: "0.84rem", lineHeight: 1.5, color: "#486581" }}>
+                        {pub.reviewers}
+                      </p>
+                    )}
+                    <a
+                      href={pub.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline-primary btn-sm"
+                    >
+                      {c.publicationsLinkLabel} ↗
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
