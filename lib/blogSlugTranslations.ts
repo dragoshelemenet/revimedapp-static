@@ -193,6 +193,42 @@ export const blogSlugGroups: Record<string, Record<Lang, string>> = {
     en: "stroke-recovery-first-90-days-neuroplasticity-rehab-chisinau",
     ru: "vosstanovlenie-posle-insulta-pervye-90-dney-reabilitatsiya-kishinev",
     ua: "vidnovlennya-pislya-insultu-pershi-90-dniv-reabilitatsiya-kyshyniv"
+  },
+  electrosomnBiLenarStress: {
+    ro: "electrosomn-si-bi-lenar-insomnie-stres-cronic-chisinau",
+    en: "electrosleep-and-bi-lenar-insomnia-chronic-stress-chisinau",
+    ru: "elektroson-i-bi-lenar-bessonnitsa-stress-kishinev",
+    ua: "elektroson-i-bi-lenar-bezsonnya-stres-kyshyniv"
+  },
+  rheotestAmpDizziness: {
+    ro: "reoencefalografie-rheotest-si-amp-117-ameteli-migrene-chisinau",
+    en: "rheoencephalography-rheotest-and-amp-117-dizziness-migraine-chisinau",
+    ru: "reoentsefalografiya-rheotest-i-amp-117-golovokruzhenie-kishinev",
+    ua: "reoentsefalohrafiya-rheotest-i-amp-117-zapamorochennya-kyshyniv"
+  },
+  glymphaticSleepClearance: {
+    ro: "sistemul-glinfatic-somnul-profund-cum-se-curata-creierul-chisinau",
+    en: "glymphatic-system-deep-sleep-brain-clearance-memory-chisinau",
+    ru: "glimfaticheskaya-sistema-glubokiy-son-ochishchenie-mozga-kishinev",
+    ua: "hlimfatychna-systema-hlybokyy-son-ochyshchennya-mozku-kyshyniv"
+  },
+  migraineTensionCervicalOveruse: {
+    ro: "migrena-vs-cefalee-tensiune-vs-cervicala-si-abuzul-de-pastile-chisinau",
+    en: "migraine-vs-tension-vs-cervicogenic-headache-medication-overuse-chisinau",
+    ru: "migren-golovnaya-bol-napryazheniya-ili-sheya-abuzus-kishinev",
+    ua: "mihren-bil-napruhy-chy-shyya-abuzusnyy-holovnyy-bil-kyshyniv"
+  },
+  sciaticaVsPiriformisSyndrome: {
+    ro: "sciatica-sau-sindrom-piriform-hernie-discala-l5-s1-chisinau",
+    en: "sciatica-vs-piriformis-syndrome-lumbar-herniation-chisinau",
+    ru: "ishias-ili-sindrom-grushevidnoy-myshtsy-gryzha-l5-s1-kishinev",
+    ua: "ishias-chy-syndrom-hrushopodibnoho-m-yaza-hryzha-l5-s1-kyshyniv"
+  },
+  speechDelayVsAutismEeg: {
+    ro: "intarziere-vorbire-copii-vs-autism-semne-neurolog-pediatru-chisinau",
+    en: "toddler-speech-delay-vs-autism-signs-eeg-pediatric-neurologist-chisinau",
+    ru: "zaderzhka-rechi-u-detey-ili-autizm-priznaki-eeg-nevrolog-kishinev",
+    ua: "zatrymka-movlennya-u-ditey-chy-autyzm-oznaky-eeg-nevroloh-kyshyniv"
   }
 };
 

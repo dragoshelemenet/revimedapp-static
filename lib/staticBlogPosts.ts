@@ -57,12 +57,12 @@ export const staticBlogPosts = blogPosts as StaticBlogPost[];
 type Lang = StaticBlogPost["lang"];
 export function getStaticPostBySlug(slug: string, lang: Lang = "ro") {
  const translated = getTranslatedBlogSlug(slug, lang);
- return staticBlogPosts.find(p => p.lang === lang && p.slug === translated && p.published === 1)
-  || staticBlogPosts.find(p => p.lang === lang && p.slug === slug && p.published === 1);
+ return staticBlogPosts.find(p => p.lang === lang && p.slug === translated && (p.published === 1 || (p as any).status === "published"))
+  || staticBlogPosts.find(p => p.lang === lang && p.slug === slug && (p.published === 1 || (p as any).status === "published"));
 }
 export function getStaticPublishedPosts(lang: Lang = "ro") {
  return staticBlogPosts
-  .filter(p => p.lang === lang && p.published === 1 && getStaticPostBySlug(p.slug, lang)?.slug === p.slug)
+  .filter(p => p.lang === lang && (p.published === 1 || (p as any).status === "published") && getStaticPostBySlug(p.slug, lang)?.slug === p.slug)
   .sort((a, b) => {
    const ra = slugRankMap.get(a.slug) ?? 999;
    const rb = slugRankMap.get(b.slug) ?? 999;
@@ -72,7 +72,7 @@ export function getStaticPublishedPosts(lang: Lang = "ro") {
 }
 export function getStaticBlogSlugs(lang?: Lang) {
  // Existing aliases remain exported and use canonical article content.
- return [...staticBlogPosts.filter(p => p.published === 1 && (!lang || p.lang === lang)), ...aliases.filter(p => (!lang || p.lang === lang) && getStaticPostBySlug(p.slug, p.lang as Lang))].map(p => p.slug);
+ return [...staticBlogPosts.filter(p => (p.published === 1 || (p as any).status === "published") && (!lang || p.lang === lang)), ...aliases.filter(p => (!lang || p.lang === lang) && getStaticPostBySlug(p.slug, p.lang as Lang))].map(p => p.slug);
 }
 
 const keys = new Set<string>();
