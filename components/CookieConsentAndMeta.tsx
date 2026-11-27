@@ -163,55 +163,77 @@ export default function CookieConsentAndMeta() {
       {consent === "unknown" ? (
         <aside
           role="region"
+          data-glass-card
           aria-label={isRu ? "Настройки файлов cookie" : "Preferințe cookies și confidențialitate"}
           style={{
             position: "fixed",
-            bottom: "74px",
-            left: "16px",
-            right: "16px",
-            maxWidth: "540px",
+            bottom: "18px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "min(760px, calc(100vw - 28px))",
             zIndex: 9995,
-            padding: "13px 16px",
-            borderRadius: "16px",
-            background: "rgba(10, 26, 44, 0.94)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-            border: "1px solid rgba(255, 255, 255, 0.16)",
-            boxShadow: "0 14px 34px rgba(4, 15, 29, 0.36)",
-            color: "#f2f7fc",
-            fontSize: "12.5px",
+            padding: "14px 20px",
+            borderRadius: "22px",
+            background:
+              "linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(242, 250, 255, 0.82) 50%, rgba(216, 240, 255, 0.88) 100%)",
+            backdropFilter: "blur(22px) saturate(180%)",
+            WebkitBackdropFilter: "blur(22px) saturate(180%)",
+            border: "1px solid rgba(255, 255, 255, 0.92)",
+            boxShadow:
+              "inset 0 2px 3px rgba(255, 255, 255, 0.98), inset 0 -2px 5px rgba(11, 143, 216, 0.18), 0 18px 42px rgba(7, 31, 63, 0.14), 0 4px 14px rgba(11, 143, 216, 0.10)",
+            color: "#0f2942",
+            fontSize: "13px",
             lineHeight: 1.45,
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <div>
-              <strong style={{ color: "#ffffff" }}>
-                {isRu ? "Конфиденциальность и Cookies (Закон № 133/2011):" : "Confidențialitate & Cookies (Legea nr. 133/2011):"}
-              </strong>{" "}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "14px",
+            }}
+          >
+            <div style={{ flex: "1 1 420px", color: "#1e3a5f" }}>
+              <span
+                style={{
+                  display: "inline-block",
+                  padding: "2px 9px",
+                  marginRight: "8px",
+                  borderRadius: "999px",
+                  background: "rgba(11, 143, 216, 0.12)",
+                  color: "#0969a8",
+                  fontWeight: 700,
+                  fontSize: "11.5px",
+                }}
+              >
+                {isRu ? "Конфиденциальность · Закон № 133/2011" : "Confidențialitate · Legea nr. 133/2011"}
+              </span>
               {isRu
-                ? "Мы используем только технически необходимые настройки и, исключительно с вашего согласия, анонимную статистику и оценку рекламы (Google / Meta)."
-                : "Folosim stocare tehnică necesară și, exclusiv cu acordul dvs., statistici anonime și măsurarea campaniilor (Google / Meta)."}{" "}
+                ? "Используем только технически необходимые настройки и, с вашего согласия, анонимную статистику (Google / Meta)."
+                : "Folosim stocare tehnică necesară și, doar cu acordul dvs., statistici anonime (Google / Meta)."}{" "}
               <Link
                 href={isRu ? "/ru/cookies/" : "/cookies/"}
-                style={{ color: "#67e8f9", textDecoration: "underline", fontWeight: 600 }}
+                style={{ color: "#0b8fd8", textDecoration: "underline", fontWeight: 700 }}
               >
-                {isRu ? "Подробнее" : "Politica Cookies"}
+                {isRu ? "Политика Cookies" : "Politica Cookies"}
               </Link>
-              .
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "flex-end" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginLeft: "auto" }}>
               <button
                 type="button"
                 onClick={() => decide("rejected")}
                 style={{
-                  padding: "6px 13px",
+                  padding: "8px 15px",
                   borderRadius: "999px",
-                  border: "1px solid rgba(255, 255, 255, 0.25)",
-                  background: "rgba(255, 255, 255, 0.08)",
-                  color: "#ffffff",
-                  fontSize: "12px",
+                  border: "1px solid rgba(11, 143, 216, 0.26)",
+                  background: "rgba(255, 255, 255, 0.82)",
+                  color: "#0f2942",
+                  fontSize: "12.5px",
                   fontWeight: 600,
                   cursor: "pointer",
+                  boxShadow: "inset 0 1px 2px rgba(255, 255, 255, 0.9)",
                 }}
               >
                 {isRu ? "Только необходимые" : "Doar Necesare"}
@@ -220,14 +242,15 @@ export default function CookieConsentAndMeta() {
                 type="button"
                 onClick={() => decide("accepted")}
                 style={{
-                  padding: "6px 15px",
+                  padding: "8px 18px",
                   borderRadius: "999px",
-                  border: "1px solid rgba(56, 189, 248, 0.5)",
-                  background: "linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%)",
+                  border: "1px solid rgba(11, 143, 216, 0.5)",
+                  background: "linear-gradient(180deg, #1d9bf0 0%, #0b8fd8 100%)",
                   color: "#ffffff",
-                  fontSize: "12px",
+                  fontSize: "12.5px",
                   fontWeight: 700,
                   cursor: "pointer",
+                  boxShadow: "0 6px 16px rgba(11, 143, 216, 0.26)",
                 }}
               >
                 {isRu ? "Принять" : "Acceptă"}
