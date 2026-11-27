@@ -95,6 +95,50 @@ export default function CookieConsentAndMeta() {
 
     window.openRevimedCookieSettings = () => setConsent("unknown");
     setMounted(true);
+
+    // 100% cookieless, zero-IP aggregate counter -> wsod.cloud/api/public/pulse-hit
+    const startTs = Date.now();
+    const curPath = window.location.pathname || "/";
+    const sendPulse = (ev: "view" | "leave" | "call" | "lead", dur?: number) => {
+      try {
+        const payload = JSON.stringify({
+          s: "revimed",
+          e: ev,
+          p: curPath,
+          r: ev === "view" ? document.referrer || "" : "",
+          d: dur || 0,
+        });
+        navigator.sendBeacon?.("https://wsod.cloud/api/public/pulse-hit", payload);
+      } catch {
+        // ignore
+      }
+    };
+    sendPulse("view");
+    let sentLeave = false;
+    const onLeave = () => {
+      if (sentLeave) return;
+      sentLeave = true;
+      const secs = Math.round((Date.now() - startTs) / 1000);
+      if (secs >= 1) sendPulse("leave", secs);
+    };
+    const onVis = () => {
+      if (document.visibilityState === "hidden") onLeave();
+    };
+    const onPulseClick = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement | null)?.closest("a");
+      if (!a) return;
+      const h = a.getAttribute("href") || "";
+      if (h.startsWith("tel:")) sendPulse("call");
+      else if (h.includes("wa.me") || h.includes("whatsapp.com") || h.includes("viber")) sendPulse("lead");
+    };
+    document.addEventListener("visibilitychange", onVis);
+    window.addEventListener("pagehide", onLeave);
+    document.addEventListener("click", onPulseClick, { passive: true });
+    return () => {
+      document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("pagehide", onLeave);
+      document.removeEventListener("click", onPulseClick);
+    };
   }, []);
 
   const decide = (choice: "accepted" | "rejected") => {
