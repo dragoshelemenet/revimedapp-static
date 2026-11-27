@@ -53,7 +53,8 @@ export default function GalleryLightbox({ items }: { items: GalleryPhotoItem[] }
             <img
               src={item.src}
               alt={item.alt || item.title}
-              loading="lazy"
+              loading={idx === 0 ? "eager" : "lazy"}
+              fetchPriority={idx === 0 ? "high" : "auto"}
               decoding="async"
               width={640}
               height={420}

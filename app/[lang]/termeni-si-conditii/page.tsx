@@ -279,6 +279,7 @@ export default async function LocalizedTermsPage({ params }: Props) {
      "@type": "WebPage",
      name: copy.title,
      url: absoluteUrl(pagePath),
+     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".rm-citable-summary"] },
      publisher: { "@id": `${siteUrl}/#medical-clinic` }
     }}
    />
@@ -292,6 +293,19 @@ export default async function LocalizedTermsPage({ params }: Props) {
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard" data-glass-card>
+     <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{copy.h1}</span>
+       <span className="rm-citable-date">S.R.L. REVIMED PLUS · IDNO 1011600011964</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? "revimed.site is an informational platform of Revimed PLUS+ Medical Center (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2, Dr. Igor Revenco) and does not replace medical consultation. The clinic does not provide emergency care (call 112) or oncology treatment. Prices and availability are confirmed at reception: 022 60 50 60."
+        : lang === "ru"
+          ? "revimed.site: информационная платформа медицинского центра Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2, д-р Игорь Ревенко), не заменяет очную консультацию врача. Клиника не оказывает экстренную помощь (звоните 112) и не проводит онкологическое лечение. Уточнение цен и наличия: 022 60 50 60."
+          : "revimed.site: інформаційна платформа медичного центру Revimed PLUS+ (Кишинів, Чокана, вул. Мірча чел Бетрин 13/2, д-р Ігор Ревенко), не замінює очну консультацію лікаря. Клініка не надає невідкладну допомогу (телефонуйте 112) і не проводить онкологічне лікування. Уточнення цін та наявності: 022 60 50 60."}
+      </p>
+     </aside>
      {copy.sections.map((sec) => (
       <div key={sec.h2}>
        <h2>{sec.h2}</h2>

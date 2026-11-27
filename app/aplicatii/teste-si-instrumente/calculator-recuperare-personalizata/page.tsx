@@ -252,31 +252,31 @@ export default function RecoveryPlannerPage() {
             <span className="miniBadge">{t.setup}</span>
 
             <label>{t.area}
-              <select value={area} onChange={(e) => setArea(e.target.value as Area)}>
+              <select aria-label={t.area} value={area} onChange={(e) => setArea(e.target.value as Area)}>
                 {(Object.keys(t.areas) as Area[]).map((key) => <option key={key} value={key}>{t.areas[key]}</option>)}
               </select>
             </label>
 
             <label>{t.goal}
-              <select value={goal} onChange={(e) => setGoal(e.target.value as Goal)}>
+              <select aria-label={t.goal} value={goal} onChange={(e) => setGoal(e.target.value as Goal)}>
                 {(Object.keys(t.goals) as Goal[]).map((key) => <option key={key} value={key}>{t.goals[key]}</option>)}
               </select>
             </label>
 
             <label>{t.days}
-              <select value={days} onChange={(e) => setDays(Number(e.target.value))}>
+              <select aria-label={t.days} value={days} onChange={(e) => setDays(Number(e.target.value))}>
                 {t.daysOptions.map((x, idx) => <option key={x} value={idx}>{x}</option>)}
               </select>
             </label>
 
             <div className="rangeBox">
               <b>{t.pain}: {pain}/10</b>
-              <input type="range" min="0" max="10" value={pain} onChange={(e) => setPain(Number(e.target.value))} />
+              <input type="range" min="0" max="10" aria-label={t.pain} aria-valuetext={`${pain}/10`} value={pain} onChange={(e) => setPain(Number(e.target.value))} />
             </div>
 
             <div className="rangeBox">
               <b>{t.mobility}: {mobility}/10</b>
-              <input type="range" min="0" max="10" value={mobility} onChange={(e) => setMobility(Number(e.target.value))} />
+              <input type="range" min="0" max="10" aria-label={t.mobility} aria-valuetext={`${mobility}/10`} value={mobility} onChange={(e) => setMobility(Number(e.target.value))} />
             </div>
 
             <button className="blueBtn" type="button" onClick={() => setShow(true)}>{t.generate}</button>

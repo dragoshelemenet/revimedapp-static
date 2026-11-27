@@ -315,19 +315,31 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
 
    <HomeStats lang={lang} />
 
-   <section className="rmSection rm-home-citable-section" aria-label="Pe scurt — Revimed PLUS+ Chișinău">
+   <section className="rmSection" style={{ paddingTop: 0, paddingBottom: 16 }}>
     <div className="rmShell">
-     <div className="rm-citable-summary" data-geo-citable>
-      {lang === "en" ? (
-       <p><strong>Revimed PLUS+ Medical Centre</strong> (Chisinau, Ciocana, 13/2 Mircea cel Batran St.) offers neurologist, neurosurgeon, neuropediatrician, and physiotherapy consultations. 25 physiotherapy devices. Primary neurology consultation: 500 MDL. Physiotherapy session: 100 MDL / 30 min. Appointments: 022 60 50 60.</p>
-      ) : lang === "ru" ? (
-       <p><strong>Медицинский центр Revimed PLUS+</strong> (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) — консультации невролога, нейрохирурга, нейропедиатра и физиотерапия. 25 медицинских аппаратов. Первичная консультация невролога: 500 MDL. Физиопроцедура: 100 MDL / 30 мин. Запись: 022 60 50 60.</p>
-      ) : lang === "ua" ? (
-       <p><strong>Медичний центр Revimed PLUS+</strong> (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) — консультації невролога, нейрохірурга, нейропедіатра та фізіотерапія. 25 медичних апаратів. Первинна консультація невролога: 500 MDL. Фізіопроцедура: 100 MDL / 30 хв. Запис: 022 60 50 60.</p>
-      ) : (
-       <p><strong>Centrul Medical Revimed PLUS+</strong> (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) ofera consultații de neurologie, neurochirurgie, neuropediatrie și fizioterapie. 25 aparate fizioterapeutice. Consultatie primara neurologie: 500 MDL. Sedinta fizioterapie: 100 MDL / 30 min. Programari: 022 60 50 60.</p>
-      )}
-     </div>
+     <aside className="rm-citable-summary" data-geo-citable>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">
+        {lang === "en"
+         ? "Revimed PLUS+ Medical Center · Chișinău (Ciocana)"
+         : lang === "ru"
+           ? "Медицинский центр Revimed PLUS+ · Кишинёв (Чеканы)"
+           : lang === "ua"
+             ? "Медичний центр Revimed PLUS+ · Кишинів (Чокана)"
+             : "Centrul Medical Revimed PLUS+ · Chișinău (Ciocana)"}
+       </span>
+       <span className="rm-citable-date">Dr. Igor Revenco · 35+ Years · 25 Devices · 96 Services</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? "Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana, Chișinău, Moldova) specializes in adult and pediatric neurology, neurosurgery, functional neurodiagnostics (19-channel EEG 1600 MDL, 3D Brain Mapping 600 MDL, REG RHEOTEST 500 MDL, EHO-EG 350 MDL, AMP 117 analyzer 1600 MDL), and apparatus physiotherapy (25 medical devices, 100 MDL / 30 min). Led by Dr. Igor Revenco (PhD in Neurosurgery USMF, EANS member, 35+ years experience). Primary consultation: 500 MDL (follow-up: 400 MDL). Hours: Mon - Fri 09:00 - 15:00. Appointments: 022 60 50 60."
+        : lang === "ru"
+          ? "Медицинский центр Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2): профильная клиника неврологии для взрослых и детей, нейрохирургии, функциональной диагностики (ЭЭГ 19 каналов 1600 MDL, 3D-картирование мозга 600 MDL, РЭГ RHEOTEST 500 MDL, ЭХО-ЭГ 350 MDL, анализатор АМП 1600 MDL) и аппаратной физиотерапии (25 медицинских аппаратов, 100 MDL / 30 мин). Руководитель: д-р Игорь Ревенко (доктор нейрохирургии USMF, член EANS, 35+ лет стажа). Первичная консультация: 500 MDL (повторная: 400 MDL). График: Пн - Пт 09:00 - 15:00. Запись: 022 60 50 60."
+          : lang === "ua"
+            ? "Медичний центр Revimed PLUS+ (Кишинів, Чокана, вул. Мірча чел Бетрин 13/2): профільна клініка неврології для дорослих і дітей, нейрохірургії, функціональної діагностики (ЕЕГ 19 каналів 1600 MDL, 3D-картування мозку 600 MDL, РЕГ RHEOTEST 500 MDL, ЕХО-ЕГ 350 MDL, аналізатор АМП 1600 MDL) та апаратної фізіотерапії (25 апаратів, 100 MDL / 30 хв). Керівник: д-р Ігор Ревенко (доктор нейрохірургії USMF, член EANS, 35+ років стажу). Первинна консультація: 500 MDL (повторна: 400 MDL). Графік: Пн - Пт 09:00 - 15:00. Запис: 022 60 50 60."
+            : "Centrul Medical Revimed PLUS+ (Chișinău, sectorul Ciocana, Str. Mircea cel Bătrân 13/2) este o clinică specializată în neurologie adulți și copii (neuropediatrie), neurochirurgie, diagnostic funcțional (EEG 19 canale 1600 MDL, Cartografiere 3D 600 MDL, REG RHEOTEST 500 MDL, EHO-EG 350 MDL, analizator AMP 1600 MDL) și fizioterapie cu aparataj (25 de aparate medicale, 100 MDL / 30 min). Condus de Dr. Igor Revenco (doctor în neurochirurgie USMF, membru EANS, 35+ ani experiență). Consultație primară: 500 MDL (repetată: 400 MDL). Program: Luni - Vineri 09:00 - 15:00. Programări: 022 60 50 60."}
+      </p>
+     </aside>
     </div>
    </section>
 
@@ -1246,7 +1258,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
      </aside>
     </div>
     <div className="rmShell aboutGrid rm-about-motion-grid">
-     <DoctorMotionCard lang={lang} />
+     <DoctorMotionCard lang={lang} priority />
      <div className="adminCard prose" data-glass-card>
       <h2>{text.aboutTitle}</h2>
       <p>{text.aboutText1}</p>
@@ -1978,7 +1990,7 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
           ? [{ src: toWebpSrc(contact.image_one), alt: "Revimed PLUS+" }]
           : []),
          ...(contact.image_two
-          ? [{ src: toWebpSrc(contact.image_two), alt: "Revimed PLUS+ — Localizare" }]
+          ? [{ src: toWebpSrc(contact.image_two), alt: "Revimed PLUS+: Localizare" }]
           : [])
         ]}
        />

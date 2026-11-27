@@ -64,7 +64,7 @@ const doctorCopy: Record<
   }
 };
 
-export default function DoctorMotionCard({ lang = "ro" }: { lang?: Lang }) {
+export default function DoctorMotionCard({ lang = "ro", priority = false }: { lang?: Lang; priority?: boolean }) {
   const copy = doctorCopy[lang] || doctorCopy.ro;
   const stageRef = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -95,7 +95,7 @@ export default function DoctorMotionCard({ lang = "ro" }: { lang?: Lang }) {
       ref={stageRef as any}
       className={`rm-doctor-motion ${visible ? "rm-in-view" : ""}`}
       data-glass-card
-      aria-label={`${copy.name} — ${copy.role}`}
+      aria-label={`${copy.name}: ${copy.role}`}
     >
       {/* Animated neural-pulse glow & orbit behind photo */}
       <span className="rm-doctor-orb rm-doctor-orb-a" aria-hidden="true" />
@@ -104,10 +104,11 @@ export default function DoctorMotionCard({ lang = "ro" }: { lang?: Lang }) {
       <div className="rm-doctor-frame">
         <img
           src="/images/about-us.webp"
-          alt={`${copy.name} — ${copy.role}`}
+          alt={`${copy.name}: ${copy.role}`}
           width={360}
           height={420}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           decoding="async"
         />
 

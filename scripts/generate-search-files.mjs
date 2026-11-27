@@ -98,8 +98,8 @@ const lastmod = new Date().toISOString().slice(0, 10);
 const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
   + urls.map((url) => {
     const imgs = pageImageMap.get(url) || [];
-    const imgXml = imgs.map((img) => `<image:image><image:loc>${escapeXml(img.loc)}</image:loc>${img.title ? `<image:title>${escapeXml(img.title)}</image:title>` : ''}</image:image>`).join('');
-    return `  <url><loc>${escapeXml(url)}</loc><lastmod>${lastmod}</lastmod><priority>${urlPriority(url)}</priority>${imgXml}</url>`;
+    const imgXml = imgs.map((img) => `<image:image><image:loc>${escapeXml(img.loc)}</image:loc></image:image>`).join('');
+    return `  <url><loc>${escapeXml(url)}</loc><lastmod>${lastmod}</lastmod>${imgXml}</url>`;
   }).join('\n') + '\n</urlset>\n';
 await writeFile(path.join(output, 'sitemap.xml'), xml);
 

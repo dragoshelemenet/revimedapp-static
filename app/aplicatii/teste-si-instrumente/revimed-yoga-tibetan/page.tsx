@@ -410,7 +410,7 @@ export default function RevimedYogaTibetanPage() {
 
               <label>
                 {t.goal}
-                <select value={goal} onChange={(e) => { setGoal(e.target.value as Goal); reset(); }}>
+                <select aria-label={t.goal} value={goal} onChange={(e) => { setGoal(e.target.value as Goal); reset(); }}>
                   {(Object.keys(t.goals) as Goal[]).map((key) => (
                     <option value={key} key={key}>{t.goals[key]}</option>
                   ))}
@@ -419,7 +419,7 @@ export default function RevimedYogaTibetanPage() {
 
               <label>
                 {t.duration}
-                <select value={duration} onChange={(e) => { setDuration(Number(e.target.value)); reset(); }}>
+                <select aria-label={t.duration} value={duration} onChange={(e) => { setDuration(Number(e.target.value)); reset(); }}>
                   <option value={180}>3 min</option>
                   <option value={300}>5 min</option>
                   <option value={600}>10 min</option>

@@ -5,11 +5,13 @@ import { useState } from "react";
 export default function LiteYouTubeEmbed({
   videoId,
   title,
-  playLabel = "Redă prezentarea video"
+  playLabel = "Redă prezentarea video",
+  priority = false
 }: {
   videoId: string;
   title: string;
   playLabel?: string;
+  priority?: boolean;
 }) {
   const [playing, setPlaying] = useState(false);
   const thumbWebp = `https://i.ytimg.com/vi_webp/${videoId}/hqdefault.webp`;
@@ -57,7 +59,8 @@ export default function LiteYouTubeEmbed({
             alt={title}
             width={480}
             height={360}
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
             decoding="async"
             style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
           />

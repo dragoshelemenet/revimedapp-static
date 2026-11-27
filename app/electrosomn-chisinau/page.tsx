@@ -11,7 +11,7 @@ export const metadata = makeMetadata({
  path: "/electrosomn-chisinau",
  localized: false,
  alternatesLanguages: { ro: "/electrosomn-chisinau/", ru: "/ru/elektroson-kishinev/", "x-default": "/electrosomn-chisinau/" },
- title: "Electrosomn & Transair TES Chișinău — Insomnie, Stres & Migrene",
+ title: "Electrosomn & Transair TES Chișinău: Insomnie, Stres & Migrene",
  description:
   "Terapie prin Electrosomn (Electrosomn-3, 4T, 5) și stimulare transcraniană Transair TES în Chișinău la Revimed PLUS+. Proceduri blânde pentru insomnie, stres, migrene și distonie."
 });
@@ -61,12 +61,22 @@ export default function ElectrosomnChisinauPage() {
    <PageHeading>
     <div>
      <p><Link href="/">Acasă</Link> / Electrosomn Chișinău</p>
-     <h1>Electrosomn &amp; Transair TES în Chișinău — Terapie Blândă pentru Somn și Stres</h1>
+     <h1>Electrosomn &amp; Transair TES în Chișinău: Terapie Blândă pentru Somn și Stres</h1>
      <p>Proceduri neinvazive de neurostimulare și relaxare a sistemului nervos central cu aparataj clinic dedicat (Electrosomn-3/4T/5, Transair, Bi-LENAR, MDM).</p>
     </div>
    </PageHeading>
    <ContentSection narrow>
     <ReadingCard>
+     <div className="rm-trust-banner">
+      <div className="rm-trust-banner-meta">
+       <strong>Dr. Igor Revenco</strong> · Categorie superioară · Membru EANS · 35+ ani · Luni - Vineri 09:00 - 15:00 · Ciocana
+      </div>
+      <div className="rm-trust-banner-actions">
+       <a href="tel:022605060" className="btn btn-primary btn-sm">Sună: 022 60 50 60</a>
+       <a href="https://wa.me/37379422908" target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-whatsapp-soft">WhatsApp</a>
+       <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri (100 MDL)</Link>
+      </div>
+     </div>
      <aside
       className="rm-citable-summary"
       aria-label="Pe scurt - date cheie si preturi"
@@ -87,10 +97,11 @@ export default function ElectrosomnChisinauPage() {
       </div>
       <p style={{ margin: 0 }}>Terapia Electrosomn la Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2) are tariful orientativ de 100 MDL / 30 min și se efectuează pe aparate medicale dedicate (Electrosomn-4T, Electrosomn-5, Transair TES, Bi-LENAR) după evaluare neurologică (500 MDL) cu Dr. Igor Revenco. Procedura este neinvazivă și recomandată pentru insomnie, stres cronic, migrene și distonie neurovegetativă. Programări: 022 60 50 60.</p>
      </aside>
-     <h2>Prezentare video — Aparatul Electrosomn-5 la Revimed PLUS+ Chișinău</h2>
+     <h2>Prezentare video: Aparatul Electrosomn-5 la Revimed PLUS+ Chișinău</h2>
      <LiteYouTubeEmbed
       videoId="6GGtiONz4pE"
-      title="Terapia Electrosomn în Chișinău (100 MDL / 30 min) — Revimed PLUS+"
+      title="Terapia Electrosomn în Chișinău (100 MDL / 30 min): Revimed PLUS+"
+      priority
      />
      <h2>Indicații frecvente pentru Electrosomn și stimulare transcraniană</h2>
      <ul>
@@ -110,7 +121,7 @@ export default function ElectrosomnChisinauPage() {
      <p>La Revimed PLUS+ dispunem atât de linia clasică <strong>Electrosomn (3, 4T, 5)</strong>, cât și de aparatele de electroanalgezie și stimulare transcraniană <strong>Transair-01P / 01S / 04 / 05, Etrans-1/2/3, Bi-LENAR și MDM-K</strong>. În timp ce Electrosomnul folosește frecvențe joase adaptate fazei de relaxare și somn (prin electrozi aplicați fronto-mastoidian sau oculo-mastoidian pe tampoane umezite), terapia <strong>Transair TES</strong> utilizează un regim selectiv de <strong>60–100 Hz</strong> care stimulează sinteza naturală de <strong>β-endorfine și serotonină</strong> în trunchiul cerebral — cu efect analgezic, anti-stres și vasocorector demonstrat clinic.</p>
      <h2>Protocolul ședinței și siguranța medicală (100 MDL / 30 min)</h2>
      <p>Primele 2–3 ședințe au rol de adaptare și durează <strong>20–30 de minute</strong>, după care durata crește la <strong>45–60 de minute</strong> în funcție de răspunsul pacientului. Înainte de începerea cursului, Dr. Igor Revenco verifică absența contraindicațiilor locale (afecțiuni inflamatorii oculare, glaucom, miopie severă sau dermatită facială — situații în care se evită montajul ocular sau se alege o altă procedură fizioterapeutică).</p>
-     <h2>Întrebări frecvente — Electrosomn Chișinău</h2>
+     <h2>Întrebări frecvente: Electrosomn Chișinău</h2>
      {faqs.map((f) => (
       <details key={f.q} style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
        <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>

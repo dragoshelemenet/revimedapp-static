@@ -151,14 +151,15 @@ export default function EquipmentCatalogGrid({
     </div>
    ) : (
     <div className="rm-smart-grid rm-equip-full-grid">
-     {filtered.map((item) => (
+     {filtered.map((item, idx) => (
       <article key={item.id} className={`${styles.card} rm-listing-card rm-equip-card`} data-glass-card>
        {item.image && (
         <Link href={item.href} className="rm-equip-card-media">
          <img
           src={item.image}
           alt={item.imageAlt || item.title}
-          loading="lazy"
+          loading={idx === 0 ? "eager" : "lazy"}
+          fetchPriority={idx === 0 ? "high" : "auto"}
           decoding="async"
           width={960}
           height={720}

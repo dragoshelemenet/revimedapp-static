@@ -1,7 +1,5 @@
-import Link from "next/link";
-import PageHeading from "@/components/PageHeading";
-import { ContentSection, ReadingCard } from "@/components/ContentLayout";
-import { JsonLd, absoluteUrl, breadcrumbJsonLd, makeMetadata, siteUrl } from "@/lib/seo";
+import LocalConditionLanding from "@/components/LocalConditionLanding";
+import { makeMetadata } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -9,84 +7,87 @@ export const metadata = makeMetadata({
  lang: "ru",
  path: "/neyrohirurg-kishinev",
  localized: false,
- alternatesLanguages: { ro: "/neurochirurg-chisinau/", ru: "/ru/neyrohirurg-kishinev/", "x-default": "/neurochirurg-chisinau/" },
- title: "Нейрохирург Кишинёв (Чеканы) — Грыжа диска и разбор МРТ",
- description:
-  "Консультация нейрохирурга в Кишинёве — д-р Игорь Ревенко (доктор нейрохирургии, член EANS, 35+ лет опыта). Разбор снимков МРТ/КТ, грыжа диска, ишиас и консервативное лечение."
-});
-
-const faqs = [
- {
-  q: "Нужно ли приносить диск МРТ на приём нейрохирурга?",
-  a: "Да, обязательно возьмите диск или снимки МРТ/КТ — врач оценивает сами срезы в сочетании с осмотром."
+ alternatesLanguages: {
+  ro: "/neurochirurg-chisinau/",
+  ru: "/ru/neyrohirurg-kishinev/",
+  "x-default": "/neurochirurg-chisinau/"
  },
- {
-  q: "Можно ли вылечить грыжу диска без операции?",
-  a: "Во многих случаях без нарастающего двигательного дефицита правильно подобранное консервативное лечение и физиотерапия дают стойкое улучшение."
- }
-];
+ title: "Нейрохирург Кишинёв (Чеканы): Грыжа диска и разбор МРТ",
+ description:
+  "Консультация нейрохирурга в Кишинёве (500 MDL): д-р Игорь Ревенко (доктор нейрохирургии USMF, член EANS, 35+ лет). Разбор снимков МРТ/КТ, грыжа диска, стеноз, ишиас и безоперационное лечение."
+});
 
 export default function NeyrohirurgKishinevPage() {
  return (
-  <>
-   <JsonLd data={breadcrumbJsonLd([{ name: "Главная", path: "/ru/" }, { name: "Нейрохирург Кишинёв", path: "/ru/neyrohirurg-kishinev/" }])} />
-   <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage",
-     datePublished: "2026-11-21",
-     dateModified: "2026-11-21",
-     lastReviewed: "2026-11-21", name: "Нейрохирург Кишинёв — Revimed PLUS+", url: absoluteUrl("/ru/neyrohirurg-kishinev/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
-   <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
-   <PageHeading>
-    <div>
-     <p><Link href="/ru/">Главная</Link> / Нейрохирург Кишинёв</p>
-     <h1>Нейрохирург в Кишинёве — Грыжа диска, позвоночник и оценка МРТ</h1>
-     <p>Объективное второе мнение нейрохирурга — д-р Игорь Ревенко (член EANS, 35+ лет клинического опыта) в клинике Revimed PLUS+ (Чеканы).</p>
-    </div>
-   </PageHeading>
-   <ContentSection narrow>
-    <ReadingCard>
-     <aside
-      className="rm-citable-summary"
-      aria-label="Кратко - ключевые факты и цены"
-      style={{
-       padding: "14px 18px",
-       marginBottom: 18,
-       borderRadius: 16,
-       background: "rgba(240, 248, 255, 0.85)",
-       borderLeft: "4px solid #0b8fd8",
-       fontSize: 14.5,
-       lineHeight: 1.58,
-       color: "#0b2545"
-      }}
-     >
-      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
-       <span>Кратко — ключевые факты и цены</span>
-       <span>Обновлено: Ноябрь 2026</span>
-      </div>
-      <p style={{ margin: 0 }}>В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичная консультация нейрохирурга стоит 500 MDL, а повторная — 400 MDL. Д-р Игорь Ревенко (доктор нейрохирургии USMF, член EANS, 35+ лет опыта) проводит разбор МРТ/КТ при грыже диска и стенозе, даёт объективное второе мнение и составляет план реабилитации (физиопроцедуры от 100 MDL / 30 мин). Запись: 022 60 50 60.</p>
-     </aside>
-     <h2>Основные направления консультации нейрохирурга</h2>
-     <ul>
-      <li>Грыжа и протрузия межпозвоночного диска (поясничный, шейный отдел);</li>
-      <li>Ишиас, корешковые боли в ноге или руке, стеноз позвоночного канала;</li>
-      <li>Выбор тактики: консервативное лечение и физиотерапия или операция;</li>
-      <li>Наблюдение и реабилитация после нейрохирургических вмешательств.</li>
-     </ul>
-     <h2>Частые вопросы</h2>
-     {faqs.map((f) => (
-      <details key={f.q} style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
-       <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
-       <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
-      </details>
-     ))}
-     <div className="rm-quick-links-bar">
-      <Link href="/ru/dr-igor-revenco/" className="btn btn-outline-primary btn-sm">Д-р Игорь Ревенко</Link>
-      <Link href="/ru/nevrolog-kishinev/" className="btn btn-outline-primary btn-sm">Невролог Кишинёв</Link>
-      <Link href="/ru/fizioterapiya-kishinev/" className="btn btn-outline-primary btn-sm">Физиотерапия</Link>
-      <Link href="/ru/preturi/" className="btn btn-outline-primary btn-sm">Цены</Link>
-      <Link href="/ru/contact/" className="btn btn-primary btn-sm">Запись: 022 60 50 60</Link>
-     </div>
-    </ReadingCard>
-   </ContentSection>
-  </>
+  <LocalConditionLanding
+   lang="ru"
+   path="/ru/neyrohirurg-kishinev/"
+   crumbLabel="Нейрохирург Кишинёв"
+   h1="Нейрохирург в Кишинёве: Разбор МРТ, Грыжа Диска и Второе Мнение"
+   lead="Объективное второе мнение нейрохирурга и прямой анализ срезов МРТ/КТ у д-ра Игоря Ревенко (доктор нейрохирургии USMF, член Европейской ассоциации нейрохирургов EANS, 35+ лет клинического опыта) в клинике Revimed PLUS+ (Чеканы)."
+   directAnswer="В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) первичная консультация нейрохирурга стоит 500 MDL (повторная: 400 MDL). Д-р Игорь Ревенко (доктор нейрохирургии USMF, член EANS, 35+ лет опыта) лично разбирает диски и снимки МРТ/КТ при грыже диска, протрузии L4-L5 / L5-S1, стенозе позвоночного канала и спондилолистезе, определяя реальную необходимость операции или безоперационный план физиотерапии (100 MDL / 30 мин). Запись: 022 60 50 60."
+   introParagraph="Консультация нейрохирурга не означает обязательную операцию. Главная задача осмотра: точно разграничить случаи, когда хирургическое вмешательство действительно необходимо, и ситуации, когда грыжа диска, протрузия или ишиас успешно поддаются консервативному лечению и физиотерапии."
+   symptomsHeading="Основные направления консультации нейрохирурга"
+   symptoms={[
+    "Грыжа и протрузия межпозвоночного диска (поясничный отдел L4-L5, L5-S1, шейный отдел C5-C6, C6-C7)",
+    "Ишиас, корешковые боли, отдающие в ногу или руку, онемение пальцев и слабость в конечности",
+    "Стеноз позвоночного канала и спондилолистез (смещение позвонков) по данным МРТ/КТ",
+    "Объективное второе мнение нейрохирурга: консервативное лечение и физиотерапия против операции",
+    "Последствия черепно-мозговых и позвоночных травм, оценка неврологического статуса",
+    "Наблюдение и поэтапная реабилитация после операций на позвоночнике"
+   ]}
+   approachHeading="Прямой разбор МРТ/КТ и безоперационное восстановление в одной клинике"
+   approachParagraphs={[
+    "Д-р Игорь Ревенко оценивает непосредственно сами срезы МРТ/КТ (на диске, флешке или плёнке), а не только текстовое заключение, сопоставляя их с неврологическим осмотром (рефлексы, мышечная сила, чувствительность дерматомов).",
+    "При отсутствии абсолютных показаний к экстренной операции (нарастающий парез, синдром конского хвоста) пациент сразу может пройти в Revimed PLUS+ индивидуальный курс консервативного лечения и аппаратной физиотерапии: Амплипульс СМТ, лекарственный электрофорез, магнитотерапия, лазер, ультразвук, лечебный массаж и кинезиотерапия."
+   ]}
+   equipmentHeading="Аппаратура клиники для безоперационного лечения позвоночника"
+   equipmentCards={[
+    {
+     slug: "amplipuls-5",
+     title: "Амплипульс-4 / 5 / 6 (СМТ)",
+     desc: "Снятие корешковой боли и мышечного спазма при грыже диска и ишиасе (100 MDL / 30 мин).",
+     image: "/images/equipment/amplipuls-5.webp"
+    },
+    {
+     slug: "aparat-electroforeza-medicamentoasa",
+     title: "Лекарственный электрофорез (Поток-1)",
+     desc: "Неинвазивное локальное введение противовоспалительных препаратов в зону позвоночника (100 MDL / 30 мин).",
+     image: "/images/equipment/aparat-electroforeza-medicamentoasa.webp"
+    },
+    {
+     slug: "lampa-solux",
+     title: "Фототерапия Соллюкс",
+     desc: "Улучшение микроциркуляции и подготовка паравертебральных мышц к реабилитации (100 MDL / 30 мин).",
+     image: "/images/equipment/lampa-solux.webp"
+    }
+   ]}
+   faqs={[
+    {
+     q: "Нужно ли приносить диск МРТ на приём нейрохирурга?",
+     a: "Да, обязательно возьмите диск, флешку или снимки МРТ/КТ. Врач оценивает сами срезы в сочетании с клиническим осмотром, чтобы определить реальную степень компрессии нервного корешка."
+    },
+    {
+     q: "Можно ли вылечить грыжу диска без операции?",
+     a: "Во многих случаях без нарастающего двигательного дефицита и нарушений тазовых функций правильно подобранное консервативное лечение, Амплипульс СМТ, электрофорез и кинезиотерапия дают стойкое улучшение без операции."
+    },
+    {
+     q: "Сколько стоит приём нейрохирурга в Кишинёве и как записаться?",
+     a: "Первичная консультация д-ра Игоря Ревенко стоит 500 MDL, повторная: 400 MDL. Запись по телефонам 022 60 50 60 или +373 79 422 908 (Пн - Пт 09:00 - 15:00)."
+    },
+    {
+     q: "Проводите ли вы реабилитацию после операции на позвоночнике?",
+     a: "Да, мы составляем поэтапные программы послеоперационного восстановления (щадящая физиотерапия, кинезиотерапия, неврологический контроль) для профилактики рецидива грыжи."
+    }
+   ]}
+   relatedLinks={[
+    { href: "/ru/gryzha-diska-kishinev/", label: "Грыжа диска без операции" },
+    { href: "/ru/protruziya-diska-l4-l5-l5-s1-stenoz-kishinev/", label: "Протрузия L4-L5 / L5-S1 и стеноз" },
+    { href: "/ru/gryzha-sheynogo-otdela-c5-c6-golovokruzhenie-kishinev/", label: "Грыжа шеи C5-C6" },
+    { href: "/ru/stenoz-pozvonochnogo-kanala-neyrohirurg-kishinev/", label: "Стеноз позвоночного канала" },
+    { href: "/ru/reabilitatsiya-posle-operatsii-pozvonochnika-kishinev/", label: "После операции на позвоночнике" },
+    { href: "/ru/fizioterapiya-kishinev/", label: "Физиотерапия Кишинёв (100 MDL)" }
+   ]}
+  />
  );
 }

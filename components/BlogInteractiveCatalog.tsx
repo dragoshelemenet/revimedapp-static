@@ -346,7 +346,7 @@ export default function BlogInteractiveCatalog({
       ) : (
         /* Blog Grid */
         <div className="rm-smart-grid" style={{ padding: "0 0 16px" }}>
-          {visibleItems.map((item) => (
+          {visibleItems.map((item, idx) => (
             <article key={item.id} className={`${styles.card} rm-listing-card`} data-glass-card>
               {item.image && (
                 <Link href={item.href} className="rm-card-cover-link" tabIndex={-1} aria-hidden="true">
@@ -354,7 +354,8 @@ export default function BlogInteractiveCatalog({
                     src={item.image}
                     alt={item.title}
                     className={styles.cover}
-                    loading="lazy"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    fetchPriority={idx === 0 ? "high" : "auto"}
                     decoding="async"
                     width={720}
                     height={405}

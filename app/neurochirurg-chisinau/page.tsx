@@ -1,7 +1,5 @@
-import Link from "next/link";
-import PageHeading from "@/components/PageHeading";
-import { ContentSection, ReadingCard } from "@/components/ContentLayout";
-import { JsonLd, absoluteUrl, breadcrumbJsonLd, makeMetadata, siteUrl } from "@/lib/seo";
+import LocalConditionLanding from "@/components/LocalConditionLanding";
+import { makeMetadata } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -9,123 +7,87 @@ export const metadata = makeMetadata({
  lang: "ro",
  path: "/neurochirurg-chisinau",
  localized: false,
- alternatesLanguages: { ro: "/neurochirurg-chisinau/", ru: "/ru/neyrohirurg-kishinev/", "x-default": "/neurochirurg-chisinau/" },
- title: "Neurochirurg Chișinău (Ciocana) — Evaluare RMN & Hernie de Disc",
- description:
-  "Consultație la medic neurochirurg în Chișinău — Dr. Igor Revenco (doctor în neurochirurgie, membru EANS, 35+ ani experiență). Evaluare RMN/CT hernie de disc, sciatică și tratament conservator."
-});
-
-const faqs = [
- {
-  q: "Trebuie să vin cu RMN-ul pe CD sau ajunge foaia cu concluzia?",
-  a: "Aduceți obligatoriu imaginile RMN/CT pe CD sau film. Neurochirurgul analizează direct secțiunile imagistice în corelație cu examenul neurologic clinic."
+ alternatesLanguages: {
+  ro: "/neurochirurg-chisinau/",
+  ru: "/ru/neyrohirurg-kishinev/",
+  "x-default": "/neurochirurg-chisinau/"
  },
- {
-  q: "Se poate trata hernia de disc fără operație?",
-  a: "Da, în numeroase cazuri fără deficit motor sever, tratamentul conservator țintit și fizioterapia medicală oferă ameliorare stabilă fără intervenție chirurgicală."
- }
-];
+ title: "Neurochirurg Chișinău (Ciocana): Evaluare RMN & Hernie de Disc",
+ description:
+  "Consultație la medic neurochirurg în Chișinău (500 MDL): Dr. Igor Revenco (doctor în neurochirurgie USMF, membru EANS, 35+ ani). Evaluare RMN/CT hernie de disc, stenoză, sciatică și tratament conservator."
+});
 
 export default function NeurochirurgChisinauPage() {
  return (
-  <>
-   <JsonLd
-    data={breadcrumbJsonLd([
-     { name: "Acasă", path: "/" },
-     { name: "Servicii", path: "/servicii/" },
-     { name: "Neurochirurg Chișinău", path: "/neurochirurg-chisinau/" }
-    ])}
-   />
-   <JsonLd
-    data={{
-     "@context": "https://schema.org",
-     "@type": "MedicalWebPage",
-     datePublished: "2026-11-21",
-     dateModified: "2026-11-21",
-     lastReviewed: "2026-11-21",
-     name: "Neurochirurg Chișinău — Dr. Igor Revenco | Revimed PLUS+",
-     url: absoluteUrl("/neurochirurg-chisinau/"),
-     about: { "@id": `${siteUrl}/#medical-clinic` },
-     reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` }
-    }}
-   />
-   <JsonLd
-    data={{
-     "@context": "https://schema.org",
-     "@type": "FAQPage",
-     mainEntity: faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a }
-     }))
-    }}
-   />
-   <PageHeading>
-    <div>
-     <p><Link href="/">Acasă</Link> / Neurochirurg Chișinău</p>
-     <h1>Neurochirurg Chișinău — Evaluare Hernie de Disc &amp; Coloană</h1>
-     <p>
-      Opinie neurochirurgicală obiectivă și analiză directă a imaginilor RMN/CT cu Dr. Igor
-      Revenco — doctor în neurochirurgie (USMF) și membru al Asociației Europene de Neurochirurgie
-      (EANS).
-     </p>
-    </div>
-   </PageHeading>
-   <ContentSection narrow>
-    <ReadingCard>
-     <aside
-      className="rm-citable-summary"
-      aria-label="Pe scurt - date cheie si preturi"
-      style={{
-       padding: "14px 18px",
-       marginBottom: 18,
-       borderRadius: 16,
-       background: "rgba(240, 248, 255, 0.85)",
-       borderLeft: "4px solid #0b8fd8",
-       fontSize: 14.5,
-       lineHeight: 1.58,
-       color: "#0b2545"
-      }}
-     >
-      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6, marginBottom: 6, fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
-       <span>Pe scurt — date cheie și prețuri</span>
-       <span>Actualizat medical: Noiembrie 2026</span>
-      </div>
-      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la medic neurochirurg costă 500 MDL, iar consultația repetată 400 MDL. Dr. Igor Revenco (doctor în neurochirurgie USMF, membru EANS, 35+ ani practică) evaluează RMN/CT pentru hernie de disc, stenoză și compresii nervoase, oferind a doua opinie obiectivă și plan de recuperare conservatoare (proceduri de fizioterapie de la 100 MDL / 30 min). Programări: 022 60 50 60.</p>
-     </aside>
-     <h2>Patologii evaluate la consultația de neurochirurgie</h2>
-     <ul>
-      <li>Hernie de disc lombară, cervicală și toracală, protruzii discale;</li>
-      <li>Sciatică, dureri radiculare care coboară pe picior sau braț;</li>
-      <li>Stenoză de canal spinal și compresii nervoase cu amorțeli sau slăbiciune;</li>
-      <li>A doua opinie neurochirurgicală: tratament conservator vs. indicație chirurgicală;</li>
-      <li>Monitorizare și recuperare medicală după intervenții pe coloană.</li>
-     </ul>
-
-     <h2>Tratament conservator și fizioterapie în aceeași clinică</h2>
-     <p>
-      Atunci când operația nu este necesară, pacientul poate începe direct în clinica Revimed PLUS+
-      (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) programul personalizat de recuperare cu
-      Amplipuls SMT, electroforeză medicamentoasă, terapie infraroșie Solux și neurostimulare.
-     </p>
-
-     <h2>Întrebări frecvente — Neurochirurg Chișinău</h2>
-     {faqs.map((f) => (
-      <details key={f.q} style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
-       <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
-       <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
-      </details>
-     ))}
-
-     <div className="rm-quick-links-bar">
-      <Link href="/dr-igor-revenco/" className="btn btn-outline-primary btn-sm">Profil Dr. Igor Revenco</Link>
-      <Link href="/neurolog-chisinau/" className="btn btn-outline-primary btn-sm">Neurolog Chișinău</Link>
-      <Link href="/fizioterapie-chisinau/" className="btn btn-outline-primary btn-sm">Fizioterapie Chișinău</Link>
-      <Link href="/preturi/" className="btn btn-outline-primary btn-sm">Prețuri</Link>
-      <Link href="/contact/" className="btn btn-primary btn-sm">Programare: 022 60 50 60</Link>
-     </div>
-    </ReadingCard>
-   </ContentSection>
-  </>
+  <LocalConditionLanding
+   lang="ro"
+   path="/neurochirurg-chisinau/"
+   crumbLabel="Neurochirurg Chișinău"
+   h1="Neurochirurg Chișinău: Evaluare RMN, Hernie de Disc & A Doua Opinie"
+   lead="Opinie neurochirurgicală obiectivă și analiză directă a secțiunilor RMN/CT cu Dr. Igor Revenco (doctor în neurochirurgie USMF, membru al Asociației Europene de Neurochirurgie EANS, 35+ ani experiență clinică) în Chișinău, sectorul Ciocana."
+   directAnswer="La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația primară la medic neurochirurg costă 500 MDL (repetată: 400 MDL). Dr. Igor Revenco (doctor în neurochirurgie USMF, membru EANS, 35+ ani experiență) evaluează direct imaginile RMN/CT pentru hernie de disc lombară sau cervicală, stenoză de canal spinal, spondilolistezis și compresii radiculare, stabilind obiectiv dacă este necesară operația sau recuperarea conservatoare cu fizioterapie (100 MDL / 30 min). Programări: 022 60 50 60."
+   introParagraph="Consultația neurochirurgicală nu înseamnă automat operație. Scopul evaluării este diferențierea clară între cazurile care necesită intervenție chirurgicală și majoritatea pacienților cu hernie de disc, protruzie sau sciatică ce pot fi recuperați în siguranță prin tratament conservator și fizioterapie medicală."
+   symptomsHeading="Patologii și situații evaluate la consultația de neurochirurgie"
+   symptoms={[
+    "Hernie de disc lombară (L4-L5, L5-S1), cervicală (C5-C6, C6-C7) și toracală sau protruzii discale cu compresie radiculară",
+    "Sciatică, dureri intense care iradiază pe picior sau braț, amorțeli, furnicături sau scăderea forței musculare",
+    "Stenoză de canal spinal lombar sau cervical și spondilolistezis (alunecare vertebrală) confirmate pe RMN/CT",
+    "A doua opinie neurochirurgicală obiectivă: când este cu adevărat necesară intervenția chirurgicală vs. protocol conservator",
+    "Traumatisme craniocerebrale sau vertebrale în antecedente și evaluarea sechelelor neurologice",
+    "Monitorizare și recuperare medicală personalizată după operații pe coloana vertebrală"
+   ]}
+   approachHeading="Evaluare clinică + imagistică RMN/CT și tratament conservator în aceeași clinică"
+   approachParagraphs={[
+    "Dr. Igor Revenco analizează personal secțiunile RMN/CT de pe CD sau film (nu doar raportul scris) și le corelează cu examenul clinic neurologic (reflexe osteotendinoase, forță musculară pe miotoame, sensibilitate pe dermatoame și probe de elongație).",
+    "În absența indicațiilor chirurgicale de urgență (deficit motor progresiv sau sindrom coadă de cal), pacientul poate începe imediat în aceeași clinică protocolul conservator de decompresie și antiinflamator: Amplipuls SMT, electroforeză medicamentoasă, magnetoterapie, laser, terapie cu ultrasunete, masaj terapeutic și kinetoterapie."
+   ]}
+   equipmentHeading="Aparatură clinică pentru tratamentul conservator al coloanei"
+   equipmentCards={[
+    {
+     slug: "amplipuls-5",
+     title: "Amplipuls-4 / 5 / 6 (SMT)",
+     desc: "Analgezie radiculară și relaxarea spasmului paravertebral în hernia de disc și sciatică (100 MDL / 30 min).",
+     image: "/images/equipment/amplipuls-5.webp"
+    },
+    {
+     slug: "aparat-electroforeza-medicamentoasa",
+     title: "Electroforeză medicamentoasă (Potok-1)",
+     desc: "Administrare locală neinvazivă a preparatelor antiinflamatoare și trofice pe zona afectată (100 MDL / 30 min).",
+     image: "/images/equipment/aparat-electroforeza-medicamentoasa.webp"
+    },
+    {
+     slug: "lampa-solux",
+     title: "Fototerapie & Infraroșu Solux",
+     desc: "Îmbunătățirea microcirculației paravertebrale și pregătirea tisulară înainte de kinetoterapie (100 MDL / 30 min).",
+     image: "/images/equipment/lampa-solux.webp"
+    }
+   ]}
+   faqs={[
+    {
+     q: "Trebuie să vin cu RMN-ul pe CD sau ajunge foaia cu concluzia scrisă?",
+     a: "Este recomandat să aduceți imaginile RMN/CT pe CD, stick sau film, nu doar descrierea text. Medicul neurochirurg evaluează direct secțiunile sagitale și axiale pentru a măsura gradul real de compresie asupra rădăcinii nervoase."
+    },
+    {
+     q: "Se poate trata hernia de disc fără operație în Chișinău?",
+     a: "Da. În majoritatea cazurilor fără deficit motor progresiv sau tulburări sfincteriene, tratamentul conservator combinat (medicație țintită, Amplipuls SMT, electroforeză, kinetoterapie) oferă ameliorare stabilă fără intervenție chirurgicală."
+    },
+    {
+     q: "Cât costă consultația la neurochirurg și cum mă programez?",
+     a: "Consultația primară la Dr. Igor Revenco costă 500 MDL, iar consultația repetată 400 MDL. Programările se fac telefonic la 022 60 50 60 sau +373 79 422 908, Luni - Vineri 09:00 - 15:00."
+    },
+    {
+     q: "Oferiți și recuperare medicală după operația de hernie de disc?",
+     a: "Da. Elaborăm protocoale etapizate de recuperare post-operatorie pe coloană (electroterapie blândă, kinetoterapie dozată, monitorizare neurologică) pentru prevenirea recidivelor."
+    }
+   ]}
+   relatedLinks={[
+    { href: "/hernie-de-disc-chisinau/", label: "Hernie de disc fără operație" },
+    { href: "/protruzie-discala-l4-l5-l5-s1-stenoza-chisinau/", label: "Protruzie L4-L5 / L5-S1 & Stenoză" },
+    { href: "/hernie-cervicala-c5-c6-dureri-gat-ameteli-chisinau/", label: "Hernie Cervicală C5-C6" },
+    { href: "/stenoza-canal-spinal-lombar-neurochirurg-chisinau/", label: "Stenoză Canal Spinal" },
+    { href: "/recuperare-postoperatorie-coloana-chisinau/", label: "Recuperare Post-Operatorie" },
+    { href: "/fizioterapie-chisinau/", label: "Fizioterapie Chișinău (100 MDL)" }
+   ]}
+  />
  );
 }

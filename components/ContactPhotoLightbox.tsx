@@ -60,10 +60,10 @@ export default function ContactPhotoLightbox({
             type="button"
             className="rm-contact-photo-btn"
             data-glass-card
-            aria-label={`${hint} — ${photo.alt}`}
+            aria-label={`${hint}: ${photo.alt}`}
             onClick={() => setActiveIndex(idx)}
           >
-            <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" width={640} height={420} />
+            <img src={photo.src} alt={photo.alt} loading={idx === 0 ? "eager" : "lazy"} fetchPriority={idx === 0 ? "high" : "auto"} decoding="async" width={640} height={420} />
             <span className="rm-expand-hand-badge" aria-hidden="true">
               <svg className="rm-hand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 11V6a2 2 0 0 0-4 0" />

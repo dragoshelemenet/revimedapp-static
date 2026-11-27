@@ -26,7 +26,7 @@ type SmartCatalogGridProps = {
   useInfoPopover?: boolean;
 };
 
-function CardItem({ item, useInfoPopover }: { item: SmartCatalogItem; useInfoPopover?: boolean }) {
+function CardItem({ item, useInfoPopover, priority = false }: { item: SmartCatalogItem; useInfoPopover?: boolean; priority?: boolean }) {
   const shortDesc =
     useInfoPopover && item.description.length > 105
       ? `${item.description.slice(0, 102).trimEnd()}…`
@@ -40,7 +40,8 @@ function CardItem({ item, useInfoPopover }: { item: SmartCatalogItem; useInfoPop
             className={styles.cover}
             src={item.image}
             alt={item.title}
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
             decoding="async"
             width={640}
             height={360}
@@ -139,8 +140,8 @@ export default function SmartCatalogGrid({
     <div>
       {/* First clean row */}
       <div className="rm-smart-grid">
-        {visibleInitial.map((item) => (
-          <CardItem key={item.id} item={item} useInfoPopover={useInfoPopover} />
+        {visibleInitial.map((item, idx) => (
+          <CardItem key={item.id} item={item} useInfoPopover={useInfoPopover} priority={idx === 0} />
         ))}
       </div>
 

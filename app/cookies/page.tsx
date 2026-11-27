@@ -25,6 +25,7 @@ export default function CookiesPage() {
      "@type": "WebPage",
      name: "Cookies și Confidențialitate",
      url: absoluteUrl("/cookies/"),
+     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".rm-citable-summary"] },
      publisher: { "@id": `${siteUrl}/#medical-clinic` }
     }}
    />
@@ -40,6 +41,15 @@ export default function CookiesPage() {
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard" data-glass-card>
+     <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">Pe scurt · Confidențialitate &amp; Cookies Revimed PLUS+</span>
+       <span className="rm-citable-date">Legea nr. 133/2011 RM · Zero tracking</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       Site-ul revimed.site (S.R.L. „REVIMED PLUS”, IDNO 1011600011964, Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) este o platformă statică informativă fără Google Analytics, fără Meta Pixel și fără cookies de publicitate. Testele interactive rulează strict local în browser. Contact confidențialitate: 022 60 50 60.
+      </p>
+     </aside>
      <h2>1. Protecția datelor cu caracter personal (Legea nr. 133/2011)</h2>
      <p>
       Site-ul <strong>revimed.site</strong> este o platformă statică de prezentare și <strong>nu colectează, nu

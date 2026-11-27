@@ -25,6 +25,7 @@ export default function TermsPage() {
      "@type": "WebPage",
      name: "Termeni și Condiții",
      url: absoluteUrl("/termeni-si-conditii/"),
+     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".rm-citable-summary"] },
      publisher: { "@id": `${siteUrl}/#medical-clinic` }
     }}
    />
@@ -40,6 +41,15 @@ export default function TermsPage() {
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard" data-glass-card>
+     <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">Pe scurt · Termeni &amp; Limitarea Răspunderii</span>
+       <span className="rm-citable-date">S.R.L. REVIMED PLUS · IDNO 1011600011964</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       Site-ul revimed.site al Centrului Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2, Dr. Igor Revenco) are rol exclusiv informativ și nu înlocuiește consultația medicală. Clinica nu oferă servicii de urgență (apelați 112) și nu efectuează tratament oncologic. Prețurile și disponibilitatea se confirmă la recepție: 022 60 50 60.
+      </p>
+     </aside>
      <h2>1. Date generale și natura strict orientativă a site-ului</h2>
      <p>
       Site-ul <strong>revimed.site</strong> este o platformă cu caracter exclusiv informativ și orientativ a

@@ -206,6 +206,7 @@ export default async function LocalizedCookiesPage({ params }: Props) {
      "@type": "WebPage",
      name: copy.title,
      url: absoluteUrl(pagePath),
+     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".rm-citable-summary"] },
      publisher: { "@id": `${siteUrl}/#medical-clinic` }
     }}
    />
@@ -219,6 +220,19 @@ export default async function LocalizedCookiesPage({ params }: Props) {
 
    <section className="rmSection legalSection">
     <article className="rmShell legalCard" data-glass-card>
+     <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{copy.h1} · Revimed PLUS+</span>
+       <span className="rm-citable-date">IDNO 1011600011964 · Zero tracking</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? "revimed.site (S.R.L. REVIMED PLUS, IDNO 1011600011964, Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) is a static informational site with zero Google Analytics, zero Meta Pixel, and zero advertising cookies. Interactive self-assessment tools run strictly locally in your browser. Privacy inquiries: 022 60 50 60."
+        : lang === "ru"
+          ? "revimed.site (S.R.L. REVIMED PLUS, IDNO 1011600011964, Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2): статический информационный сайт без Google Analytics, Meta Pixel и рекламных cookies. Интерактивные тесты работают локально в браузере. Контакт по конфиденциальности: 022 60 50 60."
+          : "revimed.site (S.R.L. REVIMED PLUS, IDNO 1011600011964, Кишинів, Чокана, вул. Мірча чел Бетрин 13/2): статичний інформаційний сайт без Google Analytics, Meta Pixel та рекламних cookies. Інтерактивні тести працюють локально у браузері. Контакт щодо конфіденційності: 022 60 50 60."}
+      </p>
+     </aside>
      {copy.sections.map((sec) => (
       <div key={sec.h2}>
        <h2>{sec.h2}</h2>

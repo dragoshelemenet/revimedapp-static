@@ -47,19 +47,19 @@ export default function CurrencyConverter({
    <div className="currencyGrid">
     <label>
      {labels?.amount || "Sumă"}
-     <input value={amount} onChange={(e) => setAmount(e.target.value)} inputMode="decimal" />
+     <input aria-label={labels?.amount || "Sumă"} value={amount} onChange={(e) => setAmount(e.target.value)} inputMode="decimal" />
     </label>
 
     <label>
      {labels?.from || "Din"}
-     <select value={from} onChange={(e) => setFrom(e.target.value as Currency)}>
+     <select aria-label={labels?.from || "Din"} value={from} onChange={(e) => setFrom(e.target.value as Currency)}>
       {Object.keys(currencies).map((key) => <option key={key}>{key}</option>)}
      </select>
     </label>
 
     <label>
      {labels?.to || "În"}
-     <select value={to} onChange={(e) => setTo(e.target.value as Currency)}>
+     <select aria-label={labels?.to || "În"} value={to} onChange={(e) => setTo(e.target.value as Currency)}>
       {Object.keys(currencies).map((key) => <option key={key}>{key}</option>)}
      </select>
     </label>
