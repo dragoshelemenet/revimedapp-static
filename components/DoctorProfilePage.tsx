@@ -455,6 +455,18 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
     url: absoluteUrl(profilePath),
     image: absoluteUrl("/images/about-us.webp"),
     medicalSpecialty: ["Neurology", "Neurosurgery", "Pediatric"],
+    knowsAbout: [
+      "Neurologie",
+      "Neurochirurgie",
+      "Neuropediatrie",
+      "Hernie de disc fără operație",
+      "Amețeli și Vertij",
+      "Migrene și Cefalee",
+      "Terapia Electrosomn",
+      "Reoencefalografie (REG)",
+      "Electroencefalografie (EEG)",
+      "Fizioterapie și Reabilitare Medicală"
+    ],
     alumniOf: {
       "@type": "EducationalOrganization",
       name: "Universitatea de Stat de Medicină și Farmacie „Nicolae Testemițanu” (USMF)"
@@ -469,6 +481,7 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
     sameAs: [
       "https://orcid.org/0009-0005-9098-8175",
       "https://scholar.google.com/citations?user=UDE8BpcAAAAJ",
+      "https://doi.org/10.5281/zenodo.24532588",
       "https://www.youtube.com/@revimedpluschisinau"
     ],
     telephone: [site.phone, site.phone2],

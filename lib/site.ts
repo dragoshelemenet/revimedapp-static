@@ -8,7 +8,7 @@ export const site = {
  phone2: "+373 79 422 908",
  email: "revimed@revimed.md",
  address: "Str. Mircea cel Bătrân 13/2",
- hours: "Luni–Vineri: 09:00–15:00",
+ hours: "Luni - Vineri: 09:00 - 15:00",
  image: "/images/medical-bg.jpg"
 };
 

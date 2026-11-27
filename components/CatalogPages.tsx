@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageHeading from "./PageHeading";
 import { ContentSection, ReadingCard, ContentNote } from "./ContentLayout";
 import SmartCatalogGrid from "./SmartCatalogGrid";
-import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd, serviceJsonLd } from "@/lib/seo";
+import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd, serviceJsonLd, medicalDeviceJsonLd } from "@/lib/seo";
 import { getRelatedBlogPostsForPost, getRelatedClinicalPagesForPost } from "@/lib/topicClusterLinks";
 import type { Lang } from "@/lib/i18n";
 
@@ -84,7 +84,12 @@ export function CatalogDetail({base, labels, item}: Props & {item: Item}) {
    { name: labels.nav, path: `${base}/` },
    { name: item.title, path: itemPath }
   ])} />
-  <JsonLd data={serviceJsonLd({
+  <JsonLd data={base.includes("/utilaj") ? medicalDeviceJsonLd({
+   name: item.title,
+   description: item.short,
+   path: itemPath,
+   image: item.image
+  }) : serviceJsonLd({
    name: item.title,
    description: item.short,
    path: itemPath,

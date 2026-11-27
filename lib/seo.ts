@@ -165,10 +165,10 @@ export function makeMetadata({
 }
 
 const clinicDescriptions: Record<Lang, string> = {
- ro: "Centrul Medical Revimed PLUS+ din Chișinău — neurologie, neurochirurgie, neuropediatrie, recuperare medicală, fizioterapie, kinetoterapie și medicină integrativă cu experiență clinică din 1991, condus de Dr. Igor Revenco.",
- en: "Revimed PLUS+ Medical Center in Chișinău, Moldova — neurology, neurosurgery, pediatric neurology, medical rehabilitation, physiotherapy, and integrative medicine since 1991, led by Dr. Igor Revenco.",
- ru: "Медицинский центр Revimed PLUS+ в Кишинёве — неврология, нейрохирургия, детская неврология, медицинская реабилитация, физиотерапия и интегративная медицина с 1991 года под руководством д-ра Игоря Ревенко.",
- ua: "Медичний центр Revimed PLUS+ у Кишиневі — неврологія, нейрохірургія, дитяча неврологія, медична реабілітація, фізіотерапія та інтегративна медицина з 1991 року під керівництвом д-ра Ігоря Ревенка."
+ ro: "Centrul Medical Revimed PLUS+ din Chișinău: neurologie, neurochirurgie, neuropediatrie, recuperare medicală, fizioterapie, kinetoterapie și medicină integrativă cu experiență clinică din 1991, condus de Dr. Igor Revenco.",
+ en: "Revimed PLUS+ Medical Center in Chișinău, Moldova: neurology, neurosurgery, pediatric neurology, medical rehabilitation, physiotherapy, and integrative medicine since 1991, led by Dr. Igor Revenco.",
+ ru: "Медицинский центр Revimed PLUS+ в Кишинёве: неврология, нейрохирургия, детская неврология, медицинская реабилитация, физиотерапия и интегративная медицина с 1991 года под руководством д-ра Игоря Ревенко.",
+ ua: "Медичний центр Revimed PLUS+ у Кишиневі: неврологія, нейрохірургія, дитяча неврологія, медична реабілітація, фізіотерапія та інтегративна медицина з 1991 року під керівництвом д-ра Ігоря Ревенка."
 };
 
 export function clinicJsonLd(lang: Lang = "ro") {
@@ -293,7 +293,7 @@ export function clinicJsonLd(lang: Lang = "ro") {
   ],
   legalName: "S.R.L. REVIMED PLUS",
     taxID: "1011600011964",
-    priceRange: "100–1600 MDL",
+    priceRange: "100 - 1600 MDL",
   sameAs: [
    "https://www.facebook.com/p/Centrul-Medical-REVIMED-100047070376925/",
    "https://www.google.com/maps/place/Centrul+Medical+Revimed/@47.0477461,28.8887469,17z",
@@ -382,11 +382,40 @@ export function serviceJsonLd({
  return {
   "@context": "https://schema.org",
   "@type": "MedicalProcedure",
+  "@id": `${absoluteUrl(path)}#procedure`,
   name,
   description,
   image: absoluteUrl(image || "/images/medical-bg.webp"),
   url: absoluteUrl(path),
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  performer: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
   provider: {
+   "@id": `${siteUrl}/#medical-clinic`
+  }
+ };
+}
+
+export function medicalDeviceJsonLd({
+ name,
+ description,
+ path,
+ image
+}: {
+ name: string;
+ description: string;
+ path: string;
+ image?: string;
+}) {
+ return {
+  "@context": "https://schema.org",
+  "@type": "MedicalDevice",
+  "@id": `${absoluteUrl(path)}#device`,
+  name,
+  description,
+  image: absoluteUrl(image || "/images/medical-bg.webp"),
+  url: absoluteUrl(path),
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  owner: {
    "@id": `${siteUrl}/#medical-clinic`
   }
  };

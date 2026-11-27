@@ -94,6 +94,29 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      about: { "@id": `${siteUrl}/#medical-clinic` },
      reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
      author: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
+     mainEntity: {
+      "@type": "MedicalCondition",
+      "@id": `${absoluteUrl(`${p.path}/`)}#condition`,
+      name: p.crumbLabel,
+      description: p.lead,
+      ...(p.symptoms?.length
+       ? {
+          signOrSymptom: p.symptoms.slice(0, 4).map((s) => ({
+           "@type": "MedicalSignOrSymptom",
+           name: s.replace(/[;.]+$/, "")
+          }))
+         }
+       : {}),
+      ...(p.equipmentCards?.length
+       ? {
+          possibleTreatment: p.equipmentCards.map((eq) => ({
+           "@type": "MedicalTherapy",
+           name: eq.title,
+           url: absoluteUrl(`${utilajBase}${eq.slug}/`)
+          }))
+         }
+       : {})
+     },
      ...(p.researchCitations?.length
       ? {
          citation: p.researchCitations.map((c) => ({

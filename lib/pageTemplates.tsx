@@ -1555,6 +1555,10 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     isPartOf: { "@id": `${site.url}/#website` },
     about: { "@id": `${site.url}/#medical-clinic` },
     inLanguage: lang === "ua" ? "uk" : lang,
+    speakable: {
+     "@type": "SpeakableSpecification",
+     cssSelector: ["h1", ".lead"]
+    },
     datePublished: "2026-11-21",
     dateModified: "2026-11-21",
     image: post.image.startsWith("http") ? post.image : absoluteUrl(post.image),
