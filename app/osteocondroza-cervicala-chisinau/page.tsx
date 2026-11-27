@@ -21,6 +21,7 @@ export default function Page() {
    crumbLabel="Osteocondroză Chișinău"
    h1="Tratament Osteocondroză Cervicală și Lombară în Chișinău"
    lead="Plan complet de neurologie și fizioterapie în sectorul Ciocana pentru dureri de gât, spate, amorțeli și rigiditate articulară."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), tratamentul osteocondrozei cervicale și lombare este coordonat de Dr. Igor Revenco și include proceduri avansate de decontracturare și reducere a edemului radicular: curenți sinusoidali modulați Amplipuls-6, electroforeză medicamentoasă transcutanată și fototerapie Solux (100 MDL / 30 min). Consultația primară costă 500 MDL (repetată 400 MDL). Programări: 022 60 50 60."
    introParagraph="Osteocondroza cervicală și lombară este una dintre cele mai frecvente cauze de durere cronică de spate, cefalee occipitală și amorțeală în brațe sau picioare. La Revimed PLUS+ Chișinău abordăm atât cauza neurologică, cât și spasmul muscular local."
    symptomsHeading="Simptome tipice ale osteocondrozei"
    symptoms={[

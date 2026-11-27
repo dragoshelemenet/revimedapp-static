@@ -21,6 +21,7 @@ export default function Page() {
    crumbLabel="Amețeli & Vertij Chișinău"
    h1="Diagnostic și Tratament Amețeli și Vertij în Chișinău"
    lead="Evaluare neurologică atentă și reografie vasculară cerebrală RHEOTEST pe loc la Centrul Medical Revimed PLUS+ (Ciocana)."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (sectorul Ciocana, bd. Mircea cel Bătrân 13/2), diagnosticul și tratamentul amețelilor și vertijului sunt coordonate de Dr. Igor Revenco (35+ ani experiență). Se utilizează reoencefalografia computerizată RHEOTEST (500 MDL) pentru evaluarea fluxului vascular cerebral și protocoale fizioterapeutice de reabilitare (Spectr-LC, Electrosomn, Amplipuls — 100 MDL / 30 min). Consultația neurologică primară costă 500 MDL (repetată 400 MDL). Programări: 022 60 50 60."
    introParagraph="Amețelile recurente, senzația că se învârte camera (vertij) și instabilitatea la mers au frecvent cauze neurologice, vasculare cerebrale sau cervicale. Identificarea cauzei exacte permite un tratament sigur și eficient."
    symptomsHeading="Simptome care necesită evaluare neurologică"
    symptoms={[

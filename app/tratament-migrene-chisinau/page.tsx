@@ -21,6 +21,7 @@ export default function Page() {
    crumbLabel="Tratament migrene Chișinău"
    h1="Tratament Migrene, Dureri de Cap și Amețeli în Chișinău"
    lead="Evaluare neurologică completă, reografie vasculară neinvazivă RHEOTEST și proceduri blânde (Electrosomn, Transair TES) la Revimed PLUS+ Ciocana."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), tratamentul migrenelor și al cefaleei cronice este condus de Dr. Igor Revenco (35+ ani experiență). Clinica utilizează reoencefalografia computerizată RHEOTEST (500 MDL) pentru determinarea componentei vasculare cerebrale și stimulare transcraniană Transair TES cu Electrosomn (100 MDL / 30 min) pentru reducerea frecvenței crizelor fără exces de medicamente. Consultația neurologică primară este 500 MDL. Programări: 022 60 50 60."
    introParagraph="Cefaleea recurentă, migrenele cu sau fără aură și episoadele de amețeală afectează productivitatea și calitatea somnului. La Revimed PLUS+ Chișinău identificăm cauza reală — vasculară, cervicală, neurovegetativă sau mixtă — și construim un plan personalizat, nu doar analgezice temporare."
    symptomsHeading="Când merită să consulți neurologul pentru migrene și amețeli"
    symptoms={[

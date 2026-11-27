@@ -75,6 +75,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
     data={{
      "@context": "https://schema.org",
      "@type": "MedicalWebPage",
+     "@id": `${absoluteUrl(`${p.path}/`)}#webpage`,
      name: p.h1,
      description: p.lead,
      url: absoluteUrl(`${p.path}/`),
@@ -82,6 +83,10 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      datePublished: "2026-11-21",
      dateModified: "2026-11-23",
      lastReviewed: "2026-11-23",
+     medicalAudience: "Patient",
+     specialty: ["Neurology", "PhysicalTherapy"],
+     isPartOf: { "@id": `${siteUrl}/#website` },
+     provider: { "@id": `${siteUrl}/#medical-clinic` },
      speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", ".rm-citable-summary"]

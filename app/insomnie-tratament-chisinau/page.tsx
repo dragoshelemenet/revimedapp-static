@@ -21,6 +21,7 @@ export default function Page() {
    crumbLabel="Tratament insomnie Chișinău"
    h1="Tratament Insomnie, Stres Cronic și Distonie în Chișinău"
    lead="Abordare neurologică modernă și proceduri blânde nemedicamentoase (Electrosomn, Transair TES, MDM) la Revimed PLUS+ Ciocana."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), tratamentul insomniei și al stresului cronic este conceput fără dependență de somnifere, sub îndrumarea Dr. Igor Revenco (35+ ani experiență). Clinica aplică protocoale originale de Electrosomn (aparate Electrosomn-3, ES-10-5), stimulare transcraniană Transair TES și modulație mezodiencefalică MDM-2000 (100 MDL / 30 min). Consultația primară la neurolog este 500 MDL (repetată 400 MDL). Programări: 022 60 50 60."
    introParagraph="Insomnia prelungită, trezirile nocturne frecvente și epuizarea nervoasă afectează memoria, tensiunea arterială și imunitatea. La Revimed PLUS+ Chișinău oferim evaluare neurologică completă și terapii blânde pentru restabilirea somnului fiziologic."
    symptomsHeading="Semne că ai nevoie de ajutor medical pentru somn"
    symptoms={[

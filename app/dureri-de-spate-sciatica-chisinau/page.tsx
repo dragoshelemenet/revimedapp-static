@@ -21,6 +21,7 @@ export default function Page() {
    crumbLabel="Dureri de spate & Sciatică"
    h1="Tratament Dureri de Spate, Lombalgie și Sciatică în Chișinău"
    lead="Evaluare neurologică și neurochirurgicală rapidă + fizioterapie țintită (Amplipuls SMT, electroforeză, Solux) în sectorul Ciocana."
+   directAnswer="La Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2), tratamentul durerilor lombare și al sciaticii combină consultația de specialitate (500 MDL neurolog / 500 MDL neurochirurg) cu 25 de aparate de fizioterapie modernă: curenți sinusoidali modulați Amplipuls, electroforeză medicamentoasă antiinflamatoare și fototerapie Solux (100 MDL / 30 min). Echipa condusă de Dr. Igor Revenco oferă soluții fără intervenție chirurgicală. Programări: 022 60 50 60."
    introParagraph="Durerile de spate lombare sau cervicale și crizele de sciatică pot bloca complet activitatea zilnică. La Revimed PLUS+ Chișinău combinăm diagnosticul precis cu proceduri fizioterapeutice care reduc rapid inflamația și spasmul muscular."
    symptomsHeading="Când este indicat consultul de specialitate"
    symptoms={[

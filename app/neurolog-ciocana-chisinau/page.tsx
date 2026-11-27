@@ -21,6 +21,7 @@ export default function Page() {
    crumbLabel="Neurolog Ciocana Chișinău"
    h1="Neurolog și Fizioterapie în Sectorul Ciocana, Chișinău"
    lead="Centrul Medical Revimed PLUS+ pe bd./Str. Mircea cel Bătrân 13/2 — aproape de casă, cu acces rapid la transport public și 25 de aparate de recuperare."
+   directAnswer="La Centrul Medical Revimed PLUS+ din sectorul Ciocana, Chișinău (bd. Mircea cel Bătrân 13/2), consultațiile neurologice pentru adulți și copii sunt realizate de Dr. Igor Revenco (medic de categorie superioară, membru EANS, 35+ ani experiență clinică). Consultația primară la neurolog costă 500 MDL (repetată 400 MDL), neurochirurg 500 MDL, iar investigațiile pe loc includ EEG (1600 MDL), REG Rheotest (500 MDL), analizator neinvaziv AMP (1000 MDL) și 25 de aparate de fizioterapie (100 MDL / 30 min). Programări fără bilet de trimitere: 022 60 50 60."
    introParagraph="Locuiești în Ciocana, Rîșcani sau Poșta Veche și cauți un medic neurolog, neurochirurg sau centru de fizioterapie cu experiență solidă? Revimed PLUS+ activează de peste 20 de ani pe Str. Mircea cel Bătrân 13/2, Chișinău (MD-2044), sub conducerea Dr. Igor Revenco."
    symptomsHeading="Servicii medicale disponibile în Ciocana, Chișinău"
    symptoms={[

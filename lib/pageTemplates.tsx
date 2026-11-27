@@ -1549,8 +1549,11 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
    ])} />
    <JsonLd data={{
     "@context": "https://schema.org", "@type": "BlogPosting",
+    "@id": `${absoluteUrl(postPath)}#article`,
     headline: post.title, description: post.excerpt,
     mainEntityOfPage: absoluteUrl(postPath),
+    isPartOf: { "@id": `${site.url}/#website` },
+    about: { "@id": `${site.url}/#medical-clinic` },
     inLanguage: lang === "ua" ? "uk" : lang,
     datePublished: "2026-11-21",
     dateModified: "2026-11-21",
