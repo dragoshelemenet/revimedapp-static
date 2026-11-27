@@ -38,9 +38,9 @@ const cookiesCopy: Record<Exclude<Lang, "ro">, {
     ]
    },
    {
-    h2: "2. No Google Analytics, Meta Pixel, or Advertising Trackers",
+    h2: "2. Prior Consent (Opt-In) for Analytics & Advertising (Google / Meta)",
     paragraphs: [
-     "This website does not use Google Analytics, Meta (Facebook) Pixel, remarketing systems, commercial profiling, or behavioral advertising cookies."
+     "By default, when you access the website, all third-party analytics and advertising measurement modules (Google Consent Mode v2 / Google Analytics 4 _ga / Google Ads _gcl_au / Meta Pixel _fbp, _fbc — max 90 days) are disabled (denied). They are activated exclusively if you explicitly click 'Accept' in the consent banner (stored locally in revimed_cookie_consent_v2). If you choose 'Essential Only', no marketing or analytics cookies are loaded."
     ]
    },
    {
@@ -86,9 +86,9 @@ const cookiesCopy: Record<Exclude<Lang, "ro">, {
     ]
    },
    {
-    h2: "2. Без Google Analytics, Meta Pixel и рекламного трекинга",
+    h2: "2. Предварительное согласие (Opt-In) на аналитику и рекламу (Google / Meta)",
     paragraphs: [
-     "Сайт не использует Google Analytics, Meta (Facebook) Pixel, системы ремаркетинга, коммерческое профилирование или рекламные cookies."
+     "По умолчанию при входе на сайт все модули аналитики и оценки рекламы (Google Consent Mode v2 / Google Analytics 4 _ga / Google Ads _gcl_au / Meta Pixel _fbp, _fbc — до 90 дней) отключены (denied). Они активируются исключительно при явном нажатии кнопки «Принять» в панели согласия (выбор сохраняется локально в revimed_cookie_consent_v2). При выборе «Только необходимые» рекламные и аналитические cookies не загружаются."
     ]
    },
    {
@@ -134,9 +134,9 @@ const cookiesCopy: Record<Exclude<Lang, "ro">, {
     ]
    },
    {
-    h2: "2. Без Google Analytics, Meta Pixel та рекламного трекінгу",
+    h2: "2. Попередня згода (Opt-In) на аналітику та рекламу (Google / Meta)",
     paragraphs: [
-     "Сайт не використовує Google Analytics, Meta (Facebook) Pixel, системи ремаркетингу, комерційне профілювання або рекламні cookies."
+     "За замовчуванням під час входу на сайт усі модулі аналітики та вимірювання реклами (Google Consent Mode v2 / Google Analytics 4 _ga / Google Ads _gcl_au / Meta Pixel _fbp, _fbc — до 90 днів) вимкнені (denied). Вони активуються виключно після явного натискання кнопки «Прийняти» на панелі згоди (вибір зберігається локально у revimed_cookie_consent_v2). Якщо ви обираєте «Лише необхідні», маркетингові cookies не завантажуються."
     ]
    },
    {

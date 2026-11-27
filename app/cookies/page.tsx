@@ -44,10 +44,10 @@ export default function CookiesPage() {
      <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
       <div className="rm-citable-summary-head">
        <span className="rm-citable-pill">Pe scurt · Confidențialitate &amp; Cookies Revimed PLUS+</span>
-       <span className="rm-citable-date">Legea nr. 133/2011 RM · Zero tracking</span>
+       <span className="rm-citable-date">Legea nr. 133/2011 RM · Opt-In Strict</span>
       </div>
       <p style={{ margin: 0 }}>
-       Site-ul revimed.site (S.R.L. „REVIMED PLUS”, IDNO 1011600011964, Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) este o platformă statică informativă fără Google Analytics, fără Meta Pixel și fără cookies de publicitate. Testele interactive rulează strict local în browser. Contact confidențialitate: 022 60 50 60.
+       Site-ul revimed.site (S.R.L. „REVIMED PLUS”, IDNO 1011600011964, Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) nu colectează date medicale prin formulare online. Orice modul de statistică sau măsurare a campaniilor (Google Consent Mode v2 / GA4 / Meta Pixel) este blocat implicit (denied) și se activează exclusiv cu consimțământul dvs. explicit („Acceptă”). Contact confidențialitate: 022 60 50 60 · Autoritate: CNPDCP (datepersonale.md).
       </p>
      </aside>
      <h2>1. Protecția datelor cu caracter personal (Legea nr. 133/2011)</h2>
@@ -67,8 +67,14 @@ export default function CookiesPage() {
      <p>
       În mod implicit, la accesarea site-ului, orice modul de analiză statistică sau măsurare a campaniilor publicitare
       (Google Analytics 4 / Google Consent Mode v2 / Meta Pixel) este <strong>dezactivat (denied)</strong>. Aceste
-      module se activează exclusiv dacă apăsați explicit butonul <strong>„Acceptă”</strong> din bara de consimțământ.
-      Dacă alegeți <strong>„Doar Necesare”</strong>, nu se încarcă niciun cookie de marketing sau statistică terță.
+      module se activează exclusiv dacă apăsați explicit butonul <strong>„Acceptă”</strong> din bara de consimțământ:
+     </p>
+     <ul>
+      <li><strong>Stocare tehnică necesară:</strong> <code>revimed_cookie_consent_v2</code> (reține local în browser opțiunea dvs. „accepted” sau „rejected”).</li>
+      <li><strong>Cookies opționale (doar după „Acceptă”):</strong> <code>_ga</code> (Google Analytics 4 — statistici anonime de trafic, max. 13–24 luni), <code>_gcl_au</code> (Google Ads — măsurare conversii, 90 zile), <code>_fbp</code> / <code>_fbc</code> (Meta Pixel — măsurarea eficienței campaniilor pe Facebook/Instagram și numărul de apeluri inițiate, 90 zile).</li>
+     </ul>
+     <p>
+      Dacă alegeți <strong>„Doar Necesare”</strong>, nu se încarcă niciun script de marketing sau analiză terță, iar eventualele cookies sunt șterse automat. Vă puteți retrage sau modifica oricând opțiunea din setările browserului sau redeschizând bara de consimțământ.
      </p>
 
      <h2>3. Stocare tehnică locală și cookies</h2>
@@ -93,7 +99,7 @@ export default function CookiesPage() {
       (IDNO <strong>1011600011964</strong>, mun. Chișinău, sect. Ciocana, bd. Mircea cel Bătrân nr. 13/2, administrator:
       Dr. Igor Revenco). Conform Legii nr. 133/2011, beneficiați de dreptul la informare, acces, intervenție, opoziție
       și ștergere în legătură cu datele prelucrate de clinică. Pentru solicitări privind confidențialitatea, ne puteți
-      contacta la <strong>022 60 50 60</strong> sau direct la sediul clinicii.
+      contacta la <strong>022 60 50 60</strong> sau direct la sediul clinicii, ori vă puteți adresa <strong>Centrului Național pentru Protecția Datelor cu Caracter Personal (CNPDCP — datepersonale.md)</strong>.
      </p>
 
      <h2>6. Limitarea răspunderii medicale și actualizări</h2>
@@ -106,10 +112,7 @@ export default function CookiesPage() {
 
      <h2>Политика конфиденциальности и Cookies (RU)</h2>
      <p>
-      Сайт <strong>revimed.site</strong> не собирает персональные данные через онлайн-формы, не использует Google
-      Analytics, рекламные трекеры или маркетинговые cookies. Интерактивные тесты работают исключительно локально в
-      вашем браузере. Встроенные видео используют режим повышенной конфиденциальности (<code>youtube-nocookie.com</code>).
-      По вопросам защиты персональных данных (Закон РМ № 133/2011) обращайтесь по тел. <strong>022 60 50 60</strong>.
+      Сайт <strong>revimed.site</strong> не собирает медицинские персональные данные через онлайн-формы. По умолчанию любые аналитические или рекламные модули (Google Consent Mode v2 / GA4 <code>_ga</code> / Meta Pixel <code>_fbp</code>, <code>_fbc</code> — до 90 дней) заблокированы (<code>denied</code>) и активируются исключительно при явном нажатии кнопки «Принять» (хранится в <code>revimed_cookie_consent_v2</code>). При выборе «Только необходимые» сторонние cookies не устанавливаются и удаляются. Интерактивные тесты работают строго локально в браузере. По вопросам защиты персональных данных (Закон РМ № 133/2011, надзорный орган CNPDCP — datepersonale.md) обращайтесь по тел. <strong>022 60 50 60</strong>.
      </p>
 
      <div className="rm-quick-links-bar">
