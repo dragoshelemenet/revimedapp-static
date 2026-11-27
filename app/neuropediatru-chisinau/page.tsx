@@ -45,7 +45,8 @@ export default function NeuropediatruChisinauPage() {
    <ContentSection narrow>
     <ReadingCard>
      <aside
-      aria-label="Pe scurt — date cheie și prețuri"
+      className="rm-citable-summary"
+      aria-label="Pe scurt - date cheie si preturi"
       style={{
        padding: "14px 18px",
        marginBottom: 18,
@@ -61,7 +62,7 @@ export default function NeuropediatruChisinauPage() {
        <span>Pe scurt — date cheie și prețuri</span>
        <span>Actualizat medical: Noiembrie 2026</span>
       </div>
-      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația de neurologie pediatrică (neuropediatru) costă 500 MDL (repetată 400 MDL) și este realizată de Dr. Igor Revenco (35+ ani experiență). Sunt disponibile și investigații neinvazive (EEG 1600 MDL, AMP 1000 MDL) și proceduri blânde de fizioterapie (150 MDL). Programări: 022 60 50 60.</p>
+      <p style={{ margin: 0 }}>La Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2), consultația de neurologie pediatrică (neuropediatru) costă 500 MDL (repetată 400 MDL) și este realizată de Dr. Igor Revenco (35+ ani experiență). Sunt disponibile și investigații neinvazive (EEG 1600 MDL, AMP 1000 MDL) și proceduri blânde de fizioterapie (100 MDL / 30 min). Programari: 022 60 50 60.</p>
      </aside>
      <h2>Când este util un consult la neuropediatru</h2>
      <ul>
@@ -73,7 +74,7 @@ export default function NeuropediatruChisinauPage() {
      </ul>
      <h2>Întrebări frecvente — Neuropediatrie Chișinău</h2>
      {faqs.map((f) => (
-      <details style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+      <details key={f.q} style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
        <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
        <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
       </details>

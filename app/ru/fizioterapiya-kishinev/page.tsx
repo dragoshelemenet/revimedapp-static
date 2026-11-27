@@ -45,7 +45,8 @@ export default function FizioterapiyaKishinevPage() {
    <ContentSection narrow>
     <ReadingCard>
      <aside
-      aria-label="Кратко — ключевые факты и цены"
+      className="rm-citable-summary"
+      aria-label="Кратко - ключевые факты и цены"
       style={{
        padding: "14px 18px",
        marginBottom: 18,
@@ -61,7 +62,7 @@ export default function FizioterapiyaKishinevPage() {
        <span>Кратко — ключевые факты и цены</span>
        <span>Обновлено: Ноябрь 2026</span>
       </div>
-      <p style={{ margin: 0 }}>В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) сеанс физиотерапии (30 мин), Электросон, Амплипульс или Электрофорез стоит 150 MDL, лечебный массаж (60 мин) — 200 MDL, комбинированная электротерапия + кинезотерапия — 250 MDL/час. В клинике работают 25 медицинских аппаратов. Запись: 022 60 50 60.</p>
+      <p style={{ margin: 0 }}>В медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) сеанс физиотерапии (30 мин), Электросон, Амплипульс или Электрофорез стоит 100 MDL / 30 мин (сеанс физиотерапии 30 мин), лечебный массаж (60 мин) — 200 MDL, комбинированная электротерапия + кинезотерапия — 250 MDL/час. В клинике работают 25 медицинских аппаратов. Запись: 022 60 50 60.</p>
      </aside>
      <h2>Основные процедуры в клинике</h2>
      <ul>
@@ -80,7 +81,7 @@ export default function FizioterapiyaKishinevPage() {
      </ul>
      <h2>Частые вопросы</h2>
      {faqs.map((f) => (
-      <details style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+      <details key={f.q} style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
        <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
        <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
       </details>

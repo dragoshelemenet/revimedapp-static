@@ -38,7 +38,10 @@ export default function ElectrosomnChisinauPage() {
    <JsonLd data={{ "@context": "https://schema.org", "@type": "MedicalWebPage",
      datePublished: "2026-11-21",
      dateModified: "2026-11-21",
-     lastReviewed: "2026-11-21", name: "Electrosomn și Transair TES Chișinău — Revimed PLUS+", url: absoluteUrl("/electrosomn-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` } }} />
+     lastReviewed: "2026-11-21", name: "Electrosomn și Transair TES Chișinău — Revimed PLUS+", url: absoluteUrl("/electrosomn-chisinau/"), about: { "@id": `${siteUrl}/#medical-clinic` }, reviewedBy: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
+      speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".rm-citable-summary"] },
+      creator: { "@type": "Person", "@id": `${siteUrl}/dr-igor-revenco/#physician`, name: "Dr. Igor Revenco" }
+     }} />
    <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
    <JsonLd
     data={{
@@ -51,6 +54,7 @@ export default function ElectrosomnChisinauPage() {
      duration: "PT2M4S",
      contentUrl: "https://www.youtube.com/watch?v=6GGtiONz4pE",
      embedUrl: "https://www.youtube-nocookie.com/embed/6GGtiONz4pE",
+     creator: { "@type": "Person", "@id": `${siteUrl}/dr-igor-revenco/#physician`, name: "Dr. Igor Revenco" },
      publisher: { "@id": `${siteUrl}/#medical-clinic` }
     }}
    />
@@ -64,7 +68,8 @@ export default function ElectrosomnChisinauPage() {
    <ContentSection narrow>
     <ReadingCard>
      <aside
-      aria-label="Pe scurt — date cheie și prețuri"
+      className="rm-citable-summary"
+      aria-label="Pe scurt - date cheie si preturi"
       style={{
        padding: "14px 18px",
        marginBottom: 18,
@@ -107,7 +112,7 @@ export default function ElectrosomnChisinauPage() {
      <p>Primele 2–3 ședințe au rol de adaptare și durează <strong>20–30 de minute</strong>, după care durata crește la <strong>45–60 de minute</strong> în funcție de răspunsul pacientului. Înainte de începerea cursului, Dr. Igor Revenco verifică absența contraindicațiilor locale (afecțiuni inflamatorii oculare, glaucom, miopie severă sau dermatită facială — situații în care se evită montajul ocular sau se alege o altă procedură fizioterapeutică).</p>
      <h2>Întrebări frecvente — Electrosomn Chișinău</h2>
      {faqs.map((f) => (
-      <details style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+      <details key={f.q} style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
        <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
        <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
       </details>

@@ -74,7 +74,8 @@ export default function NeurochirurgChisinauPage() {
    <ContentSection narrow>
     <ReadingCard>
      <aside
-      aria-label="Pe scurt — date cheie și prețuri"
+      className="rm-citable-summary"
+      aria-label="Pe scurt - date cheie si preturi"
       style={{
        padding: "14px 18px",
        marginBottom: 18,
@@ -110,7 +111,7 @@ export default function NeurochirurgChisinauPage() {
 
      <h2>Întrebări frecvente — Neurochirurg Chișinău</h2>
      {faqs.map((f) => (
-      <details style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
+      <details key={f.q} style={{ marginBottom: 10, padding: "12px 14px", borderRadius: 14, background: "rgba(240, 248, 255, 0.72)", border: "1px solid rgba(11, 143, 216, 0.16)" }}>
        <summary style={{ fontWeight: 700, color: "#08234a", cursor: "pointer" }}>{f.q}</summary>
        <p style={{ margin: "8px 0 0", color: "#334e68" }}>{f.a}</p>
       </details>

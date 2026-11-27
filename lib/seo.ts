@@ -39,10 +39,10 @@ const citySuffix: Record<Lang, string> = {
 };
 
 const shortDescSuffix: Record<Lang, string> = {
- ro: " — Centrul Medical Revimed PLUS+ Chișinău (Ciocana), neurologie, neurochirurgie și recuperare medicală.",
- en: " — Revimed PLUS+ Medical Center Chișinău (Moldova), neurology, neurosurgery, and medical rehabilitation.",
- ru: " — Медицинский центр Revimed PLUS+ Кишинёв (Чеканы), неврология, нейрохирургия и физиотерапия.",
- ua: " — Медичний центр Revimed PLUS+ Кишинів (Чекани), неврологія, нейрохірургія та фізіотерапія."
+ ro: ": Centrul Medical Revimed PLUS+ Chișinău (Ciocana), neurologie, neurochirurgie și recuperare medicală.",
+ en: ": Revimed PLUS+ Medical Center Chișinău (Moldova), neurology, neurosurgery, and medical rehabilitation.",
+ ru: ": Медицинский центр Revimed PLUS+ Кишинёв (Чеканы), неврология, нейрохирургия и физиотерапия.",
+ ua: ": Медичний центр Revimed PLUS+ Кишинів (Чекани), неврологія, нейрохірургія та фізіотерапія."
 };
 
 function clampWords(text: string, maxLen: number) {

@@ -245,7 +245,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
 
      <h2>{p.equipmentHeading}</h2>
      <div className="rm-home-services-grid" style={{ marginBottom: 22 }}>
-      {p.equipmentCards.map((eq) => (
+      {p.equipmentCards.map((eq, eqIdx) => (
        <Link
         key={eq.slug}
         href={`${utilajBase}${eq.slug}/`}
@@ -254,10 +254,11 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
        >
         <img
          src={eq.image}
-         alt={`${eq.title} — Revimed PLUS+`}
+         alt={`${eq.title}: Revimed PLUS+`}
          width={480}
          height={360}
-         loading="lazy"
+         loading={eqIdx === 0 ? "eager" : "lazy"}
+         fetchPriority={eqIdx === 0 ? "high" : "auto"}
          decoding="async"
          style={{ width: "100%", height: 130, objectFit: "cover", borderRadius: 12, marginBottom: 6 }}
         />

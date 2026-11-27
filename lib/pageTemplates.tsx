@@ -287,6 +287,7 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
      description: text.heroSubtitle,
      isPartOf: { "@id": `${site.url}/#website` },
      about: { "@id": `${site.url}/#medical-clinic` },
+          speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".rm-citable-summary"] },
      creator: {
       "@type": "Organization",
       "@id": "https://wsod.cloud/#organization",
@@ -313,6 +314,22 @@ export function HomeTemplate({ lang }: { lang: Lang }) {
    </section>
 
    <HomeStats lang={lang} />
+
+   <section className="rmSection rm-home-citable-section" aria-label="Pe scurt — Revimed PLUS+ Chișinău">
+    <div className="rmShell">
+     <div className="rm-citable-summary" data-geo-citable>
+      {lang === "en" ? (
+       <p><strong>Revimed PLUS+ Medical Centre</strong> (Chisinau, Ciocana, 13/2 Mircea cel Batran St.) offers neurologist, neurosurgeon, neuropediatrician, and physiotherapy consultations. 25 physiotherapy devices. Primary neurology consultation: 500 MDL. Physiotherapy session: 100 MDL / 30 min. Appointments: 022 60 50 60.</p>
+      ) : lang === "ru" ? (
+       <p><strong>Медицинский центр Revimed PLUS+</strong> (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2) — консультации невролога, нейрохирурга, нейропедиатра и физиотерапия. 25 медицинских аппаратов. Первичная консультация невролога: 500 MDL. Физиопроцедура: 100 MDL / 30 мин. Запись: 022 60 50 60.</p>
+      ) : lang === "ua" ? (
+       <p><strong>Медичний центр Revimed PLUS+</strong> (Кишинів, Чекани, вул. Мірча чел Бетрин 13/2) — консультації невролога, нейрохірурга, нейропедіатра та фізіотерапія. 25 медичних апаратів. Первинна консультація невролога: 500 MDL. Фізіопроцедура: 100 MDL / 30 хв. Запис: 022 60 50 60.</p>
+      ) : (
+       <p><strong>Centrul Medical Revimed PLUS+</strong> (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2) ofera consultații de neurologie, neurochirurgie, neuropediatrie și fizioterapie. 25 aparate fizioterapeutice. Consultatie primara neurologie: 500 MDL. Sedinta fizioterapie: 100 MDL / 30 min. Programari: 022 60 50 60.</p>
+      )}
+     </div>
+    </div>
+   </section>
 
    <SymptomDiagnosticFinder lang={lang} />
 
