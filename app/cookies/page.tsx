@@ -63,10 +63,12 @@ export default function CookiesPage() {
       protecția datelor cu caracter personal</strong> a Republicii Moldova.
      </p>
 
-     <h2>2. Fără Google Analytics, Meta Pixel sau tracking publicitar</h2>
+     <h2>2. Consimțământ prealabil (Opt-In) pentru Analiză &amp; Campanii (Google / Meta)</h2>
      <p>
-      Site-ul nu utilizează Google Analytics, Meta (Facebook) Pixel, sisteme de remarketing, profilare comercială sau
-      cookies de publicitate comportamentală.
+      În mod implicit, la accesarea site-ului, orice modul de analiză statistică sau măsurare a campaniilor publicitare
+      (Google Analytics 4 / Google Consent Mode v2 / Meta Pixel) este <strong>dezactivat (denied)</strong>. Aceste
+      module se activează exclusiv dacă apăsați explicit butonul <strong>„Acceptă”</strong> din bara de consimțământ.
+      Dacă alegeți <strong>„Doar Necesare”</strong>, nu se încarcă niciun cookie de marketing sau statistică terță.
      </p>
 
      <h2>3. Stocare tehnică locală și cookies</h2>

@@ -31,6 +31,7 @@ import ScrollToTopOnRoute from "../components/ScrollToTopOnRoute";
 import ScrollExperience from "../components/ScrollExperience";
 
 import MobileCallBar from "../components/MobileCallBar";
+import CookieConsentAndMeta from "../components/CookieConsentAndMeta";
 import { site } from "../lib/site";
 
 
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     {children}</main>
     <Footer />
     <MobileCallBar />
+    <CookieConsentAndMeta />
     <GlassSheenController />
     <ScrollToTopOnRoute />
     <ScrollExperience />
