@@ -529,13 +529,25 @@ export function galleryPageJsonLd({
    contentUrl: img.url.startsWith("http") ? img.url : absoluteUrl(img.url),
    caption: img.caption
   })),
-  video: videos.map((vid) => ({
-   "@type": "VideoObject",
-   name: vid.title,
-   description: `${vid.title} — ${seoBase.name}`,
-   embedUrl: vid.embedUrl,
-   publisher: { "@id": `${siteUrl}/#medical-clinic` }
-  }))
+  video: videos.map((vid) => {
+   const ytMatch = String(vid.embedUrl || "").match(/embed\/([A-Za-z0-9_-]{6,})/);
+   const ytId = ytMatch ? ytMatch[1] : null;
+   return {
+    "@type": "VideoObject",
+    name: vid.title,
+    description: `${vid.title}: ${seoBase.name} (Chișinău, Ciocana, Dr. Igor Revenco)`,
+    embedUrl: vid.embedUrl,
+    thumbnailUrl: ytId ? `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg` : seoBase.image,
+    uploadDate: "2024-03-15",
+    creator: {
+     "@type": "Person",
+     "@id": `${siteUrl}/dr-igor-revenco/#physician`,
+     name: "Dr. Igor Revenco",
+     url: `${siteUrl}/dr-igor-revenco/`
+    },
+    publisher: { "@id": `${siteUrl}/#medical-clinic` }
+   };
+  })
  };
 }
 

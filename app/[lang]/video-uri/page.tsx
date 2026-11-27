@@ -80,6 +80,19 @@ export default async function VideoLangPage({ params }: Props) {
    </PageHeading>
    <section className="rmSection galleryVideoSection">
     <div className="rmShell">
+     <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{copy.title} · Revimed PLUS+ Chișinău</span>
+       <span className="rm-citable-date">6 Clinical Videos · Dr. Igor Revenco</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "ru"
+        ? "Официальная видеогалерея медицинского центра Revimed PLUS+ (Кишинёв, сектор Чеканы, ул. Мирча чел Бэтрын 13/2): демонстрации аппаратной физиотерапии (Электросон-3, Трансаир ТЭС, Би-ЛЕНАР, Амплипульс СМТ: 100 MDL / 30 мин), процедур нейрореабилитации и клинические разъяснения д-ра Игоря Ревенко (невролог, нейрохирург и детский невролог высшей категории, 35+ лет стажа, член EANS). Запись на приём (500 MDL первичный / 400 MDL повторный): 022 60 50 60."
+        : lang === "ua"
+          ? "Офіційна відеогалерея медичного центру Revimed PLUS+ (Кишинів, сектор Чокана, вул. Мірча чел Бетрин 13/2): демонстрації апаратної фізіотерапії (Електросон-3, Трансаїр ТЕС, Бі-ЛЕНАР, Ампліпульс СМТ: 100 MDL / 30 хв), процедур нейрореабілітації та клінічні роз’яснення д-ра Ігоря Ревенка (невролог, нейрохірург і дитячий невролог вищої категорії, 35+ років стажу, член EANS). Запис на прийом (500 MDL первинний / 400 MDL повторний): 022 60 50 60."
+          : "Official video gallery of Revimed PLUS+ Medical Center (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2): clinical demonstrations of apparatus physiotherapy (Electrosleep-3, Transair TES, Bi-LENAR, Amplipuls SMT: 100 MDL / 30 min), neuro-rehabilitation workflows, and medical presentations by Dr. Igor Revenco (Senior Neurologist, Neurosurgeon & Pediatric Neurologist, 35+ years experience, EANS member). Appointments (500 MDL primary / 400 MDL follow-up): 022 60 50 60."}
+      </p>
+     </aside>
      <h2 className="centerTitle">{text.ourVideos}</h2>
      <VideoGalleryDropdown videos={youtubeVideos} lang={lang} />
      <div className="rm-quick-links-bar" style={{ justifyContent: "center", marginTop: 24 }}>

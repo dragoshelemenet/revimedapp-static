@@ -67,16 +67,16 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     ],
     eduTitle: "Studii, Titluri și Afilieri Profesionale",
     eduItems: [
-      "Absolvent al Universității de Stat de Medicină și Farmacie „Nicolae Testemițanu” (USMF, 1991), rezidențiat (1991–1994) și doctor în neurochirurgie (USMF, Chișinău).",
-      "Medic neurochirurg la Spitalul Clinic Municipal de Copii „V. Ignatenco” (1994–2007) și fondator / medic principal al Centrului Medical Revimed PLUS+ din 2007.",
+      "Absolvent al Universității de Stat de Medicină și Farmacie „Nicolae Testemițanu” (USMF, 1991), rezidențiat (1991-1994) și doctor în neurochirurgie (USMF, Chișinău).",
+      "Medic neurochirurg la Spitalul Clinic Municipal de Copii „V. Ignatenco” (1994-2007) și fondator / medic principal al Centrului Medical Revimed PLUS+ din 2007.",
       "Medic de categorie superioară în neurologie, neurochirurgie și neurologie pediatrică, membru al Asociației Europene de Neurochirurgie (EANS).",
       "Autor a zeci de lucrări științifice în neurologie, neurochirurgie și neuroreabilitare și deținător al brevetului de invenție pentru „Aparatul Revimed vertebro”."
     ],
     specTitle: "Specializări și Competențe Clinice",
     specItems: [
       "Diagnosticarea și tratamentul afecțiunilor sistemului nervos central și periferic (radiculite, dureri cervicale și lombare, migrene, cefalee, amețeli, stări depresive, anxietate, tulburări de somn).",
-      "Consultații de neurochirurgie — evaluarea indicațiilor chirurgicale versus strategii conservatoare și de recuperare.",
-      "Neurologie pediatrică (neuropediatrie) — evaluare și urmărire neurologică pentru copii și adolescenți.",
+      "Consultații de neurochirurgie: evaluarea indicațiilor chirurgicale versus strategii conservatoare și de recuperare.",
+      "Neurologie pediatrică (neuropediatrie): evaluare și urmărire neurologică pentru copii și adolescenți.",
       "Diagnostic funcțional, psihodiagnostic și programe de neurorecuperare neuro-psiho-somatică.",
       "Integrarea metodelor complementare și de fizioterapie: electroterapie (Electrosomn, Transair, Bi-LENAR), acupunctură, fitoterapie și reabilitare medicală."
     ],
@@ -94,14 +94,14 @@ const copyByLang: Record<Lang, ProfileCopy> = {
         year: "2024",
         type: "Articol · IBN",
         title:
-          "Blocantul selectiv al receptorilor de glutamat (N-metil-D-aspartat) – în terapia adjuvantă la copiii cu tulburarea spectrului autist",
+          "Blocantul selectiv al receptorilor de glutamat (N-metil-D-aspartat): în terapia adjuvantă la copiii cu tulburarea spectrului autist",
         authors: "Igor Revenco (coord. șt. Svetlana Hadjiu, USMF „Nicolae Testemițanu”)",
         venue:
-          "Conferința „Cercetarea în biomedicină și sănătate”, Ed. 4, 16–18 octombrie 2024, Chișinău, p. 457",
+          "Conferința „Cercetarea în biomedicină și sănătate”, Ed. 4, 16-18 octombrie 2024, Chișinău, p. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Studiu clinic pe 80 de copii (4–14 ani) cu tulburări din spectrul autist privind utilizarea blocantului receptorilor NMDA ca terapie adjuvantă."
+          "Studiu clinic pe 80 de copii (4-14 ani) cu tulburări din spectrul autist privind utilizarea blocantului receptorilor NMDA ca terapie adjuvantă."
       },
       {
         year: "2023",
@@ -109,7 +109,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
         title: "Trauma craniocerebrală la copii: teste radioimunologice",
         authors: "Igor Revenco, Svetlana Hadjiu (USMF „Nicolae Testemițanu”; IMSP Institutul Mamei și Copilului)",
         venue:
-          "Conferința „Cercetarea în biomedicină și sănătate”, Ed. 1, 18–20 octombrie 2023, Chișinău, p. 392",
+          "Conferința „Cercetarea în biomedicină și sănătate”, Ed. 1, 18-20 octombrie 2023, Chișinău, p. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
@@ -135,12 +135,12 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     clinicAddressLabel: "Adresă clinică",
     clinicAddress: "Str. Mircea cel Bătrân 13/2, sectorul Ciocana, Chișinău, Republica Moldova",
     clinicHoursLabel: "Program de lucru",
-    clinicHours: "Luni – Vineri: 09:00 – 15:00",
+    clinicHours: "Luni - Vineri: 09:00 - 15:00",
     clinicPhoneLabel: "Telefon programări",
     sourcesTitle: "Surse publice și directoare medicale",
     sourcesNote: "Informațiile biografice și profesionale sunt compilate din surse publice și directoare medicale din Republica Moldova:",
     sources: [
-      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Profil medic specialist — neurologie, neurochirurgie, neurologie pediatrică, categorie superioară, 35+ ani experiență." },
+      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Profil medic specialist: neurologie, neurochirurgie, neurologie pediatrică, categorie superioară, 35+ ani experiență." },
       { name: "DoctorNeurolog.md", url: "https://doctorneurolog.md/", desc: "Studii de doctorat în neurochirurgie (USMF „Nicolae Testemițanu”), membru al Asociației Europene de Neurochirurgie, domenii clinice." },
       { name: "DoctorChat.md", url: "https://doctorchat.md/", desc: "Profil medic neurolog și neuropediatru, Chișinău." },
       { name: "Top.md", url: "https://top.md/", desc: "Fișa Centrului Medical Revimed PLUS+ (sectorul Ciocana, diagnostic funcțional și reabilitare neuro-psiho-somatică)." },
@@ -164,7 +164,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     ],
     eduTitle: "Education, Credentials & Professional Memberships",
     eduItems: [
-      "PhD in Neurosurgery — doctoral studies completed at “Nicolae Testemițanu” State University of Medicine and Pharmacy (USMF), Chișinău.",
+      "PhD in Neurosurgery: doctoral studies completed at “Nicolae Testemițanu” State University of Medicine and Pharmacy (USMF), Chișinău.",
       "Superior-category physician in neurology, neurosurgery, and pediatric neurology.",
       "Member of the European Association of Neurosurgical Societies (EANS).",
       "Over 35 years of continuous medical practice and more than 20 years leading Revimed PLUS+ Medical Center in Chișinău."
@@ -172,8 +172,8 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     specTitle: "Specialties & Clinical Expertise",
     specItems: [
       "Diagnosis and treatment of central and peripheral nervous system disorders (radiculitis, cervical & lumbar pain, migraines, headaches, dizziness, depression, anxiety, sleep disorders).",
-      "Neurosurgical consultations — evaluating surgical indications versus conservative and rehabilitation pathways.",
-      "Pediatric neurology — neurological evaluation and follow-up for children and adolescents.",
+      "Neurosurgical consultations: evaluating surgical indications versus conservative and rehabilitation pathways.",
+      "Pediatric neurology: neurological evaluation and follow-up for children and adolescents.",
       "Functional diagnostics, psychodiagnostics, and neuro-psycho-somatic rehabilitation.",
       "Integrative physiotherapy and complementary methods: electrotherapy (Electrosomn, Transair, Bi-LENAR), acupuncture, phytotherapy, and medical recovery."
     ],
@@ -191,14 +191,14 @@ const copyByLang: Record<Lang, ProfileCopy> = {
         year: "2024",
         type: "Paper · IBN",
         title:
-          "The selective blocker of glutamate receptors (N-methyl-D-aspartate) – in adjunctive therapy in children with autism spectrum disorder",
+          "The selective blocker of glutamate receptors (N-methyl-D-aspartate): in adjunctive therapy in children with autism spectrum disorder",
         authors: "Igor Revenco (advisor: Svetlana Hadjiu, USMF “Nicolae Testemițanu”)",
         venue:
-          "Conference “Research in Biomedicine and Health”, 4th Ed., Oct 16–18, 2024, Chișinău, p. 457",
+          "Conference “Research in Biomedicine and Health”, 4th Ed., Oct 16-18, 2024, Chișinău, p. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Clinical study of 80 children (aged 4–14) with autism spectrum disorder on adjunctive NMDA-receptor blocker therapy."
+          "Clinical study of 80 children (aged 4-14) with autism spectrum disorder on adjunctive NMDA-receptor blocker therapy."
       },
       {
         year: "2023",
@@ -206,7 +206,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
         title: "Cranio-cerebral trauma in children: radioimmunological tests",
         authors: "Igor Revenco, Svetlana Hadjiu (USMF “Nicolae Testemițanu”; Mother and Child Institute)",
         venue:
-          "Conference “Research in Biomedicine and Health”, 1st Ed., Oct 18–20, 2023, Chișinău, p. 392",
+          "Conference “Research in Biomedicine and Health”, 1st Ed., Oct 18-20, 2023, Chișinău, p. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
@@ -232,12 +232,12 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     clinicAddressLabel: "Clinic address",
     clinicAddress: "Mircea cel Bătrân St. 13/2, Ciocana district, Chișinău, Republic of Moldova",
     clinicHoursLabel: "Working hours",
-    clinicHours: "Monday – Friday: 09:00 – 15:00",
+    clinicHours: "Monday - Friday: 09:00 - 15:00",
     clinicPhoneLabel: "Appointments phone",
     sourcesTitle: "Public Sources & Medical Directories",
     sourcesNote: "Biographical and professional credentials compiled from public medical directories and official clinic records:",
     sources: [
-      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Specialist profile — neurology, neurosurgery, pediatric neurology, superior category, 35+ years experience." },
+      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Specialist profile: neurology, neurosurgery, pediatric neurology, superior category, 35+ years experience." },
       { name: "DoctorNeurolog.md", url: "https://doctorneurolog.md/", desc: "PhD in neurosurgery (USMF “Nicolae Testemițanu”), member of the European Association of Neurosurgical Societies." },
       { name: "DoctorChat.md", url: "https://doctorchat.md/", desc: "Neurologist & pediatric neurologist directory listing in Chișinău." },
       { name: "Top.md", url: "https://top.md/", desc: "Revimed PLUS+ Medical Center directory profile (Ciocana branch, functional diagnostics & rehabilitation)." },
@@ -261,7 +261,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     ],
     eduTitle: "Образование, звания и членство",
     eduItems: [
-      "Доктор нейрохирургии — докторантура в Государственном университете медицины и фармации им. Николае Тестемицану (USMF), Кишинёв.",
+      "Доктор нейрохирургии: докторантура в Государственном университете медицины и фармации им. Николае Тестемицану (USMF), Кишинёв.",
       "Врач высшей категории по неврологии, нейрохирургии и детской неврологии.",
       "Член Европейской ассоциации нейрохирургов (EANS).",
       "Более 35 лет врачебной практики и свыше 20 лет работы во главе центра Revimed PLUS+ в Кишинёве."
@@ -269,8 +269,8 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     specTitle: "Специализация и клинические компетенции",
     specItems: [
       "Диагностика и лечение заболеваний центральной и периферической нервной системы (радикулиты, боли в шее и пояснице, мигрени, головокружение, депрессивные состояния, тревога, нарушения сна).",
-      "Консультации нейрохирурга — оценка показаний к операции или консервативному восстановлению.",
-      "Детская неврология (нейропедиатрия) — приём и наблюдение детей.",
+      "Консультации нейрохирурга: оценка показаний к операции или консервативному восстановлению.",
+      "Детская неврология (нейропедиатрия): приём и наблюдение детей.",
       "Функциональная диагностика, психодиагностика и нейро-психо-соматическая реабилитация.",
       "Физиотерапия и интегративные методы: электротерапия (Электросон, Трансаир, Би-ЛЕНАР), акупунктура, фитотерапия."
     ],
@@ -291,11 +291,11 @@ const copyByLang: Record<Lang, ProfileCopy> = {
           "Селективный блокатор глутаматных (NMDA) рецепторов в адъювантной терапии у детей с расстройством аутистического спектра",
         authors: "Игорь Ревенко (науч. рук. Светлана Хаджиу, USMF им. Н. Тестемицану)",
         venue:
-          "Конференция «Cercetarea în biomedicină și sănătate», 4-е изд., 16–18 октября 2024, Кишинёв, с. 457",
+          "Конференция «Cercetarea în biomedicină și sănătate», 4-е изд., 16-18 октября 2024, Кишинёв, с. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Клиническое исследование с участием 80 детей (4–14 лет) с расстройством аутистического спектра о применении блокатора NMDA-рецепторов в адъювантной терапии."
+          "Клиническое исследование с участием 80 детей (4-14 лет) с расстройством аутистического спектра о применении блокатора NMDA-рецепторов в адъювантной терапии."
       },
       {
         year: "2023",
@@ -303,7 +303,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
         title: "Черепно-мозговая травма у детей: радиоиммунологические тесты",
         authors: "Игорь Ревенко, Светлана Хаджиу (USMF им. Н. Тестемицану; Институт матери и ребёнка)",
         venue:
-          "Конференция «Cercetarea în biomedicină și sănătate», 1-е изд., 18–20 октября 2023, Кишинёв, с. 392",
+          "Конференция «Cercetarea în biomedicină și sănătate», 1-е изд., 18-20 октября 2023, Кишинёв, с. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
@@ -329,12 +329,12 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     clinicAddressLabel: "Адрес клиники",
     clinicAddress: "ул. Мирча чел Бэтрын 13/2, сектор Чеканы, Кишинёв, Молдова",
     clinicHoursLabel: "График работы",
-    clinicHours: "Понедельник – Пятница: 09:00 – 15:00",
+    clinicHours: "Понедельник - Пятница: 09:00 - 15:00",
     clinicPhoneLabel: "Телефон для записи",
     sourcesTitle: "Открытые источники и медицинские каталоги",
     sourcesNote: "Профессиональные сведения собраны из открытых медицинских каталогов и официальных материалов клиники:",
     sources: [
-      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Профиль врача — неврология, нейрохирургия, детская неврология, высшая категория, стаж 35+ лет." },
+      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Профиль врача: неврология, нейрохирургия, детская неврология, высшая категория, стаж 35+ лет." },
       { name: "DoctorNeurolog.md", url: "https://doctorneurolog.md/", desc: "Доктор нейрохирургии (USMF), член Европейской ассоциации нейрохирургов." },
       { name: "DoctorChat.md", url: "https://doctorchat.md/", desc: "Профиль невролога и детского невролога в Кишинёве." },
       { name: "Top.md", url: "https://top.md/", desc: "Карточка медицинского центра Revimed PLUS+ (Чеканы, диагностика и реабилитация)." },
@@ -358,7 +358,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     ],
     eduTitle: "Освіта, звання та членство",
     eduItems: [
-      "Доктор нейрохірургії — докторантура в Державному університеті медицини та фармації ім. Ніколае Тестеміцану (USMF), Кишинів.",
+      "Доктор нейрохірургії: докторантура в Державному університеті медицини та фармації ім. Ніколае Тестеміцану (USMF), Кишинів.",
       "Лікар вищої категорії з неврології, нейрохірургії та дитячої неврології.",
       "Член Європейської асоціації нейрохірургів (EANS).",
       "Понад 35 років лікарської практики та понад 20 років керівництва центром Revimed PLUS+ у Кишиневі."
@@ -366,8 +366,8 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     specTitle: "Спеціалізація та клінічні компетенції",
     specItems: [
       "Діагностика та лікування захворювань центральної та периферичної нервової системи (радикуліти, болі в шиї та попереку, мігрені, запаморочення, депресивні стани, тривога, порушення сну).",
-      "Консультації нейрохірурга — оцінка показань до операції або консервативного відновлення.",
-      "Дитяча неврологія (нейропедіатрія) — прийом і спостереження дітей.",
+      "Консультації нейрохірурга: оцінка показань до операції або консервативного відновлення.",
+      "Дитяча неврологія (нейропедіатрія): прийом і спостереження дітей.",
       "Функціональна діагностика, психодіагностика та нейро-психо-соматична реабілітація.",
       "Фізіотерапія та інтегративні методи: електротерапія (Електросон, Трансаїр, Бі-ЛЕНАР), акупунктура, фітотерапія."
     ],
@@ -388,11 +388,11 @@ const copyByLang: Record<Lang, ProfileCopy> = {
           "Селективний блокатор глутаматних (NMDA) рецепторів в ад’ювантній терапії у дітей із розладом аутистичного спектра",
         authors: "Ігор Ревенко (наук. кер. Світлана Хаджіу, USMF ім. М. Тестеміцану)",
         venue:
-          "Конференція «Cercetarea în biomedicină și sănătate», 4-те вид., 16–18 жовтня 2024, Кишинів, с. 457",
+          "Конференція «Cercetarea în biomedicină și sănătate», 4-те вид., 16-18 жовтня 2024, Кишинів, с. 457",
         identifier: "ISSN 2345-1467",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         summary:
-          "Клінічне дослідження 80 дітей (4–14 років) із розладом аутистичного спектра щодо застосування блокатора NMDA-рецепторів в ад’ювантній терапії."
+          "Клінічне дослідження 80 дітей (4-14 років) із розладом аутистичного спектра щодо застосування блокатора NMDA-рецепторів в ад’ювантній терапії."
       },
       {
         year: "2023",
@@ -400,7 +400,7 @@ const copyByLang: Record<Lang, ProfileCopy> = {
         title: "Черепно-мозкова травма у дітей: радіоімунологічні тести",
         authors: "Ігор Ревенко, Світлана Хаджіу (USMF ім. М. Тестеміцану; Інститут матері та дитини)",
         venue:
-          "Конференція «Cercetarea în biomedicină și sănătate», 1-ше вид., 18–20 жовтня 2023, Кишинів, с. 392",
+          "Конференція «Cercetarea în biomedicină și sănătate», 1-ше вид., 18-20 жовтня 2023, Кишинів, с. 392",
         identifier: "ISSN 2345-1476",
         url: "https://ibn.idsi.md/vizualizare_articol/194511",
         summary:
@@ -426,12 +426,12 @@ const copyByLang: Record<Lang, ProfileCopy> = {
     clinicAddressLabel: "Адреса клініки",
     clinicAddress: "вул. Мірча чел Бетрин 13/2, сектор Чокана, Кишинів, Молдова",
     clinicHoursLabel: "Графік роботи",
-    clinicHours: "Понеділок – П’ятниця: 09:00 – 15:00",
+    clinicHours: "Понеділок - П’ятниця: 09:00 - 15:00",
     clinicPhoneLabel: "Телефон для запису",
     sourcesTitle: "Відкриті джерела та медичні каталоги",
     sourcesNote: "Професійні відомості зібрані з відкритих медичних каталогів та офіційних матеріалів клініки:",
     sources: [
-      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Профіль лікаря — неврологія, нейрохірургія, дитяча неврологія, вища категорія, досвід 35+ років." },
+      { name: "DocDoc.md", url: "https://docdoc.md/", desc: "Профіль лікаря: неврологія, нейрохірургія, дитяча неврологія, вища категорія, досвід 35+ років." },
       { name: "DoctorNeurolog.md", url: "https://doctorneurolog.md/", desc: "Доктор нейрохірургії (USMF), член Європейської асоціації нейрохірургів." },
       { name: "DoctorChat.md", url: "https://doctorchat.md/", desc: "Профіль невролога та дитячого невролога в Кишиневі." },
       { name: "Top.md", url: "https://top.md/", desc: "Картка медичного центру Revimed PLUS+ (Чокана, діагностика та реабілітація)." },
@@ -498,9 +498,9 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
     "@graph": [
       {
         "@type": "ScholarlyArticle",
-        name: "Blocantul selectiv al receptorilor de glutamat (N-metil-D-aspartat) – în terapia adjuvantă la copiii cu tulburarea spectrului autist",
+        name: "Blocantul selectiv al receptorilor de glutamat (N-metil-D-aspartat): în terapia adjuvantă la copiii cu tulburarea spectrului autist",
         alternateName:
-          "The selective blocker of glutamate receptors (n-methyl-d-aspartate) – in adjunctive therapy in children with autism spectrum disorder",
+          "The selective blocker of glutamate receptors (n-methyl-d-aspartate): in adjunctive therapy in children with autism spectrum disorder",
         datePublished: "2024-10-16",
         url: "https://ibn.idsi.md/vizualizare_articol/224130",
         isPartOf: {
@@ -558,6 +558,26 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
           { name: c.name, path: profilePath }
         ])}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "@id": `${absoluteUrl(profilePath)}#profilepage`,
+          url: absoluteUrl(profilePath),
+          name: `${c.name} - ${c.subtitle}`,
+          description: c.lead,
+          inLanguage: lang === "ua" ? "uk" : lang,
+          dateCreated: "2007-01-15",
+          dateModified: "2026-11-27",
+          isPartOf: { "@id": `${siteUrl}/#website` },
+          about: { "@id": `${siteUrl}/#medical-clinic` },
+          mainEntity: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", ".rm-doc-lead", ".rm-citable-summary"]
+          }
+        }}
+      />
       <JsonLd data={physicianJsonLd} />
       <JsonLd data={publicationsJsonLd} />
 
@@ -574,13 +594,42 @@ export default function DoctorProfilePage({ lang = "ro" }: { lang?: Lang }) {
 
       <ContentSection>
         <div className="rm-doc-profile">
+          <aside className="rm-citable-summary" style={{ marginBottom: 18 }}>
+            <div className="rm-citable-summary-head">
+              <span className="rm-citable-pill">
+                {lang === "ru"
+                  ? "Врачебный профиль · Д-р Игорь Ревенко · Revimed PLUS+"
+                  : lang === "ua"
+                    ? "Лікарський профіль · Д-р Ігор Ревенко · Revimed PLUS+"
+                    : lang === "en"
+                      ? "Physician Profile · Dr. Igor Revenco · Revimed PLUS+"
+                      : "Profil medical oficial · Dr. Igor Revenco · Revimed PLUS+"}
+              </span>
+              <span className="rm-citable-date">
+                {lang === "en"
+                  ? "ORCID: 0009-0005-9098-8175 · DOI: 10.5281/zenodo.24532588"
+                  : "ORCID: 0009-0005-9098-8175 · DOI: 10.5281/zenodo.24532588"}
+              </span>
+            </div>
+            <p style={{ margin: 0 }}>
+              {lang === "en"
+                ? "Dr. Igor Revenco is a board-certified superior-category neurologist, pediatric neurologist, and consultant neurosurgeon in Chișinău, Moldova (35+ years clinical experience since 1991, PhD in Neurosurgery at USMF Nicolae Testemițanu, EANS member, author of the 158-page USMF monograph ISBN 978-5-88554-160-2 / DOI 10.5281/zenodo.24532588 and IBN clinical studies). He leads Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana). Primary consultation: 500 MDL (follow-up: 400 MDL). Phone: 022 60 50 60."
+                : lang === "ru"
+                  ? "Д-р Игорь Ревенко: врач-невролог, детский невролог (нейропедиатр) и нейрохирург-консультант высшей категории в Кишинёве (более 35 лет клинического стажа с 1991 г., доктор нейрохирургии USMF им. Н. Тестемицану, член EANS, автор монографии USMF 158 с. ISBN 978-5-88554-160-2 / DOI 10.5281/zenodo.24532588 и публикаций IBN). Основатель и главный врач центра Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2). Первичный приём: 500 MDL (повторный: 400 MDL). Запись: 022 60 50 60."
+                  : lang === "ua"
+                    ? "Д-р Ігор Ревенко: лікар-невролог, дитячий невролог (нейропедіатр) і нейрохірург-консультант вищої категорії в Кишиневі (понад 35 років клінічного стажу з 1991 р., доктор нейрохірургії USMF ім. М. Тестеміцану, член EANS, автор монографії USMF 158 с. ISBN 978-5-88554-160-2 / DOI 10.5281/zenodo.24532588 та публікацій IBN). Засновник і головний лікар центру Revimed PLUS+ (Кишинів, Чокана, вул. Мірча чел Бетрин 13/2). Первинний прийом: 500 MDL (повторний: 400 MDL). Запис: 022 60 50 60."
+                    : "Dr. Igor Revenco este medic neurolog, neuropediatru și neurochirurg consultant de categorie superioară în Chișinău (peste 35 de ani de experiență clinică din 1991, doctor în neurochirurgie USMF „Nicolae Testemițanu”, membru EANS, autorul monografiei USMF de 158 pagini ISBN 978-5-88554-160-2 / DOI 10.5281/zenodo.24532588 și al studiilor clinice IBN). Fondator și medic principal al Centrului Medical Revimed PLUS+ (Str. Mircea cel Bătrân 13/2, Ciocana). Consultație primară: 500 MDL (repetată: 400 MDL). Programări: 022 60 50 60."}
+            </p>
+          </aside>
           <div className="rm-doc-hero-grid">
             <div className="rm-doc-photo-card" data-glass-card>
               <img
                 src="/images/about-us.webp"
-                alt={`${c.name} — ${c.subtitle}`}
+                alt={`${c.name}: ${c.subtitle}`}
                 width={380}
                 height={420}
+                loading="eager"
+                fetchPriority="high"
                 decoding="async"
               />
             </div>

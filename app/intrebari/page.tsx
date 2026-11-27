@@ -55,7 +55,7 @@ const faqs: FaqEntry[] = [
   category: "consultatii",
   question: "Ce documente sau analize este bine să aduc la prima consultație?",
   answer:
-   "Dacă aveți investigații anterioare (RMN, CT, radiografii, EEG, analize de sânge, extrase medicale sau lista medicamentelor luate recent), luați-le cu dumneavoastră — ajută medicul să vadă tabloul complet fără a repeta investigații inutile."
+   "Dacă aveți investigații anterioare (RMN, CT, radiografii, EEG, analize de sânge, extrase medicale sau lista medicamentelor luate recent), luați-le cu dumneavoastră: ajută medicul să vadă tabloul complet fără a repeta investigații inutile."
  },
  {
   id: "programare-orar",
@@ -132,6 +132,15 @@ export default function QuestionsPage() {
     </div>
    </PageHeading>
    <ContentSection narrow>
+    <aside className="rm-citable-summary" style={{ marginBottom: 18 }}>
+     <div className="rm-citable-summary-head">
+      <span className="rm-citable-pill">Ghid Pacient & FAQ Oficial · Revimed PLUS+ Chișinău</span>
+      <span className="rm-citable-date">12 Întrebări esențiale · Tarife 2026</span>
+     </div>
+     <p style={{ margin: 0 }}>
+      Întrebări frecvente și răspunsuri clinice oficiale pentru pacienții Centrului Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2, Luni - Vineri 09:00 - 15:00): consultația primară de neurologie, neurochirurgie sau neuropediatrie cu Dr. Igor Revenco (35+ ani experiență, doctor în neurochirurgie USMF, membru EANS) costă 500 MDL (control repetat: 400 MDL); diagnosticul funcțional include EEG 19 canale (1600 MDL), Cartografiere 3D (600 MDL), REG RHEOTEST (500 MDL), EHO-EG (350 MDL), ESG (350 MDL) și AMP 117 indici (1600 MDL); ședințele de fizioterapie pe 25 de aparate costă 100 MDL / 30 min. Programări: 022 60 50 60.
+     </p>
+    </aside>
     <ReadingCard>
      <h2>Pe scurt</h2>
      <p>
@@ -156,6 +165,24 @@ export default function QuestionsPage() {
     </ReadingCard>
 
     <FaqInteractive items={faqs} />
+
+    <ReadingCard>
+     <h2>Când este indicat consultul la Revimed PLUS+ vs. Când este necesară urgența 112</h2>
+     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 14, marginTop: 10 }}>
+      <div style={{ padding: "14px 16px", borderRadius: 14, background: "rgba(16, 185, 129, 0.08)", border: "1px solid rgba(16, 185, 129, 0.25)" }}>
+       <strong style={{ display: "block", color: "#065f46", marginBottom: 6 }}>✓ Potrivit pentru ambulatoriul Revimed PLUS+</strong>
+       <p style={{ margin: 0, fontSize: "0.93rem" }}>
+        Dureri de spate, cervicalgie, sciatică și hernii/protruzii discale fără paralizie acută; migrene, cefalee, amețeli, vertij și tinitus; tulburări de somn, anxietate, distonie neurovegetativă; evaluări neuropediatrice (întârziere de vorbire, ticuri, ADHD, EEG copii); a doua opinie neurochirurgicală și recuperare post-AVC sau post-operatorie.
+       </p>
+      </div>
+      <div style={{ padding: "14px 16px", borderRadius: 14, background: "rgba(239, 68, 68, 0.08)", border: "1px solid rgba(239, 68, 68, 0.25)" }}>
+       <strong style={{ display: "block", color: "#991b1b", marginBottom: 6 }}>⚠ Urgență medicală spitalicească (Apelați 112)</strong>
+       <p style={{ margin: 0, fontSize: "0.93rem" }}>
+        Slăbiciune sau paralizie instalată brusc pe o jumătate a corpului, asimetrie facială, tulburare bruscă de vorbire (semne FAST de AVC acut), pierderea conștienței, criză convulsivă activă, traumatism cranian sever recent sau sindrom coadă de cal cu retenție acută de urină.
+       </p>
+      </div>
+     </div>
+    </ReadingCard>
 
     <ReadingCard>
      <h2>Ghiduri clinice și consultații frecvente în Chișinău</h2>

@@ -106,6 +106,21 @@ export default function ApplicationsPage({ lang }: { lang: Lang }) {
     </div>
    </PageHeading>
    <ContentSection>
+    <aside className="rm-citable-summary" style={{ marginBottom: 18 }}>
+     <div className="rm-citable-summary-head">
+      <span className="rm-citable-pill">{title} · 11 Interactive Medical Tools</span>
+      <span className="rm-citable-date">Free Access (0 MDL) · Revimed PLUS+</span>
+     </div>
+     <p style={{ margin: 0 }}>
+      {lang === "ru"
+       ? "11 бесплатных интерактивных медицинских онлайн-тестов от центра Revimed PLUS+ (Кишинёв, Чеканы, д-р Игорь Ревенко): неврологический скрининг за 2 минуты, карта боли в спине и шее (дерматомы L4-L5, L5-S1, C5-C7), дневник мигрени, тест осанки, калькулятор индекса восстановления, тренажёр дыхания, чек-лист подготовки к приёму и гид по оборудованию. Все тесты работают бесплатно без регистрации (0 MDL)."
+       : lang === "ua"
+         ? "11 безкоштовних інтерактивних медичних онлайн-тестів від центру Revimed PLUS+ (Кишинів, Чокана, д-р Ігор Ревенко): неврологічний скринінг за 2 хвилини, карта болю в спині та шиї (дерматоми L4-L5, L5-S1, C5-C7), щоденник мігрені, тест постави, калькулятор індексу відновлення, тренажер дихання та чек-лист підготовки до прийому. Усі тести безкоштовні без реєстрації (0 MDL)."
+         : lang === "en"
+           ? "11 free interactive online medical self-assessment tools by Revimed PLUS+ Medical Center (Chișinău, Ciocana, Dr. Igor Revenco): 2-minute neurological symptom screening, interactive spine & dermatome pain map (L4-L5, L5-S1, C5-C7), headache & migraine trigger diary, posture assessment, recovery index calculator, guided therapeutic breathing timer, and consultation preparation checklist. 100% free with zero registration (0 MDL)."
+           : "11 instrumente și teste medicale interactive gratuite create de Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Dr. Igor Revenco): screening neurologic în 2 minute, harta interactivă a durerii de spate și dermatoamelor (L4-L5, L5-S1, C5-C7), jurnal de migrenă și cefalee, evaluator de postură, calculator indice de recuperare, ghid de respirație terapeutică și checklist de pregătire pentru consultație. Acces gratuit fără cont (0 MDL)."}
+     </p>
+    </aside>
     <SmartCatalogGrid
      items={items}
      initialCount={12}

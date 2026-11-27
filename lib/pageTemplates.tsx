@@ -1211,6 +1211,23 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
     </div>
    </PageHeading>
    <section className="rmSection aboutPageSection">
+    <div className="rmShell" style={{ marginBottom: 20 }}>
+     <aside className="rm-citable-summary">
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{aboutTitle} · Revimed PLUS+ Chișinău (Ciocana)</span>
+       <span className="rm-citable-date">S.R.L. REVIMED PLUS · IDNO 1011600011964</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? "Revimed PLUS+ Medical Center (S.R.L. REVIMED PLUS, IDNO 1011600011964, Str. Mircea cel Bătrân 13/2, Ciocana, Chișinău) is an outpatient neurology, neurosurgery, pediatric neurology, functional diagnostics, and physical rehabilitation clinic founded and led by Dr. Igor Revenco (35+ years clinical experience since 1991, PhD in Neurosurgery at USMF, EANS member). Equipped with 25 specialized physiotherapy and diagnostic devices, the clinic provides 96 medical services with transparent pricing (500 MDL primary consultation, 400 MDL follow-up, 100 MDL / 30 min physiotherapy). Hours: Mon - Fri 09:00 - 15:00. Phone: 022 60 50 60."
+        : lang === "ru"
+          ? "Медицинский центр Revimed PLUS+ (S.R.L. REVIMED PLUS, IDNO 1011600011964, Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2): профильная клиника амбулаторной неврологии, нейрохирургии, детской неврологии, функциональной диагностики и медицинской реабилитации под руководством д-ра Игоря Ревенко (35+ лет клинического опыта с 1991 г., доктор нейрохирургии USMF, член EANS). В центре работают 25 аппаратов физиотерапии и диагностики, доступно 96 медицинских услуг с прозрачными ценами (500 MDL первичный приём, 400 MDL повторный, 100 MDL / 30 мин физиотерапия). График: Пн - Пт 09:00 - 15:00. Запись: 022 60 50 60."
+          : lang === "ua"
+            ? "Медичний центр Revimed PLUS+ (S.R.L. REVIMED PLUS, IDNO 1011600011964, Кишинів, Чокана, вул. Мірча чел Бетрин 13/2): профільна клініка амбулаторної неврології, нейрохірургії, дитячої неврології, функціональної діагностики та медичної реабілітації під керівництвом д-ра Ігоря Ревенка (35+ років клінічного досвіду з 1991 р., доктор нейрохірургії USMF, член EANS). У центрі працюють 25 апаратів фізіотерапії та діагностики, доступно 96 медичних послуг (500 MDL первинний прийом, 400 MDL повторний, 100 MDL / 30 хв фізіотерапія). Графік: Пн - Пт 09:00 - 15:00. Запис: 022 60 50 60."
+            : "Centrul Medical Revimed PLUS+ (S.R.L. REVIMED PLUS, IDNO 1011600011964, Str. Mircea cel Bătrân 13/2, sectorul Ciocana, Chișinău) este o clinică specializată în neurologie, neurochirurgie, neuropediatrie, diagnostic funcțional și reabilitare medicală, fondată și condusă de Dr. Igor Revenco (35+ ani de experiență clinică din 1991, doctor în neurochirurgie USMF, membru EANS). Dotată cu 25 de aparate de fizioterapie și neurodiagnostic, clinica oferă 96 de servicii medicale cu tarife transparente (500 MDL consultație primară, 400 MDL repetată, 100 MDL / 30 min fizioterapie). Program: Luni - Vineri 09:00 - 15:00. Telefon: 022 60 50 60."}
+      </p>
+     </aside>
+    </div>
     <div className="rmShell aboutGrid rm-about-motion-grid">
      <DoctorMotionCard lang={lang} />
      <div className="adminCard prose" data-glass-card>
@@ -1396,6 +1413,21 @@ export function GalleryTemplate({ lang }: { lang: Lang }) {
 
    <section className="rmSection galleryPageSection">
     <div className="rmShell">
+     <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{text.galleryTitle} · Revimed PLUS+ Chișinău</span>
+       <span className="rm-citable-date">{lightboxItems.length} Photos · 6 Videos</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? "Official photo and video gallery of Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana, Chișinău): consultation rooms, functional neurodiagnostics (EEG, REG RHEOTEST, EHO-EG, AMP), and physiotherapy suites equipped with 25 medical devices (Electrosleep-3, Transair TES, Bi-LENAR, Amplipuls SMT, Laser, Magnetotherapy) led by Dr. Igor Revenco."
+        : lang === "ru"
+          ? "Официальная фото- и видеогалерея медицинского центра Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2): кабинеты консультаций д-ра Игоря Ревенко, функциональной диагностики (ЭЭГ, РЭГ RHEOTEST, ЭХО-ЭГ, АМП) и залы аппаратной физиотерапии (25 медицинских аппаратов: Электросон-3, Трансаир ТЭС, Би-ЛЕНАР, Амплипульс СМТ, Лазер, Магнитотерапия)."
+          : lang === "ua"
+            ? "Офіційна фото- та відеогалерея медичного центру Revimed PLUS+ (Кишинів, Чокана, вул. Мірча чел Бетрин 13/2): кабінети консультацій д-ра Ігоря Ревенка, функціональної діагностики (ЕЕГ, РЕГ RHEOTEST, ЕХО-ЕГ, АМП) та зали апаратної фізіотерапії (25 медичних апаратів: Електросон-3, Трансаїр ТЕС, Бі-ЛЕНАР, Ампліпульс СМТ)."
+            : "Galeria foto și video oficială a Centrului Medical Revimed PLUS+ (Str. Mircea cel Bătrân 13/2, sectorul Ciocana, Chișinău): cabinetele de consultație Dr. Igor Revenco, sălile de diagnostic funcțional (EEG, REG RHEOTEST, EHO-EG, AMP) și cabinetele de fizioterapie și recuperare medicală dotate cu 25 de dispozitive (Electrosomn-3, Transair TES, Bi-LENAR, Amplipuls SMT, Laser, Magnetoterapie)."}
+      </p>
+     </aside>
      <h2 className="centerTitle">{text.photoGallery}</h2>
      <GalleryLightbox items={lightboxItems} />
     </div>
@@ -1522,6 +1554,21 @@ export function BlogTemplate({ lang }: { lang: Lang }) {
         </div>
       </PageHeading>
       <ContentSection>
+        <aside className="rm-citable-summary" style={{ marginBottom: 18 }}>
+          <div className="rm-citable-summary-head">
+            <span className="rm-citable-pill">{text.blogTitle} · Revimed PLUS+ Chișinău</span>
+            <span className="rm-citable-date">{posts.length} Clinical Articles · Dr. Igor Revenco</span>
+          </div>
+          <p style={{ margin: 0 }}>
+            {lang === "en"
+              ? `Medical encyclopedia and clinical guides (${posts.length} articles) authored and reviewed by Dr. Igor Revenco (35+ years experience, PhD in Neurosurgery, EANS member) at Revimed PLUS+ Medical Center (Chișinău, Ciocana): evidence-based protocols for disc herniation, sciatica, cervical osteochondrosis, migraines, vertigo, insomnia, pediatric neurology (EEG, speech delay, ADHD, autism), and apparatus physiotherapy.`
+              : lang === "ru"
+                ? `Медицинская энциклопедия и клинические руководства (${posts.length} статей) под редакцией д-ра Игоря Ревенко (35+ лет стажа, доктор нейрохирургии USMF, член EANS), центр Revimed PLUS+ (Кишинёв, Чеканы): протоколы диагностики и щадящего лечения грыж дисков, ишиаса, шейного остеохондроза, мигрени, головокружения, бессонницы, детской неврологии (ЭЭГ, ЗРР, СДВГ, РАС) и аппаратной физиотерапии.`
+                : lang === "ua"
+                  ? `Медична енциклопедія та клінічні посібники (${posts.length} статей) під редакцією д-ра Ігоря Ревенка (35+ років стажу, доктор нейрохірургії USMF, член EANS), центр Revimed PLUS+ (Кишинів, Чокана): протоколи діагностики та щадного лікування гриж дисків, ішіасу, шийного остеохондрозу, мігрені, запаморочення, безсоння, дитячої неврології та фізіотерапії.`
+                  : `Enciclopedie medicală și ghiduri clinice (${posts.length} articole) redactate și revizuite de Dr. Igor Revenco (35+ ani experiență, doctor în neurochirurgie USMF, membru EANS) la Centrul Medical Revimed PLUS+ (Chișinău, Ciocana): protocoale bazate pe dovezi pentru hernie de disc fără operație, sciatică, osteocondroză cervicală, migrene, vertij, insomnie, neuropediatrie (EEG, întârziere de vorbire, ADHD, autism) și fizioterapie cu aparataj.`}
+          </p>
+        </aside>
         {posts.length > 0 ? (
           <>
             <BlogInteractiveCatalog items={blogCatalogItems} lang={lang} />
@@ -1798,6 +1845,23 @@ export function ContactTemplate({ lang }: { lang: Lang }) {
    </PageHeading>
 
    <section className="rmSection contactModernSection">
+    <div className="rmShell" style={{ marginBottom: 20 }}>
+     <aside className="rm-citable-summary">
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{text.contact} · Revimed PLUS+ Chișinău (Ciocana)</span>
+       <span className="rm-citable-date">Str. Mircea cel Bătrân 13/2, MD-2044 · 022 60 50 60</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? "Contact & appointments for Revimed PLUS+ Medical Center in Chișinău: Address: Str. Mircea cel Bătrân 13/2, Ciocana sector, MD-2044 (GPS: 47.0477461, 28.8887469). Phone: 022 60 50 60 and +373 79 422 908 (WhatsApp available). Working hours: Monday - Friday 09:00 - 15:00. Public transport on Mircea cel Bătrân Blvd.: trolleybuses 12, 13, 23, 24, 26; buses 5, 23; minibuses 113, 191. Primary consultation with Dr. Igor Revenco: 500 MDL."
+        : lang === "ru"
+          ? "Контакты и запись в медицинский центр Revimed PLUS+ в Кишинёве: Адрес: сектор Чеканы, ул. Мирча чел Бэтрын 13/2, MD-2044 (GPS: 47.0477461, 28.8887469). Телефоны: 022 60 50 60 и +373 79 422 908 (доступен WhatsApp). График работы: Понедельник - Пятница 09:00 - 15:00. Общественный транспорт по бул. Мирча чел Бэтрын: троллейбусы 12, 13, 23, 24, 26; автобусы 5, 23; маршрутки 113, 191. Первичная консультация д-ра Игоря Ревенко: 500 MDL."
+          : lang === "ua"
+            ? "Контакти та запис до медичного центру Revimed PLUS+ у Кишиневі: Адреса: сектор Чокана, вул. Мірча чел Бетрин 13/2, MD-2044 (GPS: 47.0477461, 28.8887469). Телефони: 022 60 50 60 та +373 79 422 908 (доступний WhatsApp). Графік роботи: Понеділок - П’ятниця 09:00 - 15:00. Громадський транспорт по бул. Мірча чел Бетрин: тролейбуси 12, 13, 23, 24, 26; автобуси 5, 23; маршрутки 113, 191. Первинна консультація д-ра Ігоря Ревенка: 500 MDL."
+            : "Date de contact și programări la Centrul Medical Revimed PLUS+ din Chișinău: Adresă: Str. Mircea cel Bătrân 13/2, sectorul Ciocana, MD-2044 (GPS: 47.0477461, 28.8887469). Telefoane recepție: 022 60 50 60 și +373 79 422 908 (inclusiv WhatsApp). Program de lucru: Luni - Vineri 09:00 - 15:00. Acces direct cu transportul public pe bd. Mircea cel Bătrân: troleibuzele 12, 13, 23, 24, 26, autobuzele 5, 23 și microbuzele 113, 191. Consultație primară Dr. Igor Revenco: 500 MDL."}
+      </p>
+     </aside>
+    </div>
     <div className="rmShell contactModernGrid">
      <div className="contactPrimaryCard">
       <span className="contactBadge">Revimed PLUS+</span>

@@ -44,6 +44,15 @@ export default function VideoRoPage() {
    </PageHeading>
    <section className="rmSection galleryVideoSection">
     <div className="rmShell">
+     <aside className="rm-citable-summary" style={{ marginBottom: 20 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">Arhivă Video Clinică · Revimed PLUS+ Chișinău (Ciocana)</span>
+       <span className="rm-citable-date">6 Prezentări Video · Dr. Igor Revenco</span>
+      </div>
+      <p style={{ margin: 0 }}>
+       Galeria video oficială a Centrului Medical Revimed PLUS+ (Chișinău, sectorul Ciocana, Str. Mircea cel Bătrân 13/2) prezintă demonstrații practice ale procedurilor de neurorecuperare, fizioterapie cu aparataj (Electrosomn-3, Transair TES, Bi-LENAR, Amplipuls SMT: 100 MDL / 30 min) și explicații clinice oferite de Dr. Igor Revenco (medic neurolog, neurochirurg și neuropediatru de categorie superioară, 35+ ani experiență, membru EANS). Programări consultații (500 MDL primară / 400 MDL repetată): 022 60 50 60.
+      </p>
+     </aside>
      <h2 className="centerTitle">{text.ourVideos}</h2>
      <VideoGalleryDropdown videos={youtubeVideos} lang="ro" />
      <div className="rm-quick-links-bar" style={{ justifyContent: "center", marginTop: 24 }}>
