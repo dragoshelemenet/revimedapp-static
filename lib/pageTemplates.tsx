@@ -1255,7 +1255,7 @@ export function AboutTemplate({ lang }: { lang: Lang }) {
        </div>
       </div>
      </article>
-    </div>
+    </div>
    </section>
   </>
  );
@@ -1287,6 +1287,25 @@ export function PricesTemplate({ lang }: { lang: Lang }) {
     </div>
    </PageHeading>
    <section className="rmSection pricesCleanSection">
+    <div className="rmShell" style={{ marginBottom: 20 }}>
+     <aside className="rm-citable-summary">
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{text.prices} · Revimed PLUS+ Chișinău (Ciocana)</span>
+       <span className="rm-citable-date">
+        {lang === "en" ? "Updated: November 2026 · 96 Services" : lang === "ru" ? "Обновлено: Ноябрь 2026 · 96 услуг" : lang === "ua" ? "Оновлено: Листопад 2026 · 96 послуг" : "Actualizat: Noiembrie 2026 · 96 servicii"}
+       </span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? "Transparent 2026 medical tariffs at Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2): Primary neurology, neurosurgery, or pediatric neurology consultation with Dr. Igor Revenco costs 500 MDL (follow-up: 400 MDL); functional diagnostics include EHO-EG (350 MDL), ESG (350 MDL), REG RHEOTEST (500 MDL), 3D Brain Mapping (600 MDL), 19-channel EEG (1600 MDL), and non-invasive AMP analyzer (1600 MDL); apparatus physiotherapy sessions cost 100 MDL / 30 min (5-session course: 500 MDL; 10-session course: 1000 MDL). Phone: 022 60 50 60."
+        : lang === "ru"
+          ? "Прозрачные тарифы 2026 года в медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2): первичная консультация невролога, нейрохирурга или детского невролога д-ра Игоря Ревенко стоит 500 MDL (повторная: 400 MDL); функциональная диагностика: ЭХО-ЭГ (350 MDL), ЭСГ (350 MDL), РЭГ RHEOTEST (500 MDL), 3D-картирование мозга (600 MDL), ЭЭГ 19 каналов (1600 MDL), анализатор АМП (1600 MDL); аппаратная физиотерапия: 100 MDL / 30 мин (курс 5 сеансов: 500 MDL; 10 сеансов: 1000 MDL). Запись: 022 60 50 60."
+          : lang === "ua"
+            ? "Прозорі тарифи 2026 року в медичному центрі Revimed PLUS+ (Кишинів, Чокана, вул. Мірча чел Бетрин 13/2): первинна консультація невролога, нейрохірурга або дитячого невролога д-ра Ігоря Ревенка коштує 500 MDL (повторна: 400 MDL); функціональна діагностика: ЕХО-ЕГ (350 MDL), ЕСГ (350 MDL), РЕГ RHEOTEST (500 MDL), 3D-картування мозку (600 MDL), ЕЕГ 19 каналів (1600 MDL), АМП (1600 MDL); фізіотерапія: 100 MDL / 30 хв (курс 5 сеансів: 500 MDL; 10 сеансів: 1000 MDL). Запис: 022 60 50 60."
+            : "Tarife medicale transparente 2026 la Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2): consultația primară la neurolog, neurochirurg sau neuropediatru (Dr. Igor Revenco, 35+ ani experiență, membru EANS) costă 500 MDL (repetată: 400 MDL); diagnosticul funcțional include EHO-EG (350 MDL), ESG (350 MDL), REG RHEOTEST (500 MDL), Cartografiere 3D (600 MDL), EEG 19 canale (1600 MDL) și analizatorul neinvaziv AMP (1600 MDL); ședințele de fizioterapie cu aparataj costă 100 MDL / 30 min (curs 5 ședințe: 500 MDL; curs 10 ședințe: 1000 MDL). Programări: 022 60 50 60."}
+      </p>
+     </aside>
+    </div>
     <div className="rmShell pricesModernLayout">
      <PricesInteractiveSection
       lang={lang}
@@ -1557,10 +1576,10 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
     inLanguage: lang === "ua" ? "uk" : lang,
     speakable: {
      "@type": "SpeakableSpecification",
-     cssSelector: ["h1", ".lead"]
+     cssSelector: ["h1", ".lead", ".rm-citable-summary"]
     },
     datePublished: "2026-11-21",
-    dateModified: "2026-11-21",
+    dateModified: "2026-11-23",
     image: post.image.startsWith("http") ? post.image : absoluteUrl(post.image),
     author: {
      "@type": "Physician",
@@ -1573,33 +1592,133 @@ export function BlogPostTemplate({ lang, slug }: { lang: Lang; slug: string }) {
      "@id": `${site.url}/dr-igor-revenco/#physician`,
      name: "Dr. Igor Revenco"
     },
+    citation: [
+     {
+      "@type": "ScholarlyArticle",
+      name: "Semnificația modificărilor neuroendocrine (TSH, T3, T4, cortizol) în traumatismul craniocerebral: Monografie (USMF, 158 p.)",
+      datePublished: "2022",
+      url: "https://doi.org/10.5281/zenodo.24532588",
+      author: { "@id": `${site.url}/dr-igor-revenco/#physician`, "@type": "Person", name: "Dr. Igor Revenco" }
+     },
+     {
+      "@type": "ScholarlyArticle",
+      name: "Trauma craniocerebrală la copii: teste radioimunologice (USMF / IBN)",
+      datePublished: "2023",
+      url: "https://ibn.idsi.md/vizualizare_articol/194511",
+      author: { "@id": `${site.url}/dr-igor-revenco/#physician`, "@type": "Person", name: "Dr. Igor Revenco" }
+     }
+    ],
     publisher: { "@id": `${site.url}/#medical-clinic`, "@type": "MedicalClinic", name: site.name, url: site.url }
    }} />
    <PageHeading>
     <div>
-     <p className="crumb">{text.blog} / {post.title}</p>
+     <p className="crumb"><Link href={withLang("/", lang)}>{text.home}</Link> / <Link href={blogPath}>{text.blog}</Link> / {post.title}</p>
      <h1>{post.title}</h1>
      <p className="lead">{post.excerpt}</p>
     </div>
    </PageHeading>
    <ContentSection narrow><ReadingCard>
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8, marginBottom: 16, fontSize: 13.5, color: "#516575" }}>
-     <span>
-      {lang === "en" ? "Medical review:" : lang === "ru" ? "Медицинская редакция:" : lang === "ua" ? "Медична редакція:" : "Revizie medicală:"}{" "}
-      <Link href={withLang("/dr-igor-revenco/", lang)} style={{ fontWeight: 700, color: "#075f9e" }}>
-       Dr. Igor Revenco
+    <div className="rm-trust-banner">
+     <div className="rm-trust-banner-meta">
+      <strong>Dr. Igor Revenco</strong> ·{" "}
+      {lang === "ru"
+       ? "Высшая категория · Член EANS · 35+ лет опыта · Пн - Пт 09:00 - 15:00 · Чеканы"
+       : lang === "ua"
+         ? "Вища категорія · Член EANS · 35+ років досвіду · Пн - Пт 09:00 - 15:00 · Чокана"
+         : lang === "en"
+           ? "Superior Category · EANS Member · 35+ Years Experience · Mon - Fri 09:00 - 15:00 · Ciocana"
+           : "Categorie superioară · Membru EANS · 35+ ani · Luni - Vineri 09:00 - 15:00 · Ciocana"}
+     </div>
+     <div className="rm-trust-banner-actions">
+      <a href="tel:022605060" className="btn btn-primary btn-sm">
+       {lang === "ru" ? "Позвонить: 022 60 50 60" : lang === "ua" ? "Зателефонувати: 022 60 50 60" : lang === "en" ? "Call: 022 60 50 60" : "Sună: 022 60 50 60"}
+      </a>
+      <a
+       href="https://wa.me/37379422908"
+       target="_blank"
+       rel="noopener noreferrer"
+       className="btn btn-sm btn-whatsapp-soft"
+      >
+       WhatsApp
+      </a>
+      <Link href={withLang("/preturi/", lang)} className="btn btn-outline-primary btn-sm">
+       {lang === "ru" ? "Цены (96 услуг)" : lang === "ua" ? "Ціни (96 послуг)" : lang === "en" ? "Prices (96)" : "Prețuri (96)"}
       </Link>
-      {" · "}
-      <time dateTime="2026-11-21">
-       {lang === "en" ? "Updated: November 2026" : lang === "ru" ? "Обновлено: Ноябрь 2026" : lang === "ua" ? "Оновлено: Листопад 2026" : "Actualizat: Noiembrie 2026"}
-      </time>
-     </span>
-     <Link href={withLang("/contact/", lang)} style={{ fontWeight: 600, color: "#0b8fd8" }}>
-      {text.contact} →
-     </Link>
+      <Link
+       href={withLang("/aplicatii/teste-si-instrumente/screening-neurologic/", lang)}
+       className="btn btn-outline-primary btn-sm"
+      >
+       {lang === "ru" ? "Тест 2 мин →" : lang === "ua" ? "Тест 2 хв →" : lang === "en" ? "2-Min Test →" : "Test 2 min →"}
+      </Link>
+     </div>
     </div>
-    <img src={toWebpSrc(post.image)} alt={post.title} width={1200} height={675} loading="lazy" decoding="async" />
+    <aside className="rm-citable-summary" style={{ marginBottom: 18 }}>
+     <div className="rm-citable-summary-head">
+      <span className="rm-citable-pill">
+       {lang === "ru" ? "Клиническое резюме · Revimed PLUS+" : lang === "ua" ? "Клінічне резюме · Revimed PLUS+" : lang === "en" ? "Clinical Summary · Revimed PLUS+" : "Sinteză clinică · Revimed PLUS+ Chișinău"}
+      </span>
+      <span className="rm-citable-date">
+       <time dateTime="2026-11-23">
+        {lang === "en" ? "Reviewed: Nov 2026" : lang === "ru" ? "Проверено: Ноябрь 2026" : lang === "ua" ? "Перевірено: Листопад 2026" : "Revizuit medical: Noiembrie 2026"}
+       </time>
+      </span>
+     </div>
+     <p style={{ margin: 0 }}>
+      {post.excerpt}{" "}
+      {lang === "en"
+       ? "Medically reviewed by Dr. Igor Revenco (35+ years clinical experience, PhD in Neurosurgery, EANS member) at Revimed PLUS+ Medical Center (Str. Mircea cel Bătrân 13/2, Ciocana, Chișinău). Primary consultation: 500 MDL (follow-up: 400 MDL); physiotherapy procedures: 100 MDL / 30 min. Appointments: 022 60 50 60."
+       : lang === "ru"
+         ? "Медицинская редакция: д-р Игорь Ревенко (35+ лет клинического стажа, доктор нейрохирургии USMF, член EANS), центр Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2). Первичный приём: 500 MDL (повторный: 400 MDL); аппаратная физиотерапия: 100 MDL / 30 мин. Запись: 022 60 50 60."
+         : lang === "ua"
+           ? "Медична редакція: д-р Ігор Ревенко (35+ років клінічного стажу, доктор нейрохірургії USMF, член EANS), центр Revimed PLUS+ (Кишинів, Чокана, вул. Мірча чел Бетрин 13/2). Первинний прийом: 500 MDL (повторний: 400 MDL); апаратна фізіотерапія: 100 MDL / 30 хв. Запис: 022 60 50 60."
+           : "Ghid clinic revizuit de Dr. Igor Revenco (35+ ani experiență, doctor în neurochirurgie USMF, membru EANS) la Centrul Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2). Consultație primară: 500 MDL (repetată: 400 MDL); proceduri fizioterapie: 100 MDL / 30 min. Programări: 022 60 50 60."}
+     </p>
+    </aside>
+    <img src={toWebpSrc(post.image)} alt={post.title} width={1200} height={675} loading="eager" fetchPriority="high" decoding="async" />
     <div data-blog-content>{renderBlogContent(post.content)}</div>
+    <aside className="rm-citable-summary" style={{ marginTop: 22, marginBottom: 18 }}>
+     <div className="rm-citable-summary-head">
+      <span className="rm-citable-pill">
+       {lang === "ru" ? "Научные публикации и клинический опыт (USMF / IBN)" : lang === "ua" ? "Наукові публікації та клінічний досвід (USMF / IBN)" : lang === "en" ? "Peer-Reviewed Research & Clinical Verification (USMF / IBN)" : "Notă clinică & Publicații științifice Dr. Igor Revenco (USMF / IBN)"}
+      </span>
+      <Link href={withLang("/dr-igor-revenco/", lang)} style={{ fontSize: 12.5, fontWeight: 700, color: "#075f9e" }}>
+       {lang === "ru" ? "Профиль врача →" : lang === "ua" ? "Профіль лікаря →" : lang === "en" ? "Physician Profile →" : "Profil medic →"}
+      </Link>
+     </div>
+     <blockquote style={{ margin: "4px 0 10px", fontStyle: "italic", color: "#1e3a5f" }}>
+      {lang === "en"
+       ? "„Accurate differential diagnosis combining clinical neurological examination with functional verification (EEG, REG RHEOTEST, EHO-EG, MRI/CT interpretation) prevents unnecessary medication and guides targeted neuro-rehabilitation.” (Dr. Igor Revenco, PhD in Neurosurgery, EANS Member)"
+       : lang === "ru"
+         ? "«Точная дифференциальная диагностика, сочетающая клинический неврологический осмотр с функциональной верификацией (ЭЭГ, РЭГ RHEOTEST, ЭХО-ЭГ, разбор МРТ/КТ), позволяет избежать избыточной медикаментозной нагрузки и подобрать щадящую нейрореабилитацию.» (Д-р Игорь Ревенко, д-р нейрохирургии, член EANS)"
+         : lang === "ua"
+           ? "«Точна диференціальна діагностика, що поєднує клінічний неврологічний огляд із функціональною верифікацією (ЕЕГ, РЕГ RHEOTEST, ЕХО-ЕГ, аналіз МРТ/КТ), дозволяє уникнути зайвого медикаментозного навантаження та підібрати щадну нейрореабілітацію.» (Д-р Ігор Ревенко, д-р нейрохірургії, член EANS)"
+           : "„Diagnosticul diferențial riguros, care îmbină examenul clinic neurologic și neurochirurgical cu verificarea funcțională (EEG, REG RHEOTEST, EHO-EG, interpretarea RMN/CT), previne tratamentele empirice și permite o recuperare țintită și blândă.” (Dr. Igor Revenco, doctor în neurochirurgie USMF, membru EANS)"}
+     </blockquote>
+     <ul style={{ margin: 0, paddingLeft: 18, fontSize: "0.9rem" }}>
+      <li style={{ marginBottom: 4 }}>
+       <a href="https://doi.org/10.5281/zenodo.24532588" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: "#08234a" }}>
+        {lang === "ru"
+         ? "Монография USMF (2022, 158 с., 390 источников): Нейроэндокринная регуляция и последствия черепно-мозговой травмы (DOI 10.5281/zenodo.24532588)"
+         : lang === "ua"
+           ? "Монографія USMF (2022, 158 с., 390 джерел): Нейроендокринна регуляція та наслідки черепно-мозкової травми (DOI 10.5281/zenodo.24532588)"
+           : lang === "en"
+             ? "USMF Monograph (2022, 158 pp., 390 refs): Neuroendocrine Regulation in Craniocerebral Trauma (DOI 10.5281/zenodo.24532588)"
+             : "Monografie USMF (2022, 158 pag., 390 referințe): Modificările neuroendocrine și recuperarea în traumatismul craniocerebral (DOI 10.5281/zenodo.24532588)"}
+       </a>
+      </li>
+      <li>
+       <a href="https://ibn.idsi.md/vizualizare_articol/224130" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: "#08234a" }}>
+        {lang === "ru"
+         ? "Клиническое исследование IBN / USMF (2024, ISSN 2345-1467): Адъювантная нейротерапия в детской неврологии (И. Ревенко, С. Хаджиу)"
+         : lang === "ua"
+           ? "Клінічне дослідження IBN / USMF (2024, ISSN 2345-1467): Ад’ювантна нейротерапія в дитячій неврології (І. Ревенко, С. Хаджіу)"
+           : lang === "en"
+             ? "IBN / USMF Clinical Study (2024, ISSN 2345-1467): Adjunctive Neurotherapy in Pediatric Neurology (I. Revenco, S. Hadjiu)"
+             : "Studiu clinic IBN / USMF (2024, ISSN 2345-1467): Terapia adjuvantă în neuropediatrie (I. Revenco, S. Hadjiu)"}
+       </a>
+      </li>
+     </ul>
+    </aside>
     <div className="rm-blog-related-box" data-glass-card>
      <h2>
       {lang === "en"

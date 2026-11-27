@@ -7,6 +7,7 @@ import IconVisual from "@/components/IconVisual";
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { isLang, type Lang } from "@/lib/i18n";
+import { JsonLd, absoluteUrl, breadcrumbJsonLd, siteUrl } from "@/lib/seo";
 import { getRelatedBlogPostsForPost, getRelatedClinicalPagesForPost } from "@/lib/topicClusterLinks";
 
 type ToolSlug =
@@ -900,11 +901,50 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
   else setDone(true);
  }
 
+ const prefix = lang === "ro" ? "" : `/${lang}`;
+ const homePath = prefix || "/";
+ const appsPath = `${prefix}/aplicatii/`;
+ const toolPath = `${prefix}/aplicatii/teste-si-instrumente/${slug}/`;
+ const homeLabel = lang === "ru" ? "Главная" : lang === "ua" ? "Головна" : lang === "en" ? "Home" : "Acasă";
+ const appsLabel = lang === "ru" ? "Приложения" : lang === "ua" ? "Додатки" : lang === "en" ? "Apps" : "Aplicații";
+
  return (
   <>
+   <JsonLd
+    data={breadcrumbJsonLd([
+     { name: homeLabel, path: homePath },
+     { name: appsLabel, path: appsPath },
+     { name: cfg.title[lang], path: toolPath }
+    ])}
+   />
+   <JsonLd
+    data={{
+     "@context": "https://schema.org",
+     "@type": "WebApplication",
+     "@id": `${absoluteUrl(toolPath)}#webapp`,
+     name: cfg.title[lang],
+     description: cfg.lead[lang],
+     url: absoluteUrl(toolPath),
+     inLanguage: lang === "ua" ? "uk" : lang,
+     applicationCategory: "HealthApplication",
+     operatingSystem: "Any",
+     isAccessibleForFree: true,
+     isPartOf: { "@id": `${siteUrl}/#website` },
+     provider: { "@id": `${siteUrl}/#medical-clinic` },
+     author: { "@id": `${siteUrl}/dr-igor-revenco/#physician` },
+     offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "MDL",
+      availability: "https://schema.org/InStock"
+     }
+    }}
+   />
    <PageHeading>
     <div>
-     <p className="crumb">REVIMED PLUS+ / {cfg.tag[lang]}</p>
+     <p className="crumb">
+      <Link href={homePath}>{homeLabel}</Link> / <Link href={appsPath}>{appsLabel}</Link> / {cfg.tag[lang]}
+     </p>
      <h1>{cfg.title[lang]}</h1>
      <p className="lead">{cfg.lead[lang]}</p>
     </div>
@@ -912,6 +952,23 @@ export default function RevimedSmartTool({ slug }: { slug: ToolSlug }) {
 
    <section className="rmSection smartToolSection">
     <div className="rmShell smartToolWrap">
+     <aside className="rm-citable-summary" style={{ marginBottom: 18 }}>
+      <div className="rm-citable-summary-head">
+       <span className="rm-citable-pill">{cfg.tag[lang]} · Revimed PLUS+ Chișinău</span>
+       <span className="rm-citable-date">
+        {lang === "en" ? "Free Clinical Self-Check (2 min)" : lang === "ru" ? "Бесплатный онлайн-скрининг (2 мин)" : lang === "ua" ? "Безкоштовний онлайн-скринінг (2 хв)" : "Instrument clinic gratuit (2 min)"}
+       </span>
+      </div>
+      <p style={{ margin: 0 }}>
+       {lang === "en"
+        ? `${cfg.title[lang]}: ${cfg.lead[lang]} Generates a structured summary report for your in-person consultation with Dr. Igor Revenco at Revimed PLUS+ Medical Center (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2). Primary neurology or neurosurgery consultation: 500 MDL (follow-up: 400 MDL); physiotherapy procedures: 100 MDL / 30 min. Phone: 022 60 50 60.`
+        : lang === "ru"
+          ? `${cfg.title[lang]}: ${cfg.lead[lang]} Формирует готовый отчёт с ответами для очной консультации у д-ра Игоря Ревенко в медицинском центре Revimed PLUS+ (Кишинёв, Чеканы, ул. Мирча чел Бэтрын 13/2). Первичный приём невролога или нейрохирурга: 500 MDL (повторный: 400 MDL); физиопроцедуры: 100 MDL / 30 мин. Запись: 022 60 50 60.`
+          : lang === "ua"
+            ? `${cfg.title[lang]}: ${cfg.lead[lang]} Формує структурований звіт для очної консультації у д-ра Ігоря Ревенка в медичному центрі Revimed PLUS+ (Кишинів, Чокана, вул. Мірча чел Бетрин 13/2). Первинний прийом невролога або нейрохірурга: 500 MDL (повторний: 400 MDL); фізіопроцедури: 100 MDL / 30 хв. Запис: 022 60 50 60.`
+            : `${cfg.title[lang]}: ${cfg.lead[lang]} Generează un raport structurat imprimabil pentru consultația la Dr. Igor Revenco în cadrul Centrului Medical Revimed PLUS+ (Chișinău, Ciocana, Str. Mircea cel Bătrân 13/2). Consultație primară neurolog sau neurochirurg: 500 MDL (repetată: 400 MDL); proceduri fizioterapie: 100 MDL / 30 min. Programări: 022 60 50 60.`}
+      </p>
+     </aside>
      <div className="smartProgress">
       <span>{text.progress}</span>
       <b>{progress}%</b>

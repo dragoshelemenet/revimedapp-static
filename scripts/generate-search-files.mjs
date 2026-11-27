@@ -159,6 +159,8 @@ const llmsTxt = [
   '',
   '## Machine-Readable Discovery Endpoints',
   `- Full AI Knowledge Compendium (llms-full.txt): ${new URL('/llms-full.txt', origin).href}`,
+  `- Machine-Readable Pricing Catalog (pricing.md): ${new URL('/pricing.md', origin).href}`,
+  `- Plain-Text Pricing Catalog (pricing.txt): ${new URL('/pricing.txt', origin).href}`,
   `- XML Sitemap (${urls.length} canonical URLs): ${new URL('/sitemap.xml', origin).href}`,
   `- RSS 2.0 Medical Guides & Articles Feed: ${new URL('/feed.xml', origin).href}`,
   '',
@@ -279,6 +281,50 @@ const llmsFullTxt = [
 ].join('\n');
 
 await writeFile(path.join(output, 'llms-full.txt'), llmsFullTxt);
+
+const pricingMd = [
+  '# Pricing & Medical Tariffs: Centrul Medical Revimed PLUS+ (Chișinău, Moldova)',
+  '',
+  '> Last updated: November 2026 | Currency: MDL (Moldovan Leu)',
+  '> Address: Str. Mircea cel Bătrân 13/2, Ciocana, Chișinău, MD-2044 | Phone: 022 60 50 60, +373 79 422 908',
+  '> Lead Physician: Dr. Igor Revenco (35+ years experience, Superior Category Neurologist, Pediatric Neurologist & Consultant Neurosurgeon, EANS Member)',
+  '',
+  '## 1. Medical Consultations (Adulți & Copii)',
+  '- Primary Neurology Consultation (Consultație primară neurolog): 500 MDL',
+  '- Follow-up Neurology Consultation (Consultație repetată neurolog): 400 MDL',
+  '- Primary Neurosurgery Consultation with MRI/CT Review (Consultație primară neurochirurg): 500 MDL',
+  '- Follow-up Neurosurgery Consultation (Consultație repetată neurochirurg): 400 MDL',
+  '- Primary Pediatric Neurology Consultation (Consultație primară neuropediatru): 500 MDL',
+  '- Follow-up Pediatric Neurology Consultation (Consultație repetată neuropediatru): 400 MDL',
+  '',
+  '## 2. Functional Diagnostics & Neuropsychology',
+  '- Computerized Rheoencephalography (REG RHEOTEST): 500 MDL',
+  '- Echo-Encephalography (EHO-EG): 350 MDL',
+  '- 19-Channel Electroencephalography (EEG Adulți & Copii): 1600 MDL',
+  '- 3D Brain Mapping (Cartografierea creierului 3D): 600 MDL',
+  '- Non-Invasive Blood & Metabolic Analyzer (AMP 117 parameters): 1600 MDL',
+  '- Computerized Electrospondylography (ESG spine assessment): 350 MDL',
+  '- RUNO Thermalgometry (Autonomic nervous system assessment): 350 MDL',
+  '- Executive Functions & Cognitive Assessment / MMPI: 300 - 500 MDL',
+  '- Ultrasound (Ecografie) & ECG: 200 - 250 MDL',
+  '',
+  '## 3. Physiotherapy, Neurostimulation & Rehabilitation Packages',
+  '- Single Apparatus Physiotherapy Session (30 min: Electrosomn-3, Electrosomn-4T, ES-10-5, Transair TES, Etrans, LENAR, Bi-LENAR, MDM-K, MDM-101, MDM-2000, Amplipuls-4/5/6, Medicinal Electrophoresis, Spectr-LC, Solux, Detox Spa Bio): 100 MDL / 30 min',
+  '- 5-Session Physiotherapy Course (Curs 5 ședințe aparat): 500 MDL',
+  '- 10-Session Comprehensive Physiotherapy Course (Curs 10 ședințe aparat): 1000 MDL',
+  '- Therapeutic Medical Massage (Masaj terapeutic 60 min): 200 MDL',
+  '- Kinetotherapy & Postural Rehabilitation: from 100 - 200 MDL',
+  '',
+  '## Full Interactive Price List (96 Medical Services)',
+  `- Romanian: ${new URL('/preturi/', origin).href}`,
+  `- Russian: ${new URL('/ru/preturi/', origin).href}`,
+  `- English: ${new URL('/en/preturi/', origin).href}`,
+  `- Ukrainian: ${new URL('/ua/preturi/', origin).href}`,
+  ''
+].join('\n');
+
+await writeFile(path.join(output, 'pricing.md'), pricingMd);
+await writeFile(path.join(output, 'pricing.txt'), pricingMd);
 
 // Generate RSS 2.0 Feed (out/feed.xml) for AI aggregators, Perplexity, Bing/Copilot, and Google Discover
 const pubDateRfc = new Date().toUTCString();
