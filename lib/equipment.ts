@@ -50,7 +50,7 @@ export const equipmentItems: EquipmentItem[] = [
         title: "Important",
         body: [
           "Rezultatele trebuie interpretate de medic în context clinic, împreună cu simptomele, istoricul pacientului și investigațiile necesare.",
-          "Pagina este informativă și va fi completată ulterior cu imagini, exemple de raport și explicații pentru pacient.",
+          "Investigația neinvazivă durează aproximativ 15 până la 30 de minute, nu necesită puncție venoasă și oferă un raport orientativ util în consultația neurologică sau de recuperare (tarif orientativ: 1600 MDL).",
         ],
       },
     ],
@@ -238,8 +238,8 @@ export const equipmentItems: EquipmentItem[] = [
       {
         title: "Descriere",
         body: [
-          "Transair-01S / Transair-03 este inclus în lista echipamentelor pentru proceduri transcraniene.",
-          "Pagina va fi completată ulterior cu specificații, imagini, mod de lucru și explicații pentru pacienți.",
+          "Transair-01S / Transair-03 este un aparat clinic pentru stimulare electrică transcraniană (TES-terapie), conceput pentru activarea blândă a mecanismelor centrale de reglare neurovegetativă și analgezie endogenă.",
+          "Procedura durează 30 de minute (100 MDL / ședință), se aplică prin electrozi fronto-mastoidieni cu intensitate ajustată la pragul de confort al pacientului și este indicată în cefalee tensională, migrene, suprasolicitare și tulburări de somn.",
         ],
       },
     ],
@@ -321,8 +321,8 @@ export const equipmentItems: EquipmentItem[] = [
       {
         title: "Descriere",
         body: [
-          "MDM-2000 este prezentat ca un complex computerizat pentru modulare mezodiencefalică.",
-          "Pagina va fi extinsă ulterior cu detalii tehnice, aplicații orientative și imagini.",
+          "MDM-2000 este un complex computerizat multipost pentru modulare mezodiencefalică (MDM), destinat reglării blânde a centrilor subcorticali implicați în răspunsul la stres, durere și adaptare neuroendocrină.",
+          "Ședința durează 30 de minute (100 MDL), utilizează impulsuri modulate controlate digital și se recomandă în cursuri de 5 până la 10 proceduri sub supravegherea medicului neurolog.",
         ],
       },
     ],
@@ -374,8 +374,8 @@ export const equipmentItems: EquipmentItem[] = [
       {
         title: "Descriere",
         body: [
-          "Amplipuls-6 este un aparat pentru proceduri de amplipulsterapie, utilizat în fizioterapie și recuperare.",
-          "Pagina va fi completată ulterior cu diferențe față de alte modele și detalii practice.",
+          "Amplipuls-6 este un aparat modern de amplipulsterapie cu curenți sinusoidali modulați (CSM), utilizat în fizioterapie pentru decontracturare musculară paravertebrală, calmarea durerii radiculare și stimularea troficității locale.",
+          "Permite selectarea precisă a regimurilor de modulare în funcție de faza acută sau subacută a durerii de spate, cervicalgiei, sciaticii sau artrozelor (100 MDL / 30 min).",
         ],
       },
     ],
@@ -503,8 +503,8 @@ export const equipmentItems: EquipmentItem[] = [
       {
         title: "Descriere",
         body: [
-          "SPA SY-F088 / DETOX BIO-178 este menționat ca sistem de curățare și detoxifiere.",
-          "Pagina este pregătită pentru completare cu descriere clară, fotografii, protocol de folosire și avertismente corecte.",
+          "SPA SY-F088 / DETOX BIO-178 este un sistem fizioterapeutic de baie ionică pentru picioare, utilizat ca procedură complementară de relaxare periferică, confort circulator și reducere a senzației de oboseală la nivelul membrelor inferioare.",
+          "Procedura durează 30 de minute (100 MDL) și se integrează prudent în programele de îngrijire și relaxare generală, după excluderea contraindicațiilor locale.",
         ],
       },
     ],

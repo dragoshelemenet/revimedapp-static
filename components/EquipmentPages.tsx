@@ -55,6 +55,23 @@ export function EquipmentListPage({ lang = "ro" }: { lang?: string }) {
     </div>
    </PageHeading>
    <ContentSection>
+    <aside className="rm-citable-summary" style={{ marginBottom: 18 }}>
+     <div className="rm-citable-summary-head">
+      <span className="rm-citable-pill">{labels.nav} · Revimed PLUS+ Chișinău (Ciocana)</span>
+      <span className="rm-citable-date">
+       {locale === "en" ? "Updated: November 2026" : locale === "ru" ? "Обновлено: Ноябрь 2026" : locale === "ua" ? "Оновлено: Листопад 2026" : "Actualizat: Noiembrie 2026"}
+      </span>
+     </div>
+     <p style={{ margin: 0 }}>
+      {locale === "en"
+       ? `Revimed PLUS+ Medical Center in Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2) operates ${items.length} specialized medical devices for functional diagnostics (RHEOTEST 500 MDL, AMP 1600 MDL) and neurotropic physiotherapy (Electrosomn, Transair TES, Etrans, LENAR, MDM, Amplipuls, Spectr-LC, Solux: 100 MDL / 30 min) under Dr. Igor Revenco. Appointments: 022 60 50 60.`
+       : locale === "ru"
+         ? `Медицинский центр Revimed PLUS+ в Кишинёве (Чеканы, ул. Мирча чел Бэтрын 13/2) оснащён ${items.length} профильными аппаратами для функциональной диагностики (RHEOTEST 500 MDL, АМП 1600 MDL) и нейротропной физиотерапии (Электросон, Трансаир ТЭС, Этранс, ЛЭНАР, МДМ, Амплипульс, Спектр-ЛЦ, Соллюкс: 100 MDL / 30 мин) под руководством д-ра Игоря Ревенко. Запись: 022 60 50 60.`
+         : locale === "ua"
+           ? `Медичний центр Revimed PLUS+ у Кишиневі (Чокана, вул. Мірча чел Бетрин 13/2) оснащений ${items.length} профільними апаратами для функціональної діагностики (RHEOTEST 500 MDL, АМП 1600 MDL) та нейротропної фізіотерапії (Електросон, Трансаір ТЕС, Етранс, ЛЕНАР, МДМ, Ампліпульс, Спектр-ЛЦ, Соллюкс: 100 MDL / 30 хв) під керівництвом д-ра Ігоря Ревенка. Запис: 022 60 50 60.`
+           : `Centrul Medical Revimed PLUS+ din Chișinău (Ciocana, Str. Mircea cel Bătrân 13/2) dispune de ${items.length} echipamente medicale specializate pentru diagnostic funcțional (RHEOTEST 500 MDL, AMP 1600 MDL) și fizioterapie neurotropă (Electrosomn, Transair TES, Etrans, LENAR, MDM, Amplipuls, Spectr-LC, Solux: 100 MDL / 30 min), sub coordonarea Dr. Igor Revenco. Programări: 022 60 50 60.`}
+     </p>
+    </aside>
     <EquipmentCatalogGrid items={items} lang={locale} />
    </ContentSection>
   </>

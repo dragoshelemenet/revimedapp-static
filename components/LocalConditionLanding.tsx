@@ -4,6 +4,15 @@ import { ContentSection, ReadingCard } from "@/components/ContentLayout";
 import { JsonLd, absoluteUrl, breadcrumbJsonLd, siteUrl } from "@/lib/seo";
 import { revimedReviews } from "@/lib/revimedReviews";
 import { getClusterMeshForClinicalPage } from "@/lib/topicClusterLinks";
+import {
+ detectClinicalDomain,
+ getEnrichedDecisionTable,
+ getEnrichedPreparationChecklist,
+ getEnrichedRedFlagsNotice,
+ getEnrichedInteractiveTool,
+ getEnrichedResearchCitations,
+ getEnrichedFaqs
+} from "@/lib/clinicalConditionEnrichment";
 
  export type LocalLandingProps = {
  lang: "ro" | "ru";
@@ -62,6 +71,13 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
   p.lang,
   p.relatedLinks.map((rl) => rl.href)
  );
+ const domain = detectClinicalDomain(p.path, p.h1);
+ const decisionTable = getEnrichedDecisionTable(p, domain);
+ const prepChecklist = getEnrichedPreparationChecklist(p, domain);
+ const redFlags = getEnrichedRedFlagsNotice(p, domain);
+ const interactiveTool = getEnrichedInteractiveTool(p, domain);
+ const researchCitations = getEnrichedResearchCitations(p, domain);
+ const allFaqs = getEnrichedFaqs(p);
 
  return (
   <>
@@ -117,9 +133,9 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
          }
        : {})
      },
-     ...(p.researchCitations?.length
+     ...(researchCitations.length
       ? {
-         citation: p.researchCitations.map((c) => ({
+         citation: researchCitations.map((c) => ({
           "@type": "ScholarlyArticle",
           name: c.title,
           datePublished: c.year,
@@ -134,7 +150,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
     data={{
      "@context": "https://schema.org",
      "@type": "FAQPage",
-     mainEntity: p.faqs.map((f) => ({
+     mainEntity: allFaqs.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a }
@@ -270,100 +286,56 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       </div>
      </div>
 
-     {p.customDecisionTable ? (
-      <>
-       <h2>{p.customDecisionTable.heading}</h2>
-       <div className="rm-decision-table-wrap">
-        <table className="rm-decision-table">
-         <thead>
-          <tr>
-           {p.customDecisionTable.columns.map((col) => (
-            <th key={col}>{col}</th>
-           ))}
-          </tr>
-         </thead>
-         <tbody>
-          {p.customDecisionTable.rows.map((row, rIdx) => (
-           <tr key={rIdx} style={rIdx < p.customDecisionTable!.rows.length - 1 ? { borderBottom: "1px solid rgba(11, 143, 216, 0.14)" } : undefined}>
-            {row.map((cell, cIdx) => (
-             <td key={cIdx} style={{ padding: "10px 12px" }}>
-              {cIdx === 0 ? <strong>{cell}</strong> : cell}
-             </td>
-            ))}
-           </tr>
+     <h2>{decisionTable.heading}</h2>
+     <div className="rm-decision-table-wrap">
+      <table className="rm-decision-table">
+       <thead>
+        <tr>
+         {decisionTable.columns.map((col) => (
+          <th key={col}>{col}</th>
+         ))}
+        </tr>
+       </thead>
+       <tbody>
+        {decisionTable.rows.map((row, rIdx) => (
+         <tr key={rIdx} style={rIdx < decisionTable.rows.length - 1 ? { borderBottom: "1px solid rgba(11, 143, 216, 0.14)" } : undefined}>
+          {row.map((cell, cIdx) => (
+           <td key={cIdx} style={{ padding: "10px 12px" }}>
+            {cIdx === 0 ? <strong>{cell}</strong> : cell}
+           </td>
           ))}
-         </tbody>
-        </table>
-       </div>
-      </>
-     ) : (
-      <>
-       <h2>{isRu ? "Как выбрать направление в Revimed PLUS+" : "Ghid rapid: ce consultație sau procedură ți se potrivește"}</h2>
-       <div className="rm-decision-table-wrap">
-        <table className="rm-decision-table">
-         <thead>
-          <tr>
-           <th>{isRu ? "Ситуация" : "Situația ta"}</th>
-           <th>{isRu ? "Рекомендуемый шаг" : "Pasul recomandat"}</th>
-           <th>{isRu ? "Что взять с собой" : "Ce să aduci"}</th>
-          </tr>
-         </thead>
-         <tbody>
-          <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
-           <td style={{ padding: "10px 12px" }}>{isRu ? "Мигрень, головокружение, бессонница, онемение" : "Migrene, amețeli, insomnie, amorțeli, stres"}</td>
-           <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация невролога + RHEOTEST" : "Consultație neurolog + RHEOTEST"}</strong></td>
-           <td style={{ padding: "10px 12px" }}>{isRu ? "Список лекарств и старые выписки" : "Lista medicamentelor și analizele anterioare"}</td>
-          </tr>
-          <tr style={{ borderBottom: "1px solid rgba(11, 143, 216, 0.14)" }}>
-           <td style={{ padding: "10px 12px" }}>{isRu ? "Грыжа диска, ишиас, прострел в ногу или руку" : "Hernie de disc, sciatică, durere pe picior/braț"}</td>
-           <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Консультация нейрохирурга (разбор МРТ)" : "Consultație neurochirurg (analiză RMN)"}</strong></td>
-           <td style={{ padding: "10px 12px" }}>{isRu ? "Диск / плёнка МРТ или КТ" : "Imaginile RMN sau CT pe CD / film"}</td>
-          </tr>
-          <tr>
-           <td style={{ padding: "10px 12px" }}>{isRu ? "Боль в спине, спазм, восстановление" : "Dureri de spate, contracturi, recuperare"}</td>
-           <td style={{ padding: "10px 12px" }}><strong>{isRu ? "Курс физиотерапии (5–10 сеансов)" : "Curs fizioterapie (5–10 ședințe)"}</strong></td>
-           <td style={{ padding: "10px 12px" }}>{isRu ? "Назначение врача (или осмотр на месте)" : "Recomandarea medicului (sau consult pe loc)"}</td>
-          </tr>
-         </tbody>
-        </table>
-       </div>
-      </>
-     )}
-
-     {p.preparationChecklist && (
-      <>
-       <h2>{p.preparationChecklist.heading}</h2>
-       <ol style={{ paddingLeft: 20, marginBottom: 20 }}>
-        {p.preparationChecklist.steps.map((step) => (
-         <li key={step} style={{ marginBottom: 6 }}>{step}</li>
+         </tr>
         ))}
-       </ol>
-      </>
-     )}
+       </tbody>
+      </table>
+     </div>
 
-     {p.redFlagsNotice && (
-      <aside
-       className="rm-citable-summary"
-       style={{ borderLeft: "4px solid #d97706", marginBottom: 20 }}
-       aria-label={p.redFlagsNotice.heading}
-      >
-       <strong style={{ display: "block", marginBottom: 6, color: "#92400e" }}>{p.redFlagsNotice.heading}</strong>
-       <ul style={{ margin: 0, paddingLeft: 18 }}>
-        {p.redFlagsNotice.items.map((item) => (
-         <li key={item} style={{ marginBottom: 4 }}>{item}</li>
-        ))}
-       </ul>
-      </aside>
-     )}
+     <h2>{prepChecklist.heading}</h2>
+     <ol style={{ paddingLeft: 20, marginBottom: 20 }}>
+      {prepChecklist.steps.map((step) => (
+       <li key={step} style={{ marginBottom: 6 }}>{step}</li>
+      ))}
+     </ol>
 
-     {p.interactiveTool && (
-      <div className="rm-citable-summary" style={{ marginBottom: 22 }}>
-       <p style={{ margin: "0 0 10px" }}>{p.interactiveTool.desc}</p>
-       <Link href={p.interactiveTool.href} className="btn btn-outline-primary btn-sm">
-        {p.interactiveTool.label}
-       </Link>
-      </div>
-     )}
+     <aside
+      className="rm-citable-summary"
+      style={{ borderLeft: "4px solid #d97706", marginBottom: 20 }}
+      aria-label={redFlags.heading}
+     >
+      <strong style={{ display: "block", marginBottom: 6, color: "#92400e" }}>{redFlags.heading}</strong>
+      <ul style={{ margin: 0, paddingLeft: 18 }}>
+       {redFlags.items.map((item) => (
+        <li key={item} style={{ marginBottom: 4 }}>{item}</li>
+       ))}
+      </ul>
+     </aside>
+
+     <div className="rm-citable-summary" style={{ marginBottom: 22 }}>
+      <p style={{ margin: "0 0 10px" }}>{interactiveTool.desc}</p>
+      <Link href={interactiveTool.href} className="btn btn-outline-primary btn-sm">
+       {interactiveTool.label}
+      </Link>
+     </div>
 
      <h2>{isRu ? "Отзывы пациентов Revimed PLUS+ (Google Maps)" : "Recenzii reale ale pacienților (Google Maps)"}</h2>
      <div className="rm-home-services-grid" style={{ marginBottom: 22 }}>
@@ -388,7 +360,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
       ))}
      </div>
 
-     {p.researchCitations && p.researchCitations.length > 0 && (
+     {researchCitations.length > 0 && (
       <aside
        className="rm-citable-summary"
        style={{ marginBottom: 22 }}
@@ -403,7 +375,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
         </Link>
        </div>
        <ul style={{ margin: "6px 0 0", paddingLeft: 18 }}>
-        {p.researchCitations.map((cit) => (
+        {researchCitations.map((cit) => (
          <li key={cit.url} style={{ marginBottom: 6, fontSize: "0.92rem", lineHeight: 1.5 }}>
           <a href={cit.url} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: "#08234a" }}>
            {cit.title}
@@ -418,7 +390,7 @@ export default function LocalConditionLanding(p: LocalLandingProps) {
      )}
 
      <h2>{isRu ? "Частые вопросы пациентов" : "Întrebări frecvente ale pacienților"}</h2>
-     {p.faqs.map((f) => (
+     {allFaqs.map((f) => (
       <details
        key={f.q}
        style={{

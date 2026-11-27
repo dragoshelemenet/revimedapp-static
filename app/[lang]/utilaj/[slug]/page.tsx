@@ -26,10 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getLocalizedEquipmentItem(safeLang, slug);
   if (!item) return {};
   const seo = getEquipmentSeo(slug, safeLang);
+  const cityLabel = safeLang === "ru" ? "Кишинёв" : safeLang === "ua" ? "Кишинів" : "Chișinău";
   return makeMetadata({
     lang: safeLang,
     path: "/utilaj/" + slug,
-    title: item.title,
+    title: `${item.title} (${item.category}) ${cityLabel}`,
     description: seo?.seoDescription || item.short,
     image: seo?.image
   });

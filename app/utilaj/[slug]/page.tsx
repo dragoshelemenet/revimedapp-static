@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return makeMetadata({
     lang: "ro",
     path: "/utilaj/" + slug,
-    title: item.title,
+    title: `${item.title} (${item.category}) Chișinău`,
     description: seo?.seoDescription || item.short,
     image: seo?.image
   });

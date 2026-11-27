@@ -263,8 +263,8 @@ export const equipmentEn: Record<string, EquipmentItem> = {
       {
         title: "Description",
         body: [
-          "Transair-01S / Transair-03 is used within transcranial physiotherapy methods.",
-          "This page is prepared for adding technical details, images and procedure protocols later.",
+          "Transair-01S / Transair-03 is a clinical transcranial electrical stimulation (TES) unit designed for gentle activation of central neurovegetative regulation and endogenous analgesia.",
+          "Each 30-minute session (100 MDL) uses frontal-mastoid electrode placement adjusted to patient comfort, supporting relief in tension headaches, migraine, chronic stress, and sleep disturbances.",
         ],
       },
     ],
